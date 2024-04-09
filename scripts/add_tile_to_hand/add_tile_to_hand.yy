@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"add_tile_to_hand",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"add_tile_to_hand",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
