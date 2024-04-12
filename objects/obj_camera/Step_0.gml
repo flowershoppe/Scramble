@@ -1,19 +1,19 @@
 //Locals
 
-var _cam = view_camera[0];
-var _factor = zoom_factor;
-var _camx = camera_get_view_x(_cam);
-var _camy = camera_get_view_y(_cam);
-var _camxcent = _camx + (view_w / 2);
-var _camycent = _camy + (view_h / 2);
-var _camh = camera_get_view_height(_cam);
-var _camw = camera_get_view_width(_cam);
-var _newh = _camh * _factor;
-var _neww = _camw * _factor;
-var _zoomoutw = _camw + _neww;
-var _zoomouth = _camh + _newh;
-var _zoominw = _camw - _neww;
-var _zoominh = _camh - _newh;
+var _cam		= maincam;
+var _factor		= zoom_factor;
+var _camx		= camera_get_view_x(_cam);
+var _camy		= camera_get_view_y(_cam);
+var _camxcent	= _camx + (view_w / 2);
+var _camycent	= _camy + (view_h / 2);
+var _camh		= camera_get_view_height(_cam);
+var _camw		= camera_get_view_width(_cam);
+var _newh		= _camh * _factor;
+var _neww		= _camw * _factor;
+var _zoomoutw	= _camw + _neww;
+var _zoomouth	= _camh + _newh;
+var _zoominw	= _camw - _neww;
+var _zoominh	= _camh - _newh;
 
 //zoom in and out
 //change the view so long as it wouldn't exceed room parameters

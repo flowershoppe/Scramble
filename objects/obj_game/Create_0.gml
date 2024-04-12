@@ -33,3 +33,11 @@ globalvar min_zoom;
 min_zoom = 256;
 globalvar max_zoom;
 max_zoom = room_height;
+globalvar maincam;
+maincam = view_camera[0];
+globalvar board_sprite;
+board_sprite = spr_board;
+
+//Sounds
+globalvar place_sounds;
+place_sounds = [snd_place_1, snd_place_2, snd_place_3, snd_place_4, snd_place_5, snd_place_6];
