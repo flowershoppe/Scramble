@@ -6,5 +6,7 @@ draw_set_valign(fa_middle);
 //Draw tile
 draw_sprite_stretched_ext(spr, 0, x - spr_size/2, y - spr_size/2, spr_size, spr_size, c_white, 128);
 
+var _letter_y_offset = spr_size * 0.1;
+
 //Draw tile letter
-draw_text_color(x, y - spr_size * 0.15, letter, c_black, c_black, c_black, c_black, 100);
+draw_text_color(x, y - _letter_y_offset, letter, c_black, c_black, c_black, c_black, 100);

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"place_tile_on_board",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"place_tile_on_board",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
