@@ -6,14 +6,22 @@ function most_recent_button(_button_array, _pressed_chron_order_arr)
 	var i = 0;
 	while (i < array_length(_pressed_chron_order_arr))
 	{
-		var _match_func1 = function(x){return (x == _pressed_chron_order_arr[i]);};
-		if (array_find_index(_currently_pressed_arr, _match_func1) == -1)
+		var _is_pressed = false;
+		for (var j = 0; j < array_length(_currently_pressed_arr); j++)
 		{
-			array_delete(_pressed_chron_order_arr, i, 1);
+			if (_currently_pressed_arr[j] == _pressed_chron_order_arr[i])
+			{
+				_is_pressed = true;
+				break;
+			}
+		}
+		if (_is_pressed)
+		{
+			i++;
 		}
 		else
 		{
-			i++;
+			array_delete(_pressed_chron_order_arr, i, 1);
 		}
 	}
 
@@ -21,8 +29,16 @@ function most_recent_button(_button_array, _pressed_chron_order_arr)
 	//if they are, add them to pressed_chron_order
 	for (var i = 0; i < array_length(_currently_pressed_arr); i++)
 	{
-		var _match_func2 = function(x){return (x == _currently_pressed_arr[i]);};
-		if (array_find_index(_pressed_chron_order_arr, _match_func2) == -1)
+		var _is_new_press = true;
+		for (var j = 0; j < array_length(_pressed_chron_order_arr); j++)
+		{
+			if (_pressed_chron_order_arr[j] == _currently_pressed_arr[i])
+			{
+				_is_new_press = false;
+				break;
+			}
+		}
+		if (_is_new_press)
 		{
 			array_push(_pressed_chron_order_arr, _currently_pressed_arr[i]);
 		}

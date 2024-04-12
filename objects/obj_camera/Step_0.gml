@@ -43,7 +43,7 @@ else if(mouse_wheel_up() and (_zoominw > min_zoom) and (_zoominh > min_zoom))
 	
 	//recenter camera
 	if(x != _camxcent)
-:q	{
+	{
 		x = _camxcent;	
 	}
 	if(y != _camycent)
@@ -74,13 +74,13 @@ x += _horiz_camera_move_direction * camera_speed;
 var _vert_camera_move_direction;
 switch (_most_recent_vert_button)
 {
-	case left_button:
+	case up_button:
 		_vert_camera_move_direction = -1;
 	break;
 	case vk_nokey:
 		_vert_camera_move_direction = 0;
 	break;
-	case right_button:
+	case down_button:
 		_vert_camera_move_direction = 1;
 	break;
 }
