@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"most_recent_button",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"most_recent_button",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

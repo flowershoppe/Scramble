@@ -52,20 +52,47 @@ else if(mouse_wheel_up() and (_zoominw > min_zoom) and (_zoominh > min_zoom))
 	}
 }
 
-//directional movement that will not move beyond room limits
-if(keyboard_check(right_button) and (x + camera_speed) < (room_width - (view_w / 2)))
+var _most_recent_horiz_button = most_recent_button(horiz_button_arr, horiz_button_chron_order_arr);
+var _most_recent_vert_button = most_recent_button(vert_button_arr, vert_button_chron_order_arr);
+
+//move camera based on most recent directional keys pressed
+var _horiz_camera_move_direction;
+switch (_most_recent_horiz_button)
 {
-	x += camera_speed;
+	case left_button:
+		_horiz_camera_move_direction = -1;
+	break;
+	case vk_nokey:
+		_horiz_camera_move_direction = 0;
+	break;
+	case right_button:
+		_horiz_camera_move_direction = 1;
+	break;
 }
-if(keyboard_check(left_button) and (x - camera_speed) > ((view_w / 2)))
+x += _horiz_camera_move_direction * camera_speed;
+
+var _vert_camera_move_direction;
+switch (_most_recent_vert_button)
 {
-	x -= camera_speed;
+	case up_button:
+		_vert_camera_move_direction = -1;
+	break;
+	case vk_nokey:
+		_vert_camera_move_direction = 0;
+	break;
+	case down_button:
+		_vert_camera_move_direction = 1;
+	break;
 }
-if(keyboard_check(up_button) and (y - camera_speed) > ((view_h / 2)))
-{
-	y -= camera_speed;
-}
-if(keyboard_check(down_button) and (y + camera_speed) < (room_height - (view_h / 2)))
-{
-	y += camera_speed;
-}
+y += _vert_camera_move_direction * camera_speed;
+
+//move camera if view exceeds room limits
+var _view_horiz_left_limit = view_w / 2;
+var _view_horiz_right_limit = room_width - view_w / 2;
+var _view_vert_down_limit = room_height - view_h / 2;
+var _view_vert_up_limit = view_h / 2;
+
+x = max(x, _view_horiz_left_limit);
+x = min(x, _view_horiz_right_limit);
+y = min(y, _view_vert_down_limit);
+y = max(y, _view_vert_up_limit);

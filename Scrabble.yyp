@@ -51,6 +51,7 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"add_tile_to_bag","path":"scripts/add_tile_to_bag/add_tile_to_bag.yy",},},
     {"id":{"name":"add_tile_to_hand","path":"scripts/add_tile_to_hand/add_tile_to_hand.yy",},},
+    {"id":{"name":"most_recent_button","path":"scripts/most_recent_button/most_recent_button.yy",},},
     {"id":{"name":"place_tile_on_board","path":"scripts/place_tile_on_board/place_tile_on_board.yy",},},
     {"id":{"name":"snd_place_1","path":"sounds/snd_place_1/snd_place_1.yy",},},
     {"id":{"name":"snd_place_2","path":"sounds/snd_place_2/snd_place_2.yy",},},
