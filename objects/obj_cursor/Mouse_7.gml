@@ -1,17 +1,44 @@
+var _overlap;
 //if holding a tile
 if(held_tile != noone)
 {
-	//if not overlapping with an ungrabbed tile and touching the board
-	if((instance_place(x, y, obj_tile).layer != layer) and place_meeting(x, y, board_sprite))
+	
+	
+	
+
+	//if not overlapping with an ungrabbed tile
+	if(_overlap == false)
 	{
-		with(held_tile)
-		{
-			//move held tile to tile layer
-			layer = layer_get_id("Tiles");
-			grabbed = false;
-			move_snap(sprite_get_width(spr), sprite_get_height(spr));
-			audio_play_sound(place_sounds[random_range(0, array_length(place_sounds))], 1, 0, 0.8)
+		//if touching a tile holder
+		if(place_meeting(x, y, obj_tile_holder))
+		{	
+			//get id of tile holder
+			var _tile_holder = instance_place(x, y, obj_tile_holder)
+	
+			if(place_meeting(x, y, obj_playerhand))
+			{
+				//store held tile's id in hand array according to tile holder coordinate
+				obj_playerhand.tile_array[_tile_holder.x_coord] = held_tile.id;
+			}
+			else
+			{
+				var _other_tile = obj_board.tile_array[_tile_holder.x_coord][_tile_holder.y_coord];
+				
+				with(held_tile)
+					{
+						x = _tile_holder.x;
+						y = _tile_holder.y;
+						//move held tile to tile layer on the board tile
+						layer = layer_get_id("Tiles");
+						grabbed = false;
+					}
+			}
 		}
-		held_tile = noone;
 	}
+
+	//drop the tile
+	held_tile.grabbed = false;
+	held_tile = noone;
 }
+	
+	

@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_board",
+    "path":"sprites/spr_board/spr_board.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

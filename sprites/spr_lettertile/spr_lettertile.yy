@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"spr_lettertile",
-  "bboxMode":0,
+  "bboxMode":1,
   "bbox_bottom":63,
   "bbox_left":0,
   "bbox_right":63,
