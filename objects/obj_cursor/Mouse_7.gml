@@ -1,43 +1,39 @@
-var _overlap;
 //if holding a tile
 if(held_tile != noone)
 {
 	
+	var _nearest_holder = noone;
+	var _nearest_dist = infinity;
 	
-	
-
-	//if not overlapping with an ungrabbed tile
-	if(_overlap == false)
+	//find nearest tile holder that isn't filled
+	with(obj_tile_holder)
 	{
-		//if touching a tile holder
-		if(place_meeting(x, y, obj_tile_holder))
-		{	
-			//get id of tile holder
-			var _tile_holder = instance_place(x, y, obj_tile_holder)
-	
-			if(place_meeting(x, y, obj_playerhand))
+		if(filled == false)
+		{
+			var _dist = point_distance(x, y, other.x, other.y)
+			if(_dist < _nearest_dist)
 			{
-				//store held tile's id in hand array according to tile holder coordinate
-				obj_playerhand.tile_array[_tile_holder.x_coord] = held_tile.id;
-			}
-			else
-			{
-				var _other_tile = obj_board.tile_array[_tile_holder.x_coord][_tile_holder.y_coord];
-				
-				with(held_tile)
-					{
-						x = _tile_holder.x;
-						y = _tile_holder.y;
-						//move held tile to tile layer on the board tile
-						layer = layer_get_id("Tiles");
-						grabbed = false;
-					}
+				//save the id and set to filled
+				_nearest_holder = id;
+				_nearest_dist = _dist;
+				_nearest_holder.filled = true;
 			}
 		}
 	}
-
+	
+	
 	//drop the tile
 	held_tile.grabbed = false;
+	held_tile.x = _nearest_holder.x;
+	held_tile.y = _nearest_holder.y;
+	
+	
+	//place held tile id in tile array of nearest tile holder according to its coordinates
+	_nearest_holder.owner.tile_array[_nearest_holder.x_coord][_nearest_holder.y_coord] = held_tile;
+	
+	debug = _nearest_holder.owner.tile_array[_nearest_holder.x_coord][_nearest_holder.y_coord].letter;
+	
+	
 	held_tile = noone;
 }
 	

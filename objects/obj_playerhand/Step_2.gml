@@ -45,4 +45,3 @@ for(i = 0; i < hand_width; i++)
 	}
 }
 
-debug = tile_array[1];

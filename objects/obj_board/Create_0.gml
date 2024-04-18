@@ -19,6 +19,7 @@ for(i = 0; i < grid_width; i++)
 		var _tile = instance_create_layer(_offset + (i * _tile_size), _offset + (j * _tile_size), "Board", obj_tile_holder);
 		_tile.x_coord = i;
 		_tile.y_coord = j;
+		_tile.owner = self;
 	}
 	
 }

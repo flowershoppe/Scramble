@@ -13,11 +13,13 @@ for(i = 0; i < hand_width; i++)
 	tile_holder_array[i] = instance_create_layer(x, y, "Hand_Tile_Holders", obj_tile_holder);
 	tile_holder_array[i].x_coord = i;
 	tile_holder_array[i].y_coord = 0;
+	tile_holder_array[i].owner = self;
 }
 
 for(i = 0; i < hand_width; i++)
 {
 	tile_array[i] = instance_create_layer(0, 0, "Hand_Tiles", obj_tile);
-	tile_array[i].letter = "A";
-	tile_array[i].in_hand = true;
+	var _tile = tile_array[i];
+	_tile.letter = "A";
+	_tile.in_hand = true;
 }
