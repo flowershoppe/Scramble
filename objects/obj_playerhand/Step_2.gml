@@ -24,7 +24,7 @@ var _left_align = _x_draw_location - (_draw_width * 0.5) + (_tile_size / 2) + _o
 
 for(i = 0; i < hand_width; i++)
 {
-	var _tile = tile_array[i];
+	var _tile = tile_holder_array[i].tile;
 	var _tile_holder = tile_holder_array[i];
 	
 	//scale and move tile holder

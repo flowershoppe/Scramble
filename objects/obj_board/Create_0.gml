@@ -4,9 +4,6 @@ grid_height = 15;
 
 spr = spr_board;
 
-//store tile id's in this array
-tile_array[0][0] = 0;
-
 var i, j;
 var _offset = room_width / 4;
 var _tile_size = 64;
