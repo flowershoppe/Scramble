@@ -2,6 +2,7 @@
 
 var _cam		= maincam;
 var _factor		= zoom_factor;
+var _mousew		= mouse_wheel_down() - mouse_wheel_up();
 var _camx		= camera_get_view_x(_cam);
 var _camy		= camera_get_view_y(_cam);
 var _camxcent	= _camx + (view_w / 2);

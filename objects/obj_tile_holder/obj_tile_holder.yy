@@ -1,12 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_board",
+  "%Name":"obj_tile_holder",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_board",
+  "name":"obj_tile_holder",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_board",
-    "path":"sprites/spr_board/spr_board.yy",
+    "name":"spr_board_tile",
+    "path":"sprites/spr_board_tile/spr_board_tile.yy",
   },
   "spriteMaskId":null,
   "visible":true,

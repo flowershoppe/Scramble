@@ -1,3 +1,6 @@
+//factor for zooming
+zoomf = 1;
+
 //parameters of visible view of game
 view_h = display_height;
 view_w = display_width;

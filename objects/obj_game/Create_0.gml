@@ -4,7 +4,13 @@ tile_font_size = 50;
 globalvar tile_font;
 tile_font = font_add("CALADEA-REGULAR.TTF", tile_font_size, 
 					false, false, tile_font_size, tile_font_size);
+font_enable_sdf(tile_font, true);
 //room_goto(Room1);
+
+globalvar active_player;
+active_player = noone;
+globalvar tilebag;
+tilebag = instance_create_layer(300, 500, "Tilebag", obj_tilebag);
 
 //Keybinds
 globalvar left_button;
@@ -41,3 +47,15 @@ board_sprite = spr_board;
 //Sounds
 globalvar place_sounds;
 place_sounds = [snd_place_1, snd_place_2, snd_place_3, snd_place_4, snd_place_5, snd_place_6];
+
+//create game handlers
+
+instance_create_layer(0, 0, "Meta", obj_scorekeeper);
+instance_create_layer(0, 0, "Meta", obj_board);
+instance_create_layer(0, 0, "Meta", obj_camera_new);
+instance_create_layer(0, 0, "Hand", obj_playerhand);
+instance_create_layer(0, 0, "Background", obj_background);
+var _player = instance_create_layer(0, 0, "Meta", obj_player);
+var _cursor = instance_create_layer(0, 0, "Meta", obj_cursor);
+_cursor.owner = _player
+active_player = _player;

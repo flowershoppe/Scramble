@@ -1,0 +1,1 @@
+add_tile_to_bag("A", 1);

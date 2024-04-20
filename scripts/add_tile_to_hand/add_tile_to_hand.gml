@@ -1,14 +1,35 @@
-//Add tile to hand
-
-function add_tile_to_hand(_player, _israndom, _index)
+//Add tile to hand from tilebag
+function add_tile_to_hand(_hand, _tilebag)
 {
-	if(_israndom)
+	_tilebag = tilebag;
+	var i = 0;
+	
+	var _empty;
+	var i;
+	
+	//ensure bag isn't empty
+	if(array_length(_tilebag.tiles) < 1){ exit; }
+	
+	//loop through until until an empty tile holder is found
+	for(i = 0; i < _hand.hand_width; i++)
 	{
-		_player.tiles_in_hand = obj_tilebag.tiles[random_range(0, array_length(obj_tilebag.tiles) + 1)];
-	}
-	//may select individual tile
-	else
-	{
-		_player.tiles_in_hand = obj_tilebag.tiles[_index];
+		var _tile_holder = _hand.tile_holder_array[i];
+		
+		if(_tile_holder.tile == noone)
+		{		
+			//find random tile from bag and set _tile equal to it
+			var _random = irandom(array_length(obj_tilebag.tiles) - 1);
+			var _bag_tile = _tilebag.tiles[_random];
+			var _tile = _bag_tile;
+		
+			//remove tile from bag
+			array_delete(_tilebag.tiles, _random, 1);
+		
+			//place tile id in tile holder
+			_tile_holder.tile = _tile;
+			_tile.layer = layer_get_id("Hand_Tiles");
+			
+			exit;
+		}
 	}
 }
