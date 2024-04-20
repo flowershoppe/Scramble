@@ -15,6 +15,7 @@
     {"name":"obj_tilebag","order":5,"path":"objects/obj_tilebag/obj_tilebag.yy",},
     {"name":"obj_camera_new","order":14,"path":"objects/obj_camera_new/obj_camera_new.yy",},
     {"name":"add_tile_to_hand","order":1,"path":"scripts/add_tile_to_hand/add_tile_to_hand.yy",},
+    {"name":"most_recent_button","order":2,"path":"scripts/most_recent_button/most_recent_button.yy",},
     {"name":"place_tile_on_board","order":3,"path":"scripts/place_tile_on_board/place_tile_on_board.yy",},
     {"name":"snd_place_2","order":1,"path":"sounds/snd_place_2/snd_place_2.yy",},
     {"name":"snd_place_3","order":2,"path":"sounds/snd_place_3/snd_place_3.yy",},
