@@ -28,11 +28,11 @@ for(i = 0; i < hand_width; i++)
 	var _tile_holder = tile_holder_array[i];
 	
 	//scale and move tile holder
-	_x_scale = (_camh * 0.3) / spr_h;
+	var _tile_scale = (_camh * 0.3) / spr_h;
 	_tile_holder.x = _left_align + (_offset * i) + (_tile_size * i);
 	_tile_holder.y = y;
-	_tile_holder.image_xscale = _x_scale;
-	_tile_holder.image_yscale = _x_scale;
+	_tile_holder.image_xscale = _tile_scale;
+	_tile_holder.image_yscale = _tile_scale;
 	
 	//scale and move tile
 	if(_tile != noone)
@@ -40,8 +40,9 @@ for(i = 0; i < hand_width; i++)
 		_x_scale = (_camh * 0.3) / spr_h;
 		_tile.x = _left_align + (_offset * i) + (_tile_size * i);
 		_tile.y = y;
-		_tile.image_xscale = _x_scale;
-		_tile.image_yscale = _x_scale;
+		_tile.image_xscale = _tile_scale;
+		_tile.image_yscale = _tile_scale;
+		_tile.font_scale = _tile_scale;
 	}
 }
 

@@ -21,6 +21,7 @@ if(mouse_check_button_pressed(mb_left))
 		held_tile.layer = layer_get_id("Grabbed");
 		held_tile.image_xscale = 1;
 		held_tile.image_yscale = 1;
+		held_tile.font_scale = 1;
 	
 		audio_play_sound(place_sounds[irandom(array_length(place_sounds) - 1)],
 						1, 0, 0.8, 0, 1.5);
@@ -71,10 +72,19 @@ if(mouse_check_button_released(mb_left))
 			}
 		}
 	
-	
 		//drop the tile
 		held_tile.x = _nearest_holder.x;
 		held_tile.y = _nearest_holder.y;
+		
+		if(_layer == layer_get_id("Board"))
+		{
+			held_tile.layer = layer_get_id("Tiles");	
+		}
+		else
+		{
+			held_tile.layer = layer_get_id("Hand_Tiles")
+		}
+		
 		_nearest_holder.tile = held_tile;
 		audio_play_sound(place_sounds[irandom(array_length(place_sounds) - 1)],
 						1, 0, 0.8, 0, 1);

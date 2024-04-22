@@ -1,6 +1,8 @@
 //Default Font
 globalvar tile_font_size;
-tile_font_size = 50;
+tile_font_size = 42;
+globalvar tile_font_color;
+tile_font_color = c_black;
 globalvar tile_font;
 tile_font = font_add("CALADEA-REGULAR.TTF", tile_font_size, 
 					false, false, tile_font_size, tile_font_size);
@@ -52,7 +54,7 @@ place_sounds = [snd_place_1, snd_place_2, snd_place_3, snd_place_4, snd_place_5,
 
 instance_create_layer(0, 0, "Meta", obj_scorekeeper);
 instance_create_layer(0, 0, "Meta", obj_board);
-instance_create_layer(0, 0, "Meta", obj_camera_new);
+instance_create_layer(room_width / 2, room_height / 2, "Meta", obj_camera);
 instance_create_layer(0, 0, "Hand", obj_playerhand);
 instance_create_layer(0, 0, "Background", obj_background);
 var _player = instance_create_layer(0, 0, "Meta", obj_player);

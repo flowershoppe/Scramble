@@ -50,7 +50,6 @@
     {"id":{"name":"obj_tile_holder","path":"objects/obj_tile_holder/obj_tile_holder.yy",},},
     {"id":{"name":"obj_tile","path":"objects/obj_tile/obj_tile.yy",},},
     {"id":{"name":"obj_tilebag","path":"objects/obj_tilebag/obj_tilebag.yy",},},
-    {"id":{"name":"obj_camera_new","path":"objects/obj_camera_new/obj_camera_new.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"add_tile_to_bag","path":"scripts/add_tile_to_bag/add_tile_to_bag.yy",},},
     {"id":{"name":"add_tile_to_hand","path":"scripts/add_tile_to_hand/add_tile_to_hand.yy",},},
