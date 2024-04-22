@@ -1,7 +1,23 @@
 draw_self();
 
-var _y_offset = font_get_size(font) * 0.1
+var _y_offset = sprite_height * 0.1;
+var _x_offset = sprite_width * 0.05;
 
-draw_text_color(x, y - _y_offset, letter, c_black, c_black, c_black, c_black, 100);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_font(font);
 
+//draw letter
+draw_text_transformed_color(x - _x_offset, y - _y_offset, letter, font_scale, font_scale, 
+							0, font_color, font_color, font_color, font_color, 100);
 
+var _scale = font_scale / 3;
+draw_set_halign(fa_right);
+draw_set_valign(fa_top);
+
+_x_offset = sprite_width * 0.35;
+_y_offset = sprite_height * 0.4
+
+//draw point value	
+draw_text_transformed_color(x + _x_offset, y - _y_offset, pointvalue, _scale, _scale, 
+							0, font_color, font_color, font_color, font_color, 100);
