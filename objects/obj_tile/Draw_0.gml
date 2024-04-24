@@ -12,11 +12,11 @@ draw_text_transformed_color(x - _x_offset, y - _y_offset, letter, font_scale, fo
 							0, font_color, font_color, font_color, font_color, 100);
 
 var _scale = font_scale / 3;
-draw_set_halign(fa_right);
-draw_set_valign(fa_top);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
 
-_x_offset = sprite_width * 0.35;
-_y_offset = sprite_height * 0.4
+_x_offset = sprite_width * 0.3;
+_y_offset = sprite_height * 0.3;
 
 //draw point value	
 draw_text_transformed_color(x + _x_offset, y - _y_offset, pointvalue, _scale, _scale, 

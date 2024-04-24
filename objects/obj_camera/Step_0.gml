@@ -8,32 +8,32 @@ var _most_recent_vert_button = most_recent_button(vert_button_arr, vert_button_c
 var _horiz_camera_move_direction;
 switch (_most_recent_horiz_button)
 {
-	case left_button:
+	case global.left_button:
 		_horiz_camera_move_direction = -1;
 	break;
 	case vk_nokey:
 		_horiz_camera_move_direction = 0;
 	break;
-	case right_button:
+	case global.right_button:
 		_horiz_camera_move_direction = 1;
 	break;
 }
-x += _horiz_camera_move_direction * camera_speed;
+x += _horiz_camera_move_direction * global.camera_speed;
 
 var _vert_camera_move_direction;
 switch (_most_recent_vert_button)
 {
-	case up_button:
+	case global.up_button:
 		_vert_camera_move_direction = -1;
 	break;
 	case vk_nokey:
 		_vert_camera_move_direction = 0;
 	break;
-	case down_button:
+	case global.down_button:
 		_vert_camera_move_direction = 1;
 	break;
 }
-y += _vert_camera_move_direction * camera_speed;
+y += _vert_camera_move_direction * global.camera_speed;
 
 //move camera if view exceeds room limits
 var _view_horiz_left_limit = view_w / 2;
@@ -51,10 +51,10 @@ x = min(x, _view_horiz_right_limit);
 y = min(y, _view_vert_down_limit);
 y = max(y, _view_vert_up_limit);
 
-var _viewX = camera_get_view_x(maincam);
-var _viewY = camera_get_view_y(maincam);
-var _viewW = camera_get_view_width(maincam);
-var _viewH = camera_get_view_height(maincam);
+var _viewX = camera_get_view_x(global.maincam);
+var _viewY = camera_get_view_y(global.maincam);
+var _viewW = camera_get_view_width(global.maincam);
+var _viewH = camera_get_view_height(global.maincam);
 
 var _hor = keyboard_check(vk_right) - keyboard_check(vk_left);
 var _ver = keyboard_check(vk_down) - keyboard_check(vk_up);
@@ -63,18 +63,18 @@ var _gotoX = x + (_hor * 200) - (_viewW * 0.5);
 var _gotoY = y + (_ver * 150) - (_viewH * 0.5);
 var _newX = lerp(_viewX, _gotoX, 0.1);
 var _newY = lerp(_viewY, _gotoY, 0.1);
-camera_set_view_pos(maincam, _newX, _newY);
+camera_set_view_pos(global.maincam, _newX, _newY);
 
 var _factor = 0.2;
 var _mouseW = mouse_wheel_down() - mouse_wheel_up();
 zoomF = clamp(zoomF + (_mouseW * _factor), _factor, 2);
 var _lerpH = lerp(_viewH, zoomF * 540, _factor);
 var _newH = clamp(_lerpH, 0, room_height);var _newW = _newH * (960 / 540);
-camera_set_view_size(maincam, _newW, _newH);
+camera_set_view_size(global.maincam, _newW, _newH);
 var _offsetX = _newX - (_newW - _viewW) * 0.5;
 var _offsetY = _newY - (_newH - _viewH) * 0.5;
 _newX = clamp(_offsetX, 0, room_width - _newW);
 _newY = clamp(_offsetY, 0, room_height - _newH);
-camera_set_view_pos(maincam, _newX, _newY);
+camera_set_view_pos(global.maincam, _newX, _newY);
 
 #endregion

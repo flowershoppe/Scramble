@@ -1,1 +1,1 @@
-add_tile_to_hand(active_player.hand, tilebag);
+add_tile_to_hand(global.active_player.hand, global.tilebag);

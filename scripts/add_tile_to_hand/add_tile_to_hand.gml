@@ -1,7 +1,7 @@
 //Add tile to hand from tilebag
 function add_tile_to_hand(_hand, _tilebag)
 {
-	_tilebag = tilebag;
+	_tilebag = global.tilebag;
 	var i = 0;
 	
 	var _empty;
@@ -18,7 +18,7 @@ function add_tile_to_hand(_hand, _tilebag)
 		if(_tile_holder.tile == noone)
 		{		
 			//find random tile from bag and set _tile equal to it
-			var _random = irandom(array_length(obj_tilebag.tiles) - 1);
+			var _random = irandom(array_length(_tilebag.tiles) - 1);
 			var _bag_tile = _tilebag.tiles[_random];
 			var _tile = _bag_tile;
 		

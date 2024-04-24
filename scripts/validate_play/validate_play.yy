@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"validate_play",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"validate_play",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

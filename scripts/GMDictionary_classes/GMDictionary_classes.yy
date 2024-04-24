@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"GMDictionary_classes",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GMDictionary_classes",
+  "parent":{
+    "name":"GMDictionary",
+    "path":"folders/Libraries/GMDictionary.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

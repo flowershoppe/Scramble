@@ -10,5 +10,5 @@ function add_tile_to_bag(_letter, _pointvalue)
 	_tile.pointvalue = _pointvalue;
 	
 	//put it in the bag
-	array_insert(tilebag.tiles, 0, _tile);
+	array_insert(global.tilebag.tiles, 0, _tile);
 }

@@ -1,5 +1,5 @@
 //set to static location relative to camera
-var _cam = maincam;
+var _cam = global.maincam;
 var _camw = camera_get_view_width(_cam);
 var _camh = camera_get_view_height(_cam);
 var _camx = camera_get_view_x(_cam);
@@ -40,7 +40,6 @@ for(i = 0; i < hand_width; i++)
 							_tile_size, _tile_size,
 							c_white, 100);
 							
-							debug = _draw_height;
 			
 	
 		//Draw letters

@@ -1,5 +1,5 @@
 //set to static location relative to camera
-var _cam = maincam;
+var _cam = global.maincam;
 var _camw = camera_get_view_width(_cam);
 var _camh = camera_get_view_height(_cam);
 var _camx = camera_get_view_x(_cam);
