@@ -1,5 +1,8 @@
 {
-  "FolderOrderSettings":[],
+  "FolderOrderSettings":[
+    {"name":"Libraries","order":1,"path":"folders/Libraries.yy",},
+    {"name":"GMDictionary","order":1,"path":"folders/Libraries/GMDictionary.yy",},
+  ],
   "ResourceOrderSettings":[
     {"name":"obj_background","order":8,"path":"objects/obj_background/obj_background.yy",},
     {"name":"obj_board","order":9,"path":"objects/obj_board/obj_board.yy",},
@@ -14,8 +17,12 @@
     {"name":"obj_tile","order":13,"path":"objects/obj_tile/obj_tile.yy",},
     {"name":"obj_tilebag","order":5,"path":"objects/obj_tilebag/obj_tilebag.yy",},
     {"name":"add_tile_to_hand","order":1,"path":"scripts/add_tile_to_hand/add_tile_to_hand.yy",},
+    {"name":"dist_standard","order":6,"path":"scripts/dist_standard/dist_standard.yy",},
+    {"name":"GMDictionary_exceptions","order":1,"path":"scripts/GMDictionary_exceptions/GMDictionary_exceptions.yy",},
     {"name":"most_recent_button","order":2,"path":"scripts/most_recent_button/most_recent_button.yy",},
     {"name":"place_tile_on_board","order":3,"path":"scripts/place_tile_on_board/place_tile_on_board.yy",},
+    {"name":"validate_play","order":5,"path":"scripts/validate_play/validate_play.yy",},
+    {"name":"verify_word","order":4,"path":"scripts/verify_word/verify_word.yy",},
     {"name":"snd_place_2","order":1,"path":"sounds/snd_place_2/snd_place_2.yy",},
     {"name":"snd_place_3","order":2,"path":"sounds/snd_place_3/snd_place_3.yy",},
     {"name":"snd_place_4","order":3,"path":"sounds/snd_place_4/snd_place_4.yy",},
