@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"verify_word",
+  "%Name":"calculate_points",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"verify_word",
+  "name":"calculate_points",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

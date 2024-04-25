@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"place_tile_on_board",
+  "%Name":"valid_play",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"place_tile_on_board",
+  "name":"valid_play",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

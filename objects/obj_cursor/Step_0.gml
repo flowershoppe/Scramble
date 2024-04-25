@@ -87,7 +87,7 @@ if(mouse_check_button_released(mb_left))
 			//place in array for checking play validity later
 			array_insert(owner.placed_tiles, 0, held_tile);
 			
-			validate_play(owner);
+			valid_play(owner);
 		}
 		else
 		{

@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"validate_play",
+  "%Name":"get_word",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"validate_play",
+  "name":"get_word",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
