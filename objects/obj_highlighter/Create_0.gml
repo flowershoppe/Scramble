@@ -1,0 +1,1 @@
+spr = sprite_index;

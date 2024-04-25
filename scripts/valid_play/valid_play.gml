@@ -1,5 +1,5 @@
 //validate whether placed tiles constitute a valid play
-function validate_play(_player)
+function valid_play(_player)
 {
 	var i = 0;
 	var _player_array = _player.placed_tiles;

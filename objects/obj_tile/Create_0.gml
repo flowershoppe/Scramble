@@ -7,3 +7,5 @@ font_color	= global.tile_font_color;
 
 spr			= spr_lettertile;
 spr_size	= 64;
+
+highlight = false;

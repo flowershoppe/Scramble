@@ -21,3 +21,8 @@ _y_offset = sprite_height * 0.3;
 //draw point value	
 draw_text_transformed_color(x + _x_offset, y - _y_offset, pointvalue, _scale, _scale, 
 							0, font_color, font_color, font_color, font_color, 100);
+							
+if(highlight)
+{
+	draw_sprite(spr_highlight, 0, x, y);	
+}
