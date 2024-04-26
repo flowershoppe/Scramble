@@ -1,5 +1,7 @@
 pointvalue	= 0;
-letter		= "_";
+letter		= "A";
+blank		= false;
+wait_for_input = false;
 
 font		= global.tile_font;
 font_scale	= 1;
@@ -9,3 +11,4 @@ spr			= spr_lettertile;
 spr_size	= 64;
 
 highlight = false;
+

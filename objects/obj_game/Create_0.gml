@@ -56,11 +56,12 @@ global.zoom_in = ev_mouse_wheel_up;
 global.zoom_out = ev_mouse_wheel_down;
 
 //Settings
+global.hotseat = false;
 global.camera_speed = 5.0;
 global.zoom_factor = 0.1;
 global.display_width = 960;
 global.display_height = 540;
-global.min_zoom = 256;
+global.min_zoom = 540;
 global.max_zoom = room_height;
 global.maincam = view_camera[0];
 global.board_sprite = spr_board;
@@ -71,7 +72,7 @@ global.place_sounds = [snd_place_1, snd_place_2, snd_place_3, snd_place_4, snd_p
 //create game handlers
 
 instance_create_layer(0, 0, "Meta", obj_scorekeeper);
-instance_create_layer(0, 0, "Meta", obj_board);
+instance_create_layer(0, 0, "Board", obj_board);
 instance_create_layer(room_width / 2, room_height / 2, "Meta", obj_camera);
 instance_create_layer(0, 0, "Background", obj_background);
 instance_create_layer(room_width * 0.9, room_height * 0.75, "UI", obj_button);
