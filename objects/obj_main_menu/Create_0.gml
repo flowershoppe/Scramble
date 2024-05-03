@@ -1,2 +1,2 @@
-button1 = "Start Game";
-button2 = "Settings";
+button_start = "Start Game";
+button_settings = "Settings";

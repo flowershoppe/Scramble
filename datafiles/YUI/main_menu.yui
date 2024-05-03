@@ -18,7 +18,7 @@ root:
         - type: button
           content: 
             type: text
-            text: @button1
+            text: @button_start
             text_style: title        
           tooltip: this is a button
           border_thickness: 1
@@ -27,7 +27,7 @@ root:
         - type: button
           content: 
             type: text
-            text: @button2
+            text: @button_settings
             text_style: title        
           tooltip: this is a button
           border_thickness: 1
