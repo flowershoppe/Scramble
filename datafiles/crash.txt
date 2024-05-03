@@ -1,0 +1,9 @@
+{ script : "gml_Object_obj_game_Create_0", stacktrace : [ "gml_Object_obj_game_Create_0 (line 49)" ], line : 49, message : "instance_create_layer :: specified layer "Tilebag" does not exist", longMessage : "ERROR in
+action number 1
+of Create Event
+for object obj_game:
+
+
+instance_create_layer :: specified layer "Tilebag" does not exist
+ at gml_Object_obj_game_Create_0 (line 49) - global.tilebag = instance_create_layer(300, 500, "Tilebag", obj_tilebag);
+" }

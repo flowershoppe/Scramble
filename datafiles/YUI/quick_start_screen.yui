@@ -1,0 +1,32 @@
+id: quick_start_screen
+file_type: screen
+root:
+  type: panel
+  layout: canvas
+
+  elements:
+    - type: panel
+      size: { w: 240, h: 270 }
+      alignment: { h: center }
+      canvas:
+        top: 5
+        center: h
+      background: yui_panel_bg
+      padding: 10
+      
+      elements:
+        - type: button
+          content: 
+            type: text
+            text: @button1
+            text_style: title        
+          tooltip: this is a button
+          border_thickness: 1
+
+        - type: button
+          content: 
+            type: text
+            text: @button2
+            text_style: title        
+          tooltip: this is a button
+          border_thickness: 1

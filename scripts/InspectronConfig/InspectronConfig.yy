@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"InspectronConfig",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"InspectronConfig",
+  "parent":{
+    "name":"Scrabble",
+    "path":"Scrabble.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

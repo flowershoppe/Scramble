@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"bag",
-    "path":"sprites/bag/bag.yy",
+    "name":"spr_bag",
+    "path":"sprites/spr_bag/spr_bag.yy",
   },
   "spriteMaskId":null,
   "visible":true,
