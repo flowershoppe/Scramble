@@ -22,6 +22,7 @@ root:
             text_style: title        
           tooltip: this is a button
           border_thickness: 1
+          on_click: @@ start_game()
 
         - type: button
           content: 
