@@ -1,0 +1,27 @@
+id: turn_order
+file_type: screen
+
+import:
+  - ../Templates/
+  - /YUI/Widgets/child_window.yui
+
+root:
+  type: panel
+  layout: vertical
+  size: stretch
+    elements:
+      - type: child_window
+        title: Players
+        size: { w: 200 }
+        closable: true
+
+        content:
+          type: panel
+          padding: 5
+          size: { w: 200 }
+          alignment: { h: 200 }
+          elements:
+            - type: button
+              content: Player
+  
+      

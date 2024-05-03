@@ -1,9 +1,9 @@
-{ script : "gml_Object_obj_board_Create_0", message : "instance_create_layer :: specified layer "Board_Tile_Holders" does not exist", line : 25, stacktrace : [ "gml_Object_obj_board_Create_0 (line 25)","gml_Object_obj_game_Create_0 (line 75)" ], longMessage : "ERROR in
+{ script : "gml_Object_obj_game_Create_0", message : "instance_create_layer :: specified layer "Tilebag" does not exist", line : 48, stacktrace : [ "gml_Object_obj_game_Create_0 (line 48)" ], longMessage : "ERROR in
 action number 1
 of Create Event
-for object obj_board:
+for object obj_game:
 
 
-instance_create_layer :: specified layer "Board_Tile_Holders" does not exist
- at gml_Object_obj_board_Create_0 (line 25) - 		var _holder = instance_create_layer(_offset + (i * _tile_size), 
+instance_create_layer :: specified layer "Tilebag" does not exist
+ at gml_Object_obj_game_Create_0 (line 48) - global.tilebag = instance_create_layer(300, 500, "Tilebag", obj_tilebag);
 " }

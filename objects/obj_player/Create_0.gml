@@ -1,4 +1,4 @@
-name				= "Name";
+player_name			= "Name";
 point_total			= 0;
 hand_size			= 7;
 hand				= instance_create_layer(0, 0, "Hand", obj_playerhand);

@@ -1,4 +1,4 @@
-id: quick_start_screen
+id: main_menu
 file_type: screen
 root:
   type: panel

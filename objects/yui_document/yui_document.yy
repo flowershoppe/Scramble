@@ -31,8 +31,8 @@
   "properties":[
     {"$GMObjectProperty":"","%Name":"trace","filters":[],"listItems":[],"multiselect":false,"name":"trace","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"","%Name":"persist","filters":[],"listItems":[],"multiselect":false,"name":"persist","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":3,},
-    {"$GMObjectProperty":"","%Name":"yui_file","filters":[],"listItems":[],"multiselect":false,"name":"yui_file","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"YUI/main_menu.yui","varType":2,},
-    {"$GMObjectProperty":"","%Name":"data_context","filters":[],"listItems":[],"multiselect":false,"name":"data_context","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_main_menu","varType":4,},
+    {"$GMObjectProperty":"","%Name":"yui_file","filters":[],"listItems":[],"multiselect":false,"name":"yui_file","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":2,},
+    {"$GMObjectProperty":"","%Name":"data_context","filters":[],"listItems":[],"multiselect":false,"name":"data_context","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":4,},
     {"$GMObjectProperty":"","%Name":"is_full_screen","filters":[],"listItems":[],"multiselect":false,"name":"is_full_screen","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"True","varType":3,},
   ],
   "resourceType":"GMObject",
