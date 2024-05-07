@@ -1,0 +1,730 @@
+[05/09/2023, 21:45:04]  Config loaded! environment: dev
+[05/09/2023, 21:45:04]  loading initializer: 00_exit_handler.js
+[05/09/2023, 21:45:04]  loading initializer: 01_globals.js
+[05/09/2023, 21:45:04]  loading initializer: 02_entities.js
+[05/09/2023, 21:45:04]  loading initializer: 03_levels.js
+[05/09/2023, 21:45:04]  found levels: [1v1level.js, stress_test.js, test_level.js, test_level2.js]
+[05/09/2023, 21:45:04]  loading initializer: 04_maps.js
+[05/09/2023, 21:45:04]  found maps: [1v1map.js, globalmap.js]
+[05/09/2023, 21:45:04]  loading initializer: 05_constants.js
+[05/09/2023, 21:45:04]  loading initializer: 06_mongodb.js
+[05/09/2023, 21:45:04]  loading initializer: 07_console.js
+[05/09/2023, 21:45:04]  starting the eval console...
+[05/09/2023, 21:45:04]  > type right into the console to execute JS code in real time <
+[05/09/2023, 21:45:04]  loading initializer: 08_ping.js
+[05/09/2023, 21:45:04]  loading initializer: 09_game_modes.js
+[05/09/2023, 21:45:04]  found game modes: [1v1.js, 5v5.js, ffa.js]
+[05/09/2023, 21:45:04]  loading initializer: 10_lobbies.js
+[05/09/2023, 21:45:04]  loading initializer: 11_matchmaker.js
+[05/09/2023, 21:45:04]  loading initializer: 12_cmd.js
+[05/09/2023, 21:45:04]  Loading validators...
+[05/09/2023, 21:45:04]  > loading validator: lobby.js
+[05/09/2023, 21:45:04]  > loading validator: matchmaking.js
+[05/09/2023, 21:45:04]  > loading validator: party.js
+[05/09/2023, 21:45:04]  Loading handlers...
+[05/09/2023, 21:45:04]  > loading handler: auth.js
+[05/09/2023, 21:45:04]  > loading handler: custom.js
+[05/09/2023, 21:45:04]  > loading handler: lobby.js
+[05/09/2023, 21:45:04]  > loading handler: matchmaking.js
+[05/09/2023, 21:45:04]  > loading handler: party.js
+[05/09/2023, 21:45:04]  > loading handler: system.js
+[05/09/2023, 21:45:04]  Loading senders...
+[05/09/2023, 21:45:04]  > loading sender: auth.js
+[05/09/2023, 21:45:04]  > loading sender: custom.js
+[05/09/2023, 21:45:04]  > loading sender: friends.js
+[05/09/2023, 21:45:04]  > loading sender: game_loop.js
+[05/09/2023, 21:45:04]  > loading sender: lobby.js
+[05/09/2023, 21:45:04]  > loading sender: matchmaking.js
+[05/09/2023, 21:45:04]  > loading sender: party.js
+[05/09/2023, 21:45:04]  > loading sender: system.js
+[05/09/2023, 21:45:04]  loaded senders!
+[05/09/2023, 21:45:04]  loaded handlers!
+[05/09/2023, 21:45:04]  loaded validators!
+[05/09/2023, 21:45:04]  loaded initializers!
+[05/09/2023, 21:45:04]  Welcome to Warp v6.0.0
+[05/09/2023, 21:45:04]  Running Warp Game v1.0.0 (compatible versions: >=1.0.0)
+[05/09/2023, 21:45:04]  Server running on port 1338!
+[05/09/2023, 21:45:04]  WebSocket Server running on port 3001!
+[17/10/2023, 17:27:01]  Config loaded! environment: dev
+[17/10/2023, 17:27:01]  loading initializer: 00_exit_handler.js
+[17/10/2023, 17:27:01]  loading initializer: 01_globals.js
+[17/10/2023, 17:27:01]  loading initializer: 02_entities.js
+[17/10/2023, 17:27:01]  loading initializer: 03_levels.js
+[17/10/2023, 17:27:01]  found levels: [1v1level.js, stress_test.js, test_level.js, test_level2.js]
+[17/10/2023, 17:27:01]  loading initializer: 04_maps.js
+[17/10/2023, 17:27:01]  found maps: [1v1map.js, globalmap.js]
+[17/10/2023, 17:27:01]  loading initializer: 05_constants.js
+[17/10/2023, 17:27:01]  loading initializer: 06_mongodb.js
+[17/10/2023, 17:27:01]  loading initializer: 07_console.js
+[17/10/2023, 17:27:01]  starting the eval console...
+[17/10/2023, 17:27:01]  > type right into the console to execute JS code in real time <
+[17/10/2023, 17:27:01]  loading initializer: 08_ping.js
+[17/10/2023, 17:27:01]  loading initializer: 09_game_modes.js
+[17/10/2023, 17:27:01]  found game modes: [1v1.js, 5v5.js, ffa.js]
+[17/10/2023, 17:27:01]  loading initializer: 10_lobbies.js
+[17/10/2023, 17:27:01]  loading initializer: 11_matchmaker.js
+[17/10/2023, 17:27:01]  loading initializer: 12_cmd.js
+[17/10/2023, 17:27:01]  Loading validators...
+[17/10/2023, 17:27:01]  > loading validator: friends.js
+[17/10/2023, 17:27:01]  > loading validator: lobby.js
+[17/10/2023, 17:27:01]  > loading validator: matchmaking.js
+[17/10/2023, 17:27:01]  > loading validator: party.js
+[17/10/2023, 17:27:01]  Loading handlers...
+[17/10/2023, 17:27:01]  > loading handler: auth.js
+[17/10/2023, 17:27:01]  > loading handler: custom.js
+[17/10/2023, 17:27:01]  > loading handler: friends.js
+[17/10/2023, 17:27:01]  > loading handler: lobby.js
+[17/10/2023, 17:27:01]  > loading handler: matchmaking.js
+[17/10/2023, 17:27:01]  > loading handler: party.js
+[17/10/2023, 17:27:01]  > loading handler: system.js
+[17/10/2023, 17:27:01]  Loading senders...
+[17/10/2023, 17:27:01]  > loading sender: auth.js
+[17/10/2023, 17:27:01]  > loading sender: custom.js
+[17/10/2023, 17:27:01]  > loading sender: friends.js
+[17/10/2023, 17:27:01]  > loading sender: game_loop.js
+[17/10/2023, 17:27:01]  > loading sender: lobby.js
+[17/10/2023, 17:27:01]  > loading sender: matchmaking.js
+[17/10/2023, 17:27:01]  > loading sender: party.js
+[17/10/2023, 17:27:01]  > loading sender: system.js
+[17/10/2023, 17:27:01]  loaded handlers!
+[17/10/2023, 17:27:01]  loaded senders!
+[17/10/2023, 17:27:01]  loaded validators!
+[17/10/2023, 17:27:01]  loaded initializers!
+[17/10/2023, 17:27:01]  Welcome to Warp v6.0.0
+[17/10/2023, 17:27:01]  Running Warp Game v1.0.0 (compatible versions: >=1.0.0)
+[17/10/2023, 17:27:01]  Server running on port 1338!
+[17/10/2023, 17:27:01]  WebSocket Server running on port 3001!
+[17/10/2023, 17:27:01]  WebSocket connected!
+[17/10/2023, 17:27:01]  Hello from client: "hello there!"
+[17/10/2023, 17:27:01]  info about client: {"warp_version":"v6.0.0","t":60603.909,"game_version":"v1.0.0"}
+[17/10/2023, 17:27:02]  WebSocket connected!
+[17/10/2023, 17:27:02]  Hello from client: "hello there!"
+[17/10/2023, 17:27:02]  info about client: {"warp_version":"v6.0.0","t":61015.876,"game_version":"v1.0.0"}
+[17/10/2023, 17:27:22]  WebSocket closed.
+[17/10/2023, 17:27:22]  WebSocket connected!
+[17/10/2023, 17:27:22]  Hello from client: "hello there!"
+[17/10/2023, 17:27:22]  info about client: {"warp_version":"v6.0.0","t":81749.509,"game_version":"v1.0.0"}
+[17/10/2023, 17:27:25]  MongooseError: Operation `Accounts.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Projects\GameMaker Projects\Warp\TypescriptServer\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:186:23)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[17/10/2023, 17:36:20]  Config loaded! environment: dev
+[17/10/2023, 17:36:20]  loading initializer: 00_exit_handler.js
+[17/10/2023, 17:36:20]  loading initializer: 01_globals.js
+[17/10/2023, 17:36:20]  loading initializer: 02_entities.js
+[17/10/2023, 17:36:20]  loading initializer: 03_levels.js
+[17/10/2023, 17:36:20]  found levels: [1v1level.js, stress_test.js, test_level.js, test_level2.js]
+[17/10/2023, 17:36:20]  loading initializer: 04_maps.js
+[17/10/2023, 17:36:20]  found maps: [1v1map.js, globalmap.js]
+[17/10/2023, 17:36:20]  loading initializer: 05_constants.js
+[17/10/2023, 17:36:20]  loading initializer: 06_mongodb.js
+[17/10/2023, 17:36:20]  loading initializer: 07_console.js
+[17/10/2023, 17:36:20]  starting the eval console...
+[17/10/2023, 17:36:20]  > type right into the console to execute JS code in real time <
+[17/10/2023, 17:36:20]  loading initializer: 08_ping.js
+[17/10/2023, 17:36:20]  Database connected: mongodb://127.0.0.1:27017/warp-game
+[17/10/2023, 17:36:20]  loading initializer: 09_game_modes.js
+[17/10/2023, 17:36:20]  found game modes: [1v1.js, 5v5.js, ffa.js]
+[17/10/2023, 17:36:20]  loading initializer: 10_lobbies.js
+[17/10/2023, 17:36:20]  loading initializer: 11_matchmaker.js
+[17/10/2023, 17:36:20]  loading initializer: 12_cmd.js
+[17/10/2023, 17:36:20]  Loading validators...
+[17/10/2023, 17:36:20]  > loading validator: friends.js
+[17/10/2023, 17:36:20]  > loading validator: lobby.js
+[17/10/2023, 17:36:20]  > loading validator: matchmaking.js
+[17/10/2023, 17:36:20]  > loading validator: party.js
+[17/10/2023, 17:36:20]  Loading handlers...
+[17/10/2023, 17:36:20]  > loading handler: auth.js
+[17/10/2023, 17:36:20]  > loading handler: custom.js
+[17/10/2023, 17:36:20]  > loading handler: friends.js
+[17/10/2023, 17:36:20]  > loading handler: lobby.js
+[17/10/2023, 17:36:20]  > loading handler: matchmaking.js
+[17/10/2023, 17:36:20]  > loading handler: party.js
+[17/10/2023, 17:36:20]  > loading handler: system.js
+[17/10/2023, 17:36:20]  Loading senders...
+[17/10/2023, 17:36:20]  > loading sender: auth.js
+[17/10/2023, 17:36:20]  > loading sender: custom.js
+[17/10/2023, 17:36:20]  > loading sender: friends.js
+[17/10/2023, 17:36:20]  > loading sender: game_loop.js
+[17/10/2023, 17:36:20]  > loading sender: lobby.js
+[17/10/2023, 17:36:20]  > loading sender: matchmaking.js
+[17/10/2023, 17:36:20]  > loading sender: party.js
+[17/10/2023, 17:36:20]  > loading sender: system.js
+[17/10/2023, 17:36:20]  loaded handlers!
+[17/10/2023, 17:36:20]  loaded senders!
+[17/10/2023, 17:36:20]  loaded validators!
+[17/10/2023, 17:36:20]  loaded initializers!
+[17/10/2023, 17:36:20]  Welcome to Warp v6.0.0
+[17/10/2023, 17:36:20]  Running Warp Game v1.0.0 (compatible versions: >=1.0.0)
+[17/10/2023, 17:36:20]  Server running on port 1338!
+[17/10/2023, 17:36:20]  WebSocket Server running on port 3001!
+[17/10/2023, 17:36:27]  WebSocket connected!
+[17/10/2023, 17:36:27]  Hello from client: "hello there!"
+[17/10/2023, 17:36:27]  info about client: {"warp_version":"v6.0.0","t":296.459,"game_version":"v1.0.0"}
+[17/10/2023, 17:36:27]  WebSocket connected!
+[17/10/2023, 17:36:27]  Hello from client: "hello there!"
+[17/10/2023, 17:36:27]  info about client: {"warp_version":"v6.0.0","t":221.884,"game_version":"v1.0.0"}
+[17/10/2023, 17:37:15]  Saved the profile successfully.
+[17/10/2023, 17:37:15]  Saved the account successfully
+[17/10/2023, 17:37:21]  Saved the profile successfully.
+[17/10/2023, 17:37:21]  Saved the account successfully
+[17/10/2023, 17:37:26]  pp [ '2' ]
+[17/10/2023, 17:37:27]  pp [ '2' ]
+[17/10/2023, 17:37:28]  pp [ '2', '1' ]
+[17/10/2023, 17:37:28]  pool [ '2', '1' ]
+[17/10/2023, 17:37:28]  match made! teams: [ [ '1 (1000 mmr)' ], [ '2 (1000 mmr)' ] ]
+[17/10/2023, 19:06:55]  WebSocket closed.
+[17/10/2023, 19:06:55]  Saved the account successfully
+[17/10/2023, 19:06:55]  Saved the profile successfully.
+[17/10/2023, 19:06:55]  WebSocket closed.
+[17/10/2023, 19:06:55]  Saved the account successfully
+[17/10/2023, 19:06:55]  Saved the profile successfully.
+[23.11.2023, 17:52:20]  Config loaded! environment: dev
+[23.11.2023, 17:52:31]  loading initializer: 00_exit_handler.js
+[23.11.2023, 17:52:31]  loading initializer: 01_globals.js
+[23.11.2023, 17:52:31]  loading initializer: 02_entities.js
+[23.11.2023, 17:52:31]  loading initializer: 03_levels.js
+[23.11.2023, 17:52:31]  found levels: [1v1level.js, stress_test.js, test_level.js, test_level2.js]
+[23.11.2023, 17:52:31]  loading initializer: 04_maps.js
+[23.11.2023, 17:52:31]  found maps: [1v1map.js, globalmap.js]
+[23.11.2023, 17:52:31]  loading initializer: 05_constants.js
+[23.11.2023, 17:52:31]  loading initializer: 06_mongodb.js
+[23.11.2023, 17:52:31]  loading initializer: 07_console.js
+[23.11.2023, 17:52:31]  starting the eval console...
+[23.11.2023, 17:52:31]  > type right into the console to execute JS code in real time <
+[23.11.2023, 17:52:31]  loading initializer: 08_ping.js
+[23.11.2023, 17:52:31]  loading initializer: 09_game_modes.js
+[23.11.2023, 17:52:31]  found game modes: [1v1.js, 5v5.js, ffa.js]
+[23.11.2023, 17:52:31]  loading initializer: 10_lobbies.js
+[23.11.2023, 17:52:31]  loading initializer: 11_matchmaker.js
+[23.11.2023, 17:52:31]  loading initializer: 12_cmd.js
+[23.11.2023, 17:52:31]  Loading validators...
+[23.11.2023, 17:52:31]  > loading validator: friends.js
+[23.11.2023, 17:52:31]  > loading validator: lobby.js
+[23.11.2023, 17:52:31]  > loading validator: matchmaking.js
+[23.11.2023, 17:52:31]  > loading validator: party.js
+[23.11.2023, 17:52:31]  Loading handlers...
+[23.11.2023, 17:52:31]  > loading handler: auth.js
+[23.11.2023, 17:52:31]  > loading handler: custom.js
+[23.11.2023, 17:52:31]  > loading handler: friends.js
+[23.11.2023, 17:52:31]  > loading handler: lobby.js
+[23.11.2023, 17:52:31]  > loading handler: matchmaking.js
+[23.11.2023, 17:52:31]  > loading handler: party.js
+[23.11.2023, 17:52:31]  > loading handler: system.js
+[23.11.2023, 17:52:31]  Loading senders...
+[23.11.2023, 17:52:31]  > loading sender: auth.js
+[23.11.2023, 17:52:31]  > loading sender: custom.js
+[23.11.2023, 17:52:31]  > loading sender: friends.js
+[23.11.2023, 17:52:31]  > loading sender: game_loop.js
+[23.11.2023, 17:52:31]  > loading sender: lobby.js
+[23.11.2023, 17:52:31]  > loading sender: matchmaking.js
+[23.11.2023, 17:52:31]  > loading sender: party.js
+[23.11.2023, 17:52:31]  > loading sender: system.js
+[23.11.2023, 17:52:32]  loaded handlers!
+[23.11.2023, 17:52:32]  loaded senders!
+[23.11.2023, 17:52:32]  loaded validators!
+[23.11.2023, 17:52:32]  loaded initializers!
+[23.11.2023, 17:52:32]  Welcome to Warp v6.0.0
+[23.11.2023, 17:52:32]  Running Warp Game v1.0.0 (compatible versions: >=1.0.0)
+[23.11.2023, 17:52:32]  Server running on port 1338!
+[23.11.2023, 17:52:32]  WebSocket Server running on port 3001!
+[23.11.2023, 17:52:32]  Database connected: mongodb://127.0.0.1:27017/warp-game
+[23.11.2023, 17:56:14]  WebSocket connected!
+[23.11.2023, 17:56:14]  WebSocket connected!
+[23.11.2023, 17:56:18]  WebSocket closed.
+[23.11.2023, 17:56:19]  WebSocket closed.
+[23.11.2023, 17:57:02]  WebSocket connected!
+[23.11.2023, 17:57:02]  WebSocket connected!
+[23.11.2023, 17:57:02]  Hello from client: "hello there!"
+[23.11.2023, 17:57:02]  info about client: {"t":326.071,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[23.11.2023, 17:57:02]  Hello from client: "hello there!"
+[23.11.2023, 17:57:02]  info about client: {"t":332.338,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[23.11.2023, 17:57:44]  Saved the account successfully
+[23.11.2023, 17:57:44]  Saved the profile successfully.
+[23.11.2023, 17:57:50]  Saved the profile successfully.
+[23.11.2023, 17:57:50]  Saved the account successfully
+[23.11.2023, 17:57:56]  pp [ '1' ]
+[23.11.2023, 17:57:57]  pp [ '1', '2' ]
+[23.11.2023, 17:57:57]  pool [ '1', '2' ]
+[23.11.2023, 17:57:57]  match made! teams: [ [ '2 (1000 mmr)' ], [ '1 (1000 mmr)' ] ]
+[23.11.2023, 18:50:54]  WebSocket closed.
+[23.11.2023, 18:50:54]  Saved the account successfully
+[23.11.2023, 18:50:55]  Saved the profile successfully.
+[23.11.2023, 18:50:57]  WebSocket closed.
+[23.11.2023, 18:50:57]  Saved the account successfully
+[23.11.2023, 18:50:57]  Saved the profile successfully.
+[07.01.2024, 19:35:16]  Config loaded! environment: dev
+[07.01.2024, 19:35:19]  loading initializer: 00_exit_handler.js
+[07.01.2024, 19:35:19]  loading initializer: 01_globals.js
+[07.01.2024, 19:35:19]  loading initializer: 02_entities.js
+[07.01.2024, 19:35:19]  loading initializer: 03_levels.js
+[07.01.2024, 19:35:19]  found levels: [1v1level.js, stress_test.js, test_level.js, test_level2.js]
+[07.01.2024, 19:35:20]  loading initializer: 04_maps.js
+[07.01.2024, 19:35:20]  found maps: [1v1map.js, globalmap.js]
+[07.01.2024, 19:35:20]  loading initializer: 05_constants.js
+[07.01.2024, 19:35:20]  loading initializer: 06_mongodb.js
+[07.01.2024, 19:35:20]  loading initializer: 07_console.js
+[07.01.2024, 19:35:20]  starting the eval console...
+[07.01.2024, 19:35:20]  > type right into the console to execute JS code in real time <
+[07.01.2024, 19:35:20]  loading initializer: 08_ping.js
+[07.01.2024, 19:35:20]  loading initializer: 09_game_modes.js
+[07.01.2024, 19:35:20]  found game modes: [1v1.js, 5v5.js, ffa.js]
+[07.01.2024, 19:35:20]  loading initializer: 10_lobbies.js
+[07.01.2024, 19:35:20]  loading initializer: 11_matchmaker.js
+[07.01.2024, 19:35:20]  loading initializer: 12_cmd.js
+[07.01.2024, 19:35:20]  Loading validators...
+[07.01.2024, 19:35:20]  > loading validator: friends.js
+[07.01.2024, 19:35:20]  > loading validator: lobby.js
+[07.01.2024, 19:35:20]  > loading validator: matchmaking.js
+[07.01.2024, 19:35:20]  > loading validator: party.js
+[07.01.2024, 19:35:20]  Loading handlers...
+[07.01.2024, 19:35:20]  > loading handler: auth.js
+[07.01.2024, 19:35:20]  > loading handler: custom.js
+[07.01.2024, 19:35:20]  > loading handler: friends.js
+[07.01.2024, 19:35:20]  > loading handler: lobby.js
+[07.01.2024, 19:35:20]  > loading handler: matchmaking.js
+[07.01.2024, 19:35:20]  > loading handler: party.js
+[07.01.2024, 19:35:20]  > loading handler: system.js
+[07.01.2024, 19:35:20]  Loading senders...
+[07.01.2024, 19:35:20]  > loading sender: auth.js
+[07.01.2024, 19:35:20]  > loading sender: custom.js
+[07.01.2024, 19:35:20]  > loading sender: friends.js
+[07.01.2024, 19:35:20]  > loading sender: game_loop.js
+[07.01.2024, 19:35:20]  > loading sender: lobby.js
+[07.01.2024, 19:35:20]  > loading sender: matchmaking.js
+[07.01.2024, 19:35:20]  > loading sender: party.js
+[07.01.2024, 19:35:20]  > loading sender: system.js
+[07.01.2024, 19:35:21]  loaded handlers!
+[07.01.2024, 19:35:21]  loaded senders!
+[07.01.2024, 19:35:21]  loaded validators!
+[07.01.2024, 19:35:21]  loaded initializers!
+[07.01.2024, 19:35:21]  Welcome to Warp v6.0.0
+[07.01.2024, 19:35:21]  Running Warp Game v1.0.0 (compatible versions: >=1.0.0)
+[07.01.2024, 19:35:22]  Server running on port 1338!
+[07.01.2024, 19:35:22]  WebSocket Server running on port 3001!
+[07.01.2024, 19:35:22]  Database connected: mongodb://127.0.0.1:27017/warp-game
+[07.01.2024, 19:35:37]  WebSocket connected!
+[07.01.2024, 19:35:37]  WebSocket connected!
+[07.01.2024, 19:35:37]  Hello from client: "hello there!"
+[07.01.2024, 19:35:37]  info about client: {"t":494.875,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[07.01.2024, 19:35:37]  Hello from client: "hello there!"
+[07.01.2024, 19:35:37]  info about client: {"t":494.857,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[07.01.2024, 19:36:06]  Saved the account successfully
+[07.01.2024, 19:36:06]  Saved the profile successfully.
+[07.01.2024, 19:36:10]  Saved the account successfully
+[07.01.2024, 19:36:10]  Saved the profile successfully.
+[07.01.2024, 19:36:14]  pp [ '1' ]
+[07.01.2024, 19:36:15]  pp [ '1' ]
+[07.01.2024, 19:36:16]  pp [ '1' ]
+[07.01.2024, 19:36:17]  pp [ '2', '1' ]
+[07.01.2024, 19:36:17]  pool [ '2', '1' ]
+[07.01.2024, 19:36:17]  match made! teams: [ [ '1 (1025 mmr)' ], [ '2 (1000 mmr)' ] ]
+[07.01.2024, 19:45:04]  pp [ '2' ]
+[07.01.2024, 19:45:05]  pp [ '2' ]
+[07.01.2024, 19:45:06]  pp [ '2' ]
+[07.01.2024, 19:45:07]  pp [ '2' ]
+[07.01.2024, 19:45:08]  pp [ '2' ]
+[07.01.2024, 19:45:09]  pp [ '2', '1' ]
+[07.01.2024, 19:45:09]  pool [ '2', '1' ]
+[07.01.2024, 19:45:09]  match made! teams: [ [ '1 (1049 mmr)' ], [ '2 (976 mmr)' ] ]
+[07.01.2024, 19:45:15]  WebSocket closed.
+[07.01.2024, 19:45:15]  Saved the account successfully
+[07.01.2024, 19:45:15]  Saved the profile successfully.
+[07.01.2024, 19:45:21]  WebSocket closed.
+[07.01.2024, 19:45:21]  Saved the account successfully
+[07.01.2024, 19:45:21]  Saved the profile successfully.
+[07.01.2024, 19:45:26]  WebSocket connected!
+[07.01.2024, 19:45:26]  Hello from client: "hello there!"
+[07.01.2024, 19:45:26]  info about client: {"t":263.265,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[07.01.2024, 19:45:26]  WebSocket connected!
+[07.01.2024, 19:45:26]  Hello from client: "hello there!"
+[07.01.2024, 19:45:26]  info about client: {"t":384.761,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[07.01.2024, 19:45:28]  Saved the account successfully
+[07.01.2024, 19:45:28]  Saved the profile successfully.
+[07.01.2024, 19:45:31]  Saved the account successfully
+[07.01.2024, 19:45:31]  Saved the profile successfully.
+[07.01.2024, 19:45:33]  pp [ '2' ]
+[07.01.2024, 19:45:34]  pp [ '2', '1' ]
+[07.01.2024, 19:45:34]  pool [ '2', '1' ]
+[07.01.2024, 19:45:34]  match made! teams: [ [ '1 (1072 mmr)' ], [ '2 (976 mmr)' ] ]
+[07.01.2024, 19:45:39]  WebSocket closed.
+[07.01.2024, 19:45:39]  Saved the account successfully
+[07.01.2024, 19:45:39]  Saved the profile successfully.
+[07.01.2024, 19:45:39]  WebSocket closed.
+[07.01.2024, 19:45:39]  Saved the account successfully
+[07.01.2024, 19:45:39]  Saved the profile successfully.
+[07.01.2024, 19:45:42]  WebSocket connected!
+[07.01.2024, 19:45:42]  Hello from client: "hello there!"
+[07.01.2024, 19:45:42]  info about client: {"t":291.898,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[07.01.2024, 19:45:42]  WebSocket connected!
+[07.01.2024, 19:45:42]  Hello from client: "hello there!"
+[07.01.2024, 19:45:42]  info about client: {"t":360.492,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[07.01.2024, 19:45:46]  Saved the account successfully
+[07.01.2024, 19:45:46]  Saved the profile successfully.
+[07.01.2024, 19:45:48]  Saved the profile successfully.
+[07.01.2024, 19:45:48]  Saved the account successfully
+[07.01.2024, 19:45:51]  pp [ '1' ]
+[07.01.2024, 19:45:52]  pp [ '1' ]
+[07.01.2024, 19:45:53]  pp [ '1' ]
+[07.01.2024, 19:45:54]  pp [ '1' ]
+[07.01.2024, 19:45:55]  pp [ '1' ]
+[07.01.2024, 19:45:56]  pp [ '1' ]
+[07.01.2024, 19:45:57]  pp [ '1' ]
+[07.01.2024, 19:45:58]  pp [ '1' ]
+[07.01.2024, 19:46:00]  pp [ '1' ]
+[07.01.2024, 19:46:01]  pp [ '1' ]
+[07.01.2024, 19:46:02]  pp [ '1' ]
+[07.01.2024, 19:46:03]  pp [ '1' ]
+[07.01.2024, 19:46:04]  pp [ '2', '1' ]
+[07.01.2024, 19:46:04]  pool [ '2', '1' ]
+[07.01.2024, 19:46:04]  match made! teams: [ [ '1 (1072 mmr)' ], [ '2 (1004 mmr)' ] ]
+[07.01.2024, 19:46:39]  Config loaded! environment: dev
+[07.01.2024, 19:46:39]  loading initializer: 00_exit_handler.js
+[07.01.2024, 19:46:39]  loading initializer: 01_globals.js
+[07.01.2024, 19:46:39]  loading initializer: 02_entities.js
+[07.01.2024, 19:46:39]  loading initializer: 03_levels.js
+[07.01.2024, 19:46:39]  found levels: [1v1level.js, stress_test.js, test_level.js, test_level2.js]
+[07.01.2024, 19:46:39]  loading initializer: 04_maps.js
+[07.01.2024, 19:46:39]  found maps: [1v1map.js, globalmap.js]
+[07.01.2024, 19:46:39]  loading initializer: 05_constants.js
+[07.01.2024, 19:46:39]  loading initializer: 06_mongodb.js
+[07.01.2024, 19:46:39]  loading initializer: 07_console.js
+[07.01.2024, 19:46:40]  Database connected: mongodb://127.0.0.1:27017/warp-game
+[07.01.2024, 19:46:40]  starting the eval console...
+[07.01.2024, 19:46:40]  > type right into the console to execute JS code in real time <
+[07.01.2024, 19:46:40]  loading initializer: 08_ping.js
+[07.01.2024, 19:46:40]  loading initializer: 09_game_modes.js
+[07.01.2024, 19:46:40]  found game modes: [1v1.js, 5v5.js, ffa.js]
+[07.01.2024, 19:46:40]  loading initializer: 10_lobbies.js
+[07.01.2024, 19:46:40]  loading initializer: 11_matchmaker.js
+[07.01.2024, 19:46:40]  loading initializer: 12_cmd.js
+[07.01.2024, 19:46:40]  Loading validators...
+[07.01.2024, 19:46:40]  > loading validator: friends.js
+[07.01.2024, 19:46:40]  > loading validator: lobby.js
+[07.01.2024, 19:46:40]  > loading validator: matchmaking.js
+[07.01.2024, 19:46:40]  > loading validator: party.js
+[07.01.2024, 19:46:40]  Loading handlers...
+[07.01.2024, 19:46:40]  > loading handler: auth.js
+[07.01.2024, 19:46:40]  > loading handler: custom.js
+[07.01.2024, 19:46:40]  > loading handler: friends.js
+[07.01.2024, 19:46:40]  > loading handler: lobby.js
+[07.01.2024, 19:46:40]  > loading handler: matchmaking.js
+[07.01.2024, 19:46:40]  > loading handler: party.js
+[07.01.2024, 19:46:40]  > loading handler: system.js
+[07.01.2024, 19:46:40]  Loading senders...
+[07.01.2024, 19:46:40]  > loading sender: auth.js
+[07.01.2024, 19:46:40]  > loading sender: custom.js
+[07.01.2024, 19:46:40]  > loading sender: friends.js
+[07.01.2024, 19:46:40]  > loading sender: game_loop.js
+[07.01.2024, 19:46:40]  > loading sender: lobby.js
+[07.01.2024, 19:46:40]  > loading sender: matchmaking.js
+[07.01.2024, 19:46:40]  > loading sender: party.js
+[07.01.2024, 19:46:40]  > loading sender: system.js
+[07.01.2024, 19:46:40]  loaded handlers!
+[07.01.2024, 19:46:40]  loaded senders!
+[07.01.2024, 19:46:40]  loaded validators!
+[07.01.2024, 19:46:40]  loaded initializers!
+[07.01.2024, 19:46:40]  Welcome to Warp v6.0.0
+[07.01.2024, 19:46:40]  Running Warp Game v1.0.0 (compatible versions: >=1.0.0)
+[07.01.2024, 19:46:40]  Server running on port 1338!
+[07.01.2024, 19:46:40]  WebSocket Server running on port 3001!
+[07.01.2024, 19:46:54]  WebSocket connected!
+[07.01.2024, 19:46:54]  Hello from client: "hello there!"
+[07.01.2024, 19:46:54]  info about client: {"t":270.218,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[07.01.2024, 19:46:54]  WebSocket connected!
+[07.01.2024, 19:46:54]  Hello from client: "hello there!"
+[07.01.2024, 19:46:54]  info about client: {"t":301.646,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[07.01.2024, 20:29:38]  WebSocket closed.
+[07.01.2024, 20:29:38]  WebSocket closed.
+[07.01.2024, 20:31:47]  WebSocket connected!
+[07.01.2024, 20:31:47]  Hello from client: "hello there!"
+[07.01.2024, 20:31:47]  info about client: {"game_version":"v1.0.0","t":334.248,"warp_version":"v6.0.0"}
+[07.01.2024, 20:31:53]  WebSocket connected!
+[07.01.2024, 20:31:53]  Hello from client: "hello there!"
+[07.01.2024, 20:31:53]  info about client: {"game_version":"v1.0.0","t":261.307,"warp_version":"v6.0.0"}
+[07.01.2024, 20:31:58]  Saved the profile successfully.
+[07.01.2024, 20:31:58]  Saved the account successfully
+[07.01.2024, 20:32:01]  Saved the profile successfully.
+[07.01.2024, 20:32:01]  Saved the account successfully
+[07.01.2024, 20:32:04]  pool [ '2', '1' ]
+[07.01.2024, 20:32:04]  match made! teams: [ [ '1 (1072 mmr)' ], [ '2 (1004 mmr)' ] ]
+[07.01.2024, 20:32:08]  WebSocket connected!
+[07.01.2024, 20:32:08]  Hello from client: "hello there!"
+[07.01.2024, 20:32:08]  info about client: {"game_version":"v1.0.0","t":260.522,"warp_version":"v6.0.0"}
+[07.01.2024, 20:32:13]  Saved the profile successfully.
+[07.01.2024, 20:32:13]  Saved the account successfully
+[07.01.2024, 20:32:27]  WebSocket connected!
+[07.01.2024, 20:32:27]  Hello from client: "hello there!"
+[07.01.2024, 20:32:27]  info about client: {"game_version":"v1.0.0","t":262.67,"warp_version":"v6.0.0"}
+[07.01.2024, 20:32:31]  Saved the profile successfully.
+[07.01.2024, 20:32:31]  Saved the account successfully
+[07.01.2024, 20:32:34]  pool [ '3', '4' ]
+[07.01.2024, 20:32:34]  match made! teams: [ [ '4 (1000 mmr)' ], [ '3 (1000 mmr)' ] ]
+[07.01.2024, 20:33:04]  WebSocket closed.
+[07.01.2024, 20:33:04]  WebSocket closed.
+[07.01.2024, 20:33:04]  WebSocket closed.
+[07.01.2024, 20:33:04]  WebSocket closed.
+[07.01.2024, 20:33:04]  Saved the account successfully
+[07.01.2024, 20:33:04]  Saved the profile successfully.
+[07.01.2024, 20:33:04]  Saved the account successfully
+[07.01.2024, 20:33:04]  Saved the profile successfully.
+[07.01.2024, 20:33:04]  Saved the account successfully
+[07.01.2024, 20:33:04]  Saved the profile successfully.
+[07.01.2024, 20:33:04]  Saved the profile successfully.
+[07.01.2024, 20:33:04]  Saved the account successfully
+[07.01.2024, 20:33:53]  Config loaded! environment: dev
+[07.01.2024, 20:33:53]  loading initializer: 00_exit_handler.js
+[07.01.2024, 20:33:53]  loading initializer: 01_globals.js
+[07.01.2024, 20:33:53]  loading initializer: 02_entities.js
+[07.01.2024, 20:33:53]  loading initializer: 03_levels.js
+[07.01.2024, 20:33:53]  found levels: [1v1level.js, stress_test.js, test_level.js, test_level2.js]
+[07.01.2024, 20:33:53]  loading initializer: 04_maps.js
+[07.01.2024, 20:33:53]  found maps: [1v1map.js, globalmap.js]
+[07.01.2024, 20:33:53]  loading initializer: 05_constants.js
+[07.01.2024, 20:33:53]  loading initializer: 06_mongodb.js
+[07.01.2024, 20:33:53]  loading initializer: 07_console.js
+[07.01.2024, 20:33:53]  starting the eval console...
+[07.01.2024, 20:33:53]  > type right into the console to execute JS code in real time <
+[07.01.2024, 20:33:53]  loading initializer: 08_ping.js
+[07.01.2024, 20:33:53]  Database connected: mongodb://127.0.0.1:27017/warp-game
+[07.01.2024, 20:33:53]  loading initializer: 09_game_modes.js
+[07.01.2024, 20:33:53]  found game modes: [1v1.js, 5v5.js, ffa.js]
+[07.01.2024, 20:33:53]  loading initializer: 10_lobbies.js
+[07.01.2024, 20:33:53]  loading initializer: 11_matchmaker.js
+[07.01.2024, 20:33:53]  loading initializer: 12_cmd.js
+[07.01.2024, 20:33:53]  Loading validators...
+[07.01.2024, 20:33:53]  > loading validator: friends.js
+[07.01.2024, 20:33:53]  > loading validator: lobby.js
+[07.01.2024, 20:33:53]  > loading validator: matchmaking.js
+[07.01.2024, 20:33:53]  > loading validator: party.js
+[07.01.2024, 20:33:53]  Loading handlers...
+[07.01.2024, 20:33:53]  > loading handler: auth.js
+[07.01.2024, 20:33:53]  > loading handler: custom.js
+[07.01.2024, 20:33:53]  > loading handler: friends.js
+[07.01.2024, 20:33:53]  > loading handler: lobby.js
+[07.01.2024, 20:33:53]  > loading handler: matchmaking.js
+[07.01.2024, 20:33:53]  > loading handler: party.js
+[07.01.2024, 20:33:53]  > loading handler: system.js
+[07.01.2024, 20:33:53]  Loading senders...
+[07.01.2024, 20:33:53]  > loading sender: auth.js
+[07.01.2024, 20:33:53]  > loading sender: custom.js
+[07.01.2024, 20:33:53]  > loading sender: friends.js
+[07.01.2024, 20:33:53]  > loading sender: game_loop.js
+[07.01.2024, 20:33:53]  > loading sender: lobby.js
+[07.01.2024, 20:33:53]  > loading sender: matchmaking.js
+[07.01.2024, 20:33:53]  > loading sender: party.js
+[07.01.2024, 20:33:53]  > loading sender: system.js
+[07.01.2024, 20:33:53]  loaded handlers!
+[07.01.2024, 20:33:53]  loaded senders!
+[07.01.2024, 20:33:53]  loaded validators!
+[07.01.2024, 20:33:53]  loaded initializers!
+[07.01.2024, 20:33:53]  Welcome to Warp v6.0.0
+[07.01.2024, 20:33:53]  Running Warp Game v1.0.0 (compatible versions: >=1.0.0)
+[07.01.2024, 20:33:53]  Server running on port 1338!
+[07.01.2024, 20:33:53]  WebSocket Server running on port 3001!
+[07.01.2024, 20:33:57]  WebSocket connected!
+[07.01.2024, 20:33:57]  Hello from client: "hello there!"
+[07.01.2024, 20:33:57]  info about client: {"t":316.669,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[07.01.2024, 20:33:57]  WebSocket connected!
+[07.01.2024, 20:33:57]  Hello from client: "hello there!"
+[07.01.2024, 20:33:57]  info about client: {"t":336.472,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[07.01.2024, 20:34:04]  match made! teams: [ [ 'Guest002 (0 mmr)' ], [ 'Guest001 (0 mmr)' ] ]
+[07.01.2024, 20:34:40]  WebSocket closed.
+[07.01.2024, 20:34:44]  WebSocket closed.
+[05/02/2024, 11:52:40]  Config loaded! environment: dev
+[05/02/2024, 11:52:43]  loading initializer: 00_exit_handler.js
+[05/02/2024, 11:52:43]  loading initializer: 01_globals.js
+[05/02/2024, 11:52:43]  loading initializer: 02_entities.js
+[05/02/2024, 11:52:43]  loading initializer: 03_levels.js
+[05/02/2024, 11:52:43]  found levels: [1v1level.js, stress_test.js, test_level.js, test_level2.js]
+[05/02/2024, 11:52:43]  loading initializer: 04_maps.js
+[05/02/2024, 11:52:43]  found maps: [1v1map.js, globalmap.js]
+[05/02/2024, 11:52:43]  loading initializer: 05_constants.js
+[05/02/2024, 11:52:43]  loading initializer: 06_mongodb.js
+[05/02/2024, 11:52:43]  loading initializer: 07_console.js
+[05/02/2024, 11:52:43]  starting the eval console...
+[05/02/2024, 11:52:43]  > type right into the console to execute JS code in real time <
+[05/02/2024, 11:52:43]  loading initializer: 08_ping.js
+[05/02/2024, 11:52:43]  loading initializer: 09_game_modes.js
+[05/02/2024, 11:52:43]  found game modes: [1v1.js, 5v5.js, ffa.js]
+[05/02/2024, 11:52:43]  loading initializer: 10_lobbies.js
+[05/02/2024, 11:52:43]  Database connected: mongodb://127.0.0.1:27017/warp-game
+[05/02/2024, 11:52:43]  loading initializer: 11_matchmaker.js
+[05/02/2024, 11:52:43]  loading initializer: 12_cmd.js
+[05/02/2024, 11:52:43]  Loading validators...
+[05/02/2024, 11:52:43]  > loading validator: friends.js
+[05/02/2024, 11:52:43]  > loading validator: lobby.js
+[05/02/2024, 11:52:43]  > loading validator: matchmaking.js
+[05/02/2024, 11:52:43]  > loading validator: party.js
+[05/02/2024, 11:52:43]  Loading handlers...
+[05/02/2024, 11:52:43]  > loading handler: auth.js
+[05/02/2024, 11:52:43]  > loading handler: custom.js
+[05/02/2024, 11:52:43]  > loading handler: friends.js
+[05/02/2024, 11:52:43]  > loading handler: lobby.js
+[05/02/2024, 11:52:43]  > loading handler: matchmaking.js
+[05/02/2024, 11:52:43]  > loading handler: party.js
+[05/02/2024, 11:52:43]  > loading handler: system.js
+[05/02/2024, 11:52:43]  Loading senders...
+[05/02/2024, 11:52:43]  > loading sender: auth.js
+[05/02/2024, 11:52:43]  > loading sender: custom.js
+[05/02/2024, 11:52:43]  > loading sender: friends.js
+[05/02/2024, 11:52:43]  > loading sender: game_loop.js
+[05/02/2024, 11:52:43]  > loading sender: lobby.js
+[05/02/2024, 11:52:43]  > loading sender: matchmaking.js
+[05/02/2024, 11:52:43]  > loading sender: party.js
+[05/02/2024, 11:52:43]  > loading sender: system.js
+[05/02/2024, 11:52:44]  loaded handlers!
+[05/02/2024, 11:52:44]  loaded senders!
+[05/02/2024, 11:52:44]  loaded validators!
+[05/02/2024, 11:52:44]  loaded initializers!
+[05/02/2024, 11:52:44]  Welcome to Warp v6.0.0
+[05/02/2024, 11:52:44]  Running Warp Game v1.0.0 (compatible versions: >=1.0.0)
+[05/02/2024, 11:52:44]  Server running on port 1338!
+[05/02/2024, 11:52:44]  WebSocket Server running on port 3001!
+[05/02/2024, 11:53:22]  WebSocket connected!
+[05/02/2024, 11:53:22]  WebSocket connected!
+[05/02/2024, 11:53:22]  Hello from client: "hello there!"
+[05/02/2024, 11:53:22]  info about client: {"game_version":"v1.0.0","warp_version":"v6.0.0","t":335.968}
+[05/02/2024, 11:53:22]  Hello from client: "hello there!"
+[05/02/2024, 11:53:22]  info about client: {"game_version":"v1.0.0","warp_version":"v6.0.0","t":332.188}
+[05/02/2024, 12:00:35]  Config loaded! environment: dev
+[05/02/2024, 12:00:35]  loading initializer: 00_exit_handler.js
+[05/02/2024, 12:00:35]  loading initializer: 01_globals.js
+[05/02/2024, 12:00:35]  loading initializer: 02_entities.js
+[05/02/2024, 12:00:35]  loading initializer: 03_levels.js
+[05/02/2024, 12:00:35]  found levels: [1v1level.js, stress_test.js, test_level.js, test_level2.js]
+[05/02/2024, 12:00:35]  loading initializer: 04_maps.js
+[05/02/2024, 12:00:35]  found maps: [1v1map.js, globalmap.js]
+[05/02/2024, 12:00:35]  loading initializer: 05_constants.js
+[05/02/2024, 12:00:35]  loading initializer: 06_mongodb.js
+[05/02/2024, 12:00:35]  loading initializer: 07_console.js
+[05/02/2024, 12:00:35]  starting the eval console...
+[05/02/2024, 12:00:35]  > type right into the console to execute JS code in real time <
+[05/02/2024, 12:00:35]  loading initializer: 08_ping.js
+[05/02/2024, 12:00:35]  Database connected: mongodb://127.0.0.1:27017/warp-game
+[05/02/2024, 12:00:35]  loading initializer: 09_game_modes.js
+[05/02/2024, 12:00:35]  found game modes: [1v1.js, 5v5.js, ffa.js]
+[05/02/2024, 12:00:35]  loading initializer: 10_lobbies.js
+[05/02/2024, 12:00:35]  loading initializer: 11_matchmaker.js
+[05/02/2024, 12:00:35]  loading initializer: 12_cmd.js
+[05/02/2024, 12:00:35]  Loading validators...
+[05/02/2024, 12:00:35]  > loading validator: friends.js
+[05/02/2024, 12:00:35]  > loading validator: lobby.js
+[05/02/2024, 12:00:35]  > loading validator: matchmaking.js
+[05/02/2024, 12:00:35]  > loading validator: party.js
+[05/02/2024, 12:00:35]  Loading handlers...
+[05/02/2024, 12:00:35]  > loading handler: auth.js
+[05/02/2024, 12:00:35]  > loading handler: custom.js
+[05/02/2024, 12:00:35]  > loading handler: friends.js
+[05/02/2024, 12:00:35]  > loading handler: lobby.js
+[05/02/2024, 12:00:35]  > loading handler: matchmaking.js
+[05/02/2024, 12:00:35]  > loading handler: party.js
+[05/02/2024, 12:00:35]  > loading handler: system.js
+[05/02/2024, 12:00:35]  Loading senders...
+[05/02/2024, 12:00:35]  > loading sender: auth.js
+[05/02/2024, 12:00:35]  > loading sender: custom.js
+[05/02/2024, 12:00:35]  > loading sender: friends.js
+[05/02/2024, 12:00:35]  > loading sender: game_loop.js
+[05/02/2024, 12:00:35]  > loading sender: lobby.js
+[05/02/2024, 12:00:35]  > loading sender: matchmaking.js
+[05/02/2024, 12:00:35]  > loading sender: party.js
+[05/02/2024, 12:00:35]  > loading sender: system.js
+[05/02/2024, 12:00:35]  loaded handlers!
+[05/02/2024, 12:00:35]  loaded senders!
+[05/02/2024, 12:00:35]  loaded validators!
+[05/02/2024, 12:00:35]  loaded initializers!
+[05/02/2024, 12:00:35]  Welcome to Warp v6.0.0
+[05/02/2024, 12:00:35]  Running Warp Game v1.0.0 (compatible versions: >=1.0.0)
+[05/02/2024, 12:00:35]  Server running on port 1338!
+[05/02/2024, 12:00:35]  WebSocket Server running on port 3001!
+[05/02/2024, 12:00:36]  WebSocket connected!
+[05/02/2024, 12:00:36]  Hello from client: "hello there!"
+[05/02/2024, 12:00:36]  info about client: {"game_version":"v1.0.0","warp_version":"v6.0.0","t":434500.025}
+[05/02/2024, 12:00:36]  WebSocket connected!
+[05/02/2024, 12:00:36]  Hello from client: "hello there!"
+[05/02/2024, 12:00:36]  info about client: {"game_version":"v1.0.0","warp_version":"v6.0.0","t":434535.319}
+[05/02/2024, 12:00:48]  Saved the profile successfully.
+[05/02/2024, 12:00:48]  Saved the account successfully
+[05/02/2024, 12:00:52]  match made! teams: [ [ '1 (1000 mmr)' ], [ 'Guest001 (0 mmr)' ] ]
+[05/02/2024, 12:01:00]  WebSocket closed.
+[05/02/2024, 12:01:00]  WebSocket connected!
+[05/02/2024, 12:01:00]  Saved the account successfully
+[05/02/2024, 12:01:00]  Hello from client: "hello there!"
+[05/02/2024, 12:01:00]  info about client: {"game_version":"v1.0.0","warp_version":"v6.0.0","t":459249.247}
+[05/02/2024, 12:01:00]  Saved the profile successfully.
+[05/02/2024, 12:01:04]  match made! teams: [ [ 'Guest003 (0 mmr)' ], [ 'Guest001 (0 mmr)' ] ]
+[05/02/2024, 12:01:18]  WebSocket closed.
+[05/02/2024, 12:01:20]  WebSocket closed.
+[14/03/2024, 08:51:05]  Config loaded! environment: dev
+[14/03/2024, 08:51:05]  loading initializer: 00_exit_handler.js
+[14/03/2024, 08:51:05]  loading initializer: 01_globals.js
+[14/03/2024, 08:51:05]  loading initializer: 02_entities.js
+[14/03/2024, 08:51:05]  loading initializer: 03_levels.js
+[14/03/2024, 08:51:05]  found levels: [1v1level.js, stress_test.js, test_level.js, test_level2.js]
+[14/03/2024, 08:51:05]  loading initializer: 04_maps.js
+[14/03/2024, 08:51:05]  found maps: [1v1map.js, globalmap.js]
+[14/03/2024, 08:51:05]  loading initializer: 05_constants.js
+[14/03/2024, 08:51:05]  loading initializer: 06_mongodb.js
+[14/03/2024, 08:51:05]  loading initializer: 07_console.js
+[14/03/2024, 08:51:05]  starting the eval console...
+[14/03/2024, 08:51:05]  > type right into the console to execute JS code in real time <
+[14/03/2024, 08:51:05]  loading initializer: 08_ping.js
+[14/03/2024, 08:51:05]  Database connected: mongodb://127.0.0.1:27017/warp-game
+[14/03/2024, 08:51:05]  loading initializer: 09_game_modes.js
+[14/03/2024, 08:51:05]  found game modes: [1v1.js, 5v5.js, ffa.js]
+[14/03/2024, 08:51:05]  loading initializer: 10_lobbies.js
+[14/03/2024, 08:51:05]  loading initializer: 11_matchmaker.js
+[14/03/2024, 08:51:05]  loading initializer: 12_cmd.js
+[14/03/2024, 08:51:05]  Loading validators...
+[14/03/2024, 08:51:05]  > loading validator: friends.js
+[14/03/2024, 08:51:05]  > loading validator: lobby.js
+[14/03/2024, 08:51:05]  > loading validator: matchmaking.js
+[14/03/2024, 08:51:05]  > loading validator: party.js
+[14/03/2024, 08:51:05]  Loading handlers...
+[14/03/2024, 08:51:05]  > loading handler: auth.js
+[14/03/2024, 08:51:05]  > loading handler: custom.js
+[14/03/2024, 08:51:05]  > loading handler: friends.js
+[14/03/2024, 08:51:05]  > loading handler: lobby.js
+[14/03/2024, 08:51:05]  > loading handler: matchmaking.js
+[14/03/2024, 08:51:05]  > loading handler: party.js
+[14/03/2024, 08:51:05]  > loading handler: system.js
+[14/03/2024, 08:51:05]  Loading senders...
+[14/03/2024, 08:51:05]  > loading sender: auth.js
+[14/03/2024, 08:51:05]  > loading sender: custom.js
+[14/03/2024, 08:51:05]  > loading sender: friends.js
+[14/03/2024, 08:51:05]  > loading sender: game_loop.js
+[14/03/2024, 08:51:05]  > loading sender: lobby.js
+[14/03/2024, 08:51:05]  > loading sender: matchmaking.js
+[14/03/2024, 08:51:05]  > loading sender: party.js
+[14/03/2024, 08:51:05]  > loading sender: system.js
+[14/03/2024, 08:51:05]  loaded handlers!
+[14/03/2024, 08:51:05]  loaded senders!
+[14/03/2024, 08:51:05]  loaded validators!
+[14/03/2024, 08:51:05]  loaded initializers!
+[14/03/2024, 08:51:05]  Welcome to Warp v6.0.0
+[14/03/2024, 08:51:05]  Running Warp Game v1.0.0 (compatible versions: >=1.0.0)
+[14/03/2024, 08:51:05]  Server running on port 1338!
+[14/03/2024, 08:51:05]  WebSocket Server running on port 3001!
+[14/03/2024, 08:51:14]  WebSocket connected!
+[14/03/2024, 08:51:14]  Hello from client: "hello there!"
+[14/03/2024, 08:51:14]  info about client: {"t":361.327,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[14/03/2024, 08:51:14]  WebSocket connected!
+[14/03/2024, 08:51:15]  Hello from client: "hello there!"
+[14/03/2024, 08:51:15]  info about client: {"t":436.772,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[14/03/2024, 08:51:19]  match made! teams: [ [ 'Guest001 (0 mmr)' ], [ 'Guest002 (0 mmr)' ] ]
+[14/03/2024, 08:51:36]  WebSocket closed.
+[14/03/2024, 08:51:36]  WebSocket connected!
+[14/03/2024, 08:51:36]  Hello from client: "hello there!"
+[14/03/2024, 08:51:36]  info about client: {"t":22269.219,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[14/03/2024, 08:51:39]  WebSocket closed.
+[14/03/2024, 08:51:39]  WebSocket connected!
+[14/03/2024, 08:51:39]  Hello from client: "hello there!"
+[14/03/2024, 08:51:39]  info about client: {"t":25034.358,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[14/03/2024, 08:51:41]  match made! teams: [ [ 'Guest003 (0 mmr)' ], [ 'Guest004 (0 mmr)' ] ]
+[14/03/2024, 08:52:27]  WebSocket closed.
+[14/03/2024, 08:52:27]  WebSocket connected!
+[14/03/2024, 08:52:27]  Hello from client: "hello there!"
+[14/03/2024, 08:52:27]  info about client: {"t":73134.83,"game_version":"v1.0.0","warp_version":"v6.0.0"}
+[14/03/2024, 08:52:31]  match made! teams: [ [ 'Guest005 (0 mmr)' ], [ 'Guest003 (0 mmr)' ] ]
+[14/03/2024, 08:52:42]  WebSocket closed.
+[14/03/2024, 08:52:44]  WebSocket closed.
