@@ -1,0 +1,24 @@
+id: turn_order
+file_type: screen
+
+import:
+  - ../Templates/
+  - /YUI/Widgets/child_window.yui
+
+root:
+  type: panel
+  layout: canvas
+  size: stretch
+  elements:
+    - type: child_window
+      title: Players
+      size: { w: 100 }
+      closable: false
+      content:
+        type: panel
+        padding: 5
+        layout: vertical
+        elements: @player_array
+        template:
+          type: text
+          text: @player_name

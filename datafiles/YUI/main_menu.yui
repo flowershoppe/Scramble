@@ -1,0 +1,33 @@
+id: main_menu
+file_type: screen
+root:
+  type: panel
+  layout: canvas
+
+  elements:
+    - type: panel
+      size: { w: 240, h: 270 }
+      alignment: { h: center }
+      canvas:
+        top: 5
+        center: h
+      background: yui_panel_bg
+      padding: 10
+      
+      elements:
+        - type: button
+          content: 
+            type: text
+            text: @button_start
+            text_style: title        
+          tooltip: this is a button
+          border_thickness: 1
+          on_click: @@ start_game()
+
+        - type: button
+          content: 
+            type: text
+            text: @button_settings
+            text_style: title        
+          tooltip: this is a button
+          border_thickness: 1

@@ -45,7 +45,6 @@ font_enable_sdf(global.tile_font, true);
 
 global.players = [];
 global.active_player = noone;
-global.tilebag = instance_create_layer(300, 500, "Tilebag", obj_tilebag);
 
 //Keybinds
 global.left_button = vk_left;
@@ -69,16 +68,5 @@ global.board_sprite = spr_board;
 //Sounds
 global.place_sounds = [snd_place_1, snd_place_2, snd_place_3, snd_place_4, snd_place_5, snd_place_6];
 
-//create game handlers
 
-instance_create_layer(0, 0, "Meta", obj_scorekeeper);
-instance_create_layer(0, 0, "Board", obj_board);
-instance_create_layer(room_width / 2, room_height / 2, "Meta", obj_camera);
-instance_create_layer(0, 0, "Background", obj_background);
-instance_create_layer(room_width * 0.9, room_height * 0.75, "UI", obj_button);
-var _player = instance_create_layer(0, 0, "Meta", obj_player);
-var _cursor = instance_create_layer(0, 0, "Meta", obj_cursor);
-_cursor.owner = _player;
-global.active_player = _player;
-global.players = [_player];
 

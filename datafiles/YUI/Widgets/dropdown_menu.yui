@@ -1,0 +1,144 @@
+file_type: resources
+
+resources:
+
+  // default template for displaying the item value
+  dropdown_item_template:
+    type: text
+    text: @
+    color: $foreground
+
+  // default template for the dropdown indicator (e.g. a little arrow)
+  dropdown_indicator_template:
+    type: image
+    blend_color: $theme.resources.accent_color
+    size: 20
+    sprite: yui_down_arrow_64
+
+  dropdown_menu:
+    type: template
+
+    slots:
+      // the selection scope that manages selection state
+      selection_scope: null // type: YuiSelectionScope
+
+      selected_item: null
+
+      // array of items to select from
+      items: []
+
+      // whether the value can be cleared
+      can_clear_value: true
+
+      // whether to show a search field above the items
+      searchable: false
+
+      // whether to show the items inside a scrollbox
+      scrollable: false
+
+      // template to use when rendering items in dropdown
+      item_template: &dropdown_item_template
+
+      item_bg_color: null
+      selected_bg_color: null
+
+      // additional handler executed after item is selected
+      on_item_selected: null
+
+      // where to place the dropdown
+      dropdown_placement: bottom_left
+
+      // maximum height of the dropdown
+      max_dropdown_height: 300
+
+      foreground: null
+
+      indicator_template: &dropdown_indicator_template
+
+    template:
+      type: button
+      id: dropdown_button
+      padding: 2
+      content:
+        type: panel
+        layout: horizontal
+        spacing: 0
+        padding: 2
+        elements:
+          // current item text
+          - type: border
+            padding: [5, 0, 5, 0]
+            data_source: $selected_item ?? $selection_scope.selected_item
+            //flex: true
+            content: $item_template
+
+          - type: button
+            content:
+              type: text // TODO X sprite
+              color: $theme.resources.negative_color
+              text: X
+            padding: [5, 0]
+            background: #00000000
+            border_thickness: 0
+            visible: $can_clear_value and ($selected_item != undefined or $selection_scope.selected_index >= 0)
+            on_click:
+              // update selection scope if it exists
+              - @@ $selection_scope then $selection_scope.select(undefined) else false
+              // invoke the user handler
+              - @@ $on_item_selected(undefined)
+
+          - $indicator_template
+
+      popup:
+        placement: $dropdown_placement
+        padding: 1
+        content: $scrollable then &dropdown_item_panel_scrollable else &dropdown_item_panel_normal
+
+  // currently unused
+  dropdown_item_panel_searchable:
+    type: panel
+    size: { max_h: $max_dropdown_height }
+    spacing: 0
+    elements:
+      - type: text_input
+        autofocus: true
+        border_thickness: 0
+        text: foo
+        size: { w: stretch }
+      - &dropdown_item_panel
+
+  dropdown_item_panel_scrollable:
+    type: scrollbox
+    size: { max_h: $max_dropdown_height }
+    content:
+      type: dropdown_item_panel
+      size: { w: stretch }
+
+  dropdown_item_panel_normal:
+    type: dropdown_item_panel
+
+  dropdown_item_panel:
+    type: fragment
+    content:
+      type: panel
+      spacing: 0
+      alignment: { h: stretch }
+      bind_slot_scope:
+        on_item_selected: $on_item_selected
+        selection_scope: $selection_scope
+        selected_item: $selected_item ?? $selection_scope.selected_item // little trick to simplify referring to the selected item
+      elements: $items
+      template:
+        type: button
+        border_thickness: 0
+        padding: 5
+        background:
+          color: @ == $selected_item then $selected_bg_color else $item_bg_color
+        content: $item_template
+        on_click:
+          // update selection scope if it exists
+          - @@ $selection_scope then $selection_scope.select(@) else false
+          // invoke the user handler
+          - @@ $on_item_selected(@)
+          // close the popup
+          - @@ e => e.source.closePopup()

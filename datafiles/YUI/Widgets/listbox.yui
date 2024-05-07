@@ -1,0 +1,70 @@
+file_type: resources
+
+resources:
+
+  // default template for displaying the item value
+  listbox_item_template:
+    type: text
+    text: @
+    color: $foreground
+
+  listbox:
+    type: template
+    
+    slots:
+      // the selection scope that manages selection state
+      selection_scope: null // type: YuiSelectionScope
+
+      selected_item: null
+
+      // array of items to select from
+      items: []
+
+      // template to use when rendering items in dropdown
+      item_template: &listbox_item_template
+
+      item_bg_color: null
+      selected_bg_color: null
+
+      // additional handler executed after item is selected
+      on_item_selected: null
+
+      background: null
+      foreground: null
+
+    // TODO convert to match dropdown_list
+    events:
+      item_selected:
+        // select the item
+        - @@ item => $selection_scope then $selection_scope.select(item) else false
+        // invoke the user handler
+        - @@ item => $on_item_selected(item)
+
+    template:
+
+      type: scrollbox
+      background: $background
+      content:
+
+        type: panel
+        padding: 1
+        spacing: 1
+        size: { w: stretch }
+        alignment: { h: stretch }
+        elements: $items
+
+        // allows items to get the slot value in the scope of this panel instead of the item
+        bind_slot_scope:
+          selected_item: $selected_item ?? $selection_scope.selected_item // little trick to simplify referring to the selected item
+
+        template:
+        
+          type: button
+          border_thickness: 0
+          padding: [6, 5]
+          background:
+            color: @ == $selected_item then $selected_bg_color else $item_bg_color
+          content: $item_template
+
+          // invoke the item_selected event on the root widget
+          on_click: @@ e => yui_invoke_event(e.source, item_selected, @)

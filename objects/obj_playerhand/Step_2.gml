@@ -4,8 +4,8 @@ var _camw = camera_get_view_width(_cam);
 var _camh = camera_get_view_height(_cam);
 var _camx = camera_get_view_x(_cam);
 var _camy = camera_get_view_y(_cam);
-var _x_scale = (_camw * 0.75) / spr_w;
-var _y_scale = (_camh * 0.2) / spr_h;
+var _x_scale = (_camw * 0.5) / spr_w;
+var _y_scale = (_camh * 0.15) / spr_h;
 var _draw_width = _x_scale * spr_w;
 var _draw_height = _y_scale * spr_h;
 var _x_draw_location = _camx + (_camw / 2);
@@ -28,7 +28,7 @@ for(i = 0; i < hand_width; i++)
 	var _tile_holder = tile_holder_array[i];
 	
 	//scale and move tile holder
-	var _tile_scale = (_camh * 0.3) / spr_h;
+	var _tile_scale = (_camh * 0.2) / spr_h;
 	_tile_holder.x = _left_align + (_offset * i) + (_tile_size * i);
 	_tile_holder.y = y;
 	_tile_holder.image_xscale = _tile_scale;

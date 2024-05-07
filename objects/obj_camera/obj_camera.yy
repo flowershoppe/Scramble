@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"camera",
-    "path":"sprites/camera/camera.yy",
+    "name":"spr_camera",
+    "path":"sprites/spr_camera/spr_camera.yy",
   },
   "spriteMaskId":null,
   "visible":false,

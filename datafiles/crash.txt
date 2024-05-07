@@ -1,0 +1,9 @@
+{ script : "gml_Script_calculate_points", message : "Push :: Execution Error - Variable Index [0] out of range [0] - -9.placed_tiles(100128,0)", line : 8, stacktrace : [ "gml_Script_calculate_points (line 8)","gml_Object_obj_game_KeyPress_90 (line 5) - 	_player.score = calculate_points(_player);" ], longMessage : "ERROR in
+action number 1
+of Key Press Event for Z-key Key
+for object obj_game:
+
+
+Push :: Execution Error - Variable Index [0] out of range [0] - -9.placed_tiles(100128,0)
+ at gml_Script_calculate_points (line 8) - 	var _tile = _player.placed_tiles[0];
+" }
