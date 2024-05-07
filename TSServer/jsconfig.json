@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "#matchmaking/*": ["concepts/matchmaking/*"],
+            "#schemas/*": ["schemas/*"],
+            "#entities/*": ["entities/*"],
+            "#initializers/*": ["initializers/*"],
+            "#types/*": ["types/*"],
+            "#concepts/*": ["concepts/*"],
+            "#util/*": ["util/*"],
+
+            "#cmd/*": ["cmd/*"],
+            "#*": ["*"],
+
+            "#root/*": ["./*"],
+
+            "*": ["node_modules/*", "src/*"]
+        }
+    }
+}
