@@ -1,11 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"ui_players",
+  "%Name":"ui_turn_order",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"ui_players",
+  "name":"ui_turn_order",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",

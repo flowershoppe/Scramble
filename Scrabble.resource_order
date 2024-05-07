@@ -93,7 +93,7 @@
     {"name":"obj_tile_holder","order":10,"path":"objects/obj_tile_holder/obj_tile_holder.yy",},
     {"name":"obj_tile","order":13,"path":"objects/obj_tile/obj_tile.yy",},
     {"name":"obj_tilebag","order":5,"path":"objects/obj_tilebag/obj_tilebag.yy",},
-    {"name":"ui_players","order":16,"path":"objects/ui_players/ui_players.yy",},
+    {"name":"ui_turn_order","order":16,"path":"objects/ui_turn_order/ui_turn_order.yy",},
     {"name":"yui_border","order":1,"path":"objects/yui_border/yui_border.yy",},
     {"name":"yui_button","order":2,"path":"objects/yui_button/yui_button.yy",},
     {"name":"yui_cursor_item","order":3,"path":"objects/yui_cursor_item/yui_cursor_item.yy",},

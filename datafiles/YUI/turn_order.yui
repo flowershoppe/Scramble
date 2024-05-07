@@ -7,21 +7,18 @@ import:
 
 root:
   type: panel
-  layout: vertical
+  layout: canvas
   size: stretch
-    elements:
-      - type: child_window
-        title: Players
-        size: { w: 200 }
-        closable: true
-
-        content:
-          type: panel
-          padding: 5
-          size: { w: 200 }
-          alignment: { h: 200 }
-          elements:
-            - type: button
-              content: Player
-  
-      
+  elements:
+    - type: child_window
+      title: Players
+      size: { w: 100 }
+      closable: false
+      content:
+        type: panel
+        padding: 5
+        layout: vertical
+        elements: @player_array
+        template:
+          type: text
+          text: @player_name
