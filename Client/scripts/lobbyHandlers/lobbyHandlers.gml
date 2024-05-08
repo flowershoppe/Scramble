@@ -2,7 +2,7 @@ addHandler("lobby list", function(data) {
 	var lobbies = data.lobbies
 	global.lobbies = lobbies
 	
-	trace("recevied lobbies: %", lobbies)
+	warp_trace("recevied lobbies: %", lobbies)
 })
 
 addHandler("lobby info", function(data) {

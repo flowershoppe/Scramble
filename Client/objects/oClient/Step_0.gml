@@ -1,7 +1,7 @@
 /// @description Reconnect & resolve packet queue
 
 if (!connected and !connecting) {
-	trace("reconnecting...")
+	warp_trace("reconnecting...")
 	connect()
 }
 

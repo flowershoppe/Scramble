@@ -4,7 +4,7 @@
 #macro WARP_VERSION "v6.0.0"
 #macro GAME_VERSION "v1.0.0"
 
-trace("Welcome to Warp % by Evoleo!", WARP_VERSION)
+warp_trace("Welcome to Warp % by Evoleo!", WARP_VERSION)
 
 
 
@@ -70,9 +70,9 @@ SOCKET_TYPES = {
 #macro CONFIGS_SET true
 #macro Default:CONFIGS_SET false
 if (!CONFIGS_SET) {
-	trace("")
-	trace("### Remember to set your config by pressing the 'target' icon in the top-right corner of IDE! (Dev = Development, Prod = Production) ###")
-	trace("")
+	warp_trace("")
+	warp_trace("### Remember to set your config by pressing the 'target' icon in the top-right corner of IDE! (Dev = Development, Prod = Production) ###")
+	warp_trace("")
 }
 
 

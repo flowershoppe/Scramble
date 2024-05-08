@@ -355,7 +355,7 @@
     {"id":{"name":"start_game","path":"scripts/start_game/start_game.yy",},},
     {"id":{"name":"systemHandlers","path":"scripts/systemHandlers/systemHandlers.yy",},},
     {"id":{"name":"systemSenders","path":"scripts/systemSenders/systemSenders.yy",},},
-    {"id":{"name":"Trace","path":"scripts/Trace/Trace.yy",},},
+    {"id":{"name":"warp_trace","path":"scripts/warp_trace/warp_trace.yy",},},
     {"id":{"name":"UseStates","path":"scripts/UseStates/UseStates.yy",},},
     {"id":{"name":"UseTimestamps","path":"scripts/UseTimestamps/UseTimestamps.yy",},},
     {"id":{"name":"UseUUID","path":"scripts/UseUUID/UseUUID.yy",},},

@@ -37,7 +37,7 @@ function network_write(data, socket = oClient.sock) {
 	buffer_delete(buff)
 	
 	if (status < 0) {
-		trace("Failed to send data: status code %", status)
+		warp_trace("Failed to send data: status code %", status)
 		oClient.disconnect()
 	}
 }

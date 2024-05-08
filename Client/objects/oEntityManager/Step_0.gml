@@ -48,7 +48,7 @@ for(i = next_update; i < len; i++) {
 }
 
 
-//trace("base_update: %, next_update: %", base_update, next_update)
+//warp_trace("base_update: %, next_update: %", base_update, next_update)
 
 base_state = entity_updates[base_update]
 next_state = entity_updates[next_update]

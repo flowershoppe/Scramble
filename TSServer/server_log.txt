@@ -812,3 +812,11 @@
 [5/7/2024, 6:18:55 PM]  info about client: {"warp_version":"v6.0.0","t":971.641,"game_version":"v1.0.0"}
 [5/7/2024, 6:18:58 PM]  WebSocket closed.
 [5/7/2024, 6:19:12 PM]  WebSocket closed.
+[5/7/2024, 6:50:50 PM]  WebSocket connected!
+[5/7/2024, 6:50:50 PM]  WebSocket connected!
+[5/7/2024, 6:50:50 PM]  Hello from client: "hello there!"
+[5/7/2024, 6:50:50 PM]  info about client: {"warp_version":"v6.0.0","t":926.295,"game_version":"v1.0.0"}
+[5/7/2024, 6:50:50 PM]  Hello from client: "hello there!"
+[5/7/2024, 6:50:50 PM]  info about client: {"warp_version":"v6.0.0","t":933.761,"game_version":"v1.0.0"}
+[5/7/2024, 6:51:06 PM]  WebSocket closed.
+[5/7/2024, 6:51:09 PM]  WebSocket closed.

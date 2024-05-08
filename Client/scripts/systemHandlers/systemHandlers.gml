@@ -1,11 +1,11 @@
 addHandler("invalid input", function(data) {
-	trace("ERROR: Invalid input for CMD '%': %", data.c, string(data.e))
+	warp_trace("ERROR: Invalid input for CMD '%': %", data.c, string(data.e))
 })
 
 addHandler("server info", function(data) {
 	var compatible = data.compatible
 	var meta = data.meta
-	trace("Info about server: %", meta)
+	warp_trace("Info about server: %", meta)
 	
 	if (!compatible) {
 		onIncompatible(meta.game_version)
@@ -20,7 +20,7 @@ addHandler("server timestamp", function(data) {
 	global.start_server_time = data.t
 	global.start_local_time = new_t
 	
-	//trace("server time: %; client time: %", global.start_server_time, global.start_local_time)
+	//warp_trace("server time: %; client time: %", global.start_server_time, global.start_local_time)
 	
 	if (AUTOADJUST_SERVER_DELAY) {
 		if (ping < 100)

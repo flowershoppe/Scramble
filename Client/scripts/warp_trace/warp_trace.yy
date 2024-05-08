@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"Trace",
+  "%Name":"warp_trace",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Trace",
+  "name":"warp_trace",
   "parent":{
     "name":"lib",
     "path":"folders/Warp/Scripts/lib.yy",

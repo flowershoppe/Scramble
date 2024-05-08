@@ -6,18 +6,18 @@ addHandler("match found", function(data) {
 	var parties = match.parties
 	
 	global.map = map
-	trace("Match found!", data)
+	warp_trace("Match found!", data)
 })
 
 addHandler("match denied", function(data) {
 	room_goto(rMenu)
 	var s = $"Match denied (reason: {data.reason})"
 	show_message_async(s)
-	trace(s)
+	warp_trace(s)
 })
 
 addHandler("play", function(data) {
-	trace("playing!")
+	warp_trace("playing!")
 	global.playing = true
 	
 	global.lobby = data.lobby // again, just to be safe + update the data
@@ -62,7 +62,7 @@ addHandler("room transition", function(data) {
 	global.player_uuid = data.uuid
 	
 	var room_name = _level.room_name
-	//trace("room transition: % -> %", room_get_name(room), room_name)
+	//warp_trace("room transition: % -> %", room_get_name(room), room_name)
 	
 	var rm = asset_get_index(room_name)
 	if (!room_exists(rm)) {

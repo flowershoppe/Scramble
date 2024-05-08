@@ -1,7 +1,7 @@
 // some useful utility functions
 
 ///@function trace(... )
-function trace(r) {
+function warp_trace(r) {
 	r = string(r)
 	
 	var i;

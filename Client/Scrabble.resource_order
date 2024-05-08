@@ -221,7 +221,7 @@
     {"name":"start_game","order":8,"path":"scripts/start_game/start_game.yy",},
     {"name":"systemHandlers","order":6,"path":"scripts/systemHandlers/systemHandlers.yy",},
     {"name":"systemSenders","order":6,"path":"scripts/systemSenders/systemSenders.yy",},
-    {"name":"Trace","order":2,"path":"scripts/Trace/Trace.yy",},
+    {"name":"warp_trace","order":2,"path":"scripts/warp_trace/warp_trace.yy",},
     {"name":"UseTimestamps","order":1,"path":"scripts/UseTimestamps/UseTimestamps.yy",},
     {"name":"UseUUID","order":2,"path":"scripts/UseUUID/UseUUID.yy",},
     {"name":"valid_play","order":5,"path":"scripts/valid_play/valid_play.yy",},

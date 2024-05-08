@@ -8,7 +8,7 @@ function onConnect() {
 }
 
 function onDisconnect() {
-	trace("Warning: Unhandled disconnect event!")
+	warp_trace("Warning: Unhandled disconnect event!")
 }
 
 function onIncompatible(server_game_version) {

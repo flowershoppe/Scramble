@@ -4,7 +4,7 @@ addHandler("entities", function(data) {
 	
 	// don't spawn in entities if we're not playing (e.x in menus)
 	if (!global.playing) {
-		trace("Warning: received entity, but not playing yet (or already)!")
+		warp_trace("Warning: received entity, but not playing yet (or already)!")
 		return;
 	}
 	
@@ -18,7 +18,7 @@ addHandler("entities", function(data) {
 		return;
 	}
 	else if (from_room != curr_room) {
-		trace("Ignoring received entities from another room (%, we're in %)", from_room, curr_room)
+		warp_trace("Ignoring received entities from another room (%, we're in %)", from_room, curr_room)
 		return;
 	}
 			
@@ -44,7 +44,7 @@ addHandler("entity remove", function(data) {
 	if (use_timestamps(data))
 		return;
 	
-	trace("entity remove: %", data.id)
+	warp_trace("entity remove: %", data.id)
 	
 	var uuid = data.id
 	var obj = asset_get_index(data.obj)

@@ -40,7 +40,7 @@ function handlePacket(data) {
 		
 		// simple examples:
 		case "hello":
-			trace(data.str)
+			warp_trace(data.str)
 			break
 		case "message":
 			show_message_async(data.msg+"\n (c) Server")
@@ -56,7 +56,7 @@ function handlePacket(data) {
 				}
 			}
 			else {
-				trace("Warning: Unknown cmd type: " + string(cmd))
+				warp_trace("Warning: Unknown cmd type: " + string(cmd))
 			}
 			break
 	}

@@ -1,5 +1,5 @@
 /// @desc
-//trace("Networking event triggered.")
+//warp_trace("Networking event triggered.")
 
 var type = async_load[? "type"]
 var buff = async_load[? "buffer"]
@@ -14,7 +14,7 @@ switch(type) {
 				handlePacket(data);
 			}
 			catch(e) {
-				trace("an error occured while parsing the packet: " + e.message)
+				warp_trace("an error occured while parsing the packet: " + e.message)
 			}
 			
 			buffer_delete(buff);
@@ -43,14 +43,14 @@ switch(type) {
 		var size = buffer_get_size(buff)
 		var pack_count = 0
 		
-		//trace("global pack size: %", size)
+		//warp_trace("global pack size: %", size)
 		
 		for(var i = 0; i < size;) { // Break up the binary blob into single packets
 			// Read the packet size
 			if (i + 4 > size) { // cannot read the size bits (outside buffer)
 				halfpack = buffer_create(size-i, buffer_fixed, 1);
 				buffer_copy(buff, i, size-i, halfpack, 0);
-				//trace("half in at the size bits-")
+				//warp_trace("half in at the size bits-")
 				break;
 			}
 			
@@ -60,7 +60,7 @@ switch(type) {
 			if (i + 4 + packSize > size) {
 				halfpack = buffer_create(size-i, buffer_fixed, 1);
 				buffer_copy(buff, i, size-i, halfpack, 0);
-				//trace("half in-")
+				//warp_trace("half in-")
 				break;
 			}
 			i += 4;
@@ -77,7 +77,7 @@ switch(type) {
 				handlePacket(data);
 			}
 			catch(e) {
-				trace("an error occured while parsing the packet: " + e.message)
+				warp_trace("an error occured while parsing the packet: " + e.message)
 			}
 			
 			pack_count++;
@@ -86,26 +86,26 @@ switch(type) {
 			buffer_delete(pack);
 		}
 		
-		//trace("packet_count: %", pack_count);
+		//warp_trace("packet_count: %", pack_count);
 		
 		buffer_delete(buff);
 		break
 	case network_type_non_blocking_connect:
 		if (!async_load[? "succeeded"]) {
-			trace("Non-blocking connect failed.")
+			warp_trace("Non-blocking connect failed.")
 			connecting = false
 			connected = false
 			break
 		} // otherwise fall into the connect case
 	case network_type_connect:
-		trace("Connected to the server!")
+		warp_trace("Connected to the server!")
 		connected = true
 		connecting = false
 		alarm[1] = 60
 		onConnect()
 		break
 	case network_type_disconnect:
-		trace("Disconnected from the server!")
+		warp_trace("Disconnected from the server!")
 		disconnect()
 		//connected = false
 		//connecting = false

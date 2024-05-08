@@ -1,3 +1,3 @@
 /// @desc Ping Timeout
 
-trace("Ping timed out!")
+warp_trace("Ping timed out!")
