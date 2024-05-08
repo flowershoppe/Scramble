@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"ProjectStructure",
+  "name":"ProjectStructure",
+  "parent":{
+    "name":"Warp",
+    "path":"folders/Warp.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

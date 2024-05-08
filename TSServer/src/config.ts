@@ -140,7 +140,7 @@ const common_config = {
     ws_enabled: true, // websocket server?
     db_enabled: true, // MongoDB support
     shell_enabled: false, // toggles a console that allows code execution while running the game (better to change this in prod/dev configs rather than here)
-    rooms_enabled: true, // toggles lobbies being split into rooms (sub-lobbies with entities)
+    rooms_enabled: false, // toggles lobbies being split into rooms (sub-lobbies with entities)
     entities_enabled: true, // toggles loading/spawning entities
     dt_enabled: true, // toggles delta time for entity physics
     ssl_enabled: false, // SSL support. false by default (best set in the prod/dev configs)

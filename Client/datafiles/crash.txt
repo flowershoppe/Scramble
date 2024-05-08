@@ -1,9 +1,9 @@
-{ script : "gml_Script_calculate_points", message : "Push :: Execution Error - Variable Index [0] out of range [0] - -9.placed_tiles(100128,0)", line : 8, stacktrace : [ "gml_Script_calculate_points (line 8)","gml_Object_obj_game_KeyPress_90 (line 5) - 	_player.score = calculate_points(_player);" ], longMessage : "ERROR in
+{ message : "Variable <unknown_object>.IP(102471, -2147483648) not set before reading it.", stacktrace : [ "gml_Script_anon@43@gml_Object_oClient_Create_0 (line 27)","gml_Object_oClient_Create_0 (line 55) - connect()" ], longMessage : "ERROR in
 action number 1
-of Key Press Event for Z-key Key
-for object obj_game:
+of Create Event
+for object oClient:
 
 
-Push :: Execution Error - Variable Index [0] out of range [0] - -9.placed_tiles(100128,0)
- at gml_Script_calculate_points (line 8) - 	var _tile = _player.placed_tiles[0];
-" }
+Variable <unknown_object>.IP(102471, -2147483648) not set before reading it.
+ at gml_Script_anon@43@gml_Object_oClient_Create_0 (line 27) - 	network_connect_raw_async(socket, IP, real(port));
+", line : 27, script : "gml_Script_anon@43@gml_Object_oClient_Create_0" }

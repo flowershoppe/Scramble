@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"systemHandlers",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"systemHandlers",
+  "parent":{
+    "name":"handlers",
+    "path":"folders/Warp/Scripts/cmd/handlers.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

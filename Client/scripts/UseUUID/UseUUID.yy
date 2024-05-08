@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"UseUUID",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"UseUUID",
+  "parent":{
+    "name":"hooks",
+    "path":"folders/Warp/Scripts/hooks.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

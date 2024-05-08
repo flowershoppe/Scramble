@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"partySenders",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"partySenders",
+  "parent":{
+    "name":"senders",
+    "path":"folders/Warp/Scripts/cmd/senders.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

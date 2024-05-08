@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"network_write",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"network_write",
+  "parent":{
+    "name":"util",
+    "path":"folders/Warp/Scripts/util.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

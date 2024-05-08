@@ -1,14 +1,14 @@
 {
   "$GMRoom":"",
   "%Name":"rm_main_menu",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/rm_main_menu/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_227830D3","path":"rooms/rm_main_menu/rm_main_menu.yy",},
-    {"name":"main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},
     {"name":"inst_3D30907B","path":"rooms/rm_main_menu/rm_main_menu.yy",},
+    {"name":"main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},
   ],
   "isDnd":false,
   "layers":[

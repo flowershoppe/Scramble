@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"matchmakingSenders",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"matchmakingSenders",
+  "parent":{
+    "name":"senders",
+    "path":"folders/Warp/Scripts/cmd/senders.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

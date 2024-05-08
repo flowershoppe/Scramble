@@ -728,3 +728,87 @@
 [14/03/2024, 08:52:31]  match made! teams: [ [ 'Guest005 (0 mmr)' ], [ 'Guest003 (0 mmr)' ] ]
 [14/03/2024, 08:52:42]  WebSocket closed.
 [14/03/2024, 08:52:44]  WebSocket closed.
+[5/7/2024, 5:18:33 PM]  Config loaded! environment: dev
+[5/7/2024, 5:18:37 PM]  loading initializer: 00_exit_handler.js
+[5/7/2024, 5:50:33 PM]  Config loaded! environment: dev
+[5/7/2024, 5:50:33 PM]  loading initializer: 00_exit_handler.js
+[5/7/2024, 5:50:33 PM]  loading initializer: 01_globals.js
+[5/7/2024, 5:50:33 PM]  loading initializer: 02_entities.js
+[5/7/2024, 5:50:33 PM]  loading initializer: 03_levels.js
+[5/7/2024, 5:50:33 PM]  found levels: [1v1level.js, stress_test.js, test_level.js, test_level2.js]
+[5/7/2024, 5:50:33 PM]  loading initializer: 04_maps.js
+[5/7/2024, 5:50:33 PM]  found maps: [1v1map.js, globalmap.js]
+[5/7/2024, 5:50:33 PM]  loading initializer: 05_constants.js
+[5/7/2024, 5:50:33 PM]  loading initializer: 06_mongodb.js
+[5/7/2024, 5:50:33 PM]  loading initializer: 07_console.js
+[5/7/2024, 5:50:33 PM]  starting the eval console...
+[5/7/2024, 5:50:33 PM]  > type right into the console to execute JS code in real time <
+[5/7/2024, 5:50:33 PM]  loading initializer: 08_ping.js
+[5/7/2024, 5:50:33 PM]  Database connected: mongodb://127.0.0.1:27017/warp-game
+[5/7/2024, 5:50:33 PM]  loading initializer: 09_game_modes.js
+[5/7/2024, 5:50:33 PM]  found game modes: [1v1.js, 5v5.js, ffa.js]
+[5/7/2024, 5:50:33 PM]  loading initializer: 10_lobbies.js
+[5/7/2024, 5:50:33 PM]  loading initializer: 11_matchmaker.js
+[5/7/2024, 5:50:33 PM]  loading initializer: 12_cmd.js
+[5/7/2024, 5:50:33 PM]  Loading validators...
+[5/7/2024, 5:50:33 PM]  > loading validator: friends.js
+[5/7/2024, 5:50:33 PM]  > loading validator: lobby.js
+[5/7/2024, 5:50:33 PM]  > loading validator: matchmaking.js
+[5/7/2024, 5:50:33 PM]  > loading validator: party.js
+[5/7/2024, 5:50:33 PM]  Loading handlers...
+[5/7/2024, 5:50:33 PM]  > loading handler: auth.js
+[5/7/2024, 5:50:33 PM]  > loading handler: custom.js
+[5/7/2024, 5:50:33 PM]  > loading handler: friends.js
+[5/7/2024, 5:50:33 PM]  > loading handler: lobby.js
+[5/7/2024, 5:50:33 PM]  > loading handler: matchmaking.js
+[5/7/2024, 5:50:33 PM]  > loading handler: party.js
+[5/7/2024, 5:50:33 PM]  > loading handler: system.js
+[5/7/2024, 5:50:33 PM]  Loading senders...
+[5/7/2024, 5:50:33 PM]  > loading sender: auth.js
+[5/7/2024, 5:50:33 PM]  > loading sender: custom.js
+[5/7/2024, 5:50:33 PM]  > loading sender: friends.js
+[5/7/2024, 5:50:33 PM]  > loading sender: game_loop.js
+[5/7/2024, 5:50:33 PM]  > loading sender: lobby.js
+[5/7/2024, 5:50:33 PM]  > loading sender: matchmaking.js
+[5/7/2024, 5:50:33 PM]  > loading sender: party.js
+[5/7/2024, 5:50:33 PM]  > loading sender: system.js
+[5/7/2024, 5:50:33 PM]  loaded handlers!
+[5/7/2024, 5:50:33 PM]  loaded senders!
+[5/7/2024, 5:50:34 PM]  loaded validators!
+[5/7/2024, 5:50:34 PM]  loaded initializers!
+[5/7/2024, 5:50:34 PM]  Welcome to Warp v6.0.0
+[5/7/2024, 5:50:34 PM]  Running Warp Game v1.0.0 (compatible versions: >=1.0.0)
+[5/7/2024, 5:50:34 PM]  Server running on port 1338!
+[5/7/2024, 5:50:34 PM]  WebSocket Server running on port 3001!
+[5/7/2024, 6:09:28 PM]  WebSocket connected!
+[5/7/2024, 6:09:28 PM]  Hello from client: "hello there!"
+[5/7/2024, 6:09:28 PM]  info about client: {"warp_version":"v6.0.0","t":915.804,"game_version":"v1.0.0"}
+[5/7/2024, 6:09:28 PM]  WebSocket connected!
+[5/7/2024, 6:09:28 PM]  Hello from client: "hello there!"
+[5/7/2024, 6:09:28 PM]  info about client: {"warp_version":"v6.0.0","t":975.979,"game_version":"v1.0.0"}
+[5/7/2024, 6:10:17 PM]  WebSocket closed.
+[5/7/2024, 6:10:18 PM]  WebSocket closed.
+[5/7/2024, 6:10:24 PM]  WebSocket connected!
+[5/7/2024, 6:10:24 PM]  Hello from client: "hello there!"
+[5/7/2024, 6:10:24 PM]  info about client: {"warp_version":"v6.0.0","t":929.088,"game_version":"v1.0.0"}
+[5/7/2024, 6:10:24 PM]  WebSocket connected!
+[5/7/2024, 6:10:24 PM]  Hello from client: "hello there!"
+[5/7/2024, 6:10:24 PM]  info about client: {"warp_version":"v6.0.0","t":960.892,"game_version":"v1.0.0"}
+[5/7/2024, 6:10:45 PM]  WebSocket closed.
+[5/7/2024, 6:10:49 PM]  WebSocket closed.
+[5/7/2024, 6:11:55 PM]  WebSocket connected!
+[5/7/2024, 6:11:55 PM]  WebSocket connected!
+[5/7/2024, 6:11:55 PM]  Hello from client: "hello there!"
+[5/7/2024, 6:11:55 PM]  info about client: {"warp_version":"v6.0.0","t":968.23,"game_version":"v1.0.0"}
+[5/7/2024, 6:11:55 PM]  Hello from client: "hello there!"
+[5/7/2024, 6:11:55 PM]  info about client: {"warp_version":"v6.0.0","t":967.235,"game_version":"v1.0.0"}
+[5/7/2024, 6:13:39 PM]  WebSocket closed.
+[5/7/2024, 6:18:52 PM]  WebSocket closed.
+[5/7/2024, 6:18:54 PM]  WebSocket connected!
+[5/7/2024, 6:18:54 PM]  WebSocket connected!
+[5/7/2024, 6:18:55 PM]  Hello from client: "hello there!"
+[5/7/2024, 6:18:55 PM]  info about client: {"warp_version":"v6.0.0","t":964.383,"game_version":"v1.0.0"}
+[5/7/2024, 6:18:55 PM]  Hello from client: "hello there!"
+[5/7/2024, 6:18:55 PM]  info about client: {"warp_version":"v6.0.0","t":971.641,"game_version":"v1.0.0"}
+[5/7/2024, 6:18:58 PM]  WebSocket closed.
+[5/7/2024, 6:19:12 PM]  WebSocket closed.

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"PacketQueue",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"PacketQueue",
+  "parent":{
+    "name":"util",
+    "path":"folders/Warp/Scripts/util.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
