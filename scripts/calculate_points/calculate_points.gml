@@ -1,7 +1,8 @@
 //place tile ids that constitute words formed by placed tiles into player.words_tiles
 //return total point score
-function calculate_points(_player)
+function calculate_points()
 {
+	var _player = oPlayer;
 	var _word = "";
 	var _player_words_tiles = _player.turn_spelled_words;
 	var _player_tiles = _player.placed_tiles;
@@ -35,7 +36,7 @@ function calculate_points(_player)
 			//set tile to next tile to left
 			with(_tile)
 			{
-				_next_tile = instance_place(_tile.x - _spr_size, _tile.y, obj_tile);
+				_next_tile = instance_place(_tile.x - _spr_size, _tile.y, oTile);
 			}
 			
 			_tile = _next_tile;
@@ -50,7 +51,7 @@ function calculate_points(_player)
 			//set tile to next tile to right
 			with(_tile)
 			{
-				_next_tile = instance_place(x + _spr_size, y, obj_tile);
+				_next_tile = instance_place(x + _spr_size, y, oTile);
 			}
 			_tile = _next_tile;
 			
@@ -93,7 +94,7 @@ function calculate_points(_player)
 			//set tile to next tile up
 			with(_tile)
 			{
-				_next_tile = instance_place(x, y - _spr_size, obj_tile);
+				_next_tile = instance_place(x, y - _spr_size, oTile);
 			}
 			_tile = _next_tile;
 		}
@@ -107,7 +108,7 @@ function calculate_points(_player)
 			//set tile to next tile down
 			with(_tile)
 			{
-				_next_tile = instance_place(_tile.x, _tile.y + _spr_size, obj_tile);
+				_next_tile = instance_place(_tile.x, _tile.y + _spr_size, oTile);
 			}
 			_tile = _next_tile;
 			
@@ -162,10 +163,10 @@ function calculate_points(_player)
 		{
 			with(_player_words_tiles[j][k])
 			{
-				instance_create_layer(x, y, "UI", obj_highlighter);
+				instance_create_layer(x, y, "UI", oHighlighter);
 				
-				_holder = instance_place(x, y, obj_tile_holder);
-				_lmult = instance_place(x, y, obj_tile_holder).lmult;
+				_holder = instance_place(x, y, oTileHolder);
+				_lmult = instance_place(x, y, oTileHolder).lmult;
 				pointvalue *= _lmult;
 				//accumulate word multipliers
 				_wmult *= _holder.wmult;

@@ -1,22 +1,11 @@
 function next_turn()
-{
-	var _active_player = global.active_player
-	var _players = global.players
-	var _player_index = array_get_index(_players, _active_player);
+{	
+	var _player = oPlayer;
+	var _turn = global.turn;
 	
 	//reset turn-dependent variables
-	_active_player.turn_spelled_words = []
-	_active_player.placed_tiles = []
+	_player.turn_spelled_words = [];
+	_player.placed_tiles = [];
 
-	//return to start of turn order if at end
-	if(_player_index + 1 >= array_length(_players))
-	{
-		_active_player = array_get(_players, 0);
-	}
-	else
-	{
-		_active_player = array_get(global.players, _player_index + 1);
-	}
-	
-	
+	_turn ++;
 }

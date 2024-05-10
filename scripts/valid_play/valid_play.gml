@@ -1,6 +1,7 @@
 //validate whether placed tiles constitute a valid play
-function valid_play(_player)
+function valid_play()
 {
+	var _player = oPlayer;
 	var i = 0;
 	var _player_array = _player.placed_tiles;
 	var _array_ids = [];
@@ -15,7 +16,7 @@ function valid_play(_player)
 	
 	//find top-left-most tile in player's placed_tiles array
 	var _nearest_dist = infinity;
-	with(obj_tile)
+	with(oTile)
 	{
 		var _dist = point_distance(x, y, 0, 0)
 		if(_dist < _nearest_dist and array_contains(_player_array, id))
@@ -43,7 +44,7 @@ function valid_play(_player)
 		
 		with(_current_tile)
 		{
-			_c = instance_place(_next_x, _current_tile.y, obj_tile);
+			_c = instance_place(_next_x, _current_tile.y, oTile);
 		}
 		_current_tile = _c;
 	}
@@ -87,7 +88,7 @@ function valid_play(_player)
 		
 			with(_current_tile)
 			{
-				_c = instance_place(_current_tile.x, _next_y, obj_tile);
+				_c = instance_place(_current_tile.x, _next_y, oTile);
 			}
 			_current_tile = _c;
 		}
