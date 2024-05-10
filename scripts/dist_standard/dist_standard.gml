@@ -7,7 +7,7 @@ function dist_standard(_tilebag)
 	var _div;
 	var _mult;
 	var _amount;
-	var _player_count = instance_number(obj_player);
+	var _player_count = instance_number(oPlayer);
 	var _inc = 0;
 		
 	

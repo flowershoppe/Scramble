@@ -1,1 +1,0 @@
-add_tile_to_hand(global.active_player.hand, global.tilebag);
