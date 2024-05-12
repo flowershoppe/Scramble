@@ -61,7 +61,7 @@ global.maincam = view_camera[0];
 global.board_sprite = spBoard;
 
 //Sounds
-global.place_sounds = [snd_place_1, snd_place_2, snd_place_3, snd_place_4, snd_place_5, snd_place_6];
+global.place_sounds = [sdPlace1, sdPlace2, sdPlace3, sdPlace4, sdPlace5, sdPlace6];
 
 //Game Elements
 global.turn = 0;

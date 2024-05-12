@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_place_5",
+  "%Name":"sdPlace4",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.406417,
-  "name":"snd_place_5",
+  "duration":0.410958,
+  "name":"sdPlace4",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_place_5.wav",
+  "soundFile":"sdPlace4.wav",
   "type":0,
   "volume":1.0,
 }

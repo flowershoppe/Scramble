@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"MenuNavigators",
+  "%Name":"resolution_select",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"MenuNavigators",
+  "name":"resolution_select",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

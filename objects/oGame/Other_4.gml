@@ -1,6 +1,12 @@
+var _main_menu_music = msMainMenuMusic
+var _game_music_1 = msGameMusic1;
+
 switch(room)
 {
-	case rm_game:
+	case rGame:
+		
+		audio_stop_sound(_main_menu_music);
+		audio_play_sound(_game_music_1, 100, true);
 	
 		//create game handlers
 
@@ -21,4 +27,8 @@ switch(room)
 	
 	
 		break;
+		
+	case rMainMenu:
+	
+		audio_play_sound(_main_menu_music, 100, true);
 }

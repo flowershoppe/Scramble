@@ -1,12 +1,12 @@
 {
   "$GMRoom":"",
-  "%Name":"rm_game",
-  "creationCodeFile":"rooms/rm_game/RoomCreationCode.gml",
+  "%Name":"rGame",
+  "creationCodeFile":"rooms/rGame/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_49464D66","path":"rooms/rm_game/rm_game.yy",},
+    {"name":"inst_49464D66","path":"rooms/rGame/rGame.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -24,7 +24,7 @@
     {"$GMRInstanceLayer":"","%Name":"Board","depth":900,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Board","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Background","depth":1000,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Background","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
   ],
-  "name":"rm_game",
+  "name":"rGame",
   "parent":{
     "name":"Rooms",
     "path":"folders/Rooms.yy",
