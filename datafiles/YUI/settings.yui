@@ -32,6 +32,5 @@ root:
         - type: dropdown_menu
           items: @resolution_items
           on_item_selected:
-            - @@ value => @resolution = value
             - @@ value => resolution_select(value)
           
