@@ -6,8 +6,8 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"pregame","path":"rooms/rSettings/rSettings.yy",},
     {"name":"inst_2E55D79C","path":"rooms/rSettings/rSettings.yy",},
+    {"name":"pregame","path":"rooms/rSettings/rSettings.yy",},
   ],
   "isDnd":false,
   "layers":[
