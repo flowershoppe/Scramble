@@ -1,4 +1,4 @@
-id: pregame
+id: settings
 file_type: screen
 
 import:
@@ -12,6 +12,10 @@ root:
   layout: canvas
 
   elements:
+    - type: button
+      content: <= Main Menu
+      on_click: @@ room_goto(asset_get_index(rMainMenu))
+
     - type: panel
       size: { w: 240, h: 270 }
       alignment: { h: center }
@@ -20,8 +24,13 @@ root:
         center: h
       background: yui_panel_bg
       padding: 10
-      
-        elements:
-          - type: slider
-            value: @audio_volume 
+      elements:
+        - type: slider
+          value: @@ audio_get_master_gain()
+          on_value_changed: @@ value => audio_master_gain(value)
+
+        - type: dropdown_menu
+          items: @resolution_items
+          on_item_selected:
+            - @@ value => resolution_select(value)
           

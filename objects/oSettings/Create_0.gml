@@ -3,6 +3,5 @@
 display_height = global.display_height;
 display_width = global.display_width;
 
-resolution_scales = [1, 2, 3, 4];
-
-audio_volume = 100;
+resolution = "";
+resolution_items = ["960 x 540", "1920 x 1080", "Fullscreen"];

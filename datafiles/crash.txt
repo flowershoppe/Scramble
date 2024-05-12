@@ -1,9 +1,9 @@
-{ longMessage : "ERROR in
+{ stacktrace : [ "gml_Script_resolve@anon@292@YuiSetValue_YuiSetValue (line 17)","gml_Script_call@anon@429@YuiLambda_YuiLambda (line 31) - 		var result = body.resolve(data);","gml_Script_yui_call_handler (line 29) - 		handler.call(data, args);","gml_Script_yui_call_handler (line 15) - 			yui_call_handler(handler[i++], args, data);","gml_Script_resolveBoundFunction@anon@2625@YuiCallFunction_YuiCallFunction (line 103) - 			return yui_call_handler(func_ref, resolved_args, data);","gml_Script_yui_call_handler (line 26) - 		handler.resolve(data);","gml_Script_yui_call_handler (line 15) - 			yui_call_handler(handler[i++], args, data);","gml_Script_anon@493@gml_Object_yui_button_Create_0 (line 33) - 		yui_call_handler(yui_element.props.on_click, [args], data_source);","gml_Object_YuiCursorManager_Mouse_56 (line 55) - 			var handled = next.left_click();" ], line : 17, message : "variable_struct_set argument 1 incorrect type (string) expecting a Number (YYGI32)", script : "gml_Script_resolve@anon@292@YuiSetValue_YuiSetValue", longMessage : "ERROR in
 action number 1
-of Create Event
-for object yui_document:
+of Mouse Event for Glob Left Released
+for object YuiCursorManager:
 
 
-Unknown Function argument 1 incorrect type (undefined) expecting a Number (YYGR)
- at gml_Script_resolveRuntimeFunction@anon@1418@YuiCallFunction_YuiCallFunction (line 66) - 			case 3: return function_index(a[0], a[1], a[2]);
-", message : "Unknown Function argument 1 incorrect type (undefined) expecting a Number (YYGR)", script : "gml_Script_resolveRuntimeFunction@anon@1418@YuiCallFunction_YuiCallFunction", line : 66, stacktrace : [ "gml_Script_resolveRuntimeFunction@anon@1418@YuiCallFunction_YuiCallFunction (line 66)","gml_Script_YuiTextElement_getBoundValues@YuiTextElement_YuiTextElement (line 106) - 		var text = is_text_live && !is_array(props.text) ? props.text.resolve(data) : props.text;","gml_Script_yui_base__bind_values@gml_Object_yui_base_Create_0 (line 190) - 	var new_values = yui_element.getBoundValues(data_source, bound_values)","gml_Script_yui_make_render_instance (line 24) - 		bind_values();","gml_Script_yui_panel__build@gml_Object_yui_panel_Create_0 (line 73) - 			var child = yui_make_render_instance(item_element, data, i);","gml_Script_yui_make_render_instance (line 26) - 			build();","gml_Script_yui_panel__build@gml_Object_yui_panel_Create_0 (line 73) - 			var child = yui_make_render_instance(item_element, data, i);","gml_Script_yui_make_render_instance (line 26) - 			build();","gml_Script_yui_panel__build@gml_Object_yui_panel_Create_0 (line 73) - 			var child = yui_make_render_instance(item_element, data, i);","gml_Script_yui_make_render_instance (line 26) - 			build();","gml_Script_anon@1022@gml_Object_yui_document_Create_0 (line 56) - 	root = yui_make_render_instance(element, data_context);","gml_Object_yui_document_Create_0 (line 91) - load();" ] }
+variable_struct_set argument 1 incorrect type (string) expecting a Number (YYGI32)
+ at gml_Script_resolve@anon@292@YuiSetValue_YuiSetValue (line 17) - 		variable_struct_set(left_val, name, right_val);
+" }

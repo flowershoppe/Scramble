@@ -21,7 +21,7 @@ root:
             text: @button_start
             text_style: title       
           border_thickness: 1
-          on_click: @@ start_game()
+          on_click: @@ room_goto(asset_get_index(rGame))
 
         - type: button
           content: 
@@ -29,4 +29,4 @@ root:
             text: @button_settings
             text_style: title        
           border_thickness: 1
-          on_click: @@ start_settings()
+          on_click: @@ room_goto(asset_get_index(rSettings))

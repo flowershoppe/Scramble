@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_place_4",
+  "%Name":"sdSciBell",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.410958,
-  "name":"snd_place_4",
+  "duration":5.79725,
+  "name":"sdSciBell",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_place_4.wav",
+  "soundFile":"sdSciBell.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.23,
 }

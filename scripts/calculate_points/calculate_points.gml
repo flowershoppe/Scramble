@@ -179,7 +179,7 @@ function calculate_points()
 		_total += _subt;
 	}
 		
-	audio_play_sound(snd_sci_fi_bell, 0, 0);
+	audio_play_sound(sdSciBell, 0, 0);
 	
 	return _total;
 	
