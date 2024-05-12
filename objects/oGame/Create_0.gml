@@ -62,6 +62,13 @@ global.board_sprite = spBoard;
 
 //Sounds
 global.place_sounds = [sdPlace1, sdPlace2, sdPlace3, sdPlace4, sdPlace5, sdPlace6];
+global.emitterSE = audio_emitter_create();
+global.emitterMS = audio_emitter_create();
+global.volumeSE = 1;
+global.volumeMS = 1;
+
+global.music_game = msGameMusic1;
+global.music_main_menu = msMainMenuMusic;
 
 //Game Elements
 global.turn = 0;

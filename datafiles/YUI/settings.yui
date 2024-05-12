@@ -25,9 +25,26 @@ root:
       background: yui_panel_bg
       padding: 10
       elements:
+          //master volume
         - type: slider
+          min: 0
+          max: 1
           value: @@ audio_get_master_gain()
           on_value_changed: @@ value => audio_master_gain(value)
+
+          //music volume
+        - type: slider
+          min: 0
+          max: 1
+          value: @@ audio_emitter_get_gain(@emitter_MS)
+          on_value_changed: @@ value => audio_emitter_gain(@emitter_MS, value) 
+
+          //SFX volume
+        - type: slider
+          min: 0
+          max: 1
+          value: @@ audio_emitter_get_gain(@emitter_SE)
+          on_value_changed: @@ value => audio_emitter_gain(@emitter_SE, value)
 
         - type: dropdown_menu
           items: @resolution_items

@@ -65,9 +65,9 @@ resources:
           text: $max
 
         - type: text
-          text: "-"
+          text: "|"
           visible: $show_value
 
         - type: text
-          text: $value >> string_format(0, 0) // format as a whole number with no decimals
+          text: $value >> string_format(0, 1) // format as a whole number with 1 decimal
           visible: $show_value

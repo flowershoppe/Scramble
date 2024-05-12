@@ -1,12 +1,18 @@
-var _main_menu_music = msMainMenuMusic
-var _game_music_1 = msGameMusic1;
+var _main_menu_music = global.music_main_menu;
+var _game_music_1 = global.music_game;
+var _emitter_MS = global.emitterMS;
+var _emitter_SE = global.emitterSE;
+
+
+
 
 switch(room)
 {
 	case rGame:
+	
 		
 		audio_stop_sound(_main_menu_music);
-		audio_play_sound(_game_music_1, 100, true);
+		audio_play_sound_on(_emitter_MS, _game_music_1, 100, true);
 	
 		//create game handlers
 
@@ -30,5 +36,5 @@ switch(room)
 		
 	case rMainMenu:
 	
-		audio_play_sound(_main_menu_music, 100, true);
+		audio_play_sound_on(_emitter_MS, _main_menu_music, true, 100);
 }
