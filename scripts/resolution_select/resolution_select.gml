@@ -51,10 +51,11 @@ function resolution_select(_command)
 		break;			
 	}
 	
-	window_set_size(_win_w, _win_h)	
+	window_set_size(_win_w, _win_h);
+	display_set_gui_size(_win_w, _win_h);
 	instance_create_layer(0, 0, "Meta", oAppResizer);
 	oAppResizer.win_w = _win_w;
 	oAppResizer.win_h = _win_h;
 	window_center();
-	yui_document.reload();
+	//yui_document.reload();
 }
