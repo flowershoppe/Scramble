@@ -16,7 +16,6 @@ switch(room)
 	
 		//create game handlers
 
-		instance_create_layer(0, 0, "Meta", oScorekeeper);
 		instance_create_layer(0, 0, "Board", oBoard);
 		instance_create_layer(room_width / 2, room_height / 2, "Meta", oCamera);
 		instance_create_layer(0, 0, "Background", oBackground);

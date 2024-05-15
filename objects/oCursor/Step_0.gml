@@ -21,6 +21,7 @@ if(mouse_check_button_pressed(mb_left))
 	held_tile = instance_place(x, y, oTile);
 	
 	if(held_tile == noone){ exit; }
+	else if(held_tile.grabbable == false){ exit;}
 	//grab a tile
 	if(held_tile.layer == layer)
 	{		
@@ -123,7 +124,7 @@ if(mouse_check_button_released(mb_left))
 				held_tile.wait_for_input = true;	
 			}
 			
-			valid_play(owner);
+			valid_play();
 		}
 		
 		_nearest_holder.tile = held_tile;
