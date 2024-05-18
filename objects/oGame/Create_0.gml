@@ -66,9 +66,12 @@ global.emitterSE = audio_emitter_create();
 global.emitterMS = audio_emitter_create();
 global.volumeSE = 1;
 global.volumeMS = 1;
+audio_emitter_gain(global.emitterSE, 0.5);
+audio_emitter_gain(global.emitterMS, 0.5);
+audio_master_gain(0.5)
 
 global.music_game = msGameMusic1;
 global.music_main_menu = msMainMenuMusic;
 
 //Game Elements
-global.turn = 0;
+global.turn = 1;
