@@ -74,4 +74,4 @@ global.music_game = msGameMusic1;
 global.music_main_menu = msMainMenuMusic;
 
 //Game Elements
-global.turn = 0;
+global.turn = 1;

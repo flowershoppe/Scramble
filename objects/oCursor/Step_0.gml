@@ -1,7 +1,17 @@
+var _placed_tiles = owner.placed_tiles;
+
+if(!array_equals(_placed_tiles, []))
+{	
+	valid_play();
+}
+		
 if(place_meeting(x, y, owner.hand))
 { layer = layer_get_id("Hand_Tiles"); }
 else
 { layer = layer_get_id("Tiles"); }
+
+debug2 = layer_get_name(layer);
+debug3 = _placed_tiles;
 
 
 //follow the cursor
@@ -18,16 +28,21 @@ if(held_tile != noone)
 #region
 if(mouse_check_button_pressed(mb_left))
 {	
-	held_tile = instance_place(x, y, oTile);
-	
-	if(held_tile == noone){ exit; }
-	else if(held_tile.grabbable == false){ exit;}
+	//check if tile exists and is grabbable
+	var _potential_tile = instance_place(x, y, oTile);
+	if(_potential_tile == noone){ exit; }
+	if(_potential_tile.grabbable == true)
+	{
+		held_tile = _potential_tile;	
+	}
+	else{ exit; }
+		
 	//grab a tile
 	if(held_tile.layer == layer)
 	{		
 		//remove from placed tiles array if picking up from board
 		if(held_tile.layer = layer_get_id("Tiles"))
-		{array_delete(owner.placed_tiles, array_get_index(owner.placed_tiles, held_tile), 1);}
+		{array_delete(_placed_tiles, array_get_index(_placed_tiles, held_tile), 1);}
 			
 		//hold the tile
 		held_tile.layer = layer_get_id("Grabbed");
@@ -105,9 +120,19 @@ if(mouse_check_button_released(mb_left))
 				}
 			}	
 		}
+		
+		if(array_contains(_placed_tiles, held_tile))
+		{
+			array_delete(_placed_tiles, array_get_index(_placed_tiles, held_tile), 1);
+		}
+		
+		if(!array_equals(_placed_tiles, []))
+		{	
+			valid_play();
+		}
 		#endregion
 			
-		//drop the tile
+		//-----DROP TILE-----
 		held_tile.x = _nearest_holder.x;
 		held_tile.y = _nearest_holder.y;
 		
@@ -116,16 +141,25 @@ if(mouse_check_button_released(mb_left))
 		if(layer == layer_get_id("Tiles"))
 		{
 			//place in array for checking play validity later
-			array_insert(owner.placed_tiles, 0, held_tile);
+			array_insert(_placed_tiles, 0, held_tile);
 
 			//Blank tile subroutine
 			if(held_tile.blank == true)
 			{
 				held_tile.wait_for_input = true;	
-			}
-			
+			}			
+		}
+				
+		//validate play only if there are placed tiles
+		if(!array_equals(_placed_tiles, []))
+		{	
 			valid_play();
 		}
+		else
+		{
+			debug = "Play some tiles!";	
+		}
+		
 		
 		_nearest_holder.tile = held_tile;
 		audio_play_sound(global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
