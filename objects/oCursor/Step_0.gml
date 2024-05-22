@@ -1,9 +1,9 @@
 var _placed_tiles = owner.placed_tiles;
 
-if(!array_equals(_placed_tiles, []))
+/*if(!array_equals(_placed_tiles, []))
 {	
 	valid_play();
-}
+}*/
 		
 if(place_meeting(x, y, owner.hand))
 { layer = layer_get_id("Hand_Tiles"); }
@@ -24,7 +24,7 @@ if(held_tile != noone)
 	held_tile.y = y;	
 }
 
-//Press left click
+//-----PICK UP-----
 #region
 if(mouse_check_button_pressed(mb_left))
 {	
@@ -69,11 +69,16 @@ if(mouse_check_button_pressed(mb_left))
 				tile = noone;
 			}
 		}
+		
+		if(!array_equals(_placed_tiles, []))
+		{	
+			valid_play();
+		}
 	}	
 }
 #endregion
 
-//Release left click
+//-----PLACE-----
 #region
 if(mouse_check_button_released(mb_left))
 {
