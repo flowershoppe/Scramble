@@ -53,8 +53,8 @@ function valid_play()
 		}
 	}
 
-	
-	//------------------------------
+
+	//-----find smallest and largest tiles-----
 	var _smallest_tile;
 	var _largest_tile;
 	var _hole_between;
@@ -92,7 +92,9 @@ function valid_play()
 		_hole_between = false;
 		for(var _tile_pos = _smallest_tile.x; _tile_pos < _largest_tile.x; _tile_pos += _smallest_tile.sprite_width)
 		{		
-			if(!place_meeting(_tile_pos, _smallest_tile.y, oTile))
+			var _other_tile = instance_place(_tile_pos, _smallest_tile.y, oTile);
+			if(!place_meeting(_tile_pos, _smallest_tile.y, _other_tile) or 
+				_other_tile.layer != _smallest_tile.layer)
 			{
 				_hole_between = true;
 			}		
@@ -153,11 +155,9 @@ function valid_play()
 	}
 	else
 	{
-		debug = "play is invalid";	
+		debug = "play is invalid";
+		return false;
 	}
-
-
-	
 	
 	/*
 	1) compare each placed tile's x values

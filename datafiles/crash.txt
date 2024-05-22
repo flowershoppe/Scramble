@@ -1,9 +1,9 @@
-{ script : "gml_Script_valid_play_new", stacktrace : [ "gml_Script_valid_play_new (line 38)","gml_Object_oCursor_Step_0 (line 145) - 			valid_play_new();" ], line : 38, message : "local variable _tile(100052) not set before reading it.", longMessage : "ERROR in
+{ line : 1, message : "Variable <unknown_object>.valid_play_new(102170, -2147483648) not set before reading it.", script : "gml_Object_oGame_KeyPress_90", stacktrace : [ "gml_Object_oGame_KeyPress_90 (line 1)" ], longMessage : "ERROR in
 action number 1
-of  Step Event0
-for object oCursor:
+of Key Press Event for Z-key Key
+for object oGame:
 
 
-local variable _tile(100052) not set before reading it.
- at gml_Script_valid_play_new (line 38) - 			instance_place(_tile.x, _tile.y - spLetterTile.sprite_height, oTile)]
+Variable <unknown_object>.valid_play_new(102170, -2147483648) not set before reading it.
+ at gml_Object_oGame_KeyPress_90 (line 1) - if(valid_play_new())
 " }
