@@ -90,7 +90,7 @@ function valid_play()
 		_largest_tile = array_reduce(_placed_tiles, _find_largest);
 		
 		_hole_between = false;
-		for(var _tile_pos = _smallest_tile.x; _tile_pos < _largest_tile.x; _tile_pos += _smallest_tile.sprite_width)
+		for(var _tile_pos = _smallest_tile.x + _smallest_tile.sprite_width; _tile_pos < _largest_tile.x; _tile_pos += _smallest_tile.sprite_width)
 		{		
 			var _other_tile = instance_place(_tile_pos, _smallest_tile.y, oTile);
 			if(!place_meeting(_tile_pos, _smallest_tile.y, _other_tile) or 
@@ -136,7 +136,7 @@ function valid_play()
 		_largest_tile = array_reduce(_placed_tiles, _find_largest);
 		
 		_hole_between = false;
-		for(var _tile_pos = _smallest_tile.y; _tile_pos < _largest_tile.y; _tile_pos += _smallest_tile.sprite_width)
+		for(var _tile_pos = _smallest_tile.y + _smallest_tile.sprite_height; _tile_pos < _largest_tile.y; _tile_pos += _smallest_tile.sprite_width)
 		{		
 			if(!place_meeting(_smallest_tile.x, _tile_pos, oTile))
 			{

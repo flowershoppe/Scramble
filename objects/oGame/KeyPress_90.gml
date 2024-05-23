@@ -1,7 +1,6 @@
-var _test = valid_play();
-if(_test)
-{
-	
+if(array_length(oPlayer.placed_tiles) == 0){exit;}
+if(valid_play())
+{	
 	oPlayer.point_total += calculate_points();
 	debug3 = calculate_points();
 	
