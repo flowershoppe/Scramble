@@ -1,9 +1,9 @@
-{ line : 77, message : "array_reduce :: called with both empty array and no initial value", script : "gml_Script_valid_play", stacktrace : [ "gml_Script_valid_play (line 77)","gml_Object_oGame_KeyPress_90 (line 3) - if(valid_play())" ], longMessage : "ERROR in
+{ stacktrace : [ "gml_Script_valid_play (line 44)","gml_Object_oCursor_Step_0 (line 160) - 			valid_play();" ], line : 44, message : "Push :: Execution Error - Variable Index [4] out of range [4] - -7._adjacent_tiles(100905,4)", script : "gml_Script_valid_play", longMessage : "ERROR in
 action number 1
-of Key Press Event for Z-key Key
-for object oGame:
+of  Step Event0
+for object oCursor:
 
 
-array_reduce :: called with both empty array and no initial value
- at gml_Script_valid_play (line 77) - 		_smallest_tile = array_reduce(_placed_tiles, _find_smallest);
+Push :: Execution Error - Variable Index [4] out of range [4] - -7._adjacent_tiles(100905,4)
+ at gml_Script_valid_play (line 44) - 			var _adj_tile = _adjacent_tiles[_index];
 " }
