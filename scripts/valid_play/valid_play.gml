@@ -39,10 +39,9 @@ function valid_play()
 			instance_place(_tile.x, _tile.y + _tile_size, oTile),
 			instance_place(_tile.x, _tile.y - _tile_size, oTile)]
 		
-		_index = 0;
-		for(_index = 0; _index < array_length(_adjacent_tiles); _index++)
+		for(var __index = 0; __index < array_length(_adjacent_tiles); __index++)
 		{
-			var _adj_tile = _adjacent_tiles[_index];
+			var _adj_tile = _adjacent_tiles[__index];
 			if(_adj_tile != noone)
 			{
 				if(!array_contains(_placed_tiles, _adj_tile) and _adj_tile.layer == _tile.layer)	
@@ -92,12 +91,16 @@ function valid_play()
 		_hole_between = false;
 		for(var _tile_pos = _smallest_tile.x + _smallest_tile.sprite_width; _tile_pos < _largest_tile.x; _tile_pos += _smallest_tile.sprite_width)
 		{		
-			var _other_tile = instance_place(_tile_pos, _smallest_tile.y, oTile);
-			if(!place_meeting(_tile_pos, _smallest_tile.y, _other_tile) or 
-				_other_tile.layer != _smallest_tile.layer)
+			
+			with(_smallest_tile)
 			{
-				_hole_between = true;
-			}		
+				var _other_tile = instance_place(_tile_pos, _smallest_tile.y, oTile);
+				if(!place_meeting(_tile_pos, _smallest_tile.y, _other_tile) or 
+					_other_tile.layer != _smallest_tile.layer)
+				{
+					_hole_between = true;
+				}		
+			}
 		}
 	}
 	
@@ -138,9 +141,15 @@ function valid_play()
 		_hole_between = false;
 		for(var _tile_pos = _smallest_tile.y + _smallest_tile.sprite_height; _tile_pos < _largest_tile.y; _tile_pos += _smallest_tile.sprite_width)
 		{		
-			if(!place_meeting(_smallest_tile.x, _tile_pos, oTile))
+			
+			with(_smallest_tile)
 			{
-				_hole_between = true;
+				var _other_tile = instance_place(_smallest_tile.x, _tile_pos, oTile);
+				if(!place_meeting(_smallest_tile.x, _tile_pos, _other_tile) or 
+					_other_tile.layer != _smallest_tile.layer)
+				{
+					_hole_between = true;
+				}		
 			}
 		}
 	}	

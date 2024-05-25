@@ -10,7 +10,6 @@ if(place_meeting(x, y, owner.hand))
 else
 { layer = layer_get_id("Tiles"); }
 
-debug2 = layer_get_name(layer);
 debug3 = _placed_tiles;
 
 
