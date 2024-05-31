@@ -1,9 +1,9 @@
-{ stacktrace : [ "gml_Script_valid_play (line 44)","gml_Object_oCursor_Step_0 (line 160) - 			valid_play();" ], line : 44, message : "Push :: Execution Error - Variable Index [4] out of range [4] - -7._adjacent_tiles(100905,4)", script : "gml_Script_valid_play", longMessage : "ERROR in
+{ longMessage : "ERROR in
 action number 1
 of  Step Event0
 for object oCursor:
 
 
-Push :: Execution Error - Variable Index [4] out of range [4] - -7._adjacent_tiles(100905,4)
- at gml_Script_valid_play (line 44) - 			var _adj_tile = _adjacent_tiles[_index];
-" }
+Unable to find instance for object index -4
+ at gml_Object_oCursor_Step_0 (line 138) - 		held_tile.x = _nearest_holder.x;
+", line : 138, script : "gml_Object_oCursor_Step_0", stacktrace : [ "gml_Object_oCursor_Step_0 (line 138)" ], message : "Unable to find instance for object index -4" }

@@ -28,16 +28,21 @@ function valid_play()
 		}
 	}
 		
+	//-----TILE ADJACENCY-----
+	var _adjacent_tiles = [];
 	for(var _index = 0; _index < array_length(_placed_tiles); _index++)
 	{
 		_tile = _placed_tiles[_index];
 		var _tile_size = _tile.sprite_width;
 		//check for at least 1 non-placed-this-turn tile adjacency		
-		var _adjacent_tiles = 
-			[instance_place(_tile.x + _tile_size, _tile.y, oTile),
-			instance_place(_tile.x - _tile_size, _tile.y, oTile),
-			instance_place(_tile.x, _tile.y + _tile_size, oTile),
-			instance_place(_tile.x, _tile.y - _tile_size, oTile)]
+		with(_tile)
+		{
+			_adjacent_tiles = 
+				[instance_place(_tile.x + _tile_size, _tile.y, oTile),
+				instance_place(_tile.x - _tile_size, _tile.y, oTile),
+				instance_place(_tile.x, _tile.y + _tile_size, oTile),
+				instance_place(_tile.x, _tile.y - _tile_size, oTile)]
+		}
 		
 		for(var __index = 0; __index < array_length(_adjacent_tiles); __index++)
 		{
@@ -139,23 +144,26 @@ function valid_play()
 		_largest_tile = array_reduce(_placed_tiles, _find_largest);
 		
 		_hole_between = false;
-		for(var _tile_pos = _smallest_tile.y + _smallest_tile.sprite_height; _tile_pos < _largest_tile.y; _tile_pos += _smallest_tile.sprite_width)
-		{		
+		if(array_length(_placed_tiles) > 1)
+		{
+			for(var _tile_pos = _smallest_tile.y + _smallest_tile.sprite_height; _tile_pos < _largest_tile.y; _tile_pos += _smallest_tile.sprite_width)
+			{		
 			
-			with(_smallest_tile)
-			{
-				var _other_tile = instance_place(_smallest_tile.x, _tile_pos, oTile);
-				if(!place_meeting(_smallest_tile.x, _tile_pos, _other_tile) or 
-					_other_tile.layer != _smallest_tile.layer)
+				with(_smallest_tile)
 				{
-					_hole_between = true;
-				}		
+					var _other_tile = instance_place(_smallest_tile.x, _tile_pos, oTile);
+					if(!place_meeting(_smallest_tile.x, _tile_pos, _other_tile) or 
+						_other_tile.layer != _smallest_tile.layer)
+					{
+						_hole_between = true;
+					}		
+				}
 			}
 		}
 	}	
 	#endregion	
 	
-	if((_is_same_column or _is_same_row) and 
+	if((_is_same_column or _is_same_row) and array_length(_placed_tiles) > 0 and
 		(_tile_adjacent == true or (global.turn == 1 and array_length(_placed_tiles) > 1)) and 
 		_hole_between == false)
 	{		

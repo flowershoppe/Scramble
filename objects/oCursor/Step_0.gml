@@ -10,7 +10,6 @@ if(place_meeting(x, y, owner.hand))
 else
 { layer = layer_get_id("Tiles"); }
 
-debug3 = _placed_tiles;
 
 
 //follow the cursor
@@ -73,6 +72,10 @@ if(mouse_check_button_pressed(mb_left))
 		{	
 			valid_play();
 		}
+		else
+		{
+			debug = "Play some tiles!";	
+		}	
 	}	
 }
 #endregion
@@ -128,11 +131,6 @@ if(mouse_check_button_released(mb_left))
 		if(array_contains(_placed_tiles, held_tile))
 		{
 			array_delete(_placed_tiles, array_get_index(_placed_tiles, held_tile), 1);
-		}
-		
-		if(!array_equals(_placed_tiles, []))
-		{	
-			valid_play();
 		}
 		#endregion
 			
