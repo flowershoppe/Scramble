@@ -144,6 +144,42 @@ function calculate_points()
 	
 	}
 	
+	//-----VERIFY WORDS SPELLED-----
+	#region
+	
+	var _fake_words = [];
+	var _spelled_words = [];
+	for(var _index = 0; _index < array_length(_player_words_tiles); _index++)
+	{
+		_word = "";
+		for(var _array_index = 0; _array_index < array_length(_player_words_tiles[_index]); _array_index++)
+		{
+			var _letter = _player_words_tiles[_index][_array_index].letter;
+			_word = string_concat(_word, _letter);
+		}
+		if(!global.dictionary.check(string_lower(_word)))
+		{
+			array_push(_fake_words, _word);
+		}
+		else
+		{
+			array_push(_spelled_words, _word);
+		}
+	}
+	
+	//display spelled/fake words
+	if(array_length(_fake_words) > 0)
+	{
+		debug2 = "The following spelled words do not appear in the dictionary: " + 	"\n" + string(_fake_words);
+		return 0;
+	}
+	else
+	{
+		debug2 = "Words spelled: " + string(_spelled_words);
+	}
+	
+	//-----CALCULATE POINTS-----
+	#region
 	var _lmult = 1;
 	var _wmult = 1;
 	var _subt = 0;
@@ -178,7 +214,12 @@ function calculate_points()
 		_subt *= _wmult;
 		_total += _subt;
 	}
-		
+	#endregion
+	
+	
+	
+	
+	
 	audio_play_sound(sdSciBell, 0, 0);
 	
 	return _total;

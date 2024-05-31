@@ -28,7 +28,7 @@ switch(room)
 		_cursor.owner = _player;
 	
 		//initialize tilebag
-		global.tilebag = instance_create_layer(300, 500, "Tilebag", oTilebag);
+		global.tilebag = instance_create_layer(room_width / 6, room_height /2 , "Tilebag", oTilebag);
 	
 	
 		break;
