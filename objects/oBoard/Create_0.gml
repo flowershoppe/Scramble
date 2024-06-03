@@ -27,7 +27,12 @@ for(i = 0; i < grid_width; i++)
 		
 		_holder.x_coord = i;
 		_holder.y_coord = j;
-		_holder.owner = self;
+		_holder.owner = oBoard;
+		_holder.lmult = irandom_range(1, 3);
+		if(_holder.lmult == 1)
+		{
+			_holder.wmult = irandom_range(1, 3);	
+		}
 		
 		if(_prev_holder != 0)
 		{
