@@ -1,4 +1,5 @@
 randomize();
+dialogue_setup();
 
 //Dictionary
 global.dictionary = new CheckWordDictionary(working_directory + "dictionaries/full/full.txt");
