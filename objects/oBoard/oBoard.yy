@@ -9,8 +9,8 @@
   "name":"oBoard",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Game Elements",
+    "path":"folders/Objects/Game Elements.yy",
   },
   "parentObjectId":null,
   "persistent":false,

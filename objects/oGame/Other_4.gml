@@ -16,6 +16,7 @@ switch(room)
 	
 		//create game handlers
 
+		instance_create_layer(0, 0, "Meta", oMatchStats);
 		instance_create_layer(0, 0, "Board", oBoard);
 		instance_create_layer(room_width / 2, room_height / 2, "Meta", oCamera);
 		instance_create_layer(0, 0, "Background", oBackground);
@@ -36,4 +37,6 @@ switch(room)
 	case rMainMenu:
 	
 		audio_play_sound_on(_emitter_MS, _main_menu_music, true, 100);
+		
+		break;
 }

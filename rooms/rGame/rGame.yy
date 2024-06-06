@@ -7,10 +7,17 @@
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_49464D66","path":"rooms/rGame/rGame.yy",},
+    {"name":"yMatchStats","path":"rooms/rGame/rGame.yy",},
   ],
   "isDnd":false,
   "layers":[
-    {"$GMRInstanceLayer":"","%Name":"Meta","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Meta","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"Meta","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"","%Name":"yMatchStats","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"yMatchStats","objectId":{"name":"yui_document","path":"objects/yui_document/yui_document.yy",},"properties":[
+            {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"yui_document","path":"objects/yui_document/yui_document.yy",},"propertyId":{"name":"yui_file","path":"objects/yui_document/yui_document.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YUI/match_stats.yui",},
+            {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"yui_document","path":"objects/yui_document/yui_document.yy",},"propertyId":{"name":"data_context","path":"objects/yui_document/yui_document.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"oMatchStats",},
+            {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"yui_document","path":"objects/yui_document/yui_document.yy",},"propertyId":{"name":"is_full_screen","path":"objects/yui_document/yui_document.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"False",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":4.0,"x":0.0,"y":96.0,},
+      ],"layers":[],"name":"Meta","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"UI","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"UI","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Grabbed","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_49464D66","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_49464D66","objectId":{"name":"oDebugger","path":"objects/oDebugger/oDebugger.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":928.0,"y":288.0,},

@@ -1,0 +1,35 @@
+id: turn_order
+file_type: screen
+
+import:
+  - ../Templates/
+  - /YUI/Widgets/child_window.yui
+
+root:
+  type: panel
+  layout: vertical
+  size: stretch
+  alignment: {h: center}
+  background: yui_panel_bg
+  padding: 10
+  elements:
+    - type: panel
+      layout: horizontal
+      elements:
+        - type: text
+          text: "Turn: "
+        - @turn
+    - type: panel
+      layout: horizontal
+      elements:
+        - type: text
+          text: "Score: "
+        - @total_points
+
+    - type: panel
+      layout: horizontal
+      elements:
+        - type: text
+          text: "Last Play: "
+        - @last_play
+

@@ -42,7 +42,7 @@ function dialogue_setup() {
   #region Dialogue system characters map
   global.mapcharacters = ds_map_create();
   global.mapcharacters[? "default"] = -1;
-  global.mapcharacters[? "rectangle"] = 1;
+  global.mapcharacters[? "TheWiz"] = 1;
   #endregion
   #region Dialogue system layouts map
   global.maplayouts = ds_map_create();

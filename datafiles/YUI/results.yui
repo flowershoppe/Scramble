@@ -1,0 +1,59 @@
+id: results
+file_type: screen
+
+import:
+  - ../Templates/
+  - /YUI/Widgets/child_window.yui
+
+root:
+  type: panel
+  alignment: { h: center }
+  layout: canvas
+  background: yui_panel_bg
+  canvas:
+    top: 20
+    center: h
+  size: stretch
+  
+  elements:
+
+    - type: panel
+      size: {w: 500, h: 500}
+      alignment: {h: center}
+      canvas:
+        top: 5
+        center: h
+      background: yui_panel_bg
+      elements:
+        - type: text
+          text: "--- RESULT ---"
+        - type: panel
+          layout: horizontal
+          elements:
+            - type: text
+              text: "TURN COUNT | "
+            - @turn
+        - type: panel
+          layout: horizontal
+          elements:
+            - type: text 
+              text: "TOTAL SCORE | "
+            - @total_points
+        - type: panel
+          layout: horizontal
+          elements:
+            - type: text
+              text: "TILES PLAYED | "
+            - @total_tiles
+        - type: panel
+          layout: horizontal
+          elements:
+            - type: text
+              text: "LARGEST WORD | "
+            - @largest_word
+        - type: panel
+          layout: horizontal
+          elements:
+            - type: text
+              text: "LARGEST PLAY | "
+            - @largest_play

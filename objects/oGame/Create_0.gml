@@ -74,5 +74,3 @@ audio_master_gain(0.5)
 global.music_game = msGameMusic1;
 global.music_main_menu = msMainMenuMusic;
 
-//Game Elements
-global.turn = 1;
