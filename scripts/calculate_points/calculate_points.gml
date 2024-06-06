@@ -175,7 +175,7 @@ function calculate_points()
 	}
 	else
 	{
-		debug2 = "Words spelled: " + string(_spelled_words);
+		oMatchStats.last_words = "Last word(s) spelled: " + string(_spelled_words);
 	}
 	
 	//-----CALCULATE POINTS-----
@@ -199,15 +199,16 @@ function calculate_points()
 		{
 			with(_player_words_tiles[j][k])
 			{
+				var _points = pointvalue;
 				instance_create_layer(x, y, "UI", oHighlighter);
 				
 				_holder = instance_place(x, y, oTileHolder);
 				_lmult = instance_place(x, y, oTileHolder).lmult;
-				pointvalue *= _lmult;
+				_points *= _lmult;
 				//accumulate word multipliers
 				_wmult *= _holder.wmult;
 				//subtotal
-				_subt += pointvalue;
+				_subt += _points;
 			}
 		}
 		

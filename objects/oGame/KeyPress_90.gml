@@ -1,13 +1,12 @@
 if(array_length(oPlayer.placed_tiles) == 0){exit;}
 if(valid_play())
 {	
-	if(calculate_points() > 0)
+	var _score = calculate_points();
+	if(_score > 0)
 	{
-		oPlayer.point_total += calculate_points();
-		debug3 = "score: " + string(oPlayer.point_total);
-		debug4 = "last play: " + string(calculate_points());
+		oMatchStats.total_points += _score;
+		oMatchStats.last_play = _score;
 	
 		next_turn();
 	}
 }
-

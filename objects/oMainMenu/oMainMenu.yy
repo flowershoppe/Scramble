@@ -8,8 +8,8 @@
   "name":"oMainMenu",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"YUI Handlers",
+    "path":"folders/Objects/YUI Handlers.yy",
   },
   "parentObjectId":null,
   "persistent":false,
