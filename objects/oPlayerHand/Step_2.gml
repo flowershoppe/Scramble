@@ -43,6 +43,11 @@ for(i = 0; i < hand_width; i++)
 		_tile.image_xscale = _tile_scale;
 		_tile.image_yscale = _tile_scale;
 		_tile.font_scale = _tile_scale;
+		
+		empty = false;
+	}
+	else
+	{
+		empty = true;		
 	}
 }
-

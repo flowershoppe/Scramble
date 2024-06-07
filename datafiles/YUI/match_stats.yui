@@ -32,4 +32,10 @@ root:
         - type: text
           text: "Last Play: "
         - @last_play
+    - type: panel
+      layout: horizontal
+      elements:
+        - type: text
+          text: "Goal: "
+        - @condition_points
 

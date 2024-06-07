@@ -2,6 +2,8 @@
 //return total point score
 function calculate_points()
 {
+	if(oMatchState.active == false){exit;}
+	
 	var _player = oPlayer;
 	var _word = "";
 	var _player_words_tiles = _player.turn_spelled_words;

@@ -6,3 +6,5 @@ wmult = 1;
 lmult = 1;
 
 mult_spr = spMult;
+
+winspot = false;
