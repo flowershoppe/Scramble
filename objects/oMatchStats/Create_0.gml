@@ -5,3 +5,5 @@ largest_play = 0;
 turn = 1;
 last_play = 0;
 last_word = "";
+
+condition_points = oMatchState.condition_points;

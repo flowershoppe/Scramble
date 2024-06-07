@@ -1,3 +1,9 @@
+//do not run if match is inactive
+if(oMatchState == noone)
+{
+	if(oMatchState.active == false){exit;}
+}
+
 var _placed_tiles = owner.placed_tiles;
 
 /*if(!array_equals(_placed_tiles, []))

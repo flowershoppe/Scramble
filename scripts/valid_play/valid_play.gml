@@ -1,5 +1,7 @@
 function valid_play()
 {
+	if(oMatchState.active == false){exit;}
+	
 	var _placed_tiles = oPlayer.placed_tiles;
 	
 	var _is_same_row = true;
