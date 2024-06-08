@@ -78,7 +78,7 @@ function next_turn()
 		if(victory and !loss)
 		{
 			audio_stop_sound(global.music_game);
-			audio_play_sound_on(global.emitterMS, msVictory, true, 100);
+			audio_play_sound_on(global.emitterMS, global.music_victory, true, 100);
 		}
 	}
 }
