@@ -1,9 +1,9 @@
-{ stacktrace : [ "gml_Object_oMatchState_Draw_75 (line 4)" ], message : "Variable <unknown_object>.draw_sprite_(102384, -2147483648) not set before reading it.", line : 4, script : "gml_Object_oMatchState_Draw_75", longMessage : "ERROR in
+{ stacktrace : [ "gml_Script_submit_play (line 3)","gml_Object_oGame_Step_0 (line 3) - 	submit_play();" ], line : 3, message : "Unable to find instance for object index 15", script : "gml_Script_submit_play", longMessage : "ERROR in
 action number 1
-of Draw Event
-for object oMatchState:
+of  Step Event0
+for object oGame:
 
 
-Variable <unknown_object>.draw_sprite_(102384, -2147483648) not set before reading it.
- at gml_Object_oMatchState_Draw_75 (line 4) - 	draw_sprite_(spWinner, 0, room_width / 2, room_height / 2, 0.5, 0.5, 0, c_white, 1);
+Unable to find instance for object index 15
+ at gml_Script_submit_play (line 3) - 	if(array_length(oPlayer.placed_tiles) == 0){exit;}
 " }

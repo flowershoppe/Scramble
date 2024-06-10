@@ -50,6 +50,8 @@ global.down_button = vk_down;
 global.up_button = vk_up;
 global.zoom_in = ev_mouse_wheel_up;
 global.zoom_out = ev_mouse_wheel_down;
+global.confirm_button = vk_enter
+global.pause_button = ord("P");
 
 //Settings
 global.camera_speed = 5.0;
@@ -68,7 +70,13 @@ global.emitterMS = audio_emitter_create();
 global.volumeSE = 1;
 global.volumeMS = 1;
 
+audio_emitter_gain(global.emitterSE, global.volumeSE);
+audio_emitter_gain(global.emitterMS, global.volumeMS);
+
 global.music_game = msGameMusic1;
 global.music_main_menu = msMainMenuMusic;
 global.music_victory = msVictory;
+
+//Handlers
+instance_create_layer(0, 0, "Meta", oSettings);
 

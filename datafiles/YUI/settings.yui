@@ -13,8 +13,8 @@ root:
 
   elements:
     - type: button
-      content: <= Main Menu
-      on_click: @@ room_goto(asset_get_index(rMainMenu))
+      content: <= Back
+      on_click: @@ room_goto(@prev_room)
 
     - type: panel
       size: stretch

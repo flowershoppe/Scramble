@@ -26,3 +26,9 @@ if(wait_for_input)
 {
 	draw_text(room_width / 2, room_height / 4, "Please enter a character");	
 }
+
+//highlight
+if(highlight)
+{
+	draw_sprite(spHighlight, 0, x, y);	
+}
