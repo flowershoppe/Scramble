@@ -172,7 +172,7 @@ function calculate_points()
 	//display spelled/fake words
 	if(array_length(_fake_words) > 0)
 	{
-		debug2 = "The following spelled words do not appear in the dictionary: " + 	"\n" + string(_fake_words);
+		oMatchStats.print_message = "The following spelled words do not appear in the dictionary: " + 	"\n" + string(_fake_words);
 		return 0;
 	}
 	else
@@ -202,7 +202,7 @@ function calculate_points()
 			with(_player_words_tiles[j][k])
 			{
 				var _points = pointvalue;
-				instance_create_layer(x, y, "UI", oHighlighter);
+				highlight = true;
 				
 				_holder = instance_place(x, y, oTileHolder);
 				_lmult = instance_place(x, y, oTileHolder).lmult;

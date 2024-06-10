@@ -1,5 +1,5 @@
 //do not run if match is inactive
-if(oMatchState == noone)
+if(instance_exists(oMatchState))
 {
 	if(oMatchState.active == false){exit;}
 }
@@ -61,7 +61,7 @@ if(mouse_check_button_pressed(mb_left))
 		}
 		
 		audio_play_sound(global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
-						1, 0, 0.8, 0, 1.5);
+						1, 0, global.volumeSE);
 		
 		var _tile = held_tile;
 		var _holder;
@@ -171,7 +171,7 @@ if(mouse_check_button_released(mb_left))
 		
 		_nearest_holder.tile = held_tile;
 		audio_play_sound(global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
-						1, 0, 0.8, 0, 1);
+						1, 0, global.volumeSE);
 		
 		
 		held_tile = noone;

@@ -16,3 +16,5 @@ emitter_MS = global.emitterMS;
 selected_item = "960 x 540";
 
 resolution_selector = new YuiArraySelector(resolution_items, resolution_items[2])
+
+prev_room = noone;
