@@ -1,9 +1,9 @@
-{ stacktrace : [ "gml_Script_submit_play (line 3)","gml_Object_oGame_Step_0 (line 3) - 	submit_play();" ], line : 3, message : "Unable to find instance for object index 15", script : "gml_Script_submit_play", longMessage : "ERROR in
+{ stacktrace : [ "gml_Object_oBoard_Create_0 (line 6)","gml_Script_start_match (line 8)","gml_Script_dialogue_open_at (line 14)","gml_Script_dialogue_open (line 29) -   dialogue_open_at(index, arguments, 0);","gml_Object_oDialogue_Other_10 (line 214) -           dialogue_open(open_dialogue, args);","gml_Object_oDialogue_Step_0 (line 19)" ], line : 6, message : "DoMul :: Execution Error", script : "gml_Object_oBoard_Create_0", longMessage : "ERROR in
 action number 1
-of  Step Event0
-for object oGame:
+of Create Event
+for object oBoard:
 
 
-Unable to find instance for object index 15
- at gml_Script_submit_play (line 3) - 	if(array_length(oPlayer.placed_tiles) == 0){exit;}
+DoMul :: Execution Error
+ at gml_Object_oBoard_Create_0 (line 6) - image_xscale = (grid_width * _tile_size + _tile_size) / sprite_width;
 " }

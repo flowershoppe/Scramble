@@ -10,9 +10,9 @@ var _cursor = noone;
 switch(room)
 {
 	case rGame:
-	
-
 		
+		global.opponent = "TheWiz";
+		dialogue_open(dWizMatchIntro, []);
 		audio_stop_sound(_main_menu_music);
 		
 		if(!audio_is_playing(_game_music_1) and !audio_is_playing(global.music_victory))
@@ -41,8 +41,7 @@ switch(room)
 			_cursor.owner = _player;
 		}
 
-		start_match(10, 8, 10, -1, -1, -1);
-		dist_standard(global.tilebag);
+
 		
 		break;
 		

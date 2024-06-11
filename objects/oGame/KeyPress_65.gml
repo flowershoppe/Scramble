@@ -1,1 +1,0 @@
-dialogue_open(dTest, []);
