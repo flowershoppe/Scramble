@@ -136,11 +136,6 @@ function calculate_points()
 			_player_words_tiles[k] = _array_tiles;
 			k++;
 			
-			//highlight tiles part of a spelled word
-			for(j = 0; j < array_length(_array_tiles); j++)
-			{
-				_array_tiles[j].highlight = true;
-			}
 		}
 		#endregion
 	

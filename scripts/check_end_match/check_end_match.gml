@@ -49,8 +49,9 @@ function check_end_match()
 		
 		if(oMatchState.victory and !oMatchState.loss)
 		{
-			audio_stop_sound(global.music_game);
-			audio_play_sound_on(global.emitterMS, global.music_victory, true, 100);
+			dialogue_open(dWizMatchOutro, []);
+			//audio_stop_sound(global.music_game);
+			//audio_play_sound_on(global.emitterMS, global.music_victory, true, 100);
 		}
 	}
 }

@@ -1,1 +1,0 @@
-add_tile_to_hand(oPlayer.hand, global.tilebag);
