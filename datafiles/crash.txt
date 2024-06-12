@@ -1,23 +1,9 @@
-{ line : 156, message : "Unable to find a handler for exception YUI ERROR: source_items must resolve to an array
-STACK:
-gml_Script_yui_error:63
-gml_Script_YuiPanelElement_getBoundValues@YuiPanelElement_YuiPanelElement:156
-gml_Script_yui_base__bind_values@gml_Object_yui_base_Create_0:190
-gml_Object_yui_base_Step_2:36
-0
-", script : "gml_Script_YuiPanelElement_getBoundValues@YuiPanelElement_YuiPanelElement", stacktrace : [ "gml_Script_YuiPanelElement_getBoundValues@YuiPanelElement_YuiPanelElement (line 156)","gml_Script_yui_base__bind_values@gml_Object_yui_base_Create_0 (line 190) - 	var new_values = yui_element.getBoundValues(data_source, bound_values)","gml_Object_yui_base_Step_2 (line 36) - 	rebuild = bind_values();" ], longMessage : "ERROR in
+{ line : 1, script : "gml_Object_oMatchStats_Step_0", stacktrace : [ "gml_Object_oMatchStats_Step_0 (line 1)" ], message : "Unable to find instance for object index 15", longMessage : "ERROR in
 action number 1
-of  Step Event2
-for object yui_base:
+of  Step Event0
+for object oMatchStats:
 
 
-Unable to find a handler for exception YUI ERROR: source_items must resolve to an array
-STACK:
-gml_Script_yui_error:63
-gml_Script_YuiPanelElement_getBoundValues@YuiPanelElement_YuiPanelElement:156
-gml_Script_yui_base__bind_values@gml_Object_yui_base_Create_0:190
-gml_Object_yui_base_Step_2:36
-0
-
- at gml_Script_YuiPanelElement_getBoundValues@YuiPanelElement_YuiPanelElement (line 156) - 				throw yui_error("source_items must resolve to an array");
+Unable to find instance for object index 15
+ at gml_Object_oMatchStats_Step_0 (line 1) - print_message = string(oPlayer.placed_tiles);
 " }

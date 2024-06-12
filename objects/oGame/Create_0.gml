@@ -53,6 +53,7 @@ global.zoom_out = ev_mouse_wheel_down;
 global.confirm_button = vk_enter
 global.pause_button = ord("P");
 global.skip_button = vk_tab;
+global.return_button = vk_shift;
 
 //Settings
 global.camera_speed = 5.0;
