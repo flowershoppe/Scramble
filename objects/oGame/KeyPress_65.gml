@@ -1,0 +1,1 @@
+show_message(string(oMatchStats.last_words));

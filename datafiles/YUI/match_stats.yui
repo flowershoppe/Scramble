@@ -32,6 +32,18 @@ root:
         - type: text
           text: "Last Play: "
         - @last_play
+
+    - type: panel
+      layout: horizontal
+      elements:
+        - type: text
+          text: "Last Word(s): "
+        - type: panel
+          layout: horizontal
+          elements: @last_words
+          template:
+            type: text
+            text: @
     - type: panel
       layout: horizontal
       elements:
@@ -42,6 +54,5 @@ root:
       layout: horizontal
       elements:
         - type: text
-          text: "MSG:"
-        - @print_message
+          text: @print_message
 

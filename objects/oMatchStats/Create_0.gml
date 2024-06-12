@@ -4,7 +4,7 @@ largest_word = 0;
 largest_play = 0;
 turn = 1;
 last_play = 0;
-last_word = "";
+last_words = [];
 print_message = "";
 
 turn_max = -1;

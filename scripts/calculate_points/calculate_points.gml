@@ -161,6 +161,8 @@ function calculate_points()
 		else
 		{
 			array_push(_spelled_words, _word);
+			if(string_length(_word) > string_length(oMatchStats.largest_word))
+			{oMatchStats.largest_word = _word;}
 		}
 	}
 	
@@ -172,7 +174,7 @@ function calculate_points()
 	}
 	else
 	{
-		oMatchStats.last_words = "Last word(s) spelled: " + string(_spelled_words);
+		oMatchStats.last_words = _spelled_words;
 	}
 	
 	//-----CALCULATE POINTS-----
@@ -210,8 +212,13 @@ function calculate_points()
 		}
 		
 		_subt *= _wmult;
-		_total += _subt;
+		_total += _subt;		
 	}
+	
+	//update stats
+	oMatchStats.total_tiles += array_length(_player_words_tiles);
+	if(_total > oMatchStats.largest_play){oMatchStats.largest_play = _total;}
+	
 	#endregion
 	
 	
