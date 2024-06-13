@@ -82,5 +82,6 @@ global.music_victory = msVictory;
 //Handlers
 instance_create_layer(0, 0, "Meta", oSettings);
 
+
 global.opponent = noone;
 
