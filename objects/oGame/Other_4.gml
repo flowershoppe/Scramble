@@ -41,13 +41,12 @@ switch(room)
 			_cursor.owner = _player;
 		}
 
-
+		
 		
 		break;
 		
 	case rMainMenu:
 	
-		oSettings.prev_room = rMainMenu;
 		if(!audio_is_playing(global.music_main_menu))
 		{
 			audio_play_sound_on(_emitter_MS, _main_menu_music, true, 100);

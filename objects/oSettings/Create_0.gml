@@ -1,5 +1,5 @@
 //handler for settings menu
-
+visible = true;
 display_height = global.display_height;
 display_width = global.display_width;
 
@@ -15,6 +15,6 @@ emitter_MS = global.emitterMS;
 
 selected_item = "960 x 540";
 
-resolution_selector = new YuiArraySelector(resolution_items, resolution_items[2])
+menu = noone;
 
-prev_room = noone;
+resolution_selector = new YuiArraySelector(resolution_items, resolution_items[2])
