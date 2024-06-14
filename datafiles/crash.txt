@@ -1,9 +1,9 @@
-{ line : 13, script : "gml_Script_unpause_game", stacktrace : [ "gml_Script_unpause_game (line 13)","gml_Script_resolveScript@anon@1198@YuiCallFunction_YuiCallFunction (line 50)","gml_Script_yui_call_handler (line 26) - 		handler.resolve(data);","gml_Script_anon@493@gml_Object_yui_button_Create_0 (line 33) - 		yui_call_handler(yui_element.props.on_click, [args], data_source);","gml_Object_YuiCursorManager_Mouse_56 (line 55) - 			var handled = next.left_click();" ], message : "Variable <unknown_object>.menu(100951, -2147483648) not set before reading it.", longMessage : "ERROR in
+{ line : 3, message : "Unable to find instance for object index 15", script : "gml_Object_oMatchStats_Step_0", stacktrace : [ "gml_Object_oMatchStats_Step_0 (line 3)" ], longMessage : "ERROR in
 action number 1
-of Mouse Event for Glob Left Released
-for object YuiCursorManager:
+of  Step Event0
+for object oMatchStats:
 
 
-Variable <unknown_object>.menu(100951, -2147483648) not set before reading it.
- at gml_Script_unpause_game (line 13) - 	instance_destroy(menu);
+Unable to find instance for object index 15
+ at gml_Object_oMatchStats_Step_0 (line 3) - 	print_message = string(oPlayer.placed_tiles);
 " }

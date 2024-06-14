@@ -29,4 +29,4 @@ root:
             text: @button_settings
             text_style: title        
           border_thickness: 1
-          on_click: @@ room_goto(asset_get_index(rSettings))
+          on_click: @@ pause_game()

@@ -1,5 +1,7 @@
 function unpause_game()
 {
+	if(room == rMainMenu){instance_create_layer(0, 0, "Meta", yui_document, global.stMainMenu);}
+	instance_activate_layer("Meta");
 	instance_activate_layer("UI");
 	instance_activate_layer("Grabbed");
 	instance_activate_layer("Hand_Tiles");

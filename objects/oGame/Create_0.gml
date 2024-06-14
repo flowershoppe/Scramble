@@ -80,8 +80,19 @@ global.music_main_menu = msMainMenuMusic;
 global.music_victory = msVictory;
 
 //Handlers
-instance_create_layer(0, 0, "Meta", oSettings);
+instance_create_layer(0, 0, "Settings", oSettings);
 
 
 global.opponent = noone;
 
+//YUI Structs
+global.stMainMenu = {
+		yui_file: "YUI/main_menu.yui",
+		data_context: oMainMenu,
+		is_full_screen: false,
+		image_xscale: 4,
+		image_yscale: 4.5,
+		x: 352,
+		y: 224
+}
+		
