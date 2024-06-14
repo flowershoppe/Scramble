@@ -1,9 +1,9 @@
-{ line : 3, message : "Unable to find instance for object index 15", script : "gml_Object_oMatchStats_Step_0", stacktrace : [ "gml_Object_oMatchStats_Step_0 (line 3)" ], longMessage : "ERROR in
+{ line : 19, message : "File is not opened for reading.", script : "gml_Script_load@anon@798@CheckWordDictionary_GMDictionary_classes", stacktrace : [ "gml_Script_load@anon@798@CheckWordDictionary_GMDictionary_classes (line 19)","gml_Script_CheckWordDictionary (line 86) - 		self.load(source);","gml_Object_oGame_Create_0 (line 5)" ], longMessage : "ERROR in
 action number 1
-of  Step Event0
-for object oMatchStats:
+of Create Event
+for object oGame:
 
 
-Unable to find instance for object index 15
- at gml_Object_oMatchStats_Step_0 (line 3) - 	print_message = string(oPlayer.placed_tiles);
+File is not opened for reading.
+ at gml_Script_load@anon@798@CheckWordDictionary_GMDictionary_classes (line 19) - 			for (f = file_text_open_read(source); !file_text_eof(f); file_text_readln(f)) {
 " }
