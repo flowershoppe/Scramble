@@ -173,7 +173,6 @@ if(mouse_check_button_released(mb_left))
 		audio_play_sound(global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
 						1, 0, global.volumeSE);
 		
-		
 		held_tile = noone;
 	}
 }
