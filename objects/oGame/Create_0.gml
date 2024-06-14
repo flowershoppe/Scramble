@@ -2,7 +2,7 @@ randomize();
 dialogue_setup();
 
 //Dictionary
-global.dictionary = new CheckWordDictionary(working_directory + "dictionaries/full/full.txt");
+global.dictionary = new CheckWordDictionary(working_directory + "dictionaries/simple/full.txt");
 
 //Letters and Default Values
 global.letters = ds_map_create();
