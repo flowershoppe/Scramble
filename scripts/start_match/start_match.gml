@@ -3,7 +3,6 @@ function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _tur
 	global.tilebag = instance_create_layer(room_width / 6, room_height /2 , "Tilebag", oTilebag);
 	instance_create_depth(0, 0, -10, oMatchState);
 	instance_create_depth(0, 0, -9, oMatchStats);
-	instance_create_layer(room_width * 0.9, room_height * 0.75, "UI", oButton);
 	instance_create_layer(0, 96, "UI", yui_document,
 	{
 		image_xscale: 4,

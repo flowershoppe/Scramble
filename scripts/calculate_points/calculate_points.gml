@@ -175,7 +175,7 @@ function calculate_points()
 	else
 	{
 		oMatchStats.last_words = _spelled_words;
-		oMatchStats.print_message = "";
+		oMatchStats.print_message = ".";
 	}
 	
 	//-----CALCULATE POINTS-----
