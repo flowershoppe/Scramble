@@ -1,7 +1,5 @@
 spr = spButton;
-x_loc = 0;
-y_loc = 0;
-x_scale = 1;
-y_scale = 1;
-sp_width = 0;
-sp_height = 0;
+//x = view_get_wport(0) * 0.9;
+//y = view_get_hport(0) * 0.9;
+image_xscale = 0.5;
+image_yscale = 0.5;
