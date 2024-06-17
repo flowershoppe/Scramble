@@ -194,8 +194,6 @@
     {"$GMIncludedFile":"","%Name":"window_move.yui","CopyToMask":-1,"filePath":"datafiles/YUI/Interactions","name":"window_move.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"main_menu.yui","CopyToMask":-1,"filePath":"datafiles/YUI","name":"main_menu.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"match_stats.yui","CopyToMask":-1,"filePath":"datafiles/YUI","name":"match_stats.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"quick_start_screen.yui","CopyToMask":-1,"filePath":"datafiles/YUI","name":"quick_start_screen.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"quick_start_screen.yui","CopyToMask":-1,"filePath":"datafiles/YUI","name":"quick_start_screen.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"results.yui","CopyToMask":-1,"filePath":"datafiles/YUI","name":"results.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"settings.yui","CopyToMask":-1,"filePath":"datafiles/YUI","name":"settings.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"default.yui","CopyToMask":-1,"filePath":"datafiles/YUI/Themes","name":"default.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
