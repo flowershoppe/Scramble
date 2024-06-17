@@ -13,6 +13,7 @@ resources:
       max: 100
       value: 0
       on_value_changed: null
+      on_drag_end: null
       show_value: true
       slider_size: { h: 20, w: 100 }
       thumb_size: { h: 20, w: 10, min_w: 10 }
@@ -51,6 +52,7 @@ resources:
                   interaction: slider_drag
                   parameters:
                     on_position_changed: @@ e => $on_value_changed(e.left * ($max - $min))
+                    on_drag_end: @@ e => $on_drag_end(e.left * ($max - $min))
 
             // slider line
             - type: border
@@ -65,9 +67,9 @@ resources:
           text: $max
 
         - type: text
-          text: "|"
+          text: "-"
           visible: $show_value
 
         - type: text
-          text: $value >> string_format(0, 1) // format as a whole number with 1 decimal
+          text: $value >> string_format(0, 0) // format as a whole number with no decimals
           visible: $show_value

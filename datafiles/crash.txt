@@ -1,9 +1,9 @@
-{ line : 19, message : "File is not opened for reading.", script : "gml_Script_load@anon@798@CheckWordDictionary_GMDictionary_classes", stacktrace : [ "gml_Script_load@anon@798@CheckWordDictionary_GMDictionary_classes (line 19)","gml_Script_CheckWordDictionary (line 86) - 		self.load(source);","gml_Object_oGame_Create_0 (line 5)" ], longMessage : "ERROR in
+{ script : "gml_Script_yui_unregister_interactions", stacktrace : [ "gml_Script_yui_unregister_interactions (line 31)","gml_Object_yui_base_CleanUp_0 (line 7) - yui_unregister_interactions(interactions);","gml_Object_yui_panel_CleanUp_0 (line 4)" ], line : 31, message : "Unable to find instance for object index 39", longMessage : "ERROR in
 action number 1
-of Create Event
-for object oGame:
+of <Unknown Event>
+for object yui_base:
 
 
-File is not opened for reading.
- at gml_Script_load@anon@798@CheckWordDictionary_GMDictionary_classes (line 19) - 			for (f = file_text_open_read(source); !file_text_eof(f); file_text_readln(f)) {
+Unable to find instance for object index 39
+ at gml_Script_yui_unregister_interactions (line 31) - 	if !ds_exists(YuiCursorManager.participation_map, ds_type_map) return;
 " }
