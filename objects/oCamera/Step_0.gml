@@ -8,13 +8,13 @@ var _most_recent_vert_button = most_recent_button(vert_button_arr, vert_button_c
 var _horiz_camera_move_direction;
 switch (_most_recent_horiz_button)
 {
-	case global.left_button:
+	case oGame.keys.left:
 		_horiz_camera_move_direction = -1;
 	break;
 	case vk_nokey:
 		_horiz_camera_move_direction = 0;
 	break;
-	case global.right_button:
+	case oGame.keys.right:
 		_horiz_camera_move_direction = 1;
 	break;
 }
@@ -23,13 +23,13 @@ x += _horiz_camera_move_direction * global.camera_speed;
 var _vert_camera_move_direction;
 switch (_most_recent_vert_button)
 {
-	case global.up_button:
+	case oGame.keys.up:
 		_vert_camera_move_direction = -1;
 	break;
 	case vk_nokey:
 		_vert_camera_move_direction = 0;
 	break;
-	case global.down_button:
+	case oGame.keys.down:
 		_vert_camera_move_direction = 1;
 	break;
 }
@@ -56,8 +56,8 @@ var _viewY = camera_get_view_y(global.maincam);
 var _viewW = camera_get_view_width(global.maincam);
 var _viewH = camera_get_view_height(global.maincam);
 
-var _hor = keyboard_check(vk_right) - keyboard_check(vk_left);
-var _ver = keyboard_check(vk_down) - keyboard_check(vk_up);
+var _hor = keyboard_check(oGame.keys.right) - keyboard_check(oGame.keys.left);
+var _ver = keyboard_check(oGame.keys.down) - keyboard_check(oGame.keys.up);
 
 var _gotoX = x + (_hor * 200) - (_viewW * 0.5);
 var _gotoY = y + (_ver * 150) - (_viewH * 0.5);

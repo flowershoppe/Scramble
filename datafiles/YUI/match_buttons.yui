@@ -1,0 +1,31 @@
+id: match_buttons
+file_type: screen
+
+import:
+  - ../Templates/
+  - /YUI/Widgets/child_window.yui
+
+root:
+  type: panel
+  layout: vertical
+  size: stretch
+  background: yui_panel_bg
+  alignment: {h: center}
+  padding: 10
+  elements:
+    - type: button 
+      content: 
+        type: text
+        text: @btn_txt_submit_play
+        text_style: body       
+      border_thickness: 1
+      on_click: @@ submit_play();
+    - type: button 
+      content: 
+        type: text
+        text: @btn_txt_return_tiles
+        text_style: body    
+      border_thickness: 1
+      on_click: @@ return_tiles();
+
+      

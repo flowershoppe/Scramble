@@ -70,6 +70,11 @@ root:
               max: 1
               value: @@ audio_emitter_get_gain(@emitter_SE)
               on_value_changed: @@ value => audio_emitter_gain(@emitter_SE, value)
+        - type: panel
+          layout: vertical
+          elements:
+            - type: text
+              text: @@ string(global.confirm_button)
 
 
           

@@ -44,16 +44,19 @@ global.tile_font = font_add("CALADEA-REGULAR.TTF", global.tile_font_size,
 font_enable_sdf(global.tile_font, true);
 
 //Keybinds
-global.left_button = vk_left;
-global.right_button = vk_right;
-global.down_button = vk_down;
-global.up_button = vk_up;
-global.zoom_in = ev_mouse_wheel_up;
-global.zoom_out = ev_mouse_wheel_down;
-global.confirm_button = vk_enter
-global.pause_button = ord("P");
-global.skip_button = vk_tab;
-global.return_button = vk_shift;
+keys = 
+{
+	left: vk_left,
+	right: vk_right,
+	up: vk_up,
+	down: vk_down,
+	zoom_in: ev_mouse_wheel_up,
+	zoom_out: ev_mouse_wheel_down,
+	confirm: vk_enter,
+	pause: ord("P"),
+	skip: vk_tab,
+	return_button: vk_shift
+}
 
 //Settings
 global.camera_speed = 5.0;
