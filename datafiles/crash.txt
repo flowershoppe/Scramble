@@ -1,9 +1,9 @@
-{ script : "gml_Script_yui_unregister_interactions", stacktrace : [ "gml_Script_yui_unregister_interactions (line 31)","gml_Object_yui_base_CleanUp_0 (line 7) - yui_unregister_interactions(interactions);","gml_Object_yui_panel_CleanUp_0 (line 4)" ], line : 31, message : "Unable to find instance for object index 39", longMessage : "ERROR in
+{ script : "gml_Script_resolve@anon@292@YuiSubscript_YuiSubscript", stacktrace : [ "gml_Script_resolve@anon@292@YuiSubscript_YuiSubscript (line 11)","gml_Script_resolveRuntimeFunction@anon@1465@YuiCallFunction_YuiCallFunction (line 57) - 			resolved_args[i] = args[i].resolve(data);","gml_Script_YuiTextElement_getBoundValues@YuiTextElement_YuiTextElement (line 106) - 		var text = is_text_live && !is_array(props.text) ? props.text.resolve(data) : props.text;","gml_Script_yui_base__bind_values@gml_Object_yui_base_Create_0 (line 190) - 	var new_values = yui_element.getBoundValues(data_source, bound_values)","gml_Script_yui_make_render_instance (line 24) - 		bind_values();","gml_Script_yui_panel__build@gml_Object_yui_panel_Create_0 (line 73) - 			var child = yui_make_render_instance(item_element, data, i);","gml_Script_yui_make_render_instance (line 26) - 			build();","gml_Script_yui_panel__build@gml_Object_yui_panel_Create_0 (line 73) - 			var child = yui_make_render_instance(item_element, data, i);","gml_Script_yui_make_render_instance (line 26) - 			build();","gml_Script_yui_panel__build@gml_Object_yui_panel_Create_0 (line 73) - 			var child = yui_make_render_instance(item_element, data, i);","gml_Script_yui_make_render_instance (line 26) - 			build();","gml_Script_anon@1022@gml_Object_yui_document_Create_0 (line 56) - 	root = yui_make_render_instance(element, data_context);","gml_Object_yui_document_Create_0 (line 91) - load();","gml_Script_pause_game (line 6)","gml_Script_resolveScript@anon@1245@YuiCallFunction_YuiCallFunction (line 51)","gml_Script_yui_call_handler (line 26) - 		handler.resolve(data);","gml_Script_anon@493@gml_Object_yui_button_Create_0 (line 33) - 		yui_call_handler(yui_element.props.on_click, [args], data_source);","gml_Object_YuiCursorManager_Mouse_56 (line 55) - 			var handled = next.left_click();" ], line : 11, message : "variable_struct_get argument 1 incorrect type (string) expecting a Number (YYGI32)", longMessage : "ERROR in
 action number 1
-of <Unknown Event>
-for object yui_base:
+of Create Event
+for object yui_document:
 
 
-Unable to find instance for object index 39
- at gml_Script_yui_unregister_interactions (line 31) - 	if !ds_exists(YuiCursorManager.participation_map, ds_type_map) return;
+variable_struct_get argument 1 incorrect type (string) expecting a Number (YYGI32)
+ at gml_Script_resolve@anon@292@YuiSubscript_YuiSubscript (line 11) - 		var result = variable_struct_get(struct, variable_name);
 " }

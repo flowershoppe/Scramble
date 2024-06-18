@@ -40,7 +40,7 @@ if (char_count == msg_length) {
 }
 
 // Completion output of the current message
-if (skip_enabled && keyboard_check_pressed(global.skip_button)) {
+if (skip_enabled && keyboard_check_pressed(oGame.keys.skip)) {
   var delay = msg_length;
   
   if (delays.current_position != -1 && delays.current_count < delays.size) {
