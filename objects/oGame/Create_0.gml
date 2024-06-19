@@ -98,4 +98,9 @@ global.stMainMenu = {
 		x: 352,
 		y: 224
 }
+
+//initialize player and cursor
+var _player = instance_create_layer(0, 0, "Meta", oPlayer);		
+var _cursor = instance_create_layer(0, 0, "Meta", oCursor);
+_cursor.owner = _player;
 		

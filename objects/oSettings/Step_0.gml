@@ -1,4 +1,4 @@
-if(keyboard_check_pressed(global.pause_button) and room == rGame)
+if(input_check_pressed("pause") and room == rGame)
 {
 	with(yui_document)
 	{

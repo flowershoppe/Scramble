@@ -30,16 +30,8 @@ switch(room)
 			instance_create_layer(0, 0, "Background", oBackground);
 		}
 	
-		//initialize player
-		if(!instance_exists(oPlayer))
-		{
-			_player = instance_create_layer(0, 0, "Meta", oPlayer);
-		}
-		if(!instance_exists(oCursor))
-		{
-			_cursor = instance_create_layer(0, 0, "Meta", oCursor);
-			_cursor.owner = _player;
-		}
+		
+		
 
 		
 		

@@ -1,3 +1,4 @@
+if(!on_board){exit;}
 draw_self();
 
 var _y_offset = sprite_height * 0.1;
@@ -22,10 +23,7 @@ _y_offset = sprite_height * 0.3;
 draw_text_transformed_color(x + _x_offset, y - _y_offset, pointvalue, _scale, _scale, 
 							0, font_color, font_color, font_color, font_color, 100);
 							
-if(wait_for_input)
-{
-	draw_text(room_width / 2, room_height / 4, "Please enter a character");	
-}
+
 
 //highlight
 if(highlight)
