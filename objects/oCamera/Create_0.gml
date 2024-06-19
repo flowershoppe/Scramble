@@ -2,10 +2,11 @@
 zoomF = 1;
 
 //parameters of visible view of game
-view_h = global.display_height;
-view_w = global.display_width;
+view_h = view_get_hport(0);
+view_w = view_get_wport(0);
 
 //variables for managing camera movement
+/*
 horiz_button_arr = [global.left_button, global.right_button];
 horiz_button_chron_order_arr = [];
 horiz_button_currently_pressed_arr = [];

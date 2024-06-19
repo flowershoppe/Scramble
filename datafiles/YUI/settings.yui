@@ -74,7 +74,7 @@ root:
           layout: vertical
           elements:
             - type: text
-              text: @@ string(global.confirm_button)
+              text: 
 
 
           

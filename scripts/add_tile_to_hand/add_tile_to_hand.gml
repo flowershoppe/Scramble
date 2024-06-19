@@ -11,7 +11,7 @@ function add_tile_to_hand(_hand, _tilebag)
 	if(array_length(_tilebag.tiles) < 1){ exit; }
 	
 	//loop through until until an empty tile holder is found
-	for(i = 0; i < _hand.hand_width; i++)
+	for(i = 0; i < _hand.size; i++)
 	{
 		var _tile_holder = _hand.tile_holder_array[i];
 		
@@ -28,6 +28,10 @@ function add_tile_to_hand(_hand, _tilebag)
 			//place tile id in tile holder
 			_tile_holder.tile = _tile;
 			_tile.layer = layer_get_id("Hand_Tiles");
+			_tile.visible = true;
+			_tile.in_hand = true;
+			_tile.x = _tile_holder.x;
+			_tile.y = _tile_holder.y;
 			
 			exit;
 		}

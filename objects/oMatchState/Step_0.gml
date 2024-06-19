@@ -1,4 +1,4 @@
-if(keyboard_check_pressed(global.confirm_button))
+if(keyboard_check_pressed(input_check_pressed("confirm")) and active)
 {
-	if(active){submit_play();}
+	submit_play();
 }
