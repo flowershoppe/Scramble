@@ -43,21 +43,6 @@ global.tile_font = font_add("CALADEA-REGULAR.TTF", global.tile_font_size,
 					false, false, global.tile_font_size, global.tile_font_size);
 font_enable_sdf(global.tile_font, true);
 
-//Keybinds
-keys = 
-{
-	left: vk_left,
-	right: vk_right,
-	up: vk_up,
-	down: vk_down,
-	zoom_in: ev_mouse_wheel_up,
-	zoom_out: ev_mouse_wheel_down,
-	confirm: vk_enter,
-	pause: ord("P"),
-	skip: vk_tab,
-	return_button: vk_shift
-}
-
 //Settings
 global.camera_speed = 5.0;
 global.zoom_factor = 0.1;
@@ -89,14 +74,15 @@ instance_create_layer(0, 0, "Settings", oSettings);
 global.opponent = noone;
 
 //YUI Structs
-global.stMainMenu = {
-		yui_file: "YUI/main_menu.yui",
-		data_context: oMainMenu,
-		is_full_screen: false,
-		image_xscale: 4,
-		image_yscale: 4.5,
-		x: 352,
-		y: 224
+global.stMainMenu = 
+{
+	yui_file: "YUI/main_menu.yui",
+	data_context: oMainMenu,
+	is_full_screen: false,
+	image_xscale: 4,
+	image_yscale: 4.5,
+	x: 352,
+	y: 224
 }
 
 //initialize player and cursor

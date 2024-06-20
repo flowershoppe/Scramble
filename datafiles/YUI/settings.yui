@@ -15,66 +15,88 @@ root:
     - type: button
       content: <= Back
       on_click: @@ unpause_game()
-
     - type: panel
-      size: stretch
-      layout: vertical
-      background: yui_panel_bg
-      padding: 50
-      spacing: 50
+      layout: grid
+        rows: 2
+        columns: 2
       elements:
+        //left side
         - type: panel
           layout: vertical
+          background: yui_panel_bg
+          padding: 50
+          spacing: 50
           elements:
-            - type: text
-              text: Game Resolution 
-              text_style: title
-            - type: dropdown_menu
-              items: @resolution_items
-              selection_scope: @resolution_selector
-              on_item_selected:
-                - @@ value => resolution_select(value)
-        - type: panel
-          layout: vertical
-          elements:
-            - type: text          
-              text: Master Volume   
-              text_style: title  
-              alignment: {h: left}
-            - type: slider
-              min: 0
-              max: 1
-              value: @@ audio_get_master_gain()
-              on_value_changed: @@ value => audio_master_gain(value)
+            - type: panel
+              layout: vertical
+              elements:
+                - type: text
+                  text: Game Resolution 
+                  text_style: title
+                - type: dropdown_menu
+                  items: @resolution_items
+                  selection_scope: @resolution_selector
+                  on_item_selected:
+                    - @@ value => resolution_select(value)
+            - type: panel
+              layout: vertical
+              elements:
+                - type: text          
+                  text: Master Volume   
+                  text_style: title  
+                  alignment: {h: left}
+                - type: slider
+                  min: 0
+                  max: 1
+                  value: @@ audio_get_master_gain()
+                  on_value_changed: @@ value => audio_master_gain(value)
 
-        - type: panel
-          layout: vertical
-          elements:
-            - type: text          
-              text: Music Volume 
-              text_style: title 
-            - type: slider
-              min: 0
-              max: 1
-              value: @@ audio_emitter_get_gain(@emitter_MS)
-              on_value_changed: @@ value => audio_emitter_gain(@emitter_MS, value) 
+            - type: panel
+              layout: vertical
+              elements:
+                - type: text          
+                  text: Music Volume 
+                  text_style: title 
+                - type: slider
+                  min: 0
+                  max: 1
+                  value: @@ audio_emitter_get_gain(@emitter_MS)
+                  on_value_changed: @@ value => audio_emitter_gain(@emitter_MS, value) 
 
+            - type: panel
+              layout: vertical
+              elements:
+                - type: text
+                  text: Sound Effects Volume  
+                  text_style: title
+                - type: slider
+                  min: 0
+                  max: 1
+                  value: @@ audio_emitter_get_gain(@emitter_SE)
+                  on_value_changed: @@ value => audio_emitter_gain(@emitter_SE, value)
+
+          //right side
         - type: panel
+          size: stretch
           layout: vertical
+          background: yui_panel_bg
           elements:
             - type: text
-              text: Sound Effects Volume  
-              text_style: title
-            - type: slider
-              min: 0
-              max: 1
-              value: @@ audio_emitter_get_gain(@emitter_SE)
-              on_value_changed: @@ value => audio_emitter_gain(@emitter_SE, value)
+              text: test
         - type: panel
+          size: stretch
           layout: vertical
+          background: yui_panel_bg
           elements:
             - type: text
-              text: 
+              text: test
+        - type: panel
+          size: stretch
+          layout: vertical
+          background: yui_panel_bg
+          elements:
+            - type: text
+              text: test
 
 
           

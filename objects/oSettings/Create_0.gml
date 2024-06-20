@@ -1,7 +1,7 @@
 //handler for settings menu
 visible = true;
-display_height = global.display_height;
-display_width = global.display_width;
+view_height = camera_get_view_height(0);
+view_width = camera_get_view_width(0);
 
 resolution_items = ["Fullscreen", 
 					"720 x 480", 

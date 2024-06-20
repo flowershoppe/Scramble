@@ -38,7 +38,7 @@ switch(room)
 		break;
 		
 	case rMainMenu:
-	
+		
 		if(!audio_is_playing(global.music_main_menu))
 		{
 			audio_play_sound_on(_emitter_MS, _main_menu_music, true, 100);
