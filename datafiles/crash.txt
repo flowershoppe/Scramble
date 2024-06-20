@@ -1,9 +1,9 @@
 { longMessage : "ERROR in
 action number 1
-of Other Event: User Defined 0
-for object oDialogue:
+of Key Press Event for F5 Key
+for object YuiGlobals:
 
 
-Push :: Execution Error - Variable Index [0] out of range [0] - -9.tile_holder_array(101389,0)
- at gml_Script_add_tile_to_hand (line 16) - 		var _tile_holder = _hand.tile_holder_array[i];
-", script : "gml_Script_add_tile_to_hand", line : 16, stacktrace : [ "gml_Script_add_tile_to_hand (line 16)","gml_Script_start_match (line 49) - 		add_tile_to_hand(_hand, global.tilebag);","gml_Script_WizMatchStart (line 3) - 	start_match(10, 10, 50, -1, -1, -1);","gml_Object_oDialogue_Other_10 (line 206)","gml_Object_oDialogue_Step_0 (line 19)" ], message : "Push :: Execution Error - Variable Index [0] out of range [0] - -9.tile_holder_array(101389,0)" }
+Variable Index [1] out of range [1]
+ at gml_Script_read@anon@13927@__snap_from_yui_builder_snap_from_yui (line 350) -                     var _key = snap_from_yui_get_token_value;
+", line : 350, script : "gml_Script_read@anon@13927@__snap_from_yui_builder_snap_from_yui", message : "Variable Index [1] out of range [1]", stacktrace : [ "gml_Script_read@anon@13927@__snap_from_yui_builder_snap_from_yui (line 350)","gml_Script_read@anon@13927@__snap_from_yui_builder_snap_from_yui (line 367) -                         variable_struct_set(_struct, _key, read());","gml_Script___snap_from_yui_builder (line 512) -     result = read();","gml_Script_snap_from_yui (line 42)","gml_Script_anon@1501@gml_Object_YuiGlobals_Create_0 (line 65) - 	var snap = snap_from_yui(text);","gml_Script___readFile@anon@7029@CabinetFile_Cabinet (line 218) - 					return cabinet.options.file_value_generator(text, self);","gml_Script_tryLoad@anon@5840@CabinetFile_Cabinet (line 178) - 		var file_result = file_exists(fullpath) ? __readFile() : undefined;","gml_Script_tryRead@anon@4882@CabinetFile_Cabinet (line 161) - 			var result = tryLoad();","gml_Script_loadDocument@anon@460@YuiDocument_YuiDocument (line 40) - 		var file_data = cabinet_file.tryRead();		","gml_Script_YuiDocument (line 18) - 	loadDocument();","gml_Script_anon@1022@gml_Object_yui_document_Create_0 (line 48)","gml_Script_anon@1384@gml_Object_yui_document_Create_0 (line 79) - 		load();","gml_Object_YuiGlobals_KeyPress_116 (line 9) - 	reload();" ] }

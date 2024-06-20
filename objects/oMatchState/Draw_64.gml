@@ -7,6 +7,6 @@ if(active == false)
 {
 	draw_set_halign(fa_center);
 	draw_text_transformed(window_get_width() / 2, window_get_height() / 2, 
-						"press " + get_key_name(oGame.keys.confirm) + " to advance",
+						"press " + input_binding_get_name(input_binding_get("confirm")) + " to advance",
 						1, 1, 0);	
 }
