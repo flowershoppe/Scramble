@@ -757,6 +757,7 @@
     {"id":{"name":"pause_game","path":"scripts/pause_game/pause_game.yy",},},
     {"id":{"name":"resolution_select","path":"scripts/resolution_select/resolution_select.yy",},},
     {"id":{"name":"return_tiles","path":"scripts/return_tiles/return_tiles.yy",},},
+    {"id":{"name":"keybind","path":"scripts/keybind/keybind.yy",},},
     {"id":{"name":"snap_from_yui","path":"scripts/snap_from_yui/snap_from_yui.yy",},},
     {"id":{"name":"start_match","path":"scripts/start_match/start_match.yy",},},
     {"id":{"name":"string_to_array","path":"scripts/string_to_array/string_to_array.yy",},},

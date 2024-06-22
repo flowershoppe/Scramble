@@ -16,13 +16,13 @@ root:
       content: <= Back
       on_click: @@ unpause_game()
     - type: panel
-      layout: grid
-        rows: 2
-        columns: 2
+      layout: horizontal
       elements:
         //left side
         - type: panel
           layout: vertical
+          flex: true
+          size: stretch
           background: yui_panel_bg
           padding: 50
           spacing: 50
@@ -77,26 +77,32 @@ root:
 
           //right side
         - type: panel
+          flex: true
           size: stretch
           layout: vertical
+          alignment: { h: center }
           background: yui_panel_bg
-          elements:
+          padding: 50
+          spacing: 50
+          elements: 
             - type: text
-              text: test
-        - type: panel
-          size: stretch
-          layout: vertical
-          background: yui_panel_bg
-          elements:
-            - type: text
-              text: test
-        - type: panel
-          size: stretch
-          layout: vertical
-          background: yui_panel_bg
-          elements:
-            - type: text
-              text: test
+              text: Keybinds
+              text_style: title
+            - type: panel
+              elements: @keybinds
+              template:
+                type: panel
+                layout: horizontal
+                alignment: { h: center }
+                elements:
+                  - type: button
+                    fit_to_content: false
+                    content:
+                      type: text
+                      text: @@ input_binding_get_name(@)
+                    on_click: @@ keybind(struct_get(input_binding_get_verbs(@), "verb"))
+                
+
 
 
           
