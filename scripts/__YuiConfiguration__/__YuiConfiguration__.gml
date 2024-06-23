@@ -11,7 +11,7 @@
 
 // whether to use Quick Setup mode
 // Automatically configures some verbs to work properly with the default profiles in __input_config_verbs
-#macro YUI_INPUT_LIB_QUICK_SETUP true
+#macro YUI_INPUT_LIB_QUICK_SETUP false
 
 // Map input verbs to YUI navigation actions
 // The default values here match the default values in __input_config_verbs

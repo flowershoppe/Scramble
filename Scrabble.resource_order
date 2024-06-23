@@ -550,7 +550,6 @@
     {"name":"string_to_array","order":10,"path":"scripts/string_to_array/string_to_array.yy",},
     {"name":"submit_play","order":13,"path":"scripts/submit_play/submit_play.yy",},
     {"name":"unpause_game","order":20,"path":"scripts/unpause_game/unpause_game.yy",},
-    {"name":"update_keybinds","order":21,"path":"scripts/update_keybinds/update_keybinds.yy",},
     {"name":"valid_play","order":9,"path":"scripts/valid_play/valid_play.yy",},
     {"name":"ys_test","order":2,"path":"scripts/ys_test/ys_test.yy",},
     {"name":"YS_TOKEN","order":3,"path":"scripts/YS_TOKEN/YS_TOKEN.yy",},

@@ -1,13 +1,9 @@
 { longMessage : "ERROR in
 action number 1
-of  Step Event1
-for object input_controller_object:
+of  Step Event0
+for object oGame:
 
 
-Input 6.2.5:
-Verb "{ verb : "left", alternate : 0 }" not recognised
- 
- at gml_Script___input_error (line 14) -         show_error("Input " + __INPUT_VERSION + ":\n" + _string + "\n ", false);
-", script : "gml_Script___input_error", line : 14, stacktrace : [ "gml_Script___input_error (line 14)","gml_Script_input_binding_set_safe (line 20) -     __INPUT_VERIFY_BASIC_VERB_NAME","gml_Script_anon@208@keybind_keybind (line 10) - 	    input_binding_set_safe(oSettings.verb_to_set, _binding);","gml_Script___binding_scan_success@anon@67689@__input_class_player___input_class_player (line 1842) -             __rebind_success_callback(_binding);","gml_Script___tick_binding_scan@anon@63471@__input_class_player___input_class_player (line 1831) -             if (input_value_is_binding(_new_binding)) __binding_scan_success(_new_binding);","gml_Script_tick@anon@57894@__input_class_player___input_class_player (line 1580) -             if (__rebind_state > 0) __tick_binding_scan();","gml_Script___input_system_tick (line 638) -         _global.__players[_p].tick();","gml_Object_input_controller_object_Step_1 (line 1) - __input_system_tick();" ], message : "Input 6.2.5:
-Verb "{ verb : "left", alternate : 0 }" not recognised
- " }
+Variable <unknown_object>.hand_size(102593, -2147483648) not set before reading it.
+ at gml_Script_return_tiles (line 20) - 		for(var _index = 0; _index < _player.hand_size; _index++)
+", stacktrace : [ "gml_Script_return_tiles (line 20)","gml_Object_oGame_Step_0 (line 3) - 	return_tiles();	" ], message : "Variable <unknown_object>.hand_size(102593, -2147483648) not set before reading it.", script : "gml_Script_return_tiles", line : 20 }

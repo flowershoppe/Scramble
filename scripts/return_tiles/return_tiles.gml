@@ -17,7 +17,7 @@ function return_tiles()
 		}
 	
 		//loop through until an empty tile holder is found
-		for(var _index = 0; _index < _player.hand_size; _index++)
+		for(var _index = 0; _index < _hand.size; _index++)
 		{
 			var _hand_tile_holder = _hand.tile_holder_array[_index];
 			var _tile_in_holder = _hand_tile_holder.tile;

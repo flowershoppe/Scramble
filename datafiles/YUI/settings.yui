@@ -89,18 +89,45 @@ root:
               text: Keybinds
               text_style: title
             - type: panel
-              elements: @keybinds
-              template:
-                type: panel
-                layout: horizontal
-                alignment: { h: center }
-                elements:
-                  - type: button
-                    fit_to_content: false
-                    content:
-                      type: text
-                      text: @@ input_binding_get_name(@)
-                    on_click: @@ keybind(struct_get(input_binding_get_verbs(@), "verb"))
+              layout: horizontal
+              spacing: 20
+              elements:
+                - type: panel
+                  layout: horizontal
+                  spacing: 25
+                  elements:
+                    - type: panel
+                      padding: 5
+                      spacing: 16
+                      elements: @verbs
+                      template:
+                        type: panel
+                        layout: vertical
+                        elements:
+                          - type: text
+                            alignment: { h: left }
+                            text: @
+
+                    - type: panel
+                      elements: @verbs
+                      template:
+                        type: panel
+                        layout: vertical
+                        elements:
+                          - type: button
+                            alignment: { h: right }
+                            size: { w: 200, h: 30 }
+                            content:
+                              type: text
+                              text: @@ input_binding_get(@)
+                            on_click: @@ keybind(@)
+            - type: button
+              content:
+                type: text
+                text: Reset to Default
+              on_click: @@ input_profile_reset_bindings()
+
+
                 
 
 

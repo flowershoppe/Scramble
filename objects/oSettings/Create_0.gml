@@ -19,15 +19,6 @@ menu = noone;
 
 resolution_selector = new YuiArraySelector(resolution_items, resolution_items[2]);
 
-keybinds = [input_binding_get("left"),
-			input_binding_get("right"),
-			(input_binding_get("up")),
-			(input_binding_get("down")),
-			(input_binding_get("confirm")),
-			(input_binding_get("cancel")),
-			(input_binding_get("special")),
-			(input_binding_get("pause"))]
-
 verbs = ["left", "right", "up", "down", "confirm", "cancel", "special", "pause"]
 
 verb_to_set = "";

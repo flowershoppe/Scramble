@@ -763,7 +763,6 @@
     {"id":{"name":"string_to_array","path":"scripts/string_to_array/string_to_array.yy",},},
     {"id":{"name":"submit_play","path":"scripts/submit_play/submit_play.yy",},},
     {"id":{"name":"unpause_game","path":"scripts/unpause_game/unpause_game.yy",},},
-    {"id":{"name":"update_keybinds","path":"scripts/update_keybinds/update_keybinds.yy",},},
     {"id":{"name":"valid_play","path":"scripts/valid_play/valid_play.yy",},},
     {"id":{"name":"WizMatchStart","path":"scripts/WizMatchStart/WizMatchStart.yy",},},
     {"id":{"name":"YS_PRECEDENCE","path":"scripts/YS_PRECEDENCE/YS_PRECEDENCE.yy",},},
