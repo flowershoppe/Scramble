@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"update_keybinds",
+  "%Name":"keybind",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"update_keybinds",
+  "name":"keybind",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

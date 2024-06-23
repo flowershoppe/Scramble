@@ -7,11 +7,11 @@
 #macro DEFAULT_THEME_NAME "default"
 
 // macro to control whether YUI should attempt to use Input 6 library for navigation and interaction
-#macro YUI_INPUT_LIB_ENABLED false
+#macro YUI_INPUT_LIB_ENABLED true
 
 // whether to use Quick Setup mode
 // Automatically configures some verbs to work properly with the default profiles in __input_config_verbs
-#macro YUI_INPUT_LIB_QUICK_SETUP true
+#macro YUI_INPUT_LIB_QUICK_SETUP false
 
 // Map input verbs to YUI navigation actions
 // The default values here match the default values in __input_config_verbs
@@ -34,5 +34,5 @@
 #macro YUI_INPUT_VERB_PAD_SCROLL_LEFT "aim_left"
 #macro YUI_INPUT_VERB_PAD_SCROLL_RIGHT "aim_right"
 
-#macro YUI_INPUT_VERB_ACCEPT ["accept", "action"]
+#macro YUI_INPUT_VERB_ACCEPT "confirm"
 #macro YUI_INPUT_VERB_CANCEL "cancel"

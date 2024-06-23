@@ -16,13 +16,13 @@ root:
       content: <= Back
       on_click: @@ unpause_game()
     - type: panel
-      layout: grid
-        rows: 2
-        columns: 2
+      layout: horizontal
       elements:
         //left side
         - type: panel
           layout: vertical
+          flex: true
+          size: stretch
           background: yui_panel_bg
           padding: 50
           spacing: 50
@@ -77,26 +77,59 @@ root:
 
           //right side
         - type: panel
+          flex: true
           size: stretch
           layout: vertical
+          alignment: { h: center }
           background: yui_panel_bg
-          elements:
+          padding: 50
+          spacing: 50
+          elements: 
             - type: text
-              text: test
-        - type: panel
-          size: stretch
-          layout: vertical
-          background: yui_panel_bg
-          elements:
-            - type: text
-              text: test
-        - type: panel
-          size: stretch
-          layout: vertical
-          background: yui_panel_bg
-          elements:
-            - type: text
-              text: test
+              text: Keybinds
+              text_style: title
+            - type: panel
+              layout: horizontal
+              spacing: 20
+              elements:
+                - type: panel
+                  layout: horizontal
+                  spacing: 25
+                  elements:
+                    - type: panel
+                      padding: 5
+                      spacing: 16
+                      elements: @verbs
+                      template:
+                        type: panel
+                        layout: vertical
+                        elements:
+                          - type: text
+                            alignment: { h: left }
+                            text: @
+
+                    - type: panel
+                      elements: @verbs
+                      template:
+                        type: panel
+                        layout: vertical
+                        elements:
+                          - type: button
+                            alignment: { h: right }
+                            size: { w: 200, h: 30 }
+                            content:
+                              type: text
+                              text: @@ input_binding_get(@)
+                            on_click: @@ keybind(@)
+            - type: button
+              content:
+                type: text
+                text: Reset to Default
+              on_click: @@ input_profile_reset_bindings()
+
+
+                
+
 
 
           

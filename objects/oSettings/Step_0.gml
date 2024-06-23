@@ -7,3 +7,4 @@ if(input_check_pressed("pause") and room == rGame)
 		else{pause_game();}
 	}
 }
+

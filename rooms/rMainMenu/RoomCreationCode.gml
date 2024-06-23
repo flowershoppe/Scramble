@@ -1,0 +1,1 @@
+YuiCursorManager.is_navigation_active = true
