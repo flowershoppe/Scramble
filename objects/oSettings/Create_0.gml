@@ -15,8 +15,6 @@ emitter_MS = global.emitterMS;
 
 selected_item = "960 x 540";
 
-menu = noone;
-
 resolution_selector = new YuiArraySelector(resolution_items, resolution_items[2]);
 
 verbs = ["left", "right", "up", "down", "confirm", "cancel", "special", "pause"]

@@ -12,5 +12,8 @@ function unpause_game()
 	instance_activate_layer("Board_Tile_Holders");
 	instance_activate_layer("Board");
 	instance_activate_layer("Background");
-	instance_destroy(oSettings.menu);
+	with(yui_document)
+	{
+		if(data_context == oSettings){instance_destroy();}	
+	}
 }
