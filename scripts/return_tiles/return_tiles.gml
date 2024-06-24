@@ -13,7 +13,7 @@ function return_tiles()
 		
 		with(oTileHolder)
 		{
-			if(tile == _placed_tile){_placed_tile_holder = self;}	
+			if(tile == _placed_tile){_placed_tile_holder = id;}	
 		}
 	
 		//loop through until an empty tile holder is found
@@ -26,6 +26,7 @@ function return_tiles()
 			{		
 				_placed_tile.x = _hand_tile_holder.x;
 				_placed_tile.y = _hand_tile_holder.y;
+				_placed_tile.on_board = false;
 				
 				_hand_tile_holder.tile = _placed_tile;
 				_placed_tile_holder.tile = noone;
