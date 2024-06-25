@@ -1,9 +1,9 @@
-{ longMessage : "ERROR in
+{ stacktrace : [ "gml_Object_oGame_Other_4 (line 14)" ], longMessage : "ERROR in
 action number 1
-of  Step Event0
-for object oSettings:
+of Other Event: Room Start
+for object oGame:
 
 
-Unable to find instance for object index -4
- at gml_Script_unpause_game (line 16) - 	instance_destroy(oSettings.menu.id);
-", stacktrace : [ "gml_Script_unpause_game (line 16)","gml_Object_oSettings_Step_0 (line 9) - 		unpause_game();	" ], message : "Unable to find instance for object index -4", script : "gml_Script_unpause_game", line : 16 }
+Unable to find instance for object index 15
+ at gml_Object_oGame_Other_4 (line 14) - 		if(!oMatchState.active)
+", message : "Unable to find instance for object index 15", script : "gml_Object_oGame_Other_4", line : 14 }

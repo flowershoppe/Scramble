@@ -13,22 +13,27 @@ root:
   visible: @visible
   elements:
     - type: button
-      content: <= Back
-      on_click: @@ unpause_game()
+      content: 
+        type: text        
+        text: <= Back
+      on_click: @@ room_goto(asset_get_index(rPauseMenu))
     - type: panel
       layout: horizontal
+      spacing: 0
       elements:
         //left side
         - type: panel
           layout: vertical
           flex: true
           size: stretch
+          alignment: { h: center }
           background: yui_panel_bg
           padding: 50
           spacing: 50
           elements:
             - type: panel
               layout: vertical
+              alignment: { h: center }
               elements:
                 - type: text
                   text: Game Resolution 
@@ -40,11 +45,11 @@ root:
                     - @@ value => resolution_select(value)
             - type: panel
               layout: vertical
+              alignment: {h: center}
               elements:
                 - type: text          
                   text: Master Volume   
                   text_style: title  
-                  alignment: {h: left}
                 - type: slider
                   min: 0
                   max: 1
@@ -53,6 +58,7 @@ root:
 
             - type: panel
               layout: vertical
+              alignment: {h: center}
               elements:
                 - type: text          
                   text: Music Volume 
@@ -65,6 +71,7 @@ root:
 
             - type: panel
               layout: vertical
+              alignment: {h: center}
               elements:
                 - type: text
                   text: Sound Effects Volume  

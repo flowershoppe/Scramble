@@ -6,13 +6,15 @@ var _player = noone;
 var _cursor = noone;
 
 
-
 switch(room)
-{
+{              
 	case rGame:
 		
 		global.opponent = "TheWiz";
-		dialogue_open(dWizMatchIntro, []);
+		if(!instance_exists(oMatchState))
+		{
+			dialogue_open(dWizMatchIntro, []);
+		}
 		audio_stop_sound(_main_menu_music);
 		
 		if(!audio_is_playing(_game_music_1) and !audio_is_playing(global.music_victory))

@@ -2,3 +2,8 @@ if(input_check_pressed("cancel") and room == rGame and array_length(oPlayer.plac
 {
 	return_tiles();	
 }
+
+if(input_check_pressed("pause"))
+{
+	toggle_pause();
+}

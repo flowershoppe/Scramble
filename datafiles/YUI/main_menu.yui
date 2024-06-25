@@ -18,7 +18,7 @@ root:
         - type: button
           content: 
             type: text
-            text: @button_start
+            text: Start
             text_style: title       
           border_thickness: 1
           on_click: @@ room_goto(asset_get_index(rGame))
@@ -26,7 +26,7 @@ root:
         - type: button
           content: 
             type: text
-            text: @button_settings
+            text: Options
             text_style: title        
           border_thickness: 1
-          on_click: @@ pause_game()
+          on_click: @@ toggle_pause()

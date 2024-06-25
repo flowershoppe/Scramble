@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"pause_game",
+  "%Name":"room_change",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"pause_game",
+  "name":"room_change",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
