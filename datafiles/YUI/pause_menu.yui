@@ -19,6 +19,27 @@ root:
       background: yui_panel_bg
       layout: vertical
       alignment: center
+      spacing: 20
       elements:
-        - type: text 
-          text: test
+        - type: panel
+          alignment: {h: center}
+          elements:
+            - type: button 
+              content:
+                type: text
+                text_style: title
+                text: Settings
+              on_click: @@ room_goto(asset_get_index(rSettings))
+
+            - type: button 
+              content:
+                type: text
+                text_style: title
+                text: Credits
+          
+        - type: button 
+          content:
+            type: text
+            text_style: title
+            text: Back
+          on_click: @@ toggle_pause()

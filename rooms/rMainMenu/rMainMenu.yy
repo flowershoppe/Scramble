@@ -6,9 +6,9 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"yMainMenu","path":"rooms/rMainMenu/rMainMenu.yy",},
     {"name":"inst_227830D3","path":"rooms/rMainMenu/rMainMenu.yy",},
     {"name":"inst_3D30907B","path":"rooms/rMainMenu/rMainMenu.yy",},
+    {"name":"yMainMenu","path":"rooms/rMainMenu/rMainMenu.yy",},
   ],
   "isDnd":false,
   "layers":[

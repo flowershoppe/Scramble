@@ -1,6 +1,9 @@
 randomize();
 dialogue_setup();
 
+//Instance
+global.previous_room = -1;
+
 //Dictionary
 global.dictionary = new CheckWordDictionary(working_directory + "dictionaries/simple/full.txt");
 

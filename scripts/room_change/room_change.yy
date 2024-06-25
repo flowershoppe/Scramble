@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"toggle_settings",
+  "%Name":"room_change",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"toggle_settings",
+  "name":"room_change",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

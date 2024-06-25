@@ -1,5 +1,4 @@
 //handler for settings menu
-visible = true;
 view_height = camera_get_view_height(0);
 view_width = camera_get_view_width(0);
 
