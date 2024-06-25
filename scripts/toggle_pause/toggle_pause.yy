@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"unpause_game",
+  "%Name":"toggle_pause",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"unpause_game",
+  "name":"toggle_pause",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

@@ -68,8 +68,8 @@ global.music_main_menu = msMainMenuMusic;
 global.music_victory = msVictory;
 
 //Handlers
-instance_create_layer(0, 0, "Settings", oSettings);
-
+instance_create_depth(0, 0, -11, oSettings);
+instance_create_depth(0, 0, -10, oPauseMenu);
 
 global.opponent = noone;
 
@@ -83,6 +83,11 @@ global.stMainMenu =
 	image_yscale: 4.5,
 	x: 352,
 	y: 224
+}
+global.stPauseMenu =
+{
+	data_context: oPauseMenu,
+	yui_file: "YUI/pause_menu.yui"	
 }
 
 //initialize player and cursor

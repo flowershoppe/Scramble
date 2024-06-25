@@ -17,6 +17,7 @@ root:
       on_click: @@ unpause_game()
     - type: panel
       layout: horizontal
+      spacing: 0
       elements:
         //left side
         - type: panel
