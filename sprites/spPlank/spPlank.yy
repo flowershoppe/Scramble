@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spPlank",
-  "bboxMode":0,
+  "bboxMode":1,
   "bbox_bottom":83,
   "bbox_left":0,
-  "bbox_right":599,
+  "bbox_right":524,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":300,
+    "xorigin":262,
     "yorigin":42,
   },
   "swatchColours":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":600,
+  "width":525,
 }

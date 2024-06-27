@@ -1,9 +1,9 @@
-{ stacktrace : [ "gml_Object_oGame_Other_4 (line 14)" ], longMessage : "ERROR in
+{ longMessage : "ERROR in
 action number 1
-of Other Event: Room Start
-for object oGame:
+of Create Event
+for object oPlayerHand:
 
 
-Unable to find instance for object index 15
- at gml_Object_oGame_Other_4 (line 14) - 		if(!oMatchState.active)
-", message : "Unable to find instance for object index 15", script : "gml_Object_oGame_Other_4", line : 14 }
+Variable <unknown_object>.spBoardTile(104004, -2147483648) not set before reading it.
+ at gml_Object_oPlayerHand_Create_0 (line 14) - var _x_loc = x - (sprite_width / 2) - (sprite_get_width(spBoardTile) * 0.75);
+", script : "gml_Object_oPlayerHand_Create_0", message : "Variable <unknown_object>.spBoardTile(104004, -2147483648) not set before reading it.", stacktrace : [ "gml_Object_oPlayerHand_Create_0 (line 14)","gml_Script_start_match (line 33)","gml_Script_WizMatchStart (line 3) - 	start_match(10, 10, 50, -1, -1, -1);","gml_Object_oDialogue_Other_10 (line 206)","gml_Object_oDialogue_Step_0 (line 19)" ], line : 14 }
