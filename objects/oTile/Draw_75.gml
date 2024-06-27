@@ -1,6 +1,6 @@
 if(wait_for_input)
 {
-	draw_text(room_width / 2, room_height / 4, "Please enter a character");	
+	draw_text(view_get_wport(0) / 2, view_get_hport(0) / 4, "Please enter a character");	
 }
 
 

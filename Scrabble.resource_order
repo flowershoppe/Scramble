@@ -730,7 +730,7 @@
     {"name":"spBag","order":1,"path":"sprites/spBag/spBag.yy",},
     {"name":"spBG","order":3,"path":"sprites/spBG/spBG.yy",},
     {"name":"spBoard","order":7,"path":"sprites/spBoard/spBoard.yy",},
-    {"name":"spBoardTile","order":8,"path":"sprites/spBoardTile/spBoardTile.yy",},
+    {"name":"spHolder","order":8,"path":"sprites/spHolder/spHolder.yy",},
     {"name":"spButton","order":10,"path":"sprites/spButton/spButton.yy",},
     {"name":"spCamera","order":2,"path":"sprites/spCamera/spCamera.yy",},
     {"name":"spCMask","order":15,"path":"sprites/spCMask/spCMask.yy",},

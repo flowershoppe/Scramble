@@ -1,6 +1,6 @@
 spr = spBoard;
 
-var _tile_size = sprite_get_width(spBoardTile);
+var _tile_size = sprite_get_width(spHolder);
 
 //set board draw parameters
 image_xscale = (grid_width * _tile_size + _tile_size) / sprite_width;

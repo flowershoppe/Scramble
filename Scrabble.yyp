@@ -966,7 +966,7 @@
     {"id":{"name":"spBag","path":"sprites/spBag/spBag.yy",},},
     {"id":{"name":"spBG","path":"sprites/spBG/spBG.yy",},},
     {"id":{"name":"spBoard","path":"sprites/spBoard/spBoard.yy",},},
-    {"id":{"name":"spBoardTile","path":"sprites/spBoardTile/spBoardTile.yy",},},
+    {"id":{"name":"spHolder","path":"sprites/spHolder/spHolder.yy",},},
     {"id":{"name":"spButton","path":"sprites/spButton/spButton.yy",},},
     {"id":{"name":"spCamera","path":"sprites/spCamera/spCamera.yy",},},
     {"id":{"name":"spCMask","path":"sprites/spCMask/spCMask.yy",},},

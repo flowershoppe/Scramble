@@ -58,6 +58,7 @@ if(mouse_check_button_pressed(mb_left))
 		}
 	}	
 	if(held_tile == noone){exit;}
+	else if(!held_tile.grabbable){held_tile = noone; exit;}
 		
 	//grab a tile
 		

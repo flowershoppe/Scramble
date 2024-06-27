@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spBoardTile",
-    "path":"sprites/spBoardTile/spBoardTile.yy",
+    "name":"spHolder",
+    "path":"sprites/spHolder/spHolder.yy",
   },
   "spriteMaskId":null,
   "visible":true,
