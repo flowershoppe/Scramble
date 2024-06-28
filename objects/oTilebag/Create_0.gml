@@ -3,5 +3,7 @@ tiles = [];
 
 spr = spBag;
 
-x_loc = 0;
-y_loc = 250;
+font = global.tile_font
+
+x = view_get_xport(0) + sprite_get_width(spr);
+y = view_get_yport(0) + (view_get_hport(0) * 0.9);
