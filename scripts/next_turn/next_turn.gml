@@ -16,18 +16,11 @@ function next_turn()
 	_player.turn_spelled_words = [];
 	_player.placed_tiles = [];
 
-	oMatchStats.turn ++;
+	oMatchStats.turn++;
 	
 	//refill hand until full if bag has tiles
-	if(array_length(oTilebag.tiles) > 0)
-	{
-		var _count = 0;
-		while(_count < _hand.size)
-		{
-			add_tile_to_hand(_hand, oTilebag);
-			_count++
-		}
-	}
+	
+	add_tile_to_hand(_hand, oTilebag, _hand.size);	
 	
 	check_end_match();
 }
