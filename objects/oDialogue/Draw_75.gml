@@ -16,6 +16,8 @@ var cc = ff;
 var line_current = 0;
 var line_width = 0;
 
+var _old_valign = draw_get_valign();
+var _old_halign = draw_get_halign();
 draw_set_colour(default_colour);
 draw_set_font(default_font);
 draw_set_halign(fa_left);
@@ -130,3 +132,6 @@ if (dialogue_gui_character_sprite_index != -1) {
 // Leave draw alpha and gui size intact from other systems
 draw_set_alpha(1);
 display_set_gui_size(_init_gui_w, _init_gui_h);
+
+draw_set_halign(_old_halign);
+draw_set_valign(_old_valign);
