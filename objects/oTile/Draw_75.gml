@@ -6,7 +6,14 @@ if(wait_for_input)
 
 if(on_board){exit;}
 
+
+
 draw_self();
+
+if(selected)
+{
+	draw_sprite(spSelected, 0, x, y);
+}
 
 var _y_offset = sprite_height * 0.1;
 var _x_offset = sprite_width * 0.05;

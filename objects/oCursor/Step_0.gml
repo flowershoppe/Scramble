@@ -1,10 +1,12 @@
 x = mouse_x;
 y = mouse_y;
 
+
+
 //do not run if match is inactive
 if(instance_exists(oMatchState))
 {
-	if(oMatchState.active == false){exit;}
+	if(oMatchState.active == false or global.exchanging){exit;}
 }
 else{exit;}
 
@@ -191,6 +193,7 @@ if(mouse_check_button_released(mb_left))
 		
 		
 		_nearest_holder.tile = held_tile;
+		
 		audio_play_sound(global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
 						1, 0, global.volumeSE);
 		

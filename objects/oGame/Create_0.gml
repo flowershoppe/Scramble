@@ -75,6 +75,7 @@ instance_create_depth(0, 0, -11, oSettings);
 instance_create_depth(0, 0, -10, oPauseMenu);
 
 global.opponent = noone;
+global.exchanging = false;
 
 //YUI Structs
 global.stMainMenu = 

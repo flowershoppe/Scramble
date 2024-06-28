@@ -4,6 +4,9 @@ blank		= false;
 wait_for_input = false;
 grabbable = true;
 in_hand = false;
+selected = false;
+
+holder = noone;
 
 font		= global.tile_font;
 font_scale	= 1;

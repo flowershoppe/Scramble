@@ -1,5 +1,5 @@
 function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _turn_max)
-{
+{	
 	global.tilebag = instance_create_layer(0, 0, "Tilebag", oTilebag);
 	instance_create_depth(0, 0, -10, oMatchState);
 	instance_create_depth(0, 0, -9, oMatchStats);
@@ -45,12 +45,6 @@ function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _tur
 	});
 	
 	dist_standard(global.tilebag);
-	var _count = 0;
-	while(_count < oPlayerHand.size)
-	{
-		add_tile_to_hand(_hand, global.tilebag);
-		_count++;
-	}
-
+	add_tile_to_hand(_hand, global.tilebag, _hand.size);
 
 }
