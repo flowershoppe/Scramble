@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"resolution_select",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Settings",
+    "path":"folders/Scripts/Settings.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

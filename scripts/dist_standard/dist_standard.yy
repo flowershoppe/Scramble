@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"dist_standard",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Play",
+    "path":"folders/Scripts/Play.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,5 +1,13 @@
 function exchange_tiles()
-{
+{	
+	return_tiles();
+	
+	if(!global.exchanging)
+	{
+		global.exchanging = !global.exchanging;
+		exit;	
+	}
+	
 	var _array = [];
 	
 	with(oTileHolder)
@@ -13,17 +21,28 @@ function exchange_tiles()
 			}
 		}
 	}
+	
+	//only exchange if tiles have been selected
+	if(array_length(_array) > 0)
+	{
+		add_tile_to_hand(oPlayerHand, global.tilebag, array_length(_array));
+	
+		for(var _index = 0; _index < array_length(_array); _index++)
+		{
+			var _tile = _array[_index];		
+			array_push(global.tilebag.tiles, _tile);
+		
+		}		
+		oMatchStats.exchange_count++;
+		next_turn();
+	}
+	
 	with(oTile)
 	{
 		selected = false;	
 	}
 	
-	add_tile_to_hand(oPlayerHand, global.tilebag, array_length(_array));
+	global.exchanging = !global.exchanging;
 	
-	for(var _index = 0; _index < array_length(_array); _index++)
-	{
-		var _tile = _array[_index];		
-		array_push(global.tilebag.tiles, _tile);
-		
-	}	
+	
 }

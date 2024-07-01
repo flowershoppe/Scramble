@@ -174,7 +174,13 @@ function calculate_points()
 	}
 	else
 	{
-		oMatchStats.last_words = _spelled_words;
+		oMatchStats.last_words = [];
+		for(var _index = 0; _index < array_length(_spelled_words); _index++)
+		{
+			var _spelled_word = _spelled_words[_index]	
+			array_push(oMatchStats.spelled_words, _spelled_word);
+			array_push(oMatchStats.last_words, _spelled_word);
+		}
 		oMatchStats.print_message = "";
 	}
 	

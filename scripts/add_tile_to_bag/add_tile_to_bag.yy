@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"add_tile_to_bag",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Play",
+    "path":"folders/Scripts/Play.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
