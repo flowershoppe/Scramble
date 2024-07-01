@@ -20,7 +20,7 @@ if(position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id)
 	and input_mouse_check_pressed(mb_left) and global.exchanging
 		and in_hand)
 {
-	selected = true;
+	selected = !selected;
 }
 
 with(oTileHolder)

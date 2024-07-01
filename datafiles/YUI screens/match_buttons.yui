@@ -16,16 +16,25 @@ root:
     - type: button 
       content: 
         type: text
-        text: @btn_txt_submit_play
+        text: Submit Play
         text_style: body       
       border_thickness: 1
       on_click: @@ submit_play();
+
     - type: button 
       content: 
         type: text
-        text: @btn_txt_return_tiles
+        text: Return Tiles
         text_style: body    
       border_thickness: 1
       on_click: @@ return_tiles();
+
+    - type: button 
+      content: 
+        type: text
+        text: Exchange Tiles
+        text_style: body    
+      border_thickness: 1
+      on_click: @@ exchange_tiles();
 
       

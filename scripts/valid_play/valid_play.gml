@@ -166,8 +166,9 @@ function valid_play()
 	#endregion	
 	
 	if((_is_same_column or _is_same_row) and array_length(_placed_tiles) > 0 and
-		(_tile_adjacent == true or (oMatchStats.turn == 1 and array_length(_placed_tiles) > 1)) and 
-		_hole_between == false)
+		(_tile_adjacent == true or 
+		(array_length(oPlayer.match_spelled_words) < 1 and array_length(_placed_tiles) > 1)) 
+		and _hole_between == false)
 	{		
 		debug = "play is valid";
 		return true;	

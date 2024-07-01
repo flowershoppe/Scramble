@@ -5,6 +5,9 @@ largest_play = 0;
 turn = 1;
 last_play = 0;
 last_words = [];
+spelled_words = [];
+exchange_count = 0;
+
 print_message = "";
 
 turn_max = -1;

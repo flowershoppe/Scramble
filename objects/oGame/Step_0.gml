@@ -14,10 +14,5 @@ if(input_check_pressed("pause"))
 
 if(input_check_pressed("special") and room == rGame)
 {	
-	if(global.exchanging)
-	{
-		exchange_tiles();
-	}
-	global.exchanging = !global.exchanging;
-	
+	exchange_tiles();	
 }

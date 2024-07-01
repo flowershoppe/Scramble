@@ -20,10 +20,10 @@ function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _tur
 		is_full_screen: false
 	});
 	
-	instance_create_layer(750, 450, "UI", yui_document,
+	instance_create_layer(750, 400, "UI", yui_document,
 	{
 		image_xscale: 3,
-		image_yscale: 1.5,
+		image_yscale: 4,
 		yui_file: "YUI screens/match_buttons.yui",
 		data_context: oMatchGUI,
 		is_full_screen: false

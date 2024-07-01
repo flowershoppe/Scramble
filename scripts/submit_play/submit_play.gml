@@ -1,6 +1,6 @@
 function submit_play()
 {
-	if(array_length(oPlayer.placed_tiles) == 0){exit;}
+	if(array_length(oPlayer.placed_tiles) < 1){exit;}
 	if(valid_play())
 	{	
 		var _score = calculate_points();
@@ -8,7 +8,7 @@ function submit_play()
 		{
 			oMatchStats.total_points += _score;
 			oMatchStats.last_play = _score;
-	
+					
 			next_turn();
 		}
 	}
