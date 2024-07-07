@@ -15,6 +15,9 @@ font_color	= global.tile_font_color;
 spr			= spLetterTile;
 spr_size	= 64;
 
+xscale = 1;
+yscale = 1;
+
 highlight = false;
 
 on_board = false;

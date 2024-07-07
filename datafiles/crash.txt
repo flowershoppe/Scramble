@@ -1,9 +1,9 @@
-{ longMessage : "ERROR in
+{ line : 4, longMessage : "ERROR in
 action number 1
-of  Step Event0
-for object oGame:
+of  Step Event2
+for object YuiCursorManager:
 
 
-Unable to find instance for object index -4
- at gml_Script_exchange_tiles (line 15) - 		if(tile.selected)
-", stacktrace : [ "gml_Script_exchange_tiles (line 15)","gml_Object_oGame_Step_0 (line 19) - 		exchange_tiles();" ], message : "Unable to find instance for object index -4", script : "gml_Script_exchange_tiles", line : 15 }
+Variable <unknown_object>._placed_tiles(102610, -2147483648) not set before reading it.
+ at gml_Script_submit_play (line 4) - 	if(array_length(oPlayer._placed_tiles) < 1){exit;}
+", script : "gml_Script_submit_play", stacktrace : [ "gml_Script_submit_play (line 4)","gml_Script_resolveScript@anon@1245@YuiCallFunction_YuiCallFunction (line 51)","gml_Script_yui_call_handler (line 26) - 		handler.resolve(data);","gml_Script_anon@493@gml_Object_yui_button_Create_0 (line 33) - 		yui_call_handler(yui_element.props.on_click, [args], data_source);","gml_Script_anon@3872@gml_Object_YuiCursorManager_Create_0 (line 149) - 		focused_item.left_click();","gml_Object_YuiCursorManager_Step_2 (line 10) - 		activateFocused();" ], message : "Variable <unknown_object>._placed_tiles(102610, -2147483648) not set before reading it." }

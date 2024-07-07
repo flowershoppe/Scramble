@@ -98,8 +98,10 @@ function calculate_points()
 			{
 				_next_tile = instance_place(x, y - _spr_size, oTile);
 			}
+			
 			_tile = _next_tile;
 		}
+		
 		
 		//reset tile
 		_tile = _player_tiles[i];

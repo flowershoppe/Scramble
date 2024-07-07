@@ -1,16 +1,7 @@
 function next_turn()
 {	
 	var _player = oPlayer;
-	var _placed_tiles = _player.placed_tiles;
 	var _hand = oPlayerHand;
-	
-	with(oTile)
-	{
-		if(array_contains(_placed_tiles, id))
-		{
-			grabbable = false;	
-		}
-	}
 	
 	//reset turn-dependent variables
 	_player.turn_spelled_words = [];
