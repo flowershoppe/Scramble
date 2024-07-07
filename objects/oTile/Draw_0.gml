@@ -1,23 +1,24 @@
 if(!on_board){exit;}
-draw_self();
+//draw self
+draw_sprite_ext(spr, 0, x, y, xscale, yscale, 0, c_white, 1);
 
-var _y_offset = sprite_height * 0.1;
-var _x_offset = sprite_width * 0.05;
+var _x_offset = (sprite_width * xscale) * 0.05;
+var _y_offset = (sprite_height * yscale) * 0.1;
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_font(font);
 
 //draw letter
-draw_text_transformed_color(x - _x_offset, y - _y_offset, letter, font_scale, font_scale, 
+draw_text_transformed_color(x - _x_offset, y - _y_offset, letter, xscale, yscale, 
 							0, font_color, font_color, font_color, font_color, 100);
 
-var _scale = font_scale / 3;
+var _scale = (font_scale / 3) + (xscale - 1);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
-_x_offset = sprite_width * 0.3;
-_y_offset = sprite_height * 0.3;
+_x_offset = (sprite_width * xscale) * 0.3;
+_y_offset = (sprite_height * yscale) * 0.3;
 
 //draw point value	
 draw_text_transformed_color(x + _x_offset, y - _y_offset, pointvalue, _scale, _scale, 
