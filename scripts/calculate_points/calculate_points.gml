@@ -205,6 +205,8 @@ function calculate_points()
 		
 		for(k = 0; k < array_length(_player_words_tiles[j]); k++)
 		{
+			oMatchStats.total_tiles++;
+			
 			with(_player_words_tiles[j][k])
 			{
 				var _points = pointvalue;
@@ -225,7 +227,7 @@ function calculate_points()
 	}
 	
 	//update stats
-	oMatchStats.total_tiles += array_length(_player_words_tiles);
+	oMatchStats.total_words += array_length(_player_words_tiles);
 	if(_total > oMatchStats.largest_play){oMatchStats.largest_play = _total;}
 	
 	#endregion

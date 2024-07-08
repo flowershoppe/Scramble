@@ -32,7 +32,7 @@ root:
           elements:
             - type: text
               text: "TURN COUNT | "
-            - @turn
+            - @turn - 1
         - type: panel
           layout: horizontal
           elements:
@@ -45,6 +45,12 @@ root:
             - type: text
               text: "TILES PLAYED | "
             - @total_tiles
+        - type: panel
+          layout: horizontal
+          elements:
+            - type: text
+              text: "WORDS SPELLED | "
+            - @total_words
         - type: panel
           layout: horizontal
           elements:

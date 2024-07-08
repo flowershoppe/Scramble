@@ -5,7 +5,7 @@ dialogue_setup();
 global.previous_room = -1;
 
 //Dictionary
-global.dictionary = new CheckWordDictionary(working_directory + "dictionaries/simple/full.txt");
+global.dictionary = new CheckWordDictionary(working_directory + "dictionaries/full/full.txt");
 
 //Letters and Default Values
 global.letters = ds_map_create();
