@@ -11,6 +11,7 @@ y += _vert_camera_move_direction * global.camera_speed;
 
 #endregion
 
+
 #region
 
 var _viewX = camera_get_view_x(global.maincam);
@@ -42,9 +43,11 @@ camera_set_view_pos(global.maincam, _newX, _newY);
 var _factor = 0.2;
 var _mouseW = input_check("zoom_out") - input_check("zoom_in");
 zoomF = clamp(zoomF + (_mouseW * _factor), _factor, 2);
+
 var _lerpH = lerp(_viewH, zoomF * 540, _factor);
 var _newH = clamp(_lerpH, 0, room_height);var _newW = _newH * (960 / 540);
 camera_set_view_size(global.maincam, _newW, _newH);
+
 var _offsetX = _newX - (_newW - _viewW) * 0.5;
 var _offsetY = _newY - (_newH - _viewH) * 0.5;
 _newX = clamp(_offsetX, 0, room_width - _newW);
@@ -52,3 +55,33 @@ _newY = clamp(_offsetY, 0, room_height - _newH);
 camera_set_view_pos(global.maincam, _newX, _newY);
 
 #endregion
+
+if(oCursor.held_tile == noone and mouse_check_button(mb_left))
+{
+	cam = {
+	    x: camera_get_view_x(view_camera[0]),
+	    y: camera_get_view_y(view_camera[0]),
+	    w: camera_get_view_width(view_camera[0]),
+	    h: camera_get_view_height(view_camera[0])
+	};
+
+	// Move camera object around
+
+	if mouse_check_button(mb_left)
+	{
+	    x += mouse_xprevious - mouse_x;
+	    y += mouse_yprevious - mouse_y;
+	}
+
+	// Center view on x and y position
+
+	cam.x = x - cam.w / 2;
+	cam.y = y - cam.h / 2;
+
+	// Set the camera view
+
+	camera_set_view_pos(view_camera[0], cam.x, cam.y);
+}
+
+mouse_xprevious = mouse_x;
+mouse_yprevious = mouse_y;

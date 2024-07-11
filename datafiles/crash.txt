@@ -1,9 +1,9 @@
-{ line : 173, longMessage : "ERROR in
+{ stacktrace : [ "gml_Script_anon@4842@gml_Object_YuiCursorManager_Create_0 (line 179)","gml_Object_YuiCursorManager_Step_2 (line 48) - 				if up_down < 0 onKeyUp();" ], longMessage : "ERROR in
 action number 1
-of  Step Event0
-for object oCursor:
+of  Step Event2
+for object YuiCursorManager:
 
 
-Variable <unknown_object>.twrue(103893, -2147483648) not set before reading it.
- at gml_Object_oCursor_Step_0 (line 173) - 			if(held_tile.blank == twrue)
-", script : "gml_Object_oCursor_Step_0", stacktrace : [ "gml_Object_oCursor_Step_0 (line 173)" ], message : "Variable <unknown_object>.twrue(103893, -2147483648) not set before reading it." }
+Unable to find instance for object index 100019
+ at gml_Script_anon@4842@gml_Object_YuiCursorManager_Create_0 (line 179) - 	if focused_item && focused_item.onKeyPressed && focused_item.onKeyPressed(vk_up) return;
+", message : "Unable to find instance for object index 100019", script : "gml_Script_anon@4842@gml_Object_YuiCursorManager_Create_0", line : 179 }
