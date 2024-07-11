@@ -8,6 +8,7 @@ if(instance_exists(oMatchState))
 }
 else{exit;}
 
+
 var _placed_tiles = owner.placed_tiles;
 
 if(instance_exists(oPlayerHand))
@@ -200,3 +201,4 @@ if(mouse_check_button_released(mb_left))
 	}
 }
 #endregion
+
