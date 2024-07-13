@@ -14,6 +14,9 @@ cam = {
     h: camera_get_view_height(view_camera[0])
 };
 
+mouse_xguiprev = 0;
+mouse_yguiprev = 0;
+
 //variables for managing camera movement
 /*
 horiz_button_arr = [global.left_button, global.right_button];
