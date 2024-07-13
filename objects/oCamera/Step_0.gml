@@ -56,7 +56,8 @@ camera_set_view_pos(global.maincam, _newX, _newY);
 
 #endregion
 
-if(oCursor.held_tile == noone and mouse_check_button(mb_left))
+if(oCursor.held_tile == noone and mouse_check_button(mb_left) and (mouse_xguiprev != device_mouse_x_to_gui(0)
+																or mouse_yguiprev != device_mouse_y_to_gui(0)))
 {
 	cam = {
 	    x: camera_get_view_x(view_camera[0]),
@@ -85,3 +86,6 @@ if(oCursor.held_tile == noone and mouse_check_button(mb_left))
 
 mouse_xprevious = mouse_x;
 mouse_yprevious = mouse_y;
+
+mouse_xguiprev = device_mouse_x_to_gui(0);
+mouse_yguiprev = device_mouse_y_to_gui(0);
