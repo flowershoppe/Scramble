@@ -17,6 +17,8 @@ cam = {
 mouse_xguiprev = 0;
 mouse_yguiprev = 0;
 
+dragging = false;
+
 //variables for managing camera movement
 /*
 horiz_button_arr = [global.left_button, global.right_button];

@@ -32,12 +32,7 @@ switch(room)
 		if(!instance_exists(oBackground))
 		{
 			instance_create_layer(0, 0, "Background", oBackground);
-		}
-		
-		
-		
-
-		
+		}	
 		
 		break;
 		
