@@ -56,8 +56,12 @@ camera_set_view_pos(global.maincam, _newX, _newY);
 
 #endregion
 
-if(oCursor.held_tile == noone and mouse_check_button(mb_left) and (mouse_xguiprev != device_mouse_x_to_gui(0)
-																or mouse_yguiprev != device_mouse_y_to_gui(0)))
+//drag camera
+if(input_mouse_check_pressed(mb_left) and oCursor.layer != (layer_get_id("Hand"))){dragging = true;}
+if(input_mouse_check_released(mb_left)){dragging = false;}
+if(oCursor.held_tile == noone and dragging 
+	and (mouse_xguiprev != device_mouse_x_to_gui(0)
+	or mouse_yguiprev != device_mouse_y_to_gui(0)))
 {
 	cam = {
 	    x: camera_get_view_x(view_camera[0]),
