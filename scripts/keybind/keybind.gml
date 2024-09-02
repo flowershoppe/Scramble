@@ -8,7 +8,9 @@ function keybind(_verb)
 		var _verb_to_set = oSettings.verb_to_set;
 	    input_binding_set_safe(_verb_to_set, _binding);
 		
+		save_settings();
 	}
+	
 	//Start a binding scan
 	input_binding_scan_start(_binder,
 	function(_result)

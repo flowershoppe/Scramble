@@ -60,6 +60,7 @@ global.board_sprite = spBoard;
 global.place_sounds = [sdPlace1, sdPlace2, sdPlace3, sdPlace4, sdPlace5, sdPlace6];
 global.emitterSE = audio_emitter_create();
 global.emitterMS = audio_emitter_create();
+global.volumeMain = 1;
 global.volumeSE = 1;
 global.volumeMS = 1;
 
@@ -73,6 +74,7 @@ global.music_victory = msVictory;
 //Handlers
 instance_create_depth(0, 0, -11, oSettings);
 instance_create_depth(0, 0, -10, oPauseMenu);
+instance_create_depth(0, 0, 0, oSaverLoader);
 
 global.opponent = noone;
 global.exchanging = false;

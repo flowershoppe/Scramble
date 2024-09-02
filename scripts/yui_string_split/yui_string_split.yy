@@ -6,7 +6,7 @@
   "name":"yui_string_split",
   "parent":{
     "name":"string",
-    "path":"folders/Packages - YUI/scripts/string.yy",
+    "path":"folders/Libraries/Packages - YUI/scripts/string.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

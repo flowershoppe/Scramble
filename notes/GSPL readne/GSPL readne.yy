@@ -4,7 +4,7 @@
   "name":"GSPL readne",
   "parent":{
     "name":"Packages - gspl",
-    "path":"folders/Packages - gspl.yy",
+    "path":"folders/Libraries/Packages - gspl.yy",
   },
   "resourceType":"GMNotes",
   "resourceVersion":"2.0",

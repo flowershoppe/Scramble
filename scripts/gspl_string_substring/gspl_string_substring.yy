@@ -6,7 +6,7 @@
   "name":"gspl_string_substring",
   "parent":{
     "name":"Scanner",
-    "path":"folders/Packages - gspl/Scanner.yy",
+    "path":"folders/Libraries/Packages - gspl/Scanner.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

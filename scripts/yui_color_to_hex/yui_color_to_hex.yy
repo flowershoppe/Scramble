@@ -6,7 +6,7 @@
   "name":"yui_color_to_hex",
   "parent":{
     "name":"color",
-    "path":"folders/Packages - YUI/scripts/color.yy",
+    "path":"folders/Libraries/Packages - YUI/scripts/color.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

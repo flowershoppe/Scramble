@@ -4,7 +4,7 @@
   "name":"YUI readme",
   "parent":{
     "name":"Packages - YUI",
-    "path":"folders/Packages - YUI.yy",
+    "path":"folders/Libraries/Packages - YUI.yy",
   },
   "resourceType":"GMNotes",
   "resourceVersion":"2.0",

@@ -6,7 +6,7 @@
   "name":"gspl_log",
   "parent":{
     "name":"Packages - gspl",
-    "path":"folders/Packages - gspl.yy",
+    "path":"folders/Libraries/Packages - gspl.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

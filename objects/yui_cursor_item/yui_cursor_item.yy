@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Render Items",
-    "path":"folders/Packages - YUI/Render Items.yy",
+    "path":"folders/Libraries/Packages - YUI/Render Items.yy",
   },
   "parentObjectId":null,
   "persistent":false,

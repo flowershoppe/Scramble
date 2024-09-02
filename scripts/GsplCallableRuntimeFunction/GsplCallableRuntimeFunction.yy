@@ -6,7 +6,7 @@
   "name":"GsplCallableRuntimeFunction",
   "parent":{
     "name":"Callables",
-    "path":"folders/Packages - gspl/Execute/Callables.yy",
+    "path":"folders/Libraries/Packages - gspl/Execute/Callables.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
