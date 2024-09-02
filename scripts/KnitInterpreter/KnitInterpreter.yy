@@ -6,7 +6,7 @@
   "name":"KnitInterpreter",
   "parent":{
     "name":"Knit",
-    "path":"folders/Packages - gspl/Languages/Knit.yy",
+    "path":"folders/Libraries/Packages - gspl/Languages/Knit.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

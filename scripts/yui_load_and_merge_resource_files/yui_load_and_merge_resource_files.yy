@@ -6,7 +6,7 @@
   "name":"yui_load_and_merge_resource_files",
   "parent":{
     "name":"resources",
-    "path":"folders/Packages - YUI/scripts/resources.yy",
+    "path":"folders/Libraries/Packages - YUI/scripts/resources.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

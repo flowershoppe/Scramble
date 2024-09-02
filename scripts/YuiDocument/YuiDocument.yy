@@ -6,7 +6,7 @@
   "name":"YuiDocument",
   "parent":{
     "name":"Packages - YUI",
-    "path":"folders/Packages - YUI.yy",
+    "path":"folders/Libraries/Packages - YUI.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

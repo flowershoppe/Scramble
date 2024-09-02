@@ -6,7 +6,7 @@
   "name":"yui_color_shift_hue",
   "parent":{
     "name":"color",
-    "path":"folders/Packages - YUI/scripts/color.yy",
+    "path":"folders/Libraries/Packages - YUI/scripts/color.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

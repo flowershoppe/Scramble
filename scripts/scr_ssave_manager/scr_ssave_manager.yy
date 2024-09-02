@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_ssave_manager",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_ssave_manager",
+  "parent":{
+    "name":"SSave",
+    "path":"folders/Libraries/SSave.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

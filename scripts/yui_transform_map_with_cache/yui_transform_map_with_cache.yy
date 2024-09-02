@@ -6,7 +6,7 @@
   "name":"yui_transform_map_with_cache",
   "parent":{
     "name":"Transform",
-    "path":"folders/Packages - YUI/Transform.yy",
+    "path":"folders/Libraries/Packages - YUI/Transform.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

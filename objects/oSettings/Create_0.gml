@@ -16,6 +16,6 @@ selected_item = "960 x 540";
 
 resolution_selector = new YuiArraySelector(resolution_items, resolution_items[2]);
 
-verbs = ["left", "right", "up", "down", "confirm", "cancel", "special", "pause"]
+verbs = ["left", "right", "up", "down", "confirm", "cancel", "special", "pause"];
 
 verb_to_set = "";

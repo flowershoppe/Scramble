@@ -6,7 +6,7 @@
   "name":"yui_set_struct_value",
   "parent":{
     "name":"Deprecated",
-    "path":"folders/Packages - YUI/Deprecated.yy",
+    "path":"folders/Libraries/Packages - YUI/Deprecated.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

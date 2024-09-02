@@ -6,7 +6,7 @@
   "name":"snap_from_yui",
   "parent":{
     "name":"Yui",
-    "path":"folders/Packages - YUI/Parser/Yui.yy",
+    "path":"folders/Libraries/Packages - YUI/Parser/Yui.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

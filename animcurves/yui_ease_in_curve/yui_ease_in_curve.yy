@@ -11,7 +11,7 @@
   "name":"yui_ease_in_curve",
   "parent":{
     "name":"Animation",
-    "path":"folders/Packages - YUI/Animation.yy",
+    "path":"folders/Libraries/Packages - YUI/Animation.yy",
   },
   "resourceType":"GMAnimCurve",
   "resourceVersion":"2.0",

@@ -6,7 +6,7 @@
   "name":"yui_data_equal",
   "parent":{
     "name":"scripts",
-    "path":"folders/Packages - YUI/scripts.yy",
+    "path":"folders/Libraries/Packages - YUI/scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -6,7 +6,7 @@
   "name":"input_string_async",
   "parent":{
     "name":"Input",
-    "path":"folders/Packages - YUI/Input.yy",
+    "path":"folders/Libraries/Packages - YUI/Input.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

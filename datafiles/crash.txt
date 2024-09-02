@@ -1,9 +1,11 @@
-{ stacktrace : [ "gml_Object_oCamera_Step_0 (line 62)" ], longMessage : "ERROR in
+{ longMessage : "ERROR in
 action number 1
-of  Step Event0
-for object oCamera:
+of Create Event
+for object oSaverLoader:
 
 
-local variable _press(103894) not set before reading it.
- at gml_Object_oCamera_Step_0 (line 62) - if(oCursor.held_tile == noone and _press and oCursor.layer != (layer_get_id("Hand")) 
-", message : "local variable _press(103894) not set before reading it.", script : "gml_Object_oCamera_Step_0", line : 62 }
+Unable to find a handler for exception SSave value "confirm" has a default value which isn't of the correct type
+
+ at gml_Script___ssave_class_value (line 77) - 		throw ("SSave value \"" + __name + "\" has a default value which isn't of the correct type"); 
+", script : "gml_Script___ssave_class_value", message : "Unable to find a handler for exception SSave value "confirm" has a default value which isn't of the correct type
+", line : 77, stacktrace : [ "gml_Script___ssave_class_value (line 77)","gml_Script_ssave_config_save_file (line 1)","gml_Object_oSaverLoader_Create_0 (line 1)","gml_Object_oGame_Create_0 (line 77)" ] }

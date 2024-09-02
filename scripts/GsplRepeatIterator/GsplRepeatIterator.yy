@@ -6,7 +6,7 @@
   "name":"GsplRepeatIterator",
   "parent":{
     "name":"Iterators",
-    "path":"folders/Packages - gspl/Execute/Iterators.yy",
+    "path":"folders/Libraries/Packages - gspl/Execute/Iterators.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

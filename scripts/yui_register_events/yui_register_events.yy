@@ -6,7 +6,7 @@
   "name":"yui_register_events",
   "parent":{
     "name":"Cursor",
-    "path":"folders/Packages - YUI/Cursor.yy",
+    "path":"folders/Libraries/Packages - YUI/Cursor.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
