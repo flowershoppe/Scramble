@@ -8,13 +8,11 @@ if(oCursor.held_tile == noone)
 	{
 		xscale = 1.15;
 		yscale = 1.15;
-		depth = -1;
 	}
 	else
 	{
 		xscale = 1;
 		yscale = 1;
-		depth = 0;
 	}
 }
 
@@ -38,9 +36,7 @@ if(position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id)
 with(oTileHolder)
 {
 	if(tile == _tile)
-	{
-		tile.holder = id;	
-		
+	{		
 		if(array_contains(oPlayerHand.tile_holder_array, id))
 		{
 			tile.in_hand = true;

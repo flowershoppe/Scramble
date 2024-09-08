@@ -30,9 +30,9 @@ function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _tur
 	});
 	
 	//-----GAME ELEMENTS-----
-	var _hand = instance_create_depth(view_get_wport(0) / 2, 
+	var _hand = instance_create_layer(view_get_wport(0) / 2, 
 				view_get_hport(0) - (sprite_get_height(spPlank) / 2), 
-				-7, oPlayerHand,
+				"Hand", oPlayerHand,
 				{
 					size: 7
 				

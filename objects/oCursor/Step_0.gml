@@ -28,7 +28,6 @@ if(held_tile != noone)
 {
 	held_tile.x = device_mouse_x_to_gui(0);
 	held_tile.y = device_mouse_y_to_gui(0);	
-	held_tile.depth = -2;
 }
 
 //-----PICK UP-----

@@ -7,8 +7,5 @@ function ssave_config_save_file() : SSave("save") constructor
 	add_value("volumeSE", SSAVE_TYPE.REAL, 1);
 	add_value("volumeMS", SSAVE_TYPE.REAL, 1);
 	
-	add_value("confirm", SSAVE_TYPE.STRUCT, 
-			{__type: "key",
-			 __value: vk_enter,
-			 __axis_negative: 0});
+	
 }

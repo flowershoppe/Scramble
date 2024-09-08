@@ -1,11 +1,9 @@
 { longMessage : "ERROR in
 action number 1
-of Create Event
-for object oSaverLoader:
+of  Step Event0
+for object oCursor:
 
 
-Unable to find a handler for exception SSave value "confirm" has a default value which isn't of the correct type
-
- at gml_Script___ssave_class_value (line 77) - 		throw ("SSave value \"" + __name + "\" has a default value which isn't of the correct type"); 
-", script : "gml_Script___ssave_class_value", message : "Unable to find a handler for exception SSave value "confirm" has a default value which isn't of the correct type
-", line : 77, stacktrace : [ "gml_Script___ssave_class_value (line 77)","gml_Script_ssave_config_save_file (line 1)","gml_Object_oSaverLoader_Create_0 (line 1)","gml_Object_oGame_Create_0 (line 77)" ] }
+Unable to find instance for object index 100061
+ at gml_Object_oCursor_Step_0 (line 47) - 			var _tile = oPlayerHand.tile_holder_array[_index].tile;
+", script : "gml_Object_oCursor_Step_0", message : "Unable to find instance for object index 100061", line : 47, stacktrace : [ "gml_Object_oCursor_Step_0 (line 47)" ] }
