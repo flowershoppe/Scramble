@@ -9,7 +9,7 @@ if(instance_exists(oMatchState))
 else{exit;}
 
 
-var _placed_tiles = owner.placed_tiles;
+var _placed_tiles = oPlayer.placed_tiles;
 
 if(instance_exists(oPlayerHand))
 {	
@@ -33,31 +33,15 @@ if(held_tile != noone)
 //-----PICK UP-----
 #region
 if(mouse_check_button_pressed(mb_left))
-{	
-	//check if tile exists and is grabbable
-			
-	if(layer == layer_get_id("Tiles"))
+{		
+	held_tile = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile)
+	
+	if(held_tile == noone)
 	{
-		held_tile = instance_place(x, y, oTile);
+		held_tile = instance_place(mouse_x, mouse_y, oTile);
 	}
-	else if(layer == layer_get_id("Hand"))
-	{
-		for(var _index = 0; _index < oPlayerHand.size; _index++)
-		{
-			var _tile = oPlayerHand.tile_holder_array[_index].tile;
-			if(_tile != noone)
-			{
-				with(_tile)
-				{
-					if(mouse_check_button_pressed(mb_left) and 
-					position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id))
-			
-					oCursor.held_tile = _tile;
-				}
-			}
-			
-		}
-	}	
+	
+	//check if tile exists and is grabbable	
 	if(held_tile == noone){exit;}
 	else if(!held_tile.grabbable){held_tile = noone; exit;}
 		
@@ -72,6 +56,7 @@ if(mouse_check_button_pressed(mb_left))
 	held_tile.image_yscale = 1;
 	held_tile.font_scale = 1;
 	held_tile.on_board = false;
+	held_tile.in_hand = false;
 		
 	//Blank tile subroutine
 	if(held_tile.blank == true)
@@ -83,7 +68,7 @@ if(mouse_check_button_pressed(mb_left))
 					1, 0, global.volumeSE);
 		
 	var _tile = held_tile;
-	var _holder;
+	
 	//find tile holder holding the tile and remove it
 	with(oTileHolder)
 	{
@@ -93,7 +78,7 @@ if(mouse_check_button_pressed(mb_left))
 		}
 	}
 		
-	if(!array_equals(_placed_tiles, []))
+	if(array_length(_placed_tiles) > 0)
 	{	
 		valid_play();
 	}
@@ -152,22 +137,15 @@ if(mouse_check_button_released(mb_left))
 				}
 			}	
 		}
-		
-		if(array_contains(_placed_tiles, held_tile))
-		{
-			array_delete(_placed_tiles, array_get_index(_placed_tiles, held_tile), 1);
-		}
 		#endregion
-			
+		
 		//-----DROP TILE-----
-		
-		
 		held_tile.layer = layer;
-		
+				
 		if(layer == layer_get_id("Tiles"))
 		{
 			//place in array for checking play validity later
-			array_insert(_placed_tiles, 0, held_tile);
+			array_push(_placed_tiles, held_tile);
 
 			//Blank tile subroutine
 			if(held_tile.blank == true)
@@ -177,11 +155,17 @@ if(mouse_check_button_released(mb_left))
 			held_tile.on_board = true;
 
 		}
+		else if(layer == layer_get_id("Hand"))
+		{
+			held_tile.in_hand = true;
+		}
 		held_tile.x = _nearest_holder.x;
 		held_tile.y = _nearest_holder.y;
+		
+		_nearest_holder.tile = held_tile;
 				
 		//validate play only if there are placed tiles
-		if(!array_equals(_placed_tiles, []))
+		if(array_length(_placed_tiles) > 0)
 		{	
 			valid_play();
 		}
@@ -191,7 +175,7 @@ if(mouse_check_button_released(mb_left))
 		}
 		
 		
-		_nearest_holder.tile = held_tile;
+		//_nearest_holder.tile = held_tile;
 		
 		audio_play_sound(global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
 						1, 0, global.volumeSE);

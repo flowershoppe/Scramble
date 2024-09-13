@@ -4,6 +4,6 @@ of  Step Event0
 for object oCursor:
 
 
-Unable to find instance for object index 100061
- at gml_Object_oCursor_Step_0 (line 47) - 			var _tile = oPlayerHand.tile_holder_array[_index].tile;
-", script : "gml_Object_oCursor_Step_0", message : "Unable to find instance for object index 100061", line : 47, stacktrace : [ "gml_Object_oCursor_Step_0 (line 47)" ] }
+Unable to find instance for object index -4
+ at gml_Object_oCursor_Step_0 (line 162) - 		held_tile.x = _nearest_holder.x;
+", stacktrace : [ "gml_Object_oCursor_Step_0 (line 162)" ], message : "Unable to find instance for object index -4", line : 162, script : "gml_Object_oCursor_Step_0" }

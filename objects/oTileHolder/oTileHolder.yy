@@ -35,6 +35,7 @@
     {"$GMObjectProperty":"","%Name":"owner","filters":[],"listItems":[],"multiselect":false,"name":"owner","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":0,},
     {"$GMObjectProperty":"","%Name":"active","filters":[],"listItems":[],"multiselect":false,"name":"active","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"True","varType":3,},
     {"$GMObjectProperty":"","%Name":"mult_spr","filters":[],"listItems":[],"multiselect":false,"name":"mult_spr","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spMult","varType":5,},
+    {"$GMObjectProperty":"","%Name":"spr","filters":[],"listItems":[],"multiselect":false,"name":"spr","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spHolder","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

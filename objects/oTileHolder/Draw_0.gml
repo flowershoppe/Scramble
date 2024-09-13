@@ -1,4 +1,4 @@
-if(array_contains(oPlayerHand.tile_holder_array, id)){exit;}
+if(layer == layer_get_id("Hand_Tile_Holders")){exit;}
 draw_self();
 
 //if tile is on board, draw its multiplier
