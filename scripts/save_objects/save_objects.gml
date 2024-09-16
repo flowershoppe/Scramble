@@ -1,12 +1,6 @@
-function save_game()
+function save_objects()
 {
 	var _saveData = array_create(0);
-	
-	//Metadata
-	/*var _saveEntity =
-	{
-		room : room
-	}*/
 	
 	//save Player
 	with(oPlayer)
@@ -14,19 +8,43 @@ function save_game()
 		var _saveEntity =
 		{
 			object_name : object_get_name(object_index),
-			layer_name: layer_get_name(layer)
+			layer_name: layer_get_name(layer),
 			variables :
-				{
-					x : x,
-					y : y,
-					image_index : image_index,
-					image_alpha : image_alpha,
-					player_name : player_name,
-					placed_tiles : placed_tiles,
-					turn_spelled_words : turn_spelled_words,
-					match_spelled_words : match_spelled_words
-				}
+			{
+				x : x,
+				y : y,
+				image_index : image_index,
+				image_alpha : image_alpha,
+				player_name : player_name,
+				placed_tiles : placed_tiles,
+				turn_spelled_words : turn_spelled_words,
+				match_spelled_words : match_spelled_words
+			}
 		}
+		array_push(_saveData, _saveEntity);
+	}
+	
+	//save Match Stats
+	with(oMatchStats)
+	{
+		var _saveEntity =
+		{
+			object_name : object_get_name(object_index),
+			layer_name : layer_get_name(layer),
+			variables:
+			{
+				x : x,
+				y : y,
+				last_play : last_play,
+				last_words : last_words,
+				spelled_words : spelled_words,
+				turn_max : turn_max,
+				turn_min : turn_min,
+				point_max : point_max,
+				point_min : point_min
+			}		
+		}
+		array_push(_saveData, _saveEntity);
 	}
 	
 	//save Hand
@@ -48,8 +66,7 @@ function save_game()
 				size: size,
 				spr : spr
 			}
-		}
-		
+		}		
 		array_push(_saveData, _saveEntity);
 	}
 	

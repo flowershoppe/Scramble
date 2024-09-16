@@ -1,4 +1,4 @@
-function load_game()
+function load_objects()
 {	
 	if(file_exists("gamesave.save"))
 	{
@@ -10,6 +10,7 @@ function load_game()
 				
 		//recreate instances
 		with(oPlayer) instance_destroy();
+		with(oMatchStats) instance_destroy();
 		with(oTile) instance_destroy();
 		with(oTileHolder) instance_destroy();
 		with(oPlayerHand) instance_destroy();
@@ -37,10 +38,10 @@ function load_game()
 				array_push(oTilebag.tiles, _inst.id);	
 			}
 			
-			if(_struct.layer_name == "Hand_Tile_Holders")
+			/*if(_struct.layer_name == "Hand_Tile_Holders")
 			{
 				array_push(oPlayerHand.tile_holder_array, _inst);	
-			}
+			}*/
 		}
 	}
 	

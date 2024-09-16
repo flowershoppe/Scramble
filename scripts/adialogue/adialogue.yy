@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"dWiz",
+  "%Name":"adialogue",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"dWiz",
+  "name":"adialogue",
   "parent":{
     "name":"Dialogues",
     "path":"folders/Dialogues.yy",

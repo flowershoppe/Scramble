@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"save_game",
+  "%Name":"save_objects",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"save_game",
+  "name":"save_objects",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

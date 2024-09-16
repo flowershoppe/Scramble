@@ -15,5 +15,5 @@ function next_turn()
 	
 	check_end_match();
 	
-	save_game();
+	save_objects();
 }
