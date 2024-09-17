@@ -71,10 +71,14 @@ global.music_game = msGameMusic1;
 global.music_main_menu = msMainMenuMusic;
 global.music_victory = msVictory;
 
+//create Characters
+instance_create_layer(0, 0, "Meta", oWiz);
+
 //Handlers
 instance_create_depth(0, 0, -11, oSettings);
 instance_create_depth(0, 0, -10, oPauseMenu);
 instance_create_depth(0, 0, 0, oSaverLoader);
+instance_create_layer(0, 0, "Meta", oMatchStats);
 
 global.opponent = noone;
 global.exchanging = false;
@@ -100,4 +104,6 @@ global.stPauseMenu =
 var _player = instance_create_layer(0, 0, "Meta", oPlayer);		
 var _cursor = instance_create_layer(0, 0, "Meta", oCursor);
 _cursor.owner = _player;
+
+
 		

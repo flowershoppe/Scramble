@@ -1,4 +1,4 @@
-if(array_contains(oPlayerHand.tile_holder_array, id))
+if(layer == layer_get_id("Hand_Tile_Holders"))
 {
 	draw_self();
 }

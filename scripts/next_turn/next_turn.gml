@@ -14,4 +14,6 @@ function next_turn()
 	add_tile_to_hand(_hand, oTilebag, _hand.size);	
 	
 	check_end_match();
+	
+	save_game();
 }

@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"end_match",
+  "%Name":"load_game",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"end_match",
+  "name":"load_game",
   "parent":{
-    "name":"Flow",
-    "path":"folders/Scripts/Flow.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

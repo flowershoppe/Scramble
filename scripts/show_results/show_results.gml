@@ -1,4 +1,4 @@
-function end_match()
+function show_results()
 {
 	room_goto(rResults);
 }

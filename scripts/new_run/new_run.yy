@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"dWiz",
+  "%Name":"new_run",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"dWiz",
+  "name":"new_run",
   "parent":{
-    "name":"Dialogues",
-    "path":"folders/Dialogues.yy",
+    "name":"Flow",
+    "path":"folders/Scripts/Flow.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

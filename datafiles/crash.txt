@@ -1,11 +1,9 @@
-{ longMessage : "ERROR in
+{ stacktrace : [ "gml_Object_oRun_Step_0 (line 7)" ], longMessage : "ERROR in
 action number 1
-of Create Event
-for object oSaverLoader:
+of  Step Event0
+for object oRun:
 
 
-Unable to find a handler for exception SSave value "confirm" has a default value which isn't of the correct type
-
- at gml_Script___ssave_class_value (line 77) - 		throw ("SSave value \"" + __name + "\" has a default value which isn't of the correct type"); 
-", script : "gml_Script___ssave_class_value", message : "Unable to find a handler for exception SSave value "confirm" has a default value which isn't of the correct type
-", line : 77, stacktrace : [ "gml_Script___ssave_class_value (line 77)","gml_Script_ssave_config_save_file (line 1)","gml_Object_oSaverLoader_Create_0 (line 1)","gml_Object_oGame_Create_0 (line 77)" ] }
+DoAdd :: Execution Error
+ at gml_Object_oRun_Step_0 (line 7) - length = "Run length: " + _hours + " hours," + _minutes + " minutes," + _seconds + " seconds";
+", line : 7, script : "gml_Object_oRun_Step_0", message : "DoAdd :: Execution Error" }

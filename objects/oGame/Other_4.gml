@@ -8,12 +8,10 @@ var _cursor = noone;
 
 switch(room)
 {              
-	case rGame:
-		
-		global.opponent = "TheWiz";
+	case rGame:		
 		if(!instance_exists(oMatchState))
 		{
-			dialogue_open(dWizMatchIntro, []);
+			dialogue_open(adialogue, []);
 		}
 		//start_match(10, 10, 50, -1, -1, -1);
 		//dist_standard(global.tilebag);

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"show_results",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"show_results",
+  "parent":{
+    "name":"Flow",
+    "path":"folders/Scripts/Flow.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
