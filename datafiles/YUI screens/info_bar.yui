@@ -1,16 +1,13 @@
-id: info_bar
+id: _info_bar
 file_type: screen
-
-import:
-  - ../Templates/
-  - /YUI/Widgets/child_window.yui
 
 root:
   type: panel
-  layout: horizontal
+  alignment: {h: center}
+  layout: canvas
   background: yui_panel_bg
   padding: 10
-  trace: true
   elements:
     - type: text
-      text: a
+      text: @length
+
