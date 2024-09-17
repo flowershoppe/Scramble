@@ -1,0 +1,16 @@
+id: info_bar
+file_type: screen
+
+import:
+  - ../Templates/
+  - /YUI/Widgets/child_window.yui
+
+root:
+  type: panel
+  layout: horizontal
+  background: yui_panel_bg
+  padding: 10
+  trace: true
+  elements:
+    - type: text
+      text: a

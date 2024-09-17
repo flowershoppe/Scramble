@@ -1,4 +1,4 @@
-function load_objects()
+function load_game()
 {	
 	if(file_exists("gamesave.save"))
 	{

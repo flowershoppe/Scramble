@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"end_match",
+  "%Name":"new_run",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"end_match",
+  "name":"new_run",
   "parent":{
     "name":"Flow",
     "path":"folders/Scripts/Flow.yy",

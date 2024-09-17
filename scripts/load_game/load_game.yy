@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"load_objects",
+  "%Name":"load_game",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"load_objects",
+  "name":"load_game",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

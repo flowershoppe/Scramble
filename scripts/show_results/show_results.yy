@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"save_objects",
+  "%Name":"show_results",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"save_objects",
+  "name":"show_results",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Flow",
+    "path":"folders/Scripts/Flow.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

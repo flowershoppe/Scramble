@@ -1,9 +1,9 @@
-{ longMessage : "ERROR in
+{ stacktrace : [ "gml_Object_oRun_Step_0 (line 7)" ], longMessage : "ERROR in
 action number 1
-of Other Event: Room Start
-for object oGame:
+of  Step Event0
+for object oRun:
 
 
-Variable <unknown_object>.messages(101570, -2147483648) not set before reading it.
- at gml_Script_dialogue_open_at (line 16) -     dialogue = messages;
-", stacktrace : [ "gml_Script_dialogue_open_at (line 16)","gml_Script_dialogue_open (line 29) -   dialogue_open_at(index, arguments, 0);","gml_Object_oGame_Other_4 (line 14) - 			dialogue_open(adialogue, []);" ], line : 16, message : "Variable <unknown_object>.messages(101570, -2147483648) not set before reading it.", script : "gml_Script_dialogue_open_at" }
+DoAdd :: Execution Error
+ at gml_Object_oRun_Step_0 (line 7) - length = "Run length: " + _hours + " hours," + _minutes + " minutes," + _seconds + " seconds";
+", line : 7, script : "gml_Object_oRun_Step_0", message : "DoAdd :: Execution Error" }

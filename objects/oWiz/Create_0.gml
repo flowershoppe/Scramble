@@ -14,5 +14,5 @@ dialogues =
 	"[chr:TheWiz]I'm not actually a wizard though, so I can't grant you passage.",
 	"[chr:TheWiz]...",
 	"[chr:TheWiz]Good luck!",
-	"[method:end_match]"]		
+	"[method:results]"]		
 ]

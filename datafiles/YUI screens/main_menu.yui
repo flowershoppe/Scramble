@@ -18,10 +18,18 @@ root:
         - type: button
           content: 
             type: text
-            text: Start
+            text: New Run
             text_style: title       
           border_thickness: 1
-          on_click: @@ room_goto(asset_get_index(rMap))
+          on_click: @@ new_run()
+
+        - type: button
+          content: 
+            type: text
+            text: Load Run
+            text_style: title       
+          border_thickness: 1
+          on_click: @@ load_game()
 
         - type: button
           content: 

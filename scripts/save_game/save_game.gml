@@ -1,6 +1,24 @@
-function save_objects()
+function save_game()
 {
 	var _saveData = array_create(0);
+	
+	//save Run
+	with(oRun)
+	{
+		var _saveEntity =
+		{
+			object_name : object_get_name(object_index),
+			layer_name: layer_get_name(layer),
+			variables :
+			{
+				x : x,
+				y : y,
+				room : room,
+				seconds : seconds,
+			}
+		}
+		array_push(_saveData, _saveEntity);
+	}
 	
 	//save Player
 	with(oPlayer)

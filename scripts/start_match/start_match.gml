@@ -1,8 +1,7 @@
 function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _turn_max)
 {	
 	global.tilebag = instance_create_layer(0, 0, "Tilebag", oTilebag);
-	instance_create_depth(0, 0, -10, oMatchState);
-	
+	instance_create_depth(0, 0, -10, oMatchState);	
 	instance_create_depth(0, 0, -8, oMatchGUI);
 
 	oMatchStats.point_min = _point_min;
