@@ -8,8 +8,8 @@ function submit_play()
 		var _score = calculate_points();
 		if(_score > 0)
 		{
-			oMatchStats.total_points += _score;
-			oMatchStats.last_play = _score;
+			oMatchManager.total_points += _score;
+			oMatchManager.last_play = _score;
 			
 			//deactivate placed tiles
 			with(oTile)

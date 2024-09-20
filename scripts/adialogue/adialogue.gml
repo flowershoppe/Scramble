@@ -1,6 +1,6 @@
 function adialogue()
 {
-	var _op = oMatchStats.opponent;
+	var _op = oMatchManager.opponent;
 	
 	messages = _op.dialogues[_op.progression];
 	

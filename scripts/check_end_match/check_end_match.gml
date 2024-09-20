@@ -1,13 +1,13 @@
 function check_end_match()
 {
 	//-----CHECK FOR VICTORY-----
-	with(oMatchStats)
+	with(oMatchManager)
 	{
 		//if player's total points exceed win con points
 		if(total_points >= point_min)
 		{
-			oMatchState.victory = true;	
-			oMatchState.active = false;
+			oMatchManager.victory = true;	
+			oMatchManager.active = false;
 			//match becomes inactive upon winning
 		}
 
@@ -16,8 +16,8 @@ function check_end_match()
 		{
 			if(!grabbable and instance_place(x, y, oTileHolder).winspot == true)
 			{
-				oMatchState.victory = true;
-				oMatchState.active = false;
+				oMatchManager.victory = true;
+				oMatchManager.active = false;
 				//match becomes inactive upon winning
 			}	
 		}
@@ -36,20 +36,20 @@ function check_end_match()
 			(turn_min >= turn and _cant_play and turn_min > -1) or
 			(point_max <= total_points and point_max > -1) or
 			(point_min >= total_points and _cant_play and point_min > -1) or
-			(oMatchState.victory == false and _cant_play))
+			(oMatchManager.victory == false and _cant_play))
 		{
-			oMatchState.loss = true;	
-			oMatchState.active = false;
+			oMatchManager.loss = true;	
+			oMatchManager.active = false;
 		}
 
 		else
 		{
-			oMatchState.loss = false;	
+			oMatchManager.loss = false;	
 		}
 		
-		if(oMatchState.victory and !oMatchState.loss)
+		if(oMatchManager.victory and !oMatchManager.loss)
 		{
-			dialogue_open(dWizMatchOutro, []);
+			dialogue_open(adialogue, []);
 			//audio_stop_sound(global.music_game);
 			//audio_play_sound_on(global.emitterMS, global.music_victory, true, 100);
 		}

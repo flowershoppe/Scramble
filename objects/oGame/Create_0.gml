@@ -76,10 +76,10 @@ global.music_victory = msVictory;
 instance_create_layer(0, 0, "Meta", oWiz);
 
 //Handlers
-instance_create_depth(0, 0, -11, oSettings);
-instance_create_depth(0, 0, -10, oPauseMenu);
-instance_create_depth(0, 0, 0, oSaverLoader);
-instance_create_layer(0, 0, "Meta", oMatchStats);
+instance_create_layer(0, 0, "Meta", oSettings);
+instance_create_layer(0, 0, "Meta", oPauseMenu);
+instance_create_layer(0, 0, "Meta", oSaverLoader);
+instance_create_layer(0, 0, "Meta", oMatchManager);
 
 global.opponent = noone;
 global.exchanging = false;
@@ -103,8 +103,7 @@ global.stPauseMenu =
 
 //initialize player and cursor
 var _player = instance_create_layer(0, 0, "Meta", oPlayer);		
-var _cursor = instance_create_layer(0, 0, "Meta", oCursor);
-_cursor.owner = _player;
+instance_create_layer(0, 0, "Meta", oCursor);
 
 
 		

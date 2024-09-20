@@ -19,3 +19,11 @@ point_min = -1;
 opponent = oWiz;
 
 throaway = 1;
+
+victory = false;
+condition_points = 0;
+condition_location = [];
+
+loss = false;
+
+active = true;

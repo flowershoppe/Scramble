@@ -10,7 +10,7 @@ function post_load()
 				
 		//recreate instances
 		with(oPlayer) instance_destroy();
-		with(oMatchStats) instance_destroy();
+		with(oMatchManager) instance_destroy();
 		with(oTile) instance_destroy();
 		with(oTileHolder) instance_destroy();
 		with(oPlayerHand) instance_destroy();

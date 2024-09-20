@@ -312,7 +312,7 @@
     {"id":{"name":"oMapLevel","path":"objects/oMapLevel/oMapLevel.yy",},},
     {"id":{"name":"oMatchGUI","path":"objects/oMatchGUI/oMatchGUI.yy",},},
     {"id":{"name":"oMatchState","path":"objects/oMatchState/oMatchState.yy",},},
-    {"id":{"name":"oMatchStats","path":"objects/oMatchStats/oMatchStats.yy",},},
+    {"id":{"name":"oMatchManager","path":"objects/oMatchManager/oMatchManager.yy",},},
     {"id":{"name":"oPauseMenu","path":"objects/oPauseMenu/oPauseMenu.yy",},},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},},
     {"id":{"name":"oPlayerHand","path":"objects/oPlayerHand/oPlayerHand.yy",},},

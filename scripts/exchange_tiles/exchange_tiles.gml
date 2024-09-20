@@ -33,7 +33,7 @@ function exchange_tiles()
 			_tile.y = 0;
 		
 		}		
-		oMatchStats.exchange_count++;
+		oMatchManager.exchange_count++;
 		next_turn();
 	}
 	

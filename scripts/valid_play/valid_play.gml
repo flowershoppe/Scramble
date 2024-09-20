@@ -1,6 +1,6 @@
 function valid_play()
 {
-	if(oMatchState.active == false){exit;}
+	if(oMatchManager.active == false){exit;}
 	
 	var _placed_tiles = oPlayer.placed_tiles;
 	

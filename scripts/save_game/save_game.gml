@@ -43,7 +43,7 @@ function save_game()
 	}
 	
 	//save Match Stats
-	with(oMatchStats)
+	with(oMatchManager)
 	{
 		var _saveEntity =
 		{
@@ -60,22 +60,6 @@ function save_game()
 				turn_min : turn_min,
 				point_max : point_max,
 				point_min : point_min
-			}		
-		}
-		array_push(_saveData, _saveEntity);
-	}
-	
-	//save Match State
-	with(oMatchState)
-	{
-		var _saveEntity =
-		{
-			object_name : object_get_name(object_index),
-			layer_name : layer_get_name(layer),
-			variables:
-			{
-				x : x,
-				y : y,
 			}		
 		}
 		array_push(_saveData, _saveEntity);

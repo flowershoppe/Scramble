@@ -7,7 +7,7 @@ function next_turn()
 	_player.turn_spelled_words = [];
 	_player.placed_tiles = [];
 
-	oMatchStats.turn++;
+	oMatchManager.turn++;
 	
 	//refill hand until full if bag has tiles
 	

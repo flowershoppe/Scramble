@@ -147,7 +147,7 @@
     {"name":"oMapLevel","order":15,"path":"objects/oMapLevel/oMapLevel.yy",},
     {"name":"oMatchGUI","order":2,"path":"objects/oMatchGUI/oMatchGUI.yy",},
     {"name":"oMatchState","order":5,"path":"objects/oMatchState/oMatchState.yy",},
-    {"name":"oMatchStats","order":4,"path":"objects/oMatchStats/oMatchStats.yy",},
+    {"name":"oMatchManager","order":4,"path":"objects/oMatchManager/oMatchManager.yy",},
     {"name":"oPauseMenu","order":3,"path":"objects/oPauseMenu/oPauseMenu.yy",},
     {"name":"oPlayer","order":4,"path":"objects/oPlayer/oPlayer.yy",},
     {"name":"oPlayerHand","order":5,"path":"objects/oPlayerHand/oPlayerHand.yy",},

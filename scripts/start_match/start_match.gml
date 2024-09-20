@@ -1,13 +1,12 @@
 function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _turn_max)
 {	
 	global.tilebag = instance_create_layer(0, 0, "Tilebag", oTilebag);
-	instance_create_depth(0, 0, -10, oMatchState);	
-	instance_create_depth(0, 0, -8, oMatchGUI);
+	instance_create_layer(0, 0, "Meta", oMatchGUI);
 
-	oMatchStats.point_min = _point_min;
-	oMatchStats.point_max = _point_max;	
-	oMatchStats.turn_min = _turn_min;
-	oMatchStats.turn_max = _turn_max;
+	oMatchManager.point_min = _point_min;
+	oMatchManager.point_max = _point_max;	
+	oMatchManager.turn_min = _turn_min;
+	oMatchManager.turn_max = _turn_max;
 	
 	//-----YUI ELEMENTS-----
 	instance_create_layer(0, 96, "UI", yui_document,
@@ -15,7 +14,7 @@ function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _tur
 		image_xscale: 4,
 		image_yscale: 4,
 		yui_file: "YUI screens/match_stats.yui",
-		data_context: oMatchStats,
+		data_context: oMatchManager,
 		is_full_screen: false
 	});
 	
