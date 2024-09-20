@@ -9,7 +9,7 @@ var _cursor = noone;
 switch(room)
 {              
 	case rGame:		
-		if(!instance_exists(oMatchState))
+		if(play_dialogue)
 		{
 			dialogue_open(adialogue, []);
 		}

@@ -1,5 +1,6 @@
 randomize();
 dialogue_setup();
+play_dialogue = true;
 
 //Instance
 global.previous_room = -1;

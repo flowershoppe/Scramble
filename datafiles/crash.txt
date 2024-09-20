@@ -1,9 +1,9 @@
-{ stacktrace : [ "gml_Object_oRun_Step_0 (line 7)" ], longMessage : "ERROR in
+{ longMessage : "ERROR in
 action number 1
-of  Step Event0
-for object oRun:
+of Mouse Event for Glob Left Released
+for object YuiCursorManager:
 
 
-DoAdd :: Execution Error
- at gml_Object_oRun_Step_0 (line 7) - length = "Run length: " + _hours + " hours," + _minutes + " minutes," + _seconds + " seconds";
-", line : 7, script : "gml_Object_oRun_Step_0", message : "DoAdd :: Execution Error" }
+Variable <unknown_object>.i(101358, -2147483648) not set before reading it.
+ at gml_Script_load_game (line 15) - 		var _obj = asset_get_index(_loadData[i].object_name);
+", script : "gml_Script_load_game", line : 15, stacktrace : [ "gml_Script_load_game (line 15)","gml_Script_resolveScript@anon@1245@YuiCallFunction_YuiCallFunction (line 51)","gml_Script_yui_call_handler (line 26) - 		handler.resolve(data);","gml_Script_anon@493@gml_Object_yui_button_Create_0 (line 33) - 		yui_call_handler(yui_element.props.on_click, [args], data_source);","gml_Object_YuiCursorManager_Mouse_56 (line 55) - 			var handled = next.left_click();" ], message : "Variable <unknown_object>.i(101358, -2147483648) not set before reading it." }
