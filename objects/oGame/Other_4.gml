@@ -8,13 +8,32 @@ var _cursor = noone;
 
 switch(room)
 {              
-	case rGame:		
+	case rGame:
+	
+		//-----YUI ELEMENTS-----
+		instance_create_layer(0, 96, "UI", yui_document,
+		{
+			image_xscale: 4,
+			image_yscale: 4,
+			yui_file: "YUI screens/match_stats.yui",
+			data_context: oMatchManager,
+			is_full_screen: false
+		});
+	
+		instance_create_layer(750, 400, "UI", yui_document,
+		{
+			image_xscale: 3,
+			image_yscale: 4,
+			yui_file: "YUI screens/match_buttons.yui",
+			data_context: oMatchGUI,
+			is_full_screen: false
+		});
+		
 		if(play_dialogue)
 		{
 			dialogue_open(adialogue, []);
 		}
-		//start_match(10, 10, 50, -1, -1, -1);
-		//dist_standard(global.tilebag);
+		
 		audio_stop_sound(_main_menu_music);
 		
 		if(!audio_is_playing(_game_music_1) and !audio_is_playing(global.music_victory))

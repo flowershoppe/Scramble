@@ -22,12 +22,12 @@ function exchange_tiles()
 	//only exchange if tiles have been selected
 	if(array_length(_array) > 0)
 	{
-		add_tile_to_hand(oPlayerHand, global.tilebag, array_length(_array));
+		add_tile_to_hand(oPlayerHand, oTilebag, array_length(_array));
 	
 		for(var _index = 0; _index < array_length(_array); _index++)
 		{
 			var _tile = _array[_index];		
-			array_push(global.tilebag.tiles, _tile);
+			array_push(oTilebag.tiles, _tile);
 			_tile.visible = false;
 			_tile.x = 0;
 			_tile.y = 0;

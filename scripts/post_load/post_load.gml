@@ -31,20 +31,29 @@ function post_load()
 				var _name = _names[k];
 				
 				_inst[$ _name] = _variables[$ _name];
-			}
-			
-		
+			}		
 		}
 		
 		with(oTile)
 		{
-		if(layer_get_name(layer) == "Tilebag")
-		{
-			array_push(oTilebag.tiles, id);	
-		}
-		var _holder = instance_nearest(x, y, oTileHolder);
+			if(layer_get_name(layer) == "Tilebag")
+			{
+				array_push(oTilebag.tiles, id);	
+			}
+			else 
+			{
+				var _holder = instance_nearest(x, y, oTileHolder);
 		
-		_holder.tile = id;		
+				_holder.tile = id;	
+			}	
+		}
+		
+		with(oTileHolder)
+		{
+			if(layer_get_name(layer) == "Hand_Tile_Holders")
+			{
+				array_push(oPlayerHand.tile_holder_array, id);
+			}
 		}
 	}
 }

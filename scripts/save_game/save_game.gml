@@ -151,6 +151,7 @@ function save_game()
 				on_board : on_board,
 				in_hand : in_hand,
 				spr : spr,	
+				highlight : highlight
 			}		
 		}
 		array_push(_saveData, _saveEntity);
