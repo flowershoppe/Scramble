@@ -2,11 +2,7 @@ x = mouse_x;
 y = mouse_y;
 
 //do not run if match is inactive
-if(instance_exists(oMatchState))
-{
-	if(oMatchState.active == false or global.exchanging){exit;}
-}
-else{exit;}
+if(oMatchManager.active == false or global.exchanging){exit;}
 
 
 var _placed_tiles = oPlayer.placed_tiles;

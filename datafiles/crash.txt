@@ -1,9 +1,9 @@
-{ stacktrace : [ "gml_Object_oRun_Step_0 (line 7)" ], longMessage : "ERROR in
+{ longMessage : "ERROR in
 action number 1
 of  Step Event0
-for object oRun:
+for object oCursor:
 
 
-DoAdd :: Execution Error
- at gml_Object_oRun_Step_0 (line 7) - length = "Run length: " + _hours + " hours," + _minutes + " minutes," + _seconds + " seconds";
-", line : 7, script : "gml_Object_oRun_Step_0", message : "DoAdd :: Execution Error" }
+Unable to find instance for object index -4
+ at gml_Object_oCursor_Step_0 (line 158) - 		held_tile.x = _nearest_holder.x;
+", stacktrace : [ "gml_Object_oCursor_Step_0 (line 158)" ], line : 158, script : "gml_Object_oCursor_Step_0", message : "Unable to find instance for object index -4" }

@@ -13,8 +13,8 @@ function save_game()
 			{
 				x : x,
 				y : y,
-				room : room,
-				seconds : seconds,
+				room_name : room,
+				time : time,
 			}
 		}
 		array_push(_saveData, _saveEntity);
@@ -43,7 +43,7 @@ function save_game()
 	}
 	
 	//save Match Stats
-	with(oMatchStats)
+	with(oMatchManager)
 	{
 		var _saveEntity =
 		{
@@ -88,6 +88,29 @@ function save_game()
 		array_push(_saveData, _saveEntity);
 	}
 	
+	//save Board
+	with(oBoard)
+	{
+		var _saveEntity =
+		{
+			object_name : object_get_name(object_index),
+			layer_name: layer_get_name(layer),
+			variables :
+			{			
+				x : x,
+				y : y,
+				image_index : image_index,
+				image_alpha : image_alpha,
+				image_xscale : image_xscale,
+				image_yscale : image_yscale,
+				spr : spr,
+				grid_width : grid_width,
+				grid_height : grid_height
+			}	
+		}
+		array_push(_saveData, _saveEntity);
+	
+	}	
 	//save Tilebag
 	with(oTilebag)
 	{
@@ -101,7 +124,7 @@ function save_game()
 				y : y,
 				image_index : image_index,
 				image_alpha : image_alpha,
-				spr : spr,	
+				spr : spr
 			}	
 		}
 		array_push(_saveData, _saveEntity);
@@ -113,8 +136,7 @@ function save_game()
 		var _saveEntity = 
 		{
 			object_name : object_get_name(object_index),
-			layer_name: layer_get_name(layer),
-			in_hand : in_hand,
+			layer_name: layer_get_name(layer),			
 			variables :
 			{			
 				x : x,
@@ -127,7 +149,9 @@ function save_game()
 				letter : letter,
 				blank : blank,
 				on_board : on_board,
+				in_hand : in_hand,
 				spr : spr,	
+				highlight : highlight
 			}		
 		}
 		array_push(_saveData, _saveEntity);

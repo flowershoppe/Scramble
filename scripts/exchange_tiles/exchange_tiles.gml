@@ -12,28 +12,28 @@ function exchange_tiles()
 	
 	with(oTileHolder)
 	{
-		if(tile != noone)
+		if(tile != noone and tile.selected)
 		{
-			if(tile.selected)
-			{
-				array_push(_array, tile);
-				tile = noone;	
-			}
+			array_push(_array, tile);
+			tile = noone;				
 		}
 	}
 	
 	//only exchange if tiles have been selected
 	if(array_length(_array) > 0)
 	{
-		add_tile_to_hand(oPlayerHand, global.tilebag, array_length(_array));
+		add_tile_to_hand(oPlayerHand, oTilebag, array_length(_array));
 	
 		for(var _index = 0; _index < array_length(_array); _index++)
 		{
 			var _tile = _array[_index];		
-			array_push(global.tilebag.tiles, _tile);
+			array_push(oTilebag.tiles, _tile);
+			_tile.visible = false;
+			_tile.x = 0;
+			_tile.y = 0;
 		
 		}		
-		oMatchStats.exchange_count++;
+		oMatchManager.exchange_count++;
 		next_turn();
 	}
 	

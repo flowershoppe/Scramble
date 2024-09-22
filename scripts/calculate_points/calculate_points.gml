@@ -2,7 +2,7 @@
 //return total point score
 function calculate_points()
 {
-	if(oMatchState.active == false){exit;}
+	if(oMatchManager.active == false){exit;}
 	
 	var _player = oPlayer;
 	var _word = "";
@@ -163,27 +163,27 @@ function calculate_points()
 		else
 		{
 			array_push(_spelled_words, _word);
-			if(string_length(_word) > string_length(oMatchStats.largest_word))
-			{oMatchStats.largest_word = _word;}
+			if(string_length(_word) > string_length(oMatchManager.largest_word))
+			{oMatchManager.largest_word = _word;}
 		}
 	}
 	
 	//display spelled/fake words
 	if(array_length(_fake_words) > 0)
 	{
-		oMatchStats.print_message = "The following spelled words do not appear in the dictionary: " + 	"\n" + string(_fake_words);
+		oMatchManager.print_message = "The following spelled words do not appear in the dictionary: " + 	"\n" + string(_fake_words);
 		return 0;
 	}
 	else
 	{
-		oMatchStats.last_words = [];
+		oMatchManager.last_words = [];
 		for(var _index = 0; _index < array_length(_spelled_words); _index++)
 		{
 			var _spelled_word = _spelled_words[_index]	
-			array_push(oMatchStats.spelled_words, _spelled_word);
-			array_push(oMatchStats.last_words, _spelled_word);
+			array_push(oMatchManager.spelled_words, _spelled_word);
+			array_push(oMatchManager.last_words, _spelled_word);
 		}
-		oMatchStats.print_message = "";
+		oMatchManager.print_message = "";
 	}
 	
 	//-----CALCULATE POINTS-----
@@ -205,7 +205,7 @@ function calculate_points()
 		
 		for(k = 0; k < array_length(_player_words_tiles[j]); k++)
 		{
-			oMatchStats.total_tiles++;
+			oMatchManager.total_tiles++;
 			
 			with(_player_words_tiles[j][k])
 			{
@@ -227,8 +227,8 @@ function calculate_points()
 	}
 	
 	//update stats
-	oMatchStats.total_words += array_length(_player_words_tiles);
-	if(_total > oMatchStats.largest_play){oMatchStats.largest_play = _total;}
+	oMatchManager.total_words += array_length(_player_words_tiles);
+	if(_total > oMatchManager.largest_play){oMatchManager.largest_play = _total;}
 	
 	#endregion
 	
