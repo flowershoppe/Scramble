@@ -10,4 +10,10 @@ root:
   elements:
     - type: text
       text: @length
+    - type: button
+      content:
+        type: text
+        text: Pause Menu
+      on_click: @@ toggle_pause()
+
 

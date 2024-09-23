@@ -1,6 +1,6 @@
 owner = oPlayer;
 
-empty = true;
+empty = false;
 
 spr = spPlank;
 spr_w = sprite_get_width(spPlank);
