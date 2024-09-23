@@ -15,6 +15,7 @@ function save_game()
 				y : y,
 				room_name : room,
 				time : time,
+				play_dialogue : play_dialogue
 			}
 		}
 		array_push(_saveData, _saveEntity);
@@ -186,9 +187,9 @@ function save_game()
 	var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1);
 
 	buffer_write(_buffer, buffer_string, _string);
-	buffer_save(_buffer, "gamesave.save");
+	buffer_save(_buffer, game_save_id + "gamesave.save");
 	buffer_delete(_buffer);
 
-	show_debug_message("Game successfully saved as " + _string)
+	show_debug_message("Game successfully saved at " + game_save_id + " as " + _string)
 }
 

@@ -13,8 +13,8 @@
   ],
   "name":"example_room",
   "parent":{
-    "name":"Scrabble",
-    "path":"Scrabble.yyp",
+    "name":"Scramble",
+    "path":"Scramble.yyp",
   },
   "parentRoom":null,
   "physicsSettings":{

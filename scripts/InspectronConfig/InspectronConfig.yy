@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"InspectronConfig",
   "parent":{
-    "name":"Scrabble",
-    "path":"Scrabble.yyp",
+    "name":"Scramble",
+    "path":"Scramble.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

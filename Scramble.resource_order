@@ -757,7 +757,7 @@
     {"name":"sdPlace5","order":4,"path":"sounds/sdPlace5/sdPlace5.yy",},
     {"name":"sdPlace6","order":5,"path":"sounds/sdPlace6/sdPlace6.yy",},
     {"name":"sdSciBell","order":6,"path":"sounds/sdSciBell/sdSciBell.yy",},
-    {"name":"cube","order":21,"path":"sprites/cube/cube.yy",},
+    {"name":"spBG","order":21,"path":"sprites/spBG/spBG.yy",},
     {"name":"sImageTemplate","order":1,"path":"sprites/sImageTemplate/sImageTemplate.yy",},
     {"name":"spBag","order":1,"path":"sprites/spBag/spBag.yy",},
     {"name":"spBoard","order":6,"path":"sprites/spBoard/spBoard.yy",},
