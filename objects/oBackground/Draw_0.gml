@@ -1,1 +1,1 @@
-draw_sprite_stretched(spBG, 0, 0, 0, room_width, room_height);
+draw_sprite(spBG, 0, room_width / 2, room_height / 2);

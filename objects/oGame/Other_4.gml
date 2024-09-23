@@ -29,10 +29,7 @@ switch(room)
 			is_full_screen: false
 		});
 		
-		if(play_dialogue)
-		{
-			dialogue_open(adialogue, []);
-		}
+
 		
 		audio_stop_sound(_main_menu_music);
 		
