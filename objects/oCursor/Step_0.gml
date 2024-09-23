@@ -35,11 +35,13 @@ if(mouse_check_button_pressed(mb_left))
 	if(held_tile == noone)
 	{
 		held_tile = instance_place(mouse_x, mouse_y, oTile);
+		//case for in hand tile objects "actual" locations
+		if(held_tile != noone){if(held_tile.in_hand == true){held_tile = noone;}}
 	}
 	
 	//check if tile exists and is grabbable	
 	if(held_tile == noone){exit;}
-	else if(!held_tile.grabbable){held_tile = noone; exit;}
+	else if(!held_tile.grabbable or !held_tile.visible){held_tile = noone; exit;}
 		
 	//grab a tile
 		

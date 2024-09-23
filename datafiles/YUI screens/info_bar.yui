@@ -11,9 +11,8 @@ root:
     - type: text
       text: @length
     - type: button
-      content:
-        type: text
-        text: Pause Menu
+      content: " "
+      background: spCog
       on_click: @@ toggle_pause()
 
 
