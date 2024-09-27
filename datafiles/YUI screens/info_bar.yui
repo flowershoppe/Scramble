@@ -3,16 +3,18 @@ file_type: screen
 
 root:
   type: panel
-  alignment: {h: center}
-  layout: canvas
+  layout: horizontal
+  size: stretch
   background: yui_panel_bg
   padding: 10
+  spacing: 605
   elements:
-    - type: text
-      text: @length
     - type: button
+      autofocus: false
       content: " "
       background: spCog
       on_click: @@ toggle_pause()
+    - type: text
+      text: @length
 
 

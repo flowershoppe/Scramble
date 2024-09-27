@@ -14,6 +14,7 @@ root:
   padding: 10
   elements:
     - type: button 
+      autofocus: false
       content: 
         type: text
         text: Submit Play
@@ -22,6 +23,7 @@ root:
       on_click: @@ submit_play();
 
     - type: button 
+      autofocus: false
       content: 
         type: text
         text: Return Tiles
@@ -30,6 +32,7 @@ root:
       on_click: @@ return_tiles();
 
     - type: button 
+      autofocus: false
       content: 
         type: text
         text: Exchange Tiles
