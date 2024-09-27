@@ -13,7 +13,7 @@ switch(room)
 		//-----YUI ELEMENTS-----
 		instance_create_layer(0, 96, "UI", yui_document,
 		{
-			image_xscale: 4,
+			image_xscale: 3,
 			image_yscale: 4,
 			yui_file: "YUI screens/match_stats.yui",
 			data_context: oMatchManager,

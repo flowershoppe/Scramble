@@ -3,8 +3,8 @@ var _tile = id;
 //hover		
 if(oCursor.held_tile == noone)
 {
-	if(grabbable and (position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id) 
-		or place_meeting(x, y, oCursor)))
+	if(grabbable and ((position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id) and in_hand)
+		or (place_meeting(x, y, oCursor) and on_board)))
 	{
 		xscale = 1.15;
 		yscale = 1.15;

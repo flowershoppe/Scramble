@@ -10,12 +10,15 @@ function exchange_tiles()
 	
 	var _array = [];
 	
+	//remve tile selected tiles from holders
 	with(oTileHolder)
 	{
 		if(tile != noone and tile.selected)
 		{
 			array_push(_array, tile);
-			tile = noone;				
+			tile.in_hand = false;
+			tile.layer = layer_get_id("Tilebag");
+			tile = noone;					
 		}
 	}
 	

@@ -11,8 +11,6 @@ function load_game()
 		var _struct = _loadData[0];
 		var _variables = _struct.variables; //get struct of an object from data array
 		
-		oGame.play_dialogue = false;
-		
 		room_goto(_variables.room_name);	
 		
 		with(oSaverLoader)

@@ -10,3 +10,11 @@ if(active == false)
 						"press " + input_binding_get_name(input_binding_get("confirm")) + " to advance",
 						1, 1, 0);	
 }
+
+if(global.exchanging)
+{
+	var _string = "Select Tiles to Exchange";
+	
+	draw_text_color((window_get_width() / 2) - string_length(_string) / 2, (window_get_height / 2), _string,
+					c_white, c_white, c_white, c_white, 1);	
+}
