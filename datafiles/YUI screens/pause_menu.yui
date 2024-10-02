@@ -35,6 +35,13 @@ root:
               content:
                 type: text
                 text_style: title
+                text: Main Menu
+              on_click: @@ room_goto(asset_get_index(rMainMenu))
+
+            - type: button
+              content:
+                type: text
+                text_style: title
                 text: Credits
           
         - type: button 
