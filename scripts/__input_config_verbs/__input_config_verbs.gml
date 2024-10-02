@@ -24,7 +24,7 @@ function __input_config_verbs()
             cancel:  input_binding_key(vk_shift),
             special: input_binding_key(vk_tab),
                         
-            pause: input_binding_key(ord("P")),
+            pause: input_binding_key(vk_escape),
 			zoom_in: input_binding_mouse_wheel_up(),
 			zoom_out: input_binding_mouse_wheel_down()
         },

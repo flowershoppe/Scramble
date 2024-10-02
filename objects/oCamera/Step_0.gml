@@ -1,5 +1,5 @@
 //Move camera
-#region
+/*#region
 //move camera based on directional keys pressed
 var _horiz_camera_move_direction = input_check("right") - input_check("left");
 
@@ -9,7 +9,7 @@ var _vert_camera_move_direction = input_check("down") - input_check("up");
 
 y += _vert_camera_move_direction * global.camera_speed;
 
-#endregion
+#endregion*/
 
 
 #region
