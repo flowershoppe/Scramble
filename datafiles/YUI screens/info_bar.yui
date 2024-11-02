@@ -7,7 +7,7 @@ root:
   size: stretch
   background: yui_panel_bg
   padding: 10
-  spacing: 605
+  spacing: 600
   elements:
     - type: button
       autofocus: false
