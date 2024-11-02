@@ -54,13 +54,25 @@ function save_game()
 			{
 				x : x,
 				y : y,
+				total_tiles : total_tiles,
+				total_points : total_points,
+				total_words : total_words,
+				largest_word : largest_word,
+				largest_play : largest_play,
+				turn : turn,
 				last_play : last_play,
 				last_words : last_words,
 				spelled_words : spelled_words,
 				turn_max : turn_max,
 				turn_min : turn_min,
 				point_max : point_max,
-				point_min : point_min
+				point_min : point_min,
+				opponent : opponent,
+				victory : victory,
+				loss : loss,
+				active : active,
+				condition_points : condition_points,
+				condition_location : condition_location
 			}		
 		}
 		array_push(_saveData, _saveEntity);
