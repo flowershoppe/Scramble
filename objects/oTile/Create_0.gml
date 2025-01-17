@@ -12,3 +12,5 @@ xscale = 1;
 yscale = 1;
 
 highlight = false;
+
+true_layer = layer;

@@ -1,16 +1,23 @@
 var _tile = id;
 
-//hover		
+//hover	
+if(layer != true_layer & layer != layer_get_id("Grabbed"))
+{
+	true_layer = layer;	
+}
+
 if(oCursor.held_tile == noone and oCamera.dragging == false)
 {
 	if(grabbable and ((position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id) and in_hand)
 		or (place_meeting(x, y, oCursor) and on_board)))
 	{
+		layer = layer_get_id("Grabbed");
 		xscale = 1.15;
 		yscale = 1.15;
 	}
 	else
 	{
+		layer = true_layer;
 		xscale = 1;
 		yscale = 1;
 	}
