@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"WizMatchStart",
+  "%Name":"match_start",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"WizMatchStart",
+  "name":"match_start",
   "parent":{
     "name":"Dialogue Scripts",
     "path":"folders/Scripts/Dialogue Scripts.yy",

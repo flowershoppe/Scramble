@@ -32,6 +32,7 @@ function check_end_match()
 			_cant_play = true;	
 		}
 
+		//lose match
 		if((turn_max <= turn and turn_max > -1) or	
 			(turn_min >= turn and _cant_play and turn_min > -1) or
 			(point_max <= total_points and point_max > -1) or
@@ -47,8 +48,9 @@ function check_end_match()
 			oMatchManager.loss = false;	
 		}
 		
+		//win match
 		if(oMatchManager.victory and !oMatchManager.loss)
-		{
+		{		
 			dialogue_open(adialogue, []);
 			//audio_stop_sound(global.music_game);
 			//audio_play_sound_on(global.emitterMS, global.music_victory, true, 100);

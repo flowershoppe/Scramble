@@ -16,8 +16,6 @@ turn_min = -1;
 point_max = -1;
 point_min = -1;
 
-opponent = oWiz;
-
 throaway = 1;
 
 victory = false;
