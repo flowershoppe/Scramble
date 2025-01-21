@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"oCharacter",
+  "%Name":"oOpponent",
   "eventList":[],
   "managed":true,
-  "name":"oCharacter",
+  "name":"oOpponent",
   "overriddenProperties":[],
   "parent":{
     "name":"Characters",
@@ -25,9 +25,10 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"","%Name":"name","filters":[],"listItems":[],"multiselect":false,"name":"name","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"name","varType":2,},
-    {"$GMObjectProperty":"","%Name":"progression","filters":[],"listItems":[],"multiselect":false,"name":"progression","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"","%Name":"dialogue_prog","filters":[],"listItems":[],"multiselect":false,"name":"dialogue_prog","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"","%Name":"spr","filters":[],"listItems":[],"multiselect":false,"name":"spr","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":5,},
     {"$GMObjectProperty":"","%Name":"dialogues","filters":[],"listItems":[],"multiselect":false,"name":"dialogues","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"","%Name":"match_specs","filters":[],"listItems":[],"multiselect":false,"name":"match_specs","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

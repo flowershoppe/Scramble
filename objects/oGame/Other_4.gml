@@ -56,6 +56,8 @@ switch(room)
 		}
 		#endregion
 		*/
+		room_persistent = true;
+		
 		audio_stop_sound(_main_menu_music);
 		
 		if(!audio_is_playing(_game_music_1) and !audio_is_playing(global.music_victory))

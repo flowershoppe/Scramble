@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"YUI Handlers",
-    "path":"folders/Objects/YUI Handlers.yy",
+    "path":"folders/Objects/Meta/YUI Handlers.yy",
   },
   "parentObjectId":null,
   "persistent":true,

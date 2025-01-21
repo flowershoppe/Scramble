@@ -71,16 +71,12 @@ global.music_game = msGameMusic1;
 global.music_main_menu = msMainMenuMusic;
 global.music_victory = msVictory;
 
-//create Characters
-instance_create_layer(0, 0, "Meta", oWiz);
-
 //Handlers
 instance_create_layer(0, 0, "Meta", oSettings);
 instance_create_layer(0, 0, "Meta", oPauseMenu);
 instance_create_layer(0, 0, "Meta", oSaverLoader);
 instance_create_layer(0, 0, "Meta", oMatchManager);
 
-global.opponent = noone;
 global.exchanging = false;
 
 //YUI Structs
@@ -103,6 +99,10 @@ global.stPauseMenu =
 //initialize player and cursor
 var _player = instance_create_layer(0, 0, "Meta", oPlayer);		
 instance_create_layer(0, 0, "Meta", oCursor);
+
+//Opponents
+opponents_1 = [oJungle];
+opponents_2 = [oWiz];
 
 
 		

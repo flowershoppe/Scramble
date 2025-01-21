@@ -12,8 +12,8 @@
     "path":"folders/Objects/Characters.yy",
   },
   "parentObjectId":{
-    "name":"oCharacter",
-    "path":"objects/oCharacter/oCharacter.yy",
+    "name":"oOpponent",
+    "path":"objects/oOpponent/oOpponent.yy",
   },
   "persistent":true,
   "physicsAngularDamping":0.1,

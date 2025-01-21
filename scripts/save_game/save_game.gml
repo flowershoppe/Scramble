@@ -43,6 +43,29 @@ function save_game()
 		array_push(_saveData, _saveEntity);
 	}
 	
+	//save Opponent
+	with(oOpponent)
+	{
+		var _saveEntity = 
+		{
+			object_name : object_get_name(object_index),
+			layer_name: layer_get_name(layer),
+			variables :
+			{
+				x : x,
+				y : y,
+				image_index : image_index,
+				image_alpha : image_alpha,
+				name : name,
+				spr : spr,
+				match_specs : match_specs,
+				dialogues : dialogues,
+				dialogue_prog : dialogue_prog
+			}
+		}
+		array_push(_saveData, _saveEntity);
+	}
+	
 	//save Match Stats
 	with(oMatchManager)
 	{
@@ -67,12 +90,11 @@ function save_game()
 				turn_min : turn_min,
 				point_max : point_max,
 				point_min : point_min,
-				opponent : opponent,
 				victory : victory,
 				loss : loss,
 				active : active,
 				condition_points : condition_points,
-				condition_location : condition_location
+				condition_location : condition_location,
 			}		
 		}
 		array_push(_saveData, _saveEntity);

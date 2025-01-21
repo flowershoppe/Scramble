@@ -1,18 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"oSettings",
+  "%Name":"oJungle",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oSettings",
+  "name":"oJungle",
   "overriddenProperties":[],
   "parent":{
-    "name":"YUI Handlers",
-    "path":"folders/Objects/Meta/YUI Handlers.yy",
+    "name":"Characters",
+    "path":"folders/Objects/Characters.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oOpponent",
+    "path":"objects/oOpponent/oOpponent.yy",
+  },
   "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

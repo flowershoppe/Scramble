@@ -1,19 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"oSettings",
+  "%Name":"oMapLevel1",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oSettings",
+  "name":"oMapLevel1",
   "overriddenProperties":[],
   "parent":{
-    "name":"YUI Handlers",
-    "path":"folders/Objects/Meta/YUI Handlers.yy",
+    "name":"Game Elements",
+    "path":"folders/Objects/Game Elements.yy",
   },
-  "parentObjectId":null,
-  "persistent":true,
+  "parentObjectId":{
+    "name":"oMapIcon",
+    "path":"objects/oMapIcon/oMapIcon.yy",
+  },
+  "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -30,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spLetterTile",
+    "path":"sprites/spLetterTile/spLetterTile.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

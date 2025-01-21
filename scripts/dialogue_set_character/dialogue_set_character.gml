@@ -21,5 +21,15 @@ function dialogue_set_character(index) {
       dialogue_gui_character_image_width *= dialogue_gui_character_image_scale;
       dialogue_gui_character_image_y = dialogue_gui_height;
     break;
+	
+	case 2: // Jungle
+      dialogue_gui_character_sprite_index = spJungle;
+      dialogue_gui_character_image_index = 0;
+      dialogue_gui_character_image_x = 8;
+      dialogue_gui_character_image_scale = 0.25;
+      dialogue_gui_character_image_width = sprite_get_width(dialogue_gui_character_sprite_index);
+      dialogue_gui_character_image_width *= dialogue_gui_character_image_scale;
+      dialogue_gui_character_image_y = dialogue_gui_height;
+    break;
   }
 }
