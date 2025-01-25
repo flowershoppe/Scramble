@@ -1,9 +1,9 @@
-{ longMessage : "ERROR in
+{ line : 5, longMessage : "ERROR in
 action number 1
-of Mouse Event for Glob Left Released
-for object YuiCursorManager:
+of  Step Event0
+for object oTilebag:
 
 
-Variable <unknown_object>.progression(101431, -2147483648) not set before reading it.
- at gml_Script_adialogue (line 5) - 	messages = _op.dialogues[_op.progression];
-", line : 5, stacktrace : [ "gml_Script_adialogue (line 5)","gml_Script_dialogue_open_at (line 14)","gml_Script_dialogue_open (line 29) -   dialogue_open_at(index, arguments, 0);","gml_Script_check_end_match (line 52) - 			dialogue_open(adialogue, []);","gml_Script_next_turn (line 16) - 	check_end_match();","gml_Script_submit_play (line 23) - 			next_turn();","gml_Script_resolveScript@anon@1245@YuiCallFunction_YuiCallFunction (line 51)","gml_Script_yui_call_handler (line 26) - 		handler.resolve(data);","gml_Script_anon@493@gml_Object_yui_button_Create_0 (line 33) - 		yui_call_handler(yui_element.props.on_click, [args], data_source);","gml_Object_YuiCursorManager_Mouse_56 (line 55) - 			var handled = next.left_click();" ], message : "Variable <unknown_object>.progression(101431, -2147483648) not set before reading it.", script : "gml_Script_adialogue" }
+argument 5 needs to be a struct
+ at gml_Object_oTilebag_Step_0 (line 5) - 	bag_menu = instance_create_layer(window_get_width() / 2, window_get_height() / 2, 100, "YUI", yui_document,
+", message : "argument 5 needs to be a struct", stacktrace : [ "gml_Object_oTilebag_Step_0 (line 5)" ], script : "gml_Object_oTilebag_Step_0" }
