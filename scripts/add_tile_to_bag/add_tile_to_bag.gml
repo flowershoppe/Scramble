@@ -4,6 +4,7 @@ function add_tile_to_bag(_letter, _pointvalue, _count)
 {
 	var _inc = 0;
 	var _tile;
+	var _array = oTilebag.tiles;
 	while(_inc < _count)
 	{	
 		//create new tile and assign its values
@@ -17,8 +18,16 @@ function add_tile_to_bag(_letter, _pointvalue, _count)
 			_tile.blank = true;	
 		}
 		
-		//put it in the bag
-		array_insert(oTilebag.tiles, 0, _tile);
+		//put in bag
+		array_push(_array, _tile);
+		
+		//sort the bag
+		var _function = function(a, b)
+		{
+			return ord(a.letter) - ord(b.letter);
+		}	
+
+		array_sort(_array, _function);	
 		
 		_inc++;
 	}
