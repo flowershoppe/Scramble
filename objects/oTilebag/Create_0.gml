@@ -1,6 +1,5 @@
 //array of tile id's
 tiles = [];
-letters = [];
 
 spr = spBag;
 
@@ -14,5 +13,3 @@ bag_menu = noone;
 
 width = window_get_width() / 2;
 height = window_get_height() / 3;
-
-sp = spLetterTile;

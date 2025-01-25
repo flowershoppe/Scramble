@@ -12,8 +12,6 @@ root:
   layout: canvas
   
   elements:
-    - type: image
-      sprite: @sp
     - type: panel
       canvas:
         center: true
