@@ -1,0 +1,37 @@
+id: settings
+file_type: screen
+
+import:
+  - ../Templates/
+
+  - /YUI/Animations/transitions.yui
+  - /YUI/Widgets/
+
+root:
+  type: panel
+  layout: canvas
+  
+  elements:
+    - type: image
+      sprite: @sp
+    - type: panel
+      canvas:
+        center: true
+      layout: grid
+      padding: [10, 10, 10, 10]
+      grid:
+        rows: 10
+        columns: 10
+
+      background: yui_panel_bg
+      size: {w: 500, h: 200}
+      elements: @tiles
+      template:
+        type: panel
+        elements:
+          - type: text
+            text: @letter 
+          - type: image
+            sprite: @spr
+
+        
