@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_resolve_sprite_by_name",
   "isCompatibility":false,
   "isDnD":false,

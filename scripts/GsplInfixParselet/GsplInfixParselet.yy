@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GsplInfixParselet",
   "isCompatibility":false,
   "isDnD":false,

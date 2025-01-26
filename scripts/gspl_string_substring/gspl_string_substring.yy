@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"gspl_string_substring",
   "isCompatibility":false,
   "isDnD":false,

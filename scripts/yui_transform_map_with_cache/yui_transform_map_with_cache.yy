@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_transform_map_with_cache",
   "isCompatibility":false,
   "isDnD":false,

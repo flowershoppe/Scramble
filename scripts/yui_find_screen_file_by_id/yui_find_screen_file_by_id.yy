@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_find_screen_file_by_id",
   "isCompatibility":false,
   "isDnD":false,

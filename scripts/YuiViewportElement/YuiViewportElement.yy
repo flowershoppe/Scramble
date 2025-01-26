@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiViewportElement",
   "isCompatibility":false,
   "isDnD":false,

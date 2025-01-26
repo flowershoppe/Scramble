@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_resolve_resource_category_map",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiLayoutBase",
   "isCompatibility":false,
   "isDnD":false,

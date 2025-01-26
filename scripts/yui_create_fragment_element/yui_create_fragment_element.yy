@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_create_fragment_element",
   "isCompatibility":false,
   "isDnD":false,

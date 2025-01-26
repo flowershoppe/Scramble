@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"DEBUG_BREAK_YUI",
   "isCompatibility":false,
   "isDnD":false,

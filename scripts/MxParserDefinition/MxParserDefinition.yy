@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"MxParserDefinition",
   "isCompatibility":false,
   "isDnD":false,

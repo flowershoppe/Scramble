@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GsplTimeSpan",
   "isCompatibility":false,
   "isDnD":false,

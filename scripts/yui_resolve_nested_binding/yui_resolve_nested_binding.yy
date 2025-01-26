@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_resolve_nested_binding",
   "isCompatibility":false,
   "isDnD":false,

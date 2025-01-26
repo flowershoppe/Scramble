@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_color_shift_hue",
   "isCompatibility":false,
   "isDnD":false,

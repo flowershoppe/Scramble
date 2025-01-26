@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_init_props",
   "isCompatibility":false,
   "isDnD":false,

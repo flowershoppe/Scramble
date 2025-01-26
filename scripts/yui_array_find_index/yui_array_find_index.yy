@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_array_find_index",
   "isCompatibility":false,
   "isDnD":false,

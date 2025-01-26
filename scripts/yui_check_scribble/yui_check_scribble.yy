@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_check_scribble",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_get_item_parent_map",
   "isCompatibility":false,
   "isDnD":false,

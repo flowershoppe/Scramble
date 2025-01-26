@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YsTokenDefinition",
   "isCompatibility":false,
   "isDnD":false,

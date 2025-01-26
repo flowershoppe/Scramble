@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YsSetParselet",
   "isCompatibility":false,
   "isDnD":false,

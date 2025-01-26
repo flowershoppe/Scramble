@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiLambda",
   "isCompatibility":false,
   "isDnD":false,

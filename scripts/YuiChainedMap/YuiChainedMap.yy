@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiChainedMap",
   "isCompatibility":false,
   "isDnD":false,

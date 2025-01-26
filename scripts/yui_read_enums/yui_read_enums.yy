@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_read_enums",
   "isCompatibility":false,
   "isDnD":false,

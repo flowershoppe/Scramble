@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_validate_number_input",
   "isCompatibility":false,
   "isDnD":false,

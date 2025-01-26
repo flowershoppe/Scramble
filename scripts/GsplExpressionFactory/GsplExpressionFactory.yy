@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GsplExpressionFactory",
   "isCompatibility":false,
   "isDnD":false,

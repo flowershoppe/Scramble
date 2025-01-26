@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_arrays_equal",
   "isCompatibility":false,
   "isDnD":false,

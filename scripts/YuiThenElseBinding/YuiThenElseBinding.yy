@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiThenElseBinding",
   "isCompatibility":false,
   "isDnD":false,

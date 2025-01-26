@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiDataTemplateElement",
   "isCompatibility":false,
   "isDnD":false,

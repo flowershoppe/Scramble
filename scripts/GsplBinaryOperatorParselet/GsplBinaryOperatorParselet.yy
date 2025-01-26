@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GsplBinaryOperatorParselet",
   "isCompatibility":false,
   "isDnD":false,

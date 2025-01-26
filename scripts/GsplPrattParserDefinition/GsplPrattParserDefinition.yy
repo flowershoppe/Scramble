@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GsplPrattParserDefinition",
   "isCompatibility":false,
   "isDnD":false,

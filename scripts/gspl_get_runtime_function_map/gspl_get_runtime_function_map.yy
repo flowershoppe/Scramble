@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"gspl_get_runtime_function_map",
   "isCompatibility":false,
   "isDnD":false,

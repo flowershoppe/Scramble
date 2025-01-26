@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_load_resource_file",
   "isCompatibility":false,
   "isDnD":false,

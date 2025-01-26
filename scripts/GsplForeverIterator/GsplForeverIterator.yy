@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GsplForeverIterator",
   "isCompatibility":false,
   "isDnD":false,

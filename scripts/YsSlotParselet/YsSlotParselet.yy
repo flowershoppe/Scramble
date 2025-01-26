@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YsSlotParselet",
   "isCompatibility":false,
   "isDnD":false,

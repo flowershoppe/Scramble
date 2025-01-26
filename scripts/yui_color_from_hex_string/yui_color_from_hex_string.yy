@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_color_from_hex_string",
   "isCompatibility":false,
   "isDnD":false,

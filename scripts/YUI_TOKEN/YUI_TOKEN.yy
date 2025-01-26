@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YUI_TOKEN",
   "isCompatibility":false,
   "isDnD":false,

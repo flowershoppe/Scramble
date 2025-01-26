@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_apply_slot_definitions",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"gspl_set_runner_instruction",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiSwitchElement",
   "isCompatibility":false,
   "isDnD":false,

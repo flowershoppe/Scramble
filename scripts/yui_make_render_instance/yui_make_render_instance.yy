@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_make_render_instance",
   "isCompatibility":false,
   "isDnD":false,

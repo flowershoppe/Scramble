@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GsplEachIterator",
   "isCompatibility":false,
   "isDnD":false,

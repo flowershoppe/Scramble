@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"gspl_define_current_room",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_world_to_gui_y",
   "isCompatibility":false,
   "isDnD":false,

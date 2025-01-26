@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiAnimationGroupSequence",
   "isCompatibility":false,
   "isDnD":false,

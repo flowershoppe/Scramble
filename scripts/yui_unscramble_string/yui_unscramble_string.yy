@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_unscramble_string",
   "isCompatibility":false,
   "isDnD":false,

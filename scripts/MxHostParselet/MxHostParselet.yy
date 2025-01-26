@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"MxHostParselet",
   "isCompatibility":false,
   "isDnD":false,

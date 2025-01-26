@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"gspl_define_clock",
   "isCompatibility":false,
   "isDnD":false,

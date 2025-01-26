@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiPadding",
   "isCompatibility":false,
   "isDnD":false,

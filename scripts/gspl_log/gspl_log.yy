@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"gspl_log",
   "isCompatibility":false,
   "isDnD":false,

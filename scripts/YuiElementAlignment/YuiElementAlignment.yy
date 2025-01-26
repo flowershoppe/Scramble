@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiElementAlignment",
   "isCompatibility":false,
   "isDnD":false,

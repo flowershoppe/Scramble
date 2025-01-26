@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_draw_alpha_surface_part",
   "isCompatibility":false,
   "isDnD":false,

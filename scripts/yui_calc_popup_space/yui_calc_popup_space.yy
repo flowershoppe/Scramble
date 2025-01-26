@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_calc_popup_space",
   "isCompatibility":false,
   "isDnD":false,

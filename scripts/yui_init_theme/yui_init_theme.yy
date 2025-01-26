@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_init_theme",
   "isCompatibility":false,
   "isDnD":false,

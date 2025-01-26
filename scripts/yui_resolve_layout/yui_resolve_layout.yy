@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_resolve_layout",
   "isCompatibility":false,
   "isDnD":false,

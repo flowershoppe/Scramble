@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_try_start_interaction",
   "isCompatibility":false,
   "isDnD":false,

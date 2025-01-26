@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YS_PRECEDENCE",
   "isCompatibility":false,
   "isDnD":false,

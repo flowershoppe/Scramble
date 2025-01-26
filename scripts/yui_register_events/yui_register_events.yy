@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_register_events",
   "isCompatibility":false,
   "isDnD":false,

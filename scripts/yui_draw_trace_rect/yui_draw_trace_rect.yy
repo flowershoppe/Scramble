@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_draw_trace_rect",
   "isCompatibility":false,
   "isDnD":false,

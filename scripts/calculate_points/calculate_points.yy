@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"calculate_points",
   "isCompatibility":false,
   "isDnD":false,

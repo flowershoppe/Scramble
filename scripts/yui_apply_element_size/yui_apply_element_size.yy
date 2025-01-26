@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_apply_element_size",
   "isCompatibility":false,
   "isDnD":false,

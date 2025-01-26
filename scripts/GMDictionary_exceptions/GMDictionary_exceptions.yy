@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GMDictionary_exceptions",
   "isCompatibility":false,
   "isDnD":false,

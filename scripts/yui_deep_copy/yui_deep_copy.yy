@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_deep_copy",
   "isCompatibility":false,
   "isDnD":false,

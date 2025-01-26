@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GsplGlobalEnvironment",
   "isCompatibility":false,
   "isDnD":false,

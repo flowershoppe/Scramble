@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiRadialLayout",
   "isCompatibility":false,
   "isDnD":false,

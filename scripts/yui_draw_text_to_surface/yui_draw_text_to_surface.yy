@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_draw_text_to_surface",
   "isCompatibility":false,
   "isDnD":false,

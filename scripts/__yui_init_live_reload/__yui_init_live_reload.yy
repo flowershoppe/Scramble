@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__yui_init_live_reload",
   "isCompatibility":false,
   "isDnD":false,

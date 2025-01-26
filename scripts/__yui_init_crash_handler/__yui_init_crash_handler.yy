@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"__yui_init_crash_handler",
   "isCompatibility":false,
   "isDnD":false,

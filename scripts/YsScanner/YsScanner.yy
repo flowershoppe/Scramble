@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YsScanner",
   "isCompatibility":false,
   "isDnD":false,

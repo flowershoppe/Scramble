@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_is_fs_sandbox_enabled",
   "isCompatibility":false,
   "isDnD":false,

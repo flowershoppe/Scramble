@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_draw_rect_outline",
   "isCompatibility":false,
   "isDnD":false,

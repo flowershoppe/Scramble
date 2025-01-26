@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiCallFunction",
   "isCompatibility":false,
   "isDnD":false,

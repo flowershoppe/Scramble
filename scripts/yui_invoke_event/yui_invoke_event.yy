@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_invoke_event",
   "isCompatibility":false,
   "isDnD":false,

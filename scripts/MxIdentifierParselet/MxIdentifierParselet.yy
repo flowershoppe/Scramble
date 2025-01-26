@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"MxIdentifierParselet",
   "isCompatibility":false,
   "isDnD":false,

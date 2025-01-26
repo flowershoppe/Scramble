@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GsplLoopFiber",
   "isCompatibility":false,
   "isDnD":false,

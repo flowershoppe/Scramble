@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_get_runner_temp_folder",
   "isCompatibility":false,
   "isDnD":false,

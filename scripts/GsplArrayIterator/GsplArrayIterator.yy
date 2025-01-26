@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GsplArrayIterator",
   "isCompatibility":false,
   "isDnD":false,

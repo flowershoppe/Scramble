@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiCurveAnimation",
   "isCompatibility":false,
   "isDnD":false,

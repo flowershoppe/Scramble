@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GsplTokenDefinition",
   "isCompatibility":false,
   "isDnD":false,

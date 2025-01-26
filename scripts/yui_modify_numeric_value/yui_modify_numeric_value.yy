@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_modify_numeric_value",
   "isCompatibility":false,
   "isDnD":false,

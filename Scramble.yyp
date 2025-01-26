@@ -303,7 +303,6 @@
     {"$GMIncludedFile":"","%Name":"slider_drag.yui","CopyToMask":-1,"filePath":"datafiles/YUI/Interactions","name":"slider_drag.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"window_move.yui","CopyToMask":-1,"filePath":"datafiles/YUI/Interactions","name":"window_move.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"quick_start_screen.yui","CopyToMask":-1,"filePath":"datafiles/YUI","name":"quick_start_screen.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"quick_start_screen.yui","CopyToMask":-1,"filePath":"datafiles/YUI","name":"quick_start_screen.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"default.yui","CopyToMask":-1,"filePath":"datafiles/YUI/Themes","name":"default.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"pink!.yui","CopyToMask":-1,"filePath":"datafiles/YUI/Themes","name":"pink!.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"checkbox.yui","CopyToMask":-1,"filePath":"datafiles/YUI/Widgets","name":"checkbox.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -324,7 +323,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.2.0.132",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"Scramble",
   "resources":[

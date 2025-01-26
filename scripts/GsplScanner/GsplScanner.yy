@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GsplScanner",
   "isCompatibility":false,
   "isDnD":false,

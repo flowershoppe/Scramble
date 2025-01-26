@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiDragAndDrop",
   "isCompatibility":false,
   "isDnD":false,

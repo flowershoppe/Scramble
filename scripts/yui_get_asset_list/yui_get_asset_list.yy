@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_get_asset_list",
   "isCompatibility":false,
   "isDnD":false,

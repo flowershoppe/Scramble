@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_hex_to_dec",
   "isCompatibility":false,
   "isDnD":false,

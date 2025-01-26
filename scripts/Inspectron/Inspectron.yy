@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"Inspectron",
   "isCompatibility":false,
   "isDnD":false,

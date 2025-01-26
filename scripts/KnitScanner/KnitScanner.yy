@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"KnitScanner",
   "isCompatibility":false,
   "isDnD":false,

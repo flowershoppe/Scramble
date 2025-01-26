@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_string_split",
   "isCompatibility":false,
   "isDnD":false,

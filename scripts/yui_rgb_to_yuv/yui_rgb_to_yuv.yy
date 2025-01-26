@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_rgb_to_yuv",
   "isCompatibility":false,
   "isDnD":false,

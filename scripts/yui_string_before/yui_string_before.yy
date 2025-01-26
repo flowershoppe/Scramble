@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_string_before",
   "isCompatibility":false,
   "isDnD":false,

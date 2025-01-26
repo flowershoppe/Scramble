@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiDocument",
   "isCompatibility":false,
   "isDnD":false,

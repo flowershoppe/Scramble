@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"yui_trim_rect_to_viewport",
   "isCompatibility":false,
   "isDnD":false,

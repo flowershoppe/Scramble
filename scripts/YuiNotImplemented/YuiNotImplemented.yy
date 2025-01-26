@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiNotImplemented",
   "isCompatibility":false,
   "isDnD":false,

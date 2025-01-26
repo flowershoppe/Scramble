@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GsplCallableAsset",
   "isCompatibility":false,
   "isDnD":false,

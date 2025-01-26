@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YuiHorizontalLayout",
   "isCompatibility":false,
   "isDnD":false,

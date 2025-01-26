@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GsplRuntimeError",
   "isCompatibility":false,
   "isDnD":false,
