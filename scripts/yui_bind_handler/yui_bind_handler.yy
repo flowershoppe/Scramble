@@ -6,7 +6,7 @@
   "name":"yui_bind_handler",
   "parent":{
     "name":"Event Handling",
-    "path":"folders/Libraries/Packages - YUI/Event Handling.yy",
+    "path":"folders/Packages - YUI/Event Handling.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

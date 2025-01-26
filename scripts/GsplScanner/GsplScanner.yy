@@ -6,7 +6,7 @@
   "name":"GsplScanner",
   "parent":{
     "name":"Scanner",
-    "path":"folders/Libraries/Packages - gspl/Scanner.yy",
+    "path":"folders/Packages - gspl/Scanner.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

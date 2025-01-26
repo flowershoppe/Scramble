@@ -6,7 +6,7 @@
   "name":"yui_draw_polygon_outline",
   "parent":{
     "name":"draw",
-    "path":"folders/Libraries/Packages - YUI/scripts/draw.yy",
+    "path":"folders/Packages - YUI/scripts/draw.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -6,7 +6,7 @@
   "name":"gspl_queue_runner_event",
   "parent":{
     "name":"Objects",
-    "path":"folders/Libraries/Packages - gspl/Objects.yy",
+    "path":"folders/Packages - gspl/Objects.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

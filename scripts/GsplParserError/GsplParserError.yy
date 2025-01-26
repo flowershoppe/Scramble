@@ -6,7 +6,7 @@
   "name":"GsplParserError",
   "parent":{
     "name":"Parser",
-    "path":"folders/Libraries/Packages - gspl/Parser.yy",
+    "path":"folders/Packages - gspl/Parser.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

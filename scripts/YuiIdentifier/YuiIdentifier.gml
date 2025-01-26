@@ -1,10 +1,9 @@
 /// @description stores the name of an identifier
-function YuiIdentifier(identifier) : YuiExpr() constructor {
-	static is_yui_binding = true;
+function YuiIdentifier(identifier, source) : YuiExpr() constructor {
 	static is_yui_live_binding = false;
-	static is_yui_call = false;
 
-	self.identifier = identifier
+	self.identifier = identifier;
+	self.source = source;
 	
 	static resolve = function(data) {
 		// currently identifier just resolves to the string, which means any unquoted string

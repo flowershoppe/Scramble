@@ -6,7 +6,7 @@
   "name":"YuiSelectionScope",
   "parent":{
     "name":"Selection",
-    "path":"folders/Libraries/Packages - YUI/Selection.yy",
+    "path":"folders/Packages - YUI/Selection.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

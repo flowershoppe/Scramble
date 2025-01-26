@@ -6,7 +6,7 @@
   "name":"YuiCompiledBinding",
   "parent":{
     "name":"Compiler",
-    "path":"folders/Libraries/Packages - YUI/Compiler.yy",
+    "path":"folders/Packages - YUI/Compiler.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

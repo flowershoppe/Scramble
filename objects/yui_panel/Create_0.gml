@@ -10,6 +10,17 @@ internal_children = [];
 is_arranging = false;
 used_layout_size = undefined;
 
+destroy = function() {
+	var i = 0; repeat array_length(internal_children) {
+		var child = internal_children[i++];
+		if instance_exists(child)
+			child.destroy();
+	}
+		
+	// use base_destroy not border_destroy		
+	base_destroy();
+}
+
 border_onLayoutInit = onLayoutInit;
 onLayoutInit = function() {
 	border_onLayoutInit();
@@ -158,6 +169,22 @@ onChildLayoutComplete = function(child) {
 	}
 }
 
+base_traverse = traverse;
+traverse = function(func, acc = undefined) {
+	
+	with self {
+		// allow the traverse function to change the acc itself
+		acc = func(acc) ?? acc;
+	}
+	
+	var i = 0; repeat array_length(internal_children) {
+		var child = internal_children[i++];
+		if instance_exists(child) {
+			child.traverse(func, acc);
+		}
+	}
+}
+
 move = function(xoffset, yoffset) {
 	// use base move, not border's move
 	base_move(xoffset, yoffset);
@@ -185,9 +212,11 @@ unload = function(unload_root = undefined) {
 		var child_item = internal_children[i];
 		//yui_log("unloading panel child (index ", i, ") visual", instance.id);
 		
-		var child_unload_time = child_item.unload(unload_root_item);
+		if instance_exists(child_item) {
+			var child_unload_time = child_item.unload(unload_root_item);
+			unload_time = max(unload_time, child_unload_time);
+		}
 		
-		unload_time = max(unload_time, child_unload_time);
 		i++;
 	}
 

@@ -9,7 +9,7 @@ root:
   type: panel
   alignment: { h: center }
   layout: canvas
-  background: yui_panel_bg
+  background: ~yui_panel_bg
   canvas:
     top: 20
     center: h
@@ -23,7 +23,7 @@ root:
       canvas:
         top: 5
         center: h
-      background: yui_panel_bg
+      background: ~yui_panel_bg
       elements:
         - type: text
           text: "--- RESULT ---"

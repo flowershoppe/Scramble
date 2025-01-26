@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"test",
-    "path":"folders/Libraries/Packages - gspl/test.yy",
+    "path":"folders/Packages - gspl/test.yy",
   },
   "parentObjectId":null,
   "persistent":false,

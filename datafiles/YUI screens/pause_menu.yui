@@ -12,7 +12,7 @@ root:
   layout: vertical
   size: stretch
   alignment: center
-  background: yui_panel_bg
+  background: ~yui_panel_bg
   elements:
     - type: panel
       size: { w: 250, h: 350 }
@@ -29,14 +29,14 @@ root:
                 type: text
                 text_style: title
                 text: Settings
-              on_click: @@ room_goto(asset_get_index(rSettings))
+              on_click: @@ ~room_goto(~asset_get_index(rSettings))
 
             - type: button 
               content:
                 type: text
                 text_style: title
                 text: Main Menu
-              on_click: @@ room_goto(asset_get_index(rMainMenu))
+              on_click: @@ ~room_goto(~asset_get_index(rMainMenu))
 
             - type: button
               content:
@@ -49,4 +49,4 @@ root:
             type: text
             text_style: title
             text: Back
-          on_click: @@ toggle_pause()
+          on_click: @@ ~toggle_pause()

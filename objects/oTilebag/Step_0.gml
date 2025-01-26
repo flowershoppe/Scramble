@@ -10,7 +10,15 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 			{
 				data_context : oTilebag,
 				yui_file : "YUI screens/tilebag.yui",
-			})
+			});
+			
+			stats_menu = instance_create_layer(0, 0, "YUI", yui_document,
+			{
+				x : 200,
+				y : 200,
+				data_context : oRun,
+				yui_file : "YUI screens/run_stats.yui"
+			});
 		}
 		image_xscale = 1.15;
 		image_yscale = 1.15;
@@ -18,7 +26,9 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 	else
 	{
 		instance_destroy(bag_menu);	
+		instance_destroy(stats_menu);
 		bag_menu = noone;
+		stats_menu = noone;
 		image_xscale = 1;
 		image_yscale = 1;
 	}

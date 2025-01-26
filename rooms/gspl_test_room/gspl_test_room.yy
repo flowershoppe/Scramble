@@ -14,7 +14,7 @@
   "name":"gspl_test_room",
   "parent":{
     "name":"test",
-    "path":"folders/Libraries/Packages - gspl/test.yy",
+    "path":"folders/Packages - gspl/test.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

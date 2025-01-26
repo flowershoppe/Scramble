@@ -6,7 +6,7 @@
   "name":"yui_resolve_color",
   "parent":{
     "name":"color",
-    "path":"folders/Libraries/Packages - YUI/scripts/color.yy",
+    "path":"folders/Packages - YUI/scripts/color.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

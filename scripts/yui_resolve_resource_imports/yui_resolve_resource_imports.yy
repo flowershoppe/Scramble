@@ -6,7 +6,7 @@
   "name":"yui_resolve_resource_imports",
   "parent":{
     "name":"resources",
-    "path":"folders/Libraries/Packages - YUI/scripts/resources.yy",
+    "path":"folders/Packages - YUI/scripts/resources.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

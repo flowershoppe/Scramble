@@ -6,7 +6,7 @@
   "name":"yui_unscramble_string",
   "parent":{
     "name":"Effect Functions",
-    "path":"folders/Libraries/Packages - YUI/Animation/Effect Functions.yy",
+    "path":"folders/Packages - YUI/Animation/Effect Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Packages - YUI",
-    "path":"folders/Libraries/Packages - YUI.yy",
+    "path":"folders/Packages - YUI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

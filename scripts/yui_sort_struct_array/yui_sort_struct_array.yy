@@ -6,7 +6,7 @@
   "name":"yui_sort_struct_array",
   "parent":{
     "name":"scripts",
-    "path":"folders/Libraries/Packages - YUI/scripts.yy",
+    "path":"folders/Packages - YUI/scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

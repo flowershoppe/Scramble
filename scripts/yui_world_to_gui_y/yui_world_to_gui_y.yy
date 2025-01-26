@@ -6,7 +6,7 @@
   "name":"yui_world_to_gui_y",
   "parent":{
     "name":"Interaction",
-    "path":"folders/Libraries/Packages - YUI/Interaction.yy",
+    "path":"folders/Packages - YUI/Interaction.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -11,7 +11,7 @@ root:
       canvas:
         top: 5
         center: h
-      background: yui_panel_bg
+      background: ~yui_panel_bg
       padding: 10
       
       elements:
@@ -21,7 +21,7 @@ root:
             text: New Run
             text_style: title       
           border_thickness: 1
-          on_click: @@ new_run()
+          on_click: @@ ~new_run()
 
         - type: button
           content: 
@@ -29,7 +29,7 @@ root:
             text: Load Run
             text_style: title       
           border_thickness: 1
-          on_click: @@ load_game()
+          on_click: @@ ~load_game()
 
         - type: button
           content: 
@@ -37,4 +37,4 @@ root:
             text: Options
             text_style: title        
           border_thickness: 1
-          on_click: @@ toggle_pause()
+          on_click: @@ ~toggle_pause()

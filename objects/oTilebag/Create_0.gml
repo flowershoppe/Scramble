@@ -10,6 +10,7 @@ y = view_get_yport(0) + (view_get_hport(0) * 0.9);
 
 //contents window
 bag_menu = noone;
+stats_menu = noone;
 
 width = window_get_width() / 2;
 height = window_get_height() / 3;

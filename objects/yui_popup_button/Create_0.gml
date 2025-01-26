@@ -6,6 +6,13 @@ event_inherited();
 is_popup_visible = false;
 popup_item = undefined;
 
+border_destroy = destroy;
+destroy = function() {
+	if popup_item && instance_exists(popup_item)
+		popup_item.destroy();
+	border_destroy();
+}
+
 // do we need to override build?
 
 button_arrange = arrange;
@@ -14,6 +21,18 @@ button_arrange = arrange;
 arrange = function(available_size, viewport_size) {
 	var size = button_arrange(available_size, viewport_size);
 	return size;
+}
+
+traverse = function(func, acc = undefined) {
+	
+	with self {
+		// allow the traverse function to change the acc itself
+		acc = func(acc) ?? acc;
+	}
+	
+	if popup_item && instance_exists(popup_item) {
+		popup_item.traverse(func, acc);
+	}
 }
 
 border_move = move;
@@ -66,6 +85,7 @@ openPopup = function() {
 	// open the popup
 	
 	popup_item = yui_make_render_instance(bound_values.popup_element, data_source, , 100);
+	popup_item.focus_scope.doAutofocus();
 	
 	positionPopup(draw_size);
 }
@@ -82,6 +102,11 @@ closePopup = function(close_parent = false) {
 	is_popup_visible = false;
 	
 	if popup_item {
+		// if focus is within our popup, focus ourselves
+		var focus_target = popup_item.focus_scope.findFocusTarget();
+		if focus_target.focused
+			focus();
+		
 		popup_item.unload();
 		popup_item = undefined;
 	}

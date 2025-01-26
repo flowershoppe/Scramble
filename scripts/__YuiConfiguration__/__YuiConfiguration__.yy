@@ -6,7 +6,7 @@
   "name":"__YuiConfiguration__",
   "parent":{
     "name":"Configure Me! (YUI)",
-    "path":"folders/Libraries/Configure Me! (YUI).yy",
+    "path":"folders/Configure Me! (YUI).yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

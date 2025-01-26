@@ -9,6 +9,7 @@ function YuiBaseElement(_props, _resources, _slot_values) constructor {
 		is_cursor_layer: false, // whether the element consumes cursor events
 		focusable: false, // whether the item can be focused for kb/gamepad
 		autofocus: false, // whether to auto focus this item on creation (overrides previous focus)
+		is_focus_scope: false, // whether the element acts as a focus scope
 		
 		data_source: undefined, // enables overriding the data context with something else
 		
@@ -83,18 +84,18 @@ function YuiBaseElement(_props, _resources, _slot_values) constructor {
 	// feather ignore once GM2017
 	static baseInit = function YuiBaseElement__baseInit(props, default_events = undefined) {
 	
-		props.events = yui_apply_props(props.events, default_events, base_events);
-		props.events.on_mouse_down = yui_bind_handler(props.events.on_mouse_down, resources, slot_values);
-		props.events.on_mouse_up = yui_bind_handler(props.events.on_mouse_up, resources, slot_values);
-		props.events.on_mouse_wheel_up = yui_bind_handler(props.events.on_mouse_wheel_up, resources, slot_values);
-		props.events.on_mouse_wheel_down = yui_bind_handler(props.events.on_mouse_wheel_down, resources, slot_values);
-		props.events.on_click = yui_bind_handler(props.events.on_click, resources, slot_values);
-		props.events.on_right_click = yui_bind_handler(props.events.on_right_click, resources, slot_values);
-		props.events.on_double_click = yui_bind_handler(props.events.on_double_click, resources, slot_values);
-		props.events.on_arrange = yui_bind_handler(props.events.on_arrange, resources, slot_values);
-		props.events.on_got_focus = yui_bind_handler(props.events.on_got_focus, resources, slot_values);
-		props.events.on_lost_focus = yui_bind_handler(props.events.on_lost_focus, resources, slot_values);
-		props.events.on_hover_changed = yui_bind_handler(props.events.on_hover_changed, resources, slot_values);
+		events = yui_apply_props(props.events, default_events, base_events);
+		events.on_mouse_down = yui_bind_handler(events.on_mouse_down, resources, slot_values);
+		events.on_mouse_up = yui_bind_handler(events.on_mouse_up, resources, slot_values);
+		events.on_mouse_wheel_up = yui_bind_handler(events.on_mouse_wheel_up, resources, slot_values);
+		events.on_mouse_wheel_down = yui_bind_handler(events.on_mouse_wheel_down, resources, slot_values);
+		events.on_click = yui_bind_handler(events.on_click, resources, slot_values);
+		events.on_right_click = yui_bind_handler(events.on_right_click, resources, slot_values);
+		events.on_double_click = yui_bind_handler(events.on_double_click, resources, slot_values);
+		events.on_arrange = yui_bind_handler(events.on_arrange, resources, slot_values);
+		events.on_got_focus = yui_bind_handler(events.on_got_focus, resources, slot_values);
+		events.on_lost_focus = yui_bind_handler(events.on_lost_focus, resources, slot_values);
+		events.on_hover_changed = yui_bind_handler(events.on_hover_changed, resources, slot_values);
 	
 		YuiCursorManager.participation_hash.hashArray(props.interactions);
 	
@@ -106,26 +107,29 @@ function YuiBaseElement(_props, _resources, _slot_values) constructor {
 	
 		canvas = new YuiCanvasPosition(props.canvas, resources, slot_values, props.id);
 		flex = new YuiFlexValue(props.flex);
+		
+		padding = new YuiPadding(yui_bind(props[$"padding"] ?? 0, resources, slot_values));
 	
 		// TODO: move this to YuiPanelElement?
 		alignment = new YuiElementAlignment(yui_bind(props.alignment, resources, slot_values));
 		alignment.v = yui_bind_and_resolve(alignment.v, resources, slot_values);
 		alignment.h = yui_bind_and_resolve(alignment.h, resources, slot_values);
 		
-		props.enabled = yui_bind(props.enabled, resources, slot_values);
-		props.visible = yui_bind(props.visible, resources, slot_values);
-		props.opacity = yui_bind(props.opacity, resources, slot_values);
-		props.item_key = yui_bind(props.item_key, resources, slot_values);
-		props.tooltip = yui_bind(props.tooltip, resources, slot_values);
+		enabled = yui_bind(props.enabled, resources, slot_values);
+		visible = yui_bind(props.visible, resources, slot_values);
+		opacity = yui_bind(props.opacity, resources, slot_values);
+		
+		item_key = yui_bind(props.item_key, resources, slot_values);
+		tooltip = yui_bind(props.tooltip, resources, slot_values);
 	
-		props.xoffset = yui_bind(props.xoffset, resources, slot_values);
-		props.yoffset = yui_bind(props.yoffset, resources, slot_values);
+		xoffset = yui_bind(props.xoffset, resources, slot_values);
+		yoffset = yui_bind(props.yoffset, resources, slot_values);
 	
 		data_source = yui_bind(props.data_source, resources, slot_values);
 	
 		is_data_source_live = yui_is_live_binding(data_source);
-		is_visible_live = yui_is_live_binding(props.visible);
-		is_tooltip_live = yui_is_live_binding(props.tooltip);
+		is_visible_live = yui_is_live_binding(visible);
+		is_tooltip_live = yui_is_live_binding(tooltip);
 		
 		on_visible_anim = undefined;
 		on_arrange_anim = undefined;
@@ -150,7 +154,6 @@ function YuiBaseElement(_props, _resources, _slot_values) constructor {
 			is_data_source_live
 			|| is_visible_live
 			|| is_tooltip_live
-			|| yui_is_live_binding(props.size)
 			|| yui_is_live_binding(size.w)
 			|| yui_is_live_binding(size.h)
 	
@@ -158,12 +161,12 @@ function YuiBaseElement(_props, _resources, _slot_values) constructor {
 	}
 	
 	static createTooltip = function() {
-		if tooltip_element == undefined && props.tooltip != undefined {
+		if tooltip_element == undefined && tooltip != undefined {
 			var tooltip_props = {
 				type: "popup",
 				yui_type: "popup",
 				is_cursor_layer: false, // doesn't block cursor
-				content: props.tooltip,
+				content: tooltip,
 				placement: props.tooltip_placement,
 				padding: 5,
 				size: { max_w: props.tooltip_width },
@@ -177,50 +180,26 @@ function YuiBaseElement(_props, _resources, _slot_values) constructor {
 	// logic shared by many controls like border/panel/button/text_input
 	
 	static resolveBackgroundAndBorder = function() {
-	
-		// don't bind values directly by default
-		bg_sprite_binding = undefined;
-		is_bg_sprite_live = false;
-		bg_color_binding = undefined;
-		is_bg_color_live = false;
 		
+		background = undefined;
+				
 		if props.trace
 			DEBUG_BREAK_YUI
 				
 		// resolve background
-		var background_expr = yui_bind_and_resolve(props.background, resources, slot_values);
-		if background_expr != undefined {
-			
-			if is_struct(background_expr) {
-				// a struct is used when we want to bind the background dynamically,
-				// in order to differentiate between sprite indexes (which are numbers)
-				// and color values (which are also numbers :()
-				
-				bg_sprite_binding = yui_bind(background_expr[$"sprite"], resources, slot_values);
-				is_bg_sprite_live = bg_sprite_binding != undefined;
-				bg_sprite = undefined;
-				
-				bg_color_binding = yui_bind(background_expr[$"color"], resources, slot_values);
-				is_bg_color_live = bg_color_binding != undefined;
-				bg_color = undefined;
+		var bg = yui_bind(props.background, resources, slot_values);
+		if bg != undefined {
+			// allow strings, sprites, colors or bindings
+			// (string colors are resolved in yui_border's draw GUI)
+			if is_string(bg) || is_handle(bg) || is_numeric(bg) || yui_is_binding(bg) {
+				background = bg;
 			}
 			else {
-				// otherwise first see if the resolved value is a sprite,
-				// then try as a color value if it wasn't a sprite
-				var bg_spr = yui_resolve_sprite_by_name(background_expr);
-				if bg_spr != undefined {
-					bg_sprite = bg_spr;
-					bg_color = undefined;
-				}
-				else {
-					bg_color = yui_resolve_color(background_expr);
-					bg_sprite = undefined;
-				}
+				throw yui_error($"Unexpected element.background value of type: {typeof(bg)}");
 			}
 		}
 		else {
-			bg_color = undefined;
-			bg_sprite = undefined;
+			background = undefined;
 		}
 	
 		// resolve border

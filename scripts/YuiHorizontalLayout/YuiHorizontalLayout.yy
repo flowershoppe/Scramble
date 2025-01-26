@@ -6,7 +6,7 @@
   "name":"YuiHorizontalLayout",
   "parent":{
     "name":"Layout",
-    "path":"folders/Libraries/Packages - YUI/Layout.yy",
+    "path":"folders/Packages - YUI/Layout.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

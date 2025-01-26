@@ -3,14 +3,17 @@
 // clear the sprite so that we don't accidentally draw the YUI sprite when no sprite is bound
 sprite_index = -1;
 
+mirror_x = false;
+mirror_y = false;
+
 // Inherit the parent event
 event_inherited();
 
 onLayoutInit = function() {
 	
-	frame_value = new YuiBindableValue(yui_element.props.frame);
-	angle_value = new YuiBindableValue(yui_element.props.angle);
-	blend_color_value = new YuiBindableValue(yui_element.props.blend_color);
+	frame_value = new YuiBindableValue(yui_element.frame);
+	angle_value = new YuiBindableValue(yui_element.angle);
+	blend_color_value = new YuiBindableValue(yui_element.blend_color);
 	
 	animatable.frame = frame_value;
 	animatable.angle = angle_value;
@@ -22,8 +25,13 @@ build = function() {
 		sprite_index = bound_values.sprite;
 	}
 	else {
+		// NOTE: not using hideElement() because this is just to not draw anything when there is now sprite
 		visible = false;
+		exit;
 	}
+	
+	mirror_x = bound_values.mirror_x;
+	mirror_y = bound_values.mirror_y;
 	
 	if trace {
 		DEBUG_BREAK_YUI
@@ -116,6 +124,16 @@ arrange = function(available_size, viewport_size) {
 	var drawn_size = element_size.constrainDrawSize(available_size, desired_size);
 	
 	yui_resize_instance(drawn_size.w, drawn_size.h);
+	
+	// apply mirroring after sizing
+	if mirror_x {
+		image_xscale = -image_xscale;
+		padded_rect.x += abs(sprite_width);
+	}
+	if mirror_y {
+		image_yscale = -image_yscale;
+		padded_rect.y += abs(sprite_height);
+	}
 	
 	// position at the padded rect corner so we can just draw at x/y
 	x = padded_rect.x;

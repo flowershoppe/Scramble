@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"yui_resolve_sprite_by_name",
   "parent":{
-    "name":"resolve",
-    "path":"folders/Libraries/Packages - YUI/scripts/resolve.yy",
+    "name":"Deprecated",
+    "path":"folders/Packages - YUI/Deprecated.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

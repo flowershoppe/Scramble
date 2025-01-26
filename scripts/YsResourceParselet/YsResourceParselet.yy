@@ -6,7 +6,7 @@
   "name":"YsResourceParselet",
   "parent":{
     "name":"Parselets",
-    "path":"folders/Libraries/Packages - YUI/Parser/Ys/Parselets.yy",
+    "path":"folders/Packages - YUI/Parser/Ys/Parselets.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

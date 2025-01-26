@@ -120,7 +120,7 @@
   "name":"fnt_yui_body_bold",
   "parent":{
     "name":"Fonts",
-    "path":"folders/Libraries/Packages - YUI/Fonts.yy",
+    "path":"folders/Packages - YUI/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

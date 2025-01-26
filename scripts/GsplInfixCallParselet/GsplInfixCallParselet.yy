@@ -6,7 +6,7 @@
   "name":"GsplInfixCallParselet",
   "parent":{
     "name":"Pratt",
-    "path":"folders/Libraries/Packages - gspl/Parser/Pratt.yy",
+    "path":"folders/Packages - gspl/Parser/Pratt.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
