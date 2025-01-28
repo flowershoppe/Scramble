@@ -1,4 +1,4 @@
-id: settings
+id: tilebag
 file_type: screen
 
 import:
@@ -13,23 +13,30 @@ root:
   
   elements:
     - type: panel
+      alignment: center
       canvas:
         center: true
       layout: grid
       padding: [10, 10, 10, 10]
       grid:
         rows: 10
-        columns: 5
-
-      background: yui_panel_bg
-      size: {w: 250, h: 200}
+        row_height: 32
+        row_spacing: 5
+        columns: 6
+        column_width: 32
+        column_spacing: 5
+      background: ~yui_panel_bg
       elements: @tiles
       template:
-        type: panel
-        elements:
-          - type: text
-            text: @letter 
-          - type: image
-            sprite: @spr
+        type: border
+        padding: 5
+        background: @spr
+        content: 
+          type: text
+          alignment: center
+          text: @letter + @pointvalue
+          color: black
+        size: 32
+
 
         

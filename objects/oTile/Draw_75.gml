@@ -3,6 +3,9 @@ if(wait_for_input)
 	draw_text(view_get_wport(0) / 2, view_get_hport(0) / 4, "Please enter a character");	
 }
 
+var _old_halign = draw_get_halign();
+var _old_valign = draw_get_valign();
+var _old_font = draw_get_font();
 
 if(on_board){exit;}
 
@@ -37,4 +40,6 @@ _y_offset = (sprite_height * yscale) * 0.3;
 draw_text_transformed_color(x + _x_offset, y - _y_offset, pointvalue, _scale, _scale, 
 							0, font_color, font_color, font_color, font_color, 100);
 
-
+draw_set_halign(_old_halign);
+draw_set_valign(_old_valign);
+draw_set_font(_old_font);

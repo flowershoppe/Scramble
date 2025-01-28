@@ -14,8 +14,6 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 			
 			stats_menu = instance_create_layer(0, 0, "YUI", yui_document,
 			{
-				x : 200,
-				y : 200,
 				data_context : oRun,
 				yui_file : "YUI screens/run_stats.yui"
 			});

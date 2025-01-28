@@ -1,9 +1,5 @@
-{ longMessage : "ERROR in
-action number 1
-of <Unknown Event>
-for object yui_base:
-
-
+{ longMessage : "ERROR in action number 1
+of <Unknown Event> for object yui_base:
 Unable to find instance for object index 54
  at gml_Script_yui_unregister_interactions (line 31) - 	if !ds_exists(YuiCursorManager.participation_map, ds_type_map) return;
 ", message : "Unable to find instance for object index 54", script : "gml_Script_yui_unregister_interactions", line : 31, stacktrace : [ "gml_Script_yui_unregister_interactions (line 31)","gml_Object_yui_base_CleanUp_0 (line 7) - yui_unregister_interactions(interactions);","gml_Object_yui_panel_CleanUp_0 (line 4)" ] }
