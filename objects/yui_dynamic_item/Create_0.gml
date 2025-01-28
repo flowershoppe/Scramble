@@ -6,6 +6,13 @@ event_inherited();
 // the render instance for the resolved template element
 content_item = undefined;
 
+base_destroy = destroy;
+destroy = function() {
+	if content_item && instance_exists(content_item)
+		content_item.destroy();
+	base_destroy();
+}
+
 build = function() {
 	
 	opacity = parent.opacity
@@ -46,6 +53,18 @@ arrange = function(available_size, viewport_size) {
 		}
 	}
 	return draw_size;
+}
+
+traverse = function(func, acc = undefined) {
+	
+	with self {
+		// allow the traverse function to change the acc itself
+		acc = func(acc) ?? acc;
+	}
+	
+	if content_item {
+		content_item.traverse(func, acc);
+	}
 }
 
 move = function(xoffset, yoffset) {

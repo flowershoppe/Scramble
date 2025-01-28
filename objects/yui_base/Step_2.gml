@@ -10,14 +10,14 @@ if layout_props == undefined {
 
 // ensure invisible items destroy themselves since they won't run the Pre-Draw event
 if !visible && unload_now {
-	instance_destroy(self);
+	instance_destroy();
+	return;
 }
 
 // hide self if marked hidden, or parent is not visible
 // (depth order ensures further children will get hidden in the same frame)
 if hidden || parent && !parent.visible {
-	visible = false;
-	rebuild = false;
+	hideElement();
 	exit;
 }
 

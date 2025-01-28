@@ -5,15 +5,15 @@ root:
   type: panel
   layout: horizontal
   size: stretch
-  background: yui_panel_bg
+  background: ~yui_panel_bg
   padding: 10
   spacing: 600
   elements:
     - type: button
       autofocus: false
       content: " "
-      background: spCog
-      on_click: @@ toggle_pause()
+      background: ~spCog
+      on_click: @@ ~toggle_pause()
     - type: text
       text: @length
 

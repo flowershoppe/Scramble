@@ -10,7 +10,7 @@ root:
   layout: vertical
   size: stretch
   alignment: {h: center}
-  background: yui_panel_bg
+  background: ~yui_panel_bg
   padding: 10
   elements:
     - type: panel

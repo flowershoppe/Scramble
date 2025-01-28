@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ssave_config_save_file",
   "isCompatibility":false,
   "isDnD":false,

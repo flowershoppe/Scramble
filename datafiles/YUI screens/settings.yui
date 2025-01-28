@@ -16,7 +16,7 @@ root:
       content: 
         type: text        
         text: <= Back
-      on_click: @@ room_goto(asset_get_index(rPauseMenu))
+      on_click: @@ ~room_goto(~asset_get_index(rPauseMenu))
     - type: panel
       layout: horizontal
       spacing: 0
@@ -27,7 +27,7 @@ root:
           flex: true
           size: stretch
           alignment: { h: center }
-          background: yui_panel_bg
+          background: ~yui_panel_bg
           padding: 50
           spacing: 50
           elements:
@@ -42,7 +42,7 @@ root:
                   items: @resolution_items
                   selection_scope: @resolution_selector
                   on_item_selected:
-                    - @@ value => resolution_select(value)
+                    - @@ value => ~resolution_select(value)
             - type: panel
               layout: vertical
               alignment: {h: center}
@@ -53,10 +53,10 @@ root:
                 - type: slider
                   min: 0
                   max: 100
-                  value: @@ audio_get_master_gain() * 100
+                  value: @@ ~audio_get_master_gain() * 100
                   on_value_changed: 
-                    - @@ value => audio_master_gain(value / 100)
-                    - @@ save_settings()
+                    - @@ value => ~audio_master_gain(value / 100)
+                    - @@ ~save_settings()
 
             - type: panel
               layout: vertical
@@ -68,10 +68,10 @@ root:
                 - type: slider
                   min: 0
                   max: 100
-                  value: @@ audio_emitter_get_gain(@emitter_MS) * 100
+                  value: @@ ~audio_emitter_get_gain(@emitter_MS) * 100
                   on_value_changed: 
-                    - @@ value => audio_emitter_gain(@emitter_MS, value / 100) 
-                    - @@ save_settings()
+                    - @@ value => ~audio_emitter_gain(@emitter_MS, value / 100) 
+                    - @@ ~save_settings()
 
             - type: panel
               layout: vertical
@@ -83,10 +83,10 @@ root:
                 - type: slider
                   min: 0
                   max: 100
-                  value: @@ audio_emitter_get_gain(@emitter_SE) * 100
+                  value: @@ ~audio_emitter_get_gain(@emitter_SE) * 100
                   on_value_changed: 
-                    - @@ value => audio_emitter_gain(@emitter_SE, value / 100)
-                    - @@ save_settings()
+                    - @@ value => ~audio_emitter_gain(@emitter_SE, value / 100)
+                    - @@ ~save_settings()
 
           //right side
         - type: panel
@@ -94,7 +94,7 @@ root:
           size: stretch
           layout: vertical
           alignment: { h: center }
-          background: yui_panel_bg
+          background: ~yui_panel_bg
           padding: 50
           spacing: 50
           elements: 
@@ -132,13 +132,13 @@ root:
                             size: { w: 200, h: 30 }
                             content:
                               type: text
-                              text: @@ input_binding_get(@)
-                            on_click: @@ keybind(@)
+                              text: @@ ~input_binding_get(@)
+                            on_click: @@ ~keybind(@)
             - type: button
               content:
                 type: text
                 text: Reset to Default
-              on_click: @@ input_profile_reset_bindings()
+              on_click: @@ ~input_profile_reset_bindings()
 
 
                 

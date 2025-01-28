@@ -165,6 +165,8 @@ function calculate_points()
 			array_push(_spelled_words, _word);
 			if(string_length(_word) > string_length(oMatchManager.largest_word))
 			{oMatchManager.largest_word = _word;}
+			if(string_length(_word) > string_length(oRun.largest_word))
+			{oRun.largest_word = _word;}
 		}
 	}
 	
@@ -185,6 +187,7 @@ function calculate_points()
 		}
 		oMatchManager.print_message = "";
 	}
+	#endregion
 	
 	//-----CALCULATE POINTS-----
 	#region
@@ -206,6 +209,7 @@ function calculate_points()
 		for(k = 0; k < array_length(_player_words_tiles[j]); k++)
 		{
 			oMatchManager.total_tiles++;
+			oRun.tiles_played++;
 			
 			with(_player_words_tiles[j][k])
 			{
@@ -227,8 +231,10 @@ function calculate_points()
 	}
 	
 	//update stats
+	oRun.words_spelled += array_length(_player_words_tiles);
 	oMatchManager.total_words += array_length(_player_words_tiles);
 	if(_total > oMatchManager.largest_play){oMatchManager.largest_play = _total;}
+	if(_total > oRun.largest_play){oRun.largest_play = _total;}
 	
 	#endregion
 	
@@ -238,6 +244,7 @@ function calculate_points()
 	
 	audio_play_sound(sdSciBell, 0, 0);
 	
+	oRun.total_score += _total;
 	return _total;
 	
 	

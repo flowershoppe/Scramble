@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"resolution_select",
   "isCompatibility":false,
   "isDnD":false,

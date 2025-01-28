@@ -21,8 +21,6 @@ enum YUI_LIVE_RELOAD_STATES {
 	ENABLED,
 }
 
-__yui_init_live_reload();
-
 function __yui_init_live_reload() {
 	
 	if (GM_build_type == "exe") {
@@ -32,12 +30,14 @@ function __yui_init_live_reload() {
 	else {
 		
 		// get the datafiles folder path from the project file path
-		var project_folder = string_trim_end(GM_project_filename, [game_project_name + ".yyp"]);
+		var project_folder = filename_dir(GM_project_filename);
 		var data_folder = string_replace_all(project_folder, "\\", "/") + "/datafiles/";	
 		
 		var is_sandboxed = yui_is_fs_sandbox_enabled();
 		if is_sandboxed {
 			YUI_LIVE_RELOAD_STATE = YUI_LIVE_RELOAD_STATES.SANDBOX_ENABLED;
+			
+			yui_log("Application is sandboxed, using included /datafiles instead of project folder");
 			data_folder = "";
 		}
 		else if !directory_exists(data_folder) {

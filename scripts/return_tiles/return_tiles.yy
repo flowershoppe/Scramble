@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"return_tiles",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"KnitInterpreter",
   "isCompatibility":false,
   "isDnD":false,

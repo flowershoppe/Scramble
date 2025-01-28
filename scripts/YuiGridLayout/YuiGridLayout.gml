@@ -35,38 +35,72 @@ function YuiGridLayout(alignment, spacing) : YuiLayoutBase(alignment, spacing) c
 	
 	static arrange = function() {
 		
+		var row = 0;
+		var column = 0;
+		
+		var row_y = available_size.y;
+		var grid_bottom = 0;
+		
 		var i = 0; repeat array_length(items) {
 			
 			var item = items[i];
 			
 			// size the item according to the grid settings
-			var possible_size = getAvailableSizeForItem(i);
+			var possible_size = getAvailableSizeForItem(i, column, row, row_y);
 			
 			// arrange it within the size
 			var item_size = item.arrange(possible_size, viewport_size);
 			
+			yui_log($"item_size for {i} was {item_size}");
+			
+			var item_bottom = item_size.y + item_size.h + row_spacing;
+			grid_bottom = max(grid_bottom, item_bottom);
+			
 			i++;
+			column += 1;
+			
+			// bump to next row on wrap
+			if column == columns {
+				column = 0;
+				row += 1;
+				
+				// the new row starts at the bottom of the previous
+				row_y = grid_bottom + row_spacing;
+			}
 		}
 		
-		// grid (currently) always fills the available space
-		draw_size = {
-			x: available_size.x,
-			y: available_size.y,
-			w: available_size.w,
-			h: available_size.h,
-		};
+        var grid_width = columns * (column_width + column_spacing) - column_spacing;
+        var grid_height = grid_bottom - available_size.y;
+        
+        // grid (currently) always fills the available space
+        draw_size = {
+            x: available_size.x,
+            y: available_size.y,
+            w: grid_width,
+            h: grid_height,
+        };
 		
 		return draw_size;
 	}
 	
-	static getAvailableSizeForItem = function(index) {
+	static getAvailableSizeForItem = function(index, column, row, row_y) {
 		switch left_to_right {
 			case true:
-				var column = index mod columns;
-				var row = floor(index / columns);
+				var _x = floor(available_size.x + (column * (column_width + column_spacing)));
+				var _y = floor(available_size.y + (row * (row_height + row_spacing)));
+				
+				// happens if available_size.h is infinite
+				if is_nan(_x) or _x == infinity {
+					throw yui_error("Grid layout requires width to be set when used inside a viewport (scrollbox)");
+				}
+				
+				// happens if available_size.h is infinite
+				if is_nan(_y) or _y == infinity
+					_y = row_y;
+					
 				return {
-					x: floor(available_size.x + (column * (column_width + column_spacing))),
-					y: floor(available_size.y + (row * (row_height + row_spacing))),
+					x: _x,
+					y: _y,
 					w: column_width,
 					h: row_height,
 				};

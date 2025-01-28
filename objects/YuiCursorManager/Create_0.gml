@@ -22,7 +22,7 @@ cursor_offset_x = 0;
 cursor_offset_y = 0;
 
 // variables for Input 6 library support
-is_navigation_active = false; // whether YUI should check for inputs and update focus
+is_navigation_active = YUI_DEFAULT_IS_NAVIGATION_ACTIVE; // whether YUI should check for inputs and update focus
 
 finishInteraction = function() {
 	yui_log($"interaction {active_interaction.props.type} complete");
@@ -41,19 +41,11 @@ finishInteraction = function() {
 // which item has keyboard/gamepad focus
 focused_item = undefined;
 
+// which YuiFocusScope the focused_item is in
+active_focus_scope = undefined;
+
 // for use with finding next focus item
 focus_list = ds_list_create();
-
-// which focus scope is currently active
-active_focus_scope = "global";
-
-// map of focus scopes to focused item in that scope
-focus_scope_map = {
-	global: undefined,
-};
-
-// stack used to track focus scope navigation
-focus_scope_stack = ds_stack_create();
 
 // list for tracking hover items for mouseover logic
 hover_list = ds_list_create();
@@ -85,10 +77,13 @@ global_wheel_up = undefined
 global_wheel_down = undefined
 // TODO: global versions of all events
 
-setFocus = function(focus_item, new_scope = undefined) {
+setFocus = function(focus_item) {
 	
 	// check if new focus is different from current
 	if focus_item == focused_item return;
+	
+	// skip if item is not focusable
+	if focus_item && !focus_item.focusable return;
 	
 	// trigger lost focus
 	if focused_item && instance_exists(focused_item) {
@@ -96,52 +91,69 @@ setFocus = function(focus_item, new_scope = undefined) {
 		focused_item.focused = false;
 	}
 	
+	// TODO: is this where focus scopes get checked before focusing or is that in yui_find_focus_item?
+	
 	focused_item = focus_item;
 	
-	// set the new focus scope if one is provided
-	if new_scope && new_scope != active_focus_scope {
-		active_focus_scope = new_scope;
-		
-		// place it on the stack for when we exit this scope
-		ds_stack_push(focus_scope_stack, new_scope);
-	}
-	
-	focus_scope_map[$ active_focus_scope] = focused_item;
-	
-	// trigger got focus
 	if focused_item && instance_exists(focused_item) {
-		if focused_item.on_got_focus focused_item.on_got_focus();
-		focused_item.focused = true;
+		// track the new focus scope and focus the item within it
+		active_focus_scope = focused_item.focus_scope;
+		active_focus_scope.focus(focused_item);
+	}
+	else {
+		active_focus_scope = undefined;
 	}
 }
 
 moveFocus = function(direction = YUI_FOCUS_DIRECTION.DOWN) {
-	if !focused_item {
-		return;
+	var current_item = focused_item;
+
+	// if the current item is not valid, autofocus the active scope
+	var is_current_item_valid = current_item && instance_exists(current_item);
+	if !is_current_item_valid && active_focus_scope {
+		active_focus_scope.doAutofocus();
+		exit;
 	}
 
 	var next_item = yui_find_focus_item(
-		focused_item,
+		current_item,
 		focus_list,
 		direction,
-		is_focus_precise); // TODO move to macro
+		is_focus_precise); // TODO move to macro?
 
 	if next_item {
 		setFocus(next_item);
 	}
-	// NOTE: what was this stuff supposed to do?
-	//else if direction != YUI_FOCUS_DIRECTION.UP {
-	//	moveFocus(YUI_FOCUS_DIRECTION.UP);
-	//}
-	//else {
-	//	clearFocus();
-	//}
 }
 
 clearFocus = function() {
-	// TODO: this should try to find the previous focus item in scope,
-	// or kick up the focus stack
 	setFocus(undefined);
+}
+
+tryAutofocus = function(target, is_focus_root) {
+	// NOTE: assumes item is focusable (checked at single callsite to this function)
+		
+	if !is_focus_root {
+		// we will focus this item if it has autofocus: true OR there is no focused item at all
+		if target.autofocus || focused_item == undefined || !instance_exists(focused_item) {
+			if is_navigation_active {
+				setFocus(target);
+			}
+		}
+	}
+	
+	if is_focus_root {
+		var parent_scope = target.focus_scope.parent;
+		if parent_scope
+			parent_scope.autofocus_target ??= target.focus_scope;
+	}
+	else {
+		if target.focus_scope.autofocus_target == undefined {
+			target.focus_scope.autofocus_target = target;
+		
+			active_focus_scope ??= target.focus_scope;
+		}
+	}
 }
 
 activateFocused = function() {
@@ -154,7 +166,7 @@ trackMouseDownItems = function(button) {
 	array_resize(mouse_down_array[button], hover_count);
 	var i = hover_count - 1; repeat hover_count {
 		var item = hover_list[|i];
-		var type = object_get_name(item.object_index);
+		//var type = object_get_name(item.object_index);
 		//yui_log("mouse down on:", item, " - ", type, " - ", item[$" _id"]);
 		mouse_down_array[button][i] = item;
 		i--;
@@ -166,22 +178,34 @@ isCursorOnVisiblePart = function(item) {
 }
 
 onKeyLeft = function() {
-	if focused_item && focused_item.onKeyPressed && focused_item.onKeyPressed(vk_left) return;
+	// trigger normal keypress handling first
+	if focused_item && instance_exists(focused_item)
+		&& focused_item.onKeyPressed && focused_item.onKeyPressed(vk_left) return;
+
 	moveFocus(YUI_FOCUS_DIRECTION.LEFT);
 }
 
 onKeyRight = function() {
-	if focused_item && focused_item.onKeyPressed && focused_item.onKeyPressed(vk_right) return;
+	// trigger normal keypress handling first
+	if focused_item && instance_exists(focused_item)
+		&& focused_item.onKeyPressed && focused_item.onKeyPressed(vk_right) return;
+
 	moveFocus(YUI_FOCUS_DIRECTION.RIGHT);
 }
 
 onKeyUp = function() {
-	if focused_item && focused_item.onKeyPressed && focused_item.onKeyPressed(vk_up) return;
+	// trigger normal keypress handling first
+	if focused_item && instance_exists(focused_item)
+		&& focused_item.onKeyPressed && focused_item.onKeyPressed(vk_up) return;
+
 	moveFocus(YUI_FOCUS_DIRECTION.UP);
 }
 
 onKeyDown = function() {
-	if focused_item && focused_item.onKeyPressed && focused_item.onKeyPressed(vk_down) return;
+	// trigger normal keypress handling first
+	if focused_item && instance_exists(focused_item)
+		&& focused_item.onKeyPressed && focused_item.onKeyPressed(vk_down) return;
+
 	moveFocus(YUI_FOCUS_DIRECTION.DOWN);
 }
 

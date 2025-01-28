@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"define_knit_parse_tree",
   "isCompatibility":false,
   "isDnD":false,

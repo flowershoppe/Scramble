@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"next_turn",
   "isCompatibility":false,
   "isDnD":false,

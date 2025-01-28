@@ -1,3 +1,4 @@
+var _old_color = draw_get_color();
 /// @description Draw dialogue box and text
 var _init_gui_w = display_get_gui_width();
 var _init_gui_h = display_get_gui_height();
@@ -15,6 +16,7 @@ var cc = ff;
 
 var line_current = 0;
 var line_width = 0;
+
 
 var _old_valign = draw_get_valign();
 var _old_halign = draw_get_halign();
@@ -135,3 +137,4 @@ display_set_gui_size(_init_gui_w, _init_gui_h);
 
 draw_set_halign(_old_halign);
 draw_set_valign(_old_valign);
+draw_set_color(_old_color);

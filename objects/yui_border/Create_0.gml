@@ -13,17 +13,21 @@ is_arranging = false;
 has_content_item = true; // yui_panel sets this to false
 content_item = undefined;
 
+bg_alpha = undefined;
+
 has_border_color = false;
 has_focus_color = false;
 draw_border = false;
 
+base_destroy = destroy;
+destroy = function() {
+	if content_item && instance_exists(content_item)
+		content_item.destroy();
+	base_destroy();
+}
+
 onLayoutInit = function() {	
 		
-	if layout_props.bg_color != undefined {
-		bg_color = layout_props.bg_color;
-		bg_alpha = ((bg_color & 0xFF000000) >> 24) / 255;
-	}
-	
 	if layout_props.border_color != undefined {
 		has_border_color = true;
 		border_color = layout_props.border_color;
@@ -34,19 +38,7 @@ onLayoutInit = function() {
 		border_thickness = layout_props.border_thickness;
 	}
 	
-	if layout_props.bg_sprite != undefined {
-		bg_sprite = layout_props.bg_sprite;
-		bg_alpha = 1;
-	}
-	
-	is_bg_sprite_live = yui_element.is_bg_sprite_live;
-	if is_bg_sprite_live
-		bg_sprite_value = new YuiBindableValue(yui_element.bg_sprite_binding);
-		
-	is_bg_color_live = yui_element.is_bg_color_live;
-	if is_bg_color_live
-		bg_color_value = new YuiBindableValue(yui_element.bg_color_binding);
-
+	background_value = new YuiBindableValue(yui_element.background);
 	
 	if layout_props.border_focus_color != undefined {
 		has_focus_color = true;
@@ -143,6 +135,19 @@ onChildLayoutComplete = function(child) {
 	}
 }
 
+base_traverse = traverse;
+traverse = function(func, acc = undefined) {
+	
+	with self {
+		// allow the traverse function to change the acc itself
+		acc = func(acc) ?? acc;
+	}
+	
+	if content_item && instance_exists(content_item) {
+		content_item.traverse(func, acc);
+	}
+}
+
 // override move
 base_move = move;
 move = function(xoffset, yoffset) {
@@ -156,7 +161,7 @@ base_unload = unload;
 unload = function(unload_root = undefined) {
 	var unload_time = base_unload(unload_root);
 	
-	if content_item {
+	if content_item && instance_exists(content_item) {
 		unload_time = max(unload_time, content_item.unload(unload_root_item));
 	}
 

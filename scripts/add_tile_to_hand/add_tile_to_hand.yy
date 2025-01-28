@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"add_tile_to_hand",
   "isCompatibility":false,
   "isDnD":false,

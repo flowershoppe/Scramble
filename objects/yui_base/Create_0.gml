@@ -93,6 +93,13 @@ viewport_part = undefined;
 // hack so that text element knows to rebuild
 opacity_changed = false;
 
+destroy = function() {
+	if tooltip_item && instance_exists(tooltip_item)
+		tooltip_item.destroy();
+	instance_destroy();
+	//yui_log($"destroyed instance {id} ({object_get_name(object_index)})");
+}
+
 initLayout = function() {
 	_id = yui_element.props.id;
 	trace = yui_element.props.trace;
@@ -100,44 +107,42 @@ initLayout = function() {
 	element_size = yui_element.size;
 	canvas = yui_element.canvas;
 	flex = yui_element.flex;
-	has_tooltip = yui_element.props.tooltip != undefined;
+	has_tooltip = yui_element.tooltip != undefined;
 	
-	events = yui_element.props.events;
+	events = yui_element.events;
 	yui_register_events(events);
 	
 	interactions = yui_element.props.interactions;
 	yui_register_interactions(interactions);
 	
-	focusable = yui_element.props.focusable;
+	is_element_focusable = yui_element.props.focusable;
+	autofocus = yui_element.props.autofocus;
+	is_focus_scope = yui_element.props.is_focus_scope;
 	is_cursor_layer = yui_element.props.is_cursor_layer;
 	
-	// TODO: this bypasses enabled, should probably move to first build
-	// set initial focus if needed
-	if focusable 
-		&& ((YuiCursorManager.focused_item == undefined || !instance_exists(YuiCursorManager.focused_item))
-			|| yui_element.props.autofocus) {
-		YuiCursorManager.setFocus(id);
+	if focus_scope == undefined || is_cursor_layer || is_focus_scope {
+		is_focus_root = true;
+		focus_scope = new YuiFocusScope(id, focus_scope);
 	}
 	
 	// any data_source value means we have to evaluate it 
 	has_data_source = yui_element.data_source != undefined;
 	
 	data_source_value = new YuiBindableValue(yui_element.data_source);
-	enabled_value = new YuiBindableValue(yui_element.props.enabled);
-	visible_value = new YuiBindableValue(yui_element.props.visible);
-	opacity_value = new YuiBindableValue(yui_element.props.opacity);
-	xoffset_value = new YuiBindableValue(yui_element.props.xoffset);
-	yoffset_value = new YuiBindableValue(yui_element.props.yoffset);
+	enabled_value = new YuiBindableValue(yui_element.enabled);
+	visible_value = new YuiBindableValue(yui_element.visible);
+	opacity_value = new YuiBindableValue(yui_element.opacity);
+	xoffset_value = new YuiBindableValue(yui_element.xoffset);
+	yoffset_value = new YuiBindableValue(yui_element.yoffset);
 	
 	// map of animatable properties to the YuiBindableValues
 	animatable = {
 		opacity: opacity_value,
-		visible: visible_value,
 		xoffset: xoffset_value,
 		yoffset: yoffset_value,
 	};
 	
-	if !enabled_value.is_live enabled = yui_element.props.enabled;
+	if !enabled_value.is_live enabled = yui_element.enabled;
 	
 	on_visible_anim = yui_element.on_visible_anim;
 	on_arrange_anim = yui_element.on_arrange_anim;
@@ -151,22 +156,24 @@ onLayoutInit = function() {
 	// virtual
 }
 
-hide_element = function() {
+hideElement = function() {
 	if visible {
 		visible = false;
-			
+		
+		focusable = false;
 		if focused {
-			YuiCursorManager.clearFocus();
+			focus_scope.unfocus(id);
 		}
 			
 		// trigger parent re-layout since we might have been taking up space
-		if parent and bound_values {
+		if parent && bound_values {
 			parent.onChildLayoutComplete(self);
 		}
 		
 		// need to reset these, as values may change while the element
 		// is not visible, which means the diffing will be out of date
 		bound_values = undefined;
+		rebuild = false;
 	}
 }
 
@@ -182,7 +189,7 @@ bind_values = function yui_base__bind_values() {
 	
 	if visible_value.is_live visible_value.update(data_source);
 	if visible_value.value == false {
-		hide_element();
+		hideElement();
 		exit;
 	}
 	
@@ -192,15 +199,39 @@ bind_values = function yui_base__bind_values() {
 	// handle custom cases where we might want to not be visible 
 	// e.g. text element text is undefined
 	if new_values == false {
-		hide_element();
+		hideElement();
 		exit;
 	}
-	
+		
 	// ensure that we're now visible
 	var was_visible = visible;
 	visible = true;
 	
+	// calculate enabled state from parent and/or live value
+	var is_parent_enabled = parent ? parent.enabled : true;
+	if is_parent_enabled && enabled_value.is_live {
+		enabled_value.update(data_source);
+		enabled = enabled_value.value;
+	}
+	else {
+		enabled = is_parent_enabled;
+	}	
+	
+	// update focus state
+	focusable = enabled ? is_element_focusable : false;
+	
+	// only autofocus if we just became visible
 	if !was_visible {
+		if focusable || is_focus_root {
+			YuiCursorManager.tryAutofocus(id, is_focus_root);
+		}
+	}
+	else if focused && !focusable {
+		focus_scope.unfocus(id);
+	}
+	
+	if !was_visible {
+	
 		if on_visible_anim
 			beginAnimationGroup(on_visible_anim);
 	}
@@ -216,7 +247,7 @@ bind_values = function yui_base__bind_values() {
 		bound_values = new_values;
 	}
 	
-	// maybe move this to element.is_live()?
+	// maybe move this to element.isLive()?
 	is_binding_active = bound_values.is_live;
 
 	return true;
@@ -233,25 +264,6 @@ arrange = function(available_size, viewport_size) {
 }
 
 process = function yui_base__process() {
-	
-	// calculate enabled state from parent and/or live value
-	
-	var is_parent_enabled = parent ? parent.enabled : true;
-	
-	if is_parent_enabled && enabled_value.is_live {
-		enabled_value.update(data_source);
-		enabled = enabled_value.value;
-	}
-	else {
-		enabled = is_parent_enabled;
-	}
-	
-	// update focusable state
-	
-	focusable = enabled ? yui_element.props.focusable : false;
-	if focused && !focusable {
-		YuiCursorManager.clearFocus();
-	}
 	
 	// update opacity
 	
@@ -382,6 +394,9 @@ beginAnimationGroup = function(animation_group) {
 unload = function(unload_root = undefined) {
 	
 	unloading = true;
+	focusable = false;
+	
+	if focused focus_scope.unfocus(id);
 	
 	// TODO: call on_unloading element event
 	
@@ -434,12 +449,62 @@ unload = function(unload_root = undefined) {
 	return unload_time;
 }
 
+traverse = function(func, acc = undefined) {
+	with self {
+		func(acc);
+	}
+}
+
+doTraverse = function(func, acc = undefined) {
+	// need to unbind the function from its scope
+	var f = method(undefined, func);
+	traverse(f, acc);
+}
+
+generateFocusDebug = function() {
+	yui_log("TODO: generate focus debug");
+	
+	var info = {
+		_id,
+		scope_id: focus_scope.id,
+		scope_info: focus_scope.getInfo(),
+		children: {}
+	};
+	
+	doTraverse(focusDebug, info);
+	
+	yui_log("debug output:");
+	
+	var json = json_stringify(info, true);
+	clipboard_set_text(json);
+	yui_log(json);
+}
+
+focusDebug = function(info) {
+	//yui_log($"focus debug on {_id}");
+	
+	if focus_scope.id != info.scope_id {
+		// track the new focus scope as a child
+		var new_info = {
+			_id,
+			scope_id: focus_scope.id,
+			scope_info: focus_scope.getInfo(),
+			children: {}
+		};
+		info.children[$_id] = new_info;
+		
+		// further traversal will add to the child scope info
+		return new_info;
+	}
+}
+
 generateLayoutLog = function() {
 	yui_log("TODO: generate layout log");
 }
 
 Inspectron()
-	.Button("Generate Layout Log", generateLayoutLog).AtTop()
+	.Button("Generate Focus Debug", generateFocusDebug).AtTop()
+	//.Button("Generate Layout Log", generateLayoutLog).AtTop()
 	.Section("yui_base")
 	.Checkbox(nameof(trace))
 	.Checkbox(nameof(is_cursor_layer))

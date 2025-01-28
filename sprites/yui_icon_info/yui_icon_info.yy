@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"delapouite",
-    "path":"folders/Libraries/Packages - YUI/Sprites/game-icons.net/delapouite.yy",
+    "path":"folders/Packages - YUI/Sprites/game-icons.net/delapouite.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,12 +1,12 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"YsFunctionParselet",
   "isCompatibility":false,
   "isDnD":false,
   "name":"YsFunctionParselet",
   "parent":{
-    "name":"Parselets",
-    "path":"folders/Libraries/Packages - YUI/Parser/Ys/Parselets.yy",
+    "name":"Deprecated",
+    "path":"folders/Packages - YUI/Deprecated.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

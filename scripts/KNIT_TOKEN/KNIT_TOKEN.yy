@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"KNIT_TOKEN",
   "isCompatibility":false,
   "isDnD":false,

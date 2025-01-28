@@ -1,5 +1,5 @@
 /// @description YuiScript scanner
-function YsScanner(source, token_definition) : GsplScanner(source, token_definition) constructor {
+function YsScanner(source) : GsplScanner(source, ys_token_definition()) constructor {
 	
 	// implements scanning logic
 	static scanToken = function() {
@@ -19,7 +19,10 @@ function YsScanner(source, token_definition) : GsplScanner(source, token_definit
 				if match("?") addToken(YS_TOKEN.QUESTION_QUESTION)
 				else addToken(YS_TOKEN.QUESTION);
 				break;
-			case "|": addToken(YS_TOKEN.PIPE); break;
+			case "|":
+				if match(">") addToken(YS_TOKEN.PIPE_GREATER)
+				else addToken(YS_TOKEN.PIPE);
+				break;
 		    case "-": addToken(YS_TOKEN.MINUS); break;
 		    case "+": addToken(YS_TOKEN.PLUS); break;
 		    case "*": addToken(YS_TOKEN.STAR); break;
@@ -114,6 +117,10 @@ function YsScanner(source, token_definition) : GsplScanner(source, token_definit
 			case "&":
 				skip(1);
 				scanVariablePath(YS_TOKEN.RESOURCE_IDENTIFIER);
+				break;
+			case "~":
+				skip(1);
+				scanIdentifier(YS_TOKEN.HOST_IDENTIFIER);
 				break;
 			
 			case "#":

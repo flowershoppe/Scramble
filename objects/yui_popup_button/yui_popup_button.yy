@@ -2,14 +2,14 @@
   "$GMObject":"",
   "%Name":"yui_popup_button",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"yui_popup_button",
   "overriddenProperties":[],
   "parent":{
     "name":"Render Items",
-    "path":"folders/Libraries/Packages - YUI/Render Items.yy",
+    "path":"folders/Packages - YUI/Render Items.yy",
   },
   "parentObjectId":{
     "name":"yui_button",

@@ -18,11 +18,17 @@ text_surface = undefined;
 text_surface_w = 0;
 text_surface_h = 0;
 
+// the region settings (enabled/highlight/color/blend)
+regions = undefined;
+
+// the active region, if scribble regions are enabled and a region is hovered over
+active_region = undefined;
+
 // used by yui_text_input
 override_text = undefined;
 
 onLayoutInit = function() {
-	text_value = new YuiBindableValue(yui_element.props.text);
+	text_value = new YuiBindableValue(yui_element.text);
 	animatable.text = text_value;
 	
 	color_value = new YuiBindableValue(yui_element.color);
@@ -30,14 +36,18 @@ onLayoutInit = function() {
 	
 	highlight_color = layout_props.highlight_color;
 	use_scribble = layout_props.use_scribble;
+	
+	regions = layout_props.regions;
 }
 
 build = function() {
+	
+	font = bound_values.font;
 		
 	if use_scribble {
 		formatted_text = override_text ?? bound_values.text
 		scribble_element = scribble(formatted_text, string(id))
-			.starting_format(bound_values.font)
+			.starting_format(font_get_name(font))
 			.align(layout_props.halign, layout_props.valign);
 		
 		if bound_values.typist {
@@ -47,24 +57,13 @@ build = function() {
 		else if layout_props.autotype != undefined {
 			typist = scribble_typist();
 			var autotype = layout_props.autotype;
-			if autotype == true {
-				typist.in(0.15, 0);
-			}
-			else if is_struct(autotype) {
-				typist.in(autotype.speed, autotype.smoothness);
-			}
-			else {
-				// TODO validate this in YuiTextElement
-				throw yui_error("invalid autotype value");
-			}
+			typist.in(autotype.speed, autotype.smoothness);
 		}	
 	}
 	else {		
 		// handle newlines
 		formatted_text = override_text ?? string_replace(bound_values.text, "\\n", "\n");
 	}
-	
-	font = asset_get_index(bound_values.font);
 }
 
 /// @param {struct} available_size
@@ -135,10 +134,10 @@ arrange = function yui_text__arrange(available_size, viewport_size) {
 	
 		draw_set_font(old_font);
 	
-		text_surface_w = native_width + padding.w;
+		text_surface_w = native_width;
 	
 		// can't use string_height_ext because it doesn't account for letters like pqyg
-		text_surface_h = native_height + padding.h;
+		text_surface_h = native_height;
 	
 		// update draw size
 		desired_size.w = layout_props.halign or is_wrapped
@@ -159,7 +158,7 @@ arrange = function yui_text__arrange(available_size, viewport_size) {
 	yui_resize_instance(drawn_size.w, drawn_size.h);
 	
 	if trace {
-		DEBUG_BREAK_YUI
+		yui_break()
 	}
 	
 	use_text_surface = font >= 0 && !use_scribble;
@@ -181,10 +180,10 @@ arrange = function yui_text__arrange(available_size, viewport_size) {
 	
 	// when centering, center on the center of the padded rect
 	if layout_props.halign == fa_center {
-		element_xoffset += padded_rect.w / 2;
+		element_xoffset += (padded_rect.w / 2) - (text_surface_w / 2);
 	}
 	if layout_props.valign == fa_middle {
-		element_yoffset += padded_rect.h / 2;
+		element_yoffset += (padded_rect.h / 2) - (text_surface_h / 2);
 	}
 	
 	return draw_size;
@@ -204,13 +203,11 @@ buildTextSurface = function yui_text__buildTextSurface(text = undefined) {
 		}
 	
 		text_surface = yui_draw_text_to_surface(
-			element_xoffset, element_yoffset,
 			text_surface_w, text_surface_h,
 			text,
-			text_surface_w - layout_props.padding.w,
+			text_surface_w,
 			c_white, // color blending happens on surface draw
 			opacity,
-			layout_props.halign, layout_props.valign,
 			font,
 			text_surface);
 	}

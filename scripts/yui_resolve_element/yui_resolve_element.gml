@@ -8,7 +8,8 @@ function yui_resolve_element(yui_data, resources, slot_values, parent_id = undef
 	
 	static element_map = YuiGlobals.element_map;
 	
-	try {
+	//try
+	{
 		if yui_data == undefined return undefined;
 
 		// convert raw string elements to text data
@@ -106,7 +107,7 @@ function yui_resolve_element(yui_data, resources, slot_values, parent_id = undef
 		// feather ignore once GM1045
 		return element;
 	}
-	catch (error) {
-		return yui_make_error_element(error, resources, slot_values);
-	}
+	//catch (error) {
+	//	return yui_make_error_element(error, resources, slot_values);
+	//}
 }

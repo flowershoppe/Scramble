@@ -5,6 +5,13 @@ event_inherited();
 
 case_item = undefined;
 
+base_destroy = destroy;
+destroy = function() {
+	if case_item && instance_exists(case_item)
+		case_item.destroy();
+	base_destroy();
+}
+
 build = function() {
 	// clear out the old item;
 	if case_item {
@@ -59,6 +66,18 @@ arrange = function(available_size, viewport_size) {
 	}
 	
 	return draw_size;
+}
+
+traverse = function(func, acc = undefined) {
+	
+	with self {
+		// allow the traverse function to change the acc itself
+		acc = func(acc) ?? acc;
+	}
+	
+	if case_item {
+		case_item.traverse(func, acc);
+	}
 }
 
 base_move = move;
