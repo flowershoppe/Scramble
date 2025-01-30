@@ -16,7 +16,7 @@ root:
   elements:
     - type: panel
       size: { w: 250, h: 350 }
-      background: yui_panel_bg
+      background: ~yui_panel_bg
       layout: vertical
       alignment: center
       spacing: 20
