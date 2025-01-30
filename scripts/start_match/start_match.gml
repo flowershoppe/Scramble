@@ -23,6 +23,25 @@ function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _tur
 		grid_height: _board_h
 	});
 	
+	//UI
+	instance_create_layer(0, 128, "YUI", yui_document,
+	{
+		data_context : oMatchManager,
+		yui_file : "YUI screens/match_stats.yui",
+		is_full_screen : false,
+		image_xscale : 3,
+		image_yscale : 3.5
+	});
+	
+	instance_create_layer(755, 384, "YUI", yui_document,
+	{
+		data_context : 	oMatchGUI,
+		yui_file : "YUI screens/match_buttons.yui",
+		is_full_screen : false,
+		image_xscale : 3.046,
+		image_yscale : 2.609
+	})
+	
 	dist_standard(oTilebag);
 	add_tile_to_hand(_hand, oTilebag, _hand.size);
 
