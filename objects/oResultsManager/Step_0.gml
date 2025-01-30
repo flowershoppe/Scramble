@@ -1,4 +1,4 @@
-if(input_check_pressed("confirm"))
+if(input_check_pressed("confirm") or input_mouse_check_pressed(mb_left))
 {
 	//reset match manager and opponent
 	instance_destroy(oMatchManager);

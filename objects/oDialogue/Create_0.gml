@@ -73,3 +73,9 @@ dialogue_get_colour = function(value1, value2) {
 dialogue_play_sound = function(value) {
   audio_play_sound(value, 1, false);
 }
+
+//Create Advance Button
+instance_create_layer(0, 0, "YUI", oAdvanceButton);
+
+						
+						

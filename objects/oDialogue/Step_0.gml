@@ -6,7 +6,7 @@ if (char_count == msg_length) {
     alarm[1] = autoprocess_delay;
   }
   
-  if (dialogue_gui_fading_in && (autoprocess || input_check_pressed("confirm") || input_mouse_check_pressed(mb_left))) {
+  if (dialogue_gui_fading_in && (autoprocess || input_check_pressed("confirm"))) {
     if (question_asked) { // Dialogue stack pushing
       dialogue = question_answers[options_cursor];
       ds_stack_push(dialogue_stack, [stack_index[0], msg_current, stack_option]);
