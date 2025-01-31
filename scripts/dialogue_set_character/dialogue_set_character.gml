@@ -22,8 +22,8 @@ function dialogue_set_character(index) {
       dialogue_gui_character_image_y = dialogue_gui_height;
     break;
 	
-	case 2: // Jungle
-      dialogue_gui_character_sprite_index = spJungle;
+	case 2: // Cress
+      dialogue_gui_character_sprite_index = spCress;
       dialogue_gui_character_image_index = 0;
       dialogue_gui_character_image_x = 8;
       dialogue_gui_character_image_scale = 0.25;
