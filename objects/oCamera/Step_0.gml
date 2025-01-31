@@ -11,6 +11,7 @@ y += _vert_camera_move_direction * global.camera_speed;
 
 #endregion*/
 
+if(!active){dragging = false; exit;}
 
 #region
 

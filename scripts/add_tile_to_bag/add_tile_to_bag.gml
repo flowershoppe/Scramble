@@ -1,10 +1,14 @@
 //Add tile to bag
 
-function add_tile_to_bag(_letter, _pointvalue, _count)
+function add_tile_to_bag(_letter, _pointvalue, _count, _is_permanent)
 {
 	var _inc = 0;
 	var _tile;
-	var _array = oTilebag.tiles;
+	if(_is_permanent)
+	{var _array = oTilebag.tiles;}
+	else 
+	{var _array = oTilebag.match_tiles;}
+	
 	while(_inc < _count)
 	{	
 		//create new tile and assign its values
@@ -16,6 +20,11 @@ function add_tile_to_bag(_letter, _pointvalue, _count)
 		if(_letter == "_")
 		{
 			_tile.blank = true;	
+		}
+		
+		if(_is_permanent)
+		{
+			_tile.persistent = true;	
 		}
 		
 		//put in bag

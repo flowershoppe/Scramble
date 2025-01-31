@@ -9,7 +9,7 @@ var _cursor = noone;
 switch(room)
 {              
 	case rGame:
-	
+		#region
 		/*
 		//-----YUI ELEMENTS-----
 		#region
@@ -54,8 +54,8 @@ switch(room)
 				is_full_screen: false
 			}); 	
 		}
-		#endregion
 		*/
+		#endregion
 		room_persistent = true;
 		
 		audio_stop_sound(_main_menu_music);
@@ -65,11 +65,6 @@ switch(room)
 			audio_play_sound_on(_emitter_MS, _game_music_1, true, 100);
 		}
 	
-		//create game handlers
-		if(!instance_exists(oCamera))
-		{
-			instance_create_layer(room_width / 2, room_height / 2, "Meta", oCamera);
-		}
 		if(!instance_exists(oBackground))
 		{
 			instance_create_layer(0, 0, "Background", oBackground);
@@ -78,6 +73,8 @@ switch(room)
 		break;
 		
 	case rMainMenu:
+	
+		oCamera.active = false;
 		YuiCursorManager.is_navigation_active = false
 		if(!audio_is_playing(global.music_main_menu))
 		{

@@ -1,7 +1,7 @@
 name = "The Wiz";
 spr = spTheWiz;
 
-match_specs = [10, 10, 10, -1, -1, -1];
+match_specs = [10, 10, 1, -1, -1, -1];
 
 dialogues =
 [

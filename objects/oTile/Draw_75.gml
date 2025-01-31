@@ -7,7 +7,7 @@ var _old_halign = draw_get_halign();
 var _old_valign = draw_get_valign();
 var _old_font = draw_get_font();
 
-if(on_board){exit;}
+if(on_board or !visible){exit;}
 
 //draw self
 draw_sprite_ext(spr, 0, x, y, xscale, yscale, 0, c_white, 1);

@@ -1,10 +1,11 @@
 //Add tile to hand from tilebag
 function add_tile_to_hand(_hand, _tilebag, _amount)
 {
+	var _array = _tilebag.match_tiles;
 	for(var _count = 0; _count < _amount; _count++)
 	{
 		//ensure bag isn't empty
-		if(array_length(_tilebag.tiles) < 1){ exit; }
+		if(array_length(_array) < 1){ exit; }
 	
 		//loop through until an empty tile holder is found
 		for(var i = 0; i < _hand.size; i++)
@@ -13,13 +14,13 @@ function add_tile_to_hand(_hand, _tilebag, _amount)
 			
 			if(_tile_holder.tile == noone)
 			{		
-				//find random tile from bag and set _tile equal to it
-				var _random = irandom(array_length(_tilebag.tiles) - 1);
-				var _bag_tile = _tilebag.tiles[_random];
+				//find random tile from bag and set _tile equal to it				
+				var _random = irandom(array_length(_array) - 1);
+				var _bag_tile = _array[_random];
 				var _tile = _bag_tile;
 		
 				//remove tile from bag
-				array_delete(_tilebag.tiles, _random, 1);
+				array_delete(_array, _random, 1);
 		
 				//place tile id in tile holder
 				_tile_holder.tile = _tile;

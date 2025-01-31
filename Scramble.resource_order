@@ -627,6 +627,7 @@
     {"name":"new_run","order":5,"path":"scripts/new_run/new_run.yy",},
     {"name":"next_turn","order":2,"path":"scripts/next_turn/next_turn.yy",},
     {"name":"post_load","order":30,"path":"scripts/post_load/post_load.yy",},
+    {"name":"reset_tilebag","order":6,"path":"scripts/reset_tilebag/reset_tilebag.yy",},
     {"name":"resolution_select","order":1,"path":"scripts/resolution_select/resolution_select.yy",},
     {"name":"return_tiles","order":5,"path":"scripts/return_tiles/return_tiles.yy",},
     {"name":"room_change","order":4,"path":"scripts/room_change/room_change.yy",},

@@ -30,7 +30,7 @@ function exchange_tiles()
 		for(var _index = 0; _index < array_length(_array); _index++)
 		{
 			var _tile = _array[_index];		
-			array_push(oTilebag.tiles, _tile);
+			array_push(oTilebag.match_tiles, _tile);
 			_tile.visible = false;
 			_tile.x = 0;
 			_tile.y = 0;

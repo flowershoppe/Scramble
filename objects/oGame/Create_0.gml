@@ -76,6 +76,8 @@ instance_create_layer(0, 0, "Meta", oSettings);
 instance_create_layer(0, 0, "Meta", oPauseMenu);
 instance_create_layer(0, 0, "Meta", oSaverLoader);
 instance_create_layer(0, 0, "Meta", oMatchManager);
+instance_create_layer(room_width / 2, room_height / 2, "Meta", oCamera,
+{active : false});
 
 global.exchanging = false;
 
@@ -101,6 +103,7 @@ var _player = instance_create_layer(0, 0, "Meta", oPlayer);
 instance_create_layer(0, 0, "Meta", oCursor);
 
 //Opponents
+//multiple tiers
 opponents_1 = [oCress];
 opponents_2 = [oWiz];
 
