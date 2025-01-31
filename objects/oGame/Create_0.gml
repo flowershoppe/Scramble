@@ -101,7 +101,7 @@ var _player = instance_create_layer(0, 0, "Meta", oPlayer);
 instance_create_layer(0, 0, "Meta", oCursor);
 
 //Opponents
-opponents_1 = [oJungle];
+opponents_1 = [oCress];
 opponents_2 = [oWiz];
 
 
