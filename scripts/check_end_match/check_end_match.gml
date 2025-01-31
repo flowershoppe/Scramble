@@ -24,7 +24,7 @@ function check_end_match()
 
 		var _cant_play = false;
 		//tilebag empty, hand empty, no tiles placed this turn, and no held tile
-		if(array_length(oTilebag.tiles) < 1 
+		if(array_length(oTilebag.match_tiles) < 1 
 			and oPlayerHand.empty
 			and array_length(oPlayer.placed_tiles) < 1 
 			and oCursor.held_tile == noone)

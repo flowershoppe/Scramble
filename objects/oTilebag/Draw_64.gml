@@ -8,7 +8,16 @@ draw_set_font(font);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
-var _string = string(array_length(tiles));
+if(room == rGame)
+{
+	yui_tiles = match_tiles;
+}
+else
+{
+	yui_tiles = tiles;
+}
+
+var _string = string(array_length(yui_tiles));
 
 draw_text_color(x, y, _string, 
 				c_white, c_white, c_white, c_white, 1);

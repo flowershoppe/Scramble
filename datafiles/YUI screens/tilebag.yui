@@ -26,7 +26,7 @@ root:
         column_width: 32
         column_spacing: 5
       background: ~yui_panel_bg
-      elements: @tiles
+      elements: @yui_tiles
       template:
         type: border
         padding: 5

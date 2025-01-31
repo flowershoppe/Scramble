@@ -855,6 +855,7 @@
     {"id":{"name":"new_run","path":"scripts/new_run/new_run.yy",},},
     {"id":{"name":"next_turn","path":"scripts/next_turn/next_turn.yy",},},
     {"id":{"name":"post_load","path":"scripts/post_load/post_load.yy",},},
+    {"id":{"name":"reset_tilebag","path":"scripts/reset_tilebag/reset_tilebag.yy",},},
     {"id":{"name":"resolution_select","path":"scripts/resolution_select/resolution_select.yy",},},
     {"id":{"name":"return_tiles","path":"scripts/return_tiles/return_tiles.yy",},},
     {"id":{"name":"room_change","path":"scripts/room_change/room_change.yy",},},

@@ -5,15 +5,11 @@ function dist_standard(_tilebag)
 	var _letter;
 	var _count;
 	var _inc = 0;
-		
-	
-	
-	
 			
 	//Add blank spaces
 	_letter = "_";
 	_count = 1;
-	add_tile_to_bag(_letter, _letters[? _letter], _count);
+	add_tile_to_bag(_letter, _letters[? _letter], _count, true);
 	
 	//loop through all letters of the alphabet
 	_count = 0;
@@ -105,7 +101,7 @@ function dist_standard(_tilebag)
 				break;
 			#endregion
 		}
-		add_tile_to_bag(_letter, _letters[? _letter], _count);
+		add_tile_to_bag(_letter, _letters[? _letter], _count, true);
 			
 		//increment to next alphabet letter
 		_letter_num ++;
