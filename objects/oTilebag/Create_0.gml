@@ -1,7 +1,6 @@
 //array of tile id's
 tiles = [];
 match_tiles = [];
-yui_tiles = [];
 
 spr = spBag;
 
