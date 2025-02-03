@@ -1,7 +1,7 @@
 name = "Cress";
 spr = spCress;
 
-match_specs = [5, 15, 1, -1, -1, -1];
+match_specs = [5, 15, 10, -1, -1, -1];
 
 dialogues =
 [
