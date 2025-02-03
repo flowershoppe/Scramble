@@ -55,5 +55,27 @@ function post_load()
 				array_push(oPlayerHand.tile_holder_array, id);
 			}
 		}
+		
+		if(oMatchManager.active)
+		{
+			//UI
+			instance_create_layer(0, 128, "YUI", yui_document,
+			{
+				data_context : oMatchManager,
+				yui_file : "YUI screens/match_stats.yui",
+				is_full_screen : false,
+				image_xscale : 3,
+				image_yscale : 3.5
+			});
+	
+			instance_create_layer(755, 384, "YUI", yui_document,
+			{
+				data_context : 	oMatchGUI,
+				yui_file : "YUI screens/match_buttons.yui",
+				is_full_screen : false,
+				image_xscale : 3.046,
+				image_yscale : 2.609
+			});				
+		}
 	}
 }
