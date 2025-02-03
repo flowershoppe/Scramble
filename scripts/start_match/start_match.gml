@@ -41,6 +41,7 @@ function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _tur
 		image_yscale : 2.609
 	})
 	
+	oTilebag.yui_tiles = oTilebag.match_tiles;
 	array_copy(oTilebag.match_tiles, 0, oTilebag.tiles, 0, array_length(oTilebag.tiles));
 	add_tile_to_hand(_hand, oTilebag, _hand.size);
 	
