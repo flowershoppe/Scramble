@@ -1,3 +1,5 @@
+play_dialogue = true;
+
 total_tiles = 0;
 total_points = 0;
 total_words = 0;

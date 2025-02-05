@@ -1,5 +1,6 @@
 function show_results()
 {
+	oMatchManager.play_dialogue = true;
 	oTilebag.yui_tiles = oTilebag.tiles;
 	reset_tilebag();
 	room_persistent = false;
