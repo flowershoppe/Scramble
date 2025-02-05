@@ -1,5 +1,3 @@
-play_dialogue = true;
-
 time = 0;
 tiles_played = 0;
 words_spelled = 0;

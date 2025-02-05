@@ -14,8 +14,7 @@ function save_game()
 				x : x,
 				y : y,
 				room_name : room,
-				time : time,
-				play_dialogue : play_dialogue
+				time : time				
 			}
 		}
 		array_push(_saveData, _saveEntity);
@@ -77,6 +76,7 @@ function save_game()
 			{
 				x : x,
 				y : y,
+				play_dialogue : play_dialogue,
 				total_tiles : total_tiles,
 				total_points : total_points,
 				total_words : total_words,
