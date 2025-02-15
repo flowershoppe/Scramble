@@ -34,11 +34,13 @@ function post_load()
 			}		
 		}
 		
+		
 		with(oTile)
 		{
 			if(layer_get_name(layer) == "Tilebag")
 			{
-				array_push(oTilebag.tiles, id);	
+				array_insert(oTilebag.tiles, 0, id);
+				persistent = true;
 			}
 			else 
 			{
@@ -54,6 +56,16 @@ function post_load()
 			{
 				array_push(oPlayerHand.tile_holder_array, id);
 			}
+		}
+		
+		if(room == rResults)
+		{
+			instance_create_layer(0, 0, "YUI", yui_document,
+			{
+				data_context : oMatchManager,
+				yui_file : "YUI screens/results.yui",
+				is_full_screen : true
+			});		
 		}
 		
 		if(oMatchManager.active)
