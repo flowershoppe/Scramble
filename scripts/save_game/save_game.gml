@@ -160,9 +160,6 @@ function save_game()
 				image_index : image_index,
 				image_alpha : image_alpha,
 				spr : spr,
-				tiles : tiles,
-				match_tiles : match_tiles,
-				yui_tiles : yui_tiles
 			}	
 		}
 		array_push(_saveData, _saveEntity);

@@ -1,3 +1,6 @@
+font		= global.tile_font;
+font_color	= global.tile_font_color;
+
 if(wait_for_input)
 {
 	draw_text(view_get_wport(0) / 2, view_get_hport(0) / 4, "Please enter a character");	
@@ -37,6 +40,10 @@ _x_offset = (sprite_width * xscale) * 0.3;
 _y_offset = (sprite_height * yscale) * 0.3;
 
 //draw point value	
+if(pointvalue > global.letters[? letter])
+{
+	font_color = c_red;
+}
 draw_text_transformed_color(x + _x_offset, y - _y_offset, pointvalue, _scale, _scale, 
 							0, font_color, font_color, font_color, font_color, 100);
 

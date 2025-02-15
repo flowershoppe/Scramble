@@ -15,5 +15,8 @@ function next_turn()
 	
 	check_end_match();
 	
-	save_game();
+	if(!oMatchManager.loss and !oMatchManager.victory)
+	{
+		save_game();
+	}
 }
