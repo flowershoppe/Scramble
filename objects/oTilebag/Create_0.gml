@@ -3,6 +3,8 @@ tiles = [];
 match_tiles = [];
 yui_tiles = tiles;
 
+last_tile = noone;
+
 spr = spBag;
 
 font = global.tile_font

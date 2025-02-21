@@ -39,6 +39,9 @@ ds_map_add(global.letters, "Z", 10);
 ds_map_add(global.letters, "_", 0);
 #endregion
 
+global.vowels = ["A", "E", "I", "O", "U"];
+global.consonants = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"];
+
 //Default Font
 global.tile_font_size = 40;
 global.tile_font_color = c_black;
@@ -82,6 +85,7 @@ instance_create_layer(room_width / 2, room_height / 2, "Meta", oCamera,
 global.exchanging = false;
 
 //YUI Structs
+#region
 global.stMainMenu = 
 {
 	yui_file: "YUI/main_menu.yui",
@@ -97,6 +101,38 @@ global.stPauseMenu =
 	data_context: oPauseMenu,
 	yui_file: "YUI/pause_menu.yui"	
 }
+global.stMatchStats =
+{
+	data_context : oMatchManager,
+	yui_file : "YUI screens/match_stats.yui",
+	is_full_screen : false,
+	image_xscale : 3.2,
+	image_yscale : 5,
+	x : 755,
+	y : 64
+}
+global.stMatchButtons = 
+{
+	data_context : oMatchGUI,
+	yui_file : "YUI screens/match_buttons.yui",
+	is_full_screen : false,
+	image_xscale : 3.2,
+	image_yscale : 2.609,
+	x : 755,
+	y : 384
+}
+global.stCharms = 
+{
+	data_context : oCharmManager,
+	yui_file : "YUI screens/charms.yui",
+	is_full_screen : false,
+	image_xscale : 1,
+	image_yscale : 1,
+	x : 0,
+	y : 50,
+	persistent : true
+}
+#endregion
 
 //initialize player and cursor
 var _player = instance_create_layer(0, 0, "Meta", oPlayer);		
@@ -108,4 +144,4 @@ opponents_1 = [oCress];
 opponents_2 = [oWiz];
 
 
-		
+receiver = new Receiver();
