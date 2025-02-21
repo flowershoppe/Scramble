@@ -1,0 +1,30 @@
+id: charms
+file_type: screen
+
+import:
+  - ../Templates/
+
+  - /YUI/Animations/transitions.yui
+  - /YUI/Widgets/
+
+root:  
+  type: panel
+  layout: grid
+  padding: [10, 10, 10, 10]
+  grid:
+    rows: 5
+    row_height: 32
+    row_spacing: 16
+    columns: 2
+    column_width: 32
+    column_spacing: 16
+  background: ~yui_panel_bg
+  elements: @charms
+  template:
+    type: border
+    padding: 5
+    background: @sprite_index
+    size: 32
+
+
+        

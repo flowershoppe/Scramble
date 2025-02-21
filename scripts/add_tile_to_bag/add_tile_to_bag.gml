@@ -38,6 +38,11 @@ function add_tile_to_bag(_letter, _pointvalue, _count, _is_permanent)
 
 		array_sort(_array, _function);	
 		
+		
+		oTilebag.last_tile = _tile;
+		
 		_inc++;
+		
+		broadcast("add_tile_to_bag");
 	}
 }
