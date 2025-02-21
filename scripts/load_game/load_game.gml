@@ -8,6 +8,8 @@ function load_game()
 		with(oTileHolder) instance_destroy();
 		with(oPlayerHand) instance_destroy();
 		with(oTilebag) instance_destroy();
+		with(oCharmManager) instance_destroy();
+		with(oCharm) instance_destroy();
 		
 		var _buffer = buffer_load("gamesave.save");
 		var _string = buffer_read(_buffer, buffer_string);

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"load_game",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Admin",
+    "path":"folders/Scripts/Admin.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

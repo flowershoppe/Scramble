@@ -126,11 +126,11 @@ global.stCharms =
 	data_context : oCharmManager,
 	yui_file : "YUI screens/charms.yui",
 	is_full_screen : false,
-	image_xscale : 1,
-	image_yscale : 1,
+	image_xscale : 2.5,
+	image_yscale : 4.5,
 	x : 0,
-	y : 50,
-	persistent : true
+	y : 64,
+	persist : true
 }
 #endregion
 

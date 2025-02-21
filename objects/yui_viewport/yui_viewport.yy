@@ -3,12 +3,11 @@
   "%Name":"yui_viewport",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"yui_viewport",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiViewportElement",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":{"name":"YuiViewportElement","path":"scripts/YuiViewportElement/YuiViewportElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiViewportElement",},
   ],
   "parent":{
     "name":"Render Items",

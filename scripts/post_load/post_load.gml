@@ -15,6 +15,8 @@ function post_load()
 		with(oTileHolder) instance_destroy();
 		with(oPlayerHand) instance_destroy();
 		with(oTilebag) instance_destroy();
+		with(oCharmManager) instance_destroy();
+		with(oCharm) instance_destroy();
 		
 		for(var i = 0; i < array_length(_loadData); i++) //loop through data array
 		{
@@ -34,6 +36,10 @@ function post_load()
 			}		
 		}
 		
+		with(oCharm)
+		{
+			array_push(oCharmManager.charms);
+		}
 		
 		with(oTile)
 		{

@@ -11,10 +11,12 @@ event_inherited();
 
 onLayoutInit = function() {
 	
-	frame_value = new YuiBindableValue(yui_element.frame);
-	angle_value = new YuiBindableValue(yui_element.angle);
-	blend_color_value = new YuiBindableValue(yui_element.blend_color);
+	sprite_value = new YuiBindableValue(yui_element.sprite, yui_element.getDefaultAnim("sprite"));
+	frame_value = new YuiBindableValue(yui_element.frame, yui_element.getDefaultAnim("frame"));
+	angle_value = new YuiBindableValue(yui_element.angle, yui_element.getDefaultAnim("angle"));
+	blend_color_value = new YuiBindableValue(yui_element.blend_color, yui_element.getDefaultAnim("blend_color"));
 	
+	animatable.sprite = sprite_value;
 	animatable.frame = frame_value;
 	animatable.angle = angle_value;
 	animatable.blend_color = blend_color_value;
@@ -25,7 +27,7 @@ build = function() {
 		sprite_index = bound_values.sprite;
 	}
 	else {
-		// NOTE: not using hideElement() because this is just to not draw anything when there is now sprite
+		// NOTE: not using hideElement() because this is just to not draw anything when there is no sprite
 		visible = false;
 		exit;
 	}
@@ -42,6 +44,8 @@ build = function() {
 /// @param {struct} viewport_size
 arrange = function(available_size, viewport_size) {
 
+	x = available_size.x;
+	y = available_size.y;
 	draw_rect = available_size;
 	self.viewport_size = viewport_size;
 	
@@ -129,10 +133,12 @@ arrange = function(available_size, viewport_size) {
 	if mirror_x {
 		image_xscale = -image_xscale;
 		padded_rect.x += abs(sprite_width);
+		draw_size.x += abs(sprite_width);
 	}
 	if mirror_y {
 		image_yscale = -image_yscale;
 		padded_rect.y += abs(sprite_height);
+		draw_size.y += abs(sprite_height);
 	}
 	
 	// position at the padded rect corner so we can just draw at x/y
@@ -149,5 +155,7 @@ arrange = function(available_size, viewport_size) {
 
 Inspectron()
 	.Section("yui_image")
-	//.Sprite(nameof(sprite_index))
-	.SpritePicker(nameof(sprite_index));
+	.SpritePicker(nameof(sprite_index))
+	.Watch(nameof(sprite_width))
+	.Watch(nameof(sprite_height))
+	.Watch(nameof(image_index));

@@ -9,7 +9,7 @@
   "managed":true,
   "name":"yui_panel",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiPanelElement",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":{"name":"YuiPanelElement","path":"scripts/YuiPanelElement/YuiPanelElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiPanelElement",},
   ],
   "parent":{
     "name":"Render Items",
@@ -33,7 +33,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"padding","filters":[],"listItems":[],"multiselect":false,"name":"padding","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":4,},
+    {"$GMObjectProperty":"v1","%Name":"padding","filters":[],"listItems":[],"multiselect":false,"name":"padding","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

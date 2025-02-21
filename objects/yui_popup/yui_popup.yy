@@ -7,7 +7,7 @@
   "managed":true,
   "name":"yui_popup",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiPopupElement",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":{"name":"YuiPopupElement","path":"scripts/YuiPopupElement/YuiPopupElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiPopupElement",},
   ],
   "parent":{
     "name":"Render Items",
