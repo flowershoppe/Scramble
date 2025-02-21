@@ -9,8 +9,8 @@
   "managed":true,
   "name":"yui_border",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiBorderElement",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"bg_color","path":"objects/yui_base/yui_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":{"name":"YuiBorderElement","path":"scripts/YuiBorderElement/YuiBorderElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiBorderElement",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"bg_color","path":"objects/yui_base/yui_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
   ],
   "parent":{
     "name":"Render Items",
@@ -36,10 +36,10 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"bg_sprite","filters":[
         "GMSprite",
-      ],"listItems":[],"multiselect":false,"name":"bg_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":5,},
-    {"$GMObjectProperty":"v1","%Name":"border_color","filters":[],"listItems":[],"multiselect":false,"name":"border_color","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":7,},
-    {"$GMObjectProperty":"v1","%Name":"border_thickness","filters":[],"listItems":[],"multiselect":false,"name":"border_thickness","rangeEnabled":true,"rangeMax":5.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"border_alpha","filters":[],"listItems":[],"multiselect":false,"name":"border_alpha","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+      ],"listItems":[],"multiselect":false,"name":"bg_sprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"border_color","filters":[],"listItems":[],"multiselect":false,"name":"border_color","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":7,},
+    {"$GMObjectProperty":"v1","%Name":"border_thickness","filters":[],"listItems":[],"multiselect":false,"name":"border_thickness","rangeEnabled":true,"rangeMax":5.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"border_alpha","filters":[],"listItems":[],"multiselect":false,"name":"border_alpha","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

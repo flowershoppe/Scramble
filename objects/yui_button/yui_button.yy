@@ -10,8 +10,8 @@
   "managed":true,
   "name":"yui_button",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiButtonElement",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"bg_color","path":"objects/yui_base/yui_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"$FF4D4D4D",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":{"name":"YuiButtonElement","path":"scripts/YuiButtonElement/YuiButtonElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiButtonElement",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"bg_color","path":"objects/yui_base/yui_base.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"$FF4D4D4D",},
   ],
   "parent":{
     "name":"Render Items",
@@ -35,9 +35,9 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"highlight_color","filters":[],"listItems":[],"multiselect":false,"name":"highlight_color","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"$FFFFFFFF","varType":7,},
-    {"$GMObjectProperty":"v1","%Name":"highlight_alpha","filters":[],"listItems":[],"multiselect":false,"name":"highlight_alpha","rangeEnabled":true,"rangeMax":1.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.2","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"pressed_alpha","filters":[],"listItems":[],"multiselect":false,"name":"pressed_alpha","rangeEnabled":true,"rangeMax":1.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.4","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"highlight_color","filters":[],"listItems":[],"multiselect":false,"name":"highlight_color","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"$FFFFFFFF","varType":7,},
+    {"$GMObjectProperty":"v1","%Name":"highlight_alpha","filters":[],"listItems":[],"multiselect":false,"name":"highlight_alpha","rangeEnabled":true,"rangeMax":1.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.2","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"pressed_alpha","filters":[],"listItems":[],"multiselect":false,"name":"pressed_alpha","rangeEnabled":true,"rangeMax":1.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.4","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

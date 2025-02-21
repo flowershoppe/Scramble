@@ -146,6 +146,40 @@ function save_game()
 		array_push(_saveData, _saveEntity);
 	
 	}	
+	//save Charms
+	with(oCharmManager)
+	{
+		var _saveEntity =
+		{
+			object_name : object_get_name(object_index),
+			layer_name: layer_get_name(layer),
+			variables :
+			{			
+				x : x,
+				y : y,
+				image_index : image_index,
+				image_alpha : image_alpha,
+			}	
+		}
+		array_push(_saveData, _saveEntity);
+	}
+	with(oCharm)
+	{
+		var _saveEntity =
+		{
+			object_name : object_get_name(object_index),
+			layer_name: layer_get_name(layer),
+			variables :
+			{			
+				x : x,
+				y : y,
+				image_index : image_index,
+				image_alpha : image_alpha,
+				data : data
+			}	
+		}
+		array_push(_saveData, _saveEntity);
+	}
 	//save Tilebag
 	with(oTilebag)
 	{

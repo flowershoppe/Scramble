@@ -25,6 +25,7 @@ root:
     padding: 5
     background: @sprite_index
     size: 32
+    tooltip: @description
 
 
         

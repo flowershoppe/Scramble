@@ -7,7 +7,7 @@
   "managed":true,
   "name":"yui_dynamic_item",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiDynamicElement",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":{"name":"YuiDynamicElement","path":"scripts/YuiDynamicElement/YuiDynamicElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiDynamicElement",},
   ],
   "parent":{
     "name":"Render Items",

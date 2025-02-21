@@ -34,7 +34,17 @@ build = function() {
 		
 		var case_element = yui_element.getCaseElement(key);
 		if case_element {
-			case_item = yui_make_render_instance(case_element, data_context);
+			case_item = yui_make_render_instance(case_element, data_source);
+		}
+	}
+	
+	if case_item {
+		// check if we need to rebuild
+		case_item.rebuild = case_item.data_context != data_source;
+		if case_item.rebuild {
+			// update child data context
+			case_item.data_context = data_source;
+			// will trigger build() as child runs after this
 		}
 	}
 }
@@ -50,11 +60,30 @@ arrange = function(available_size, viewport_size) {
 	if !case_item 
 		return sizeToDefault();
 	
-	case_item.arrange(available_size, viewport_size);
+	// we need to constrain the draw size by our element size
+	// (border etc get this from padding logic)
+	var available_rect = element_size.constrainDrawSize(available_size, available_size);
+		
+	var desired_size = {
+		w: 0,
+		h: 0,
+	}
+	
+	if case_item {
+		is_arranging = true;
+		var content_size = case_item.arrange(available_rect, viewport_size);
+		is_arranging = false;
+		
+		desired_size.w += content_size.w;
+		desired_size.h += content_size.h;
+	}
+	
 	x = case_item.x;
 	y = case_item.y;
+	
+	var drawn_size = element_size.constrainDrawSize(available_size, desired_size);
 		
-	yui_resize_instance(case_item.draw_size.w, case_item.draw_size.h)
+	yui_resize_instance(drawn_size.w, drawn_size.h)
 	
 	// probably unnecessary but keeping for reference
 	//if viewport_size {
@@ -82,6 +111,7 @@ traverse = function(func, acc = undefined) {
 
 base_move = move;
 move = function(xoffset, yoffset) {
+	base_move(xoffset, yoffset);
 	if case_item {
 		case_item.move(xoffset, yoffset);
 	}

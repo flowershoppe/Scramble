@@ -18,7 +18,7 @@
   "managed":true,
   "name":"yui_text_input",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiTextInputElement",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":{"name":"YuiTextInputElement","path":"scripts/YuiTextInputElement/YuiTextInputElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiTextInputElement",},
   ],
   "parent":{
     "name":"Render Items",
@@ -42,7 +42,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"highlight_alpha","filters":[],"listItems":[],"multiselect":false,"name":"highlight_alpha","rangeEnabled":true,"rangeMax":1.0,"rangeMin":0.0,"resource":null,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.1","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"highlight_alpha","filters":[],"listItems":[],"multiselect":false,"name":"highlight_alpha","rangeEnabled":true,"rangeMax":1.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.1","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

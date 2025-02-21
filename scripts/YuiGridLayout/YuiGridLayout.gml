@@ -51,7 +51,7 @@ function YuiGridLayout(alignment, spacing) : YuiLayoutBase(alignment, spacing) c
 			// arrange it within the size
 			var item_size = item.arrange(possible_size, viewport_size);
 			
-			yui_log($"item_size for {i} was {item_size}");
+			//yui_log($"item_size for {i} was {item_size}");
 			
 			var item_bottom = item_size.y + item_size.h + row_spacing;
 			grid_bottom = max(grid_bottom, item_bottom);
@@ -69,16 +69,18 @@ function YuiGridLayout(alignment, spacing) : YuiLayoutBase(alignment, spacing) c
 			}
 		}
 		
-        var grid_width = columns * (column_width + column_spacing) - column_spacing;
-        var grid_height = grid_bottom - available_size.y;
-        
-        // grid (currently) always fills the available space
-        draw_size = {
-            x: available_size.x,
-            y: available_size.y,
-            w: grid_width,
-            h: grid_height,
-        };
+		var grid_height = available_size.h;
+		if grid_height == infinity {
+			grid_height = grid_bottom - available_size.y;
+		}
+		
+		// grid (currently) always fills the available space
+		draw_size = {
+			x: available_size.x,
+			y: available_size.y,
+			w: available_size.w,
+			h: grid_height,
+		};
 		
 		return draw_size;
 	}

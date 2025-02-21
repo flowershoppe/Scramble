@@ -7,7 +7,7 @@
   "managed":true,
   "name":"yui_data_template",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":null,"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiDataTemplateElement",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"yui_base","path":"objects/yui_base/yui_base.yy",},"propertyId":{"name":"element_constructor","path":"objects/yui_base/yui_base.yy",},"resource":{"name":"YuiDataTemplateElement","path":"scripts/YuiDataTemplateElement/YuiDataTemplateElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"YuiDataTemplateElement",},
   ],
   "parent":{
     "name":"Render Items",
