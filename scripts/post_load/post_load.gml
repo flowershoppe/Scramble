@@ -55,6 +55,14 @@ function post_load()
 				_holder.tile = id;	
 			}	
 		}
+		//sort the bag
+		var _array = oTilebag.tiles;
+		var _function = function(a, b)
+		{
+			return ord(a.letter) - ord(b.letter);
+		}	
+
+		array_sort(_array, _function);
 		
 		with(oTileHolder)
 		{
