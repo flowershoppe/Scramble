@@ -2,6 +2,7 @@ id: _info_bar
 file_type: screen
 
 root:
+  is_cursor_layer: true
   type: panel
   layout: horizontal
   size: stretch

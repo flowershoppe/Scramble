@@ -1,3 +1,4 @@
+selectable = false;
 rewarding = false;
 
 reward_count = 0;

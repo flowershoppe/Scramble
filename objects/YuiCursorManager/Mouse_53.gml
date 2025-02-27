@@ -31,6 +31,7 @@ var i = hover_count - 1; repeat hover_count {
 		// a cursor layer blocks all events from propagating below it
 		// e.g. popups and windows
 		if next.is_cursor_layer {
+			left_pressed_consumed = true;
 			break;
 		}
 	}

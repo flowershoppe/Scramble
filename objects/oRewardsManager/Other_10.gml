@@ -1,3 +1,5 @@
+alarm_set(1, 60);
+
 rewarding = true;
 size = sprite_get_width(spLetterTile);
 width = size * (reward_count - 1);
@@ -30,7 +32,7 @@ while(_i < _reward_count)
 	}
 
 	//select random letter
-	_letter = _letters[irandom_range(0, array_length(_letters))];
+	_letter = _letters[irandom_range(0, array_length(_letters) - 1)];
 
 	if(_is_base_point)
 	{
