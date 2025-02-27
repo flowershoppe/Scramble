@@ -1,4 +1,4 @@
-if(rewarding)
+if(selectable)
 {
 	if(input_mouse_check_pressed(mb_left) and 
 	position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile))
@@ -7,6 +7,7 @@ if(rewarding)
 		add_tile_to_bag(_tile.letter, _tile.pointvalue, 1, true);	
 		room_goto(rMap);
 		rewarding = false;
+		selectable = false;
 		array_rewards = [];
 		//reset match manager and opponent
 		instance_destroy(oMatchManager);

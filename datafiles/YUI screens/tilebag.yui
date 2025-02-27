@@ -10,7 +10,7 @@ import:
 root:
   type: panel
   layout: canvas
-  
+  is_cursor_layer: true
   elements:
     - type: panel
       alignment: center
