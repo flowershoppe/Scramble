@@ -134,6 +134,10 @@ global.stCharms =
 }
 #endregion
 
+//Charms
+global.charms = [
+oTClef,
+oSpade];
 //initialize player and cursor
 var _player = instance_create_layer(0, 0, "Meta", oPlayer);		
 instance_create_layer(0, 0, "Meta", oCursor);

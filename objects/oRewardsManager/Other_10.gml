@@ -18,37 +18,58 @@ var _pointvalue = 0;
 
 while(_i < _reward_count)
 {
-	var _is_vowel = irandom_range(0, 1);
-	var _is_base_point = irandom_range(0, 1);
+	switch(reward_type)
+	{
+		case oTile:
+			var _is_vowel = irandom_range(0, 1);
+			var _is_base_point = irandom_range(0, 1);
 	
-	//equal chance for vowel or consonant
-	if(_is_vowel)
-	{
-		_letters = _vowels;
-	}
-	else 
-	{
-		_letters = _consonants;	
-	}
+			//equal chance for vowel or consonant
+			if(_is_vowel)
+			{
+				_letters = _vowels;
+			}
+			else 
+			{
+				_letters = _consonants;	
+			}
 
-	//select random letter
-	_letter = _letters[irandom_range(0, array_length(_letters) - 1)];
+			//select random letter
+			_letter = _letters[irandom_range(0, array_length(_letters) - 1)];
 
-	if(_is_base_point)
-	{
-		_pointvalue = global.letters[? _letter];
-	}
-	else
-	{
-		_pointvalue = (global.letters[? _letter]) * 2;
+			if(_is_base_point)
+			{
+				_pointvalue = global.letters[? _letter];
+			}
+			else
+			{
+				_pointvalue = (global.letters[? _letter]) * 2;
+			}
+	
+			var _reward = instance_create_layer(_x_loc, _y_loc, "UI", oTile,
+			{
+				letter : _letter,
+				pointvalue : _pointvalue,
+				persistent : false
+			});
+		break;
+		
+		case oCharm:
+			//if play has all charms, exit
+			if(array_length(global.charms) == array_length(oCharmManager.charms)){exit;}
+			
+			//randomly select a charm until an unowned one is chosen
+			var _reward = global.charms[irandom_range(0, array_length(global.charms) - 1)];
+			while(instance_exists(_reward))
+			{
+				_reward = global.charms[irandom_range(0, array_length(global.charms) - 1)];
+			}
+			instance_create_layer(_x_loc, _y_loc, "Meta", _reward, {persistent : false});
+		break;
 	}
 	
-	array_push(array_rewards, 
-	instance_create_layer(_x_loc, _y_loc, "UI", oTile,
-	{
-		letter : _letter,
-		pointvalue : _pointvalue
-	}));
+	array_push(array_rewards, _reward);
+	
 	_x_loc += size;
 	_i++;
 }
