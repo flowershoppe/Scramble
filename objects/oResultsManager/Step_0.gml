@@ -4,5 +4,5 @@ if((input_check_pressed("confirm") or input_mouse_check_pressed(mb_left))
 	instance_destroy(oOpponent);
 	
 	//go to rewards
-	reward(3);
+	reward(1, oCharm);
 }

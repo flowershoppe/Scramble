@@ -1,4 +1,4 @@
-function reward(_count)
+function reward(_count, _obj)
 {
 	var _m = oRewardsManager;
 	
@@ -10,6 +10,7 @@ function reward(_count)
 	
 	with(oRewardsManager)
 	{
+		reward_type = _obj;
 		reward_count = _count;
 		event_user(0);
 	}

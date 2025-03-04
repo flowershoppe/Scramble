@@ -11,7 +11,10 @@
     "name":"Charms",
     "path":"folders/Objects/Game Elements/Charms.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oCharm",
+    "path":"objects/oCharm/oCharm.yy",
+  },
   "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
