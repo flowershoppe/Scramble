@@ -19,4 +19,6 @@ function next_turn()
 	{
 		save_game();
 	}
+	
+	broadcast("turn start");
 }

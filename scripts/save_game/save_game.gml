@@ -14,7 +14,8 @@ function save_game()
 				x : x,
 				y : y,
 				room_name : room,
-				time : time				
+				time : time,
+				money_earned : money_earned
 			}
 		}
 		array_push(_saveData, _saveEntity);
@@ -36,7 +37,8 @@ function save_game()
 				player_name : player_name,
 				placed_tiles : placed_tiles,
 				turn_spelled_words : turn_spelled_words,
-				match_spelled_words : match_spelled_words
+				match_spelled_words : match_spelled_words,
+				money : money
 			}
 		}
 		array_push(_saveData, _saveEntity);

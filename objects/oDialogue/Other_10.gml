@@ -29,7 +29,7 @@ if (msg_length == 0) {
 }
 
 // Splitting the message into character array
-msg_chars = string_to_array(msg, msg_length);
+msg_chars = string_to_array(msg);
 
 question_asked = false;
 options_count = 0;

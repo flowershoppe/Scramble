@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"check_words",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"check_words",
+  "parent":{
+    "name":"Play",
+    "path":"folders/Scripts/Play.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

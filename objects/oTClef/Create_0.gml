@@ -3,7 +3,7 @@ description = "Increases point value of each vowel tile added to the tilebag by 
 
 receiver = new Receiver();
 
-receiver.add("add_tile_to_bag", function() 
+receiver.add("add tile to bag", function() 
 	{ 
 		var _tile = oTilebag.last_tile;
 		
