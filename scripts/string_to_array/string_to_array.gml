@@ -9,8 +9,8 @@
 /// @argument {String} input String to split into characters array
 /// @argument {Real} length The length of the given string
 /// @returns {Array<String>} Returns an array of characters
-function string_to_array(input, length) {
-  var array = array_create(length, "");
+function string_to_array(input) {
+  var array = array_create(string_length(input), "");
   var char_index = 0;
   
   var i = 0;

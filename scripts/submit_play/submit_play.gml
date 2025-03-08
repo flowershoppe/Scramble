@@ -5,6 +5,7 @@ function submit_play()
 	
 	if(valid_play())
 	{	
+		check_words();
 		var _score = calculate_points();
 		if(_score > 0)
 		{
@@ -19,8 +20,11 @@ function submit_play()
 					grabbable = false;	
 				}
 			}
-					
-			next_turn();
+			
+			if(!oMatchManager.victory and !oMatchManager.loss)
+			{
+				next_turn();
+			}
 		}
 	}
 }

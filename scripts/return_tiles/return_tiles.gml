@@ -3,7 +3,6 @@ function return_tiles()
 	var _placed_tiles = oPlayer.placed_tiles;
 	if(array_length(_placed_tiles) < 1){exit;}
 	var _placed_tile = _placed_tiles[0];
-	var _player = oPlayer;
 	var _hand = oPlayerHand;
 	var _placed_tile_holder;
 	
