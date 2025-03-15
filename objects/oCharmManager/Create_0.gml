@@ -1,8 +1,11 @@
 charms = [];
 
-var _c = instance_create_layer(0, 0, "Meta", oOcarina);
+/*if(!instance_exists(oLoop))
+{
+	var _c = instance_create_layer(0, 0, "Meta", oLoop);
+	array_push(charms, _c);
+}*/
 
-array_push(charms, _c);
 
 var _st = global.stCharms;
 

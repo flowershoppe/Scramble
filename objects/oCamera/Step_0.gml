@@ -10,7 +10,7 @@ var _vert_camera_move_direction = input_check("down") - input_check("up");
 y += _vert_camera_move_direction * global.camera_speed;
 
 #endregion*/
-
+global.maincam = view_camera[0];
 if(!active){dragging = false; exit;}
 
 #region
@@ -41,8 +41,12 @@ var _newX = lerp(_viewX, _gotoX, 0.1);
 var _newY = lerp(_viewY, _gotoY, 0.1);
 camera_set_view_pos(global.maincam, _newX, _newY);
 
-var _factor = 0.2;
-var _mouseW = input_check("zoom_out") - input_check("zoom_in");
+var _factor = 0.3;
+var _mouseW = input_check("zoom_out") - input_check("zoom_in")
+if(_mouseW != 0)
+{
+	var z = 2;	
+}
 zoomF = clamp(zoomF + (_mouseW * _factor), _factor, 2);
 
 var _lerpH = lerp(_viewH, zoomF * 540, _factor);

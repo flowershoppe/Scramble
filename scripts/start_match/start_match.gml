@@ -35,5 +35,6 @@ function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _tur
 	add_tile_to_hand(_hand, oTilebag, _hand.size);
 	
 	broadcast("turn start");
+	broadcast("match start");
 	
 }

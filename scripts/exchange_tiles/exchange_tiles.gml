@@ -38,6 +38,7 @@ function exchange_tiles()
 		}		
 		oMatchManager.exchange_count++;
 		next_turn();
+		broadcast("exchange");
 	}
 	
 	with(oTile)
@@ -46,6 +47,7 @@ function exchange_tiles()
 	}
 	
 	global.exchanging = !global.exchanging;
+	
 	
 	
 }

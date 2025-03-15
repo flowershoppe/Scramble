@@ -12,6 +12,7 @@ receiver.add("turn start", function()
 			_tile.pointvalue *= 2;	
 			
 			broadcast("random success");
+			broadcast("charm trigger");
 		}
 	});
 

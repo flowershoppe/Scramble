@@ -10,6 +10,7 @@ receiver.add("add tile to bag", function()
 		if(array_contains(global.vowels, _tile.letter))
 		{
 			_tile.pointvalue++;	
+			broadcast("charm trigger");
 		}
 	});
 	

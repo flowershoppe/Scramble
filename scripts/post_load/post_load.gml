@@ -38,7 +38,7 @@ function post_load()
 		
 		with(oCharm)
 		{
-			array_push(oCharmManager.charms);
+			array_push(oCharmManager.charms, id);
 		}
 		
 		with(oTile)

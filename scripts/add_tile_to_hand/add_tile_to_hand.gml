@@ -1,7 +1,8 @@
 //Add tile to hand from tilebag
-function add_tile_to_hand(_hand, _tilebag, _amount)
+function add_tile_to_hand(_amount)
 {
-	var _array = _tilebag.match_tiles;
+	var _array = oTilebag.match_tiles;
+	var _hand = oPlayerHand;
 	for(var _count = 0; _count < _amount; _count++)
 	{
 		//ensure bag isn't empty

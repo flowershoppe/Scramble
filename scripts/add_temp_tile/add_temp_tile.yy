@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"add_temp_tile",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"add_temp_tile",
+  "parent":{
+    "name":"Play",
+    "path":"folders/Scripts/Play.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

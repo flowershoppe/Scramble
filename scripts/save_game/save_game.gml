@@ -177,7 +177,9 @@ function save_game()
 				y : y,
 				image_index : image_index,
 				image_alpha : image_alpha,
-				data : data
+				data : data,
+				value : value,
+				description : description
 			}	
 		}
 		array_push(_saveData, _saveEntity);
@@ -222,7 +224,8 @@ function save_game()
 				on_board : on_board,
 				in_hand : in_hand,
 				spr : spr,	
-				highlight : highlight
+				highlight : highlight,
+				temp : temp
 			}		
 		}
 		array_push(_saveData, _saveEntity);

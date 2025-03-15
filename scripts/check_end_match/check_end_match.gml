@@ -41,6 +41,7 @@ function check_end_match()
 		{
 			oMatchManager.loss = true;	
 			oMatchManager.active = false;
+			broadcast("match end");
 		}
 
 		else
@@ -52,6 +53,7 @@ function check_end_match()
 		if(oMatchManager.victory and !oMatchManager.loss)
 		{		
 			dialogue_open(adialogue, []);
+			broadcast("match end");
 			//audio_stop_sound(global.music_game);
 			//audio_play_sound_on(global.emitterMS, global.music_victory, true, 100);
 		}
