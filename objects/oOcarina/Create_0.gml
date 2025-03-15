@@ -27,8 +27,9 @@ receiver.add("check words", function()
 			_i++;			
 		}
 		
-		if(_bool = true)
+		if(_bool == true)
 		{
 			oPlayer.play_mult_bonus *= 2;	
+			broadcast("charm trigger");
 		}
 	});

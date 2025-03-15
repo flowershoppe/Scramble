@@ -1,6 +1,7 @@
 wait_for_input = false;
 grabbable = true;
 selected = false;
+temp = false;
 
 font		= global.tile_font;
 font_scale	= 1;
@@ -14,3 +15,13 @@ yscale = 1;
 highlight = false;
 
 true_layer = layer;
+
+receiver = new Receiver();
+
+receiver.add("match end", function()
+	{
+		if(temp)
+		{
+			persistent = false;	
+		}
+	});
