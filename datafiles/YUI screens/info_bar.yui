@@ -8,7 +8,7 @@ root:
   size: stretch
   background: ~yui_panel_bg
   padding: 10
-  spacing: 590
+  spacing: 250
   elements:
     - type: button
       size: {w: 32, h: 32}
@@ -16,6 +16,8 @@ root:
       content: " "
       background: ~spCog
       on_click: @@ ~toggle_pause()
+    - type: text
+      text: @@'Money - ' + ~oPlayer.money
     - type: text
       text: @length
 

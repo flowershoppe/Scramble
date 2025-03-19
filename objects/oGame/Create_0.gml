@@ -4,8 +4,9 @@ dialogue_setup();
 //Instance
 global.previous_room = -1;
 
-//Dictionary
+//Dictionaries
 global.dictionary = new CheckWordDictionary(working_directory + "dictionaries/full/full.txt");
+global.dictionary_food = new CheckWordDictionary(working_directory + "dictionaries/food.txt");
 
 //Letters and Default Values
 global.letters = ds_map_create();

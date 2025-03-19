@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"wordify",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"wordify",
+  "parent":{
+    "name":"Play",
+    "path":"folders/Scripts/Play.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
