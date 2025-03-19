@@ -1,10 +1,17 @@
 charms = [];
 
-/*if(!instance_exists(oLoop))
-{
-	var _c = instance_create_layer(0, 0, "Meta", oLoop);
-	array_push(charms, _c);
-}*/
+
+var _c = instance_create_layer(0, 0, "Meta", oPuzzle);
+array_push(charms, _c);
+var _c = instance_create_layer(0, 0, "Meta", oPiggyBank);
+array_push(charms, _c);
+var _c = instance_create_layer(0, 0, "Meta", oSnake);
+array_push(charms, _c);
+var _c = instance_create_layer(0, 0, "Meta", oCheese);
+array_push(charms, _c);
+var _c = instance_create_layer(0, 0, "Meta", oOcarina);
+array_push(charms, _c);
+
 
 
 var _st = global.stCharms;

@@ -22,10 +22,16 @@ root:
   elements: @charms
   template:
     type: border
-    padding: 5
-    background: @sprite_index
     size: 32
-    tooltip: @description
+    tooltip: @name + ~chr(13) + @description
+    content:
+      type: image
+      sprite: @sprite_index
+      padding: 5
+      blend_color: @color
+      background: @sprite_index
+      size: 32
+    
 
 
         

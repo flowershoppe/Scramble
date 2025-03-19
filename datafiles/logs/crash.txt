@@ -1,5 +1,5 @@
-{ message : "Variable <unknown_object>.persist(104398, -2147483648) not set before reading it.", longMessage : "ERROR in action number 1
-of Create Event for object yui_document:
-Variable <unknown_object>.persist(104398, -2147483648) not set before reading it.
- at gml_Object_yui_document_Create_0 (line 3) - persistent = persist;
-", stacktrace : [ "gml_Object_yui_document_Create_0 (line 3)","gml_Object_oCharmManager_Create_0 (line 7)","gml_Script_new_run (line 7)","gml_Script_resolveScript@anon@2161@YuiCallFunction@YuiCallFunction (line 77)","gml_Script_yui_call_handler (line 26) - 		handler.resolve(data);","gml_Script_anon@493@gml_Object_yui_button_Create_0 (line 33) - 		yui_call_handler(yui_element.on_click, [args], data_source);","gml_Object_YuiCursorManager_Mouse_56 (line 55) - 			var handled = next.left_click();" ], line : 3, script : "gml_Object_yui_document_Create_0" }
+{ message : "Unable to find instance for object index 73", longMessage : "ERROR in action number 1
+of <Unknown Event> for object yui_base:
+Unable to find instance for object index 73
+ at gml_Script_yui_unregister_interactions (line 31) - 	if !ds_exists(YuiCursorManager.participation_map, ds_type_map) return;
+", script : "gml_Script_yui_unregister_interactions", stacktrace : [ "gml_Script_yui_unregister_interactions (line 31)","gml_Object_yui_base_CleanUp_0 (line 7) - yui_unregister_interactions(interactions);","gml_Object_yui_panel_CleanUp_0 (line 4)" ], line : 31 }

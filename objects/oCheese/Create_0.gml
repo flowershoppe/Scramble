@@ -1,9 +1,11 @@
 name = "Cheese Wedge";
-description = "When a turn starts, gain points equal to the current turn.";
+description = "When a turn starts, add 1 to this charm's sell value. Value: " + string(value);
+color = c_yellow;
 
 receiver = new Receiver();
 
 receiver.add("turn start", function()
 	{
-		oMatchManager.total_points += oMatchManager.turn;
+		value += oMatchManager.turn;
+		description = "When a turn starts, add 1 to this charm's sell value. Value: " + string(value);
 	});

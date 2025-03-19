@@ -143,7 +143,7 @@ function check_words()
 	
 	}
 	
-	//-----VERIFY WORDS SPELLED-----
+	//-----CHECK DICTIONARY-----
 	#region
 	
 	var _fake_words = [];
@@ -178,6 +178,13 @@ function check_words()
 	}
 	else //WORD IS VALID AND REAL
 	{
+		//each word spelled has a word mult bonus for charm purposes
+		for(var i = 0; i < array_length(_spelled_words); i++)
+		{
+			array_push(oPlayer.word_mult_bonus, 1);
+			array_push(oPlayer.word_point_bonus, 0);
+		}
+		
 		oPlayer.turn_spelled_words = _spelled_words;
 		oPlayer.words_tiles = _player_words_tiles;
 		oMatchManager.last_words = [];

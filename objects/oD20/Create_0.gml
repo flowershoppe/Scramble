@@ -1,5 +1,6 @@
 name = "20-Sided Die";
 description = "When a turn starts, has a 1-in-20 chance to quadruple the point value of a random tile in hand until end of match.";
+color = c_blue;
 
 receiver = new Receiver();
 

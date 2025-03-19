@@ -21,6 +21,7 @@ function calculate_points()
 		//review each letter of the word
 		for(k = 0; k < array_length(_player_words_tiles[j]); k++)
 		{
+			
 			oMatchManager.total_tiles++;
 			oRun.tiles_played++;
 			
@@ -42,8 +43,8 @@ function calculate_points()
 			}
 		}
 		
-		_subt += oPlayer.word_point_bonus;
-		_wmult *= oPlayer.word_mult_bonus;
+		_subt += oPlayer.word_point_bonus[j];
+		_wmult *= oPlayer.word_mult_bonus[j];
 		_subt *= _wmult;
 		_total += _subt;
 	}
@@ -56,8 +57,8 @@ function calculate_points()
 	oPlayer.letter_point_bonus = 0;
 	oPlayer.letter_mult_bonus = 1;
 	
-	oPlayer.word_point_bonus = 0;
-	oPlayer.word_mult_bonus = 1;
+	oPlayer.word_point_bonus = [];
+	oPlayer.word_mult_bonus = [];
 
 	oPlayer.play_point_bonus = 0;
 	oPlayer.play_mult_bonus = 1;
