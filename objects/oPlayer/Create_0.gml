@@ -14,3 +14,5 @@ word_mult_bonus = [];
 
 play_point_bonus = 0;
 play_mult_bonus = 1;
+
+exchanged_tiles = [];

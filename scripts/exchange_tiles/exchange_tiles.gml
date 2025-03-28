@@ -25,7 +25,7 @@ function exchange_tiles()
 	//only exchange if tiles have been selected
 	if(array_length(_array) > 0)
 	{
-		add_tile_to_hand(oPlayerHand, oTilebag, array_length(_array));
+		add_tile_to_hand(array_length(_array));
 	
 		for(var _index = 0; _index < array_length(_array); _index++)
 		{
@@ -38,6 +38,7 @@ function exchange_tiles()
 		}		
 		oMatchManager.exchange_count++;
 		next_turn();
+		oPlayer.exchanged_tiles = _array;
 		broadcast("exchange");
 	}
 	
@@ -47,7 +48,6 @@ function exchange_tiles()
 	}
 	
 	global.exchanging = !global.exchanging;
-	
 	
 	
 }

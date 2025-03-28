@@ -9,10 +9,11 @@ receiver.add("turn start", function()
 		if(irandom(20) == 20)
 		{
 			var _tile = oPlayerHand.tile_holder_array[irandom_range(0, oPlayerHand.size)].tile;
-		
+			
 			_tile.pointvalue *= 4;	
 			
 			broadcast("random success");
+			animate = !animate; 
 			broadcast("charm trigger");
 		}
 	});

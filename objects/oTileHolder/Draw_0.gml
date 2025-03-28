@@ -17,6 +17,9 @@ if(owner == oBoard)
 
 	else if(wmult == 3)
 	{ _subimg = 4; }
+	
+	else if(wmult == 4)
+	{ _subimg = 5; }
 
 	draw_sprite(mult_spr, _subimg, x, y);
 }

@@ -21,9 +21,10 @@ receiver.add("check words", function()
 			while(_k < array_length(_word_array))
 			{
 				var _letter = _word_array[_k];
-				if(_letter == "O")
+				if(_letter == "O" and _bool == false)
 				{
 					data[0]++;
+					animate = !animate; 
 					broadcast("charm trigger");
 					_bool = true;		
 				}

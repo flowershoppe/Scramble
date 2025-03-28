@@ -22,6 +22,7 @@ receiver.add("check words", function()
 			}
 		}
 		oPlayer.play_point_bonus += _bonus;
+		animate = !animate; 
 		broadcast("charm trigger");
 	});
 	
