@@ -8,5 +8,6 @@ receiver.add("charm trigger", function()
 	{
 		oPlayer.money++;
 		broadcast("gain money");
+		animate = !animate;
 	});
 	

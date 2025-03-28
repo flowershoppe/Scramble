@@ -170,6 +170,7 @@ function valid_play()
 		(array_length(oPlayer.match_spelled_words) < 1 and array_length(_placed_tiles) > 1)) 
 		and _hole_between == false)
 	{		
+		broadcast("valid play");
 		debug = "play is valid";
 		return true;	
 	}

@@ -31,6 +31,7 @@ receiver.add("check words", function()
 		if(_bool == true)
 		{
 			oPlayer.play_mult_bonus *= 2;	
+			animate = !animate; 
 			broadcast("charm trigger");
 		}
 	});

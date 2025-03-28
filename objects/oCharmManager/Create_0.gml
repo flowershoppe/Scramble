@@ -1,7 +1,7 @@
 charms = [];
 
 
-var _c = instance_create_layer(0, 0, "Meta", oPuzzle);
+var _c = instance_create_layer(0, 0, "Meta", oEraser);
 array_push(charms, _c);
 var _c = instance_create_layer(0, 0, "Meta", oPiggyBank);
 array_push(charms, _c);

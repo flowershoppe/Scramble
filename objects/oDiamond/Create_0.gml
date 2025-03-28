@@ -31,6 +31,7 @@ receiver.add("check words", function()
 		}
 		if(_count >= 5)
 		{
+			animate = !animate; 
 			broadcast("charm trigger");
 			oPlayer.play_mult_bonus += 2
 		}

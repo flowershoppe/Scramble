@@ -16,6 +16,7 @@ receiver.add("check words", function()
 			{
 				_factor *= 2;
 			}
+			animate = !animate; 
 			broadcast("charm trigger");
 		}
 		

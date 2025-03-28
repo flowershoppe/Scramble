@@ -16,6 +16,7 @@ receiver.add("check words", function()
 				and global.dictionary_food.check(string_lower(_words[_i])))
 			{
 				oPlayer.word_mult_bonus[_i] *= 2;
+				animate = !animate; 
 				broadcast("charm trigger");
 			}
 		}

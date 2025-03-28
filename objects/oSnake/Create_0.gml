@@ -6,6 +6,7 @@ receiver = new Receiver();
 
 receiver.add("calculate points", function() 
 	{ 
+		animate = !animate; 
 		broadcast("charm trigger");
 		add_temp_tile("S", global.letters[? "S"], 1);
 	});

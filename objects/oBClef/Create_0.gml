@@ -10,8 +10,9 @@ receiver.add("add tile to bag", function()
 		if(array_contains(global.consonants, _tile.letter))
 		{
 			_tile.pointvalue++;	
+			animate = !animate; 
+			broadcast("charm trigger");
+			
 		}
-		
-		broadcast("charm trigger");
 	});
 	

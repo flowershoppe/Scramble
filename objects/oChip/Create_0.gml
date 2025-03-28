@@ -9,6 +9,7 @@ receiver.add("random success", function()
 		oPlayer.money++;
 		
 		broadcast("gain money");
+		animate = !animate; 
 		broadcast("charm trigger");
 	});
 	
