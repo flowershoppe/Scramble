@@ -263,6 +263,6 @@ function save_game()
 	buffer_save(_buffer, game_save_id + "gamesave.save");
 	buffer_delete(_buffer);
 
-	show_debug_message("Game successfully saved at " + game_save_id + " as " + _string)
+	show_debug_message("Game successfully saved at " + game_save_id)
 }
 

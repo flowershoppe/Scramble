@@ -2,6 +2,7 @@ x = mouse_x;
 y = mouse_y;
 
 //do not run if match is inactive
+if(!instance_exists(oMatchManager)){exit;}
 if(oMatchManager.active == false or global.exchanging){exit;}
 
 
