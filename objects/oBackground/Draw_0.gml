@@ -1,1 +1,1 @@
-draw_sprite(spBG, 0, room_width / 2, room_height / 2);
+draw_sprite(spr, 0, room_width / 2, room_height / 2);

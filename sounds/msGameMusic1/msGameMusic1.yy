@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":78.62857,
+  "duration":78.58794,
   "name":"msGameMusic1",
   "parent":{
     "name":"Sounds",

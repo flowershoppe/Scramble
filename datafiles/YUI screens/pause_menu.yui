@@ -36,7 +36,7 @@ root:
                 type: text
                 text_style: title
                 text: Main Menu
-              on_click: @@ ~room_goto(~asset_get_index(rMainMenu))
+              on_click: @@ ~goto_mainmenu()
 
             - type: button
               content:

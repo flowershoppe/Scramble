@@ -1,0 +1,42 @@
+id: game over
+file_type: screen
+
+import:
+  - ../Templates/
+
+  - /YUI/Animations/transitions.yui
+  - /YUI/Widgets/
+
+root:
+  type: panel
+  layout: canvas
+
+  elements:
+    - type: panel
+      alignment: center
+      canvas:
+        center: true
+      background: ~yui_panel_bg
+      size: {w: 200, h: 300}
+      padding: 10
+      elements:
+        - type: image
+          sprite: ~spLoser
+        - type: text
+          text: @@ 'Total Score - ' + @total_score
+        - type: text
+          text: @@ 'Largest Play - ' + @largest_play
+        - type: text
+          text: @@ 'Largest Word - ' + @largest_word
+        - type: text
+          text: @@ 'Words Spelled - ' + @words_spelled
+        - type: button
+          content:
+            type: text
+            text: Main Menu
+            text_style: title
+          border_thickness: 1
+          on_click: @@ ~goto_mainmenu()
+      
+
+        
