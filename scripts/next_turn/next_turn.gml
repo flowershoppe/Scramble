@@ -18,7 +18,6 @@ function next_turn()
 	if(!oMatchManager.loss and !oMatchManager.victory)
 	{
 		save_game();
+		broadcast("turn start");
 	}
-	
-	broadcast("turn start");
 }

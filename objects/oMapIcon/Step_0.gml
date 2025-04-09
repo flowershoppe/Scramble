@@ -2,8 +2,7 @@ if(active and mouse_check_button_pressed(mb_left) and
 	position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id))
 {
 	room_goto(rGame);
-	instance_create_layer(0, 0, "Meta", opponent);	
-	active = false;
+	instance_create_layer(0, 0, "Meta", opponent);
 }
 
 //hover		

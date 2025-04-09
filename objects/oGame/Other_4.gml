@@ -5,11 +5,18 @@ var _emitter_SE = global.emitterSE;
 var _player = noone;
 var _cursor = noone;
 
+if(!instance_exists(oCursor))
+{
+	instance_create_layer(0, 0, "Meta", oCursor);	
+}
 
 switch(room)
-{              
+{        
+
+	
 	case rGame:
 		#region
+
 		/*
 		//-----YUI ELEMENTS-----
 		#region

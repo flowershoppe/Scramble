@@ -39,6 +39,11 @@ function check_end_match()
 			(point_min >= total_points and _cant_play and point_min > -1) or
 			(oMatchManager.victory == false and _cant_play))
 		{
+			var _saveloc = "gamesave.save";
+			oMatchManager.active = false;
+			oMatchManager.loss = true;
+			file_delete(_saveloc);
+			show_debug_message("Deleting save at" + _saveloc)
 			broadcast("match end");
 			room_goto(rGameOver);
 			with(oRun){alarm_set(1, 1);}

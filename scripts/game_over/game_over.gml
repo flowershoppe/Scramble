@@ -1,8 +1,5 @@
 function game_over()
 {
-	oMatchManager.loss = true;	
-	oMatchManager.active = false;
-	
 	instance_destroy(oTilebag);
 	instance_destroy(oTile);
 	

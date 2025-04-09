@@ -9,6 +9,5 @@ instance_create_layer(0, 0, "Meta", oMatchManager);
 
 //initialize player and cursor
 instance_create_layer(0, 0, "Meta", oPlayer);		
-instance_create_layer(0, 0, "Meta", oCursor);
 
 save_game();
