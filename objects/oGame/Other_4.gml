@@ -67,17 +67,17 @@ switch(room)
 	
 		if(!instance_exists(oBackground))
 		{
-			instance_create_layer(0, 0, "Background", oBackground);
+			instance_create_layer(0, 0, "Background", oBackground, {spr : spBG});
 		}	
 		
 		break;
 		
-	case rMainMenu:
-	
+	case rMainMenu:		
 		oCamera.active = false;
 		YuiCursorManager.is_navigation_active = false
 		if(!audio_is_playing(global.music_main_menu))
 		{
+			audio_stop_all();
 			audio_play_sound_on(_emitter_MS, _main_menu_music, true, 100);
 		}
 		

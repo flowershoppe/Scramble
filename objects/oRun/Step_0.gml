@@ -5,3 +5,8 @@ var _hours = string(time div 21600)
 
 
 length = "Run length: " + _hours + " hours, " + _minutes + " minutes, " + _seconds + " seconds";
+
+if(input_check_pressed("confirm") and room == rGameOver)
+{
+	room_goto(rMainMenu);
+}

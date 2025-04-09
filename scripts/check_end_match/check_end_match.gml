@@ -39,9 +39,9 @@ function check_end_match()
 			(point_min >= total_points and _cant_play and point_min > -1) or
 			(oMatchManager.victory == false and _cant_play))
 		{
-			oMatchManager.loss = true;	
-			oMatchManager.active = false;
 			broadcast("match end");
+			room_goto(rGameOver);
+			with(oRun){alarm_set(1, 1);}
 		}
 
 		else

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"goto_mainmenu",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"goto_mainmenu",
+  "parent":{
+    "name":"Admin",
+    "path":"folders/Scripts/Admin.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
