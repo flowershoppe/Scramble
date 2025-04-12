@@ -3,7 +3,7 @@ y = mouse_y;
 
 //do not run if match is inactive
 if(!instance_exists(oMatchManager)){exit;}
-if(oMatchManager.active == false or global.exchanging){exit;}
+if(oMatchManager.active == false){exit;}
 
 
 var _placed_tiles = oPlayer.placed_tiles;
@@ -21,12 +21,7 @@ if(instance_exists(oPlayerHand))
 	}
 }
 
-if(held_tile != noone)
-{
-	held_tile.x = device_mouse_x_to_gui(0);
-	held_tile.y = device_mouse_y_to_gui(0);	
-}
-
+if(global.exchanging){exit;}
 //-----PICK UP-----
 #region
 if(mouse_check_button_pressed(mb_left))
@@ -56,12 +51,6 @@ if(mouse_check_button_pressed(mb_left))
 	held_tile.font_scale = 1;
 	held_tile.on_board = false;
 	held_tile.in_hand = false;
-		
-	//Blank tile subroutine
-	if(held_tile.blank == true)
-	{
-		held_tile.letter = "_";		
-	}
 		
 	audio_play_sound(global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
 					1, 0, global.volumeSE);
@@ -183,4 +172,10 @@ if(mouse_check_button_released(mb_left))
 	}
 }
 #endregion
+
+if(held_tile != noone)
+{
+	held_tile.x = device_mouse_x_to_gui(0);
+	held_tile.y = device_mouse_y_to_gui(0);	
+}
 

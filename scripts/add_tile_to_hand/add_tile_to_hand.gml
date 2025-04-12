@@ -30,6 +30,7 @@ function add_tile_to_hand(_amount)
 				_tile.in_hand = true;
 				_tile.x = _tile_holder.x;
 				_tile.y = _tile_holder.y;
+				_tile.persistent = false;
 				
 				i = _hand.size;
 			}
