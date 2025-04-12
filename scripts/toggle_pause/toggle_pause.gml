@@ -8,6 +8,6 @@ function toggle_pause()
 	else
 	{
 		global.previous_room = room;
-		room_goto(rPauseMenu);	
+		room_goto(rPauseMenu);
 	}
 }

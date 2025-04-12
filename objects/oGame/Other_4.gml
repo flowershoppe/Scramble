@@ -11,9 +11,7 @@ if(!instance_exists(oCursor))
 }
 
 switch(room)
-{        
-
-	
+{        	
 	case rGame:
 		#region
 
@@ -79,7 +77,7 @@ switch(room)
 		
 		break;
 		
-	case rMainMenu:		
+	case rMainMenu:	
 		oCamera.active = false;
 		YuiCursorManager.is_navigation_active = false
 		if(!audio_is_playing(global.music_main_menu))

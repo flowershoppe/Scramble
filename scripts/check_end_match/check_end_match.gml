@@ -39,6 +39,7 @@ function check_end_match()
 			(point_min >= total_points and _cant_play and point_min > -1) or
 			(oMatchManager.victory == false and _cant_play))
 		{
+			room_persistent = false;
 			var _saveloc = "gamesave.save";
 			oMatchManager.active = false;
 			oMatchManager.loss = true;

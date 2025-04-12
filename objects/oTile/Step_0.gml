@@ -39,14 +39,12 @@ with(oTileHolder)
 		{
 			tile.in_hand = true;
 		}
-	}
-	
+	}	
 }
 
-/*if(array_contains(oPlayerHand.tile_holder_array, holder) and blank)
-{	
-	//reset blank tile if in hand
-	wait_for_input = false;
+//blank
+if(!on_board and blank == true)
+{
 	letter = "_";
+	wait_for_input = false;
 }
-
