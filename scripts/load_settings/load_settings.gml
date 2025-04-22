@@ -1,10 +1,24 @@
 function load_settings()
 {
-	var _save = ssave_get(ssave_config_save_file);
-	
-	audio_master_gain(_save.get("volumeMain", 1));
-	audio_emitter_gain(global.emitterSE, _save.get("volumeSE", 1));
-	audio_emitter_gain(global.emitterMS, _save.get("volumeMS", 1));
+	if(file_exists("settings.save"))
+	{		
+		var _buffer = buffer_load("settings.save");
+		var _string = buffer_read(_buffer, buffer_string);
+		var _loadData = json_parse(_string);
+		
+		global.volumeMain = _loadData.volume_Main;
+		global.volumeMS = _loadData.volume_MS;
+		global.volumeSE = _loadData.volume_SE;
+		window_set_size(_loadData.window_width, _loadData.window_height);
+		window_center();
+		
+		audio_emitter_gain(global.emitterSE, global.volumeSE);
+		audio_emitter_gain(global.emitterMS, global.volumeMS);
+		
+		buffer_delete(_buffer);
+		
+		show_debug_message("loaded settings.save");
+	}
 	
 	if(file_exists("keybinds.save"))
 	{
@@ -15,8 +29,6 @@ function load_settings()
 		
 		buffer_delete(_buffer);
 		
-		show_debug_message("loading keybinds.save");
-	}
-	
-	
+		show_debug_message("loaded keybinds.save");
+	}	
 }

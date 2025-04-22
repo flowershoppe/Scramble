@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"toggle_settings",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"toggle_settings",
+  "parent":{
+    "name":"Play",
+    "path":"folders/Scripts/Play.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

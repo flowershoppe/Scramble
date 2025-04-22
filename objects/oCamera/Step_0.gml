@@ -10,6 +10,7 @@ var _vert_camera_move_direction = input_check("down") - input_check("up");
 y += _vert_camera_move_direction * global.camera_speed;
 
 #endregion*/
+if(global.paused){exit;}
 global.maincam = view_camera[0];
 if(!active){dragging = false; exit;}
 
@@ -65,6 +66,14 @@ camera_set_view_pos(global.maincam, _newX, _newY);
 if(input_mouse_check_pressed(mb_left) and !instance_exists(oDialogue) 
 	and oCursor.layer != (layer_get_id("Hand"))){dragging = true;}
 if(input_mouse_check_released(mb_left)){dragging = false;}
+with(oTile)
+{
+	if(hover)
+	{
+		oCamera.dragging = false;	
+	}
+}
+
 if(dragging and oCursor.held_tile == noone
 	and (mouse_xguiprev != device_mouse_x_to_gui(0)
 	or mouse_yguiprev != device_mouse_y_to_gui(0)))

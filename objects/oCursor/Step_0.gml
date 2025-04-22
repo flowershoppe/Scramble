@@ -1,3 +1,4 @@
+if(global.paused){exit;}
 x = mouse_x;
 y = mouse_y;
 
@@ -40,7 +41,7 @@ if(mouse_check_button_pressed(mb_left))
 	else if(!held_tile.grabbable or !held_tile.visible){held_tile = noone; exit;}
 		
 	//grab a tile
-		
+	
 	//remove from placed tiles array if picking up from board
 	if(held_tile.on_board == true)
 	{array_delete(_placed_tiles, array_get_index(_placed_tiles, held_tile), 1);}

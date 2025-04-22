@@ -1,15 +1,22 @@
 function save_settings()
 {
-	var _save = ssave_get(ssave_config_save_file);
+	//save settings
+	var _saveData = 
+	{
+		window_width : window_get_width(),
+		window_height : window_get_height(),
+		volume_MS : global.volumeMS,
+		volume_SE : global.volumeSE,
+		volume_Main : global.volumeMain		
+	};
+	var _string = json_stringify(_saveData);
+	var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1);
+
+	buffer_write(_buffer, buffer_string, _string);
+	buffer_save(_buffer, "settings.save");
+	buffer_delete(_buffer);
 	
-	_save.set("volumeMain", audio_get_master_gain(0));
-	_save.set("volumeSE", audio_emitter_get_gain(global.emitterSE));
-	_save.set("volumeMS", audio_emitter_get_gain(global.emitterMS));
-	
-	_save.save();
-	
-	show_debug_message("saved to" + game_save_id);
-	
+	//save keybinds
 	var _string = input_player_export(0, true);
 	var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1);
 	

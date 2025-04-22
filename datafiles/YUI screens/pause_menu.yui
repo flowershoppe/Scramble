@@ -12,16 +12,16 @@ root:
   layout: vertical
   size: stretch
   alignment: center
-  background: ~yui_panel_bg
+  is_cursor_layer: true
   elements:
-    - type: panel
+    - type: panel   
       size: { w: 250, h: 350 }
       background: ~yui_panel_bg
       layout: vertical
       alignment: center
       spacing: 20
       elements:
-        - type: panel
+        - type: panel          
           alignment: {h: center}
           elements:
             - type: button 
@@ -29,7 +29,7 @@ root:
                 type: text
                 text_style: title
                 text: Settings
-              on_click: @@ ~room_goto(~asset_get_index(rSettings))
+              on_click: @@ ~toggle_settings()
 
             - type: button 
               content:

@@ -1,3 +1,4 @@
+if(global.paused){exit;}
 /// @description Input handling and processing
 if (char_count == msg_length) {
   

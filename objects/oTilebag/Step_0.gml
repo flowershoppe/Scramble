@@ -1,3 +1,4 @@
+if(global.paused){exit;}
 //hover
 if(oCursor.held_tile == noone and oCamera.dragging == false)
 {

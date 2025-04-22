@@ -1,13 +1,25 @@
 function toggle_pause()
 {
-	if(room == rPauseMenu or room == rSettings)
-	{
-		room_goto(global.previous_room);
-		global.previous_room = -1;
-	}
+	//unpause
+	if(global.paused)
+	{		
+		with(yui_document)
+		{
+			if(yui_file == "YUI screens/pause_menu.yui")
+			{
+				instance_destroy();	
+			}
+			if(yui_file == "YUI screens/settings.yui")
+			{
+				instance_destroy();	
+			}
+		}
+		global.paused = false
+	}	
+	//pause
 	else
-	{
-		global.previous_room = room;
-		room_goto(rPauseMenu);
+	{	
+		instance_create_layer(0, 0, "Pause", yui_document, global.stPauseMenu);
+		global.paused = true;
 	}
 }
