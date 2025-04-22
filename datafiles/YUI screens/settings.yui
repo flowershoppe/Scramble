@@ -16,7 +16,7 @@ root:
       content: 
         type: text        
         text: <= Back
-      on_click: @@ ~room_goto(~asset_get_index(rPauseMenu))
+      on_click: @@ ~toggle_settings()
     - type: panel
       layout: horizontal
       spacing: 0
@@ -43,6 +43,7 @@ root:
                   selection_scope: @resolution_selector
                   on_item_selected:
                     - @@ value => ~resolution_select(value)
+                    - @@ value => ~save_settings()
             - type: panel
               layout: vertical
               alignment: {h: center}
@@ -56,7 +57,7 @@ root:
                   value: @@ ~audio_get_master_gain() * 100
                   on_value_changed: 
                     - @@ value => ~audio_master_gain(value / 100)
-                    - @@ ~save_settings()
+                    - @@ value => ~save_settings()
 
             - type: panel
               layout: vertical
@@ -71,7 +72,7 @@ root:
                   value: @@ ~audio_emitter_get_gain(@emitter_MS) * 100
                   on_value_changed: 
                     - @@ value => ~audio_emitter_gain(@emitter_MS, value / 100) 
-                    - @@ ~save_settings()
+                    - @@ value => ~save_settings()
 
             - type: panel
               layout: vertical
@@ -86,7 +87,7 @@ root:
                   value: @@ ~audio_emitter_get_gain(@emitter_SE) * 100
                   on_value_changed: 
                     - @@ value => ~audio_emitter_gain(@emitter_SE, value / 100)
-                    - @@ ~save_settings()
+                    - @@ value => ~save_settings()
 
           //right side
         - type: panel

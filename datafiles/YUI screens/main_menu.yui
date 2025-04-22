@@ -37,4 +37,4 @@ root:
             text: Options
             text_style: title        
           border_thickness: 1
-          on_click: @@ ~toggle_pause()
+          on_click: @@ ~toggle_settings()

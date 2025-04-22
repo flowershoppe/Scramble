@@ -4,7 +4,7 @@
 /// @argument {number} position The index of the first message in the dialogue
 function dialogue_open_at(index, arguments, position) {
   if (!global.dialogue_is_open) {
-    instance_create_depth(0, 0, 0, oDialogue);
+    instance_create_layer(0, 0, "UI", oDialogue);
   }
   
   with (oDialogue) {

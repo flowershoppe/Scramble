@@ -1,6 +1,7 @@
 randomize();
 dialogue_setup();
 
+global.paused = false;
 //Instance
 global.previous_room = -1;
 
@@ -77,6 +78,8 @@ global.music_victory = msVictory;
 
 //Handlers
 instance_create_layer(0, 0, "Meta", oSaverLoader);
+instance_create_layer(0, 0, "Meta", oPauseMenu);
+instance_create_layer(0, 0, "Meta", oSettings);
 instance_create_layer(room_width / 2, room_height / 2, "Meta", oCamera,
 {active : false});
 
@@ -96,8 +99,8 @@ global.stMainMenu =
 }
 global.stPauseMenu =
 {
-	data_context: oPauseMenu,
-	yui_file: "YUI/pause_menu.yui"	
+	yui_file : "YUI screens/pause_menu.yui",
+	data_context : oPauseMenu
 }
 global.stMatchStats =
 {
@@ -129,6 +132,11 @@ global.stCharms =
 	x : 0,
 	y : 64,
 }
+global.stSettings =
+{
+	data_context : oSettings,
+	yui_file : "YUI screens/settings.yui"
+}
 #endregion
 
 //Charms
@@ -140,6 +148,5 @@ oSpade];
 //multiple tiers
 opponents_1 = [oCress];
 opponents_2 = [oWiz];
-
 
 receiver = new Receiver();

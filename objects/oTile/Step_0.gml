@@ -1,3 +1,4 @@
+if(global.paused){exit;}
 var _tile = id;
 
 //hover	
@@ -14,12 +15,14 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 		if(oMatchManager.active){layer = layer_get_id("Grabbed");}
 		xscale = 1.15;
 		yscale = 1.15;
+		hover = true;
 	}
 	else
 	{
 		layer = true_layer;
 		xscale = 1;
 		yscale = 1;
+		hover = false;
 	}
 }
 

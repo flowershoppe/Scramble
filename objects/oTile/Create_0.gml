@@ -11,6 +11,7 @@ spr_size	= 64;
 
 xscale = 1;
 yscale = 1;
+hover = false;
 
 highlight = false;
 
