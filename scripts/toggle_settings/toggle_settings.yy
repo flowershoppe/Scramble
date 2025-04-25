@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"toggle_settings",
   "parent":{
-    "name":"Play",
-    "path":"folders/Scripts/Play.yy",
+    "name":"Settings",
+    "path":"folders/Scripts/Settings.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

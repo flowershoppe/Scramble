@@ -39,7 +39,6 @@ function check_end_match()
 			(point_min >= total_points and _cant_play and point_min > -1) or
 			(oMatchManager.victory == false and _cant_play))
 		{
-			room_persistent = false;
 			var _saveloc = "gamesave.save";
 			oMatchManager.active = false;
 			oMatchManager.loss = true;
@@ -58,6 +57,14 @@ function check_end_match()
 		//win match
 		if(oMatchManager.victory and !oMatchManager.loss)
 		{		
+			//put tiles back in bag
+			with(oTile)
+			{
+				if(array_contains(oTilebag.tiles, id))
+				{
+					persistent = true;	
+				}
+			}
 			dialogue_open(adialogue, []);
 			broadcast("match end");
 			//audio_stop_sound(global.music_game);

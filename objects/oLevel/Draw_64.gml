@@ -1,3 +1,4 @@
+if(room != rMap){exit;}
 draw_self();
 
 if(!active)

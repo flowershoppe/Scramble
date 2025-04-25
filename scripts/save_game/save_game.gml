@@ -15,7 +15,8 @@ function save_game()
 				y : y,
 				room_name : room,
 				time : time,
-				money_earned : money_earned
+				money_earned : money_earned,
+				levels_completed : levels_completed
 			}
 		}
 		array_push(_saveData, _saveEntity);
@@ -255,6 +256,24 @@ function save_game()
 		}
 		array_push(_saveData, _saveEntity);
 	}
+	
+	//save Levels
+	with(oLevel)
+	{
+		var _saveEntity = 
+		{
+			object_name : object_get_name(object_index),
+			layer_name : layer_get_name(layer),
+			variables:
+			{
+				x : x,
+				y : y,
+				active : active
+			}
+		}
+		array_push(_saveData, _saveEntity);
+	}	
+
 	
 	var _string = json_stringify(_saveData);
 	var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1);

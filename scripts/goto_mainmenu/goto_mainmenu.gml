@@ -12,6 +12,9 @@ function goto_mainmenu()
 	instance_destroy(oCursor);
 	instance_destroy(yui_document);
 	instance_destroy(oOpponent);
+	instance_destroy(oLevel);
+	
+	global.paused = false;
 	
 	with(oGame){alarm_set(0, 1);}
 }
