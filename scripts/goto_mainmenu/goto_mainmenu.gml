@@ -7,7 +7,6 @@ function goto_mainmenu()
 	instance_destroy(oCharm);
 	instance_destroy(oTile);
 	instance_destroy(oPlayer);
-	instance_destroy(oRewardsManager);
 	instance_destroy(oCharmManager);
 	instance_destroy(oCursor);
 	instance_destroy(yui_document);

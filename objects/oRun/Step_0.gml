@@ -10,11 +10,3 @@ if(input_check_pressed("confirm") and room == rGameOver)
 {
 	room_goto(rMainMenu);
 }
-
-with(oLevel)
-{
-	if(active)
-	{
-		oRun.current_level = id;
-	}
-}
