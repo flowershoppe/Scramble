@@ -10,8 +10,8 @@
   "name":"oAppResizer",
   "overriddenProperties":[],
   "parent":{
-    "name":"Meta",
-    "path":"folders/Objects/Meta.yy",
+    "name":"YUI Handlers",
+    "path":"folders/Objects/Meta/YUI Handlers.yy",
   },
   "parentObjectId":null,
   "persistent":false,

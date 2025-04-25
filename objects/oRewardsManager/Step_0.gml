@@ -4,19 +4,20 @@ if(selectable)
 	if(input_mouse_check_pressed(mb_left) and 
 	position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), reward_type))
 	{
+		var _choice = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), reward_type).id;
 		switch(reward_type)
 		{
-			case oTile:
-				var _tile = instance_nearest(oCursor.x, oCursor.y, oTile)
-				add_tile_to_bag(_tile.letter, _tile.pointvalue, 1, true);	
+			case oTile:				
+				add_tile_to_bag(_choice.letter, _choice.pointvalue, 1, true);	
 			break;
 			
 			case oCharm:
-				var _charm = instance_nearest(oCursor.x, oCursor.y, oCharm).object_index;
-				add_charm(_charm);
+				add_charm(_choice.object_index);
 			break;
 		}
 
+		oRun.current_level.active = false;
+		oRun.current_level = noone;
 		room_goto(rMap);
 		rewarding = false;
 		selectable = false;
