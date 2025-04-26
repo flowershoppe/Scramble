@@ -12,6 +12,8 @@ function goto_mainmenu()
 	instance_destroy(yui_document);
 	instance_destroy(oOpponent);
 	instance_destroy(oLevel);
+	instance_destroy(oResultsManager);
+	instance_destroy(oRewardsManager);
 	
 	global.paused = false;
 	

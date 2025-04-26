@@ -11,12 +11,8 @@ root:
   type: panel
   layout: canvas
   visible: @visible
+  is_cursor_layer: true
   elements:
-    - type: button
-      content: 
-        type: text        
-        text: <= Back
-      on_click: @@ ~toggle_settings()
     - type: panel
       layout: horizontal
       spacing: 0
@@ -140,10 +136,8 @@ root:
                 type: text
                 text: Reset to Default
               on_click: @@ ~input_profile_reset_bindings()
-
-
-                
-
-
-
-          
+    - type: button
+      content: 
+        type: text        
+        text: <= Back
+      on_click: @@ ~toggle_settings()

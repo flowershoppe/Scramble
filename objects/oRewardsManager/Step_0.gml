@@ -1,10 +1,11 @@
 //click on reward
-if(selectable)
+if(selectable and !global.paused)
 {
 	if(input_mouse_check_pressed(mb_left) and 
 	position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), reward_type))
 	{
 		var _choice = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), reward_type).id;
+		if(_choice.visible == false){exit;}
 		switch(reward_type)
 		{
 			case oTile:				

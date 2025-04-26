@@ -15,3 +15,4 @@ receiver.add("gain money", function()
 		money_earned++;
 	});
 	
+alarm_set(2, 1);
