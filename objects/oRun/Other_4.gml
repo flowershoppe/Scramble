@@ -5,12 +5,7 @@ if(room == rMap or room == rResults)
 
 if(room == rResults)
 {
-	instance_create_layer(0, 0, "YUI", yui_document,
-	{
-		data_context : oMatchManager,
-		yui_file : "YUI screens/results.yui",
-		is_full_screen : true
-	});		
+	instance_create_layer(0, 0, "YUI", yui_document, global.stResults);		
 }
 
 if(room == rMap)

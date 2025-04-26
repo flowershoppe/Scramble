@@ -16,7 +16,7 @@ function save_game()
 				room_name : room,
 				time : time,
 				money_earned : money_earned,
-				levels_completed : levels_completed
+				levels_completed : levels_completed,
 			}
 		}
 		array_push(_saveData, _saveEntity);

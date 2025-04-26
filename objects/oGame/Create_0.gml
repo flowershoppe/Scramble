@@ -102,7 +102,8 @@ global.stMainMenu =
 global.stPauseMenu =
 {
 	yui_file : "YUI screens/pause_menu.yui",
-	data_context : oPauseMenu
+	data_context : oPauseMenu,
+	layer : layer_get_id("Pause")
 }
 global.stMatchStats =
 {
@@ -112,7 +113,8 @@ global.stMatchStats =
 	image_xscale : 3.2,
 	image_yscale : 5,
 	x : 755,
-	y : 64
+	y : 64,
+	layer : layer_get_id("YUI")
 }
 global.stMatchButtons = 
 {
@@ -122,7 +124,8 @@ global.stMatchButtons =
 	image_xscale : 3.2,
 	image_yscale : 2.609,
 	x : 755,
-	y : 384
+	y : 384,
+	layer : layer_get_id("YUI")
 }
 global.stCharms = 
 {
@@ -133,11 +136,18 @@ global.stCharms =
 	image_yscale : 4.5,
 	x : 0,
 	y : 64,
+	layer : layer_get_id("YUI")
 }
 global.stSettings =
 {
 	data_context : oSettings,
 	yui_file : "YUI screens/settings.yui"
+}
+global.stResults = 
+{
+	data_context : oMatchManager,
+	yui_file : "YUI screens/results.yui",
+	is_full_screen : true	
 }
 #endregion
 

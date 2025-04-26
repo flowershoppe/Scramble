@@ -57,6 +57,13 @@ function check_end_match()
 		//win match
 		if(oMatchManager.victory and !oMatchManager.loss)
 		{		
+			with(yui_document)
+			{
+				if(yui_file == "YUI screens/match_buttons.yui")
+				{
+					instance_destroy();
+				}
+			}
 			//put tiles back in bag
 			with(oTile)
 			{

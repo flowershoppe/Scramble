@@ -9,6 +9,11 @@ if(!instance_exists(oCursor))
 {
 	instance_create_layer(0, 0, "Meta", oCursor);	
 }
+if(room != rMainMenu)
+{
+	instance_create_layer(0, 0, "Meta", oRewardsManager);
+	instance_create_layer(0, 0, "Meta", oResultsManager);	
+}
 
 switch(room)
 {        

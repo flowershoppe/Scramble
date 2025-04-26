@@ -11,17 +11,15 @@ root:
   layout: canvas
   background: ~yui_panel_bg
   canvas:
-    top: 20
+    top: 50
     center: h
-  size: stretch
-  
+  size: stretch  
   elements:
-
     - type: panel
       size: {w: 500, h: 500}
       alignment: {h: center}
       canvas:
-        top: 5
+        top: 75
         center: h
       background: ~yui_panel_bg
       elements:
