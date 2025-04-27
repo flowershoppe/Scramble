@@ -15,7 +15,7 @@ root:
     rows: 5
     row_height: 32
     row_spacing: 16
-    columns: 2
+    columns: 1
     column_width: 32
     column_spacing: 16
   background: ~yui_panel_bg
