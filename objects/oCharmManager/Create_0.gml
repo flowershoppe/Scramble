@@ -1,14 +1,12 @@
-charms = [];
+charms = [-1, -1, -1, -1, -1];
+max_charms = 5;
+charms_full_message = false;
 
-
-var _c = instance_create_layer(0, 0, "Meta", oEraser);
-array_push(charms, _c);
-var _c = instance_create_layer(0, 0, "Meta", oPiggyBank);
-array_push(charms, _c);
-var _c = instance_create_layer(0, 0, "Meta", oCheese);
-array_push(charms, _c);
-var _c = instance_create_layer(0, 0, "Meta", oOcarina);
-array_push(charms, _c);
+add_charm(oBClef);
+add_charm(oChip);
+add_charm(oD6);
+add_charm(oPuzzle);
+add_charm(oTMap);
 
 var _bool = false;
 

@@ -1,14 +1,17 @@
 font		= global.tile_font;
 font_color	= global.tile_font_color;
-
-if(wait_for_input)
-{
-	draw_text(view_get_wport(0) / 2, view_get_hport(0) / 4, "Please enter a character");	
-}
-
 var _old_halign = draw_get_halign();
 var _old_valign = draw_get_valign();
 var _old_font = draw_get_font();
+
+if(wait_for_input)
+{
+	draw_set_valign(fa_middle);
+	draw_set_halign(fa_center);
+	draw_text(display_get_gui_width() / 2, display_get_gui_height() / 4, "Please enter a character");	
+	draw_set_halign(_old_halign);
+	draw_set_valign(_old_valign);
+}
 
 if(on_board or !visible){exit;}
 
