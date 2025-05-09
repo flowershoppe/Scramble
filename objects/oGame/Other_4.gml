@@ -1,3 +1,5 @@
+randomize();
+
 var _main_menu_music = global.music_main_menu;
 var _game_music_1 = global.music_game;
 var _emitter_MS = global.emitterMS;
@@ -8,11 +10,6 @@ var _cursor = noone;
 if(!instance_exists(oCursor))
 {
 	instance_create_layer(0, 0, "Meta", oCursor);	
-}
-if(room != rMainMenu)
-{
-	instance_create_layer(0, 0, "Meta", oRewardsManager);
-	instance_create_layer(0, 0, "Meta", oResultsManager);	
 }
 
 switch(room)

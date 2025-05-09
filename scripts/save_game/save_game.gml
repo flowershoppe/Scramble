@@ -258,6 +258,24 @@ function save_game()
 	}
 	
 	//save Levels
+	with(oRewardsManager)
+	{
+		var _saveEntity = 
+		{
+			object_name : object_get_name(object_index),
+			layer_name : layer_get_name(layer),
+			variables:
+			{
+				x : x,
+				y : y,
+				rewarding : rewarding,
+				reward_type : reward_type
+			}
+		}
+		array_push(_saveData, _saveEntity);
+	}	
+	
+	//save Levels
 	with(oLevel)
 	{
 		var _saveEntity = 
