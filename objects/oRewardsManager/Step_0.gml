@@ -1,4 +1,21 @@
+//delay selectability of rewards
+if(rewarding and !selectable and alarm_get(1) == -1)
+{
+	alarm_set(1, 60);	
+}
+//failsafe
+if(!rewarding){selectable = false;}
+
 //click on reward
+if(room == rResults and (input_check_pressed("confirm") or input_mouse_check_pressed(mb_left))
+	and !rewarding)
+{	
+	instance_destroy(oOpponent);
+	
+	//go to rewards
+	reward(oRun.current_level.reward_amount, oRun.current_level.reward_type);
+} 
+
 if(selectable and !global.paused)
 {
 	if(input_mouse_check_pressed(mb_left) and 

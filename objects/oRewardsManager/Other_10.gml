@@ -1,4 +1,4 @@
-alarm_set(1, 60);
+//reward
 
 rewarding = true;
 size = sprite_get_width(spLetterTile);
@@ -74,3 +74,4 @@ while(_i < _reward_count)
 	_i++;
 }
 
+save_game();

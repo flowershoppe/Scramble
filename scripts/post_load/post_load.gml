@@ -50,9 +50,12 @@ function post_load()
 			}
 			else 
 			{
-				var _holder = instance_nearest(x, y, oTileHolder);
+				if(instance_exists(oTileHolder))
+				{
+					var _holder = instance_nearest(x, y, oTileHolder);
 		
-				_holder.tile = id;	
+					_holder.tile = id;	
+				}
 			}	
 		}
 		//sort the bag
@@ -88,6 +91,17 @@ function post_load()
 			instance_create_layer(0, 0, "YUI", yui_document, global.stMatchStats);
 	
 			instance_create_layer(755, 384, "YUI", yui_document, global.stMatchButtons);		
+		}
+		
+		if(oRewardsManager.rewarding)
+		{
+			with(oTile)
+			{
+				if(visible)
+				{
+					array_push(oRewardsManager.array_rewards, id);	
+				}
+			}
 		}
 	}
 }

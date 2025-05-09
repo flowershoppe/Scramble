@@ -1,4 +1,3 @@
-randomize();
 dialogue_setup();
 
 global.paused = false;
@@ -81,7 +80,6 @@ instance_create_layer(0, 0, "Meta", oSaverLoader);
 instance_create_layer(0, 0, "Meta", oPauseMenu);
 instance_create_layer(0, 0, "Meta", oSettings);
 instance_create_layer(0, 0, "Meta", oResultsManager);
-instance_create_layer(0, 0, "Meta", oRewardsManager);
 instance_create_layer(room_width / 2, room_height / 2, "Meta", oCamera,
 {active : false});
 
