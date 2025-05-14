@@ -6,9 +6,23 @@ if(rewarding and !selectable and alarm_get(1) == -1)
 //failsafe
 if(!rewarding){selectable = false;}
 
+//check for collision with info bar
+var _yui = noone;
+with(yui_document)
+{
+	if(yui_file == "YUI screens/info_bar.yui")
+	{
+		_yui = id;
+	}
+}
+if(_yui != noone)
+{
+	var _bool = position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), _yui)
+}
+
 //click on reward
 if(room == rResults and (input_check_pressed("confirm") or input_mouse_check_pressed(mb_left))
-	and !rewarding)
+	and !rewarding and !_bool and !global.paused)
 {	
 	instance_destroy(oOpponent);
 	
@@ -18,7 +32,7 @@ if(room == rResults and (input_check_pressed("confirm") or input_mouse_check_pre
 
 if(selectable and !global.paused)
 {
-	if(input_mouse_check_pressed(mb_left) and 
+	if(input_mouse_check_released(mb_left) and 
 	position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), reward_type))
 	{
 		var _choice = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), reward_type).id;
@@ -45,4 +59,25 @@ if(selectable and !global.paused)
 		instance_destroy(oMatchManager);
 		instance_create_layer(0, 0, "Meta", oMatchManager);
 	}	
+}
+
+//yui element
+if(rewarding)
+{
+	var _bool = false;
+	with(yui_document)
+	{
+		if(yui_file == "YUI screens/rewards.yui")
+		{
+			_bool = true;
+		}
+	}
+	if(_bool == false)
+	{
+		instance_create_layer(0, 0, "YUI", yui_document,
+		{
+			data_context : oRewardsManager,
+			yui_file : "YUI screens/rewards.yui"
+		});	
+	}
 }
