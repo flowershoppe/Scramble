@@ -80,6 +80,8 @@ instance_create_layer(0, 0, "Meta", oSaverLoader);
 instance_create_layer(0, 0, "Meta", oPauseMenu);
 instance_create_layer(0, 0, "Meta", oSettings);
 instance_create_layer(0, 0, "Meta", oResultsManager);
+instance_create_layer(0, 0, "Meta", oStats);
+load_stats();
 instance_create_layer(room_width / 2, room_height / 2, "Meta", oCamera,
 {active : false});
 
@@ -146,6 +148,12 @@ global.stResults =
 	data_context : oMatchManager,
 	yui_file : "YUI screens/results.yui",
 	is_full_screen : true	
+}
+global.stStats = 
+{
+	data_context : oStats,
+	yui_file : "YUI screens/stats.yui",
+	is_full_screen : true
 }
 #endregion
 

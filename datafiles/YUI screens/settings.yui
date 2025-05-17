@@ -140,4 +140,6 @@ root:
       content: 
         type: text        
         text: <= Back
+        text_style: title
+      border_thickness: 1
       on_click: @@ ~toggle_settings()

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"save_stats",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"save_stats",
+  "parent":{
+    "name":"Admin",
+    "path":"folders/Scripts/Admin.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

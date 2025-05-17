@@ -1,0 +1,76 @@
+id: stats
+file_type: screen
+
+import:
+  - ../Templates/
+
+  - /YUI/Animations/transitions.yui
+  - /YUI/Widgets/
+
+root:
+  type: panel
+  layout: canvas
+  is_cursor_layer: true
+  size: stretch
+  elements:
+    - type: panel
+      layout: canvas
+      canvas:
+        center: true
+      size: {w: 250, h: 300}
+      background: ~yui_panel_bg
+      padding: 10
+      elements:
+        - type: button
+          content:
+            type: text
+            text: Back
+            text_style: title
+          border_thickness: 1
+          on_click: @@ ~toggle_stats()
+        - type: panel
+          alignment: center
+          elements:
+            - type: panel
+              layout: horizontal
+              alignment: center
+              elements:
+                - type: text
+                  text: "-STATS-"
+                  text_style: title
+            - type: panel
+              layout: horizontal
+              elements:
+                - type: text
+                  text : "RUNS | "
+                - @run_count
+            - type: panel
+              layout: horizontal
+              elements:
+                - type: text
+                  text : "WINS | "
+                - @wins
+            - type: panel
+              layout: horizontal
+              elements:
+                - type: text
+                  text : "LOSSES | "
+                - @losses
+            - type: panel
+              layout: horizontal
+              elements:
+                - type: text
+                  text : "WORDS SPELLED | "
+                - @words_spelled
+            - type: panel
+              layout: horizontal
+              elements:
+                - type: text
+                  text : "TILES PLAYED | "
+                - @tiles_played
+            - type: panel
+              layout: horizontal
+              elements:
+                - type: text
+                  text : "PLAY TIME | "
+                - @time_string

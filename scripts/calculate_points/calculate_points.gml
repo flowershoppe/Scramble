@@ -24,6 +24,7 @@ function calculate_points()
 			
 			oMatchManager.total_tiles++;
 			oRun.tiles_played++;
+			oStats.tiles_played++;
 			
 			with(_player_words_tiles[j][k])
 			{
@@ -72,6 +73,9 @@ function calculate_points()
 	if(_total > oRun.largest_play){oRun.largest_play = _total;}
 	
 	oPlayer.words_tiles = [];
+	
+	//update profile stats
+	oStats.words_spelled += array_length(_player_words_tiles);
 	
 	audio_play_sound(sdSciBell, 0, 0);
 	
