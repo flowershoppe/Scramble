@@ -38,3 +38,11 @@ root:
             text_style: title        
           border_thickness: 1
           on_click: @@ ~toggle_settings()
+  
+        - type: button
+          content: 
+            type: text
+            text: Stats
+            text_style: title        
+          border_thickness: 1
+          on_click: @@ ~toggle_stats()
