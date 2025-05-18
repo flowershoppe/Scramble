@@ -21,8 +21,6 @@ root:
   background: ~yui_panel_bg
   elements: @charms
   template:
-    type: border
-    background: @sprite_index
     type: image
     size: 32
     tooltip: @name + ~chr(13) + @description
