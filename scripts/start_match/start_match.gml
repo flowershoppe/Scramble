@@ -1,4 +1,4 @@
-function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _turn_max, _ev_user)
+function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _turn_max)
 {		
 	instance_create_layer(0, 0, "Meta", oMatchGUI);
 	var _o = oMatchManager;
@@ -37,7 +37,7 @@ function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _tur
 	//run custom code
 	with(oRun.current_level.opponent)
 	{
-		event_user(_ev_user);
+		event_user(0);
 	}
 	
 	broadcast("turn start");

@@ -1,9 +1,9 @@
 NAME, TYPE, SOURCE_EXPRESSION
-yui_color_shift_hue, script, "@@ color => color |> ~yui_color_shift_hue(~yui_resolve_color(&accent_color), &lum_factor + &accent_lum)"
-yui_resolve_color, script, "@@ color => color |> ~yui_color_shift_hue(~yui_resolve_color(&accent_color), &lum_factor + &accent_lum)"
+yui_color_shift_hue, script, "@@ color => color |> ~yui_color_shift_hue(~yui_resolve_color(&tint_color), &lum_factor)"
+yui_resolve_color, script, "@@ color => color |> ~yui_color_shift_hue(~yui_resolve_color(&tint_color), &lum_factor)"
+fnt_yui_body, font, "~fnt_yui_body"
 fnt_yui_title, font, "~fnt_yui_title"
 fnt_yui_subtitle, font, "~fnt_yui_subtitle"
-fnt_yui_body, font, "~fnt_yui_body"
 yui_panel_bg, sprite, "~yui_panel_bg"
 new_run, script, "@@ ~new_run()"
 load_game, script, "@@ ~load_game()"

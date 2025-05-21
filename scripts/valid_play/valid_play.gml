@@ -165,7 +165,30 @@ function valid_play()
 	}	
 	#endregion	
 	
-	if((_is_same_column or _is_same_row) and array_length(_placed_tiles) > 0 and
+	//first turn's play must cover a starting square
+	var _start = false;
+	if(oMatchManager.turn == 1)
+	{
+		var _holder = noone;
+		for(var i = 0; i < array_length(_placed_tiles); i++)
+		{
+			with(_placed_tiles[i])
+			{
+				_holder = instance_nearest(x, y, oTileHolder);	
+			}
+			
+			if(_holder.start_point == true)
+			{
+				_start = true;	
+			}
+		}
+	}
+	else
+	{
+		_start = true	
+	}
+	
+	if(_start and (_is_same_column or _is_same_row) and array_length(_placed_tiles) > 0 and
 		(_tile_adjacent == true or 
 		(array_length(oPlayer.match_spelled_words) < 1 and array_length(_placed_tiles) > 1)) 
 		and _hole_between == false)

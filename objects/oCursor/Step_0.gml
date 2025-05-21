@@ -26,16 +26,23 @@ if(global.exchanging){exit;}
 //-----PICK UP-----
 #region
 if(mouse_check_button_pressed(mb_left))
-{		
-	held_tile = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile)
-	
-	if(held_tile == noone)
+{	
+	//in hand check
+	if(position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile))
 	{
-		held_tile = instance_place(mouse_x, mouse_y, oTile);
-		//case for in hand tile objects "actual" locations
-		if(held_tile != noone){if(held_tile.in_hand == true){held_tile = noone;}}
+		held_tile = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile);
+		if(held_tile.on_board){ held_tile = noone; }
 	}
-	
+	//on board check
+	else if(place_meeting(x, y, oTile))
+	{
+		held_tile = instance_place(x, y, oTile);
+	}
+	else{ held_tile = noone; }
+
+	//case for in hand tile objects "actual" locations
+	//if(held_tile != noone){if(held_tile.in_hand == true){held_tile = noone;}}
+		
 	//check if tile exists and is grabbable	
 	if(held_tile == noone){exit;}
 	else if(!held_tile.grabbable or !held_tile.visible){held_tile = noone; exit;}
