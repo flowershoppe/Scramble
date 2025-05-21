@@ -48,8 +48,26 @@ root:
       layout: horizontal
       elements:
         - type: text
-          text: "Goal: "
+          text: "Point Minimum: "
         - @point_min
+    - type: panel
+      layout: horizontal
+      elements:
+        - type: text
+          text: "Point Maximum: "
+        - @point_max
+    - type: panel
+      layout: horizontal
+      elements:
+        - type: text
+          text: "Turn Minimum: "
+        - @turn_min
+    - type: panel
+      layout: horizontal
+      elements:
+        - type: text
+          text: "Turn Maximum: "
+        - @turn_max
     - type: panel
       layout: horizontal
       elements:

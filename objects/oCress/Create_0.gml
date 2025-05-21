@@ -1,7 +1,7 @@
 name = "Cress";
 spr = spCress;
-
-match_specs = [5, 15, 1, -1, -1, -1];
+//_board_w, _board_h, _point_min, _point_max, _turn_min, _turn_max, _ev_user
+match_specs = [5, 15, 75, -1, -1, 6, 0];
 
 dialogues =
 [
@@ -10,5 +10,5 @@ dialogues =
 	"[method:match_start]"],
 
 	["[chr:Cress]You're doing better than I thought you would be.",
-	"[method:show_results]"]	
+	"[method:show_results]"]
 ]
