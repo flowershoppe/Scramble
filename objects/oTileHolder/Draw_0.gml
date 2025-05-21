@@ -21,5 +21,11 @@ if(owner == oBoard)
 	else if(wmult == 4)
 	{ _subimg = 5; }
 
-	draw_sprite(mult_spr, _subimg, x, y);
+	if(start_point)
+	{ draw_sprite(spStar, 0, x, y); }
+		
+	else
+	{	
+		draw_sprite(mult_spr, _subimg, x, y);
+	}
 }

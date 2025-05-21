@@ -7,16 +7,27 @@ if(layer != true_layer & layer != layer_get_id("Grabbed"))
 	true_layer = layer;	
 }
 
-if(oCursor.held_tile == noone and oCamera.dragging == false)
+if(oCursor.held_tile == noone and oCamera.dragging == false and visible)
 {
-	if(grabbable and ((position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id) and visible)
-		or (place_meeting(x, y, oCursor) and on_board)))
+	var _intersect = false;
+	
+	if(on_board and place_meeting(x, y, oCursor))
+	{
+		_intersect = true;
+	}
+	else if(!on_board and position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id))
+	{
+		_intersect = true;
+	}
+	
+	if(grabbable and _intersect)
 	{
 		if(oMatchManager.active){layer = layer_get_id("Grabbed");}
 		xscale = 1.15;
 		yscale = 1.15;
 		hover = true;
 	}
+
 	else
 	{
 		layer = true_layer;
