@@ -8,8 +8,8 @@
   "name":"oWiz",
   "overriddenProperties":[],
   "parent":{
-    "name":"Characters",
-    "path":"folders/Objects/Characters.yy",
+    "name":"Level 1",
+    "path":"folders/Objects/Characters/Level 1.yy",
   },
   "parentObjectId":{
     "name":"oOpponent",

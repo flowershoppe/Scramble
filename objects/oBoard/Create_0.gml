@@ -1,5 +1,9 @@
 spr = spBoard;
-
+holders = [];
+for(var i = 0; i < grid_width; i++)
+{
+	array_push(holders, array_create(grid_height));	
+}
 var _tile_size = sprite_get_width(spHolder);
 
 //set board draw parameters
@@ -26,6 +30,7 @@ for(_x = 0; _x < grid_width; _x++)
 		_holder.y_coord = _y;
 		_holder.owner = oBoard;
 		
+		holders[_x][_y] = _holder;
 		_prev_holder = _holder;
 		
 	}

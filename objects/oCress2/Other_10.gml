@@ -1,0 +1,1 @@
+instance_destroy(oBoard.holders[5, 5]);
