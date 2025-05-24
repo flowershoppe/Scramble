@@ -1,7 +1,7 @@
 name = "The Wiz";
 spr = spTheWiz;
 //_board_w, _board_h, _point_min, _point_max, _turn_min, _turn_max
-match_specs = [15, 15, 50, -1, -1, 7];
+match_specs = [9, 9, 50, -1, -1, 7];
 
 dialogues =
 [

@@ -19,7 +19,7 @@ function add_temp_tile(_letter, _point, _amount)
 						pointvalue : _point,
 						letter : _letter,
 						temp : true,
-						persistent : true
+						persistent : false
 					});
 					
 				//place tile id in tile holder

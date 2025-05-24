@@ -1,7 +1,7 @@
 name = "Cress";
 spr = spCress;
-//_board_w, _board_h, _point_min, _point_max, _turn_min, _turn_max, _ev_user
-match_specs = [5, 10, 75, -1, -1, 6, 0];
+//_board_w, _board_h, _point_min, _point_max, _turn_min, _turn_max
+match_specs = [9, 5, 25, -1, -1, 6];
 
 dialogues =
 [

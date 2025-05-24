@@ -9,7 +9,7 @@
 
 // whether gamepad/keyboard navigation is active by default
 // (can still be toggled at runtime by setting YuiCursorManager.is_navigation_active)
-#macro YUI_DEFAULT_IS_NAVIGATION_ACTIVE true
+#macro YUI_DEFAULT_IS_NAVIGATION_ACTIVE false
 
 // macro to control whether YUI should attempt to use Input 6 library for navigation and interaction
 #macro YUI_INPUT_LIB_ENABLED false

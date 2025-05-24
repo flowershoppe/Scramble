@@ -19,11 +19,17 @@ receiver.add("match start", function()
 		var _length = array_length(_array);
 		var _random = irandom_range(0, _length);
 		
-		if(_array[_random].wmult == 1 and _array[_random].lmult == 1)
+		var _bool = false;
+		while(_bool == false)
 		{
-			_array[_random].wmult = 2;
-			animate = !animate;
+			if(_array[_random].wmult == 1 and _array[_random].lmult == 1)
+			{
+				_array[_random].wmult = 2;
+				animate = !animate;
+				_bool = true;
+			}
 		}
+
 		
 	});
 	

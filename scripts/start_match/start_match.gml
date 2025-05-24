@@ -19,7 +19,7 @@ function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _tur
 				
 				});
 	
-	var _board = instance_create_layer(0, 0, "Board", oBoard, 
+	instance_create_layer(0, 0, "Board", oBoard, 
 	{
 		grid_width: _board_w,
 		grid_height: _board_h
@@ -32,7 +32,7 @@ function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _tur
 	
 	oTilebag.yui_tiles = oTilebag.match_tiles;
 	array_copy(oTilebag.match_tiles, 0, oTilebag.tiles, 0, array_length(oTilebag.tiles));
-	add_tile_to_hand(_hand, oTilebag, _hand.size);
+	add_tile_to_hand(_hand.size);
 	
 	//run custom code
 	with(oRun.current_level.opponent)
@@ -42,5 +42,6 @@ function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _tur
 	
 	broadcast("turn start");
 	broadcast("match start");
+	save_game();
 	
 }

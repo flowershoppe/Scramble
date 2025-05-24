@@ -40,24 +40,28 @@ function post_load()
 		{
 			array_push(oCharmManager.charms, id);
 		}
-		
+	
 		with(oTile)
 		{
+			if(persistent)
+			{
+				array_push(oTilebag.tiles, id);				
+			}
+			
 			if(layer_get_name(layer) == "Tilebag")
 			{
-				array_insert(oTilebag.tiles, 0, id);
-				persistent = true;
-			}
-			else 
+				visible = false;
+				array_push(oTilebag.match_tiles, id);
+			}			
+			else if(instance_exists(oTileHolder))
 			{
-				if(instance_exists(oTileHolder))
-				{
-					var _holder = instance_nearest(x, y, oTileHolder);
+				visible = true;
+				var _holder = instance_nearest(x, y, oTileHolder);
 		
-					_holder.tile = id;	
-				}
-			}	
+				_holder.tile = id;	
+			}
 		}
+		oTilebag.yui_tiles = oTilebag.match_tiles
 		//sort the bag
 		var _array = oTilebag.tiles;
 		var _function = function(a, b)

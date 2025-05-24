@@ -164,7 +164,7 @@ oSpade];
 
 //Opponents
 //multiple tiers
-opponents_1 = [oCress];
-opponents_2 = [oWiz];
+opponents_1 = [oCress13];
+opponents_2 = [oCress2];
 
 receiver = new Receiver();

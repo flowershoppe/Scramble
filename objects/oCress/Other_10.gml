@@ -1,1 +1,0 @@
-oBoard.holders[0, 0].start_point = true;
