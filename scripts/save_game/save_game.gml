@@ -218,6 +218,7 @@ function save_game()
 				image_index : image_index,
 				image_alpha : image_alpha,
 				visible : visible,
+				persistent : persistent,
 				grabbable: grabbable,
 				pointvalue : pointvalue,
 				letter : letter,
@@ -251,7 +252,8 @@ function save_game()
 				owner : owner,
 				winspot : winspot,
 				active : active,
-				mult_spr : mult_spr
+				mult_spr : mult_spr,
+				start_point : start_point
 			}		
 		}
 		array_push(_saveData, _saveEntity);

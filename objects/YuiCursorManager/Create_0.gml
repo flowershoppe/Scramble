@@ -79,6 +79,8 @@ global_wheel_down = undefined
 
 setFocus = function(focus_item) {
 	
+	if !YuiCursorManager.is_navigation_active return;
+	
 	// check if new focus is different from current
 	if focus_item == focused_item return;
 	
