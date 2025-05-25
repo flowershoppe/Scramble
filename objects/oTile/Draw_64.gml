@@ -13,7 +13,7 @@ if(wait_for_input)
 	draw_set_valign(_old_valign);
 }
 
-if(on_board or !visible){exit;}
+if(on_board){exit;}
 
 //draw self
 draw_sprite_ext(spr, 0, x, y, xscale, yscale, 0, c_white, 1);
