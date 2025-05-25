@@ -38,7 +38,11 @@ function check_words()
 			//set tile to next tile to left
 			with(_tile)
 			{
-				_next_tile = instance_place(_tile.x - _spr_size, _tile.y, oTile);
+				_next_tile = instance_place(x - _spr_size, y, oTile);
+				if(_next_tile != noone)
+				{
+					if(!_next_tile.on_board){ _next_tile = noone; }
+				}
 			}
 			
 			_tile = _next_tile;
@@ -54,6 +58,10 @@ function check_words()
 			with(_tile)
 			{
 				_next_tile = instance_place(x + _spr_size, y, oTile);
+				if(_next_tile != noone)
+				{
+					if(!_next_tile.on_board){ _next_tile = noone; }
+				}
 			}
 			_tile = _next_tile;
 			
@@ -97,6 +105,10 @@ function check_words()
 			with(_tile)
 			{
 				_next_tile = instance_place(x, y - _spr_size, oTile);
+				if(_next_tile != noone)
+				{
+					if(!_next_tile.on_board){ _next_tile = noone; }
+				}
 			}
 			
 			_tile = _next_tile;
@@ -113,6 +125,10 @@ function check_words()
 			with(_tile)
 			{
 				_next_tile = instance_place(_tile.x, _tile.y + _spr_size, oTile);
+				if(_next_tile != noone)
+				{
+					if(!_next_tile.on_board){ _next_tile = noone; }
+				}
 			}
 			_tile = _next_tile;
 			
