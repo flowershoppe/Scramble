@@ -136,7 +136,7 @@ if(mouse_check_button_released(mb_left))
 		#endregion
 		
 		//-----DROP TILE-----
-		held_tile.layer = layer;
+		held_tile.layer = layer_get_id("Hand_Tiles");
 				
 		if(layer == layer_get_id("Tiles"))
 		{

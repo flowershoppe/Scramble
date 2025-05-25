@@ -7,7 +7,7 @@ if(layer != true_layer & layer != layer_get_id("Grabbed"))
 	true_layer = layer;	
 }
 
-if(oCursor.held_tile == noone and oCamera.dragging == false and visible)
+if(oCursor.held_tile == noone and oCamera.dragging == false)
 {
 	var _intersect = false;
 	

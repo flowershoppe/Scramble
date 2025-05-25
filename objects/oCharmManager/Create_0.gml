@@ -17,3 +17,6 @@ if(_bool == false)
 	var _st = global.stCharms;
 	instance_create_layer(0, 0, "YUI", yui_document, _st);
 }
+
+add_charm(oPiggyBank);
+add_charm(oCheese);
