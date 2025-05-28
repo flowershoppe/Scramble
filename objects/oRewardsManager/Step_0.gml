@@ -23,11 +23,10 @@ if(_yui != noone)
 //click on reward
 if(room == rResults and (input_check_pressed("confirm") or input_mouse_check_pressed(mb_left))
 	and !rewarding and !_bool and !global.paused)
-{	
-	instance_destroy(oOpponent);
-	
+{		
 	//go to rewards
-	reward(oRun.current_level.reward_amount, oRun.current_level.reward_type);
+	reward(oOpponent.reward_amount, oOpponent.reward_type);
+	instance_destroy(oOpponent);
 } 
 
 if(selectable and !global.paused)
@@ -77,7 +76,9 @@ if(rewarding)
 		instance_create_layer(0, 0, "YUI", yui_document,
 		{
 			data_context : oRewardsManager,
-			yui_file : "YUI screens/rewards.yui"
+			yui_file : "YUI screens/rewards.yui",
+			x : x_loc,
+			y : y_loc
 		});	
 	}
 }

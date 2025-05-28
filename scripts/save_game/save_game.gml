@@ -61,6 +61,8 @@ function save_game()
 				name : name,
 				spr : spr,
 				match_specs : match_specs,
+				reward_type : reward_type,
+				reward_amount : reward_amount,
 				dialogues : dialogues,
 				dialogue_prog : dialogue_prog
 			}
