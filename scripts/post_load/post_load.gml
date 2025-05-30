@@ -38,7 +38,10 @@ function post_load()
 		
 		with(oCharm)
 		{
-			array_push(oCharmManager.charms, id);
+			if(isininventory)
+			{
+				array_push(oCharmManager.charms, id);
+			}
 		}
 	
 		with(oTile)
@@ -81,7 +84,7 @@ function post_load()
 		
 		if(room == rResults)
 		{
-			instance_create_layer(0, 0, "YUI", yui_document,
+			instance_create_layer(0, 0, "Tilebag", yui_document,
 			{
 				data_context : oMatchManager,
 				yui_file : "YUI screens/results.yui",

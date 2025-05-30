@@ -9,3 +9,18 @@ if(input_check_pressed("confirm") and room == rGameOver)
 {
 	room_goto(rMainMenu);
 }
+
+var _bool = false;
+
+with(yui_document)
+{
+	if(yui_file == "YUI screens/results.yui")
+	{
+		_bool = true;	
+	}
+}
+
+if(room == rResults and _bool == false)
+{
+	instance_create_layer(0, 0, "YUI", yui_document, global.stResults);		
+}

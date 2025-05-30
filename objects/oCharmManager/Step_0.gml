@@ -1,9 +1,8 @@
-//create charms ui
 var _bool = false;
 
 with(yui_document)
 {
-	if(data_context == oCharmManager)
+	if(yui_file == "YUI screens/charms.yui")
 	{
 		_bool = true;
 	}

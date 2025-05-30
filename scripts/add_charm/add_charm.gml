@@ -3,7 +3,7 @@ function add_charm(_charm)
 	var _charms = oCharmManager.charms;
 	if(array_contains(_charms, -1))
 	{
-		var _c = instance_create_layer(0, 0, "Meta", _charm);
+		var _c = instance_create_layer(0, 0, "Meta", _charm, {isininventory : true});
 		var _ind = array_get_index(_charms, -1)
 		oCharmManager.charms[_ind] = _c;
 	}
