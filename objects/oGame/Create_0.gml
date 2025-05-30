@@ -134,6 +134,7 @@ global.stCharms =
 	is_full_screen : false,
 	image_xscale : 2.5,
 	image_yscale : 4.5,
+	persistent : true,
 	x : 0,
 	y : 64,
 	layer : layer_get_id("YUI")

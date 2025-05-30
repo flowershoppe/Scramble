@@ -73,7 +73,7 @@ if(rewarding)
 	}
 	if(_bool == false)
 	{
-		instance_create_layer(0, 0, "YUI", yui_document,
+		instance_create_layer(0, 0, "UI", yui_document,
 		{
 			data_context : oRewardsManager,
 			yui_file : "YUI screens/rewards.yui",
