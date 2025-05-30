@@ -65,7 +65,7 @@ while(_i < _reward_count)
 			{
 				_reward = global.charms[irandom_range(0, array_length(global.charms) - 1)];
 			}
-			instance_create_layer(_x_loc, _y_loc, "Meta", _reward, {persistent : false});
+			instance_create_layer(_x_loc, _y_loc, "UI", _reward, {persistent : false});
 		break;
 	}
 	
