@@ -159,8 +159,26 @@ global.stStats =
 
 //Charms
 global.charms = [
+oBClef,
+oCassette,
+oCheese,
+oChip,
+oCount,
+oD20,
+oD6,
+oDiamond,
+oEraser,
+oFridge,
+oHammerSickle,
+oLoop,
+oOcarina,
+oPiggyBank,
+oPuzzle,
+oRupee,
+oSnake,
+oSpade,
 oTClef,
-oSpade];
+oTMap];
 
 //Opponents
 //multiple tiers

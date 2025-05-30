@@ -29,6 +29,8 @@
     {"$GMObjectProperty":"v1","%Name":"spr","filters":[],"listItems":[],"multiselect":false,"name":"spr","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":5,},
     {"$GMObjectProperty":"v1","%Name":"dialogues","filters":[],"listItems":[],"multiselect":false,"name":"dialogues","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"match_specs","filters":[],"listItems":[],"multiselect":false,"name":"match_specs","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"reward_type","filters":[],"listItems":[],"multiselect":false,"name":"reward_type","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"reward_amount","filters":[],"listItems":[],"multiselect":false,"name":"reward_amount","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

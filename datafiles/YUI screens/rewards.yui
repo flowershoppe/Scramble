@@ -15,9 +15,11 @@ root:
     - type: panel
       alignment: center
       canvas:
-        center: true
+        top: 275
+        left: 
       layout: horizontal
       background: ~yui_panel_bg
+      spacing: 25
       elements: @array_rewards
       template:
         type: image

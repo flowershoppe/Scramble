@@ -2,9 +2,10 @@
 
 rewarding = true;
 size = sprite_get_width(spLetterTile);
-width = size * (reward_count - 1);
+width = (size + buffer) * (reward_count - 1);
 x_loc = (room_width / 2) - (width / 2);
-y_loc = room_height / 2;
+y_loc = (room_height / 2) + 50;
+
 
 var _i = 0;
 var _x_loc = x_loc;
@@ -55,7 +56,7 @@ while(_i < _reward_count)
 		break;
 		
 		case oCharm:
-			//if play has all charms, exit
+			//if player has all charms, exit
 			if(array_length(global.charms) == array_length(oCharmManager.charms)){exit;}
 			
 			//randomly select a charm until an unowned one is chosen
@@ -70,7 +71,7 @@ while(_i < _reward_count)
 	
 	array_push(array_rewards, _reward);
 	
-	_x_loc += size;
+	_x_loc = _x_loc + buffer + size;
 	_i++;
 }
 
