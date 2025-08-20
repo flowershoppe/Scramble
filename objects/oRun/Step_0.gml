@@ -14,7 +14,7 @@ var _bool = false;
 
 with(yui_document)
 {
-	if(yui_file == "YUI screens/results.yui")
+	if(yui_file == "YUI screens/results.yub i")
 	{
 		_bool = true;	
 	}
