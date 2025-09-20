@@ -35,7 +35,7 @@ if(selectable and !global.paused)
 	position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), reward_type))
 	{
 		var _choice = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), reward_type).id;
-		if(_choice.visible == false){exit;}
+		if(!_choice.visible){exit;}
 		switch(reward_type)
 		{
 			case oTile:				

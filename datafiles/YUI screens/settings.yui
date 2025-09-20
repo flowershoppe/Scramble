@@ -33,7 +33,7 @@ root:
               elements:
                 - type: text
                   text: Game Resolution 
-                  text_style: title
+                  text_style: subtitle
                 - type: dropdown_menu
                   items: @resolution_items
                   selection_scope: @resolution_selector
@@ -46,7 +46,7 @@ root:
               elements:
                 - type: text          
                   text: Master Volume   
-                  text_style: title  
+                  text_style: subtitle  
                 - type: slider
                   min: 0
                   max: 100
@@ -61,7 +61,7 @@ root:
               elements:
                 - type: text          
                   text: Music Volume 
-                  text_style: title 
+                  text_style: subtitle 
                 - type: slider
                   min: 0
                   max: 100
@@ -76,7 +76,7 @@ root:
               elements:
                 - type: text
                   text: Sound Effects Volume  
-                  text_style: title
+                  text_style: subtitle
                 - type: slider
                   min: 0
                   max: 100
@@ -97,7 +97,7 @@ root:
           elements: 
             - type: text
               text: Keybinds
-              text_style: title
+              text_style: subtitle
             - type: panel
               layout: horizontal
               spacing: 20
@@ -140,6 +140,6 @@ root:
       content: 
         type: text        
         text: <= Back
-        text_style: title
+        text_style: subtitle
       border_thickness: 1
       on_click: @@ ~toggle_settings()

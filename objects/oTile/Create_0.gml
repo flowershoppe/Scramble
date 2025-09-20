@@ -26,3 +26,11 @@ receiver.add("match end", function()
 			persistent = false;	
 		}
 	});
+
+receiver.add("turn start", function()
+	{
+		if(temp)
+		{
+			instance_destroy();	
+		}
+	});

@@ -43,7 +43,8 @@ ds_map_add(global.letters, "_", 0);
 global.vowels = ["A", "E", "I", "O", "U"];
 global.consonants = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"];
 
-//Default Font
+//Tile
+global.tile_sprite = spLetterTile;
 global.tile_font_size = 40;
 global.tile_font_color = c_black;
 global.tile_font = font_add("CALADEA-REGULAR.TTF", global.tile_font_size, 
