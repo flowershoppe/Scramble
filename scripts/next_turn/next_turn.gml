@@ -11,7 +11,7 @@ function next_turn()
 	
 	//refill hand until full if bag has tiles
 	
-	add_tile_to_hand(_hand, oTilebag, _hand.size);	
+	add_tile_to_hand(_hand.size);	
 	
 	check_end_match();
 	

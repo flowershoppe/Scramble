@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"isgreater",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"isgreater",
+  "parent":{
+    "name":"Play",
+    "path":"folders/Scripts/Play.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

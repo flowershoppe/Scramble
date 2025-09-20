@@ -1,4 +1,4 @@
-if(!array_contains(oCharmManager.charms, id) and room == rResults)
+if(!array_contains(oCharmManager.charms, id))
 {
 	draw_self();
 }

@@ -4,7 +4,7 @@ match_spelled_words = [];
 turn_spelled_words	= [];
 words_tiles = [];
 
-money = 0; 
+money = 9999; 
 
 letter_point_bonus = 0;
 letter_mult_bonus = 1;

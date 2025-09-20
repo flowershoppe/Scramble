@@ -8,7 +8,7 @@ root:
   size: stretch
   background: ~yui_panel_bg
   padding: 10
-  spacing: 250
+  spacing: 245
   elements:
     - type: button
       size: {w: 32, h: 32}

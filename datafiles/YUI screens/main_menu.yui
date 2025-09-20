@@ -19,7 +19,7 @@ root:
           content: 
             type: text
             text: New Run
-            text_style: title       
+            text_style: subtitle       
           border_thickness: 1
           on_click: @@ ~new_run()
 
@@ -27,7 +27,7 @@ root:
           content: 
             type: text
             text: Load Run
-            text_style: title       
+            text_style: subtitle       
           border_thickness: 1
           on_click: @@ ~load_game()
 
@@ -35,7 +35,7 @@ root:
           content: 
             type: text
             text: Options
-            text_style: title        
+            text_style: subtitle        
           border_thickness: 1
           on_click: @@ ~toggle_settings()
   
@@ -43,6 +43,6 @@ root:
           content: 
             type: text
             text: Stats
-            text_style: title        
+            text_style: subtitle        
           border_thickness: 1
           on_click: @@ ~toggle_stats()
