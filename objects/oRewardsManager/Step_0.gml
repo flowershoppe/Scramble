@@ -1,11 +1,3 @@
-//delay selectability of rewards
-if(rewarding and !selectable and alarm_get(1) == -1)
-{
-	alarm_set(1, 60);	
-}
-//failsafe
-if(!rewarding){selectable = false;}
-
 //check for collision with info bar
 var _yui = noone;
 with(yui_document)
@@ -20,47 +12,19 @@ if(_yui != noone)
 	var _bool = position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), _yui)
 }
 
-//click on reward
-if(room == rResults and (input_check_pressed("confirm") or input_mouse_check_pressed(mb_left))
-	and !rewarding and !_bool and !global.paused)
-{		
-	//go to rewards
-	reward(oOpponent.reward_amount, oOpponent.reward_type);
-	instance_destroy(oOpponent);
-} 
-
-if(selectable and !global.paused)
-{
-	if(input_mouse_check_released(mb_left) and 
-	position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), reward_type))
-	{
-		var _choice = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), reward_type).id;
-		if(!_choice.visible){exit;}
-		switch(reward_type)
-		{
-			case oTile:				
-				add_tile_to_bag(_choice.letter, _choice.pointvalue, 1, true);	
-			break;
-			
-			case oCharm:
-				add_charm(_choice.object_index);
-			break;
-		}
-
-		oRun.current_level.active = false;
-		oRun.current_level = noone;
-		room_goto(rMap);
-		rewarding = false;
-		selectable = false;
-		array_rewards = [];
-		reward_type = noone;
-		//reset match manager and opponent
-		instance_destroy(oMatchManager);
-		instance_create_layer(0, 0, "Meta", oMatchManager);
-	}	
+//create rewards interface
+if(room == rResults and (input_check_pressed("confirm") or input_mouse_check_pressed(mb_left)) 
+	and !_bool and !global.paused and !rewarding)
+{	
+	//reward
+	event_user(0);
+		
+	instance_destroy(oOpponent);	
+	rewarding = true;
+	save_game();
 }
 
-//yui element
+//create rewards interface
 if(rewarding)
 {
 	var _bool = false;
@@ -72,13 +36,22 @@ if(rewarding)
 		}
 	}
 	if(_bool == false)
-	{
+	{		
 		instance_create_layer(0, 0, "UI", yui_document,
 		{
 			data_context : oRewardsManager,
-			yui_file : "YUI screens/rewards.yui",
-			x : x_loc,
-			y : y_loc
-		});	
+			yui_file : "YUI screens/rewards.yui"
+		});		
+	}	
+}
+
+if(array_length(array_rewards) < 1)
+{
+	with(oCharm)
+	{
+		if(!array_contains(oCharmManager.charms, id))
+		{
+			array_push(oRewardsManager.array_rewards, id);
+		}
 	}
 }

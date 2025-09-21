@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"reward",
+  "%Name":"get_reward",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"reward",
+  "name":"get_reward",
   "parent":{
     "name":"Flow",
     "path":"folders/Scripts/Flow.yy",
