@@ -180,6 +180,7 @@ function save_game()
 				y : y,
 				image_index : image_index,
 				image_alpha : image_alpha,
+				visible : visible,
 				data : data,
 				value : value,
 				description : description,
@@ -274,7 +275,6 @@ function save_game()
 				x : x,
 				y : y,
 				rewarding : rewarding,
-				reward_type : reward_type
 			}
 		}
 		array_push(_saveData, _saveEntity);

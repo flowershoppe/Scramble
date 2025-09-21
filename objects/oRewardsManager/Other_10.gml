@@ -1,11 +1,8 @@
 //reward
-
-rewarding = true;
 size = sprite_get_width(spLetterTile);
 width = (size + buffer) * (reward_count - 1);
 x_loc = (room_width / 2) - (width / 2);
 y_loc = (room_height / 2) + 50;
-
 
 var _i = 0;
 var _x_loc = x_loc;
@@ -14,12 +11,12 @@ var _vowels = global.vowels;
 var _consonants = global.consonants;
 var _letter = "";
 var _letters = [];
-var _reward_count = reward_count;
+var _reward_count = oOpponent.reward_amount;
 var _pointvalue = 0;
 
 while(_i < _reward_count)
 {
-	switch(reward_type)
+	switch(oOpponent.reward_type)
 	{
 		case oTile:
 			var _is_vowel = irandom_range(0, 1);
@@ -51,7 +48,8 @@ while(_i < _reward_count)
 			{
 				letter : _letter,
 				pointvalue : _pointvalue,
-				persistent : false
+				persistent : false,
+				visible : false
 			});
 		break;
 		
@@ -65,7 +63,7 @@ while(_i < _reward_count)
 			{
 				_reward = global.charms[irandom_range(0, array_length(global.charms) - 1)];
 			}
-			instance_create_layer(_x_loc, _y_loc, "UI", _reward, {persistent : false});
+			instance_create_layer(_x_loc, _y_loc, "UI", _reward, {persistent : false, visible : false});
 		break;
 	}
 	
@@ -74,5 +72,3 @@ while(_i < _reward_count)
 	_x_loc = _x_loc + buffer + size;
 	_i++;
 }
-
-save_game();

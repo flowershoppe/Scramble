@@ -86,7 +86,7 @@ root:
           content:
             type: text
             text: Continue
-          on_click: @@ ~room_goto(@map)
+          on_click: @@ ~room_goto(~rMap)
 
 
 
