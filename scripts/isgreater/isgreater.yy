@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"isgreater",
   "parent":{
-    "name":"Play",
-    "path":"folders/Scripts/Play.yy",
+    "name":"Admin",
+    "path":"folders/Scripts/Admin.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

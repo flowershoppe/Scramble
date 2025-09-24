@@ -48,7 +48,7 @@ root:
             type: panel
             layout: canvas
             size: 64
-            background: @spr
+            background: @@ ~oRun.tile_sprite
             events:
               on_click: @@ ~purchase(@id)
             elements:
@@ -62,7 +62,7 @@ root:
                 text: @pointvalue
                 canvas:
                   right: 2
-                color: @@ ~isGreater(@id) then red else black
+                color: @@ ~isGreater(@letter, @pointvalue) then red else black
         - type: panel
           padding: 10
           spacing: 20
@@ -85,7 +85,7 @@ root:
         - type: button
           content:
             type: text
-            text: Continue
+            text: To Map =>
           on_click: @@ ~room_goto(~rMap)
 
 

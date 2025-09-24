@@ -6,6 +6,9 @@ dist_standard(oTilebag);
 instance_create_layer(0, 0, "Meta", oCharmManager);
 instance_create_layer(0, 0, "Meta", oMatchManager);
 
+//generate shop
+with(oShop){event_user(0);}
+
 //initialize player and cursor
 instance_create_layer(0, 0, "Meta", oPlayer);		
 

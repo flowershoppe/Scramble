@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sin_oscillate",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sin_oscillate",
+  "parent":{
+    "name":"Admin",
+    "path":"folders/Scripts/Admin.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

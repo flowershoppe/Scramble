@@ -45,6 +45,7 @@ if(rewarding)
 	}	
 }
 
+//on load subroutine
 if(array_length(array_rewards) < 1)
 {
 	with(oCharm)
