@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"oMap",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"oMap",
   "overriddenProperties":[],
@@ -28,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spMap",
-    "path":"sprites/spMap/spMap.yy",
+    "name":"spCircuit",
+    "path":"sprites/spCircuit/spCircuit.yy",
   },
   "spriteMaskId":null,
   "visible":true,

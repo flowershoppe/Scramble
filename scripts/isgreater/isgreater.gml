@@ -1,4 +1,4 @@
-function isGreater(_id)
+function isGreater(_letter, _pointvalue)
 {
-	return _id.pointvalue > global.letters[? _id.letter];
+	return _pointvalue > global.letters[? _letter];
 }

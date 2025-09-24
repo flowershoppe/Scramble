@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"draw_sprite_solid_color",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"draw_sprite_solid_color",
+  "parent":{
+    "name":"Admin",
+    "path":"folders/Scripts/Admin.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,3 +1,4 @@
+tile_sprite = global.tile_sprite;
 if(!global.paused){time ++;}
 var _seconds = string(time div 60 mod 60)
 var _minutes = string(time div 3600 mod 60)

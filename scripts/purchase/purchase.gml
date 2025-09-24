@@ -9,7 +9,8 @@ function purchase(_id)
 		{
 			add_tile_to_bag(_id.letter, _id.pointvalue, 1, true);
 			_money -= oShop.price_tile;
-			array_delete(_tiles, array_get_index(_tiles, _id), 1);
+			array_delete(oShop.tile_specs, array_get_index(_tiles, _id), 1);
+			array_delete(_tiles, array_get_index(_tiles, _id), 1);			
 			instance_destroy(_id);
 		}
 	}
