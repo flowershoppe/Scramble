@@ -16,6 +16,7 @@ function get_reward(_id)
 		instance_destroy(_id);		
 	}
 	
+	oRewardsManager.rewarding = false;
 	oRun.current_level.active = false;
 	oRun.current_level = noone;
 	room_goto(rMap);

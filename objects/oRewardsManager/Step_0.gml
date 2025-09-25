@@ -40,13 +40,14 @@ if(rewarding)
 		instance_create_layer(0, 0, "UI", yui_document,
 		{
 			data_context : oRewardsManager,
-			yui_file : "YUI screens/rewards.yui"
+			yui_file : "YUI screens/rewards.yui",
+			persistent : false
 		});		
 	}	
 }
 
 //on load subroutine
-if(array_length(array_rewards) < 1)
+if(array_length(array_rewards) < 1 and room == rResults)
 {
 	with(oCharm)
 	{

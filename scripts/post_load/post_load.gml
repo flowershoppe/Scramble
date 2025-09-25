@@ -40,7 +40,7 @@ function post_load()
 		{
 			if(isininventory)
 			{
-				array_push(oCharmManager.charms, id);
+				oCharmManager.charms[array_get_index(oCharmManager.charms, -1)] = id;
 			}
 		}
 	
