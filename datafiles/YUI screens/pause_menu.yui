@@ -48,5 +48,5 @@ root:
           content:
             type: text
             text_style: subtitle
-            text: Back
+            text: Resume
           on_click: @@ ~toggle_pause()

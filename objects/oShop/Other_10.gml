@@ -12,7 +12,8 @@ var _x_loc = x_loc;
 for(var _i = 0; _i < tile_count; _i++)
 {
 	var _is_vowel = irandom_range(0, 1);
-	var _is_base_point = irandom_range(0, 1);
+	var _chance = 25;
+	var _roll = irandom_range(0, 100);
 	
 	//equal chance for vowel or consonant
 	if(_is_vowel)
@@ -27,7 +28,7 @@ for(var _i = 0; _i < tile_count; _i++)
 	//select random letter
 	_letter = _letters[irandom_range(0, array_length(_letters) - 1)];
 
-	if(_is_base_point)
+	if(_roll <= _chance)
 	{
 		_pointvalue = global.letters[? _letter];
 	}
