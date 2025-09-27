@@ -3,6 +3,9 @@ spr = spCress;
 //_board_w, _board_h, _point_min, _point_max, _turn_min, _turn_max
 match_specs = [8, 6, 100, -1, -1, 5];
 
+reward_type = oCharm;
+reward_amount = 5;
+
 dialogues =
 [
 	["[chr:Cress][ts:normal]This isn't working",

@@ -16,10 +16,19 @@ function get_reward(_id)
 		instance_destroy(_id);		
 	}
 	
+	if(room == rResults)
+	{
+		var _lvl = oRun.current_level.object_index;
+		_lvl.active = false;
+		if(_lvl == oLevel1){with(oLevel2){active = true;}
+	//	if(_lvl == oLevel2){with(oLevel3){active = true;}
+		}
+	}	
+	
 	oRewardsManager.rewarding = false;
-	oRun.current_level.active = false;
 	oRun.current_level = noone;
 	room_goto(rMap);
+	instance_destroy(oOpponent);
 	oRewardsManager.array_rewards = [];
 	//reset match manager and opponent
 	instance_destroy(oMatchManager);

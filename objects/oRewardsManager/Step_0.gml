@@ -18,8 +18,6 @@ if(room == rResults and (input_check_pressed("confirm") or input_mouse_check_pre
 {	
 	//reward
 	event_user(0);
-		
-	instance_destroy(oOpponent);	
 	rewarding = true;
 	save_game();
 }
@@ -30,19 +28,34 @@ if(rewarding)
 	var _bool = false;
 	with(yui_document)
 	{
-		if(yui_file == "YUI screens/rewards.yui")
+		if(yui_file == "YUI screens/charmrewards.yui" or yui_file == "YUI screens/tilerewards.yui")
 		{
 			_bool = true;
 		}
 	}
 	if(_bool == false)
-	{		
-		instance_create_layer(0, 0, "UI", yui_document,
+	{
+		switch(oOpponent.reward_type)
 		{
-			data_context : oRewardsManager,
-			yui_file : "YUI screens/rewards.yui",
-			persistent : false
-		});		
+			case oTile:
+				instance_create_layer(0, 0, "UI", yui_document,
+				{
+					data_context : oRewardsManager,
+					yui_file : "YUI screens/tilerewards.yui",
+					persistent : false
+				});			
+			break;
+			
+			case oCharm:
+				instance_create_layer(0, 0, "UI", yui_document,
+				{
+					data_context : oRewardsManager,
+					yui_file : "YUI screens/charmrewards.yui",
+					persistent : false
+				});		
+			break;
+		}
+
 	}	
 }
 

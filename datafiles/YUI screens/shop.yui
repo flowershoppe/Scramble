@@ -13,6 +13,23 @@ root:
   layout: canvas  
   elements:
     - type: panel
+      layout: horizontal
+      alignment: center
+      canvas:
+        top: 25
+      elements:
+        - type: panel
+          layout: vertical
+          alignment: { h: center }
+          elements:
+            - type: text
+              text: Welcome to Da Shop
+              text_style: subtitle
+            - type: text
+              text: The shop can be visited anytime between levels 
+            - type: text
+              text: and changes inventory between floors
+    - type: panel
       background: ~yui_panel_bg
       size: stretch
       elements: 
