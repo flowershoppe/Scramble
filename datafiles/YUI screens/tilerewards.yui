@@ -1,0 +1,65 @@
+id: tilerewards
+file_type: screen
+
+import:
+  - ../Templates/
+
+  - /YUI/Animations/transitions.yui
+  - /YUI/Widgets/
+
+root:
+  type: panel
+  layout: canvas 
+  elements:
+    - type: panel
+      alignment: center
+      layout: horizontal
+      canvas:
+        top: 350
+      elements:
+        - type: text
+          text: Select a Reward
+          text_style: title
+    - type: panel
+      alignment: center
+      canvas:
+        top: 275
+      layout: horizontal
+      background: ~yui_panel_bg
+      spacing: 25
+      elements: @array_rewards
+      template:
+        size: 64
+        type: image
+        sprite: @@ ~spShadow
+    - type: panel
+      theme: dark
+      alignment: center
+      layout: horizontal
+      spacing: 25
+      canvas:
+        top: 265
+      elements: @array_rewards
+      template:
+        type: panel
+        layout: canvas
+        size: 64
+        background: @@ ~oRun.tile_sprite
+        events:
+          on_click: @@ ~get_reward(@id)
+        elements:
+          - type: text
+            alignment: center
+            canvas:
+              bottom: 5
+            text: @letter
+            text_style: title
+          - type: text
+            text: @pointvalue
+            canvas:
+              right: 2
+            color: @@ ~isGreater(@letter, @pointvalue) then red else black
+
+
+
+        

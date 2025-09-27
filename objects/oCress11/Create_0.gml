@@ -14,4 +14,4 @@ dialogues =
 
 	["[chr:Cress]You're doing better than I thought you would be.",
 	"[method:show_results]"]
-]
+];

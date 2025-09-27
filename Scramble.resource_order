@@ -389,6 +389,7 @@
     {"name":"draw_sprite_solid_color","order":11,"path":"scripts/draw_sprite_solid_color/draw_sprite_solid_color.yy",},
     {"name":"exchange_tiles","order":7,"path":"scripts/exchange_tiles/exchange_tiles.yy",},
     {"name":"game_over","order":8,"path":"scripts/game_over/game_over.yy",},
+    {"name":"gen_board","order":11,"path":"scripts/gen_board/gen_board.yy",},
     {"name":"get_reward","order":10,"path":"scripts/get_reward/get_reward.yy",},
     {"name":"GMDictionary_exceptions","order":1,"path":"scripts/GMDictionary_exceptions/GMDictionary_exceptions.yy",},
     {"name":"goto_mainmenu","order":6,"path":"scripts/goto_mainmenu/goto_mainmenu.yy",},

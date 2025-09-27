@@ -18,3 +18,7 @@ if(input_check_pressed("special") and room == rGame)
 {	
 	exchange_tiles();	
 }
+if(input_keyboard_check_pressed(ord("H")))
+{
+	oMatchManager.total_points += 10;
+}

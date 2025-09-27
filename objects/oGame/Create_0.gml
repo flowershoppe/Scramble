@@ -184,7 +184,7 @@ oTMap];
 
 //Opponents
 //multiple tiers
-opponents_1 = [oCress13];
-opponents_2 = [oCress2];
+opponents_1 = [oCress11, oCress12, oCress13];
+opponents_2 = [oCress21];
 
 receiver = new Receiver();

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"gen_board",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"gen_board",
+  "parent":{
+    "name":"Flow",
+    "path":"folders/Scripts/Flow.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
