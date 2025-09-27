@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"match_start",
+  "%Name":"gen_specs",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"match_start",
+  "name":"gen_specs",
   "parent":{
-    "name":"Dialogue Scripts",
-    "path":"folders/Scripts/Dialogue Scripts.yy",
+    "name":"Flow",
+    "path":"folders/Scripts/Flow.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

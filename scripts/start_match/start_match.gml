@@ -1,45 +1,33 @@
-function start_match(_board_w, _board_h, _point_min, _point_max, _turn_min, _turn_max)
+function start_match()
 {		
+	var _lvl = oRun.current_level.object_index;
+	//UI
 	instance_create_layer(0, 0, "Meta", oMatchGUI);
-	var _o = oMatchManager;
-	
-	_o.point_min = _point_min;
-	_o.point_max = _point_max;	
-	_o.turn_min = _turn_min;
-	_o.turn_max = _turn_max;
-	_o.active = true;
-	
-	
-	//-----GAME ELEMENTS-----
+	instance_create_layer(0, 0, "YUI", yui_document, global.stMatchStats);	
+	instance_create_layer(0, 0, "YUI", yui_document, global.stMatchButtons);
+		
+	//-----GAME ELEMENTS-----	
 	var _hand = instance_create_layer(view_get_wport(0) / 2, 
-				view_get_hport(0) - (sprite_get_height(spPlank) / 2), 
+				view_get_hport(0) - (sprite_get_height(oRun.hand_sprite) / 2), 
 				"Hand", oPlayerHand,
 				{
-					size: 7
-				
-				});
+					size: 7				
+				});	
+	gen_specs(_lvl);
+	gen_board(_lvl);
 	
-	instance_create_layer(0, 0, "Board", oBoard, 
-	{
-		grid_width: _board_w,
-		grid_height: _board_h
-	});
-	
-	//UI
-	instance_create_layer(0, 0, "YUI", yui_document, global.stMatchStats);
-	
-	instance_create_layer(0, 0, "YUI", yui_document, global.stMatchButtons);
 	
 	oTilebag.yui_tiles = oTilebag.match_tiles;
 	array_copy(oTilebag.match_tiles, 0, oTilebag.tiles, 0, array_length(oTilebag.tiles));
 	add_tile_to_hand(_hand.size);
 	
 	//run custom code
-	with(oRun.current_level.opponent)
+	with(oOpponent)
 	{
 		event_user(0);
 	}
 	
+	oMatchManager.active = true
 	broadcast("turn start");
 	broadcast("match start");
 	save_game();

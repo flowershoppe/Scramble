@@ -44,6 +44,7 @@ global.vowels = ["A", "E", "I", "O", "U"];
 global.consonants = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"];
 
 //Tile
+global.hand_sprite = spPlank;
 global.tile_sprite = spLetterTile;
 global.tile_font_size = 40;
 global.tile_font_color = c_black;
@@ -184,7 +185,7 @@ oTMap];
 
 //Opponents
 //multiple tiers
-opponents_1 = [oCress11, oCress12, oCress13];
-opponents_2 = [oCress21];
+opponents_1 = [oCress1];
+opponents_2 = [oCress2];
 
 receiver = new Receiver();
