@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"oCress21",
+  "%Name":"oCress1",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oCress21",
+  "name":"oCress1",
   "overriddenProperties":[],
   "parent":{
-    "name":"Level 2",
-    "path":"folders/Objects/Characters/Level 2.yy",
+    "name":"Level 1",
+    "path":"folders/Objects/Characters/Level 1.yy",
   },
   "parentObjectId":{
     "name":"oOpponent",
