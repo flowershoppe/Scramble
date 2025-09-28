@@ -3,7 +3,7 @@ function gen_specs(_lvl)
 	switch(_lvl)
 	{
 		case oLevel1:
-			var _ran = irandom_range(1, 3);
+			var _ran = irandom_range(3, 3);
 			switch(_ran)
 			{
 				case 1:
@@ -13,7 +13,7 @@ function gen_specs(_lvl)
 					specs(-1, 10, 3, -1);
 				break;
 				case 3:
-					specs(10, 25, 3, 5);
+					specs(10, 25, 5, 5);
 				break;
 			}
 		break;
