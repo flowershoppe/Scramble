@@ -305,6 +305,7 @@
     {"$GMIncludedFile":"","%Name":"main_menu.yui","CopyToMask":-1,"filePath":"datafiles/YUI screens","name":"main_menu.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"match_buttons.yui","CopyToMask":-1,"filePath":"datafiles/YUI screens","name":"match_buttons.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"match_stats.yui","CopyToMask":-1,"filePath":"datafiles/YUI screens","name":"match_stats.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"norewards.yui","CopyToMask":-1,"filePath":"datafiles/YUI screens","name":"norewards.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"pause_menu.yui","CopyToMask":-1,"filePath":"datafiles/YUI screens","name":"pause_menu.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"results.yui","CopyToMask":-1,"filePath":"datafiles/YUI screens","name":"results.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"run_stats.yui","CopyToMask":-1,"filePath":"datafiles/YUI screens","name":"run_stats.yui","resourceType":"GMIncludedFile","resourceVersion":"2.0",},

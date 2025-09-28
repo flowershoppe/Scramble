@@ -3,22 +3,86 @@ function check_end_match()
 	//-----CHECK FOR VICTORY-----
 	with(oMatchManager)
 	{
-		//if player's total points exceed win con points
-		if(total_points >= point_min)
+		//win cons
+		#region
+		var _win = oMatchManager.victory;
+		var _p_min = false;
+		var _p_max = false;
+		var _t_min = false;
+		var _t_max = false;
+		
+		if(point_min != -1)
 		{
-			oMatchManager.victory = true;	
-			oMatchManager.active = false;
-			//match becomes inactive upon winning
+			if(total_points >= point_min)
+			{
+				_p_min = true;	
+			}
+			else{_p_min = false;}
 		}
-
+		else{_p_min = true;}
+		
+		if(point_max != -1)
+		{
+			if(total_points <= point_max)
+			{
+				_p_max = true	
+			}
+			else{_win = false;}
+		}
+		else{_p_max = true;}
+		
+		if(turn_min != -1)
+		{
+			if(turn_min <= turn)
+			{
+				_t_min = true;	
+			}
+			else{_t_min = false;}
+		}
+		else{_t_min = true;}
+		
+		if(turn_max != -1)
+		{
+			if(turn_max >= turn)
+			{
+				_t_max = true;	
+			}
+			else{_t_max = false;}
+		}
+		else{_t_max = true;}
+		
+		/*var _four_lose = false;
+		//all four cons
+		if(point_min != -1 and
+			point_max != -1 and
+			turn_min != -1 and
+			turn_max != -1)
+		{
+			if(point_min <= total_points and total_points <= point_max)
+			{
+				if(turn == turn_min)
+				{
+					_win = true;
+				}
+				else
+				{
+					_four_lose = true;
+				}
+			}
+			
+		}*/
+		
+		if(_p_min and _p_max and _t_min and _t_max)
+		{
+			_win = true;	
+		}
+		#endregion
 		//if a played tile exists on the win con location
 		with(oTile)
 		{
 			if(!grabbable and instance_place(x, y, oTileHolder).winspot == true)
 			{
-				oMatchManager.victory = true;
-				oMatchManager.active = false;
-				//match becomes inactive upon winning
+				_win = true;
 			}	
 		}
 
@@ -31,13 +95,17 @@ function check_end_match()
 		{
 			_cant_play = true;	
 		}
-
+	
+		if(_win)
+		{
+			oMatchManager.active = false;	
+		}
 		//lose match
-		if((turn_max <= turn and turn_max > -1) or	
-			(turn_min >= turn and _cant_play and turn_min > -1) or
-			(point_max <= total_points and point_max > -1) or
-			(point_min >= total_points and _cant_play and point_min > -1) or
-			(oMatchManager.victory == false and _cant_play))
+		if((turn_max < turn and turn_max > -1) or	
+			(turn_min > turn and _cant_play and turn_min > -1) or
+			(point_max < total_points and point_max > -1) or
+			(point_min > total_points and _cant_play and point_min > -1) or
+			(_win == false and _cant_play))
 		{
 			var _saveloc = "gamesave.save";
 			oMatchManager.active = false;
@@ -55,7 +123,7 @@ function check_end_match()
 		}
 		
 		//win match
-		if(oMatchManager.victory and !oMatchManager.loss)
+		if(_win and !oMatchManager.loss)
 		{		
 			with(yui_document)
 			{
@@ -77,5 +145,7 @@ function check_end_match()
 			//audio_stop_sound(global.music_game);
 			//audio_play_sound_on(global.emitterMS, global.music_victory, true, 100);
 		}
+		
+		oMatchManager.victory = _win;
 	}
 }
