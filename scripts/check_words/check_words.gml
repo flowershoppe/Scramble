@@ -172,7 +172,7 @@ function check_words()
 			var _letter = _player_words_tiles[_index][_array_index].letter;
 			_word = string_concat(_word, _letter);
 		}
-		if(!global.dictionary.check(string_lower(_word)))
+		if(!global.dictionary.check(string_lower(_word)) and !global.cheat)
 		{
 			array_push(_fake_words, _word);
 		}
@@ -187,7 +187,7 @@ function check_words()
 	}
 	
 	//display spelled/fake words
-	if(array_length(_fake_words) > 0)
+	if(array_length(_fake_words) > 0 and !global.cheat)
 	{
 		oMatchManager.print_message = "The following spelled words do not appear in the dictionary: " + 	"\n" + string(_fake_words);
 		return false;

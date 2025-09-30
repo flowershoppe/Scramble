@@ -36,7 +36,20 @@ if(mouse_check_button_pressed(mb_left))
 	//on board check
 	else if(place_meeting(x, y, oTile))
 	{
-		held_tile = instance_place(x, y, oTile);
+		var _list = ds_list_create();
+		var _num = instance_place_list(x, y, oTile, _list, true);
+		for(var _i = 0; _i < _num; _i++)
+		{
+			if(_list[| _i].on_board)
+			{
+				held_tile = _list[| _i];
+				break;
+			}
+			else
+			{
+				held_tile = noone;
+			}
+		}
 	}
 	else{ held_tile = noone; }
 

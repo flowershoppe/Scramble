@@ -165,31 +165,31 @@ function valid_play()
 	}	
 	#endregion	
 	
-	//first turn's play must cover a starting square
+	//play is valid if covering a start square
 	var _start = false;
-	if(oMatchManager.turn == 1)
+	var _holder = noone;
+	for(var i = 0; i < array_length(_placed_tiles); i++)
 	{
-		var _holder = noone;
-		for(var i = 0; i < array_length(_placed_tiles); i++)
+		with(_placed_tiles[i])
 		{
-			with(_placed_tiles[i])
-			{
-				_holder = instance_nearest(x, y, oTileHolder);	
-			}
+			_holder = instance_nearest(x, y, oTileHolder);	
+		}
 			
-			if(_holder.start_point == true)
-			{
-				_start = true;	
-			}
+		if(_holder.start_point == true)
+		{
+			_start = true;	
 		}
 	}
-	else
+	
+	//first turn requires covering start
+	if(oMatchManager.turn == 1 and !_start)
 	{
-		_start = true	
+		return false;
+		exit;
 	}
 	
-	if(_start and (_is_same_column or _is_same_row) and array_length(_placed_tiles) > 0 and
-		(_tile_adjacent == true or 
+	if((_is_same_column or _is_same_row) and array_length(_placed_tiles) > 0 and
+		(_tile_adjacent == true or (_start and array_length(_placed_tiles) > 0) or
 		(array_length(oPlayer.match_spelled_words) < 1 and array_length(_placed_tiles) > 1)) 
 		and _hole_between == false)
 	{		

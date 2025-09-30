@@ -20,5 +20,10 @@ if(input_check_pressed("special") and room == rGame)
 }
 if(input_keyboard_check_pressed(ord("H")))
 {
-	oMatchManager.total_points += 10;
+	global.cheat = true;
+	with(oLevel){active = true;}
+}
+if(input_keyboard_check_pressed(ord("I")))
+{
+	oMatchManager.total_points += 10;	
 }

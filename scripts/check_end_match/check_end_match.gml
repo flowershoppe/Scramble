@@ -72,19 +72,32 @@ function check_end_match()
 			
 		}*/
 		
-		if(_p_min and _p_max and _t_min and _t_max)
+		//if a played tile exists on the win con location
+		var _winspot = true;
+		with(oTileHolder)
+		{
+			if(winspot)
+			{
+				with(oTile)
+				{
+					if(!grabbable and instance_place(x, y, oTileHolder).winspot == true)
+					{
+						_winspot = true;
+						break;
+					}
+					else
+					{
+						_winspot = false;	
+					}
+				}
+			}
+		}
+		
+		if(_p_min and _p_max and _t_min and _t_max and _winspot)
 		{
 			_win = true;	
 		}
 		#endregion
-		//if a played tile exists on the win con location
-		with(oTile)
-		{
-			if(!grabbable and instance_place(x, y, oTileHolder).winspot == true)
-			{
-				_win = true;
-			}	
-		}
 
 		var _cant_play = false;
 		//tilebag empty, hand empty, no tiles placed this turn, and no held tile

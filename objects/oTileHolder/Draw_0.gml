@@ -24,8 +24,16 @@ if(owner == oBoard)
 	if(start_point)
 	{ draw_sprite(spStar, 0, x, y); }
 		
-	else
-	{	
-		draw_sprite(mult_spr, _subimg, x, y);
+	rot++;
+	
+	if(rot > 360){rot = 0;}
+	if(winspot)
+	{ 
+		draw_sprite_ext(spGoal, 0, x, y, 1, 1, rot, 5368891, 1);
+		draw_sprite_ext(spGoal, 0, x, y, 1, 1, rot * -1, 5368891, 1);
+		draw_sprite_ext(spGoal, 1, x, y, 1, 1, rot * 2, 5368891, 1);
 	}
+	
+	draw_sprite(mult_spr, _subimg, x, y);
+	
 }
