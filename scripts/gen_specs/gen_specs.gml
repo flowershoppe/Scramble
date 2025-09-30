@@ -17,6 +17,15 @@ function gen_specs(_lvl)
 				break;
 			}
 		break;
+		
+		case oLevel2:
+			var _ran = irandom_range(1, 1);
+			switch(_ran)
+			{
+				case 1:
+					specs(60, -1, -1, 6);
+			}
+		break;
 	}
 }
 

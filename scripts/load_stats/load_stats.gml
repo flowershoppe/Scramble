@@ -3,6 +3,10 @@ function load_stats()
 	if(file_exists("stats.save"))
 	{
 		var _buffer = buffer_load("stats.save");
+		if (buffer_get_size(_buffer) == 0) 
+		{
+			show_debug_message("local app data stats.save empty")
+		}
 		var _string = buffer_read(_buffer, buffer_string);
 		
 		buffer_delete(_buffer);

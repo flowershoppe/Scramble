@@ -1,4 +1,5 @@
 dialogue_setup();
+global.cheat = false;
 
 global.paused = false;
 //Instance

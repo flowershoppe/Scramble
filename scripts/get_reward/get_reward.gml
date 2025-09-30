@@ -23,9 +23,9 @@ function get_reward(_id)
 	{
 		var _lvl = oRun.current_level.object_index;
 		_lvl.active = false;
-		if(_lvl == oLevel1){with(oLevel2){active = true;}
-	//	if(_lvl == oLevel2){with(oLevel3){active = true;}
-		}
+		if(_lvl == oLevel1){with(oLevel2){active = true;}}
+		if(_lvl == oLevel2){with(oLevel3){active = true;}}
+		
 	}	
 	
 	oRewardsManager.rewarding = false;
