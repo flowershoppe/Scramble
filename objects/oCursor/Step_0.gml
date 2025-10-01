@@ -30,14 +30,28 @@ if(mouse_check_button_pressed(mb_left))
 	//in hand check
 	if(position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile))
 	{
-		held_tile = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile);
-		if(held_tile.on_board){ held_tile = noone; }
+		var _list = ds_list_create();
+		var _num = instance_place_list(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile, _list, true);
+		for(var _i = 0; _i < _num; _i++)
+		{
+			if(_list[| _i].in_hand)
+			{
+				held_tile = _list[| _i];
+				break;
+			}
+			else
+			{
+				held_tile = noone;
+			}
+		}
+		//held_tile = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile);
+		//if(held_tile.on_board){ held_tile = noone; }
 	}
 	//on board check
 	else if(place_meeting(x, y, oTile))
 	{
 		var _list = ds_list_create();
-		var _num = instance_place_list(x, y, oTile, _list, true);
+		var _num = instance_position_list(x, y, oTile, _list, true);
 		for(var _i = 0; _i < _num; _i++)
 		{
 			if(_list[| _i].on_board)
@@ -101,7 +115,7 @@ if(mouse_check_button_pressed(mb_left))
 
 //-----PLACE-----
 #region
-if(mouse_check_button_released(mb_left))
+if(!mouse_check_button(mb_left))
 {
 	if(held_tile == noone){exit;}
 	

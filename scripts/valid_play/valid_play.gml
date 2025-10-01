@@ -188,10 +188,9 @@ function valid_play()
 		exit;
 	}
 	
-	if((_is_same_column or _is_same_row) and array_length(_placed_tiles) > 0 and
-		(_tile_adjacent == true or (_start and array_length(_placed_tiles) > 0) or
-		(array_length(oPlayer.match_spelled_words) < 1 and array_length(_placed_tiles) > 1)) 
-		and _hole_between == false)
+	if((_is_same_column or _is_same_row) and !_hole_between and
+		(_tile_adjacent == true or 
+		(_start and array_length(_placed_tiles) > 0)))
 	{		
 		broadcast("valid play");
 		debug = "play is valid";
