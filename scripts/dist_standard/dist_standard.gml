@@ -34,7 +34,7 @@ function dist_standard(_tilebag)
 				_count = 1;
 				break;
 			case "E":
-				_count = 2;
+				_count = 20;
 				break;
 			case "F":
 				_count = 1;
@@ -43,7 +43,7 @@ function dist_standard(_tilebag)
 				_count = 1;
 				break;
 			case "H":
-				_count = 1;
+				_count = 10;
 				break;
 			case "I":
 				_count = 2;
@@ -76,7 +76,7 @@ function dist_standard(_tilebag)
 				_count = 1;
 				break;
 			case "S":
-				_count = 1;
+				_count = 10;
 				break;
 			case "T":
 				_count = 1;

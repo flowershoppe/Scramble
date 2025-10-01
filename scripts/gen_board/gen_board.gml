@@ -5,7 +5,7 @@ function gen_board(_lvl)
 		case oLevel1:
 		#region
 		//randomly select a lv1 gen
-			var _ran = irandom_range(1, 3);
+			var _ran = irandom_range(4, 4);
 			switch(_ran)
 			{
 				case 1:					
@@ -28,6 +28,20 @@ function gen_board(_lvl)
 					_array[4, 8].wmult = 2;
 					_array[0, 2].lmult = 2;
 					_array[4, 2].lmult = 2;	
+					
+					var _ran = irandom_range(1, 3);
+					switch(_ran)
+					{
+						case 1:
+							specs(25, -1, -1, 5);
+						break;
+						case 2:
+							specs(-1, 10, 3, -1);
+						break;
+						case 3:
+							specs(10, 25, 5, 5);
+						break;
+					}
 				break;
 				
 				case 2:
@@ -50,6 +64,20 @@ function gen_board(_lvl)
 					_array[4, 3].wmult = 2;
 					_array[8, 4].wmult = 2;
 					_array[0, 4].wmult = 2;
+					
+					var _ran = irandom_range(1, 3);
+					switch(_ran)
+					{
+						case 1:
+							specs(25, -1, -1, 5);
+						break;
+						case 2:
+							specs(-1, 10, 3, -1);
+						break;
+						case 3:
+							specs(10, 25, 5, 5);
+						break;
+					}
 				break;
 				
 				case 3:
@@ -68,6 +96,34 @@ function gen_board(_lvl)
 					_array[5, 5].wmult = 2;
 					_array[0, 3].lmult = 2;
 					_array[6, 3].lmult = 2;
+					
+					var _ran = irandom_range(1, 3);
+					switch(_ran)
+					{
+						case 1:
+							specs(25, -1, -1, 5);
+						break;
+						case 2:
+							specs(-1, 10, 3, -1);
+						break;
+						case 3:
+							specs(10, 25, 5, 5);
+						break;
+					}
+				break;
+				
+				case 4:
+					instance_create_layer(0, 0, "Board", oBoard, 
+					{
+						grid_width: 10,
+						grid_height: 4
+					});
+					var _array = oBoard.holders;
+					
+					_array[0, 0].start_point = true;
+					_array[9, 3].winspot = true;
+					
+					specs(-1, -1, -1, 5);
 				break;
 			}
 		break;
@@ -144,3 +200,14 @@ function gen_board(_lvl)
 	}
 
 }
+
+
+		
+/*
+			var _ran = irandom_range(1, 1);
+			switch(_ran)
+			{
+				case 1:
+					specs(60, -1, -1, 6);
+			}
+

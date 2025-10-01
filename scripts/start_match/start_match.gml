@@ -13,7 +13,6 @@ function start_match()
 				{
 					size: 7				
 				});	
-	gen_specs(_lvl);
 	gen_board(_lvl);
 	
 	

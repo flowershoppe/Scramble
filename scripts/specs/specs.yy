@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"gen_specs",
+  "%Name":"specs",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"gen_specs",
+  "name":"specs",
   "parent":{
     "name":"Flow",
     "path":"folders/Scripts/Flow.yy",
