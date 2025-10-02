@@ -16,10 +16,10 @@ function reset_tilebag()
 		x = 0;
 		y = 0;
 		
-		//destroy any tiles that aren't supposed to be in the bag
+		//destroy any tiles that aren't in the bag
 		if(!array_contains(_array, id))
 		{
-			instance_destroy(id);	
+			instance_destroy(id);
 		}
 	}
 }
