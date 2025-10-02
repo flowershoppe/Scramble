@@ -5,19 +5,24 @@ function next_turn()
 	
 	//reset turn-dependent variables
 	_player.turn_spelled_words = [];
-	_player.placed_tiles = [];
-
-	oMatchManager.turn++;
+	_player.placed_tiles = [];	
 	
 	//refill hand until full if bag has tiles
 	
+
+	
+	if(check_end_match())
+	{
+		exit;	
+	}
+	
 	add_tile_to_hand(_hand.size);	
 	
-	check_end_match();
+	oMatchManager.turn++;
 	
 	if(!oMatchManager.loss and !oMatchManager.victory)
 	{
-		save_game();
 		broadcast("turn start");
+		save_game();
 	}
 }
