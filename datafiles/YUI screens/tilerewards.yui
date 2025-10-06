@@ -19,7 +19,7 @@ root:
       elements:
         - type: text
           text: Select a Reward
-          text_style: title
+          text_style: subtitle
     - type: panel
       alignment: center
       canvas:

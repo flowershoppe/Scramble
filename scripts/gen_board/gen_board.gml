@@ -5,7 +5,7 @@ function gen_board(_lvl)
 		case oLevel1:
 		#region
 		//randomly select a lv1 gen
-			var _ran = irandom_range(1, 1);
+			var _ran = irandom_range(1, 4);
 			switch(_ran)
 			{
 				case 1:					
@@ -29,7 +29,7 @@ function gen_board(_lvl)
 					_array[0, 2].lmult = 2;
 					_array[4, 2].lmult = 2;	
 					
-					var _ran = irandom_range(3, 3);
+					var _ran = irandom_range(1, 3);
 					switch(_ran)
 					{
 						case 1:
@@ -112,19 +112,22 @@ function gen_board(_lvl)
 					}
 				break;
 				
+				//PATH
 				case 4:
+				#region
 					instance_create_layer(0, 0, "Board", oBoard, 
 					{
-						grid_width: 10,
+						grid_width: 8,
 						grid_height: 4
 					});
 					var _array = oBoard.holders;
 					
 					_array[0, 0].start_point = true;
-					_array[9, 3].winspot = true;
+					_array[7, 3].winspot = true;
 					
 					specs(-1, -1, -1, 7);
 				break;
+				#endregion
 			}
 		break;
 		#endregion
@@ -132,10 +135,12 @@ function gen_board(_lvl)
 		case oLevel2:
 		
 			//randomly select a lv2 gen
-			var _ran = irandom_range(3, 3);
+			var _ran = irandom_range(1, 4);
 			switch(_ran)
 			{
+				//DIVIDE
 				case 1:
+				#region
 					instance_create_layer(0, 0, "Board", oBoard, 
 					{
 						grid_width: 9,
@@ -172,12 +177,15 @@ function gen_board(_lvl)
 						break;
 						
 						case 3:
-							specs(40, 50, 5, 5);
+							specs(40, 50, 6, 6);
 						break;
 					}
 				break;
+				#endregion
 				
+				//HOLE PUNCH
 				case 2:
+				#region
 					instance_create_layer(0, 0, "Board", oBoard, 
 					{
 						grid_width: 10,
@@ -206,7 +214,7 @@ function gen_board(_lvl)
 					remove_holder(3, 5);
 					
 					_array[9, 9].winspot = true;
-					var _ran = irandom_range(1, 1);
+					var _ran = irandom_range(1, 3);
 					switch(_ran)
 					{
 						case 1:
@@ -214,13 +222,16 @@ function gen_board(_lvl)
 						break;
 						
 						case 2:
-							specs(-1, 20, 8, -1);
+							specs(-1, 30, 8, -1);
 						break;
 					}
 					
 				break;
+				#endregion
 				
+				//HOURGLASS
 				case 3:
+				#region
 					instance_create_layer(0, 0, "Board", oBoard, 
 					{
 						grid_width: 9,
@@ -279,7 +290,141 @@ function gen_board(_lvl)
 					_array[6, 6].lmult = 2;
 					_array[8, 8].winspot = true;
 					
-					var _ran = irandom_range(1, 1);
+					var _ran = irandom_range(1, 2);
+					switch(_ran)
+					{
+						case 1:
+							specs(50, -1, -1, 8);
+						break;
+						
+						case 2:
+							specs(-1, 20, 5, -1);
+						break;
+					}
+				break;
+				#endregion
+				
+				//CROSS
+				case 4:
+				#region
+					instance_create_layer(0, 0, "Board", oBoard, 
+					{
+						grid_width: 11,
+						grid_height: 11
+					});
+					var _array = oBoard.holders;
+					
+					_array[5, 5].start_point = true;
+					
+					_array[4, 4].lmult = 2;
+					_array[4, 6].lmult = 2;
+					_array[6, 4].lmult = 2;
+					_array[6, 6].lmult = 2;
+					
+					_array[5, 1].wmult = 2;
+					_array[4, 0].lmult = 3;
+					_array[6, 0].lmult = 3;
+					_array[4, 2].lmult = 3;
+					_array[6, 2].lmult = 3;
+					
+					_array[1, 5].wmult = 2;
+					_array[0, 4].lmult = 3;
+					_array[0, 6].lmult = 3;
+					_array[2, 4].lmult = 3;
+					_array[2, 6].lmult = 3;
+					
+					_array[9, 5].wmult = 2;
+					_array[10, 4].lmult = 3;
+					_array[10, 6].lmult = 3;
+					_array[8, 4].lmult = 3;
+					_array[8, 6].lmult = 3;
+					
+					_array[5, 9].wmult = 2;
+					_array[4, 10].lmult = 3;
+					_array[6, 10].lmult = 3;
+					_array[4, 8].lmult = 3;
+					_array[6, 8].lmult = 3;
+					
+					remove_holder(0, 0);
+					remove_holder(0, 1);
+					remove_holder(0, 2);
+					remove_holder(0, 3);
+					remove_holder(1, 0);
+					remove_holder(1, 1);
+					remove_holder(1, 2);
+					remove_holder(1, 3);
+					remove_holder(2, 0);
+					remove_holder(2, 1);
+					remove_holder(2, 2);
+					remove_holder(2, 3);
+					remove_holder(3, 0);
+					remove_holder(3, 1);
+					remove_holder(3, 2);
+					remove_holder(3, 3);
+					
+					remove_holder(7, 0);
+					remove_holder(7, 1);
+					remove_holder(7, 2);
+					remove_holder(7, 3);
+					remove_holder(8, 0);
+					remove_holder(8, 1);
+					remove_holder(8, 2);
+					remove_holder(8, 3);
+					remove_holder(9, 0);
+					remove_holder(9, 1);
+					remove_holder(9, 2);
+					remove_holder(9, 3);
+					remove_holder(10, 0);
+					remove_holder(10, 1);
+					remove_holder(10, 2);
+					remove_holder(10, 3);
+					
+					remove_holder(0, 10);
+					remove_holder(1, 10);
+					remove_holder(2, 10);
+					remove_holder(3, 10);
+					remove_holder(0, 9);
+					remove_holder(1, 9);
+					remove_holder(2, 9);
+					remove_holder(3, 9);
+					remove_holder(0, 8);
+					remove_holder(1, 8);
+					remove_holder(2, 8);
+					remove_holder(3, 8);
+					remove_holder(0, 7);
+					remove_holder(1, 7);
+					remove_holder(2, 7);
+					remove_holder(3, 7);
+					remove_holder(3, 6);
+					remove_holder(3, 3);
+					
+					remove_holder(10, 10);
+					remove_holder(9, 10);
+					remove_holder(8, 10);
+					remove_holder(7, 10);
+					remove_holder(10, 9);
+					remove_holder(9, 9);
+					remove_holder(8, 9);
+					remove_holder(7, 9);
+					remove_holder(10, 8);
+					remove_holder(9, 8);
+					remove_holder(8, 8);
+					remove_holder(7, 8);
+					remove_holder(10, 7);
+					remove_holder(9, 7);
+					remove_holder(8, 7);
+					remove_holder(7, 7);
+	
+					remove_holder(6, 7);
+					remove_holder(4, 7);
+					remove_holder(3, 4);
+					remove_holder(6, 3);
+					remove_holder(7, 6);
+					remove_holder(7, 4);
+					remove_holder(4, 3);
+					remove_holder(3, 6);
+					
+					var _ran = irandom_range(1, 2);
 					switch(_ran)
 					{
 						case 1:
@@ -290,7 +435,9 @@ function gen_board(_lvl)
 							specs(-1, 20, 8, -1);
 						break;
 					}
+					
 				break;
+				#endregion
 			}		
 		break;
 	}

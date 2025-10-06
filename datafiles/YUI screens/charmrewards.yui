@@ -13,6 +13,15 @@ root:
   elements:
     - type: panel
       alignment: center
+      layout: horizontal
+      canvas:
+        top: 350
+      elements:
+        - type: text
+          text: Select a Reward
+          text_style: subtitle
+    - type: panel
+      alignment: center
       canvas:
         top: 275
       layout: horizontal

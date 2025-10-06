@@ -677,6 +677,7 @@
     {"name":"reset_tilebag","order":6,"path":"scripts/reset_tilebag/reset_tilebag.yy",},
     {"name":"resolution_select","order":1,"path":"scripts/resolution_select/resolution_select.yy",},
     {"name":"return_tiles","order":5,"path":"scripts/return_tiles/return_tiles.yy",},
+    {"name":"reward_money","order":13,"path":"scripts/reward_money/reward_money.yy",},
     {"name":"room_change","order":4,"path":"scripts/room_change/room_change.yy",},
     {"name":"save_game","order":4,"path":"scripts/save_game/save_game.yy",},
     {"name":"save_settings","order":2,"path":"scripts/save_settings/save_settings.yy",},
