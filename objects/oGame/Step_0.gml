@@ -22,6 +22,7 @@ if(input_keyboard_check_pressed(ord("H")))
 {
 	global.cheat = true;
 	with(oLevel){active = true;}
+	oPlayer.money = 9999;
 }
 if(input_keyboard_check_pressed(ord("I")))
 {

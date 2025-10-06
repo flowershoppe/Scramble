@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"reward_money",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"reward_money",
+  "parent":{
+    "name":"Flow",
+    "path":"folders/Scripts/Flow.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

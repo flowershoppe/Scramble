@@ -47,6 +47,7 @@ if(rewarding)
 		}
 		else
 		{
+			reward_money();
 			switch(oOpponent.reward_type)
 			{
 				case oTile:
