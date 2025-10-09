@@ -440,6 +440,65 @@ function gen_board(_lvl)
 				#endregion
 			}		
 		break;
+		
+		case oLevel3:
+		
+			//randomly select a lv3 gen
+			var _ran = irandom_range(1, 1);
+			switch(_ran)
+			{
+				//EYE
+				case 1: 
+					instance_create_layer(0, 0, "Board", oBoard, 
+					{
+						grid_width: 11,
+						grid_height: 7
+					});
+					var _array = oBoard.holders;
+					
+					_array[5, 2].start_point = true;
+					_array[5, 4].winspot = true;
+					
+					_array[0, 3].wmult = 2;
+					_array[10, 3].wmult = 2;
+					_array[5, 0].lmult = 2;
+					_array[5, 6].lmult = 3;
+					
+					remove_holder(0, 0);
+					remove_holder(0, 1);
+					remove_holder(1, 0);
+					remove_holder(10, 0);
+					remove_holder(9, 0);
+					remove_holder(10, 1);
+					remove_holder(0, 6);
+					remove_holder(0, 5);
+					remove_holder(1, 6);
+					remove_holder(10, 6);
+					remove_holder(10, 5);
+					remove_holder(9, 6);
+					remove_holder(3, 3);
+					remove_holder(4, 3);
+					remove_holder(5, 3);
+					remove_holder(6, 3);
+					remove_holder(7, 3);
+					
+					var _ran = irandom_range(1, 2);
+					switch(_ran)
+					{
+						case 1:
+							specs(60, -1, -1, 7);
+						break;
+						
+						case 2:
+							specs(-1, -1, -1, 4);
+						break;
+						
+						case 3:
+							specs(-1, 25, 4, -1);
+						break;
+					}
+				break;
+			}
 	}
 
 }
