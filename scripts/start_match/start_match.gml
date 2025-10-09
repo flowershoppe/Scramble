@@ -1,6 +1,13 @@
 function start_match()
 {		
-	var _lvl = oRun.current_level.object_index;
+	var _lvl;
+	for(var _i = 0; _i < array_length(oRun.levels); _i++)
+	{	
+		with(oRun.levels[_i])
+		{
+			if(active){_lvl = object_index; break;}	
+		}
+	}
 	//UI
 	instance_create_layer(0, 0, "Meta", oMatchGUI);
 	instance_create_layer(0, 0, "YUI", yui_document, global.stMatchStats);	

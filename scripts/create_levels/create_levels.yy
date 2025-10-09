@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"create_levels",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"create_levels",
+  "parent":{
+    "name":"Flow",
+    "path":"folders/Scripts/Flow.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -9,8 +9,6 @@ function next_turn()
 	
 	//refill hand until full if bag has tiles
 	
-
-	
 	if(check_end_match())
 	{
 		exit;	

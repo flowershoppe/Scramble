@@ -48,25 +48,25 @@ if(rewarding)
 		else
 		{
 			reward_money();
-			switch(oOpponent.reward_type)
+			//give reward based on current level in stage
+			//if not last level of stage...
+			if(!oRun.levels[array_length(oRun.levels) - 1].active)
 			{
-				case oTile:
-					instance_create_layer(0, 0, "UI", yui_document,
-					{
-						data_context : oRewardsManager,
-						yui_file : "YUI screens/tilerewards.yui",
-						persistent : false
-					});			
-				break;
-			
-				case oCharm:
-					instance_create_layer(0, 0, "UI", yui_document,
-					{
-						data_context : oRewardsManager,
-						yui_file : "YUI screens/charmrewards.yui",
-						persistent : false
-					});		
-				break;
+				instance_create_layer(0, 0, "UI", yui_document,
+				{
+					data_context : oRewardsManager,
+					yui_file : "YUI screens/tilerewards.yui",
+					persistent : false
+				});			
+			}
+			else
+			{
+				instance_create_layer(0, 0, "UI", yui_document,
+				{
+					data_context : oRewardsManager,
+					yui_file : "YUI screens/charmrewards.yui",
+					persistent : false
+				});	
 			}
 		}
 	}	

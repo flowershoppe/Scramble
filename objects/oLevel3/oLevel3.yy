@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"oLevel3",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"oLevel3",
   "overriddenProperties":[],
@@ -9,8 +11,11 @@
     "name":"Game Elements",
     "path":"folders/Objects/Game Elements.yy",
   },
-  "parentObjectId":null,
-  "persistent":false,
+  "parentObjectId":{
+    "name":"oLevel",
+    "path":"objects/oLevel/oLevel.yy",
+  },
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -27,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spTMap",
+    "path":"sprites/spTMap/spTMap.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
