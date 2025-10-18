@@ -8,15 +8,15 @@ function next_turn()
 	_player.placed_tiles = [];	
 	
 	//refill hand until full if bag has tiles
+
+	oMatchManager.turn++;
 	
 	if(check_end_match())
 	{
 		exit;	
 	}
 	
-	add_tile_to_hand(_hand.size);	
-	
-	oMatchManager.turn++;
+	add_tile_to_hand(_hand.size);
 	
 	if(!oMatchManager.loss and !oMatchManager.victory)
 	{

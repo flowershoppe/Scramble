@@ -43,6 +43,11 @@ function post_load()
 				oCharmManager.charms[array_get_index(oCharmManager.charms, -1)] = id;
 			}
 		}
+		
+		with(oLevel)
+		{
+			array_push(oRun.levels, object_index);	
+		}
 	
 		with(oTile)
 		{

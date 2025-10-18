@@ -43,6 +43,13 @@ root:
           layout: horizontal 
           elements:
             - type: text
+              text: "Level Bonus | "
+            - type: text
+              text: @l_bonus
+        - type: panel
+          layout: horizontal 
+          elements:
+            - type: text
               text: "Total Money Reward | "
             - type: text
-              text: @t_bonus + @p_bonus + @base_money_reward
+              text: @total_bonus

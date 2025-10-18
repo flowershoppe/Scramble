@@ -35,8 +35,23 @@ function exchange_tiles()
 			_tile.x = 0;
 			_tile.y = 0;
 		
+		}
+		//do not increment exchange count on turn 1 if the hand has no vowels or Y's
+		var _no_vowels = 0;
+		if(oMatchManager.turn == 1)
+		{
+			with(oTile)
+			{				
+				if(!array_contains(global.vowels, letter) and in_hand and letter != "Y")
+				{
+					_no_vowels++;
+				}	
+			}
+		}
+		if(_no_vowels < oPlayerHand.size)
+		{
+			oMatchManager.exchange_count++;
 		}		
-		oMatchManager.exchange_count++;
 		next_turn();
 		oPlayer.exchanged_tiles = _array;
 		broadcast("exchange");

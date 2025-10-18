@@ -7,7 +7,7 @@ largest_play = 0;
 money_earned = 0;
 levels_completed = 0;
 levels = [];
-stage = 0;
+stage = 1;
 
 receiver = new Receiver();
 

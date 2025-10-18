@@ -7,6 +7,9 @@ var _letter = "";
 var _letters = [];
 var _pointvalue = 0;
 
+tile_specs = [];
+charms = [];
+
 var _x_loc = x_loc;
 //populate tiles
 for(var _i = 0; _i < tile_count; _i++)

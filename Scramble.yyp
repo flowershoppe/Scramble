@@ -1162,6 +1162,7 @@
     {"id":{"name":"spCheese","path":"sprites/spCheese/spCheese.yy",},},
     {"id":{"name":"spChip","path":"sprites/spChip/spChip.yy",},},
     {"id":{"name":"spCircuit","path":"sprites/spCircuit/spCircuit.yy",},},
+    {"id":{"name":"spCircuit2","path":"sprites/spCircuit2/spCircuit2.yy",},},
     {"id":{"name":"spCMask","path":"sprites/spCMask/spCMask.yy",},},
     {"id":{"name":"spCog","path":"sprites/spCog/spCog.yy",},},
     {"id":{"name":"spCount","path":"sprites/spCount/spCount.yy",},},

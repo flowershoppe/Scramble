@@ -41,7 +41,7 @@ function check_end_match()
 		
 		if(_tminactive)
 		{
-			if(turn_min <= turn)
+			if(turn - 1 >= turn_min)
 			{
 				_t_min = true;	
 			}
@@ -51,7 +51,7 @@ function check_end_match()
 		
 		if(_tmaxactive)
 		{
-			if(turn_max >= turn)
+			if(turn - 1 <= turn_max)
 			{
 				_t_max = true;	
 			}
@@ -60,7 +60,7 @@ function check_end_match()
 		else{_t_max = true;}
 		
 		var _targetturn = false;
-		if(_tmaxactive and _tminactive and ((turn + 1) == turn_max))
+		if(_tmaxactive and _tminactive and ((turn) == turn_max))
 		{
 			if(total_points >= point_min and total_points <= point_max)
 			{
@@ -116,7 +116,8 @@ function check_end_match()
 		
 		if(_p_min and _p_max and (_targetturn or (_t_min and _t_max)) and _winspot)
 		{
-			_win = true;	
+			_win = true;
+			if(!_targetturn){turn -= 1;}
 		}
 		#endregion
 /*

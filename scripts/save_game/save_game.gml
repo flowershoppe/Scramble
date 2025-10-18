@@ -15,6 +15,7 @@ function save_game()
 				y : y,
 				room_name : room,
 				time : time,
+				stage: stage,
 				money_earned : money_earned,
 				levels_completed : levels_completed,
 			}

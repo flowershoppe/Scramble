@@ -898,6 +898,7 @@
     {"name":"spCheese","order":8,"path":"sprites/spCheese/spCheese.yy",},
     {"name":"spChip","order":6,"path":"sprites/spChip/spChip.yy",},
     {"name":"spCircuit","order":29,"path":"sprites/spCircuit/spCircuit.yy",},
+    {"name":"spCircuit2","order":35,"path":"sprites/spCircuit2/spCircuit2.yy",},
     {"name":"spCMask","order":13,"path":"sprites/spCMask/spCMask.yy",},
     {"name":"spCog","order":19,"path":"sprites/spCog/spCog.yy",},
     {"name":"spCount","order":13,"path":"sprites/spCount/spCount.yy",},
