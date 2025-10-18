@@ -4,6 +4,7 @@ base_money_reward = 5;
 total_bonus = 0;
 t_bonus = 0;
 p_bonus = 0;
+l_bonus = 0;
 
 reward_count = 0;
 array_rewards = [];

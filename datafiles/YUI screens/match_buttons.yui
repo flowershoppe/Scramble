@@ -18,7 +18,7 @@ root:
       content: 
         type: text
         text: Submit Play
-        text_style: body       
+        text_style: body
       border_thickness: 1
       on_click: @@ ~submit_play()
 
@@ -26,7 +26,7 @@ root:
       content: 
         type: text
         text: Return Tiles
-        text_style: body    
+        text_style: body
       border_thickness: 1
       on_click: @@ ~return_tiles()
 
@@ -34,7 +34,8 @@ root:
       content: 
         type: text
         text: Exchange Tiles
-        text_style: body    
+        text_style: body
+      border_color: @exchange_flash then green else black
       border_thickness: 1
       on_click: @@ ~exchange_tiles()
 

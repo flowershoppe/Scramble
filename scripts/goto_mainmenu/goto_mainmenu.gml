@@ -2,6 +2,7 @@ function goto_mainmenu()
 {
 	//destroy run handlers
 	instance_destroy(oMatchManager);
+	instance_destroy(oMatchGUI);
 	instance_destroy(oRun);
 	instance_destroy(oTilebag);
 	instance_destroy(oCharm);

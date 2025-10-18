@@ -16,27 +16,40 @@ root:
       alignment: center
       canvas:
         center: true
+        top: 50
       layout: grid
       padding: [10, 10, 10, 10]
       grid:
         rows: 10
-        row_height: 32
+        row_height: 40
         row_spacing: 5
         columns: 6
-        column_width: 32
+        column_width: 40
         column_spacing: 5
       background: ~yui_panel_bg
       elements: @yui_tiles
       template:
-        type: border
-        padding: 5
-        background: @spr
-        content: 
-          type: text
-          alignment: center
-          text: @letter + @pointvalue
-          color: black
-        size: 32
+        type: panel
+        layout: canvas
+        size: 40
+        background: @@ ~oRun.tile_sprite
+        events:
+          on_click: @@ ~get_reward(@id)
+        elements:
+          - type: text
+            theme: dark
+            canvas:
+              bottom: 5
+              left: 8
+            text: @letter
+            text_style: subtitle
+          - type: text
+            theme: default
+            text: @pointvalue
+            text_style: body
+            canvas:
+              right: 2
+            color: @@ ~isGreater(@letter, @pointvalue) then red else black
 
 
         
