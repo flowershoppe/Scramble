@@ -4,21 +4,34 @@ file_type: screen
 root:
   is_cursor_layer: true
   type: panel
-  layout: horizontal
+  layout: canvas
   size: stretch
   background: ~yui_panel_bg
-  padding: 10
-  spacing: 245
+  padding: 0
   elements:
     - type: button
       size: {w: 32, h: 32}
+      canvas:
+        top: 15
+        left: 15
       autofocus: false
       content: " "
       background: ~spCog
       on_click: @@ ~toggle_pause()
     - type: text
+      text: @@'Floor - ' + ~oRun.stage
+      canvas:
+        top: 20
+        left: 100
+    - type: text
       text: @@'Money - ' + ~oPlayer.money
+      canvas:
+        top: 20
+        left: 200
     - type: text
       text: @length
+      canvas:
+        top: 20
+        right: 50
 
 

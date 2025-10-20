@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"isnegative",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"isnegative",
+  "parent":{
+    "name":"Admin",
+    "path":"folders/Scripts/Admin.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

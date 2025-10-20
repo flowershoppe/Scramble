@@ -5,7 +5,7 @@ var _seconds = string(time div 60 mod 60)
 var _minutes = string(time div 3600 mod 60)
 var _hours = string(time div 216000)
 
-length = "Run length: " + _hours + " hours, " + _minutes + " minutes, " + _seconds + " seconds";
+length = "Run length: " + _hours + " H, " + _minutes + " M, " + _seconds + " S";
 
 if(input_check_pressed("confirm") and room == rGameOver)
 {

@@ -8,5 +8,8 @@ if(instance_exists(oRun))
 		case 2:
 			spr = spCircuit2;
 		break;
+		case 3:
+			spr = spCircuit3;
+		break;
 	}
 }
