@@ -146,6 +146,7 @@ function gen_board(_lvl)
 		#endregion
 		
 		case oLevel2:
+		#region
 			_point_base = 30;
 			_point_scale = 7;
 			for(var i = 0; i < array_length(oRun.levels); i++)
@@ -462,14 +463,26 @@ function gen_board(_lvl)
 				#endregion
 			}		
 		break;
+		#endregion
 		
 		case oLevel3:
-		
+		#region
+			_point_base = 40;
+			_point_scale = 10;
+			for(var i = 0; i < array_length(oRun.levels); i++)
+			{
+				if(oRun.levels[i].active)
+				{
+					_point_scale_mult = i;
+				}
+			}
+			specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 5);
 			//randomly select a lv3 gen
-			var _ran = irandom_range(1, 1);
+			var _ran = irandom_range(1, 4);
 			switch(_ran)
 			{
 				//EYE
+				#region
 				case 1: 
 					instance_create_layer(0, 0, "Board", oBoard, 
 					{
@@ -504,7 +517,7 @@ function gen_board(_lvl)
 					remove_holder(6, 3);
 					remove_holder(7, 3);
 					
-					var _ran = irandom_range(1, 2);
+					/*var _ran = irandom_range(1, 2);
 					switch(_ran)
 					{
 						case 1:
@@ -518,10 +531,101 @@ function gen_board(_lvl)
 						case 3:
 							specs(-1, 25, 4, -1);
 						break;
-					}
+					}*/
 				break;
+				#endregion
+				//HEART
+				#region
+				case 2: 
+					instance_create_layer(0, 0, "Board", oBoard, 
+					{
+						grid_width: 9,
+						grid_height: 7
+					});
+					var _array = oBoard.holders;
+					
+					_array[4, 2].start_point = true;
+					
+					_array[2, 0].wmult = 2;
+					_array[6, 0].wmult = 2;
+					_array[4, 1].lmult = 2;
+					_array[0, 2].lmult = 3;
+					_array[8, 2].lmult = 3;
+					_array[4, 6].lmult = 2;
+					
+					remove_holder(0, 0);
+					remove_holder(4, 0);
+					remove_holder(8, 0);
+					remove_holder(0, 3);
+					remove_holder(0, 4);
+					remove_holder(0, 5);
+					remove_holder(0, 6);
+					remove_holder(1, 4);
+					remove_holder(1, 5);
+					remove_holder(1, 6);
+					remove_holder(2, 5);
+					remove_holder(2, 6);
+					remove_holder(3, 6);
+					remove_holder(5, 6);
+					remove_holder(6, 5);
+					remove_holder(6, 6);
+					remove_holder(7, 4);
+					remove_holder(7, 5);
+					remove_holder(7, 6);
+					remove_holder(8, 3);
+					remove_holder(8, 4);
+					remove_holder(8, 5);
+					remove_holder(8, 6);
+				break;
+				#endregion
+				//WIDE OPEN
+				#region
+				case 3: 
+					instance_create_layer(0, 0, "Board", oBoard, 
+					{
+						grid_width: 13,
+						grid_height: 13
+					});
+					var _array = oBoard.holders;
+					
+					_array[6, 6].start_point = true;
+					
+					_array[0, 0].wmult = 4;
+					_array[12, 0].wmult = 4;
+					_array[0, 12].wmult = 4;
+					_array[12, 12].wmult = 4;
+					_array[6, 0].lmult = 3;
+					_array[6, 12].lmult = 3;
+					_array[0, 6].lmult = 3;
+					_array[12, 6].lmult = 3;
+				break;
+				#endregion
+				//MOUNTAIN
+				#region
+				case 4: 
+					instance_create_layer(0, 0, "Board", oBoard, 
+					{
+						grid_width: 11,
+						grid_height: 11
+					});
+					var _array = oBoard.holders;
+					
+					_array[0, 10].start_point = true;
+					_array[10, 0].winspot = true;
+					
+					for(var i = 0; i < 10; i++)
+					{
+						for(var k = 0; k < (10 - i); k++)
+						{
+							remove_holder(i, k);
+						}
+					}
+					specs(-1, -1, -1, 8);
+				break;
+				#endregion
 			}
+		break;
+		#endregion
 	}
-
 }
 

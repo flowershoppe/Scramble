@@ -49,25 +49,25 @@ root:
       elements:
         - type: text
           text: "Point Minimum: "
-        - @point_min
+        - @@ ~isnegative(@point_min) then 'N/A' else @point_min
     - type: panel
       layout: horizontal
       elements:
         - type: text
           text: "Point Maximum: "
-        - @point_max
+        - @@ ~isnegative(@point_max) then 'N/A' else @point_max
     - type: panel
       layout: horizontal
       elements:
         - type: text
           text: "Turn Minimum: "
-        - @turn_min
+        - @@ ~isnegative(@turn_min) then 'N/A' else @turn_min
     - type: panel
       layout: horizontal
       elements:
         - type: text
           text: "Turn Maximum: "
-        - @turn_max
+        - @@ ~isnegative(@turn_max) then 'N/A' else @turn_max
     - type: panel
       layout: horizontal
       elements:
