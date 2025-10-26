@@ -27,6 +27,7 @@ receiver.add("match start", function()
 				_array[_random].wmult = 2;
 				animate = !animate;
 				_bool = true;
+				broadcast("charm trigger");
 			}
 		}
 

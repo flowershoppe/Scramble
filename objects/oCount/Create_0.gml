@@ -24,6 +24,7 @@ receiver.add("check words", function()
 		{
 			animate = !animate; 
 			broadcast("charm trigger");
+			animate = !animate;
 			data[0]++;	
 			description = "Playing this charm's point bonus permanently increases its point bonus by 1. Point Bonus: " + string(data[0]) + ".";
 		}

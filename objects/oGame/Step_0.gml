@@ -20,9 +20,11 @@ if(input_check_pressed("special") and room == rGame)
 }
 if(input_keyboard_check_pressed(ord("H")))
 {
-	global.cheat = true;
 	//with(oLevel){active = true;}
 	oPlayer.money = 9999;
+	add_charm(oHeadphones);
+	add_charm(oD6);
+	add_charm(oD20);
 }
 if(input_keyboard_check_pressed(ord("I")))
 {
