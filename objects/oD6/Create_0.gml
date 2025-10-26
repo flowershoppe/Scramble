@@ -5,7 +5,7 @@ receiver = new Receiver();
 
 receiver.add("turn start", function() 
 	{ 
-		if(irandom(6) == 6)
+		if(irandom_range(1, 6 * oPlayer.random_mod) >= 6)
 		{
 			var _tile = oPlayerHand.tile_holder_array[irandom_range(0, oPlayerHand.size)].tile;
 		

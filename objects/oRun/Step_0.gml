@@ -26,3 +26,12 @@ if(room == rResults and _bool == false)
 {
 	instance_create_layer(0, 0, "YUI", yui_document, global.stResults);		
 }
+
+if(old_money != oPlayer.money)
+{
+	if(old_money < oPlayer.money)
+	{
+		money_earned += (oPlayer.money - money_earned);		
+	}
+	old_money = oPlayer.money;
+}

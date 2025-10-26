@@ -18,7 +18,7 @@ function start_match()
 				view_get_hport(0) - (sprite_get_height(oRun.hand_sprite) / 2), 
 				"Hand", oPlayerHand,
 				{
-					size: 7				
+					size: oPlayer.hand_size			
 				});	
 	gen_board(_lvl);
 	

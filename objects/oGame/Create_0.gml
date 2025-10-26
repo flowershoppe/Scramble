@@ -88,6 +88,7 @@ load_stats();
 instance_create_layer(room_width / 2, room_height / 2, "Meta", oCamera,
 {active : false});
 
+//GAMEPLAY
 global.exchanging = false;
 
 //YUI Structs
@@ -164,9 +165,11 @@ global.stStats =
 //Charms
 global.charms = [
 oBClef,
+oBell,
 oCassette,
 oCheese,
 oChip,
+oClover,
 oCount,
 oD20,
 oD6,
@@ -174,13 +177,19 @@ oDiamond,
 oEraser,
 oFridge,
 oHammerSickle,
+oHeadphones,
 oLoop,
+oMetalDetector,
 oOcarina,
 oPiggyBank,
 oPuzzle,
+oQuiver,
+oReceipt,
 oRupee,
+oSeedling,
 oSnake,
 oSpade,
+oStopwatch,
 oTClef,
 oTMap];
 

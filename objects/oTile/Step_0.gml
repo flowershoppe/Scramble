@@ -1,5 +1,15 @@
 if(global.paused){exit;}
 var _tile = id;
+with(oTileHolder)
+{
+	if(tile == _tile)
+	{		
+		if(array_contains(oPlayerHand.tile_holder_array, id))
+		{
+			tile.in_hand = true;
+		}
+	}	
+}
 
 //hover	
 if(layer != true_layer & layer != layer_get_id("Grabbed"))
@@ -22,7 +32,8 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 	
 	if(grabbable and _intersect)
 	{
-		if(oMatchManager.active){layer = layer_get_id("Grabbed");}
+		if(oMatchManager.active){layer = layer_get_id("Grabbed");
+			depth = (x - layer_get_depth("Hand_Tiles") * 2) / 10;}
 		xscale = 1.15;
 		yscale = 1.15;
 		hover = true;
@@ -30,7 +41,15 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 
 	else
 	{
-		layer = true_layer;
+		//GUI layering
+		if(instance_exists(oPlayerHand) and in_hand)
+		{
+			depth = layer_get_depth("Hand_Tiles") + (x / 10);
+		}
+		else
+		{
+			//layer = true_layer;	
+		}
 		xscale = 1;
 		yscale = 1;
 		hover = false;
@@ -43,17 +62,6 @@ if(position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id)
 		and in_hand)
 {
 	selected = !selected;
-}
-
-with(oTileHolder)
-{
-	if(tile == _tile)
-	{		
-		if(array_contains(oPlayerHand.tile_holder_array, id))
-		{
-			tile.in_hand = true;
-		}
-	}	
 }
 
 //blank
