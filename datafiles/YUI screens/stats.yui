@@ -11,16 +11,14 @@ root:
   type: panel
   layout: canvas
   is_cursor_layer: true
-  padding: 100
   elements:
     - type: panel
-      size: stretch
+      canvas:
+        center: true
       elements:
         - type: panel
           layout: canvas
-          canvas:
-            center: true
-          size: {w: 250, h: 300}
+          size: {w: 300, h: 300}
           background: ~yui_panel_bg
           padding: 10
           elements:
@@ -28,7 +26,7 @@ root:
               content:
                 type: text
                 text: Back
-                text_style: title
+                text_style: subtitle
               border_thickness: 1
               on_click: @@ ~toggle_stats()
             - type: panel
@@ -40,7 +38,7 @@ root:
                   elements:
                     - type: text
                       text: "-STATS-"
-                      text_style: title
+                      text_style: subtitle
                 - type: panel
                   layout: horizontal
                   elements:
