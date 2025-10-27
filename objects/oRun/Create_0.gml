@@ -9,3 +9,5 @@ money_earned = 0;
 levels_completed = 0;
 levels = [];
 stage = 1;
+stage_count = 1;
+current_level = noone;

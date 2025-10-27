@@ -1,0 +1,54 @@
+id: victory
+file_type: screen
+
+import:
+  - ../Templates/
+
+  - /YUI/Animations/transitions.yui
+  - /YUI/Widgets/
+
+root:
+  type: panel
+  layout: canvas
+  elements:
+    - type: panel
+      alignment: center
+      layout: canvas
+      canvas:
+        center: true
+      background: ~yui_panel_bg
+      size: {w: 600, h: 500}
+      elements:
+        - type: panel
+          canvas:
+            top: 50
+          size: {w: 350, h: 350}
+          elements:
+            - type: image
+              sprite: ~spWinner
+        - type: panel
+          canvas:
+            right: 75
+            top: 200
+          elements:
+            - type: text
+              text: @@ 'Total Score | ' + @total_score
+            - type: text
+              text: @@ 'Largest Play | ' + @largest_play
+            - type: text
+              text: @@ 'Largest Word | ' + @largest_word
+            - type: text
+              text: @@ 'Words Spelled | ' + @words_spelled
+        - type: button
+          canvas: 
+            bottom: 50
+            right: 230
+          content:
+            type: text
+            text: Main Menu
+            text_style: subtitle
+          border_thickness: 1
+          on_click: @@ ~goto_mainmenu()
+      
+
+        
