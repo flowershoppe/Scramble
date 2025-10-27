@@ -708,6 +708,7 @@
     {"name":"toggle_settings","order":5,"path":"scripts/toggle_settings/toggle_settings.yy",},
     {"name":"toggle_stats","order":9,"path":"scripts/toggle_stats/toggle_stats.yy",},
     {"name":"valid_play","order":4,"path":"scripts/valid_play/valid_play.yy",},
+    {"name":"win_run","order":16,"path":"scripts/win_run/win_run.yy",},
     {"name":"wordify","order":12,"path":"scripts/wordify/wordify.yy",},
     {"name":"YS_PRECEDENCE","order":2,"path":"scripts/YS_PRECEDENCE/YS_PRECEDENCE.yy",},
     {"name":"ys_test","order":3,"path":"scripts/ys_test/ys_test.yy",},

@@ -11,8 +11,7 @@ receiver.add("add tile to bag", function()
 		{
 			_tile.pointvalue++;	
 			animate = !animate; 
-			broadcast("charm trigger");
-			
+			broadcast("charm trigger");			
 		}
 	});
 	

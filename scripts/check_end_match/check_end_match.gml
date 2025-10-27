@@ -131,18 +131,14 @@ function check_end_match()
 			_cant_play = true;	
 		}*/
 	
-		if(_win)
-		{
-			oMatchManager.active = false;	
-		}
-		else if(((_tmaxactive and turn > turn_max) or
+		if(((_tmaxactive and turn > turn_max) or
 				(_pmaxactive and total_points > point_max)))
 		{
 			var _saveloc = "gamesave.save";
 			oMatchManager.active = false;
 			oMatchManager.loss = true;
 			file_delete(_saveloc);
-			show_debug_message("Deleting save at" + _saveloc)
+			show_debug_message("Deleting save at " + _saveloc)
 			broadcast("match end");
 			room_goto(rGameOver);
 			with(oRun){alarm_set(1, 1);}
@@ -155,7 +151,7 @@ function check_end_match()
 		
 		//win match
 		if(_win and !oMatchManager.loss)
-		{		
+		{
 			with(yui_document)
 			{
 				if(yui_file == "YUI screens/match_buttons.yui")
@@ -170,6 +166,15 @@ function check_end_match()
 				{
 					persistent = true;	
 				}
+			}
+			//end run if current stage is amount of stages and current level is final level
+			if(oRun.stage >= oRun.stage_count and oRun.current_level == oRun.levels[array_length(oRun.levels) - 1])
+			{				
+				reset_tilebag();
+				room_goto(rGameOver);
+				oMatchManager.active = false;
+				with(oRun){alarm_set(2, 1);}
+				exit;				
 			}
 			dialogue_open(adialogue, []);
 			broadcast("match end");

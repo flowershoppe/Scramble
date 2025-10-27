@@ -22,6 +22,7 @@ function get_reward(_id)
 	next_level();	
 	
 	oRewardsManager.rewarding = false;
+	oRun.current_level = noone;
 	room_goto(rMap);
 	instance_destroy(oOpponent);
 	oRewardsManager.array_rewards = [];

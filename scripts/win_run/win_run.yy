@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"win_run",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"win_run",
+  "parent":{
+    "name":"Flow",
+    "path":"folders/Scripts/Flow.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
