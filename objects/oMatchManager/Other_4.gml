@@ -1,9 +1,12 @@
 switch(room)
 {
 	case rGame:
-		if(play_dialogue)
+		if(array_get_index(oRun.levels, oRun.current_level) == 0)
 		{
 			dialogue_open(adialogue, []);
-			play_dialogue = false;
+		}
+		else
+		{
+			start_match();	
 		}
 }

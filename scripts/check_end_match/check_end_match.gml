@@ -151,7 +151,8 @@ function check_end_match()
 		
 		//win match
 		if(_win and !oMatchManager.loss)
-		{
+		{			
+			oMatchManager.active = false;
 			with(yui_document)
 			{
 				if(yui_file == "YUI screens/match_buttons.yui")
@@ -172,11 +173,19 @@ function check_end_match()
 			{				
 				reset_tilebag();
 				room_goto(rGameOver);
-				oMatchManager.active = false;
 				with(oRun){alarm_set(2, 1);}
 				exit;				
 			}
-			dialogue_open(adialogue, []);
+			//THRE WILL BE A BETTER WAY TO DO THIS \/
+			//if first level of stage, do dialogue
+			if(array_get_index(oRun.levels, oRun.current_level) == 0)
+			{
+				dialogue_open(adialogue, []);
+			}
+			else
+			{
+				show_results();	
+			}
 			broadcast("match end");
 			return true;
 			//audio_stop_sound(global.music_game);

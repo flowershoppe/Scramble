@@ -30,20 +30,12 @@ root:
                 text_style: subtitle
                 text: Settings
               on_click: @@ ~toggle_settings()
-
             - type: button 
               content:
                 type: text
                 text_style: subtitle
                 text: Main Menu
-              on_click: @@ ~goto_mainmenu()
-
-            - type: button
-              content:
-                type: text
-                text_style: subtitle
-                text: Credits
-          
+              on_click: @@ ~goto_mainmenu()          
         - type: button 
           content:
             type: text

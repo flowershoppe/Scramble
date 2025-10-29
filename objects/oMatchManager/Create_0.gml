@@ -1,4 +1,4 @@
-play_dialogue = true;
+play_dialogue = false;
 
 total_tiles = 0;
 total_points = 0;

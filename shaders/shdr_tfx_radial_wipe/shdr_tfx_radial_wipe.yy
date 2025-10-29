@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shdr_tfx_radial_wipe",
+  "name":"shdr_tfx_radial_wipe",
+  "parent":{
+    "name":"tfx_shdr",
+    "path":"folders/Shaders/tfx_shdr.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}
