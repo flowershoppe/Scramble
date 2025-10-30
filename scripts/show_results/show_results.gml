@@ -4,5 +4,5 @@ function show_results()
 	oTilebag.yui_tiles = oTilebag.tiles;
 	reset_tilebag();
 	room_persistent = false;
-	room_goto(rResults);
+	screenTransition(rResults, , ST_CHECKER_DIAG_UL_TO_DR_Y);
 }

@@ -1,7 +1,7 @@
 function new_run()
 {
 	oStats.run_count++;
-	room_goto(rMap);
+	screenTransition(rMap, , ST_CHECKER_DIAG_UL_TO_DR_Y);
 	
 	instance_destroy(oRun);
 	instance_create_layer(0, 0, "Meta", oRun);

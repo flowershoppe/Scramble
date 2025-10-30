@@ -18,5 +18,5 @@ function goto_mainmenu()
 	
 	global.paused = false;
 	
-	with(oGame){alarm_set(0, 1);}
+	screenTransition(rMainMenu, , ST_CHECKER_DIAG_UL_TO_DR_Y);
 }
