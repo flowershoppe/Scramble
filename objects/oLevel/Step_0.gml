@@ -2,9 +2,7 @@ if(global.paused){exit;}
 if(visible and active and mouse_check_button_pressed(mb_left) and 
 	position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id))
 {
-	tfx_set_effect("pixelize");
-	tfx_set_duration(120);
-	tfx_room_goto(rGame);
+	screenTransition(rGame, , ST_CHECKER_DIAG_UL_TO_DR_Y);
 	oRun.current_level = id;
 	instance_create_layer(0, 0, "Meta", opponent);
 }

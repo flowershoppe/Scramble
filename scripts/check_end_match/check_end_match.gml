@@ -140,7 +140,7 @@ function check_end_match()
 			file_delete(_saveloc);
 			show_debug_message("Deleting save at " + _saveloc)
 			broadcast("match end");
-			room_goto(rGameOver);
+			screenTransition(rGameOver, , ST_CHECKER_DIAG_UL_TO_DR_Y);
 			with(oRun){alarm_set(1, 1);}
 		}
 
@@ -172,7 +172,7 @@ function check_end_match()
 			if(oRun.stage >= oRun.stage_count and oRun.current_level == oRun.levels[array_length(oRun.levels) - 1])
 			{				
 				reset_tilebag();
-				room_goto(rGameOver);
+				screenTransition(rGameOver, , ST_CHECKER_DIAG_UL_TO_DR_Y);
 				with(oRun){alarm_set(2, 1);}
 				exit;				
 			}

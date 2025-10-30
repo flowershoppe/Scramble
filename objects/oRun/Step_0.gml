@@ -9,7 +9,7 @@ length = "Run length: " + _hours + " H, " + _minutes + " M, " + _seconds + " S";
 
 if(input_check_pressed("confirm") and room == rGameOver)
 {
-	room_goto(rMainMenu);
+	screenTransition(rMainMenu, , ST_CHECKER_DIAG_UL_TO_DR_Y);
 }
 
 var _bool = false;
@@ -27,11 +27,14 @@ if(room == rResults and _bool == false)
 	instance_create_layer(0, 0, "YUI", yui_document, global.stResults);		
 }
 
-if(old_money != oPlayer.money)
+if(instance_exists(oPlayer))
 {
-	if(old_money < oPlayer.money)
+	if(old_money != oPlayer.money)
 	{
-		money_earned += (oPlayer.money - money_earned);		
-	}
-	old_money = oPlayer.money;
+		if(old_money < oPlayer.money)
+		{
+			money_earned += (oPlayer.money - money_earned);		
+		}
+		old_money = oPlayer.money;
+	}	
 }

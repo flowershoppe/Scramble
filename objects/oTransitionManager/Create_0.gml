@@ -1,1 +1,0 @@
-tfx_set_effect("circle");
