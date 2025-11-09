@@ -17,7 +17,9 @@ root:
       autofocus: false
       content: " "
       background: ~spCog
-      on_click: @@ ~toggle_pause()
+      on_click: 
+        - ~toggle_pause()
+        - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
     - type: text
       text: @@'Floor - ' + ~oRun.stage
       canvas:
@@ -29,9 +31,14 @@ root:
         top: 20
         left: 200
     - type: text
+      text: Run Length - 
+      canvas:
+        top: 20
+        right: 175
+    - type: text
       text: @length
       canvas:
         top: 20
-        right: 50
+        left: 790
 
 

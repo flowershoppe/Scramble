@@ -7,7 +7,7 @@ function win_run()
 		yui_file : "YUI screens/victory.yui"
 	});
 	audio_stop_all()
-	audio_play_sound(msGameOver, 1, true);
+	audio_play_sound_on(global.emitterMS, msVictory, false, 1);
 	var _saveloc = "gamesave.save";
 	file_delete(_saveloc);
 	show_debug_message("Deleting save at " + _saveloc)

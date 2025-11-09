@@ -87,8 +87,8 @@ if(mouse_check_button_pressed(mb_left))
 	held_tile.on_board = false;
 	held_tile.in_hand = false;
 		
-	audio_play_sound(global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
-					1, 0, global.volumeSE);
+	audio_play_sound_on(global.emitterSE, global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
+					false, 0);
 		
 	var _tile = held_tile;
 	

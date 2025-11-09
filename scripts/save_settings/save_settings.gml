@@ -7,7 +7,8 @@ function save_settings()
 		window_height : window_get_height(),
 		volume_MS : global.volumeMS,
 		volume_SE : global.volumeSE,
-		volume_Main : global.volumeMain		
+		volume_Main : global.volumeMain,
+		font : oGame.font
 	};
 	var _string = json_stringify(_saveData);
 	var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1);
@@ -24,4 +25,5 @@ function save_settings()
 	buffer_save(_buffer, "keybinds.save");
 	buffer_delete(_buffer);
 
+	show_debug_message("Settings saved");
 }

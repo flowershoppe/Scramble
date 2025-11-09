@@ -1,3 +1,4 @@
+randomize();
 dialogue_setup();
 global.cheat = false;
 
@@ -44,15 +45,6 @@ ds_map_add(global.letters, "_", 0);
 global.vowels = ["A", "E", "I", "O", "U"];
 global.consonants = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"];
 
-//Tile
-global.hand_sprite = spPlank;
-global.tile_sprite = spLetterTile;
-global.tile_font_size = 40;
-global.tile_font_color = c_black;
-global.tile_font = font_add("CALADEA-REGULAR.TTF", global.tile_font_size, 
-					false, false, global.tile_font_size, global.tile_font_size);
-font_enable_sdf(global.tile_font, true);
-
 //Settings
 global.camera_speed = 5.0;
 global.zoom_factor = 0.1;
@@ -67,6 +59,7 @@ global.board_sprite = spBoard;
 global.place_sounds = [sdPlace1, sdPlace2, sdPlace3, sdPlace4, sdPlace5, sdPlace6];
 global.emitterSE = audio_emitter_create();
 global.emitterMS = audio_emitter_create();
+global.music = 0;
 global.volumeMain = 1;
 global.volumeSE = 1;
 global.volumeMS = 1;
@@ -75,8 +68,43 @@ audio_emitter_gain(global.emitterSE, global.volumeSE);
 audio_emitter_gain(global.emitterMS, global.volumeMS);
 
 global.music_game = msGameMusic1;
-global.music_main_menu = msMainMenuMusic;
+global.music_map = msMap;
+global.music_main_menu = msTitle;
 global.music_victory = msVictory;
+
+//Fonts
+#region
+fonts = [
+	construct_font("Arial",	fnt_arial, fnt_arial_small),
+	
+	construct_font("Book Antiqua", fnt_book_antiqua, fnt_book_antiqua_small),
+	
+	construct_font("Comic Sans", fnt_comic_sans, fnt_comic_sans_small),
+	
+	construct_font("Impact", fnt_impact, fnt_impact_small),
+	
+	construct_font("Oswald", fnt_oswald, fnt_oswald_small),
+	
+	construct_font("Pirata", fnt_pirata, fnt_pirata_small),
+	
+	construct_font("Segoe", fnt_segoe, fnt_segoe_small),
+	
+	construct_font("Wingdings", fnt_wingdings, fnt_wingdings_small)
+];
+#endregion
+
+global.title_font_size = 20;
+global.reality_hyper_title = font_add("Reality Hyper.ttf", global.title_font_size,
+					false, false, global.title_font_size, global.title_font_size);
+global.subtitle_font_size = 16;
+global.reality_hyper_subtitle = font_add("Reality Hyper.ttf", global.subtitle_font_size,
+					false, false, global.subtitle_font_size, global.subtitle_font_size);
+global.body_font_size = 14;
+global.reality_hyper_subtitle = font_add("Reality Hyper.ttf", global.body_font_size,
+					false, false, global.body_font_size, global.body_font_size);
+global.hand_sprite = spPlank;
+tile_sprite = spLetterTile;
+tile_font_color = c_black;
 
 //Handlers
 instance_create_layer(0, 0, "Meta", oSaverLoader);
@@ -87,6 +115,13 @@ instance_create_layer(0, 0, "Meta", oStats);
 load_stats();
 instance_create_layer(room_width / 2, room_height / 2, "Meta", oCamera,
 {active : false});
+
+//default font
+if(font == 0)
+{
+	font = construct_font("Oswald", fnt_oswald, fnt_oswald_small);
+	set_tile_font(font);
+}
 
 //GAMEPLAY
 global.exchanging = false;
@@ -200,3 +235,6 @@ opponents_2 = [oCress2];
 opponents_3 = [oCress3];
 
 receiver = new Receiver();
+
+emitter_SE = global.emitterSE;
+emitter_MS = global.emitterMS;

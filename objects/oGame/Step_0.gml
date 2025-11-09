@@ -30,3 +30,12 @@ if(input_keyboard_check_pressed(ord("I")))
 {
 	oMatchManager.total_points += 10;	
 }
+
+if(instance_exists(oMatchManager))
+{
+	if(room == rGameOver and oMatchManager.victory and 
+		!audio_is_playing(msVictory) and !audio_is_playing(msVictoryLoop))
+	{
+		audio_play_sound_on(global.emitterMS, msVictoryLoop, false, 1);
+	}
+}

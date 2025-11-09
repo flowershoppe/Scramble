@@ -19,14 +19,56 @@ root:
       elements:
         //left side
         - type: panel
+          background: ~yui_panel_bg
           layout: vertical
           flex: true
           size: stretch
           alignment: { h: center }
-          background: ~yui_panel_bg
           padding: 50
-          spacing: 50
+          spacing: 25
           elements:
+            - type: panel
+              layout: canvas
+              alignment: {v: center}
+              size: {w: 250, h: 64}
+              spacing: 25
+              elements:                
+                - type: panel
+                  layout: vertical
+                  alignment: {h: center}
+                  canvas: 
+                    left: 5
+                    top: 5
+                  elements:
+                    - type: text
+                      text: Tile Font
+                      text_style: subtitle
+                    - type: dropdown_menu
+                      item_template: @name
+                      can_clear_value: false
+                      items: ~oGame.fonts
+                      selection_scope: @font_selector
+                      on_item_selected:
+                        - @@ value => ~set_tile_font(value)
+                - type: panel
+                  layout: canvas
+                  size: 64
+                  background: ~oGame.tile_sprite
+                  theme: dark
+                  canvas:
+                    right: 5
+                    top: 5
+                  elements:
+                    - type: text
+                      font: ~oGame.tile_font
+                      alignment: center
+                      text: A
+                      text_style: title
+                    - type: text
+                      font: ~oGame.tile_font_small
+                      text: 1
+                      canvas:
+                        right: 2
             - type: panel
               layout: vertical
               alignment: { h: center }
@@ -36,10 +78,12 @@ root:
                   text_style: subtitle
                 - type: dropdown_menu
                   items: @resolution_items
+                  can_clear_value: false
                   selection_scope: @resolution_selector
                   on_item_selected:
                     - @@ value => ~resolution_select(value)
                     - @@ value => ~save_settings()
+                    - @@ value => ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
             - type: panel
               layout: vertical
               alignment: {h: center}
@@ -65,9 +109,9 @@ root:
                 - type: slider
                   min: 0
                   max: 100
-                  value: @@ ~audio_emitter_get_gain(@emitter_MS) * 100
+                  value: @@ ~audio_emitter_get_gain(~oGame.emitter_MS) * 100
                   on_value_changed: 
-                    - @@ value => ~audio_emitter_gain(@emitter_MS, value / 100) 
+                    - @@ value => ~audio_emitter_gain(~oGame.emitter_MS, value / 100) 
                     - @@ value => ~save_settings()
 
             - type: panel
@@ -80,9 +124,9 @@ root:
                 - type: slider
                   min: 0
                   max: 100
-                  value: @@ ~audio_emitter_get_gain(@emitter_SE) * 100
+                  value: @@ ~audio_emitter_get_gain(~oGame.emitter_SE) * 100
                   on_value_changed: 
-                    - @@ value => ~audio_emitter_gain(@emitter_SE, value / 100)
+                    - @@ value => ~audio_emitter_gain(~oGame.emitter_SE, value / 100)
                     - @@ value => ~save_settings()
 
           //right side
@@ -130,16 +174,22 @@ root:
                             content:
                               type: text
                               text: @@ ~input_binding_get(@)
-                            on_click: @@ ~keybind(@)
+                            on_click: 
+                              - @@ ~keybind(@)
+                              - @@ ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
             - type: button
               content:
                 type: text
                 text: Reset to Default
-              on_click: @@ ~input_profile_reset_bindings()
+              on_click: 
+                - @@ ~input_profile_reset_bindings()
+                - @@ ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
     - type: button
       content: 
         type: text        
-        text: <= Back
+        text: Back
         text_style: subtitle
       border_thickness: 1
-      on_click: @@ ~toggle_settings()
+      on_click: 
+        - @@ ~toggle_settings()
+        - @@ ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)

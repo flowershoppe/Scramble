@@ -6,24 +6,29 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 	{
 		if(bag_menu == noone)
 		{
+			audio_play_sound(sdOpenBag, 1, false);
 			//display contents
+			if(room != rGameOver)
+			{
+				stats_menu = instance_create_layer(0, 0, "UI", yui_document,
+				{
+					data_context : oRun,
+					yui_file : "YUI screens/run_stats.yui"
+				});
+			}
 			bag_menu = instance_create_layer(0, 0, "UI", yui_document,
 			{
 				data_context : oTilebag,
 				yui_file : "YUI screens/tilebag.yui",
 			});
-			
-			stats_menu = instance_create_layer(0, 0, "UI", yui_document,
-			{
-				data_context : oRun,
-				yui_file : "YUI screens/run_stats.yui"
-			});
+
 		}
 		image_xscale = 1.15;
 		image_yscale = 1.15;
 	}
-	else
+	else if(image_xscale != 1)
 	{
+		audio_play_sound(sdCloseBag, 1, false);
 		instance_destroy(bag_menu);	
 		instance_destroy(stats_menu);
 		bag_menu = noone;

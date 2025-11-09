@@ -46,7 +46,9 @@ root:
         size: 64
         background: @@ ~oRun.tile_sprite
         events:
-          on_click: @@ ~get_reward(@id)
+          on_click: 
+            - ~get_reward(@id)
+            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdConfirm, false, 1)
         elements:
           - type: text
             alignment: center

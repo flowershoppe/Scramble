@@ -32,9 +32,9 @@ root:
         type: panel
         layout: canvas
         size: 40
-        background: @@ ~oRun.tile_sprite
+        background: ~oGame.tile_sprite
         events:
-          on_click: @@ ~get_reward(@id)
+          on_click: ~get_reward(@id)
         elements:
           - type: text
             theme: dark
@@ -49,7 +49,7 @@ root:
             text_style: body
             canvas:
               right: 2
-            color: @@ ~isGreater(@letter, @pointvalue) then red else black
+            color: ~isGreater(@letter, @pointvalue) then red else black
 
 
         

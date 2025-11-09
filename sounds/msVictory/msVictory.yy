@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":47.856327,
+  "duration":42.720364,
   "name":"msVictory",
   "parent":{
     "name":"Sounds",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"msVictory.mp3",
   "type":0,
-  "volume":0.5,
+  "volume":1.0,
 }

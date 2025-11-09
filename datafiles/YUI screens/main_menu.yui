@@ -1,5 +1,10 @@
 id: main_menu
 file_type: screen
+
+import:
+  // import all resources from transitions.yui to use in animations
+  - /YUI/Animations/transitions.yui
+
 root:
   type: panel
   layout: canvas
@@ -10,39 +15,71 @@ root:
       alignment: { h: center }
       canvas:
         top: 5
-        center: h
-      background: ~yui_panel_bg
-      padding: 10
-      
+        center: h      
+      padding: 10      
+      indexed: true
       elements:
         - type: button
+          font: ~oGame.reality_hyper_subtitle
+          background: ~spPanel
           content: 
             type: text
             text: New Run
-            text_style: subtitle       
-          border_thickness: 1
-          on_click: @@ ~new_run()
+            text_style: subtitle
+          border_thickness: 2
+          animate:
+            on_visible:
+              xoffset: &cascade_slide_in_right
+          on_click: 
+            - ~new_run()
+            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+          events:
+            on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
 
         - type: button
+          background: ~spPanel
           content: 
             type: text
             text: Load Run
             text_style: subtitle       
-          border_thickness: 1
-          on_click: @@ ~load_game()
+          border_thickness: 2
+          animate:
+            on_visible:
+              xoffset: &cascade_slide_in_left
+          on_click: 
+            - ~load_game()
+            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+          events:
+            on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
 
         - type: button
+          background: ~spPanel
           content: 
             type: text
             text: Options
             text_style: subtitle        
-          border_thickness: 1
-          on_click: @@ ~toggle_settings()
+          border_thickness: 2
+          animate:
+            on_visible:
+              xoffset: &cascade_slide_in_right
+          on_click: 
+            - ~toggle_settings()
+            - ~audio_play_sound_on(0, ~sdSelect, false, 1)
+          events:
+            on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
   
         - type: button
+          background: ~spPanel
           content: 
             type: text
             text: Stats
             text_style: subtitle        
           border_thickness: 1
-          on_click: @@ ~toggle_stats()
+          animate:
+            on_visible:
+              xoffset: &cascade_slide_in_left
+          on_click: 
+            - ~toggle_stats()
+            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+          events:
+            on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false

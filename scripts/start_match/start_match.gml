@@ -15,7 +15,7 @@ function start_match()
 		
 	//-----GAME ELEMENTS-----	
 	var _hand = instance_create_layer(view_get_wport(0) / 2, 
-				view_get_hport(0) - (sprite_get_height(oRun.hand_sprite) / 2), 
+				view_get_hport(0) - (sprite_get_height(global.hand_sprite) / 2), 
 				"Hand", oPlayerHand,
 				{
 					size: oPlayer.hand_size			

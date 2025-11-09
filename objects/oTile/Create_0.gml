@@ -3,9 +3,9 @@ grabbable = true;
 selected = false;
 temp = false;
 
-font		= global.tile_font;
+font		= oGame.tile_font;
 font_scale	= 1;
-font_color	= global.tile_font_color;
+font_color	= oGame.tile_font_color;
 
 spr_size	= 64;
 

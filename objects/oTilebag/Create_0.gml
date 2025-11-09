@@ -7,7 +7,7 @@ last_tile = noone;
 
 spr = spBag;
 
-font = global.tile_font
+font = global.reality_hyper_title
 
 //contents window
 bag_menu = noone;

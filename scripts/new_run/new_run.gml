@@ -12,4 +12,6 @@ function new_run()
 	
 	instance_destroy(oShop);
 	instance_create_layer(0, 0, "Meta", oShop);
+	
+	//audio_play_sound(sdConfirm, 1, false);
 }

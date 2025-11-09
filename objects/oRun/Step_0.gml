@@ -1,11 +1,9 @@
-tile_sprite = global.tile_sprite;
-hand_sprite = global.hand_sprite;
-if(!global.paused){time ++;}
+if(!global.paused and !(room == rGameOver)){time ++;}
 var _seconds = string(time div 60 mod 60)
 var _minutes = string(time div 3600 mod 60)
 var _hours = string(time div 216000)
 
-length = "Run length: " + _hours + " H, " + _minutes + " M, " + _seconds + " S";
+length = _hours + " H, " + _minutes + " M, " + _seconds + " S";
 
 if(input_check_pressed("confirm") and room == rGameOver)
 {

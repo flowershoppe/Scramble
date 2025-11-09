@@ -46,7 +46,9 @@ root:
         sprite: @sprite_index
         blend_color: @color
         events:
-          on_click: @@ ~get_reward(@id)
+          on_click: 
+            - ~get_reward(@id)
+            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdConfirm, false, 1)
 
 
 

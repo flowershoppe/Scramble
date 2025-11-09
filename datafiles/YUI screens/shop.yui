@@ -39,7 +39,7 @@ root:
           elements:
             - type: text
               text: "Credits | " 
-            - @@ ~oPlayer.money
+            - ~oPlayer.money
         - type: panel
           layout: horizontal
           padding: 10
@@ -65,21 +65,23 @@ root:
             type: panel
             layout: canvas
             size: 64
-            background: @@ ~oRun.tile_sprite
+            background: ~oGame.tile_sprite
             events:
-              on_click: @@ ~purchase(@id)
+              on_click: 
+                - ~purchase(@id)
+                - ~audio_play_sound_on(~oGame.emitter_SE, ~sdConfirm, false, 1)
             elements:
               - type: text
+                font: ~oGame.tile_font
                 alignment: center
-                canvas:
-                  bottom: 5
                 text: @letter
                 text_style: title
               - type: text
+                font: ~oGame.tile_font_small
                 text: @pointvalue
                 canvas:
                   right: 2
-                color: @@ ~isGreater(@letter, @pointvalue) then red else black
+                color: ~isGreater(@letter, @pointvalue) then red else black
         - type: panel
           padding: 10
           spacing: 20
@@ -93,7 +95,9 @@ root:
             sprite: @sprite_index
             blend_color: @color
             events:
-              on_click: @@ ~purchase(@id)
+              on_click: 
+                - ~purchase(@id)
+                - ~audio_play_sound_on(~oGame.emitter_SE, ~sdConfirm, false, 1)
     - type: panel
       canvas:
         right: 10
@@ -102,8 +106,10 @@ root:
         - type: button
           content:
             type: text
-            text: To Map =>
-          on_click: @@ ~room_goto(~rMap)
+            text: To Map
+          on_click: 
+            - ~goto_map()
+            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)
 
 
 
