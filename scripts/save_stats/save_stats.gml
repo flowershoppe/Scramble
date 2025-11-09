@@ -17,5 +17,5 @@ function save_stats()
 	buffer_save(_buffer, game_save_id + "stats.save");
 	buffer_delete(_buffer);
 
-	show_debug_message("Game successfully saved at " + game_save_id)
+	//show_debug_message("Game successfully saved at " + game_save_id)
 }

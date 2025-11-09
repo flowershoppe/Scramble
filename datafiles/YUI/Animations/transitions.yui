@@ -5,6 +5,7 @@ resources:
   fade_in:
     type: curve
     curve: curveExpoInv
+    delay: 1000
     duration: 2000
     from: 0
     to: 1
@@ -32,12 +33,20 @@ resources:
     duration: &fade_color_duration
     to: #00ee00
 
-  cascade_slide_in:
+  cascade_slide_in_left:
     type: curve
     curve: ~curveExpoInv
     duration: 600
-    delay: @@ ($panel_index ?? 0) * 100
-    from: -400
+    delay: @@ 1000 + ($panel_index ?? 0) * 100
+    from: -600
+    to: 0
+
+  cascade_slide_in_right:
+    type: curve
+    curve: ~curveExpoInv
+    duration: 600
+    delay: @@ 1000 + ($panel_index ?? 0) * 100
+    from: 600
     to: 0
 
   cascade_slide_out:

@@ -140,6 +140,7 @@ theme:
       spacing: 5
 
     button:
+      on_click: @@ ~audio_play_sound(~sdSelect, 1, false)
       background: &control_bg
       border_color: &control_border
       border_focus_color: &focus_border

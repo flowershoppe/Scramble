@@ -36,7 +36,9 @@ root:
             text: Main Menu
             text_style: subtitle
           border_thickness: 1
-          on_click: @@ ~goto_mainmenu()
+          on_click: 
+            - ~goto_mainmenu()
+            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)
       
 
         

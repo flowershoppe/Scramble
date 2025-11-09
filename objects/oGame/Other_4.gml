@@ -1,77 +1,27 @@
-randomize();
-
-var _main_menu_music = global.music_main_menu;
-var _game_music_1 = global.music_game;
-var _emitter_MS = global.emitterMS;
-var _emitter_SE = global.emitterSE;
-var _player = noone;
-var _cursor = noone;
-
 if(!instance_exists(oCursor))
 {
 	instance_create_layer(0, 0, "Meta", oCursor);	
 }
 
+//music
 switch(room)
 {        
 	case rMap:
-
+		if(!audio_is_playing(global.music_map))
+		{
+			audio_stop_sound(global.music);
+			global.music = global.music_map;
+			audio_play_sound_on(global.emitterMS, global.music_map, true, 1);
+		}
 		break;
 	case rGame:
-		#region
-
-		/*
-		//-----YUI ELEMENTS-----
-		#region
-		var _isYUI = false;
-		with(yui_document)
-		{
-			if(yui_file	== "YUI screens/match_stats.yui")
-			{
-				_isYUI = true;
-			}
-		}
-		//if there is no YUI element
-		if(!_isYUI)
-		{
-			instance_create_layer(0, 96, "UI", yui_document,
-			{
-				image_xscale: 3,
-				image_yscale: 4,
-				yui_file: "YUI screens/match_stats.yui",
-				data_context: oMatchManager,
-				is_full_screen: false
-			});
-		}
 		
-		_isYUI = false;
-		with(yui_document)
-		{
-			if(yui_file	== "YUI screens/match_buttons.yui")
-			{
-				_isYUI = true;
-			}
-		}
-		//if there is no YUI element
-		if(!_isYUI)
-		{
-			instance_create_layer(750, 400, "UI", yui_document,
-			{
-				image_xscale: 3,
-				image_yscale: 4,
-				yui_file: "YUI screens/match_buttons.yui",
-				data_context: oMatchGUI,
-				is_full_screen: false
-			}); 	
-		}
-		*/
-		#endregion
+		audio_stop_sound(global.music);
 		
-		audio_stop_sound(_main_menu_music);
-		
-		if(!audio_is_playing(_game_music_1) and !audio_is_playing(global.music_victory))
+		if(!audio_is_playing(msGameMusic1) and !audio_is_playing(global.music_victory))
 		{
-			audio_play_sound_on(_emitter_MS, _game_music_1, true, 100);
+			global.music = msGameMusic1;
+			audio_play_sound_on(global.emitterMS, msGameMusic1, true, 100);
 		}
 	
 		if(!instance_exists(oBackground))
@@ -86,8 +36,9 @@ switch(room)
 		YuiCursorManager.is_navigation_active = false
 		if(!audio_is_playing(global.music_main_menu))
 		{
-			audio_stop_all();
-			audio_play_sound_on(_emitter_MS, _main_menu_music, true, 100);
+			audio_stop_sound(global.music);
+			global.music = global.music_main_menu;
+			audio_play_sound_on(global.emitterMS, global.music_main_menu, true, 100);
 		}
 		
 		break;

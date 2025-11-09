@@ -1,5 +1,5 @@
-font		= global.tile_font;
-font_color	= global.tile_font_color;
+font		= oGame.tile_font;
+font_color	= oGame.tile_font_color;
 var _old_halign = draw_get_halign();
 var _old_valign = draw_get_valign();
 var _old_font = draw_get_font();
@@ -24,8 +24,8 @@ if(selected)
 	draw_sprite_ext(spSelected, 0, x, y, xscale, yscale, 0, c_white, 1);
 }
 
-var _x_offset = (sprite_width * xscale) * 0.05;
-var _y_offset = (sprite_height * yscale) * 0.1;
+var _x_offset = 0//(sprite_width * xscale) * 0.15;
+var _y_offset = 0//(sprite_height * yscale) * 0.15;
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);

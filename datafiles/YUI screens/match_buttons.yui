@@ -20,7 +20,9 @@ root:
         text: Submit Play
         text_style: body
       border_thickness: 1
-      on_click: @@ ~submit_play()
+      on_click: 
+        - ~submit_play()
+        - ~audio_play_sound_on(~oGame.emitter_SE, ~sdConfirm, false, 1)
 
     - type: button 
       content: 
@@ -28,7 +30,9 @@ root:
         text: Return Tiles
         text_style: body
       border_thickness: 1
-      on_click: @@ ~return_tiles()
+      on_click: 
+        - ~return_tiles()
+        - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)
 
     - type: button 
       content: 
@@ -37,6 +41,8 @@ root:
         text_style: body
       border_color: @exchange_flash then green else black
       border_thickness: 1
-      on_click: @@ ~exchange_tiles()
+      on_click: 
+        - ~exchange_tiles()
+        - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
 
       

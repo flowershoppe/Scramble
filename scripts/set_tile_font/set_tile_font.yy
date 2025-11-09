@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"set_tile_font",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"set_tile_font",
+  "parent":{
+    "name":"Admin",
+    "path":"folders/Scripts/Admin.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

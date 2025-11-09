@@ -13,6 +13,7 @@ function toggle_stats()
 	
 	if(!_exists)
 	{
+		//audio_play_sound(sdConfirm, 1, false);
 		instance_create_layer(0, 0, "Settings", yui_document, global.stStats);
 	}
 }

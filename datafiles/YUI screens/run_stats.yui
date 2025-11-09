@@ -14,11 +14,11 @@ root:
   elements:
     - type: panel
       canvas: 
-        top: 50
+        top: 70
         left: 375
-      background: ~yui_panel_bg
-      size: {w: 200, h: 200}
+      size: {w: 200, h: 120}
       padding: 10
+      background: ~yui_panel_bg
       elements:
         - type: text
           text: @@ 'Total Score - ' + @total_score

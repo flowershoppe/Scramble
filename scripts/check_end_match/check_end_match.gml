@@ -140,7 +140,7 @@ function check_end_match()
 			file_delete(_saveloc);
 			show_debug_message("Deleting save at " + _saveloc)
 			broadcast("match end");
-			screenTransition(rGameOver, , ST_CHECKER_DIAG_UL_TO_DR_Y);
+			screenTransition(rGameOver, , ST_CHECKER_UD_BOTH);
 			with(oRun){alarm_set(1, 1);}
 		}
 
@@ -151,7 +151,8 @@ function check_end_match()
 		
 		//win match
 		if(_win and !oMatchManager.loss)
-		{			
+		{		
+			oMatchManager.victory = true;
 			oMatchManager.active = false;
 			with(yui_document)
 			{
@@ -172,7 +173,7 @@ function check_end_match()
 			if(oRun.stage >= oRun.stage_count and oRun.current_level == oRun.levels[array_length(oRun.levels) - 1])
 			{				
 				reset_tilebag();
-				screenTransition(rGameOver, , ST_CHECKER_DIAG_UL_TO_DR_Y);
+				screenTransition(rGameOver, , ST_CHECKER_DU_X);
 				with(oRun){alarm_set(2, 1);}
 				exit;				
 			}
@@ -186,7 +187,7 @@ function check_end_match()
 			{
 				show_results();	
 			}
-			broadcast("match end");
+			broadcast("match end");			
 			return true;
 			//audio_stop_sound(global.music_game);
 			//audio_play_sound_on(global.emitterMS, global.music_victory, true, 100);

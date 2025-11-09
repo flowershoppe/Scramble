@@ -9,6 +9,7 @@ function load_settings()
 		global.volumeMain = _loadData.volume_Main;
 		global.volumeMS = _loadData.volume_MS;
 		global.volumeSE = _loadData.volume_SE;
+		set_tile_font(_loadData.font);
 		window_set_size(_loadData.window_width, _loadData.window_height);
 		window_center();
 		
@@ -18,6 +19,11 @@ function load_settings()
 		buffer_delete(_buffer);
 		
 		show_debug_message("loaded settings.save");
+	}
+	else
+	{
+		save_settings();
+		show_debug_message("successfully initialized settings");
 	}
 	
 	if(file_exists("keybinds.save"))

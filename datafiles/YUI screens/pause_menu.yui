@@ -29,16 +29,22 @@ root:
                 type: text
                 text_style: subtitle
                 text: Settings
-              on_click: @@ ~toggle_settings()
+              on_click:
+                - ~toggle_settings()
+                - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
             - type: button 
               content:
                 type: text
                 text_style: subtitle
                 text: Main Menu
-              on_click: @@ ~goto_mainmenu()          
+              on_click: 
+                - ~goto_mainmenu()          
+                - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)
         - type: button 
           content:
             type: text
             text_style: subtitle
             text: Resume
-          on_click: @@ ~toggle_pause()
+          on_click: 
+            - ~toggle_pause()
+            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)

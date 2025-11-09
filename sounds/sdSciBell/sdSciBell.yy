@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":5.79725,
+  "duration":5.7972565,
   "name":"sdSciBell",
   "parent":{
     "name":"Sounds",
