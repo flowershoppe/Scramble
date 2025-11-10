@@ -18,6 +18,25 @@ function save_game()
 				stage: stage,
 				money_earned : money_earned,
 				levels_completed : levels_completed,
+				current_level : current_level
+			}
+		}
+		array_push(_saveData, _saveEntity);
+	}
+	
+	//save Shop
+	with(oShop)
+	{
+		var _saveEntity =
+		{
+			object_name : object_get_name(object_index),
+			layer_name: layer_get_name(layer),
+			variables :
+			{
+				x : x,
+				y : y,
+				tile_specs : tile_specs,
+				charms : charms
 			}
 		}
 		array_push(_saveData, _saveEntity);
