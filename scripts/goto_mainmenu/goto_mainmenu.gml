@@ -15,6 +15,7 @@ function goto_mainmenu()
 	instance_destroy(oLevel);
 	instance_destroy(oResultsManager);
 	instance_destroy(oRewardsManager);
+	instance_destroy(oShop);
 	
 	global.paused = false;
 	
