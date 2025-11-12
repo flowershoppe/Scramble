@@ -71,7 +71,7 @@ dialogue_get_colour = function(value1, value2) {
 }
 
 dialogue_play_sound = function(value) {
-  audio_play_sound(value, 1, false);
+  audio_play_sound_on(oGame.emitter_SE, value, false, 1);
 }
 
 //Create Advance Button

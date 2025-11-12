@@ -6,8 +6,8 @@ reward_amount = 3;
 
 dialogues =
 [
-	["[chr:Cress][ts:normal]Glad to see you're okay.",
-	"[chr:Cress][ts:normal]Will you help me with my work?",
+	["[chr:Cress][ts:slow]Glad to see you're okay.",
+	"[chr:Cress][ts:slow]Will you help me with my work?",
 	"[method:start_match]"],
 
 	["[chr:Cress]You're doing better than I thought you would be.",

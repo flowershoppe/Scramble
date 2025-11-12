@@ -50,6 +50,7 @@ root:
                       selection_scope: @font_selector
                       on_item_selected:
                         - @@ value => ~set_tile_font(value)
+                        - @@ value => ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
                 - type: panel
                   layout: canvas
                   size: 64
@@ -137,11 +138,14 @@ root:
           alignment: { h: center }
           background: ~yui_panel_bg
           padding: 50
-          spacing: 50
+          spacing: 25
           elements: 
             - type: text
               text: Keybinds
               text_style: subtitle
+            - type: text
+              text: Select and press any key to rebind
+              text_style: body
             - type: panel
               layout: horizontal
               spacing: 20

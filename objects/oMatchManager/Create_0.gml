@@ -28,4 +28,4 @@ active = false;
 
 loss = false;
 
-
+i = 0;

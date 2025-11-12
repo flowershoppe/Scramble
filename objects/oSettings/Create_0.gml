@@ -16,14 +16,3 @@ resolution_selector = new YuiArraySelector(resolution_items, resolution_items[2]
 verbs = ["left", "right", "up", "down", "confirm", "cancel", "special", "pause"];
 
 verb_to_set = "";
-
-var _ind = 0;
-for(var i = 0; i < array_length(oGame.fonts); i++)
-{
-	if(oGame.font.name == oGame.fonts[i].name)
-	{
-		_ind = i;
-		break;
-	}
-}
-font_selector = new YuiArraySelector(oGame.fonts, oGame.fonts[_ind]);

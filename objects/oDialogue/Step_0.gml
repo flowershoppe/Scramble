@@ -1,4 +1,11 @@
 if(global.paused){exit;}
+if(char_count < array_length(msg_chars))
+{
+	if(char_count % 3 == 0)
+	{
+		audio_play_sound_on(oGame.emitter_SE, sdText, false, 1, , , irandom_range(1, 1));
+	}
+}
 /// @description Input handling and processing
 if (char_count == msg_length) {
   

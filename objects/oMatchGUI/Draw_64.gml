@@ -7,7 +7,7 @@ if(global.exchanging)
 	var _old_valign = draw_get_valign();
 	var _old_font = draw_get_font();
 	
-	draw_set_font(global.tile_font);
+	draw_set_font(oGame.tile_font);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
 
