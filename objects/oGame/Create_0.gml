@@ -59,6 +59,7 @@ global.board_sprite = spBoard;
 global.place_sounds = [sdPlace1, sdPlace2, sdPlace3, sdPlace4, sdPlace5, sdPlace6];
 global.emitterSE = audio_emitter_create();
 global.emitterMS = audio_emitter_create();
+global.emitterMain = audio_emitter_create();
 global.music = 0;
 global.volumeMain = 1;
 global.volumeSE = 1;
@@ -66,6 +67,7 @@ global.volumeMS = 1;
 
 audio_emitter_gain(global.emitterSE, global.volumeSE);
 audio_emitter_gain(global.emitterMS, global.volumeMS);
+audio_emitter_gain(global.emitterMain, global.volumeMain);
 
 global.music_game = msGameMusic1;
 global.music_map = msMap;
@@ -106,6 +108,12 @@ global.hand_sprite = spPlank;
 tile_sprite = spLetterTile;
 tile_font_color = c_black;
 
+//default font
+font = construct_font("Oswald", fnt_oswald, fnt_oswald_small);
+tile_font_name = font.name;
+tile_font = font.normal;
+tile_font_small = font.small;
+
 //Handlers
 instance_create_layer(0, 0, "Meta", oSaverLoader);
 instance_create_layer(0, 0, "Meta", oPauseMenu);
@@ -115,13 +123,6 @@ instance_create_layer(0, 0, "Meta", oStats);
 load_stats();
 instance_create_layer(room_width / 2, room_height / 2, "Meta", oCamera,
 {active : false});
-
-//default font
-if(font == 0)
-{
-	font = construct_font("Oswald", fnt_oswald, fnt_oswald_small);
-	set_tile_font(font);
-}
 
 //GAMEPLAY
 global.exchanging = false;
@@ -238,3 +239,19 @@ receiver = new Receiver();
 
 emitter_SE = global.emitterSE;
 emitter_MS = global.emitterMS;
+
+load_settings();
+
+with(oSettings)
+{
+	var _ind = 0;
+	for(var i = 0; i < array_length(oGame.fonts); i++)
+	{
+		if(oGame.font.name == oGame.fonts[i].name)
+		{
+			_ind = i;
+			break;
+		}
+	}
+	font_selector = new YuiArraySelector(oGame.fonts, oGame.fonts[_ind]);
+}

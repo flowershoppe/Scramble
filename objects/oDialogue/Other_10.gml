@@ -69,7 +69,6 @@ var values = array_create(8, undefined);
 // Parsing dialogue message
 for (var i = 0; i < msg_length; i++) {
   var char = msg_chars[i];
-  
   // Looking for command blocks
   if (char == "[") {
     var command_valid = true;

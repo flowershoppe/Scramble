@@ -14,8 +14,8 @@ root:
   elements:
     - type: panel
       canvas: 
-        top: 70
-        left: 375
+        top: 75
+        left: 110
       size: {w: 200, h: 120}
       padding: 10
       background: ~yui_panel_bg

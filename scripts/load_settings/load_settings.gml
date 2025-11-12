@@ -8,13 +8,15 @@ function load_settings()
 		
 		global.volumeMain = _loadData.volume_Main;
 		global.volumeMS = _loadData.volume_MS;
-		global.volumeSE = _loadData.volume_SE;
-		set_tile_font(_loadData.font);
+		global.volumeSE = _loadData.volume_SE;	
+		audio_emitter_gain(global.emitterSE, global.volumeSE);
+		audio_emitter_gain(global.emitterMS, global.volumeMS);
+		audio_emitter_gain(global.emitterMain, global.volumeMain);
+		
 		window_set_size(_loadData.window_width, _loadData.window_height);
 		window_center();
 		
-		audio_emitter_gain(global.emitterSE, global.volumeSE);
-		audio_emitter_gain(global.emitterMS, global.volumeMS);
+		set_tile_font(_loadData.font);
 		
 		buffer_delete(_buffer);
 		

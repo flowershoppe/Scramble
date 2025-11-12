@@ -44,7 +44,7 @@ root:
         type: panel
         layout: canvas
         size: 64
-        background: @@ ~oRun.tile_sprite
+        background: @@ ~oGame.tile_sprite
         events:
           on_click: 
             - ~get_reward(@id)
@@ -55,11 +55,12 @@ root:
             canvas:
               bottom: 5
             text: @letter
-            text_style: title
+            font: ~oGame.tile_font
           - type: text
             text: @pointvalue
+            font: ~oGame.tile_font_small
             canvas:
-              right: 2
+              right: 5
             color: @@ ~isGreater(@letter, @pointvalue) then red else black
 
 

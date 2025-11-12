@@ -5,9 +5,9 @@ function save_settings()
 	{
 		window_width : window_get_width(),
 		window_height : window_get_height(),
-		volume_MS : global.volumeMS,
-		volume_SE : global.volumeSE,
-		volume_Main : global.volumeMain,
+		volume_MS : audio_emitter_get_gain(global.emitterMS),
+		volume_SE : audio_emitter_get_gain(global.emitterSE),
+		volume_Main : audio_emitter_get_gain(global.emitterMain),
 		font : oGame.font
 	};
 	var _string = json_stringify(_saveData);

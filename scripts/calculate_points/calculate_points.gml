@@ -29,7 +29,6 @@ function calculate_points()
 			with(_player_words_tiles[j][k])
 			{
 				var _points = pointvalue;
-				highlight = true;
 				
 				_holder = instance_place(x, y, oTileHolder);				
 				//factor in the holder's multipliers
@@ -72,12 +71,11 @@ function calculate_points()
 	oRun.total_score += _total;
 	if(_total > oRun.largest_play){oRun.largest_play = _total;}
 	
-	oPlayer.words_tiles = [];
-	
 	//update profile stats
 	oStats.words_spelled += array_length(_player_words_tiles);
 	
-	audio_play_sound(sdSciBell, 0, 0);
+	//animation
+	with(oMatchManager){alarm_set(0, 1);}
 	
 	broadcast("calculate points");
 	return _total;
