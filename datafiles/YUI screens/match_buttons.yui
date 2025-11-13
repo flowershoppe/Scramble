@@ -24,7 +24,6 @@ root:
         on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
       on_click: 
         - ~submit_play()
-        - ~audio_play_sound_on(~oGame.emitter_SE, ~sdConfirm, false, 1)
 
     - type: button 
       content: 

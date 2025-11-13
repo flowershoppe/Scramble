@@ -16,7 +16,7 @@ function gen_board(_lvl)
 				_point_scale_mult = i;
 			}
 		}
-		specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 5);
+		specs(50 + _point_base + (_point_scale * _point_scale_mult), -1, -1, 5);
 		//randomly select a lv1 gen
 			var _ran = irandom_range(1, 3);
 			switch(_ran)

@@ -28,4 +28,8 @@ active = false;
 
 loss = false;
 
-i = 0;
+//animate
+word_ind = 0;
+letter_ind = 0;
+total_letters = 0;
+count = 0;

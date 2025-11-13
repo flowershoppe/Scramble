@@ -3,9 +3,8 @@ function submit_play()
 	var _placed_tiles = oPlayer.placed_tiles;
 	if(array_length(_placed_tiles) < 1){exit;}
 	
-	if(valid_play())
+	if(valid_play() and check_words())
 	{	
-		check_words();
 		var _score = calculate_points();
 		if(_score > 0)
 		{
