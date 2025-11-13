@@ -163,10 +163,11 @@ if(!mouse_check_button(mb_left))
 		#endregion
 		
 		//-----DROP TILE-----
-		held_tile.layer = layer_get_id("Hand_Tiles");
+		
 				
 		if(layer == layer_get_id("Tiles"))
 		{
+			held_tile.layer = layer_get_id("Tiles");
 			//place in array for checking play validity later
 			array_push(_placed_tiles, held_tile);
 
@@ -181,6 +182,7 @@ if(!mouse_check_button(mb_left))
 		else if(layer == layer_get_id("Hand"))
 		{
 			held_tile.in_hand = true;
+			held_tile.layer = layer_get_id("Hand_Tiles");
 		}
 		held_tile.x = _nearest_holder.x;
 		held_tile.y = _nearest_holder.y;
