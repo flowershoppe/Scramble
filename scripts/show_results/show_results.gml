@@ -1,5 +1,6 @@
 function show_results()
 {
+	oMatchManager.typist = 0;
 	oRun.levels_completed++;
 	oTilebag.yui_tiles = oTilebag.tiles;
 	reset_tilebag();

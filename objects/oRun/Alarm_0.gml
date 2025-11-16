@@ -12,7 +12,7 @@ with(oShop){event_user(0);}
 //initialize player and cursor
 instance_create_layer(0, 0, "Meta", oPlayer);	
 
-create_levels(2, oLevel1);
+create_levels(3, oLevel1);
 
 save_game();
 

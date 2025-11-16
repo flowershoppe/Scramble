@@ -12,7 +12,7 @@ root:
   layout: canvas
   is_cursor_layer: true
   elements:
-    - type: panel
+    - type: panel      
       canvas:
         center: true
       elements:
@@ -77,3 +77,9 @@ root:
                     - type: text
                       text : "PLAY TIME | "
                     - @time_string
+                - type: panel
+                  layout: horizontal
+                  elements:
+                    - type: text
+                      text : "MONEY EARNED | "
+                    - @total_money_earned

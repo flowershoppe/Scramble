@@ -154,13 +154,6 @@ function check_end_match()
 		{		
 			oMatchManager.victory = true;
 			oMatchManager.active = false;
-			with(yui_document)
-			{
-				if(yui_file == "YUI screens/match_buttons.yui")
-				{
-					instance_destroy();
-				}
-			}
 			//put tiles back in bag
 			with(oTile)
 			{
@@ -177,20 +170,25 @@ function check_end_match()
 				with(oRun){alarm_set(2, 1);}
 				exit;				
 			}
-			//THRE WILL BE A BETTER WAY TO DO THIS \/
-			//if first level of stage, do dialogue
-			if(array_get_index(oRun.levels, oRun.current_level) == 0)
-			{
-				dialogue_open(adialogue, []);
+			
+			//MUSIC			
+			audio_play_sound_on(oGame.emitter_SE, msWinChime, false, 1);			
+					
+			with(oMatchManager)
+			{				
+				typist = scribble_typist();
+				typist.in(0.15, 0);
+				typist.sound_per_char(sounds, 1, 2);
+				wait = true;
+				alarm_set(1, 120);
 			}
-			else
+			with(oTile)
 			{
-				show_results();	
+				if(on_board){instance_create_depth(x, y, depth - 1, oShine);}
 			}
-			broadcast("match end");			
+			
+			broadcast("match end");	
 			return true;
-			//audio_stop_sound(global.music_game);
-			//audio_play_sound_on(global.emitterMS, global.music_victory, true, 100);
 		}
 	}
 }

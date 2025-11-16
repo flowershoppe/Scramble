@@ -48,7 +48,7 @@ root:
         events:
           on_click: 
             - ~get_reward(@id)
-            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdConfirm, false, 1)
+            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
 
 
 

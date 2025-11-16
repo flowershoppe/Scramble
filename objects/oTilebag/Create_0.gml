@@ -7,7 +7,7 @@ last_tile = noone;
 
 spr = spBag;
 
-font = global.reality_hyper_title
+font = oGame.tile_font;
 
 //contents window
 bag_menu = noone;

@@ -8,7 +8,7 @@ function save_stats()
 		run_count : run_count,
 		tiles_played : tiles_played,
 		words_spelled : words_spelled,
-		
+		total_money_earned : total_money_earned
 	}
 	var _string = json_stringify(_saveData);
 	var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1);

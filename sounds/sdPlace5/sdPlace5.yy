@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.406417,
+  "duration":0.40641722,
   "name":"sdPlace5",
   "parent":{
     "name":"Sounds",

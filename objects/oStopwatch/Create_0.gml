@@ -7,7 +7,7 @@ receiver = new Receiver();
 
 receiver.add("match start", function()
 {
-	if(!isnegative(oMatchManager.turn_max))
+	if(oMatchManager.turn_max > 0)
 	{
 		broadcast("charm trigger");
 		oMatchManager.turn_max ++;

@@ -6,6 +6,7 @@ function add_charm(_charm)
 		var _c = instance_create_layer(0, 0, "Meta", _charm, {isininventory : true});
 		var _ind = array_get_index(_charms, -1)
 		oCharmManager.charms[_ind] = _c;
+		return true;
 	}
 	else
 	{
@@ -14,5 +15,6 @@ function add_charm(_charm)
 			charms_full_message = true;
 			alarm_set(0, 120);
 		}
+		return false;
 	}
 }

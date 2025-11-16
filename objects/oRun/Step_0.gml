@@ -31,6 +31,7 @@ if(instance_exists(oPlayer))
 	{
 		if(old_money < oPlayer.money)
 		{
+			oStats.total_money_earned += (oPlayer.money - money_earned)
 			money_earned += (oPlayer.money - money_earned);		
 		}
 		old_money = oPlayer.money;

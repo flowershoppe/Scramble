@@ -8,11 +8,11 @@ if(count < 7){count++;}
 	}
 }*/
 audio_play_sound_on(oGame.emitter_SE, sdPlayTile, false, 1, , , 1 + (0.5 * count),);
+audio_play_sound_on(oGame.emitter_SE, sdHit, false, 1, , , 1 + (0.5 * count),);
 var _tile = oPlayer.words_tiles[word_ind][letter_ind];
 _tile.highlight = true;
-var _shine = instance_create_depth(_tile.x, _tile.y, -200, oShine);
-var _layer2 = layer_get_name(_shine.layer);
-var _layer = layer_get_name(_tile.layer);
+instance_create_depth(_tile.x, _tile.y, -200, oShine);
+
 //move to next word
 if(letter_ind >= array_length(oPlayer.words_tiles[word_ind]) - 1)
 {
@@ -31,7 +31,7 @@ if(word_ind >= array_length(oPlayer.words_tiles))
 	word_ind = 0;
 	letter_ind = 0;
 	total_letters = 0;
-	count = 0; 
+	count = 0;
 	exit;
 }
 alarm_set(0, 5);

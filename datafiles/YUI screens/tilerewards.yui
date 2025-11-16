@@ -14,6 +14,9 @@ root:
     - type: panel
       alignment: center
       layout: horizontal
+      animate:
+        on_visible:
+          opacity: &fade_in
       canvas:
         top: 350
       elements:
@@ -22,6 +25,9 @@ root:
           text_style: subtitle
     - type: panel
       alignment: center
+      animate:
+        on_visible:
+          opacity: &fade_in
       canvas:
         top: 275
       layout: horizontal
@@ -34,6 +40,9 @@ root:
         sprite: @@ ~spShadow
     - type: panel
       theme: dark
+      animate:
+        on_visible:
+          opacity: &fade_in
       alignment: center
       layout: horizontal
       spacing: 25
@@ -42,13 +51,16 @@ root:
       elements: @array_rewards
       template:
         type: panel
+        animate:
+          on_visible:
+            opacity: &fade_in
         layout: canvas
         size: 64
         background: @@ ~oGame.tile_sprite
         events:
           on_click: 
             - ~get_reward(@id)
-            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdConfirm, false, 1)
+            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
         elements:
           - type: text
             alignment: center

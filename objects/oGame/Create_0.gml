@@ -94,17 +94,6 @@ fonts = [
 	construct_font("Wingdings", fnt_wingdings, fnt_wingdings_small)
 ];
 #endregion
-
-global.title_font_size = 20;
-global.reality_hyper_title = font_add("Reality Hyper.ttf", global.title_font_size,
-					false, false, global.title_font_size, global.title_font_size);
-global.subtitle_font_size = 16;
-global.reality_hyper_subtitle = font_add("Reality Hyper.ttf", global.subtitle_font_size,
-					false, false, global.subtitle_font_size, global.subtitle_font_size);
-global.body_font_size = 14;
-global.reality_hyper_subtitle = font_add("Reality Hyper.ttf", global.body_font_size,
-					false, false, global.body_font_size, global.body_font_size);
-global.hand_sprite = spPlank;
 tile_sprite = spLetterTile;
 tile_font_color = c_black;
 
@@ -126,6 +115,7 @@ instance_create_layer(room_width / 2, room_height / 2, "Meta", oCamera,
 
 //GAMEPLAY
 global.exchanging = false;
+global.hand_sprite = spPlank;
 
 //YUI Structs
 #region
