@@ -20,7 +20,7 @@ root:
       indexed: true
       elements:
         - type: button
-          font: ~oGame.reality_hyper_subtitle
+          font: ~fnt_reality_hyper
           background: ~spPanel
           content: 
             type: text

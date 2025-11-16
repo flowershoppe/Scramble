@@ -14,12 +14,16 @@ root:
     - type: panel
       layout: vertical
       alignment: center
+      indexed: true
       canvas:
         top: 350
         center: h
       elements:
         - type: panel
           layout: horizontal 
+          animate:
+            on_visible:
+              opacity: &cascade_fade_in
           elements:
             - type: text
               text: "Base Money Reward | "
@@ -27,6 +31,9 @@ root:
               text: @base_money_reward
         - type: panel
           layout: horizontal 
+          animate:
+            on_visible:
+              opacity: &cascade_fade_in
           elements:
             - type: text
               text: "Point Bonus | "
@@ -34,6 +41,9 @@ root:
               text: @p_bonus
         - type: panel
           layout: horizontal 
+          animate:
+            on_visible:
+              opacity: &cascade_fade_in
           elements:
             - type: text
               text: "Turn Bonus | "
@@ -41,6 +51,9 @@ root:
               text: @t_bonus
         - type: panel
           layout: horizontal 
+          animate:
+            on_visible:
+              opacity: &cascade_fade_in
           elements:
             - type: text
               text: "Level Bonus | "
@@ -48,6 +61,9 @@ root:
               text: @l_bonus
         - type: panel
           layout: horizontal 
+          animate:
+            on_visible:
+              opacity: &cascade_fade_in
           elements:
             - type: text
               text: "Total Money Reward | "

@@ -2,11 +2,19 @@ file_type: resources
 
 resources:
 
+  cascade_fade_in:
+    type: curve
+    curve: ~curveExpoInv
+    delay: @@ 1000 + ($panel_index ?? 0) * 100
+    duration: 100
+    from: 0
+    to: 1
+
   fade_in:
     type: curve
-    curve: curveExpoInv
-    delay: 1000
-    duration: 2000
+    curve: ~curveExpoInv
+    delay: 0
+    duration: 100
     from: 0
     to: 1
 

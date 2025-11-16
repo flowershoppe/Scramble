@@ -33,6 +33,7 @@
     {"$GMObjectProperty":"v1","%Name":"words_spelled","filters":[],"listItems":[],"multiselect":false,"name":"words_spelled","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"tiles_played","filters":[],"listItems":[],"multiselect":false,"name":"tiles_played","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"play_time","filters":[],"listItems":[],"multiselect":false,"name":"play_time","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"total_money_earned","filters":[],"listItems":[],"multiselect":false,"name":"total_money_earned","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

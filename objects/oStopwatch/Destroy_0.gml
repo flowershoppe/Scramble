@@ -1,1 +1,0 @@
-oPlayerHand.size -= 1;

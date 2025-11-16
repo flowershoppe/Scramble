@@ -21,7 +21,7 @@ switch(room)
 		{
 			audio_stop_sound(global.music);
 			global.music = global.music_main_menu;
-			audio_play_sound_on(global.emitterMS, global.music_main_menu, true, 100);
+			audio_play_sound_on(oGame.emitter_MS, global.music_main_menu, true, 100);
 		}
 		
 		break;

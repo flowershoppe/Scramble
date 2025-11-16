@@ -19,11 +19,7 @@ function submit_play()
 					grabbable = false;	
 				}
 			}
-			
-			if(!oMatchManager.victory and !oMatchManager.loss)
-			{
-				next_turn();
-			}
 		}
+		next_turn();
 	}
 }

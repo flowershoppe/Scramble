@@ -37,6 +37,12 @@ if(instance_exists(oMatchManager))
 	if(room == rGameOver and oMatchManager.victory and 
 		!audio_is_playing(msVictory) and !audio_is_playing(msVictoryLoop))
 	{
-		audio_play_sound_on(global.emitterMS, msVictoryLoop, false, 1);
+		global.music = msVictoryLoop
+		audio_play_sound_on(oGame.emitter_MS, global.music, true, 1);
 	}
+	/*if(oMatchManager.victory and room != rGameOver and !audio_is_playing(msWin) and !audio_is_playing(msWinLoop))
+	{
+		global.music = msWinLoop;
+		audio_play_sound_on(oGame.emitter_MS, global.music, true, 1);
+	}*/
 }
