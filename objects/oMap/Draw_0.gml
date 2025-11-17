@@ -1,6 +1,8 @@
-draw_sprite_ext(spr, 0, 0, 0, 1, 1, 0, 11053224, 1);
+var _scale = window_get_width() / sprite_get_width(spr);
 
-var _alpha = sin_oscillate(0, 0.15, 5)
+draw_sprite_ext(spr, 0, 0, 0, _scale, _scale, 0, c_white, 1);
 
-draw_sprite_solid_color(spr, 0, 0, 0, 1, 1, 0, c_aqua, _alpha);
+var _alpha = sin_oscillate(0, .1, 6)
+
+draw_sprite_solid_color(spr, 0, 0, 0, _scale, _scale, 0, c, _alpha);
 
