@@ -7,8 +7,6 @@ last_tile = noone;
 
 spr = spBag;
 
-font = oGame.tile_font;
-
 //contents window
 bag_menu = noone;
 stats_menu = noone;

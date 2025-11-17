@@ -1,1 +1,1 @@
-speed = 0.15;
+spr = spDesk
