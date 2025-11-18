@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.250667,
+  "duration":0.25068027,
   "name":"sdPlace3",
   "parent":{
     "name":"Sounds",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"sdPlace3.wav",
   "type":0,
-  "volume":0.5,
+  "volume":0.4,
 }

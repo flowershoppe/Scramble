@@ -2,13 +2,15 @@ if(global.paused){exit;}
 x = mouse_x;
 y = mouse_y;
 
-//do not run if match is inactive
+
 if(!instance_exists(oMatchManager)){exit;}
-if(oMatchManager.active == false){exit;}
 
+if(oMatchManager.active)
+{
+	var _placed_tiles = oPlayer.placed_tiles;
+}
 
-var _placed_tiles = oPlayer.placed_tiles;
-
+oCursor.layer = layer_get_id("Tiles");
 if(instance_exists(oPlayerHand))
 {	
 	with(oPlayerHand)
@@ -17,8 +19,6 @@ if(instance_exists(oPlayerHand))
 		{
 			oCursor.layer = layer_get_id("Hand");
 		}
-		else
-		{ oCursor.layer = layer_get_id("Tiles"); }	
 	}
 }
 
@@ -28,7 +28,7 @@ if(global.exchanging){exit;}
 if(mouse_check_button_pressed(mb_left))
 {	
 	//in hand check
-	if(position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile))
+	if(oMatchManager.active and position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile))
 	{
 		var _list = ds_list_create();
 		var _num = instance_place_list(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile, _list, true);
@@ -77,8 +77,11 @@ if(mouse_check_button_pressed(mb_left))
 	//grab a tile
 	
 	//remove from placed tiles array if picking up from board
-	if(held_tile.on_board == true)
-	{array_delete(_placed_tiles, array_get_index(_placed_tiles, held_tile), 1);}
+	if(oMatchManager.active)
+	{
+		if(held_tile.on_board == true)
+		{array_delete(_placed_tiles, array_get_index(_placed_tiles, held_tile), 1);}
+	}
 			
 	//hold the tile;
 	held_tile.image_xscale = 1;
@@ -100,15 +103,18 @@ if(mouse_check_button_pressed(mb_left))
 			tile = noone;
 		}
 	}
-		
-	if(array_length(_placed_tiles) > 0)
-	{	
-		valid_play();
-	}
-	else
+	if(oMatchManager.active)
 	{
-		debug = "Play some tiles!";	
-	}	
+		if(array_length(_placed_tiles) > 0)
+		{	
+			valid_play();
+		}
+		else
+		{
+			debug = "Play some tiles!";	
+		}	
+	}
+
 		
 }
 #endregion
@@ -162,15 +168,15 @@ if(!mouse_check_button(mb_left))
 		}
 		#endregion
 		
-		//-----DROP TILE-----
-		
-				
+		//-----DROP TILE-----				
 		if(layer == layer_get_id("Tiles"))
 		{
 			held_tile.layer = layer_get_id("Tiles");
 			//place in array for checking play validity later
-			array_push(_placed_tiles, held_tile);
-
+			if(oMatchManager.active)
+			{
+				array_push(_placed_tiles, held_tile);
+			}
 			//Blank tile subroutine
 			if(held_tile.blank == true)
 			{
@@ -190,13 +196,16 @@ if(!mouse_check_button(mb_left))
 		_nearest_holder.tile = held_tile;
 				
 		//validate play only if there are placed tiles
-		if(array_length(_placed_tiles) > 0)
-		{	
-			valid_play();
-		}
-		else
+		if(oMatchManager.active)
 		{
-			debug = "Play some tiles!";	
+			if(array_length(_placed_tiles) > 0)
+			{	
+				valid_play();
+			}
+			else
+			{
+				debug = "Play some tiles!";	
+			}
 		}
 		
 		

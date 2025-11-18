@@ -1,12 +1,23 @@
-instance_create_layer(x_loc, y_loc, "Meta", oTitleLetter,
+var _letter = letters[ind];
+var _tile = instance_create_layer(x_loc, y_loc, "Tiles", oTile,
 {
-	sprite_index : array[i],
-	image_blend : c_orange
+	on_board : true,
+	letter : _letter,
+	pointvalue : global.letters[? _letter],
+	x : x_loc,
+	y : y_loc
 });
-i++;
-x_loc += size;	
-
-if(i < length)
+with(instance_nearest(x_loc, y_loc, oTileHolder))
 {
-	alarm_set(0, letter_delay);	
+	tile = _tile;
+}
+instance_create_depth(x_loc, y_loc, layer_get_depth(layer_get_id("Tiles")) - 1, oShine);
+ind++;
+x_loc += size;
+
+if(ind < length)
+{
+	audio_play_sound_on(oGame.emitter_SE, sdPlayTile, false, 1, , , 1 + (0.5 * ind),);
+	audio_play_sound_on(oGame.emitter_SE, sdHit, false, 1, , , 1 + (0.5 * ind),);
+	alarm_set(0, 5);
 }
