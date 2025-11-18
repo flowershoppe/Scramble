@@ -4,7 +4,6 @@ dist_standard(oTilebag);
 	
 //initialize handlers
 instance_create_layer(0, 0, "Meta", oCharmManager);
-instance_create_layer(0, 0, "Meta", oMatchManager);
 
 //generate shop
 with(oShop){event_user(0);}

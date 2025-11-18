@@ -1,4 +1,4 @@
-if(global.paused){exit;}
+if(global.paused or !oMatchManager.active){exit;}
 var _tile = id;
 with(oTileHolder)
 {
