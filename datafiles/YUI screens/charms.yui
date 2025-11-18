@@ -6,9 +6,11 @@ import:
 
   - /YUI/Animations/transitions.yui
   - /YUI/Widgets/
+  - /YUI/Interactions/equip_item.yui
 
 root:  
   type: panel
+  theme: default
   layout: grid
   padding: [10, 10, 10, 10]
   grid:
@@ -22,6 +24,9 @@ root:
   elements: @charms
   template:
     type: image
+    events:
+      on_mouse_down:
+        interaction: equip_item
     size: 32
     tooltip: @name + ~chr(13) + @description
     sprite: @sprite_index
