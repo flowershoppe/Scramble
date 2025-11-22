@@ -1,0 +1,1 @@
+screenTransition(rMainMenu, , ST_CHECKER_DIAG_DL_TO_UR_BOTH);

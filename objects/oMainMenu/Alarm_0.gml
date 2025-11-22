@@ -1,3 +1,5 @@
+audio_play_sound_on(oGame.emitter_SE, sdPlayTile, false, 1, , , 1 + (0.5 * ind),);
+audio_play_sound_on(oGame.emitter_SE, sdHit, false, 1, , , 1 + (0.5 * ind),);
 var _letter = letters[ind];
 var _tile = instance_create_layer(x_loc, y_loc, "Tiles", oTile,
 {
@@ -17,7 +19,5 @@ x_loc += size;
 
 if(ind < length)
 {
-	audio_play_sound_on(oGame.emitter_SE, sdPlayTile, false, 1, , , 1 + (0.5 * ind),);
-	audio_play_sound_on(oGame.emitter_SE, sdHit, false, 1, , , 1 + (0.5 * ind),);
 	alarm_set(0, 5);
 }
