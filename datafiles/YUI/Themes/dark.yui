@@ -14,9 +14,9 @@ constants:
 
   tint_color: #ffffff
   //accent_color: #AA00AA
-  accent_color: #e3008c
+  accent_color: #ffffffff
   lum_factor: 1
-  accent_lum: -0.5
+  accent_lum: 1
 
   // tint_color: #33FF33
   // accent_color: #00ff00

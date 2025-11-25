@@ -13,7 +13,11 @@ function load_settings()
 		audio_emitter_gain(global.emitterMS, global.volumeMS);
 		audio_emitter_gain(global.emitterMain, global.volumeMain);
 		
+		oSettings.window_width = _loadData.window_width;
+		oSettings.window_height = _loadData.window_height;		
 		window_set_size(_loadData.window_width, _loadData.window_height);
+		window_set_fullscreen(_loadData.isfullscreen);
+		oSettings.isfullscreen = _loadData.isfullscreen;
 		window_center();
 		
 		set_tile_font(_loadData.font);

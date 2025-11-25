@@ -19,6 +19,7 @@ root:
         type: text
         text: Submit Play
         text_style: body  
+      border_color: black
       border_thickness: 1
       events:
         on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
@@ -30,6 +31,7 @@ root:
         type: text
         text: Return Tiles
         text_style: body
+      border_color: black
       border_thickness: 1
       events:
         on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false

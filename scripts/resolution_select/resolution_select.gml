@@ -13,6 +13,7 @@ function resolution_select(_command)
 			window_set_fullscreen(true);
 			_win_w = display_get_width();
 			_win_h = display_get_height();
+			oSettings.isfullscreen = true;
 			
 		break;
 		
@@ -20,6 +21,7 @@ function resolution_select(_command)
 			window_set_fullscreen(false);
 			_win_w = 720;
 			_win_h = 480;
+			oSettings.isfullscreen = false;
 			
 		break;
 		
@@ -27,6 +29,7 @@ function resolution_select(_command)
 			window_set_fullscreen(false);
 			_win_w = 960;
 			_win_h = 540;
+			oSettings.isfullscreen = false;
 			
 		break;
 		
@@ -34,6 +37,7 @@ function resolution_select(_command)
 			window_set_fullscreen(false);
 			_win_w = 1280;
 			_win_h = 720;
+			oSettings.isfullscreen = false;
 			
 		break;
 		
@@ -41,6 +45,7 @@ function resolution_select(_command)
 			window_set_fullscreen(false);
 			_win_w = 1600;
 			_win_h = 900;
+			oSettings.isfullscreen = false;
 			
 		break;
 		
@@ -48,10 +53,13 @@ function resolution_select(_command)
 			window_set_fullscreen(false);
 			_win_w = 1920;
 			_win_h = 1080;
+			oSettings.isfullscreen = false;
 		break;			
 	}
 	
 	window_set_size(_win_w, _win_h);
+	oSettings.window_width = _win_w;
+	oSettings.window_height = _win_h;
 	//instance_create_layer(0, 0, "Meta", oAppResizer, 
 	//{
 		//win_w: _win_w,
