@@ -63,7 +63,9 @@ camera_set_view_pos(global.maincam, _newX, _newY);
 #endregion
 
 //drag camera
-if(input_mouse_check_pressed(mb_left) and !instance_exists(oDialogue) 
+var _yui = false;
+with(oCursor){_yui = position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), yui_document);}
+if(!_yui and input_mouse_check_pressed(mb_left) and !instance_exists(oDialogue) 
 	and oCursor.layer != (layer_get_id("Hand"))){dragging = true;}
 if(input_mouse_check_released(mb_left)){dragging = false;}
 with(oTile)

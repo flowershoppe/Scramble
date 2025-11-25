@@ -1,5 +1,5 @@
 { longMessage : "ERROR in action number 1
-of  Step Event0 for object oMatchGUI:
-Unable to find instance for object index 40
- at gml_Object_oMatchGUI_Step_0 (line 2) - if(oMatchManager.turn == 1)
-", stacktrace : [ "gml_Object_oMatchGUI_Step_0 (line 2)" ], line : 2, message : "Unable to find instance for object index 40", script : "gml_Object_oMatchGUI_Step_0" }
+of Alarm Event for alarm 0 for object oMainMenu:
+Push :: Execution Error - Variable Index [8] out of range [8] - -6.letters(102802,8)
+ at gml_Object_oMainMenu_Alarm_0 (line 3) - var _letter = letters[ind];
+", script : "gml_Object_oMainMenu_Alarm_0", message : "Push :: Execution Error - Variable Index [8] out of range [8] - -6.letters(102802,8)", stacktrace : [ "gml_Object_oMainMenu_Alarm_0 (line 3)" ], line : 3 }

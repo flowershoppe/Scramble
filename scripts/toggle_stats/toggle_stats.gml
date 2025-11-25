@@ -1,6 +1,7 @@
 function toggle_stats()
 {
 	//stats
+	global.paused = !global.paused;
 	var _exists = false;
 	with(yui_document)
 	{

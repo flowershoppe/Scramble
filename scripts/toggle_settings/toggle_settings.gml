@@ -7,7 +7,8 @@ function toggle_settings()
 		if(yui_file == "YUI screens/settings.yui")
 		{
 			_exists = true;
-			instance_destroy()
+			instance_destroy();
+			if(room == rMainMenu){global.paused = false;}
 		}
 	}
 	
@@ -15,5 +16,6 @@ function toggle_settings()
 	{
 		//audio_play_sound(sdConfirm, 1, false);
 		instance_create_layer(0, 0, "Settings", yui_document, global.stSettings);
+		global.paused = true;
 	}
 }

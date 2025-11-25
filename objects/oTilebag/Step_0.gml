@@ -10,13 +10,13 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 			//display contents
 			if(room != rGameOver)
 			{
-				stats_menu = instance_create_layer(0, 0, "UI", yui_document,
+				stats_menu = instance_create_depth(0, 0, layer_get_depth(layer_get_id("UI")) - 2, yui_document,
 				{
 					data_context : oRun,
 					yui_file : "YUI screens/run_stats.yui"
 				});
 			}
-			bag_menu = instance_create_layer(0, 0, "UI", yui_document,
+			bag_menu = instance_create_depth(0, 0, layer_get_depth(layer_get_id("UI")) - 2, yui_document,
 			{
 				data_context : oTilebag,
 				yui_file : "YUI screens/tilebag.yui",

@@ -21,3 +21,9 @@ if(ind < length)
 {
 	alarm_set(0, 5);
 }
+else
+{
+	ind = 0;
+	x_loc = (room_width / 2) - (width / 2);
+	y_loc = room_height * 0.25;
+}

@@ -1,4 +1,4 @@
-var _scale = window_get_width() / sprite_get_width(spr);
+var _scale = 960 / 1920;
 
 draw_sprite_ext(spr, 0, 0, 0, _scale, _scale, 0, c_white, 1);
 

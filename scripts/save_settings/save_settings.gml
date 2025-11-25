@@ -3,12 +3,13 @@ function save_settings()
 	//save settings
 	var _saveData = 
 	{
-		window_width : window_get_width(),
-		window_height : window_get_height(),
+		window_width : oSettings.window_width,
+		window_height : oSettings.window_height,
 		volume_MS : audio_emitter_get_gain(global.emitterMS),
 		volume_SE : audio_emitter_get_gain(global.emitterSE),
 		volume_Main : audio_emitter_get_gain(global.emitterMain),
-		font : oGame.font
+		font : oGame.font,
+		isfullscreen : oSettings.isfullscreen
 	};
 	var _string = json_stringify(_saveData);
 	var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1);
