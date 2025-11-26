@@ -7,14 +7,14 @@ for(var i = 0; i < grid_width; i++)
 var _tile_size = sprite_get_width(spHolder);
 
 //set board draw parameters
-image_xscale = (grid_width * _tile_size + _tile_size) / sprite_width;
-image_yscale = (grid_height * _tile_size + _tile_size) / sprite_height;
+board_width = grid_width * _tile_size + _tile_size;
+board_height = grid_height * _tile_size + _tile_size;
 x = room_width / 2;
 y = room_height / 2;
 
 var _x, _y;
-var _x_offset = (x - sprite_width / 2) + (_tile_size);
-var _y_offset = (y - sprite_height / 2) + (_tile_size);
+var _x_offset = (x - (board_width / 2));
+var _y_offset = (y - (board_height / 2));
 
 var _prev_holder = 0;
 

@@ -1,4 +1,4 @@
-sprite_index = spLetterTile;
+//set sprite based on level
 icon = spExclamation;
 iconc = c_red;
 

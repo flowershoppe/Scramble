@@ -10,15 +10,12 @@ if(oMatchManager.active)
 	var _placed_tiles = oPlayer.placed_tiles;
 }
 
-oCursor.layer = layer_get_id("Tiles");
+layer = layer_get_id("Tiles");
 if(instance_exists(oPlayerHand))
-{	
-	with(oPlayerHand)
+{		
+	if(place_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oPlayerHand))
 	{
-		if(position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id))
-		{
-			oCursor.layer = layer_get_id("Hand");
-		}
+		layer = layer_get_id("Hand");
 	}
 }
 

@@ -5,10 +5,14 @@ var _init_gui_h = display_get_gui_height();
 
 display_set_gui_size(dialogue_gui_width, dialogue_gui_height);
 
-draw_set_alpha(dialogue_gui_fader);
 if (textbox_show) {
-  draw_set_colour(dialogue_background_colour);
-  draw_rectangle(textbox_left, textbox_top, textbox_left + textbox_width, textbox_top + textbox_height, false);
+  var _x_loc = textbox_left + (textbox_width / 2);
+  var _y_loc = textbox_top + (textbox_height / 2);
+  var _spr_width = sprite_get_width(spPanel);
+  var _spr_height = sprite_get_height(spPanel);
+  //dialogue_background_colour
+  draw_sprite_ext(spPanel, 0, _x_loc, _y_loc, textbox_width / _spr_width, textbox_height / _spr_height,
+				0, c_white, dialogue_gui_fader);
 }
 
 var breaks = ffbreaks;
