@@ -18,7 +18,9 @@ function save_game()
 				stage: stage,
 				money_earned : money_earned,
 				levels_completed : levels_completed,
-				current_level : current_level
+				current_level : current_level,
+				level_count : level_count,
+				stage_count : stage_count
 			}
 		}
 		array_push(_saveData, _saveEntity);

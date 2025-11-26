@@ -12,7 +12,7 @@ else
 var _string = string(array_length(yui_tiles));
 
 var t = scribble("[fa_center][fa_middle] " + _string);
-t.draw(x - 10, y);
+t.draw(x - 10, y + 15);
 t.starting_format(font_get_name(oGame.tile_font), c_white);
 t.sdf_outline(c_black, 2);
 
