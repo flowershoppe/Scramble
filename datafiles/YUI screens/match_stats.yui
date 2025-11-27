@@ -9,10 +9,16 @@ root:
   type: panel
   layout: vertical
   size: stretch
-  alignment: {h: center}
+  alignment: center
   background: ~yui_panel_bg
-  padding: 10
+  spacing: 15
   elements:
+    - type: panel
+      layout: horizontal
+      elements:
+        - type: text
+          text: "Score: "
+        - @total_points
     - type: panel
       layout: horizontal
       elements:
@@ -23,16 +29,32 @@ root:
       layout: horizontal
       elements:
         - type: text
-          text: "Score: "
-        - @total_points
-
+          text: "Point Min: "
+        - @@ ~isnegative(@point_min) then 'N/A' else @point_min
+    //- type: panel
+    //  layout: horizontal
+    //  elements:
+    //    - type: text
+    //      text: "Point Max: "
+    //    - @@ ~isnegative(@point_max) then 'N/A' else @point_max
+    //- type: panel
+    //  layout: horizontal
+    //  elements:
+    //    - type: text
+    //      text: "Turn Min: "
+    //    - @@ ~isnegative(@turn_min) then 'N/A' else @turn_min
+    - type: panel
+      layout: horizontal
+      elements:
+        - type: text
+          text: "Turn Max: "
+        - @@ ~isnegative(@turn_max) then 'N/A' else @turn_max
     - type: panel
       layout: horizontal
       elements:
         - type: text
           text: "Last Play: "
         - @last_play
-
     - type: panel
       layout: horizontal
       elements:
@@ -44,33 +66,3 @@ root:
           template:
             type: text
             text: @
-    - type: panel
-      layout: horizontal
-      elements:
-        - type: text
-          text: "Point Minimum: "
-        - @@ ~isnegative(@point_min) then 'N/A' else @point_min
-    - type: panel
-      layout: horizontal
-      elements:
-        - type: text
-          text: "Point Maximum: "
-        - @@ ~isnegative(@point_max) then 'N/A' else @point_max
-    - type: panel
-      layout: horizontal
-      elements:
-        - type: text
-          text: "Turn Minimum: "
-        - @@ ~isnegative(@turn_min) then 'N/A' else @turn_min
-    - type: panel
-      layout: horizontal
-      elements:
-        - type: text
-          text: "Turn Maximum: "
-        - @@ ~isnegative(@turn_max) then 'N/A' else @turn_max
-    - type: panel
-      layout: horizontal
-      elements:
-        - type: text
-          text: @print_message
-
