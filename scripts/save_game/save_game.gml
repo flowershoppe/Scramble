@@ -119,9 +119,7 @@ function save_game()
 				point_min : point_min,
 				victory : victory,
 				loss : loss,
-				active : active,
-				condition_points : condition_points,
-				condition_location : condition_location,
+				active : active
 			}		
 		}
 		array_push(_saveData, _saveEntity);
@@ -233,6 +231,10 @@ function save_game()
 	//save Tiles
 	with(oTile)
 	{
+		if(!grabbable)
+		{
+			highlight = true;	
+		}
 		var _saveEntity = 
 		{
 			object_name : object_get_name(object_index),

@@ -11,12 +11,6 @@ with(oTileHolder)
 	}	
 }
 
-//hover	
-if(layer != true_layer & layer != layer_get_id("Grabbed"))
-{
-	true_layer = layer;	
-}
-
 if(oCursor.held_tile == noone and oCamera.dragging == false)
 {
 	var _intersect = false;
@@ -32,8 +26,11 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 	
 	if(grabbable and _intersect)
 	{
-		if(oMatchManager.active){layer = layer_get_id("Grabbed");
-			depth = (x - layer_get_depth("Hand_Tiles") * 2) / 10;}
+		if(oMatchManager.active)
+		{/*
+			layer = layer_get_id("Grabbed");
+			depth = (x - layer_get_depth("Hand_Tiles") * 2) / 10;*/
+		}
 		xscale = 1.15;
 		yscale = 1.15;
 		hover = true;
@@ -44,7 +41,7 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 		//GUI layering
 		if(instance_exists(oPlayerHand) and in_hand)
 		{
-			depth = layer_get_depth("Hand_Tiles") + (x / 10);
+			//depth = layer_get_depth("Hand_Tiles") + (x / 10);
 		}
 		else
 		{

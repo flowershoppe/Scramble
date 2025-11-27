@@ -25,15 +25,19 @@ function post_load()
 			var _names = struct_get_names(_variables); //returns an array of all names in the struct
 			var _len = array_length(_names);
 			var _obj = asset_get_index(_loadData[i].object_name);
-			var _inst = instance_create_layer(0, 0, _loadData[i].layer_name, _obj);
-			
+			if(_obj == oBoard)
+			{
+				var _a = 1;	
+			}
+			var _inst = instance_create_layer(0, 0, _loadData[i].layer_name, _obj, _variables);
+			/*
 			//assign all recreated objects' standard variables
 			for(var k = 0; k < _len; k++)
 			{
 				var _name = _names[k];
 				
 				_inst[$ _name] = _variables[$ _name];
-			}		
+			}		*/
 		}
 		
 		with(oCharm)
@@ -97,7 +101,7 @@ function post_load()
 			});		
 		}
 		
-		if(oMatchManager.active)
+		if(room == rGame)
 		{
 			//UI
 			instance_create_layer(0, 0, "YUI", yui_document, global.stMatchStats);
