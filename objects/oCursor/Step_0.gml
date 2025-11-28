@@ -86,6 +86,7 @@ if(mouse_check_button_pressed(mb_left))
 	held_tile.font_scale = 1;
 	held_tile.on_board = false;
 	held_tile.in_hand = false;
+	held_tile.layer = layer_get_id("Grabbed");
 		
 	audio_play_sound_on(global.emitterSE, global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
 					false, 0);

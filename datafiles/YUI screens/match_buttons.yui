@@ -10,7 +10,7 @@ root:
   layout: vertical
   size: stretch
   background: ~yui_panel_bg
-  alignment: {h: center}
+  alignment: center
   padding: 10
   elements:
     - type: button 

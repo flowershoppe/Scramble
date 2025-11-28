@@ -1,4 +1,4 @@
 name = "Rupee";
-description = "Can be sold for 100 credits.";
+description = "Can be sold for 50 credits.";
 color = c_silver;
-value = 100;
+value = 50;

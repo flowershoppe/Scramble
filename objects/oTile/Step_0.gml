@@ -27,9 +27,8 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 	if(grabbable and _intersect)
 	{
 		if(oMatchManager.active)
-		{/*
+		{
 			layer = layer_get_id("Grabbed");
-			depth = (x - layer_get_depth("Hand_Tiles") * 2) / 10;*/
 		}
 		xscale = 1.15;
 		yscale = 1.15;

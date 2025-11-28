@@ -52,12 +52,16 @@ _y_loc += buffer + size;
 var _x_loc = x_loc;
 for(var _i = 0; _i < charm_count; _i++)	
 {
+	var _noshop =
+	[
+		oRupee
+	];
 	//if player has all charms, exit
 	if(array_length(global.charms) == array_length(oCharmManager.charms)){exit;}
 			
 	//randomly select a charm until an unowned one is chosen
 	var _item = global.charms[irandom_range(0, array_length(global.charms) - 1)];
-	while(instance_exists(_item) or array_contains(charms, _item))
+	while(instance_exists(_item) or array_contains(charms, _item) or array_contains(_noshop, _item))
 	{
 		_item = global.charms[irandom_range(0, array_length(global.charms) - 1)];
 	}

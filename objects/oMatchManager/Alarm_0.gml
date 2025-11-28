@@ -22,8 +22,7 @@ if(letter_ind >= array_length(oPlayer.words_tiles[word_ind]) - 1)
 //move to next letter
 else if(word_ind < array_length(oPlayer.words_tiles))
 {	
-	letter_ind++;
-	
+	letter_ind++;	
 }
 //reset
 if(word_ind >= array_length(oPlayer.words_tiles))

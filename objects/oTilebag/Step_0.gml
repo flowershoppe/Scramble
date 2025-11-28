@@ -1,4 +1,4 @@
-if(global.paused){exit;}
+if(global.paused or instance_exists(oDialogue)){exit;}
 //hover
 if(oCursor.held_tile == noone and oCamera.dragging == false)
 {
@@ -21,7 +21,6 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 				data_context : oTilebag,
 				yui_file : "YUI screens/tilebag.yui",
 			});
-
 		}
 		image_xscale = 1.15;
 		image_yscale = 1.15;
