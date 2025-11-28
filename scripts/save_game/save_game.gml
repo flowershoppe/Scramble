@@ -231,9 +231,10 @@ function save_game()
 	//save Tiles
 	with(oTile)
 	{
+		var _high = false;
 		if(!grabbable)
 		{
-			highlight = true;	
+			_high = true;	
 		}
 		var _saveEntity = 
 		{
@@ -254,7 +255,7 @@ function save_game()
 				on_board : on_board,
 				in_hand : in_hand,
 				spr : spr,	
-				highlight : highlight,
+				highlight : _high,
 				temp : temp
 			}		
 		}

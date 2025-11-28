@@ -22,4 +22,8 @@ function submit_play()
 		}
 		next_turn();
 	}
+	else
+	{
+		audio_play_sound_on(oGame.emitter_SE, sdBack, false, 1);	
+	}
 }
