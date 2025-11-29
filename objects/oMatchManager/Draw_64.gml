@@ -8,13 +8,24 @@ if(typist != 0)
 	t.sdf_outline(c_black, 2);
 	//val = sin_oscillate(160, 255, 2);
 }
-/*
-if(global.exchanging)
-{
-	var _string = "Select Tiles to Exchange";
-	
-	draw_text_color((window_get_width() / 2) - string_length(_string) / 2, (window_get_height / 2), _string,
-					c_white, c_white, c_white, c_white, 1);	
-}
 
-ANIMATE RESULTS SCREEN
+//NO VOWELS
+var _no_vowels = false;
+if(turn == 1)
+{
+	with(oTile)
+	{				
+		if(!array_contains(global.vowels, letter) and in_hand and letter != "Y")
+		{
+			_no_vowels = true;
+			break;
+		}	
+	}
+}
+if(_no_vowels)
+{
+	var t = scribble("[fa_center]No vowels present on first turn.\nYou may exchange with no penalty.");
+	t.starting_format(font_get_name(oGame.tile_font), c_white);
+	t.draw(_x, _y);
+	t.sdf_outline(c_black, 2);
+}

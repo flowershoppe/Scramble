@@ -100,20 +100,7 @@ if(mouse_check_button_pressed(mb_left))
 		{
 			tile = noone;
 		}
-	}
-	if(oMatchManager.active)
-	{
-		if(array_length(_placed_tiles) > 0)
-		{	
-			valid_play();
-		}
-		else
-		{
-			debug = "Play some tiles!";	
-		}	
-	}
-
-		
+	}	
 }
 #endregion
 
@@ -191,27 +178,13 @@ if(!mouse_check_button(mb_left))
 		held_tile.x = _nearest_holder.x;
 		held_tile.y = _nearest_holder.y;
 		
-		_nearest_holder.tile = held_tile;
-				
-		//validate play only if there are placed tiles
-		if(oMatchManager.active)
-		{
-			if(array_length(_placed_tiles) > 0)
-			{	
-				valid_play();
-			}
-			else
-			{
-				debug = "Play some tiles!";	
-			}
-		}
-		
+		_nearest_holder.tile = held_tile;		
 		
 		//_nearest_holder.tile = held_tile;
 		
 		audio_play_sound(global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
 						1, 0, global.volumeSE);
-		
+
 		held_tile = noone;
 	}
 }

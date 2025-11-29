@@ -273,7 +273,15 @@ function check_words()
 	//display spelled/fake words
 	if(array_length(_fake_words) > 0 and !global.cheat)
 	{
-		oMatchManager.print_message = "The following spelled words do not appear in the dictionary: " + "\n" + string(_fake_words);
+		var _str = string(_fake_words);
+		if(array_length(_fake_words) > 1)
+		{
+			screen_message("These words do not appear in the dictionary: " + "\n[" + _str, 180);
+		}
+		else
+		{
+			screen_message("This word does not appear in the dictionary: " + "\n[" + _str, 180);
+		}
 		return false;
 	}
 	else //WORD IS VALID AND REAL

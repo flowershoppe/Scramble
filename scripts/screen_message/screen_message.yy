@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"screen_message",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"screen_message",
+  "parent":{
+    "name":"Play",
+    "path":"folders/Scripts/Play.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
