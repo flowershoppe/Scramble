@@ -24,6 +24,7 @@ function submit_play()
 	}
 	else
 	{
+		valid_play();
 		audio_play_sound_on(oGame.emitter_SE, sdBack, false, 1);	
 	}
 }

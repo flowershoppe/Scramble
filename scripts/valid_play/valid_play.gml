@@ -184,6 +184,7 @@ function valid_play()
 	//first turn requires covering start
 	if(oMatchManager.turn == 1 and !_start)
 	{
+		screen_message("Play is invalid", 180);
 		return false;
 		exit;
 	}
@@ -193,12 +194,11 @@ function valid_play()
 		(_start and array_length(_placed_tiles) > 0)))
 	{		
 		broadcast("valid play");
-		debug = "play is valid";
 		return true;	
 	}
 	else
 	{
-		debug = "play is invalid";
+		screen_message("Play is invalid", 180);
 		return false;
 	}
 	

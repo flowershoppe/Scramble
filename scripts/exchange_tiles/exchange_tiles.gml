@@ -37,18 +37,19 @@ function exchange_tiles()
 		
 		}
 		//do not increment exchange count on turn 1 if the hand has no vowels or Y's
-		var _no_vowels = 0;
+		var _no_vowels = false;
 		if(oMatchManager.turn == 1)
 		{
 			with(oTile)
 			{				
 				if(!array_contains(global.vowels, letter) and in_hand and letter != "Y")
 				{
-					_no_vowels++;
+					_no_vowels = true;
+					break;
 				}	
 			}
 		}
-		if(_no_vowels < oPlayerHand.size)
+		if(!_no_vowels)
 		{
 			oMatchManager.exchange_count++;
 		}		

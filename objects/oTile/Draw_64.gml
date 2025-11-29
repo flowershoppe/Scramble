@@ -8,7 +8,7 @@ if(wait_for_input)
 {
 	draw_set_valign(fa_middle);
 	draw_set_halign(fa_center);
-	draw_text(display_get_gui_width() / 2, display_get_gui_height() / 4, "Please enter a character");	
+	draw_text(display_get_gui_width() / 2, display_get_gui_height() / 3, "Please enter a character");	
 	draw_set_halign(_old_halign);
 	draw_set_valign(_old_valign);
 }
