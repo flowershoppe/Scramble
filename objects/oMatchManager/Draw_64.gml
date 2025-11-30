@@ -11,15 +11,22 @@ if(typist != 0)
 
 //NO VOWELS
 var _no_vowels = false;
-if(turn == 1)
+if(turn == 1 and room == rGame)
 {
 	with(oTile)
-	{				
-		if(!array_contains(global.vowels, letter) and in_hand and letter != "Y")
+	{	
+		if(visible)
 		{
-			_no_vowels = true;
-			break;
-		}	
+			if(!array_contains(global.vowels, letter) and letter != "Y")
+			{
+				_no_vowels = true;
+			}
+			else
+			{
+				_no_vowels = false;
+				break;
+			}
+		}
 	}
 }
 if(_no_vowels)

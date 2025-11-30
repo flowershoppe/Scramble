@@ -41,6 +41,7 @@ if(mouse_check_button_pressed(mb_left))
 				held_tile = noone;
 			}
 		}
+		ds_list_destroy(_list);
 		//held_tile = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile);
 		//if(held_tile.on_board){ held_tile = noone; }
 	}
@@ -61,6 +62,7 @@ if(mouse_check_button_pressed(mb_left))
 				held_tile = noone;
 			}
 		}
+		ds_list_destroy(_list);
 	}
 	else{ held_tile = noone; }
 
@@ -86,6 +88,9 @@ if(mouse_check_button_pressed(mb_left))
 	held_tile.font_scale = 1;
 	held_tile.on_board = false;
 	held_tile.in_hand = false;
+	old_x = held_tile.x;
+	old_y = held_tile.y;
+	old_layer = layer;
 	held_tile.layer = layer_get_id("Grabbed");
 		
 	audio_play_sound_on(global.emitterSE, global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
@@ -116,13 +121,32 @@ if(!mouse_check_button(mb_left))
 		var _nearest_holder = noone;
 		var _nearest_dist = infinity;
 	
-		//find nearest tile holder of the same layer that isn't holding a tile		
+		var _switch_tile = noone;
+		var _list = ds_list_create();
+		
+		var _num = instance_position_list(x, y, oTile, _list, true);
+		_num += instance_position_list(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile, _list, true);
+		if(_num > 1)
+		{
+			if(_list[| 1].visible)
+			{
+				_switch_tile = _list[| 0];
+				if(_switch_tile == held_tile)
+				{
+					_switch_tile = _list[| 1];	
+				}
+			}
+		}
+		ds_list_destroy(_list);
+		
+		
+		//find nearest tile holder of the same layer		
 		#region
 		if(layer == layer_get_id("Hand"))
 		{
 			with(oTileHolder)
 			{
-				if(tile == noone and array_contains(oPlayerHand.tile_holder_array, id))
+				if(array_contains(oPlayerHand.tile_holder_array, id))
 				{
 					var _dist = point_distance(x, y, device_mouse_x_to_gui(0), device_mouse_y_to_gui(0))
 					if(_dist < _nearest_dist)
@@ -139,7 +163,7 @@ if(!mouse_check_button(mb_left))
 		{			
 			with(oTileHolder)
 			{
-				if(tile == noone and layer == layer_get_id("Board_Tile_Holders"))
+				if(layer == layer_get_id("Board_Tile_Holders"))
 				{
 					var _dist = point_distance(x, y, other.x, other.y)
 					if(_dist < _nearest_dist)
@@ -178,14 +202,83 @@ if(!mouse_check_button(mb_left))
 		held_tile.x = _nearest_holder.x;
 		held_tile.y = _nearest_holder.y;
 		
-		_nearest_holder.tile = held_tile;		
-		
-		//_nearest_holder.tile = held_tile;
+		_nearest_holder.tile = held_tile;
 		
 		audio_play_sound(global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
 						1, 0, global.volumeSE);
 
 		held_tile = noone;
+		
+		//SWITCH TILE
+		#region
+		if(_switch_tile != noone)
+		{
+			_switch_tile.x = old_x;
+			_switch_tile.y = old_y;
+			_switch_tile.layer = old_layer;		
+		
+			if(old_layer == layer_get_id("Hand"))
+			{
+				with(oTileHolder)
+				{
+					if(array_contains(oPlayerHand.tile_holder_array, id))
+					{
+						var _dist = point_distance(oCursor.old_x, oCursor.old_y, device_mouse_x_to_gui(0), device_mouse_y_to_gui(0))
+						if(_dist < _nearest_dist)
+						{
+							//save the id
+							_nearest_holder = id;
+							_nearest_dist = _dist;
+						}
+					}
+				}
+			}
+		
+			else
+			{			
+				with(oTileHolder)
+				{
+					if(layer == layer_get_id("Board_Tile_Holders"))
+					{
+						var _dist = point_distance(oCursor.old_x, oCursor.old_y, other.x, other.y)
+						if(_dist < _nearest_dist)
+						{
+							//save the id
+							_nearest_holder = id;
+							_nearest_dist = _dist;
+						}
+					}
+				}	
+			}
+		
+			//-----DROP TILE-----				
+			if(old_layer == layer_get_id("Tiles"))
+			{
+				_switch_tile.layer = layer_get_id("Tiles");
+				//place in array for checking play validity later
+				if(oMatchManager.active)
+				{
+					array_push(_placed_tiles, _switch_tile);
+				}
+				//Blank tile subroutine
+				if(_switch_tile.blank == true)
+				{
+					_switch_tile.wait_for_input = true;	
+				}	
+				_switch_tile.on_board = true;
+				_switch_tile.in_hand = false;
+
+			}
+			else if(old_layer == layer_get_id("Hand"))
+			{
+				_switch_tile.in_hand = true;
+				_switch_tile.on_board = false;
+				_switch_tile.layer = layer_get_id("Hand_Tiles");
+			}
+			
+			_nearest_holder.tile = _switch_tile;
+		}
+		#endregion
 	}
 }
 #endregion
