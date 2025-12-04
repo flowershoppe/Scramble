@@ -4,7 +4,6 @@ width = (size + buffer) * (reward_count - 1);
 x_loc = (room_width / 2) - (width / 2);
 y_loc = (room_height / 2) + 50;
 
-oOpponent.reward_amount = 0;
 broadcast("reward amount");
 
 var _i = 0;
@@ -15,7 +14,7 @@ var _consonants = global.consonants;
 var _letter = "";
 var _letters = [];
 
-var _reward_count = oOpponent.reward_amount;
+var _reward_count = 0;
 var _pointvalue = 0;
 
 //if not last level of stage...

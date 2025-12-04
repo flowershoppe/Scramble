@@ -129,6 +129,21 @@ root:
                   on_value_changed: 
                     - @@ value => ~audio_emitter_gain(~oGame.emitter_SE, value / 100)
                     - @@ value => ~save_settings()
+            - type: panel
+              layout: horizontal
+              alignment: {h: center}
+              spacing: 10
+              elements:
+                - type: text
+                  text: Dialogue
+                - type: button
+                  content: " "
+                  background: @play_dialogue then ~spConfirm else ~spCancel
+                  on_click: 
+                    - @play_dialogue = not @play_dialogue
+                    - ~save_settings()
+                    - @@ ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+                  
 
           //right side
         - type: panel

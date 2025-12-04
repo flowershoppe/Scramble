@@ -24,13 +24,13 @@ if (lookahead[0] != -1) {
     case "!":
     case "?":
     case ".":
-      delay = 50;
+      delay = 10;
     break;
     
     case ";":
     case ":":
     case ",":
-      delay = 20;
+      delay = 5;
     break;
   }
   

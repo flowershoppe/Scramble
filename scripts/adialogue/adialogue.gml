@@ -1,7 +1,6 @@
 function adialogue()
 {
-	var _op = oOpponent;
+	var _o = oDialogueManager;
 	
-	messages = _op.dialogues[_op.dialogue_prog];
-	_op.dialogue_prog ++;
+	messages = _o.dialogues[_o.dialogue_array][_o.index];
 }

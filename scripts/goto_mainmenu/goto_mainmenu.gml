@@ -12,11 +12,11 @@ function goto_mainmenu()
 	instance_destroy(oCharmManager);
 	instance_destroy(oCursor);
 	instance_destroy(yui_document);
-	instance_destroy(oOpponent);
 	instance_destroy(oLevel);
 	instance_destroy(oResultsManager);
 	instance_destroy(oRewardsManager);
 	instance_destroy(oShop);
+	instance_destroy(oDialogueManager);
 	
 	global.paused = false;
 	

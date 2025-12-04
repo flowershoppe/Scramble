@@ -10,5 +10,5 @@ levels_completed = 0;
 levels = [];
 stage = 1;
 stage_count = 1;
-level_count = 3;
-current_level = noone;
+level_count = 5;
+

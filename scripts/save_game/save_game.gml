@@ -67,31 +67,6 @@ function save_game()
 		array_push(_saveData, _saveEntity);
 	}
 	
-	//save Opponent
-	with(oOpponent)
-	{
-		var _saveEntity = 
-		{
-			object_name : object_get_name(object_index),
-			layer_name: layer_get_name(layer),
-			variables :
-			{
-				x : x,
-				y : y,
-				image_index : image_index,
-				image_alpha : image_alpha,
-				name : name,
-				spr : spr,
-				match_specs : match_specs,
-				reward_type : reward_type,
-				reward_amount : reward_amount,
-				dialogues : dialogues,
-				dialogue_prog : dialogue_prog
-			}
-		}
-		array_push(_saveData, _saveEntity);
-	}
-	
 	//save Match Stats
 	with(oMatchManager)
 	{

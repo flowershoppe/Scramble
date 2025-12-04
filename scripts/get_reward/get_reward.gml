@@ -24,7 +24,6 @@ function get_reward(_id)
 	oRewardsManager.rewarding = false;
 	oRun.current_level = noone;
 	screenTransition(rMap, , ST_CHECKER_DIAG_UL_TO_DR_Y);
-	instance_destroy(oOpponent);
 	oRewardsManager.array_rewards = [];
 	//reset match manager and opponent
 	instance_destroy(oMatchManager);
