@@ -27,12 +27,6 @@ function start_match()
 	array_copy(oTilebag.match_tiles, 0, oTilebag.tiles, 0, array_length(oTilebag.tiles));
 	add_tile_to_hand(_hand.size);
 	
-	//run custom code
-	with(oOpponent)
-	{
-		event_user(0);
-	}
-	
 	oMatchManager.active = true
 	broadcast("turn start");
 	broadcast("match start");

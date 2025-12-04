@@ -74,8 +74,5 @@ dialogue_play_sound = function(value) {
   audio_play_sound_on(oGame.emitter_SE, value, false, 1);
 }
 
-//Create Advance Button
-instance_create_layer(0, 0, "YUI", oAdvanceButton);
-
 						
 						

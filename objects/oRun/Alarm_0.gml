@@ -1,4 +1,5 @@
 //new run
+instance_create_layer(0, 0, "Meta", oDialogueManager);
 instance_create_layer(100, 450, "Tilebag", oTilebag);
 dist_standard(oTilebag);
 	

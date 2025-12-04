@@ -1,9 +1,17 @@
 if(global.paused){exit;}
 if(char_count < array_length(msg_chars))
-{
-	if(char_count % 3 == 0)
+{	
+	if(array_contains(["a", "e", "i", "o", "u", "y", "s"], string_lower(msg_chars[char_count])))
 	{
-		audio_play_sound_on(oGame.emitter_SE, sdText, false, 1, , , irandom_range(1, 1));
+		audio_play_sound_on(oGame.emitter_SE, sdHarp, false, 1, , , 1);
+	}
+	instance_destroy(oAdvanceButton);
+}
+else
+{
+	if(!instance_exists(oAdvanceButton))
+	{
+		instance_create_depth(0, 0, layer_get_depth(layer_get_id("UI")) - 1, oAdvanceButton);	
 	}
 }
 /// @description Input handling and processing
@@ -48,7 +56,7 @@ if (char_count == msg_length) {
 }
 
 // Completion output of the current message
-if (skip_enabled && input_check_pressed("cancel")) {
+if (skip_enabled && char_count > 1 && (input_check_pressed("confirm") or input_mouse_check_pressed(mb_left))) {
   var delay = msg_length;
   
   if (delays.current_position != -1 && delays.current_count < delays.size) {

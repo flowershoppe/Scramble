@@ -9,6 +9,7 @@ function save_settings()
 		volume_SE : audio_emitter_get_gain(global.emitterSE),
 		volume_Main : audio_emitter_get_gain(global.emitterMain),
 		font : oGame.font,
+		play_dialogue : oSettings.play_dialogue,
 		isfullscreen : oSettings.isfullscreen
 	};
 	var _string = json_stringify(_saveData);
