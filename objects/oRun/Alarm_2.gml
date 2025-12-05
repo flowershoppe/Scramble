@@ -1,1 +1,1 @@
-win_run();
+show_victory();
