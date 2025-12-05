@@ -14,3 +14,4 @@ dialogues =
 	["[chr:Cress][ts:slow]Great work! This is so [e:bouncing]excitiiiiing!",
 	"[method:show_results]"]],			
 ];	
+victory_dialogue = [];

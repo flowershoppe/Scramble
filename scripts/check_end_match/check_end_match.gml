@@ -151,7 +151,8 @@ function check_end_match()
 		
 		//win match
 		if(_win and !oMatchManager.loss)
-		{		
+		{
+			oRun.levels_completed++;
 			oMatchManager.victory = true;
 			oMatchManager.active = false;
 			//put tiles back in bag
@@ -161,14 +162,6 @@ function check_end_match()
 				{
 					persistent = true;	
 				}
-			}
-			//end run if current stage is amount of stages and current level is final level
-			if(oRun.stage >= oRun.stage_count and oRun.current_level == oRun.levels[array_length(oRun.levels) - 1])
-			{				
-				reset_tilebag();
-				screenTransition(rGameOver, , ST_CHECKER_DU_X);
-				with(oRun){alarm_set(2, 1);}
-				exit;				
 			}
 			
 			//MUSIC			
@@ -185,6 +178,12 @@ function check_end_match()
 			with(oTile)
 			{
 				if(on_board){instance_create_depth(x, y, depth - 1, oShine);}
+			}
+			
+			//end run
+			if(oRun.stage >= oRun.stage_count and oRun.current_level == oRun.levels[array_length(oRun.levels) - 1])
+			{
+				win_run();
 			}
 			
 			broadcast("match end");	

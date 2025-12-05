@@ -1,7 +1,6 @@
 function show_results()
 {
-	oMatchManager.typist = 0;
-	oRun.levels_completed++;
+	oMatchManager.typist = 0;	
 	oTilebag.yui_tiles = oTilebag.tiles;
 	reset_tilebag();
 	room_persistent = false;

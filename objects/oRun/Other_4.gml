@@ -26,3 +26,8 @@ if(room == rMap)
 		audio_play_sound_on(global.emitterMS, global.music_map, true, 1);
 	}
 }
+
+if(room == rGameOver)
+{
+	alarm_set(3, 180);
+}
