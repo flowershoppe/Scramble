@@ -32,11 +32,13 @@ function YuiBaseElement(_props, _resources, _slot_values) constructor {
 		
 		events: undefined,
 		
-		// placeholder for animation info
 		animate: undefined,
+		animation_signal: undefined,
 		
 		// array of interaction.role participation
 		interactions: [], // these are defined in data!
+		
+		sounds: undefined,
 	};
 	
 	// common events across elements
@@ -80,6 +82,9 @@ function YuiBaseElement(_props, _resources, _slot_values) constructor {
 	
 	// get the theme props for our element type
 	element_theme = theme.elements[$ _props.type];
+	
+	// HACK:- yui_apply_props doesn't merge sounds defined on the instance with sounds from the theme
+	needs_sound_merge = struct_exists(_props, "sounds") && struct_exists(element_theme, "sounds");
 	
 	// feather ignore once GM2017
 	static baseInit = function YuiBaseElement__baseInit(props, default_events = undefined) {
@@ -131,34 +136,64 @@ function YuiBaseElement(_props, _resources, _slot_values) constructor {
 		is_visible_live = yui_is_live_binding(visible);
 		is_tooltip_live = yui_is_live_binding(tooltip);
 		
-		default_anim = undefined;
+		animations = {
+			on_visible: undefined,
+			on_got_focus: undefined,
+			on_lost_focus: undefined,
+			on_hover: undefined,
+			on_hover_end: undefined,
+			on_arrange: undefined,
+			on_unloading: undefined,
+			
+			// custom animations will be picked up below if animation_signal is defined
+		};
 		
-		on_visible_anim = undefined;
-		on_arrange_anim = undefined;
-		on_unloading_anim = undefined;
+		// these are individual animation curves for when a bound animatable value changes
+		default_animations = undefined;
 		
 		if props.animate != undefined {
-			// these are individual animation curves for when a bound animatable value changes
-			default_anim = props.animate[$"default"];
-			
-			var on_visible_animation = props.animate[$"on_visible"];
-			if on_visible_animation != undefined {
-				on_visible_anim = yui_resolve_animation_group(on_visible_animation, resources, slot_values);
-			}
-			var on_arrange_animation = props.animate[$"on_arrange"];
-			if on_arrange_animation != undefined {
-				on_arrange_anim = yui_resolve_animation_group(on_arrange_animation, resources, slot_values);
-			}
-			var on_unloading_animation = props.animate[$"on_unloading"];
-			if on_unloading_animation != undefined {
-				on_unloading_anim = yui_resolve_animation_group(on_unloading_animation, resources, slot_values);
+			var anim_names = struct_get_names(props.animate);
+			var i = 0; repeat array_length(anim_names) {
+				var anim_name = anim_names[i++];
+				
+				if anim_name == "default" {
+					default_animations = props.animate[$ "default"];
+					continue;
+				}
+				
+				var anim = yui_resolve_animation_group(props.animate[$ anim_name], resources, slot_values);
+				animations[$ anim_name] = anim;
 			}
 		}
-			
+		
+		// MxAnimationSignal binding for triggering animations from game logic
+		animation_signal = yui_bind(props.animation_signal, resources, slot_values);
+		is_animation_signal_live = yui_is_live_binding(animation_signal);
+		
+		if animation_signal != undefined && props.animate == undefined
+				throw yui_error("element 'animation_signal' was provided but element has no 'animate' defined");
+		
+		// bind sounds
+		var prop_sounds = props.sounds;
+		if needs_sound_merge {
+			prop_sounds = yui_apply_props(prop_sounds, element_theme.sounds);
+		}
+		sounds = {};
+		if props.sounds != undefined {
+			var sound_names = struct_get_names(prop_sounds);
+			var i = 0; repeat array_length(sound_names) {
+				var sound_name = sound_names[i++];
+				
+				var sound = yui_bind(prop_sounds[$ sound_name], resources, slot_values);
+				sounds[$ sound_name] = sound;
+			}
+		}
+		
 		base_is_bound =
 			is_data_source_live
 			|| is_visible_live
 			|| is_tooltip_live
+			|| is_animation_signal_live
 			|| yui_is_live_binding(size.w)
 			|| yui_is_live_binding(size.h)
 	
@@ -166,8 +201,8 @@ function YuiBaseElement(_props, _resources, _slot_values) constructor {
 	}
 	
 	static getDefaultAnim = function(anim_name) {
-		if default_anim {
-			var anim = default_anim[$ anim_name];
+		if default_animations {
+			var anim = default_animations[$ anim_name];
 			if anim != undefined
 				return yui_resolve_animation(anim, resources, slot_values);
 		}
@@ -196,8 +231,8 @@ function YuiBaseElement(_props, _resources, _slot_values) constructor {
 		
 		background = undefined;
 				
-		if props.trace
-			DEBUG_BREAK_YUI
+		//if props.trace
+		//	yui_break();
 				
 		// resolve background
 		var bg = yui_bind(props.background, resources, slot_values);
@@ -211,9 +246,9 @@ function YuiBaseElement(_props, _resources, _slot_values) constructor {
 				throw yui_error($"Unexpected element.background value of type: {typeof(bg)}");
 			}
 		}
-		else {
-			background = undefined;
-		}
+		
+		// resolve bg_blend_color
+		bg_blend_color = yui_resolve_color(yui_bind_and_resolve(props.bg_blend_color, resources, slot_values));
 	
 		// resolve border
 		border_color = yui_resolve_color(yui_bind_and_resolve(props.border_color, resources, slot_values));

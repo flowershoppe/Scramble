@@ -68,8 +68,8 @@ resources:
           // current item text
           - type: border
             padding: [5, 0, 5, 0]
-            data_source: $selected_item ?? $selection_scope.selected_item
-            //flex: true
+            data_source: $selected_item ?? $selection_scope?.selected_item
+            flex: true
             content: $item_template
 
           - type: button
@@ -78,15 +78,14 @@ resources:
               color: $theme.resources.negative_color
               text: X
             padding: [5, 0]
-            background: #00000000
+            background: rgba(73, 73, 73, 0)
             border_thickness: 0
-            visible: $can_clear_value and ($selected_item != undefined or $selection_scope.selected_index >= 0)
+            visible: $can_clear_value and ($selected_item != undefined or $selection_scope?.selected_index >= 0)
             on_click:
               // update selection scope if it exists
-              - @@ $selection_scope then $selection_scope.select(undefined) else false
+              - @@ $selection_scope?.select(undefined)
               // invoke the user handler
-              - @@ $on_item_selected(undefined)
-
+              - @@ $on_item_selected?(undefined)
           - $indicator_template
 
       popup:
@@ -126,7 +125,7 @@ resources:
       bind_slot_scope:
         on_item_selected: $on_item_selected
         selection_scope: $selection_scope
-        selected_item: $selected_item ?? $selection_scope.selected_item // little trick to simplify referring to the selected item
+        selected_item: $selected_item ?? $selection_scope?.selected_item // little trick to simplify referring to the selected item
       elements: $items
       template:
         type: button
@@ -136,8 +135,8 @@ resources:
         content: $item_template
         on_click:
           // update selection scope if it exists
-          - @@ $selection_scope then $selection_scope.select(@) else false
+          - @@ $selection_scope?.select(@)
           // invoke the user handler
-          - @@ $on_item_selected(@)
+          - @@ $on_item_selected?(@)
           // close the popup
           - @@ e => e.source.closePopup()

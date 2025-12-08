@@ -27,10 +27,13 @@ root:
               text: Welcome to Da Shop
               text_style: subtitle
             - type: text
+              theme: elektra
               text: The shop can be visited anytime between levels 
             - type: text
+              theme: elektra
               text: and changes inventory between floors
     - type: panel
+      theme: elektra
       background: ~yui_panel_bg
       size: stretch
       elements: 
@@ -70,6 +73,7 @@ root:
             events:
               on_click: 
                 - ~purchase(@id)
+                - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
             elements:
               - type: text
                 font: ~oGame.tile_font
@@ -90,14 +94,17 @@ root:
           elements: @charms
           template:
             type: image
+            visible: @ != -1
             size: 64
             tooltip: @name + ~chr(13) + @description
-            sprite: @sprite_index
+            sprite: @sprite_index ?? ~spHolder
             blend_color: @color
             events:
               on_click: 
                 - ~purchase(@id)
+                - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
     - type: panel
+      theme: elektra
       canvas:
         right: 10
         top: 10

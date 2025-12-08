@@ -26,34 +26,50 @@ enum __SNAP_YUI
 ///
 /// @param string              The YUI string to be decoded
 /// @param {bool} [replaceKeywords]   Whether to replace keywords (true, false, null) with boolean/undefined equivalents. Default to <true>
-/// @param {bool} [trackFieldOrder]   Whether to track the order of struct fields as they appear in the YUI string (stored in __snap_field_order field on each GML struct). Default to <false>
+/// @param {bool} [trackFieldOrder]   Whether to track the order of struct fields as they appear in the YUI string (stored in static snap_field_order field on each GML struct). Default to <false>
 ///
 /// @jujuadams 2020-09-20
 function snap_from_yui(_string, _replace_keywords = true, _track_field_order = false)
 {
-    var _buffer = buffer_create(string_byte_length(_string)+1, buffer_fixed, 1);
+	if _string == "" return undefined;
+	
+	// put the string into a buffer for faster parsing
+    var _buffer = buffer_create(string_byte_length(_string), buffer_fixed, 1);
     buffer_write(_buffer, buffer_text, _string);
+	
+	return snap_from_yui_buffer(_buffer, _replace_keywords, _track_field_order, _string);
+}
+
+function snap_from_yui_buffer(_buffer, _replace_keywords = true, _track_field_order = false, _source = undefined)
+{
     buffer_seek(_buffer, buffer_seek_start, 0);
 
-    var _tokens_array = (new __snap_from_yui_tokenizer(_buffer)).result;
-
+    var _tokens_array = (new __snap_from_yui_tokenizer(_buffer, _source)).result;
+	
+	//__snap_from_yui_dump_tokens(_tokens_array);
+	
     buffer_delete(_buffer);
 
-    return (new __snap_from_yui_builder(_tokens_array, _replace_keywords, _track_field_order, _string)).result;
+	var builder = (new __snap_from_yui_builder(_tokens_array, _replace_keywords, _track_field_order, _source));
+    return builder.result;
 }
 
 #macro snap_from_yui_get_token_type tokens_array[token_index][0]
 #macro snap_from_yui_get_token_value tokens_array[token_index][1]
 
 // Feather ignore once GM2017
-function __snap_from_yui_tokenizer(_buffer) constructor
+function __snap_from_yui_tokenizer(_buffer, _string) constructor
 {
     buffer = _buffer;
     var _buffer_size = buffer_get_size(_buffer);
 
     var _tokens_array = [];
     result = _tokens_array;
+	
+	// used when handling escape chracters in strings
+	partial_chunk = "";
 
+	var _line          = 1;
     var _chunk_start   = 0;
     var _chunk_end     = 0;
     var _indent_search = true;
@@ -65,6 +81,7 @@ function __snap_from_yui_tokenizer(_buffer) constructor
     var _string_start           = undefined;
     var _in_comment             = false;
 
+	// NOTE: _tell is passed so that we can return to the current position when done
     static read_chunk = function(_start, _end, _tell)
     {
         if (_end <= _start) return undefined;
@@ -78,13 +95,28 @@ function __snap_from_yui_tokenizer(_buffer) constructor
         buffer_poke(buffer, _end, buffer_u8, _value);
         buffer_seek(buffer, buffer_seek_start, _tell);
 
-        return _string;
+		return _string;
+    }
+	
+    static read_partial_chunk = function(_start, _end, _tell)
+    {
+		// include any partial chunk we have so far
+		return partial_chunk + read_chunk(_start, _end, _tell);
     }
 
     static read_chunk_and_add = function(_start, _end, _tell, _type)
     {
         var _chunk = read_chunk(_start, _end, _tell);
-        if (_chunk != undefined) result[@ array_length(result)] = [_type, _chunk];
+		
+		// include any partial chunk already read
+		if partial_chunk != "" {
+			_chunk = partial_chunk + _chunk;
+			partial_chunk = "";
+		}
+		
+		// add the chunk to the token array
+        if (_chunk != undefined)
+			result[@ array_length(result)] = [_type, _chunk];
     }
 
     while(buffer_tell(_buffer) < _buffer_size)
@@ -93,32 +125,51 @@ function __snap_from_yui_tokenizer(_buffer) constructor
 
         if (_in_comment)
         {
-			// read until a new line or EOF then exit comment parsing
-            if ((_value == 0) || (_value == 10) || (_value == 13))
+			// null or \r - exit comment parsing
+            if ((_value == 0) || (_value == 13))
             {
-                _tokens_array[@ array_length(_tokens_array)] = [__SNAP_YUI.NEWLINE];
                 _chunk_start = buffer_tell(_buffer);
                 _chunk_end   = buffer_tell(_buffer);
 
                 _in_comment = false;
 				_indent_search = true;
             }
+			// \n - exit comment parsing and push new line
+            if (_value == 10)
+            {
+                _tokens_array[@ array_length(_tokens_array)] = [__SNAP_YUI.NEWLINE, _line];
+				_line++;
+                _chunk_start = buffer_tell(_buffer);
+                _chunk_end   = buffer_tell(_buffer);
+
+                _in_comment    = false;
+				_indent_search = true;
+			}
         }
         else if (_indent_search)
         {
-			 // find the current indent level
+			// find the current indent level
 
             if (_value == 0)
             {
                 break;
             }
-            else if ((_value == 10) || (_value == 13))
+			// \r - end chunk
+            else if (_value == 13)
             {
-                _tokens_array[@ array_length(_tokens_array)] = [__SNAP_YUI.NEWLINE];
                 _chunk_start = buffer_tell(_buffer);
                 _chunk_end   = buffer_tell(_buffer);
             }
-            else if (_value > 32) // non-whitepace, so track indent level
+			// \n - end chunk and push new line
+            else if (_value == 10)
+            {
+                _tokens_array[@ array_length(_tokens_array)] = [__SNAP_YUI.NEWLINE, _line];
+				_line++;
+                _chunk_start = buffer_tell(_buffer);
+                _chunk_end   = buffer_tell(_buffer);
+            }
+			// non-whitepace, so track indent level
+            else if (_value > 32)
             {
                 read_chunk_and_add(_chunk_start, buffer_tell(_buffer)-1, buffer_tell(_buffer), __SNAP_YUI.INDENT);
 
@@ -132,7 +183,8 @@ function __snap_from_yui_tokenizer(_buffer) constructor
         }
         else
         {
-            if (_scalar_first_character && (_value == 45)) //First character on the line is a hyphen
+			// First character on the line is a hyphen
+            if (_scalar_first_character && (_value == 45))
             {
                 var _next_value = buffer_peek(_buffer, buffer_tell(_buffer), buffer_u8);
 
@@ -164,8 +216,9 @@ function __snap_from_yui_tokenizer(_buffer) constructor
 					// ...or write my own parser
                 }
             }
+			// two slashes in a row
 			else if (_scalar_first_character
-				&& (_value == 47 && buffer_peek(_buffer, buffer_tell(_buffer), buffer_u8) == 47)) // two slashes in a row
+				&& (_value == 47 && buffer_peek(_buffer, buffer_tell(_buffer), buffer_u8) == 47))
 			{
 				_in_comment = true;
 			}
@@ -175,11 +228,36 @@ function __snap_from_yui_tokenizer(_buffer) constructor
 
                 if (_in_string)
                 {
+					// backlash escape supports \" \n \t \\
+					if (_value == 92) {
+						// read the partial chunk up to the escape (it will be added to the final string chunk)
+						var _current_pos = buffer_tell(_buffer);
+						partial_chunk = read_partial_chunk(_string_start, _current_pos-1, _current_pos);
+						
+						// read the escaped character and add it
+						
+						var _next_value = buffer_peek(_buffer, buffer_tell(_buffer), buffer_u8);
+						
+						if (_next_value == 34) // " (double quote)
+							partial_chunk += "\"";
+						else if (_next_value == 110) // letter n
+							partial_chunk += "\n";
+						else if (_next_value == 116)  // letter t
+							partial_chunk += "\t";
+						else if (_next_value == 92) // backslash
+							partial_chunk += @"\";
+						
+						// reset string start to after the escaped character
+						_string_start = _current_pos + 1;
+						buffer_seek(_buffer, buffer_seek_relative, 1);
+					}
+					
+					 // Quote " (except when escaped as \")
                     if ((_value == 34)
-						&& (buffer_peek(_buffer, buffer_tell(_buffer)-2, buffer_u8) != 92)) //Quote "  and  backslash \
+						&& (buffer_peek(_buffer, buffer_tell(_buffer)-2, buffer_u8) != 92))
                     {
-                        read_chunk_and_add(_chunk_start+1, buffer_tell(_buffer)-1, buffer_tell(_buffer), __SNAP_YUI.STRING);
-
+                        read_chunk_and_add(_string_start, buffer_tell(_buffer)-1, buffer_tell(_buffer), __SNAP_YUI.STRING);
+						
                         _chunk_start        = buffer_tell(_buffer);
                         _chunk_end          = buffer_tell(_buffer);
                         _in_string          = false;
@@ -188,21 +266,28 @@ function __snap_from_yui_tokenizer(_buffer) constructor
                 }
                 else
                 {
-                    if (_value <= 32) //Whitespace
+					// Whitespace
+                    if (_value <= 32)
                     {
                         if (!_scalar_has_content) _chunk_start = buffer_tell(_buffer);
                     }
-                    else //Not whitespace
+					// Not whitespace
+                    else
                     {
                         _scalar_has_content = true;
                     }
-
-                    if (_value == 34) //Quote "
+					
+					// mid scalar is when we are past the beginning of a scalar
+					var _mid_scalar = _chunk_start != _chunk_end && _scalar_has_content;
+					
+					// Quote " - starts a new scalar but not if we're in the middle of a scalar, and not in json)
+                    if (_value == 34 && !(_mid_scalar && _json_depth == 0))
                     {
                         _in_string = true;
                         _string_start = buffer_tell(_buffer);
                     }
-					else if ((_value == 47 && buffer_peek(_buffer, buffer_tell(_buffer), buffer_u8) == 47) // // comment
+					// // comment
+					else if ((_value == 47 && buffer_peek(_buffer, buffer_tell(_buffer), buffer_u8) == 47)
 						&& (buffer_tell(_buffer) >= 1) && (buffer_peek(_buffer, buffer_tell(_buffer)-2, buffer_u8) <= 32))
                     {
                         read_chunk_and_add(_chunk_start, _chunk_end, buffer_tell(_buffer), __SNAP_YUI.SCALAR);
@@ -211,11 +296,12 @@ function __snap_from_yui_tokenizer(_buffer) constructor
                         _chunk_end   = buffer_tell(_buffer);
                         _in_comment  = true;
                     }
-                    else if ((_value == 91) || (_value == 93) || (_value == 123) || (_value == 125)) // [ ] { }
+					// [ ] { }
+                    else if ((_value == 91) || (_value == 93) || (_value == 123) || (_value == 125))
                     {
-                        // if we're past the beginning of a scalar and not in json depth,
+                        // if we're in the middle of a scalar and not in json depth,
 						// then we don't need to treat []{} as the end of the scalar
-                        if _chunk_start != _chunk_end && _scalar_has_content && _json_depth == 0 {
+                        if _mid_scalar && _json_depth == 0 {
                             _chunk_end = buffer_tell(_buffer);
                         }
                         else {
@@ -237,7 +323,8 @@ function __snap_from_yui_tokenizer(_buffer) constructor
                             _scalar_has_content = false;
                         }
                     }
-                    else if ((_json_depth > 0) && (_value == 44)) //Comma ,
+					// Comma ,
+                    else if ((_json_depth > 0) && (_value == 44))
                     {
                         read_chunk_and_add(_chunk_start, _chunk_end, buffer_tell(_buffer), __SNAP_YUI.SCALAR);
                         _tokens_array[@ array_length(_tokens_array)] = [__SNAP_YUI.JSON_COMMA];
@@ -246,7 +333,8 @@ function __snap_from_yui_tokenizer(_buffer) constructor
                         _chunk_end          = buffer_tell(_buffer);
                         _scalar_has_content = false;
                     }
-                    else if (_value == 58) //Colon :
+					// Colon :
+                    else if (_value == 58)
                     {
                         if (_json_depth > 0)
                         {
@@ -263,13 +351,16 @@ function __snap_from_yui_tokenizer(_buffer) constructor
                             _tokens_array[@ array_length(_tokens_array)] = [__SNAP_YUI.STRUCT];
 
                             var _next_value = buffer_peek(_buffer, buffer_tell(_buffer), buffer_u8);
-                            if ((_next_value == 10) || (_next_value == 13)) //Next value is a newline
+							
+							// Next value is a newline
+                            if ((_next_value == 10) || (_next_value == 13))
                             {
                                 _chunk_start   = buffer_tell(_buffer);
                                 _chunk_end     = buffer_tell(_buffer);
                                 _indent_search = false;
                             }
-                            else if (_next_value == 32) //Next value is a space
+							// Next value is a space
+                            else if (_next_value == 32)
                             {
                                 buffer_seek(_buffer, buffer_seek_relative, 1);
                                 _chunk_start            = buffer_tell(_buffer);
@@ -278,18 +369,33 @@ function __snap_from_yui_tokenizer(_buffer) constructor
                             }
                         }
                     }
-                    else if ((_value == 0) || (_value == 10) || (_value == 13)) //Null or newline
+					// Null or \r - end chunk
+                    else if ((_value == 0) || (_value == 13))
                     {
                         read_chunk_and_add(_chunk_start, _chunk_end, buffer_tell(_buffer), __SNAP_YUI.SCALAR);
-                        _tokens_array[@ array_length(_tokens_array)] = [__SNAP_YUI.NEWLINE];
 
-                        _chunk_start   = buffer_tell(_buffer);
-                        _chunk_end     = buffer_tell(_buffer);
+                        _chunk_start = buffer_tell(_buffer);
+                        _chunk_end   = buffer_tell(_buffer);
+                    }
+					// \n - end chunk and push new line
+                    else if (_value == 10)
+                    {
+                        read_chunk_and_add(_chunk_start, _chunk_end, buffer_tell(_buffer), __SNAP_YUI.SCALAR);
+                        _tokens_array[@ array_length(_tokens_array)] = [__SNAP_YUI.NEWLINE, _line];
+						_line++;
+                        _chunk_start = buffer_tell(_buffer);
+                        _chunk_end   = buffer_tell(_buffer);
+						
                         _indent_search = true;
                     }
 
 					// move the chunk end forward
                     if (_value > 32) _chunk_end = buffer_tell(_buffer);
+					
+					// end of file in the middle of a scalar chunk
+					if buffer_tell(_buffer) >= _buffer_size {
+                        read_chunk_and_add(_chunk_start, _chunk_end, buffer_tell(_buffer), __SNAP_YUI.SCALAR);
+					}
                 }
             }
         }
@@ -336,29 +442,40 @@ function __snap_from_yui_builder(_tokens_array, _replace_keywords, _track_field_
 
     static read = function()
     {
+		if array_length(tokens_array) == 0
+			return undefined;
+			
+		if token_index >= array_length(tokens_array)
+			throw "Expected more tokens but ran out";
+		
         var _token = tokens_array[token_index];
         token_index++;
 
         var _type = _token[0];
         if ((_type == __SNAP_YUI.SCALAR) || (_type == __SNAP_YUI.STRING))
         {
-            if (snap_from_yui_get_token_type == __SNAP_YUI.STRUCT)
+            if (token_index < token_count && tokens_array[token_index][0] == __SNAP_YUI.STRUCT)
             {
                 var _indent_limit = indent;
                 var _struct = {};
 				if (track_field_order) {
 					var field_index = 0;
-					_struct.__snap_field_order = [];
+					var snap_field_order = [];
+					var struct_static = { snap_field_order };
+					static_set(_struct, struct_static);
 				}
 
                 --token_index;
                 while(token_index < token_count)
                 {
-                    var _key = snap_from_yui_get_token_value;
+                    var _key = tokens_array[token_index][1];
+					
+					if struct_exists(_struct, _key)
+						throw $"snap_from_yui: Struct already has key: {_key}";
 
 					if (track_field_order) {
-						// add the key to the __snap_field_order array
-						_struct.__snap_field_order[field_index++] = _key;
+						// add the key to the snap_field_order array
+						snap_field_order[field_index++] = _key;
 					}
 
                     token_index += 2; //Skip over the struct symbol
@@ -382,27 +499,17 @@ function __snap_from_yui_builder(_tokens_array, _replace_keywords, _track_field_
             }
             else
             {
-                var _result = _token[1];
-                if (_type == __SNAP_YUI.STRING)
+				var _result = _token[1];
+                if (_type == __SNAP_YUI.SCALAR)
                 {
-                    //Unescape characters
-                    //TODO - Do this when building tokens
-                    _result = string_replace_all(_result, "\\\"", "\"");
-                    _result = string_replace_all(_result, "\\\t", "\t");
-                    _result = string_replace_all(_result, "\\\r", "\r");
-                    _result = string_replace_all(_result, "\\\n", "\n");
-                    _result = string_replace_all(_result, "\\\\", "\\");
-                }
-                else
-                {
-                    try
+                    try 
                     {
                         _result = real(_result);
-                        //It's a number
+                        // It's a number
                     }
                     catch(_error)
                     {
-                        //It's a string
+                        // It's a string
                         if (replace_keywords)
                         {
                             switch(string_lower(_result))
@@ -473,17 +580,22 @@ function __snap_from_yui_builder(_tokens_array, _replace_keywords, _track_field_
             var _struct = {};
 			if (track_field_order) {
 				var field_index = 0;
-				_struct.__snap_field_order = [];
+				var snap_field_order = [];
+				var struct_static = { snap_field_order };
+				static_set(_struct, struct_static);
 			}
 
             read_to_next();
             while((token_index < token_count) && (snap_from_yui_get_token_type != __SNAP_YUI.JSON_STRUCT_END))
             {
                 var _key = read();
+				
+				if struct_exists(_struct, _key)
+					throw $"snap_from_yui: Struct already has key: {_key}";
 
 				if (track_field_order) {
-					// add the key to the __snap_field_order array
-					_struct.__snap_field_order[field_index++] = _key;
+					// add the key to the snap_field_order array
+					_struct.snap_field_order[field_index++] = _key;
 				}
 
                 read_to_next();
@@ -517,4 +629,52 @@ function __snap_from_yui_builder(_tokens_array, _replace_keywords, _track_field_
 
     read_to_next();
     result = read();
+}
+
+// debug function for checking the token array in readable form
+function __snap_from_yui_dump_tokens(tokens) {
+	var str = "";
+	var i = 0; repeat array_length(tokens) {
+		var token = tokens[i++];
+		switch token[0] {
+		    case __SNAP_YUI.INDENT:
+				str += $"INDENT '{token[1]}'\n";
+				break;
+		    case __SNAP_YUI.NEWLINE:
+				str += $"NEWLINE {token[1] + 1}\n";
+				break;
+		    case __SNAP_YUI.ARRAY:
+				str += "ARRAY\n";
+				break;
+		    case __SNAP_YUI.STRUCT:
+				str += "STRUCT\n";
+				break;
+		    case __SNAP_YUI.SCALAR:
+				str += $"SCALAR {token[1]}\n";
+				break;
+		    case __SNAP_YUI.STRING:
+				str += $"STRING {token[1]}\n";
+				break;
+		    case __SNAP_YUI.JSON_ARRAY_START:
+				str += "JSON_ARRAY_START\n";
+				break;
+		    case __SNAP_YUI.JSON_ARRAY_END:
+				str += "JSON_ARRAY_END\n";
+				break;
+		    case __SNAP_YUI.JSON_STRUCT_START:
+				str += "JSON_STRUCT_START\n";
+				break;
+		    case __SNAP_YUI.JSON_STRUCT_END:
+				str += "JSON_STRUCT_END\n";
+				break;
+		    case __SNAP_YUI.JSON_COMMA:
+				str += "JSON_COMMA\n";
+				break;
+		    case __SNAP_YUI.JSON_COLON:
+				str += "JSON_COLON\n";
+				break;
+		}
+	}
+	
+	clipboard_set_text(str);
 }

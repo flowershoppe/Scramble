@@ -1,14 +1,29 @@
 /// @description
 function YuiLambda(body, context) : YuiExpr() constructor {
 	static is_yui_live_binding = true;
+	static is_call = true;
 	static is_lambda = true;
 
 	self.body = body;
 	self.context = context;
 	self.compiled_script_name = undefined;
 	
+	static debug = function() {
+		return {
+			_type: instanceof(self),
+			body: body.debug(),
+		}
+	}
+	
 	static resolve = function(data) {
-		throw yui_error("attemped to resolve() YuiLmabda, use call() instead");
+		
+		// TODO: this could actually create a YuiLambdaClosure with the `data` attached
+		// so that .call can be only the args, allowing lambdas called from code to not
+		// also need the data context passed in to the caller
+		
+		// return the lambda itself, without calling it
+		return self;
+		//throw yui_error("attemped to resolve() YuiLmabda, use call() instead");
 	}
 	
 	static call = function(data, args) {
@@ -19,10 +34,17 @@ function YuiLambda(body, context) : YuiExpr() constructor {
 		
 		// set the context params from the args array
 		context.params = {};
-		var i = 0; repeat array_length(args) {
-			var param_name = context.arg_map[i];
-			context.params[$ param_name] = args[i];
-			i++;
+		
+		if is_array(args) {
+			var i = 0; repeat array_length(args) {
+				var param_name = context.arg_map[i];
+				context.params[$ param_name] = args[i];
+				i++;
+			}
+		}
+		else {
+			var param_name = context.arg_map[0];
+			context.params[$ param_name] = args;
 		}
 		
 		// call the function body

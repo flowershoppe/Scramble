@@ -1,8 +1,7 @@
 /// @description draw text/scribble element
 
-//if trace {
-//	DEBUG_BREAK_YUI;
-//}
+//if trace
+//	yui_break();
 
 // draw background
 if bg_alpha > 0 {
@@ -20,11 +19,7 @@ if highlight && highlight_color != undefined {
 
 if is_string(color) color = yui_resolve_color(color);
 
-if use_scribble {
-	if trace {
-		DEBUG_BREAK_YUI;
-	}
-	
+if use_scribble {	
 	if regions.enabled {
 		var hover_region = scribble_element.region_detect(
 			x + element_xoffset,
@@ -58,10 +53,31 @@ if use_scribble {
 		}
 	}
 	
-	scribble_element.blend(color, opacity);
-
-	// draw the scribble element
-	scribble_element.draw(x + element_xoffset, y + element_yoffset, typist);
+	if viewport_size {
+		if viewport_part.visible {
+			if viewport_part.clipped {
+				var scissor = gpu_get_scissor();
+				gpu_set_scissor(
+					viewport_part.x + xoffset,
+					viewport_part.y + yoffset,
+					viewport_part.w,
+					viewport_part.h);
+			}
+			
+			// draw the scribble element
+			scribble_element.blend(color, opacity);
+			scribble_element.draw(x + element_xoffset, y + element_yoffset, typist);
+			
+			if viewport_part.clipped {
+				gpu_set_scissor(scissor);
+			}
+		}
+	}
+	else {
+		// draw the scribble element
+		scribble_element.blend(color, opacity);
+		scribble_element.draw(x + element_xoffset, y + element_yoffset, typist);
+	}
 }
 else {
 
@@ -79,9 +95,10 @@ else {
 				yui_draw_alpha_surface_part(
 					text_surface,
 					viewport_part.l, viewport_part.t,
-					viewport_part.w,// text_surface_w),
-					viewport_part.h,// text_surface_h),
-					viewport_part.x, viewport_part.y,
+					viewport_part.w,
+					viewport_part.h,
+					viewport_part.x + xoffset,
+					viewport_part.y + yoffset,
 					opacity,
 					color);
 			}
@@ -92,30 +109,12 @@ else {
 				buildTextSurface();
 			}
 			if text_surface != undefined {
-				yui_draw_alpha_surface(text_surface, x + element_xoffset, y + element_yoffset, opacity, color);
+				yui_draw_alpha_surface(
+					text_surface,
+					x + element_xoffset,
+					y + element_yoffset,
+					opacity, color);
 			}
 		}
-	}
-}
-
-
-if (trace) {
-		
-	yui_draw_trace_rect(true, padded_rect, yui_padding_color);
-	yui_draw_trace_rect(true, draw_rect, yui_draw_rect_color);
-
-	yui_draw_trace_rect(true, draw_size, yui_draw_size_color);
-
-	// debug mouseover trace
-	if highlight {
-		yui_draw_trace_rect(true, draw_size, yui_hover_color);
-	}
-	
-	if viewport_part {
-		yui_draw_trace_rect(true, viewport_part, yui_viewport_color);
-	}
-	
-	if viewport_size {
-		yui_draw_trace_rect(true, viewport_size, c_olive);
 	}
 }

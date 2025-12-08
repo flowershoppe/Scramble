@@ -14,12 +14,15 @@ function YuiTemplateDefinition(name, template_props, resources) constructor {
 	
 	content_type = content.type;
 	content_events = content[$"events"];
+	content_anims = content[$"animate"];
+	content_sounds = content[$"sounds"];
 	content_template = yui_get_or_init_template_def(resources, content_type);
 	
 	// TODO: convert back to regular map?
 	slot_definitions = new YuiChainedMap(/* no parent*/,  template_props[$"slots"]);
 	
 	events = template_props[$"events"];
+	animate = template_props[$"animate"];
 
 	static createElement = function(
 		element_props,
@@ -55,6 +58,20 @@ function YuiTemplateDefinition(name, template_props, resources) constructor {
 		if outer_events || content_events {
 			// TODO: currently events will override on collision, could merge handlers into array of handlers?
 			element_props.events = yui_apply_props(element_props[$"events"], outer_events, content_events);
+		}
+		
+		// merge content animations with animations from element props and outer template content
+		var outer_anims = outer_template_content ? outer_template_content[$"animate"] : undefined;
+		if outer_anims || content_anims {
+			// NOTE: animations will override on collision
+			element_props.animate = yui_apply_props(element_props[$"animate"], outer_anims, content_anims);
+		}
+		
+		// merge content sounds with sounds from element props and outer template content
+		var outer_sounds = outer_template_content ? outer_template_content[$"sounds"] : undefined;
+		if outer_sounds || content_sounds {
+			// NOTE: sounds will override on collision
+			element_props.sounds = yui_apply_props(element_props[$"sounds"], outer_sounds, content_sounds);
 		}
 		
 		if content_template {
@@ -103,8 +120,8 @@ function YuiTemplateDefinition(name, template_props, resources) constructor {
 			var slot_value =
 				((yui_bind(element_props[$ slot_key], resources, outer_slot_values, /*bind_arrays*/ true)
 				?? yui_bind(outer_template_content[$ slot_key], resources, outer_slot_values, /*bind_arrays*/ true))
-				?? yui_deep_copy(template_theme[$ slot_key]))
-				?? yui_deep_copy(slot_definitions.get(slot_key));
+				?? variable_clone(template_theme[$ slot_key]))
+				?? variable_clone(slot_definitions.get(slot_key));
 				
 			slot_values.set(slot_key, slot_value);
 		}

@@ -148,7 +148,8 @@ theme:
       highlight_color: &accent_color //|> ~yui_color_shift_hue(&accent_color, 1.5)
       highlight_alpha: .5
       padding: [10, 5]
-
+      sounds:
+      
     popup:
       background: &control_border
       border_color: &focus_border
@@ -160,13 +161,13 @@ theme:
   text_styles:
 
     title:
-      font: ~fnt_yui_title
+      font: ~fnt_reality_hyper_big
       color: &text_color
 
     subtitle:
-      font: ~fnt_yui_subtitle
+      font: ~fnt_reality_hyper
       color: &text_color
 
     body:
-      font: ~fnt_yui_body
+      font: ~fnt_reality_hyper_small
       color: &text_color

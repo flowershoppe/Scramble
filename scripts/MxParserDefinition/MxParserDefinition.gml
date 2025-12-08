@@ -1,8 +1,3 @@
-function mx_parser_definition() {
-	static definition = new MxParserDefinition();	
-	return definition;
-}
-
 function MxParserDefinition() : GsplPrattParserDefinition(YS_TOKEN.EOF) constructor {
 
 	// feather disable GM2017
@@ -39,6 +34,9 @@ function MxParserDefinition() : GsplPrattParserDefinition(YS_TOKEN.EOF) construc
 	// list expressions
 	prefix(YS_TOKEN.LEFT_BRACKET, new GsplListParselet(YS_TOKEN.COMMA, YS_TOKEN.RIGHT_BRACKET));
 	
+	// list spread
+	prefix(YS_TOKEN.DOT_DOT_DOT, new MxSpreadParselet());
+	
 	// prefix operators
 	prefixOperator(YS_TOKEN.MINUS, YS_PRECEDENCE.PREFIX);
 	prefixOperator(YS_TOKEN.NOT, YS_PRECEDENCE.PREFIX);
@@ -49,8 +47,6 @@ function MxParserDefinition() : GsplPrattParserDefinition(YS_TOKEN.EOF) construc
 	// conditional (supports then/else and ?:)
 	infix(YS_TOKEN.THEN,
 		new GsplConditionalParselet(YS_PRECEDENCE.CONDITIONAL, YS_TOKEN.ELSE));
-	infix(YS_TOKEN.QUESTION,
-		new GsplConditionalParselet(YS_PRECEDENCE.CONDITIONAL, YS_TOKEN.COLON));
 		
 	// lambda definition e.g. var => log(var)
 	infix(YS_TOKEN.ARROW,
@@ -70,12 +66,18 @@ function MxParserDefinition() : GsplPrattParserDefinition(YS_TOKEN.EOF) construc
 			
 	// infix call e.g. @foo |> bar()
 	infix(YS_TOKEN.PIPE_GREATER,
-		new GsplInfixCallParselet(YS_PRECEDENCE.CALL));
+		new GsplInfixCallParselet(YS_PRECEDENCE.CHAIN));
+		
+	// optional application, e.g. foo?(bar) foo?[bar] (or any infix parselet!)
+	infix(YS_TOKEN.QUESTION, new MxOptionalParselet(YS_PRECEDENCE.PREFIX));
+		
+	// breakpoint
+	infix(YS_TOKEN.BANG, new GsplTraceParselet(YS_PRECEDENCE.PREFIX));
 		
 	// infix call e.g. @foo >> bar()
 	// DEPRECATED
 	infix(YS_TOKEN.GREATER_GREATER,
-		new GsplInfixCallParselet(YS_PRECEDENCE.CALL));
+		new GsplInfixCallParselet(YS_PRECEDENCE.CHAIN));
 	
 	// directives e.g. trace, freeze, etc
 	infix(YS_TOKEN.PIPE, new YsDirectiveParselet());

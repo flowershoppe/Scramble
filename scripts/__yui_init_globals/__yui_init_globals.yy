@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"__yui_init_globals",
   "parent":{
-    "name":"Packages - YUI",
-    "path":"folders/Packages - YUI.yy",
+    "name":"Deprecated",
+    "path":"folders/Packages - YUI/Deprecated.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -97,6 +97,7 @@ destroy = function() {
 	if tooltip_item && instance_exists(tooltip_item)
 		tooltip_item.destroy();
 	instance_destroy();
+	destroyed = true;
 	//yui_log($"destroyed instance {id} ({object_get_name(object_index)})");
 }
 
@@ -146,9 +147,42 @@ initLayout = function() {
 	
 	if !enabled_value.is_live enabled = yui_element.enabled;
 	
-	on_visible_anim = yui_element.on_visible_anim;
-	on_arrange_anim = yui_element.on_arrange_anim;
-	on_unloading_anim = yui_element.on_unloading_anim;
+	// animations
+	
+	yui_animations = yui_element.animations;
+	
+	on_visible_anim = yui_animations.on_visible;
+	on_arrange_anim = yui_animations.on_arrange;
+	on_unloading_anim = yui_animations.on_unloading;
+	
+	on_got_focus_anim = yui_animations.on_got_focus;
+	on_lost_focus_anim = yui_animations.on_lost_focus;
+	
+	on_hover_anim = yui_animations.on_hover;
+	on_hover_end_anim = yui_animations.on_hover_end;
+
+	if on_got_focus_anim {
+		on_got_focus = function() {
+			beginAnimationGroup(on_got_focus_anim);
+		}
+	}
+	
+	if on_lost_focus_anim {
+		on_lost_focus = function() {
+			beginAnimationGroup(on_lost_focus_anim);
+		}
+	}
+	
+	animation_signal = yui_element.animation_signal;
+	if animation_signal != undefined {
+		has_custom_animations = true;
+		is_animation_signal_live = yui_element.is_animation_signal_live;
+		last_signal = undefined;
+		last_signal_version = 0;
+	}
+	has_custom_animations = animation_signal != undefined;
+	
+	yui_sounds = yui_element.sounds;
 	
 	layout_props = yui_element.getLayoutProps();
 	onLayoutInit();
@@ -246,13 +280,10 @@ arrange = function(available_size, viewport_size) {
 // NOTE: only executes if the element is visible
 process = function yui_base__process(became_visible) {
 	
-	
 	// calculate enabled state from parent and/or live value
 	var is_parent_enabled = parent ? parent.enabled : true;
 	if is_parent_enabled && enabled_value.is_live {
-		var enc = enabled_value.update(data_source);
-		if enc && trace
-			yui_break();
+		enabled_value.update(data_source);
 		enabled = enabled_value.value;
 	}
 	else {
@@ -287,6 +318,48 @@ process = function yui_base__process(became_visible) {
 	if became_visible {
 		if on_visible_anim
 			beginAnimationGroup(on_visible_anim);
+	}
+	
+	if has_custom_animations {
+		var signal = is_animation_signal_live ?  animation_signal.resolve(data_source) : animation_signal;
+		if signal == undefined {
+			last_signal = undefined;
+			last_signal_version = 0;
+		}
+		else {
+			var signal_updated = false;
+			
+			// first check if we got a new signal source, the compare versions
+			if signal != last_signal {
+				if last_signal == undefined {
+					// if we didn't have a signal before, set our version to the signals current version
+					last_signal_version = signal.version
+				}
+				else {
+					signal_updated = true;
+				}
+				
+				last_signal = signal;
+			}
+			else {
+				signal_updated = signal.version > last_signal_version;
+			}
+			
+			if signal_updated {
+				last_signal_version = signal.version;
+				
+				var animation_name = signal.value;
+				var anim = yui_animations[$ animation_name];
+				if anim != undefined {
+					beginAnimationGroup(anim);
+				}
+				else if trace {
+					// NOTE: it's okay if we send a signal that the UI doesn't understand
+					// as different UIs may bind to the same source signal at different times
+					yui_log($"{_id} ({id}): got animation signal '{animation_name}' but no matching animation definition on element.animate");
+				}
+			}
+		}
 	}
 }
 
@@ -357,13 +430,16 @@ closePopup = function(close_parent = false) {
 		ancestor = ancestor.parent;
 	}
 }
-base_setHighlight = setHighlight;
-setHighlight = function(highlight) {
-	
-	base_setHighlight(highlight)
+
+base_hoverChanged = hoverChanged;
+hoverChanged = function(hover) {
+	if hover && enabled
+		playSound("hover");
+		
+	base_hoverChanged(hover);
 	
 	if has_tooltip {
-		if highlight {
+		if hover {
 			tooltip_element ??= yui_element.createTooltip();
 			if tooltip_item == undefined {
 				tooltip_item = yui_make_render_instance(
@@ -381,6 +457,15 @@ setHighlight = function(highlight) {
 			tooltip_item = undefined;
 		}
 	}
+	
+	if hover {
+		if on_hover_anim
+			beginAnimationGroup(on_hover_anim);
+	}
+	else {
+		if on_hover_end_anim
+			beginAnimationGroup(on_hover_end_anim);
+	}
 }
 
 // NOTE: assumes the point has already been tested via something like instance_position()
@@ -388,10 +473,10 @@ isPointVisible = function(x, y) {
 	if viewport_part != undefined && viewport_part.clipped {
 		return point_in_rectangle(
 				x, y,
-				viewport_part.x,
-				viewport_part.y,
-				viewport_part.x + viewport_part.w,
-				viewport_part.y + viewport_part.h);
+				viewport_part.x + xoffset,
+				viewport_part.y + yoffset,
+				viewport_part.x + xoffset + viewport_part.w,
+				viewport_part.y + yoffset + viewport_part.h);
 	}
 	else {
 		return visible;
@@ -401,6 +486,24 @@ isPointVisible = function(x, y) {
 beginAnimationGroup = function(animation_group) {
 	if animation_group.enabled
 		animation_group.start(animatable, self);
+}
+
+playSound = function(sound_name, sound_id = undefined) {
+	var sound = yui_sounds[$ sound_name];
+	if sound != undefined {
+		sound = yui_resolve_binding(sound, data_source);
+		if !is_handle(sound) && sound == false
+			return;
+		
+		if sound_id != undefined
+			audio_stop_sound(sound_id);
+		
+		// todo: YUI_wide audio gain setting?
+		return audio_play_sound(
+			sound,
+			YUI_DEFAULT_AUDIO_PRIORITY,
+			false); // no loops
+	}
 }
 
 unload = function(unload_root = undefined) {
@@ -514,8 +617,14 @@ generateLayoutLog = function() {
 	yui_log("TODO: generate layout log");
 }
 
+inspectDataContext = function() {
+	var data = data_source;
+	yui_break();
+}
+
 Inspectron()
 	.Button("Generate Focus Debug", generateFocusDebug).AtTop()
+	.Button("Inspect Data Context", inspectDataContext).SameLine().AtTop()
 	//.Button("Generate Layout Log", generateLayoutLog).AtTop()
 	.Section("yui_base")
 	.Checkbox(nameof(trace))
@@ -525,8 +634,9 @@ Inspectron()
 	.Watch(nameof(enabled))
 	.Watch(nameof(focusable))
 	.Watch(nameof(focused))
-	.Watch(nameof(opacity))
 	.Watch(nameof(highlight))
+	.Watch(nameof(opacity))
+	.Watch(nameof(visible))
 	.Watch(nameof(xoffset))
 	.Watch(nameof(yoffset))
 	.Rect(nameof(x))

@@ -4,6 +4,7 @@ file_type: screen
 root:
   is_cursor_layer: true
   type: panel
+  theme: elektra
   layout: canvas
   size: stretch
   background: ~yui_panel_bg

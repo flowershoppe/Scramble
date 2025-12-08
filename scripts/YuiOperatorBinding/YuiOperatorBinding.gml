@@ -8,11 +8,20 @@ function YuiOperatorBinding(left, operator, right) : YuiExpr() constructor {
 	self.operator_lexeme = operator._lexeme;
 	self.operator = operator._type;
 	
-	self.left_type = left.checkType();
-	self.right_type = right.checkType();
+	//self.left_type = left.checkType();
+	//self.right_type = right.checkType();
 	
 	if (!left.is_yui_live_binding && !right.is_yui_live_binding) {
 		self.is_yui_live_binding = false;
+	}
+	
+	static debug = function() {
+		return {
+			_type: instanceof(self),
+			left: left.debug(),
+			operator: operator_name,
+			right: right.debug(),
+		}
 	}
 	
 	switch self.operator {
@@ -24,6 +33,8 @@ function YuiOperatorBinding(left, operator, right) : YuiExpr() constructor {
 			};
 			break;
 		case YS_TOKEN.QUESTION_QUESTION:
+			self.left.optional = true;
+			
 			self.resolve = function ys_operator_null_coalesce(data) {
 				var left_val = left.resolve(data);
 				return left_val ?? right.resolve(data);
@@ -47,14 +58,40 @@ function YuiOperatorBinding(left, operator, right) : YuiExpr() constructor {
 		case YS_TOKEN.OR:
 			self.resolve = function ys_operator_or(data) {
 				var left_val = left.resolve(data);
-			return left_val or right.resolve(data);
+				return left_val or right.resolve(data);
 			};
 			break;
 				
 		case YS_TOKEN.STRING_PLUS:
 			self.resolve = function ys_operator_concat(data) {
 				var left_val = left.resolve(data);
-				return string(left_val) + string(right.resolve(data));
+				var right_val = right.resolve(data);
+				
+				if is_array(left_val) {
+					if is_array(right_val) {
+						// [a] $+ [b] -> [a, b]
+						return array_concat(left_val, right_val);
+					}
+					else {
+						// [a] $+ b -> [a, b]
+						var left_count = array_length(left_val);
+						var result = array_create(left_count + 1);
+						result[left_count] = right_val;
+						array_copy(result, 0, left_val, 0, left_count);
+						return result;
+					}
+				}
+				else if is_array(right_val) {
+					// a $+ [b] -> [a, b]
+					var right_count = array_length(right_val);
+					var result = array_create(right_count + 1);
+					result[0] = left_val;
+					array_copy(result, 1, right_val, 0, right_count);
+					return result;
+				}
+				else {
+					return string(left_val) + string(right.resolve(data));
+				}
 			};
 			break;
 				
@@ -68,6 +105,7 @@ function YuiOperatorBinding(left, operator, right) : YuiExpr() constructor {
 				else if is_string(right_val)
 					return string(left_val) + right_val;
 				else
+					assertNotStructs("+", left_val, right_val);
 					return left_val + right_val;
 				};
 			break;
@@ -75,53 +113,76 @@ function YuiOperatorBinding(left, operator, right) : YuiExpr() constructor {
 		case YS_TOKEN.MINUS:
 			self.resolve = function ys_operator_subtract(data) {
 				var left_val = left.resolve(data);
-				return left_val - right.resolve(data);
+				var right_val = right.resolve(data);
+				assertNotStructs("-", left_val, right_val);
+				return left_val - right_val;
 			};
 			break;
 				
 		case YS_TOKEN.STAR:
 			self.resolve = function ys_operator_multiply(data) {
 				var left_val = left.resolve(data);
-				return left_val * right.resolve(data);
+				var right_val = right.resolve(data);
+				assertNotStructs("*", left_val, right_val);
+				return left_val * right_val;
 			};
 			break;
 				
 		case YS_TOKEN.SLASH:
 			self.resolve = function ys_operator_divide(data) {
 				var left_val = left.resolve(data);
-				return left_val / right.resolve(data);
+				var right_val = right.resolve(data);
+				assertNotStructs("/", left_val, right_val);
+				return left_val / right_val;
 			};
 			break;
 		case YS_TOKEN.GREATER:
 			self.resolve = function ys_operator_greater_than(data) {
 				var left_val = left.resolve(data);
-				return left_val > right.resolve(data);
+				var right_val = right.resolve(data);
+				assertNotStructs(">", left_val, right_val);
+				return left_val > right_val;
 			};
 			break;
 				
 		case YS_TOKEN.GREATER_EQUAL:
 			self.resolve = function ys_operator_greater_than_or_equal(data) {
 				var left_val = left.resolve(data);
-				return left_val >= right.resolve(data);
+				var right_val = right.resolve(data);
+				assertNotStructs(">=", left_val, right_val);
+				return left_val >= right_val;
 			};
 			break;
 				
 		case YS_TOKEN.LESS:
 			self.resolve = function ys_operator_less_than(data) {
 				var left_val = left.resolve(data);
-				return left_val < right.resolve(data);
+				var right_val = right.resolve(data);
+				assertNotStructs("<", left_val, right_val);
+				return left_val < right_val;
 			};
 			break;
 				
 		case YS_TOKEN.LESS_EQUAL:
 			self.resolve = function ys_operator_less_than_or_equal(data) {
 				var left_val = left.resolve(data);
-				return left_val <= right.resolve(data);
+				var right_val = right.resolve(data);
+				assertNotStructs("<=", left_val, right_val);
+				return left_val <= right_val;
 			};
 			break;
 				
 		default:
 			throw yui_error("Unknown operator: " + operator_name);
+	}
+	
+	static assertNotStructs = function(op, left, right) {
+		if GM_build_type == "run" {
+			if is_struct(left)
+				throw yui_error($"Cannot apply '{op}' to struct (left-side: {instanceof(left)})");
+			if is_struct(right)
+				throw yui_error($"Cannot apply '{op}' to struct (right-side: {instanceof(right)})");
+		}
 	}
 	
 	static checkType = function() {

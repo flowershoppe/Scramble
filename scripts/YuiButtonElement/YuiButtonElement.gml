@@ -6,6 +6,8 @@ function YuiButtonElement(_props, _resources, _slot_values) : YuiBaseElement(_pr
 		focusable: true,
 		
 		background: undefined,
+		bg_blend_color: c_white, // optional color to blend the background sprite
+		
 		border_color: undefined,
 		border_thickness: 1,
 		border_focus_color: undefined,
@@ -24,10 +26,19 @@ function YuiButtonElement(_props, _resources, _slot_values) : YuiBaseElement(_pr
 		on_click: undefined,
 	}
 	
-	if _props[$ "trace"] == true
-		DEBUG_BREAK_YUI
+	//if _props[$ "trace"] == true
+	//	yui_break();
 	
 	props = yui_apply_element_props(_props);
+	
+	// fix up button.on_click to be handled by event system
+	if props.on_click != undefined {
+		props.events ??= {};
+		if struct_exists(props.events, "on_click")
+			throw yui_error("button: on_click was defined in both on_click and events.on_click");
+			
+		props.events.on_click = props.on_click;
+	}
 	
 	baseInit(props);
 	
@@ -47,8 +58,6 @@ function YuiButtonElement(_props, _resources, _slot_values) : YuiBaseElement(_pr
 		popup_element = yui_resolve_element(props.popup, resources, slot_values);
 	}
 	
-	on_click = yui_bind_handler(props.on_click, resources, slot_values);
-	
 	is_bound = base_is_bound;
 		
 	// ===== functions =====
@@ -61,15 +70,15 @@ function YuiButtonElement(_props, _resources, _slot_values) : YuiBaseElement(_pr
 		return {
 			alignment: alignment,
 			padding,
-			size: size,
+			size,
 			highlight_color: yui_resolve_color(highlight_color),
 			highlight_alpha,
 			pressed_alpha,
 			// border
 			content_element: content,
-			border_color: border_color,
+			border_color,
 			border_thickness: props.border_thickness,
-			border_focus_color: border_focus_color,
+			border_focus_color,
 		};
 	}
 	

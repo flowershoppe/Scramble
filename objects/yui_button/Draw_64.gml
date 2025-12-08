@@ -1,13 +1,24 @@
 /// @description draw alpha + highlight
 
-// Inherit the parent event
-event_inherited();
-
 var show_highlight = (highlight || focused)
 	&& highlight_color != undefined
 	&& enabled;
 	
-if show_highlight {
+if show_highlight and trace
+	mx_break()
+	
+active_bg_blend_color = show_highlight
+	? highlight_color
+	: (enabled
+		? bg_blend_color
+		: c_white);
+
+// Inherit the parent event
+event_inherited();
+	
+var draw_highlight = bg_sprite == undefined or highlight_color == $ffffffff;
+if show_highlight && draw_highlight {
+	
 	var alpha = (button_pressed ? pressed_alpha : highlight_alpha) * opacity;
 	if alpha > 0 {
 		if viewport_size {
@@ -15,7 +26,7 @@ if show_highlight {
 				if viewport_part.clipped {
 					draw_sprite_ext(
 						yui_white_pixel, 0,
-						viewport_part.x, viewport_part.y, viewport_part.w, viewport_part.h,
+						viewport_part.x + xoffset, viewport_part.y + yoffset, viewport_part.w, viewport_part.h,
 						0, highlight_color, alpha);
 				}
 				else {

@@ -4,7 +4,6 @@
 /// @description Calls a function with bindable arguments
 function YuiCallFunction(target_expr, args) : YuiExpr() constructor {
 	static is_yui_live_binding = true;
-	static is_call = true;
 	
 	static runtime_functions = gspl_get_runtime_function_map();
 	
@@ -12,6 +11,21 @@ function YuiCallFunction(target_expr, args) : YuiExpr() constructor {
 	self.args = args;
 	self.arg_count = array_length(args);
 	self.resolved_args = array_create(arg_count);
+	
+	static debug = function() {
+		var args_list = array_create(arg_count);
+		var i = 0; repeat arg_count {
+			var expr = args[i];
+			args_list[i] = expr.debug();
+			i++;
+		}
+		
+		return {
+			_type: instanceof(self),
+			call_target: is_instanceof(target_expr, YuiExpr) ? target_expr.debug() : target_expr,
+			args: args_list,
+		}
+	}
 
 	if is_instanceof(target_expr, YuiAssetReference) {
 		var target = target_expr.resolve();
@@ -70,7 +84,7 @@ function YuiCallFunction(target_expr, args) : YuiExpr() constructor {
 	static resolveScript = function(data) {
 			
 		var i = 0; repeat arg_count {
-			resolved_args[i] = args[i].resolve(data);
+			resolved_args[i] = yui_resolve_binding(args[i], data);
 			i++;
 		}
 			
@@ -80,7 +94,7 @@ function YuiCallFunction(target_expr, args) : YuiExpr() constructor {
 	static resolveRuntimeFunction = function(data) {
 
 		var i = 0; repeat arg_count {
-			resolved_args[i] = args[i].resolve(data);
+			resolved_args[i] = yui_resolve_binding(args[i], data);
 			i++;
 		}
 			
@@ -104,7 +118,7 @@ function YuiCallFunction(target_expr, args) : YuiExpr() constructor {
 	
 	static resolveLambda = function(data) {
 		var i = 0; repeat arg_count {
-			resolved_args[i] = args[i].resolve(data);
+			resolved_args[i] = yui_resolve_binding(args[i], data);
 			i++;
 		}
 		
@@ -116,7 +130,7 @@ function YuiCallFunction(target_expr, args) : YuiExpr() constructor {
 		// resolve the function reference and arguments
 		var func_ref = target_expr.resolve(data);
 		var i = 0; repeat arg_count {
-			resolved_args[i] = args[i].resolve(data);
+			resolved_args[i] = yui_resolve_binding(args[i], data);
 			i++;
 		}
 			
@@ -133,6 +147,9 @@ function YuiCallFunction(target_expr, args) : YuiExpr() constructor {
 		if is_instanceof(func_ref, YuiLambda) {
 			return func_ref.call(data, resolved_args);
 		}
+		
+		if !is_method(func_ref) && !script_exists(func_ref)
+			throw yui_error($"Cannot call expression value with type {typeof(func_ref)} as a function/script");
 
 		// NOTE: could hyperoptimize by setting .resolve based on the arg_count (which is already known)
 		var a = resolved_args;

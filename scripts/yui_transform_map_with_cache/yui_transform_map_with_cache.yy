@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"yui_transform_map_with_cache",
   "parent":{
-    "name":"Transform",
-    "path":"folders/Packages - YUI/Transform.yy",
+    "name":"Deprecated",
+    "path":"folders/Packages - YUI/Deprecated.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

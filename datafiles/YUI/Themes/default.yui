@@ -168,16 +168,16 @@ theme:
 
   // used for text.text_style (or text_input.text_style) to set the font and color
   // this enables you to adjust style values in one place rather than in each text element
-  text_styles:
+   text_styles:
 
     title:
-      font: ~fnt_yui_title
+      font: ~fnt_reality_hyper_big
       color: &text_color
 
     subtitle:
-      font: ~fnt_yui_subtitle
+      font: ~fnt_reality_hyper
       color: &text_color
 
     body:
-      font: ~fnt_yui_body
+      font: ~fnt_reality_hyper_small
       color: &text_color

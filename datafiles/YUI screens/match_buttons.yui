@@ -14,6 +14,7 @@ root:
   padding: 10
   elements:
     - type: button 
+      enabled: ~oMatchManager.active
       autofocus: false
       content: 
         type: text
@@ -27,6 +28,7 @@ root:
         - ~submit_play()
 
     - type: button 
+      enabled: ~oMatchManager.active
       content: 
         type: text
         text: Return Tiles
@@ -40,6 +42,7 @@ root:
         - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)
 
     - type: button 
+      enabled: ~oMatchManager.active
       content: 
         type: text
         text: Exchange Tiles
