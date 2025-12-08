@@ -1,3 +1,4 @@
+outline_init();
 alpha = 0;
 typist = scribble_typist();
 typist.in(1, 50);
