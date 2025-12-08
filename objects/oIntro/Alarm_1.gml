@@ -15,5 +15,5 @@ if(count < 50)
 }
 else
 {
-	alarm_set(2, 1);	
+	alarm_set(2, 200);	
 }

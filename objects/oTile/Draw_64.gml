@@ -6,11 +6,10 @@ var _old_font = draw_get_font();
 
 if(wait_for_input)
 {
-	draw_set_valign(fa_middle);
-	draw_set_halign(fa_center);
-	draw_text(display_get_gui_width() / 2, display_get_gui_height() / 3, "Please enter a character");	
-	draw_set_halign(_old_halign);
-	draw_set_valign(_old_valign);
+	var t = scribble("[fa_center][fa_middle]Please enter a character.");
+	t.starting_format(font_get_name(font), c_white)
+	t.sdf_outline(c_black, 2);
+	t.draw(display_get_gui_width() / 2, display_get_gui_height() / 3);
 }
 
 if(on_board){exit;}

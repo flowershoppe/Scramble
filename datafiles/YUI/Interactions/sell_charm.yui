@@ -1,7 +1,6 @@
-id: equip_item
+id: sell_charm
 file_type: interaction
 type: drag_and_drop
-
 hit_test_source_position: true
 
 // 'Interactions' are used to define complex UI behavior like Drag and Drop without writing code.
@@ -12,28 +11,19 @@ hit_test_source_position: true
 drag:
   // The 'condition' property controls whether an element can currently participate in the role.
   // In this case, it determines if the user can begin dragging this element.
-  condition: @is_equipped != true // NOTE - is_equipped isn't actually implemented yet...
+  condition: true // NOTE - is_equipped isn't actually implemented yet...
 
   visual:
     // NOTE: import does not work in interactions yet :(
     type: panel
-    layout: horizontal
-    background: black // note that we can use the name of any built in GMS color
-    border_color: white
-    border_thickness: 1
-    padding: 1
     elements:
       - type: image
-        sprite: @source.data.sprite |> ~asset_get_index()
+        sprite: @source.data.sprite_index
         size: 64
-      - type: text
-        padding: 10
-        text_style: subtitle
-        text: @source.data.name
 
   // by default, the visual for the item being dragged is drawn centered on the cursor
   // but we can disable that here, so that it's position with the cursor at the top left
-  center_visual: false
+  center_visual: true
 
   // We can also define a function to be called at each frame
   // this might be useful if you wanted to track where the cursor was moved during the drag
@@ -45,7 +35,7 @@ drop:
   // when the 'slot' value on the target (this element) matches the 'slot' on the item being
   // dragged. This prevents you from equipping boots to your head!
   // Note that we can use binding expressions more complex than just referring to a single value
-  condition: @source.data.slot == @target.data.slot
+  condition: @target.hover
 
   // You can also define a visual to be drawn *on top* of the drop element. This way you can
   // draw helpful indicators to guide users to valid drop targets, or indicate what action
@@ -74,4 +64,4 @@ drop:
 // lastly, you can also define an action to take if the drop is cancelled
 // (aka the dragged item is released over something which is not a drop target
 // or is not a *valid* drop target)
-on_cancel: @@ ~yui_log(`interaction 'equip_item' was cancelled`)
+on_cancel: @@ ~yui_log(`interaction 'sell_charm' was cancelled`)
