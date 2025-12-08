@@ -70,6 +70,9 @@ right_click_consumed = false;
 wheel_down_consumed = false;
 wheel_up_consumed = false;
 
+// which elements consumed the events
+left_pressed_consumer = false;
+
 // events to handle mouse interaction if YUI screen has not handled it
 // NOTE: only supports one subscriber!
 global_left_pressed = undefined;
@@ -138,9 +141,7 @@ tryAutofocus = function(target, is_focus_root) {
 	if !is_focus_root {
 		// we will focus this item if it has autofocus: true OR there is no focused item at all
 		if target.autofocus || focused_item == undefined || !instance_exists(focused_item) {
-			if is_navigation_active {
-				setFocus(target);
-			}
+			setFocus(target);
 		}
 	}
 	
@@ -166,16 +167,18 @@ activateFocused = function() {
 
 trackMouseDownItems = function(button) {
 	array_resize(mouse_down_array[button], hover_count);
-	var i = hover_count - 1; repeat hover_count {
+	var i = 0; repeat hover_count {
 		var item = hover_list[|i];
 		//var type = object_get_name(item.object_index);
 		//yui_log("mouse down on:", item, " - ", type, " - ", item[$" _id"]);
 		mouse_down_array[button][i] = item;
-		i--;
+		i++;
 	}
 }
 
 isCursorOnVisiblePart = function(item) {
+	if !object_is_ancestor(item.object_index, yui_base) return true;
+	
 	return item.isPointVisible(mouse_x + cursor_offset_x, mouse_y + cursor_offset_y);
 }
 
@@ -213,8 +216,8 @@ onKeyDown = function() {
 
 onCursorWheelUp = function() {
 	var wheel_up_consumed = false;
-	var i = hover_count - 1; repeat hover_count {
-		var next = hover_list[| i];
+	var i = 0; repeat hover_count {
+		var next = hover_array[i];
 	
 		if instance_exists(next) && isCursorOnVisiblePart(next) {
 			if next.on_mouse_wheel_up {
@@ -231,10 +234,10 @@ onCursorWheelUp = function() {
 			}
 		}
 	
-		i--;
+		i++;
 	}
 
-	if i < 0 && global_wheel_up {
+	if !wheel_up_consumed && global_wheel_up {
 		// Feather disable once GM1021
 		global_wheel_up();
 	}
@@ -242,8 +245,8 @@ onCursorWheelUp = function() {
 
 onCursorWheelDown = function() {
 	var wheel_down_consumed = false;
-	var i = hover_count - 1; repeat hover_count {
-		var next = hover_list[| i];
+	var i = 0; repeat hover_count {
+		var next = hover_array[i];
 	
 		if instance_exists(next) && isCursorOnVisiblePart(next) {
 			if next.on_mouse_wheel_down {
@@ -256,14 +259,15 @@ onCursorWheelDown = function() {
 			// a cursor layer blocks all events from propagating below it
 			// e.g. popdowns and windows
 			if next.is_cursor_layer {
+				wheel_down_consumed = true;
 				break;
 			}
 		}
 	
-		i--;
+		i++;
 	}
 
-	if i < 0 && global_wheel_down {
+	if !wheel_down_consumed && global_wheel_down {
 		// Feather disable once GM1021
 		global_wheel_down();
 	}

@@ -14,6 +14,8 @@ function YuiPanelElement(_props, _resources, _slot_values) : YuiBaseElement(_pro
 		
 		// visuals
 		background: undefined,
+		bg_blend_color: c_white, // optional color to blend the background sprite
+		
 		border_color: undefined,
 		border_thickness: 1,
 		border_focus_color: undefined,
@@ -87,6 +89,7 @@ function YuiPanelElement(_props, _resources, _slot_values) : YuiBaseElement(_pro
 	else {
 		// generate item_elements if we have explicit elements
 		item_elements = [];
+		element_count = 0;
 		var i = 0; var panel_count = array_length(elements); repeat panel_count {
 			var element = elements[i];
 			var panel_item_id = props.id + "[" + string(i) + "]";
@@ -100,15 +103,20 @@ function YuiPanelElement(_props, _resources, _slot_values) : YuiBaseElement(_pro
 				});
 			}
 			
-			item_elements[i] = yui_resolve_element(
+			var resolved_element = yui_resolve_element(
 				element,
 				resources,
 				item_slot_values,
 				panel_item_id);
 				
+			// an element could be undefined if it came from a slot that didn't have a value
+			if resolved_element != undefined {
+				item_elements[element_count] = resolved_element
+				element_count++;
+			}
+				
 			i++;
 		}
-		element_count = i;
 		
 		// force layout to check if it's live
 		layout.init(item_elements, undefined, undefined, props);

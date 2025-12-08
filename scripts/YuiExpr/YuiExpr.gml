@@ -5,6 +5,14 @@ function YuiExpr() constructor {
 	static is_assign = false;
 	static trace = false;
 	
+	static is_yui_live_binding = false;
+	
+	static debug = function() {
+		return {
+			_type: instanceof(self),
+		}
+	}
+	
 	static checkType = function() {
 		return undefined;
 	}

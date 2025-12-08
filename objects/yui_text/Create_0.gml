@@ -100,10 +100,10 @@ arrange = function yui_text__arrange(available_size, viewport_size) {
 		var is_wrapped = scribble_element.get_wrapped();
 		var new_bbox = scribble_element.get_bbox(x, y, padding.left, padding.top, padding.right, padding.bottom);
 
-		desired_size.w = layout_props.halign or is_wrapped
+		desired_size.w = layout_props.halign == fa_center
 			? available_size.w
 			: new_bbox.width;
-		desired_size.h = layout_props.valign
+		desired_size.h = layout_props.valign == fa_middle
 			? available_size.h
 			: new_bbox.height;
 	}
@@ -116,12 +116,24 @@ arrange = function yui_text__arrange(available_size, viewport_size) {
 		draw_set_font(font);
 	
 		// calc size
-		var native_width = string_width_ext(formatted_text, -1, padded_rect.w);
-		var native_height = string_height_ext(formatted_text, -1, padded_rect.w);
 		
 		// check wrapped
-		var native_width_nowrap = string_width(text);
+		var native_width_nowrap = string_width(formatted_text);
 		var is_wrapped = native_width_nowrap > padded_rect.w;
+		
+		if trace
+			mx_break()
+		
+		// NOTE: if we use the string_width_ext when wrapping is not needed, trailing spaces get
+		// trimmed, which is not desired as the text may be used as a spacer between other text
+		if is_wrapped {
+			var native_width = string_width_ext(formatted_text, -1, padded_rect.w);
+			var native_height = string_height_ext(formatted_text, -1, padded_rect.w);
+		}
+		else {
+			var native_width = native_width_nowrap;
+			var native_height = string_height(formatted_text);
+		}
 		
 		//var render_width = new_bbox.width;
 		//var render_height = max(new_bbox.height, string_height("bq"));
@@ -139,11 +151,14 @@ arrange = function yui_text__arrange(available_size, viewport_size) {
 		// can't use string_height_ext because it doesn't account for letters like pqyg
 		text_surface_h = native_height;
 	
+		// NOTE: halign is currently broken for non-scribble as yui_draw_text_to_surface()
+		// does not accept the halign param
+		
 		// update draw size
-		desired_size.w = layout_props.halign or is_wrapped
+		desired_size.w = layout_props.halign == fa_center
 			? available_size.w
 			: native_width;
-		desired_size.h = layout_props.valign
+		desired_size.h = layout_props.valign == fa_middle
 			? available_size.h
 			: native_height;
 	}
@@ -175,6 +190,8 @@ arrange = function yui_text__arrange(available_size, viewport_size) {
 		
 		if build_surface {
 			buildTextSurface();
+			if text_surface == undefined
+				use_text_surface = false;
 		}
 	}
 	
@@ -194,13 +211,13 @@ buildTextSurface = function yui_text__buildTextSurface(text = undefined) {
 	if !bound_values return;
 	
 	// only build the surface if it would have any pixels
+	// TODO: fold this into use_text_surface determination?
 	if text_surface_w > 0 && text_surface_h > 0 {
 
 		text ??= formatted_text;
-				
-		if trace {
-			DEBUG_BREAK_YUI
-		}
+
+		if trace
+			yui_break();
 	
 		text_surface = yui_draw_text_to_surface(
 			text_surface_w, text_surface_h,

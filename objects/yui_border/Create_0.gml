@@ -13,7 +13,12 @@ is_arranging = false;
 has_content_item = true; // yui_panel sets this to false
 content_item = undefined;
 
+background_initalized = false;
+
 bg_alpha = undefined;
+
+bg_blend_color = c_white; // blend color when drawing bg sprite
+active_bg_blend_color = c_white; // blend color used when drawing (e.g. can be overidden by yui_button)
 
 has_border_color = false;
 has_focus_color = false;
@@ -21,8 +26,10 @@ draw_border = false;
 
 base_destroy = destroy;
 destroy = function() {
-	if content_item && instance_exists(content_item)
+	if content_item && instance_exists(content_item) {
 		content_item.destroy();
+		content_item = undefined;
+	}
 	base_destroy();
 }
 
@@ -39,7 +46,10 @@ onLayoutInit = function() {
 	}
 	
 	background_value = new YuiBindableValue(yui_element.background, yui_element.getDefaultAnim("background"));
-	animatable.background = background_value
+	animatable.background = background_value;
+	
+	bg_blend_color = yui_element.bg_blend_color;
+	active_bg_blend_color = bg_blend_color;
 	
 	if layout_props.border_focus_color != undefined {
 		has_focus_color = true;

@@ -24,13 +24,17 @@ function make_yscript_type_map() {
 	type_map[YS_TOKEN.LEFT_BRACKET] = "LEFT_BRACKET";
 	type_map[YS_TOKEN.RIGHT_BRACKET] = "RIGHT_BRACKET";
 	type_map[YS_TOKEN.DOT] = "DOT";
+	type_map[YS_TOKEN.DOT] = "DOT_DOT_DOT";
 	type_map[YS_TOKEN.COMMA] = "COMMA";
+	type_map[YS_TOKEN.PIPE_GREATER] = "PIPE_GREATER";
 	type_map[YS_TOKEN.GREATER_GREATER] = "GREATER_GREATER";
+	type_map[YS_TOKEN.ARROW] = "ARROW";
 	type_map[YS_TOKEN.QUESTION] = "QUESTION";
 	type_map[YS_TOKEN.QUESTION_QUESTION] = "QUESTION_QUESTION";
 	type_map[YS_TOKEN.COLON] = "COLON";
 	type_map[YS_TOKEN.PIPE] = "PIPE";
 	type_map[YS_TOKEN.EQUAL] = "EQUAL";
+	type_map[YS_TOKEN.STRING_PLUS] = "STRING_PLUS";
 		
 	type_map[YS_TOKEN.MINUS] = "MINUS";
 	type_map[YS_TOKEN.PLUS] = "PLUS";
@@ -56,6 +60,7 @@ function make_yscript_type_map() {
 	type_map[YS_TOKEN.BINDING_IDENTIFIER] = "BINDING_IDENTIFIER";
 	type_map[YS_TOKEN.SLOT_IDENTIFIER] = "SLOT_IDENTIFIER";
 	type_map[YS_TOKEN.RESOURCE_IDENTIFIER] = "RESOURCE_IDENTIFIER";
+	type_map[YS_TOKEN.HOST_IDENTIFIER] = "HOST_IDENTIFIER";
 	type_map[YS_TOKEN.IDENTIFIER] = "IDENTIFIER";
 	
 	type_map[YS_TOKEN.STRING] = "STRING";

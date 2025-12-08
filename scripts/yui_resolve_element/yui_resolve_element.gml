@@ -8,8 +8,7 @@ function yui_resolve_element(yui_data, resources, slot_values, parent_id = undef
 	
 	static element_map = YuiGlobals.element_map;
 	
-	//try
-	{
+	try {
 		if yui_data == undefined return undefined;
 
 		// convert raw string elements to text data
@@ -19,7 +18,7 @@ function yui_resolve_element(yui_data, resources, slot_values, parent_id = undef
 			
 				// if the result is not a binding, copy the resolved values to ensure we're not sharing state incorrectly
 				if !yui_is_binding(resolved_yui_data) && (is_struct(resolved_yui_data) || is_array(resolved_yui_data)) {
-					resolved_yui_data = yui_deep_copy(resolved_yui_data)
+					resolved_yui_data = variable_clone(resolved_yui_data)
 				}
 			
 				// the result might be something like a slot or resource, or 'raw' element props
@@ -107,7 +106,7 @@ function yui_resolve_element(yui_data, resources, slot_values, parent_id = undef
 		// feather ignore once GM1045
 		return element;
 	}
-	//catch (error) {
-	//	return yui_make_error_element(error, resources, slot_values);
-	//}
+	catch (error) {
+		return yui_make_error_element(error, resources, slot_values);
+	}
 }

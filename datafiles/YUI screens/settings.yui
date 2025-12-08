@@ -10,6 +10,7 @@ import:
 root:
   type: panel
   layout: canvas
+  theme: elektra
   visible: @visible
   is_cursor_layer: true
   elements:
@@ -19,7 +20,7 @@ root:
       elements:
         //left side
         - type: panel
-          background: ~yui_panel_bg
+          background: ~spPanel
           layout: vertical
           flex: true
           size: stretch
@@ -34,23 +35,22 @@ root:
               spacing: 25
               elements:                
                 - type: panel
+                  size: {w: 175, h: 64}
                   layout: vertical
-                  alignment: {h: center}
-                  canvas: 
-                    left: 5
-                    top: 5
+                  alignment: center
                   elements:
                     - type: text
                       text: Tile Font
                       text_style: subtitle
                     - type: dropdown_menu
+                      size: {w: 175}
                       item_template: @name
                       can_clear_value: false
                       items: ~oGame.fonts
                       selection_scope: @font_selector
                       on_item_selected:
                         - @@ value => ~set_tile_font(value)
-                        - @@ value => ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+                        - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
                 - type: panel
                   layout: canvas
                   size: 64
@@ -72,19 +72,20 @@ root:
                         right: 2
             - type: panel
               layout: vertical
-              alignment: { h: center }
+              alignment: { h: center }              
               elements:
                 - type: text
                   text: Game Resolution 
                   text_style: subtitle
                 - type: dropdown_menu
                   items: @resolution_items
+                  size: {w: 125}
                   can_clear_value: false
                   selection_scope: @resolution_selector
                   on_item_selected:
                     - @@ value => ~resolution_select(value)
                     - @@ value => ~save_settings()
-                    - @@ value => ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+                    - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
             - type: panel
               layout: vertical
               alignment: {h: center}
@@ -93,6 +94,7 @@ root:
                   text: Master Volume   
                   text_style: subtitle  
                 - type: slider
+                  line_color: grey
                   min: 0
                   max: 100
                   value: @@ ~audio_get_master_gain() * 100
@@ -108,6 +110,7 @@ root:
                   text: Music Volume 
                   text_style: subtitle 
                 - type: slider
+                  line_color: grey
                   min: 0
                   max: 100
                   value: @@ ~audio_emitter_get_gain(~oGame.emitter_MS) * 100
@@ -123,6 +126,7 @@ root:
                   text: Sound Effects Volume  
                   text_style: subtitle
                 - type: slider
+                  line_color: grey
                   min: 0
                   max: 100
                   value: @@ ~audio_emitter_get_gain(~oGame.emitter_SE) * 100
@@ -131,27 +135,29 @@ root:
                     - @@ value => ~save_settings()
             - type: panel
               layout: horizontal
-              alignment: {h: center}
+              alignment: center
               spacing: 10
               elements:
                 - type: text
                   text: Dialogue
+                  text_style: subtitle
                 - type: button
+                  size: 32
                   content: " "
                   background: @play_dialogue then ~spConfirm else ~spCancel
                   on_click: 
                     - @play_dialogue = not @play_dialogue
                     - ~save_settings()
-                    - @@ ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
-                  
+                    - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
 
           //right side
         - type: panel
           flex: true
           size: stretch
           layout: vertical
-          alignment: { h: center }
-          background: ~yui_panel_bg
+          theme: elektra
+          alignment: center
+          background: ~spPanel
           padding: 50
           spacing: 25
           elements: 
@@ -195,14 +201,14 @@ root:
                               text: @@ ~input_binding_get(@)
                             on_click: 
                               - @@ ~keybind(@)
-                              - @@ ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+                              - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
             - type: button
               content:
                 type: text
                 text: Reset to Default
               on_click: 
                 - @@ ~input_profile_reset_bindings()
-                - @@ ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+                - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
     - type: button
       content: 
         type: text        
@@ -211,4 +217,4 @@ root:
       border_thickness: 1
       on_click: 
         - @@ ~toggle_settings()
-        - @@ ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)
+        - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)

@@ -87,4 +87,3 @@ resources:
     duration: &slide_duration
     from: 30
     to: 0
-

@@ -11,6 +11,7 @@ root:
   type: panel
   layout: canvas
   is_cursor_layer: true
+  theme: elektra
   elements:
     - type: panel      
       canvas:
@@ -18,7 +19,7 @@ root:
       elements:
         - type: panel
           layout: canvas
-          size: {w: 300, h: 300}
+          size: {w: 350, h: 350}
           background: ~yui_panel_bg
           padding: 10
           elements:
@@ -33,6 +34,7 @@ root:
                 - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)
             - type: panel
               alignment: center
+              spacing: 10
               elements:
                 - type: panel
                   layout: horizontal

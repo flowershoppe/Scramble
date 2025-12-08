@@ -23,6 +23,17 @@ function YuiElementDrag(_props, _resources) constructor {
 	props = yui_apply_props(_props);
 	resources = _resources;
 	
+	static makeHandler = function(handler_prop) {
+		if handler_prop == undefined return;
+		
+		if is_array(handler_prop) {
+			return new YuiArrayEventHandler(handler_prop);
+		}
+		else {
+			return new YuiBindingEventHandler(handler_prop);
+		}
+	}
+	
 	static canStart = function(source_data) {
 		return true; // eval condition?
 	}
@@ -33,10 +44,12 @@ function YuiElementDrag(_props, _resources) constructor {
 		button = interaction[$ "button"] ?? mb_left;
 		
 		// TODO: init_props on the parameters (and define defaults in .yui)
+		// OR treat the interaction constructor as a 'pattern' and have it create an instance
+		// where the interaction is declared as an event handler
 		parameters = variable_struct_get(interaction, "parameters") ?? {};
 		
-		on_position_changed = parameters[$ "on_position_changed"] ?? props.on_position_changed;
-		on_drag_end = parameters[$ "on_drag_end"] ?? props.on_drag_end;
+		on_position_changed = makeHandler(parameters[$ "on_position_changed"] ?? props.on_position_changed);
+		on_drag_end = makeHandler(parameters[$ "on_drag_end"] ?? props.on_drag_end);
 		
 		// target might be an ancestor of the source, e.g. the window containing the title bar drag button
 		var source_type = parameters[$"source_type"];
@@ -69,8 +82,8 @@ function YuiElementDrag(_props, _resources) constructor {
 		
 		var parent_size = parent.draw_size;
 		
-		var relative_left = cursor_pos.x - parent_size.x;
-		var relative_top = cursor_pos.y - parent_size.y;
+		var relative_left = cursor_pos.x - parent.x;
+		var relative_top = cursor_pos.y - parent.y;
 		
 		// in element mode, position by the corner of the target, not the position of the cursor
 		if props.mode == "element" {
@@ -115,11 +128,11 @@ function YuiElementDrag(_props, _resources) constructor {
 			yui_log(event);
 		}
 
-		yui_call_handler(on_position_changed, [event], target.data_source);
+		on_position_changed.call(target.data_source, event);
 		
 		if mouse_check_button_released(button) {
 			if on_drag_end != undefined {
-				yui_call_handler(on_drag_end, [event], target.data_source);
+				on_drag_end.call(event, target.data_source);
 			}
 			finish();
 		}

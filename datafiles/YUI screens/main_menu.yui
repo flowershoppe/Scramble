@@ -13,6 +13,7 @@ root:
     - type: panel
       size: { w: 240, h: 270 }
       alignment: { h: center }
+      theme: menu
       canvas:
         top: 5
         center: h      
@@ -51,7 +52,6 @@ root:
             - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
           events:
             on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
-
         - type: button
           background: ~spPanel
           content: 
@@ -64,10 +64,9 @@ root:
               xoffset: &cascade_slide_in_right
           on_click: 
             - ~toggle_settings()
-            - ~audio_play_sound_on(0, ~sdSelect, false, 1)
+            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
           events:
             on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
-  
         - type: button
           background: ~spPanel
           content: 

@@ -5,14 +5,30 @@ function YsSlotParselet() : GsplPrefixParselet() constructor {
 		var path = token._lexeme;
 		
 		// given 'foo.bar.baz' get 'foo' and 'bar.baz'
-		var path_parts = yui_string_split(path, ".", 2);
+		var path_parts = string_split(path, ".", , 1);
 		var slot_key = path_parts[0];
+		
+		if parser.slot_values == undefined
+			throw yui_error("YsSlotParselet: parser does not have any slot_values");
 
-		var slot_value = parser.slot_values.get(slot_key);
+		try {
+			var slot_value = parser.slot_values.get(slot_key);
+		}
+		catch (error) {
+			error = yui_error(error.message + " in expression: " + parser.source);
+			throw error;
+		}
 		
 		var sub_path = array_length(path_parts) > 1
 			? path_parts[1]
 			: "";
+		
+		// if the slot value is an expression parse that also
+		// NOTE: this can happen when setting the default value of a slot to an expression
+		// as those are not parsed when the template/component is initialized
+		if yui_is_binding_expr(slot_value) {
+			slot_value = yui_parse_binding_expr(slot_value, parser.resources, parser.slot_values)
+		}
 		
 		if yui_is_binding(slot_value) {
 			if sub_path == "" {
@@ -22,9 +38,6 @@ function YsSlotParselet() : GsplPrefixParselet() constructor {
 			else {
 				return new YuiNestedBinding(slot_value, sub_path);
 			}
-		}
-		else if yui_is_binding_expr(slot_value) {
-			return yui_parse_binding_expr(slot_value, parser.resources, parser.slot_values)
 		}
 		else if sub_path == "" {
 			// if there is no sub path, return the value (wrapped)

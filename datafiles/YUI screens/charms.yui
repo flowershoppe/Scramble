@@ -12,6 +12,7 @@ root:
   type: panel
   theme: default
   layout: grid
+  siz: {w: 32, h: 175}
   padding: [10, 10, 10, 10]
   grid:
     rows: 5
@@ -24,17 +25,18 @@ root:
   elements: @charms
   template:
     type: image
+    visible: @ != -1
     events:
       on_mouse_down:
         interaction: sell_charm
     size: 32
     tooltip: @name + ~chr(13) + @description
-    sprite: @sprite_index
+    sprite: @sprite_index ?? ~spHolder
     blend_color: @color ?? white
-    xoffset: @animate then 0 else 1
+    xoffset: @?.animate then 0 else 1
     animate:
       default:
-        xoffset:
+        xoffset: 
           type: curve
           curve: ~yui_wave_curve
           from: -10

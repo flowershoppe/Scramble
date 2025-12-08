@@ -5,6 +5,14 @@ function YuiValueBinding(value, path) : YuiBinding(undefined) constructor {
 	self.value = value;
 	self.path = path;
 	
+	static debug = function() {
+		return {
+			_type: instanceof(self),
+			value: is_struct(value) ? instanceof(value) : value, // avoid tostring on structs
+			path,
+		}
+	}
+	
 	if path == "" {
 		resolver = resolveEmptyPath;
 		self.is_yui_live_binding = false;
@@ -15,7 +23,7 @@ function YuiValueBinding(value, path) : YuiBinding(undefined) constructor {
 	}
 	else {
 		resolver = resolveTokenArray;
-		tokens = yui_string_split(path, ".");
+		tokens = string_split(path, ".");
 	}
 
 	static resolve = function(data) {
