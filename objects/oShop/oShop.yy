@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spShop",
-    "path":"sprites/spShop/spShop.yy",
+    "name":"spFrut",
+    "path":"sprites/spFrut/spFrut.yy",
   },
   "spriteMaskId":null,
   "visible":true,

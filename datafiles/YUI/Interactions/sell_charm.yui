@@ -3,23 +3,19 @@ file_type: interaction
 type: drag_and_drop
 hit_test_source_position: true
 
-// 'Interactions' are used to define complex UI behavior like Drag and Drop without writing code.
-// The core logic exists in GML code, but we can define custom behavior and visuals in .yui files.
-// The drag_and_drop interaction type defines two roles, 'drag' and 'drop'.
-// UI elements can participate in one or more interactions/roles, as seen in inventory_screen.yui
+hide_source: true
 
 drag:
-  // The 'condition' property controls whether an element can currently participate in the role.
-  // In this case, it determines if the user can begin dragging this element.
-  condition: true // NOTE - is_equipped isn't actually implemented yet...
-
+  
   visual:
     // NOTE: import does not work in interactions yet :(
     type: panel
     elements:
       - type: image
         sprite: @source.data.sprite_index
+        blend_color: @source.data.color
         size: 64
+        layer: 100
 
   // by default, the visual for the item being dragged is drawn centered on the cursor
   // but we can disable that here, so that it's position with the cursor at the top left
@@ -28,6 +24,7 @@ drag:
   // We can also define a function to be called at each frame
   // this might be useful if you wanted to track where the cursor was moved during the drag
   action: null
+  condition: true
 
 drop:
   // the 'drop' condition determines whether it is valid to 'drop' the item being dragged

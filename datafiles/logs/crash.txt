@@ -1,5 +1,5 @@
 { longMessage : "ERROR in action number 1
-of Alarm Event for alarm 0 for object oMainMenu:
-Push :: Execution Error - Variable Index [8] out of range [8] - -6.letters(102802,8)
- at gml_Object_oMainMenu_Alarm_0 (line 3) - var _letter = letters[ind];
-", script : "gml_Object_oMainMenu_Alarm_0", message : "Push :: Execution Error - Variable Index [8] out of range [8] - -6.letters(102802,8)", stacktrace : [ "gml_Object_oMainMenu_Alarm_0 (line 3)" ], line : 3 }
+of Mouse Event for Glob Left Released for object YuiCursorManager:
+unable to convert string "e => ~clipboard_set_text(@)" to integer
+ at gml_Script_call@anon@94@YuiBindingEventHandler@YuiEventHandler (line 5) - 		if expr.is_lambda {
+", line : 5, stacktrace : [ "gml_Script_call@anon@94@YuiBindingEventHandler@YuiEventHandler (line 5)","gml_Script_yui_call_handler (line 26) - 		return handler.call(data, args, self);","gml_Script_anon@784@yui_register_events@yui_register_events (line 48) - 			yui_call_handler(events.on_click, [args], data_source);","gml_Object_YuiCursorManager_Mouse_56 (line 54) - 			var handled = next.left_click();" ], script : "gml_Script_call@anon@94@YuiBindingEventHandler@YuiEventHandler", message : "unable to convert string "e => ~clipboard_set_text(@)" to integer" }

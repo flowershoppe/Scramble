@@ -10,9 +10,9 @@ import:
 root:
   type: panel
   layout: canvas
-
   elements:
     - type: panel
+      theme: elektra
       canvas: 
         top: 75
         left: 110

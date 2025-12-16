@@ -9,6 +9,7 @@ border_arrange = arrange;
 arrange = function(available_size, viewport_size) {
 	border_arrange(available_size, viewport_size);
 	
+	if(!visible){return;}
 	// align popup
 	yui_align_from_placement(self, bound_values.placement);
 }
