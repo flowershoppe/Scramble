@@ -7,7 +7,7 @@ root:
   theme: elektra
   layout: canvas
   size: stretch
-  background: ~yui_panel_bg
+  background: ~spPanel
   padding: 0
   elements:
     - type: button

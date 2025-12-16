@@ -150,7 +150,6 @@ theme:
       highlight_color: &accent_color //|> ~yui_color_shift_hue(&accent_color, 1.5)
       highlight_alpha: 0.5
       padding: [10, 5]
-      sounds:
 
     popup:
       // animate:

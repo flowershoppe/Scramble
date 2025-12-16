@@ -10,54 +10,36 @@ import:
 
 root:
   type: panel
-  padding: 100 
   layout: canvas  
   elements:
     - type: panel
-      layout: horizontal
-      alignment: center
-      canvas:
-        top: 25
-      elements:
-        - type: panel
-          layout: vertical
-          alignment: { h: center }
-          elements:
-            - type: text
-              text: Welcome to Da Shop
-              text_style: subtitle
-            - type: text
-              theme: elektra
-              text: The shop can be visited anytime between levels 
-            - type: text
-              theme: elektra
-              text: and changes inventory between floors
-    - type: panel
       theme: elektra
-      background: ~yui_panel_bg
-      size: stretch
+      background: ~spPanel
+      layout: vertical
+      padding: 10
+      canvas:
+        center: true
+      size: {w: 600, h: 325}
       elements: 
         - type: panel
           layout: horizontal
-          padding: 10
+          alignment: center
+          canvas:
+            top: 125
           elements:
-            - type: text
-              text: "Credits | " 
-            - ~oPlayer.money
-        - type: panel
-          layout: horizontal
-          padding: 10
-          elements:
-            - type: text
-              text: "Tile = "
-            - @price_tile
-        - type: panel
-          layout: horizontal
-          padding: 10
-          elements:
-            - type: text
-              text: "Charm = "
-            - @price_charm
+            - type: panel
+              layout: vertical
+              alignment: { h: center }
+              elements:
+                - type: text
+                  text: Welcome to Da Shop
+                  text_style: subtitle
+                - type: text
+                  theme: elektra
+                  text: The shop can be visited anytime between levels 
+                - type: text
+                  theme: elektra
+                  text: and changes inventory between floors
         - type: panel
           theme: dark
           padding: 10
@@ -68,13 +50,18 @@ root:
           template:
             type: panel
             layout: canvas
-            size: 64
-            background: ~oGame.tile_sprite
+            size: 64            
             events:
               on_click: 
                 - ~purchase(@id)
                 - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
             elements:
+              - type: image
+                sprite: ~spShadow
+                canvas:
+                  bottom: -15
+              - type: image
+                sprite: ~oGame.tile_sprite
               - type: text
                 font: ~oGame.tile_font
                 alignment: center
@@ -86,6 +73,44 @@ root:
                 canvas:
                   right: 2
                 color: ~isGreater(@letter, @pointvalue) then red else black
+              - type: panel
+                layout: canvas
+                canvas:
+                  bottom: 0
+                  right: 14
+                size: 16
+                elements:
+                  - type: text
+                    font: ~fnt_elektra_small
+                    color: black
+                    text: ~oShop.price_tile
+                    text_style: subtitle
+                    canvas:
+                      left: 2
+                      top: 2
+                  - type: text
+                    font: ~fnt_elektra_small
+                    color: yellow
+                    text: ~oShop.price_tile
+                    text_style: subtitle
+              - type: panel
+                layout: canvas
+                canvas:
+                  bottom: -4
+                  right: -12
+                size: 18
+                elements: 
+                  - type: image
+                    sprite: ~spMyte
+                    blend_color: black
+                    size: 14
+                    canvas:
+                      left: 2
+                      top: 2
+                  - type: image
+                    sprite: ~spMyte
+                    size: 14
+                    blend_color: yellow
         - type: panel
           padding: 10
           spacing: 20
@@ -93,16 +118,62 @@ root:
           layout: horizontal
           elements: @charms
           template:
-            type: image
-            visible: @ != -1
+            type: panel
+            layout: canvas
             size: 64
-            tooltip: @name + ~chr(13) + @description
-            sprite: @sprite_index ?? ~spHolder
-            blend_color: @color
-            events:
-              on_click: 
-                - ~purchase(@id)
-                - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+            elements:
+              - type: image
+                sprite: ~spShadow
+                canvas:
+                  bottom: -10
+              - type: image
+                visible: @ != -1
+                size: 64
+                tooltip: @name + ~chr(13) + @description
+                sprite: @sprite_index ?? ~spHolder
+                blend_color: @color
+                events:
+                  on_click: 
+                    - ~purchase(@id)
+                    - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+              - type: panel
+                layout: canvas
+                canvas:
+                  bottom: 0
+                  right: 14
+                size: 16
+                elements:
+                  - type: text
+                    font: ~fnt_elektra_small
+                    color: black
+                    text: ~oShop.price_charm
+                    text_style: subtitle
+                    canvas:
+                      left: 2
+                      top: 2
+                  - type: text
+                    font: ~fnt_elektra_small
+                    color: yellow
+                    text: ~oShop.price_charm
+                    text_style: subtitle
+              - type: panel
+                layout: canvas
+                canvas:
+                  bottom: -4
+                  right: -12
+                size: 18
+                elements: 
+                  - type: image
+                    sprite: ~spMyte
+                    blend_color: black
+                    size: 14
+                    canvas:
+                      left: 2
+                      top: 2
+                  - type: image
+                    sprite: ~spMyte
+                    size: 14
+                    blend_color: yellow
     - type: panel
       theme: elektra
       canvas:
@@ -116,14 +187,27 @@ root:
           on_click: 
             - ~goto_map()
             - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)
-    - type: image
-      sprite: ~spRecycle
-      size: 64
+    - type: panel
+      layout: vertical
+      size: {w: 70, h: 128}
       canvas:
-        bottom: 100
-        left: 25
-      interactions:
-        - sell_charm.drop
-
-
+        right: 50
+        bottom: 10
+      elements:
+        - type: panel
+          layout: canvas
+          size: 64
+          elements:
+            - type: image
+              sprite: ~spRecycleBin
+              size: 64
+              interactions:
+                - sell_charm.drop
+        - type: text
+          scribble: true
+          text: Click and drag a charm here to sell it for half value
+          alignment: {h: center}
+          color: black
+          font: ~fnt_elektra_tiny
+          
           

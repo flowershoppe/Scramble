@@ -21,7 +21,7 @@ root:
     columns: 1
     column_width: 32
     column_spacing: 16
-  background: ~yui_panel_bg
+  background: ~spPanel
   elements: @charms
   template:
     type: image
@@ -30,6 +30,7 @@ root:
       on_mouse_down:
         interaction: sell_charm
     size: 32
+    theme: elektra
     tooltip: @name + ~chr(13) + @description
     sprite: @sprite_index ?? ~spHolder
     blend_color: @color ?? white
