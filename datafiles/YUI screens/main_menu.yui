@@ -73,7 +73,7 @@ root:
             type: text
             text: Stats
             text_style: subtitle        
-          border_thickness: 1
+          border_thickness: 2
           animate:
             on_visible:
               xoffset: &cascade_slide_in_left

@@ -1237,7 +1237,7 @@
     {"name":"spD6","order":4,"path":"sprites/spD6/spD6.yy",},
     {"name":"spDeltarune","order":34,"path":"sprites/spDeltarune/spDeltarune.yy",},
     {"name":"spDiamond","order":12,"path":"sprites/spDiamond/spDiamond.yy",},
-    {"name":"spDropShadow","order":45,"path":"sprites/spDropShadow/spDropShadow.yy",},
+    {"name":"spDropShadow","order":58,"path":"sprites/spDropShadow/spDropShadow.yy",},
     {"name":"spE","order":1,"path":"sprites/spE/spE.yy",},
     {"name":"spEmpty","order":31,"path":"sprites/spEmpty/spEmpty.yy",},
     {"name":"spEraser","order":19,"path":"sprites/spEraser/spEraser.yy",},

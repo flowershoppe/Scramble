@@ -1,5 +1,6 @@
 if(room == rMainMenu)
 {
+	layer = layer_get_id("Board");
 	alarm_set(0, 60);
 	for(var i = 0; i < length; i ++)
 	{
