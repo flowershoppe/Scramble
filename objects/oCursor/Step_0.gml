@@ -20,51 +20,84 @@ if(instance_exists(oPlayerHand))
 }
 
 if(global.exchanging){exit;}
+
+//-----TYPE TO PLACE-----
+var _letter = "";
+var _bool = true;
+with(oTile)
+{
+	if(wait_for_input)
+	{
+		_bool = false;
+	}
+}
+
+if(input_keyboard_check_pressed(vk_anykey) and layer == layer_get_id("Tiles") and _bool and ord("A") <= keyboard_key and keyboard_key <= ord("Z"))
+{
+	var _array = oPlayerHand.tile_holder_array;
+
+	for(var i = 0; i < array_length(_array); i++)
+	{
+		if(_array[i].tile != noone)
+		{
+			if(string_upper(keyboard_lastchar) == _array[i].tile.letter)
+			{
+				_letter = string_upper(keyboard_lastchar);
+				held_tile = _array[i].tile;
+				break;
+			}
+		}
+	}
+}
+
 //-----PICK UP-----
 #region
-if(mouse_check_button_pressed(mb_left))
+if(mouse_check_button_pressed(mb_left) or _letter != "")
 {	
 	//in hand check
-	if(oMatchManager.active and position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile))
+	if(_letter == "")
 	{
-		var _list = ds_list_create();
-		var _num = instance_place_list(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile, _list, true);
-		for(var _i = 0; _i < _num; _i++)
+		if(oMatchManager.active and position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile))
 		{
-			if(_list[| _i].in_hand)
+			var _list = ds_list_create();
+			var _num = instance_place_list(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile, _list, true);
+			for(var _i = 0; _i < _num; _i++)
 			{
-				held_tile = _list[| _i];
-				break;
+				if(_list[| _i].in_hand)
+				{
+					held_tile = _list[| _i];
+					break;
+				}
+				else
+				{
+					held_tile = noone;
+				}
 			}
-			else
-			{
-				held_tile = noone;
-			}
+			ds_list_destroy(_list);
+			//held_tile = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile);
+			//if(held_tile.on_board){ held_tile = noone; }
 		}
-		ds_list_destroy(_list);
-		//held_tile = instance_position(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile);
-		//if(held_tile.on_board){ held_tile = noone; }
-	}
-	//on board check
-	else if(place_meeting(x, y, oTile))
-	{
-		var _list = ds_list_create();
-		var _num = instance_position_list(x, y, oTile, _list, true);
-		for(var _i = 0; _i < _num; _i++)
+		//on board check
+		else if(place_meeting(x, y, oTile))
 		{
-			if(_list[| _i].on_board)
+			var _list = ds_list_create();
+			var _num = instance_position_list(x, y, oTile, _list, true);
+			for(var _i = 0; _i < _num; _i++)
 			{
-				held_tile = _list[| _i];
-				break;
+				if(_list[| _i].on_board)
+				{
+					held_tile = _list[| _i];
+					break;
+				}
+				else
+				{
+					held_tile = noone;
+				}
 			}
-			else
-			{
-				held_tile = noone;
-			}
+			ds_list_destroy(_list);
 		}
-		ds_list_destroy(_list);
+		else{ held_tile = noone; }
 	}
-	else{ held_tile = noone; }
 
 	//case for in hand tile objects "actual" locations
 	//if(held_tile != noone){if(held_tile.in_hand == true){held_tile = noone;}}
@@ -82,7 +115,18 @@ if(mouse_check_button_pressed(mb_left))
 		{array_delete(_placed_tiles, array_get_index(_placed_tiles, held_tile), 1);}
 	}
 			
-	//hold the tile;
+	//hold the tile;	
+	if(held_tile.on_board)
+	{
+		old_layer = layer_get_id("Tiles");	
+	}
+	else if(held_tile.in_hand)
+	{
+		old_layer = layer_get_id("Hand");	
+	}
+	audio_play_sound_on(global.emitterSE, global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
+			false, 0);
+	
 	held_tile.image_xscale = 1;
 	held_tile.image_yscale = 1;
 	held_tile.font_scale = 1;
@@ -90,11 +134,12 @@ if(mouse_check_button_pressed(mb_left))
 	held_tile.in_hand = false;
 	old_x = held_tile.x;
 	old_y = held_tile.y;
-	old_layer = layer;
 	held_tile.layer = layer_get_id("Grabbed");
+	
+	held_tile.x = device_mouse_x_to_gui(0);
+	held_tile.y = device_mouse_y_to_gui(0);	
 		
-	audio_play_sound_on(global.emitterSE, global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
-					false, 0);
+
 		
 	var _tile = held_tile;
 	
@@ -111,7 +156,7 @@ if(mouse_check_button_pressed(mb_left))
 
 //-----PLACE-----
 #region
-if(!mouse_check_button(mb_left))
+if(!mouse_check_button(mb_left) or _letter != "")
 {
 	if(held_tile == noone){exit;}
 	
@@ -213,17 +258,22 @@ if(!mouse_check_button(mb_left))
 		#region
 		if(_switch_tile != noone)
 		{
+			array_delete(_placed_tiles, array_get_index(_placed_tiles, _switch_tile), 1);
 			_switch_tile.x = old_x;
 			_switch_tile.y = old_y;
 			_switch_tile.layer = old_layer;		
-		
+			
+			_nearest_holder = noone;
+			_nearest_dist = infinity;
 			if(old_layer == layer_get_id("Hand"))
 			{
+				_nearest_holder = instance_nearest(oCursor.old_x, oCursor.old_y, oTileHolder); 
+				
 				with(oTileHolder)
 				{
 					if(array_contains(oPlayerHand.tile_holder_array, id))
 					{
-						var _dist = point_distance(oCursor.old_x, oCursor.old_y, device_mouse_x_to_gui(0), device_mouse_y_to_gui(0))
+						var _dist = point_distance(x, y, oCursor.old_x, oCursor.old_y)
 						if(_dist < _nearest_dist)
 						{
 							//save the id
@@ -240,7 +290,7 @@ if(!mouse_check_button(mb_left))
 				{
 					if(layer == layer_get_id("Board_Tile_Holders"))
 					{
-						var _dist = point_distance(oCursor.old_x, oCursor.old_y, other.x, other.y)
+						var _dist = point_distance(x, y, oCursor.old_x, oCursor.old_y)
 						if(_dist < _nearest_dist)
 						{
 							//save the id
@@ -282,6 +332,7 @@ if(!mouse_check_button(mb_left))
 	}
 }
 #endregion
+
 
 if(held_tile != noone)
 {
