@@ -10,7 +10,7 @@ root:
   type: panel
   alignment: { h: center }
   layout: canvas
-  background: ~yui_panel_bg  
+  theme: elektra
   canvas:
     top: 50
     center: h
@@ -24,7 +24,7 @@ root:
       canvas:
         top: 75
         center: h
-      background: ~yui_panel_bg
+      background: ~spPanel
       elements:
         - type: text
           text: "--- RESULT ---"

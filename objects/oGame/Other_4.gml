@@ -5,15 +5,7 @@ if(!instance_exists(oCursor))
 
 //music
 switch(room)
-{        
-	case rGame:
-		if(!instance_exists(oBackground))
-		{
-			instance_create_layer(0, 0, "Background", oBackground, {spr : spBG});
-		}	
-		
-		break;
-		
+{        		
 	case rMainMenu:	
 		oCamera.active = false;
 		YuiCursorManager.is_navigation_active = false

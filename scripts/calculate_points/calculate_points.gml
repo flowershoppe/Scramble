@@ -21,7 +21,6 @@ function calculate_points()
 		//review each letter of the word
 		for(k = 0; k < array_length(_player_words_tiles[j]); k++)
 		{
-			
 			oMatchManager.total_tiles++;
 			oRun.tiles_played++;
 			oStats.tiles_played++;
@@ -40,6 +39,18 @@ function calculate_points()
 				
 				//subtotal
 				_subt += _points;
+				
+				//get coins
+				with(_holder)
+				{
+					if(hascoin)
+					{
+						var _coin = instance_place(x, y, oCoin);
+						oPlayer.money += _coin.value;
+						instance_destroy(_coin);
+						hascoin = false;
+					}
+				}
 			}
 		}
 		

@@ -15,6 +15,7 @@ root:
       layout: vertical
       alignment: center
       indexed: true
+      theme: elektra
       canvas:
         top: 350
         center: h
