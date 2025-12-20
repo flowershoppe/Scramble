@@ -10,7 +10,7 @@ root:
   layout: vertical
   size: stretch
   alignment: center
-  background: ~yui_panel_bg
+  background: ~spPanel
   spacing: 15
   elements:
     - type: panel

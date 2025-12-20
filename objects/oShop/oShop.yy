@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spFrut",
-    "path":"sprites/spFrut/spFrut.yy",
+    "name":"spGameBG1",
+    "path":"sprites/spGameBG1/spGameBG1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

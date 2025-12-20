@@ -9,9 +9,10 @@ root:
   type: panel
   layout: vertical
   size: stretch
-  background: ~yui_panel_bg
+  background: ~spPanel
   alignment: center
   padding: 10
+  theme: elektra
   elements:
     - type: button 
       enabled: ~oMatchManager.active
@@ -47,7 +48,7 @@ root:
         type: text
         text: Exchange Tiles
         text_style: body
-      border_color: @exchange_flash then green else black
+      //border_color: @exchange_flash then green else black
       border_thickness: 1
       events:
         on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false

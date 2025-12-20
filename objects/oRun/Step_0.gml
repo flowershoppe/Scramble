@@ -32,7 +32,8 @@ if(instance_exists(oPlayer))
 		if(old_money < oPlayer.money)
 		{
 			oStats.total_money_earned += (oPlayer.money - money_earned)
-			money_earned += (oPlayer.money - money_earned);		
+			money_earned += (oPlayer.money - money_earned);	
+			audio_play_sound_on(oGame.emitter_SE, sdCoinGet, false, 1);
 		}
 		old_money = oPlayer.money;
 	}	
