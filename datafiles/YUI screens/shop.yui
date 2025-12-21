@@ -177,8 +177,8 @@ root:
     - type: panel
       theme: elektra
       canvas:
-        right: 10
-        top: 10
+        right: 200
+        bottom: 125
       elements:
         - type: button
           content:
@@ -207,7 +207,7 @@ root:
           scribble: true
           text: Click and drag a charm here to sell it for half value
           alignment: {h: center}
-          color: black
+          color: white
           font: ~fnt_elektra_tiny
           
           
