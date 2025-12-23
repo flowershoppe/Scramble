@@ -1,1 +1,1 @@
-exit;
+draw_self();

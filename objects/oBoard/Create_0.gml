@@ -1,5 +1,6 @@
 spr = spBoard;
 holders = [];
+coinchance = 1;
 for(var i = 0; i < grid_width; i++)
 {
 	array_push(holders, array_create(grid_height));	
@@ -9,8 +10,8 @@ var _tile_size = sprite_get_width(spHolder);
 //set board draw parameters
 board_width = grid_width * _tile_size + _tile_size;
 board_height = grid_height * _tile_size + _tile_size;
-x = room_width / 2;
-y = room_height / 2;
+x = (room_width / 2) + _tile_size;
+y = (room_height / 2) + _tile_size;
 
 var _x, _y;
 var _x_offset = (x - (board_width / 2));
@@ -36,4 +37,4 @@ for(_x = 0; _x < grid_width; _x++)
 	}
 	
 }
-
+coinchance = 1;

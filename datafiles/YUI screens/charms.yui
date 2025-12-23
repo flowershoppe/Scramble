@@ -32,6 +32,7 @@ root:
     size: 32
     theme: elektra
     tooltip: @name + ~chr(13) + @description
+    tooltip_width: 250
     sprite: @sprite_index ?? ~spHolder
     blend_color: @color ?? white
     xoffset: @?.animate then 0 else 1
