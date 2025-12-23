@@ -11,6 +11,7 @@ root:
   size: stretch
   alignment: center
   background: ~spPanel
+  padding: 10
   spacing: 15
   elements:
     - type: panel
@@ -29,7 +30,7 @@ root:
       layout: horizontal
       elements:
         - type: text
-          text: "Point Min: "
+          text: "Target Score: "
         - @@ ~isnegative(@point_min) then 'N/A' else @point_min
     //- type: panel
     //  layout: horizontal
