@@ -32,7 +32,8 @@ with(oTile)
 	}
 }
 
-if(input_keyboard_check_pressed(vk_anykey) and layer == layer_get_id("Tiles") and _bool and ord("A") <= keyboard_key and keyboard_key <= ord("Z"))
+
+if(room == rGame and input_keyboard_check_pressed(vk_anykey) and layer == layer_get_id("Tiles") and _bool and ord("A") <= keyboard_key and keyboard_key <= ord("Z"))
 {
 	var _array = oPlayerHand.tile_holder_array;
 
@@ -49,6 +50,7 @@ if(input_keyboard_check_pressed(vk_anykey) and layer == layer_get_id("Tiles") an
 		}
 	}
 }
+
 
 //-----PICK UP-----
 #region
