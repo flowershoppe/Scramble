@@ -20,7 +20,7 @@ function reward_money()
 		}
 		else if(_m.point_max > -1)
 		{
-			p_bonus = round((_m.point_max - _m.total_points) / 5);
+			p_bonus = 0;//round((_m.point_max - _m.total_points) / 5);
 		}
 		else if(_m.turn_max > -1)
 		{

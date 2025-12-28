@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"array_count",
   "parent":{
-    "name":"Admin",
-    "path":"folders/Scripts/Admin.yy",
+    "name":"Scribble",
+    "path":"folders/Scribble.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

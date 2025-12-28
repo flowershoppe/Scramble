@@ -17,6 +17,7 @@ function post_load()
 		with(oTilebag) instance_destroy();
 		with(oCharmManager) instance_destroy();
 		with(oCharm) instance_destroy();
+		with(oDialogueManager) instance_destroy();
 		
 		for(var i = 0; i < array_length(_loadData); i++) //loop through data array
 		{
@@ -45,6 +46,17 @@ function post_load()
 			if(isininventory)
 			{
 				oCharmManager.charms[array_get_index(oCharmManager.charms, -1)] = id;
+			}
+			//if in rResults and not a player's charm, add to rewards array
+			if(room == rResults)
+			{
+				with(oCharm)
+				{
+					if(!array_contains(oCharmManager.charms, id))
+					{
+						array_push(oRewardsManager.array_rewards, id);
+					}
+				}
 			}
 		}
 		
@@ -85,6 +97,7 @@ function post_load()
 		
 		with(oTileHolder)
 		{
+			loading = true;
 			if(layer_get_name(layer) == "Hand_Tile_Holders")
 			{
 				array_push(oPlayerHand.tile_holder_array, id);
@@ -120,4 +133,5 @@ function post_load()
 			}
 		}
 	}
+	oGame.loading = false;
 }

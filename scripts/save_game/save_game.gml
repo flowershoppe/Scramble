@@ -15,7 +15,7 @@ function save_game()
 				y : y,
 				room_name : room,
 				time : time,
-				stage: stage,
+				stage : stage,
 				money_earned : money_earned,
 				levels_completed : levels_completed,
 				current_level : current_level,
@@ -123,29 +123,6 @@ function save_game()
 		array_push(_saveData, _saveEntity);
 	}
 	
-	//save Board
-	with(oBoard)
-	{
-		var _saveEntity =
-		{
-			object_name : object_get_name(object_index),
-			layer_name: layer_get_name(layer),
-			variables :
-			{			
-				x : x,
-				y : y,
-				image_index : image_index,
-				image_alpha : image_alpha,
-				image_xscale : image_xscale,
-				image_yscale : image_yscale,
-				spr : spr,
-				grid_width : grid_width,
-				grid_height : grid_height
-			}	
-		}
-		array_push(_saveData, _saveEntity);
-	
-	}	
 	//save Charms
 	with(oCharmManager)
 	{
@@ -163,6 +140,7 @@ function save_game()
 		}
 		array_push(_saveData, _saveEntity);
 	}
+	
 	with(oCharm)
 	{
 		var _saveEntity =
@@ -184,6 +162,7 @@ function save_game()
 		}
 		array_push(_saveData, _saveEntity);
 	}
+	
 	//save Tilebag
 	with(oTilebag)
 	{
@@ -250,6 +229,7 @@ function save_game()
 				y : y,
 				image_index : image_index,
 				image_alpha : image_alpha,
+				visible : visible,
 				spr : spr,
 				lmult : lmult,
 				wmult : wmult,
@@ -262,6 +242,29 @@ function save_game()
 		}
 		array_push(_saveData, _saveEntity);
 	}
+	
+	//save Board
+	with(oBoard)
+	{
+		var _saveEntity =
+		{
+			object_name : object_get_name(object_index),
+			layer_name: layer_get_name(layer),
+			variables :
+			{			
+				x : x,
+				y : y,
+				image_index : image_index,
+				image_alpha : image_alpha,
+				image_xscale : image_xscale,
+				image_yscale : image_yscale,
+				spr : spr,
+				grid_width : grid_width,
+				grid_height : grid_height
+			}	
+		}
+		array_push(_saveData, _saveEntity);
+	}	
 	
 	//save Levels
 	with(oRewardsManager)
@@ -291,12 +294,65 @@ function save_game()
 			{
 				x : x,
 				y : y,
-				active : active
+				active : active,
+				spr : spr
 			}
 		}
 		array_push(_saveData, _saveEntity);
 	}	
-
+	
+	//save Dialogue
+	with(oDialogueManager)
+	{
+		var _saveEntity = 
+		{
+			object_name : object_get_name(object_index),
+			layer_name : layer_get_name(layer),
+			variables:
+			{
+				x : x,
+				y : y,
+				dialogues : dialogues,
+				dialogue_array: dialogue_array,
+				index : index,
+				victory_dialogue : victory_dialogue
+			}
+		}
+		array_push(_saveData, _saveEntity);
+	}
+	
+	//save BG
+	with(oBackground)
+	{
+		var _saveEntity = 
+		{
+			object_name : object_get_name(object_index),
+			layer_name : layer_get_name(layer),
+			variables:
+			{
+				x : x,
+				y : y,
+				spr : spr
+			}
+		}
+		array_push(_saveData, _saveEntity);
+	}
+	
+	//save Coin
+	with(oCoin)
+	{
+		var _saveEntity = 
+		{
+			object_name : object_get_name(object_index),
+			layer_name : layer_get_name(layer),
+			variables:
+			{
+				x : x,
+				y : y
+			}
+		}
+		array_push(_saveData, _saveEntity);
+	}
 	
 	var _string = json_stringify(_saveData);
 	var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1);
@@ -305,6 +361,6 @@ function save_game()
 	buffer_save(_buffer, game_save_id + "gamesave.save");
 	buffer_delete(_buffer);
 
-	show_debug_message("Game successfully saved at " + game_save_id)
+	show_debug_message("Game successfully saved at " + game_save_id);
 }
 

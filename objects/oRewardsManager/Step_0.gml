@@ -71,15 +71,3 @@ if(rewarding)
 		}
 	}	
 }
-
-//on load subroutine
-if(array_length(array_rewards) < 1 and room == rResults)
-{
-	with(oCharm)
-	{
-		if(!array_contains(oCharmManager.charms, id))
-		{
-			array_push(oRewardsManager.array_rewards, id);
-		}
-	}
-}

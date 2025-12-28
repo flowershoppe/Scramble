@@ -2,6 +2,7 @@ function load_game()
 {	
 	if(file_exists("gamesave.save"))
 	{
+		oGame.loading = true;
 		with(oPlayer) instance_destroy();
 		with(oMatchManager) instance_destroy();
 		with(oTile) instance_destroy();

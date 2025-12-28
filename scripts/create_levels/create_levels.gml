@@ -24,7 +24,7 @@ function create_levels(_amount, _type)
 		var _lv = instance_create_layer(room_width * (_i / (_amount + 1)), room_height * 0.5, "YUI", _type, 
 			{
 				active : _active,
-				sprite_index : _spr
+				spr : _spr
 			});
 		array_push(oRun.levels, _lv);	
 	}

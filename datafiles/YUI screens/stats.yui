@@ -13,14 +13,14 @@ root:
   is_cursor_layer: true
   theme: elektra
   elements:
-    - type: panel      
+    - type: panel   
       canvas:
         center: true
       elements:
         - type: panel
           layout: canvas
           size: {w: 350, h: 350}
-          background: ~yui_panel_bg
+          background: ~spPanel
           padding: 10
           elements:
             - type: button

@@ -1,6 +1,5 @@
 spr = spBoard;
 holders = [];
-coinchance = 1;
 for(var i = 0; i < grid_width; i++)
 {
 	array_push(holders, array_create(grid_height));	
@@ -18,7 +17,7 @@ var _x_offset = (x - (board_width / 2));
 var _y_offset = (y - (board_height / 2));
 
 var _prev_holder = 0;
-
+if(oGame.loading){exit;}
 for(_x = 0; _x < grid_width; _x++)
 {
 	for(_y = 0; _y < grid_height; _y++)
@@ -37,4 +36,3 @@ for(_x = 0; _x < grid_width; _x++)
 	}
 	
 }
-coinchance = 1;

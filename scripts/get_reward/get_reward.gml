@@ -13,9 +13,11 @@ function get_reward(_id)
 		}
 		else if(object_is_ancestor(_ind, oCharm))
 		{		
-			add_charm(_ind);
-			array_delete(_array, array_get_index(_array, _ind), 1);
-			instance_destroy(_id);		
+			if(add_charm(_ind))
+			{
+				array_delete(_array, array_get_index(_array, _ind), 1);
+				instance_destroy(_id);	
+			}
 		}
 	}
 	

@@ -54,7 +54,6 @@ root:
             events:
               on_click: 
                 - ~purchase(@id)
-                - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
             elements:
               - type: image
                 sprite: ~spShadow
@@ -136,7 +135,6 @@ root:
                 events:
                   on_click: 
                     - ~purchase(@id)
-                    - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
               - type: panel
                 layout: canvas
                 canvas:

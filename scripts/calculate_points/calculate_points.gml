@@ -43,12 +43,11 @@ function calculate_points()
 				//get coins
 				with(_holder)
 				{
-					if(hascoin)
+					if(place_meeting(x, y, oCoin))
 					{
 						var _coin = instance_place(x, y, oCoin);
 						oPlayer.money += _coin.value;
 						instance_destroy(_coin);
-						hascoin = false;
 					}
 				}
 			}

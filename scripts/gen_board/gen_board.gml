@@ -7,7 +7,7 @@ function gen_board(_lvl)
 	{		
 		case oLevel1:
 		#region
-		_point_base = 20;
+		_point_base = 50;
 		_point_scale = 5;
 		for(var i = 0; i < array_length(oRun.levels); i++)
 		{
@@ -16,7 +16,7 @@ function gen_board(_lvl)
 				_point_scale_mult = i;
 			}
 		}
-		specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 5);
+		specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 6);
 		//randomly select a lv1 gen
 			var _ran = irandom_range(1, 3);
 			switch(_ran)
@@ -147,8 +147,8 @@ function gen_board(_lvl)
 		
 		case oLevel2:
 		#region
-			_point_base = 30;
-			_point_scale = 7;
+			_point_base = 60;
+			_point_scale = 5;
 			for(var i = 0; i < array_length(oRun.levels); i++)
 			{
 				if(oRun.levels[i].active)
@@ -156,7 +156,7 @@ function gen_board(_lvl)
 					_point_scale_mult = i;
 				}
 			}
-			specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 5);
+			specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 6);
 			//randomly select a lv2 gen
 			var _ran = irandom_range(1, 4);
 			switch(_ran)
@@ -467,8 +467,8 @@ function gen_board(_lvl)
 		
 		case oLevel3:
 		#region
-			_point_base = 40;
-			_point_scale = 10;
+			_point_base = 70;
+			_point_scale = 5;
 			for(var i = 0; i < array_length(oRun.levels); i++)
 			{
 				if(oRun.levels[i].active)
@@ -476,7 +476,7 @@ function gen_board(_lvl)
 					_point_scale_mult = i;
 				}
 			}
-			specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 5);
+			specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 6);
 			//randomly select a lv3 gen
 			var _ran = irandom_range(1, 4);
 			switch(_ran)

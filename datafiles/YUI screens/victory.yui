@@ -13,10 +13,11 @@ root:
   elements:
     - type: panel
       alignment: center
+      theme: elektra
       layout: canvas
       canvas:
         center: true
-      background: ~yui_panel_bg
+      background: ~spPanel
       size: {w: 600, h: 500}
       elements:
         - type: panel
@@ -28,7 +29,7 @@ root:
               sprite: ~spWinner
         - type: panel
           canvas:
-            right: 75
+            right: 60
             top: 200
           elements:
             - type: text
@@ -42,6 +43,7 @@ root:
             - type: text
               text: @@ 'Run Length | ' + @length
         - type: button
+          background: ~spPanel
           canvas: 
             bottom: 50
             right: 200
