@@ -10,6 +10,7 @@ import:
 root:
   type: panel
   layout: canvas 
+  theme: elektra
   events:
     on_click: @@ ~get_reward(-4)
   elements:
@@ -28,7 +29,7 @@ root:
       canvas:
         top: 275
       layout: horizontal
-      background: ~yui_panel_bg
+      background: ~spPanel
       elements:
         - type: text
           text: No Rewards!

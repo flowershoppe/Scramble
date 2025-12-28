@@ -15,6 +15,7 @@ root:
   theme: elektra
   elements:
     - type: button 
+      background: ~spPanel
       enabled: ~oMatchManager.active
       autofocus: false
       content: 
@@ -29,6 +30,7 @@ root:
         - ~submit_play()
 
     - type: button 
+      background: ~spPanel
       enabled: ~oMatchManager.active
       content: 
         type: text
@@ -43,6 +45,7 @@ root:
         - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)
 
     - type: button 
+      background: ~spPanel
       enabled: ~oMatchManager.active
       content: 
         type: text

@@ -12,6 +12,7 @@ root:
   layout: canvas  
   elements:
     - type: panel
+      theme: elektra
       alignment: center
       layout: horizontal
       canvas:
@@ -25,7 +26,7 @@ root:
       canvas:
         top: 275
       layout: horizontal
-      background: ~yui_panel_bg
+      background: ~spPanel
       spacing: 25
       elements: @array_rewards
       template:
@@ -35,12 +36,14 @@ root:
     - type: panel
       alignment: center
       layout: horizontal
+      theme: elektra
       spacing: 25
       canvas:
         top: 270
       elements: @array_rewards
       template:
         type: image
+        visible: @ != -1
         size: 64
         tooltip: @name + ~chr(13) + @description
         sprite: @sprite_index

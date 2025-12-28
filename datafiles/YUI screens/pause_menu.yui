@@ -11,20 +11,22 @@ root:
   type: panel
   layout: vertical
   size: stretch
+  theme: elektra
   alignment: center
   is_cursor_layer: true
   elements:
     - type: panel   
-      size: { w: 250, h: 350 }
-      background: ~yui_panel_bg
+      size: { w: 250, h: 250 }
+      background: ~spPanel
       layout: vertical
       alignment: center
       spacing: 20
       elements:
-        - type: panel          
+        - type: panel       
           alignment: {h: center}
           elements:
             - type: button 
+              background: ~spPanel
               content:
                 type: text
                 text_style: subtitle
@@ -32,7 +34,10 @@ root:
               on_click:
                 - ~toggle_settings()
                 - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+              events:
+                on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
             - type: button 
+              background: ~spPanel
               content:
                 type: text
                 text_style: subtitle
@@ -40,11 +45,16 @@ root:
               on_click: 
                 - ~goto_mainmenu()          
                 - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)
-        - type: button 
-          content:
-            type: text
-            text_style: subtitle
-            text: Resume
-          on_click: 
-            - ~toggle_pause()
-            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+              events:
+                on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
+            - type: button 
+              background: ~spPanel
+              content:
+                type: text
+                text_style: subtitle
+                text: Resume
+              on_click: 
+                - ~toggle_pause()
+                - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+              events:
+                on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false

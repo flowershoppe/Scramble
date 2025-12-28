@@ -37,16 +37,6 @@ root:
               opacity: &cascade_fade_in
           elements:
             - type: text
-              text: "Point Bonus | "
-            - type: text
-              text: @p_bonus
-        - type: panel
-          layout: horizontal 
-          animate:
-            on_visible:
-              opacity: &cascade_fade_in
-          elements:
-            - type: text
               text: "Turn Bonus | "
             - type: text
               text: @t_bonus

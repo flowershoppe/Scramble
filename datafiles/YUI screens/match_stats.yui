@@ -11,6 +11,7 @@ root:
   size: stretch
   alignment: center
   background: ~spPanel
+  theme: elektra
   padding: 10
   spacing: 15
   elements:
@@ -24,14 +25,14 @@ root:
       layout: horizontal
       elements:
         - type: text
-          text: "Turn: "
-        - @turn
+          text: "Target: "
+        - @@ ~isnegative(@point_min) then 'N/A' else @point_min
     - type: panel
       layout: horizontal
       elements:
         - type: text
-          text: "Target Score: "
-        - @@ ~isnegative(@point_min) then 'N/A' else @point_min
+          text: "Turn: "
+        - @turn
     //- type: panel
     //  layout: horizontal
     //  elements:
@@ -57,7 +58,8 @@ root:
           text: "Last Play: "
         - @last_play
     - type: panel
-      layout: horizontal
+      layout: vertical
+      alignment: {h: center}
       elements:
         - type: text
           text: "Last Word(s): "

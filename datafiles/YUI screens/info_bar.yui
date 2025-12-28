@@ -26,18 +26,24 @@ root:
       canvas:
         top: 20
         left: 100
-    - type: text
-      text: @@'Money - ' + ~oPlayer.money
+    - type: panel
+      layout: horizontal
+      spacing: 5
       canvas:
         top: 20
         left: 200
+      elements:
+        - type: text
+          text: Money - 
+        - type: text
+          text: ~oPlayer.money
     - type: text
       text: Run Length - 
       canvas:
         top: 20
         right: 175
     - type: text
-      text: @length
+      text: ~oRun.length
       canvas:
         top: 20
         left: 790
