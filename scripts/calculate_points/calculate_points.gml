@@ -50,6 +50,7 @@ function calculate_points()
 						instance_destroy(_coin);
 					}
 				}
+				_holder.visible = false;
 			}
 		}
 		

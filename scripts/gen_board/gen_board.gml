@@ -136,7 +136,7 @@ function gen_board(_lvl)
 					var _array = oBoard.holders;
 					
 					_array[0, 0].start_point = true;
-					_array[7, 3].winspot = true;
+					//_array[7, 3].winspot = true;
 					
 					specs(-1, -1, -1, 7);
 				break;
@@ -236,7 +236,7 @@ function gen_board(_lvl)
 					remove_holder(3, 6);
 					remove_holder(3, 5);
 					
-					_array[9, 9].winspot = true;
+					//_array[9, 9].winspot = true;
 					var _ran = irandom_range(1, 1);
 					/*switch(_ran)
 					{
@@ -311,7 +311,7 @@ function gen_board(_lvl)
 					_array[6, 2].lmult = 2;
 					_array[2, 6].lmult = 2;
 					_array[6, 6].lmult = 2;
-					_array[8, 8].winspot = true;
+					//_array[8, 8].winspot = true;
 					
 					var _ran = irandom_range(1, 1);
 					/*switch(_ran)
@@ -492,7 +492,7 @@ function gen_board(_lvl)
 					var _array = oBoard.holders;
 					
 					_array[5, 2].start_point = true;
-					_array[5, 4].winspot = true;
+					//_array[5, 4].winspot = true;
 					
 					_array[0, 3].wmult = 2;
 					_array[10, 3].wmult = 2;
@@ -611,7 +611,7 @@ function gen_board(_lvl)
 					var _array = oBoard.holders;
 					
 					_array[0, 10].start_point = true;
-					_array[10, 0].winspot = true;
+					//_array[10, 0].winspot = true;
 					
 					for(var i = 0; i < 10; i++)
 					{

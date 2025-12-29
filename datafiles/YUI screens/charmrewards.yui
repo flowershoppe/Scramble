@@ -46,6 +46,7 @@ root:
         visible: @ != -1
         size: 64
         tooltip: @name + ~chr(13) + @description
+        tooltip_width: 250
         sprite: @sprite_index
         blend_color: @color
         events:
