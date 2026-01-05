@@ -13,7 +13,7 @@ function next_turn()
 	
 	if(check_end_match())
 	{
-		exit;	
+		exit;
 	}
 	
 	add_tile_to_hand(_hand.size);

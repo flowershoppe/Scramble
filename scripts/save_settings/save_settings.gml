@@ -7,11 +7,12 @@ function save_settings()
 		window_height : oSettings.window_height,
 		volume_MS : audio_emitter_get_gain(global.emitterMS),
 		volume_SE : audio_emitter_get_gain(global.emitterSE),
-		volume_Main : audio_emitter_get_gain(global.emitterMain),
+		volume_Main : audio_get_master_gain(0),
 		font : oGame.font,
 		play_dialogue : oSettings.play_dialogue,
 		isfullscreen : oSettings.isfullscreen
 	};
+	var a = audio_get_master_gain(0);
 	var _string = json_stringify(_saveData);
 	var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1);
 

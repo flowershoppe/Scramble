@@ -38,3 +38,28 @@ if(instance_exists(oPlayer))
 		old_money = oPlayer.money;
 	}	
 }
+
+vowel_count = 0;
+consonant_count = 0;
+if(!instance_exists(oTilebag)){exit;}
+var _array = [];
+if(room == rGame)
+{
+	_array = oTilebag.match_tiles;	
+}
+else
+{
+	_array = oTilebag.tiles;
+}
+for(var i = 0; i < array_length(_array); i++)
+{
+	var _letter = _array[i].letter;
+	if(array_contains(global.vowels, _letter))
+	{
+		vowel_count++;
+	}
+	else if(array_contains(global.consonants, _letter))
+	{
+		consonant_count++;	
+	}
+}

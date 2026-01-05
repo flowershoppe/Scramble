@@ -182,6 +182,10 @@ if(!mouse_check_button(mb_left) or _letter != "")
 				{
 					_switch_tile = _list[| 1];	
 				}
+				if(!_switch_tile.grabbable)
+				{
+					_switch_tile = noone;
+				}
 			}
 		}
 		ds_list_destroy(_list);
@@ -193,7 +197,7 @@ if(!mouse_check_button(mb_left) or _letter != "")
 		{
 			with(oTileHolder)
 			{
-				if(array_contains(oPlayerHand.tile_holder_array, id))
+				if(array_contains(oPlayerHand.tile_holder_array, id) and visible)
 				{
 					var _dist = point_distance(x, y, device_mouse_x_to_gui(0), device_mouse_y_to_gui(0))
 					if(_dist < _nearest_dist)
@@ -210,7 +214,7 @@ if(!mouse_check_button(mb_left) or _letter != "")
 		{			
 			with(oTileHolder)
 			{
-				if(layer == layer_get_id("Board_Tile_Holders"))
+				if(layer == layer_get_id("Board_Tile_Holders") and visible)
 				{
 					var _dist = point_distance(x, y, other.x, other.y)
 					if(_dist < _nearest_dist)

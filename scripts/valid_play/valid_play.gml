@@ -186,12 +186,11 @@ function valid_play()
 	{
 		screen_message("Play is invalid", 180);
 		return false;
-		exit;
 	}
 	
 	if((_is_same_column or _is_same_row) and !_hole_between and
 		(_tile_adjacent == true or 
-		(_start and array_length(_placed_tiles) > 0)))
+		(_start and array_length(_placed_tiles) > 1)))
 	{		
 		broadcast("valid play");
 		return true;	

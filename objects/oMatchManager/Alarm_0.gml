@@ -1,4 +1,5 @@
 //Animate tiles on play
+if(loss){exit;}
 if(count < 7){count++;}
 /*if(total_letters == 0)
 {

@@ -25,7 +25,7 @@ root:
   elements: @charms
   template:
     type: image
-    visible: @ != -1
+    visible: @ != -1 and not undefined
     events:
       on_mouse_down:
         interaction: sell_charm

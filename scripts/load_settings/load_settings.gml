@@ -11,8 +11,8 @@ function load_settings()
 		global.volumeSE = _loadData.volume_SE;	
 		audio_emitter_gain(global.emitterSE, global.volumeSE);
 		audio_emitter_gain(global.emitterMS, global.volumeMS);
-		audio_emitter_gain(global.emitterMain, global.volumeMain);
-		
+		audio_set_master_gain(0, global.volumeMain);
+	
 		oSettings.play_dialogue = _loadData.play_dialogue;
 		oSettings.window_width = _loadData.window_width;
 		oSettings.window_height = _loadData.window_height;		

@@ -7,15 +7,13 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 		if(bag_menu == noone)
 		{
 			audio_play_sound(sdOpenBag, 1, false);
-			//display contents
-			if(room != rGameOver)
+			//display contents			
+			stats_menu = instance_create_depth(0, 0, layer_get_depth(layer_get_id("UI")) - 2, yui_document,
 			{
-				stats_menu = instance_create_depth(0, 0, layer_get_depth(layer_get_id("UI")) - 2, yui_document,
-				{
-					data_context : oRun,
-					yui_file : "YUI screens/run_stats.yui"
-				});
-			}
+				data_context : oRun,
+				yui_file : "YUI screens/run_stats.yui"
+			});
+			
 			bag_menu = instance_create_depth(0, 0, layer_get_depth(layer_get_id("UI")) - 2, yui_document,
 			{
 				data_context : oTilebag,

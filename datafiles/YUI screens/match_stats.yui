@@ -9,7 +9,7 @@ root:
   type: panel
   layout: vertical
   size: stretch
-  alignment: center
+  alignment: {h: center}
   background: ~spPanel
   theme: elektra
   padding: 10

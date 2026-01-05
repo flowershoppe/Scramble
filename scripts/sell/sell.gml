@@ -1,5 +1,6 @@
 function sell(_charm, _value)
 {
+	_charm.sprite_index = spEmpty;
 	oPlayer.money += round(_charm.value / 2);
 	array_delete(oCharmManager.charms, array_get_index(oCharmManager.charms, _charm), 1);
 	array_push(oCharmManager.charms, -1);

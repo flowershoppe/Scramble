@@ -34,7 +34,7 @@ root:
         left: 200
       elements:
         - type: text
-          text: Money - 
+          text: Mytes - 
         - type: text
           text: ~oPlayer.money
     - type: text
