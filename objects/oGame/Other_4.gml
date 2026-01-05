@@ -15,6 +15,7 @@ switch(room)
 			global.music = global.music_main_menu;
 			audio_play_sound_on(oGame.emitter_MS, global.music_main_menu, true, 100);
 		}
-		
+
 		break;
 }
+

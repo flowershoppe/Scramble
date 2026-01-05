@@ -27,9 +27,22 @@ function calculate_points()
 			
 			with(_player_words_tiles[j][k])
 			{
-				var _points = pointvalue;
-				
-				_holder = instance_place(x, y, oTileHolder);				
+				var _points = pointvalue;				
+				var _list = ds_list_create();
+				var _num = instance_place_list(x, y, oTileHolder, _list, true);
+				for(var i = 0; i < _num; i++)
+				{
+					_holder = _list[| i];
+					if(_holder.layer == layer_get_id("Hand_Tile_Holders"))
+					{
+						_holder = noone;
+					}
+					else
+					{
+						break;	
+					}
+				}
+
 				//factor in the holder's multipliers
 				_lmult = _holder.lmult;
 				_lmult *= oPlayer.letter_mult_bonus;

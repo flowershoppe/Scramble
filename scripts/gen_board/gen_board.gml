@@ -7,7 +7,7 @@ function gen_board(_lvl)
 	{		
 		case oLevel1:
 		#region
-		_point_base = 50;
+		_point_base = 40;
 		_point_scale = 5;
 		for(var i = 0; i < array_length(oRun.levels); i++)
 		{
@@ -147,7 +147,7 @@ function gen_board(_lvl)
 		
 		case oLevel2:
 		#region
-			_point_base = 60;
+			_point_base = 50;
 			_point_scale = 5;
 			for(var i = 0; i < array_length(oRun.levels); i++)
 			{
@@ -467,7 +467,7 @@ function gen_board(_lvl)
 		
 		case oLevel3:
 		#region
-			_point_base = 70;
+			_point_base = 60;
 			_point_scale = 5;
 			for(var i = 0; i < array_length(oRun.levels); i++)
 			{

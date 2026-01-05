@@ -16,7 +16,7 @@ root:
       canvas: 
         top: 75
         left: 110
-      size: {w: 200, h: 120}
+      size: {w: 200, h: 160}
       padding: 10
       background: ~spPanel
       elements:
@@ -28,6 +28,10 @@ root:
           text: @@ 'Largest Word - ' + @largest_word
         - type: text
           text: @@ 'Words Spelled - ' + @words_spelled
+        - type: text
+          text: @@ 'Vowels - ' + @vowel_count
+        - type: text
+          text: @@ 'Consonants - ' + @consonant_count
       
 
         

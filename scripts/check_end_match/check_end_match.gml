@@ -131,9 +131,20 @@ function check_end_match()
 			_cant_play = true;	
 		}*/
 	
+		//-----LOSE-----
 		if(((_tmaxactive and turn > turn_max) or
 				(_pmaxactive and total_points > point_max)))
 		{
+			//put tiles back in bag
+			with(oTile)
+			{
+				if(array_contains(oTilebag.tiles, id))
+				{
+					persistent = true;	
+				}
+			}
+			oTilebag.yui_tiles = oTilebag.tiles;
+			reset_tilebag();
 			var _saveloc = "gamesave.save";
 			oMatchManager.active = false;
 			oMatchManager.loss = true;
@@ -142,6 +153,7 @@ function check_end_match()
 			broadcast("match end");
 			screenTransition(rGameOver, , ST_CHECKER_UD_BOTH);
 			with(oRun){alarm_set(1, 1);}
+			return true;
 		}
 
 		else
@@ -149,7 +161,7 @@ function check_end_match()
 			oMatchManager.loss = false;	
 		}
 		
-		//win match
+		//-----WIN-----
 		if(_win and !oMatchManager.loss)
 		{
 			oRun.levels_completed++;

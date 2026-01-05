@@ -22,7 +22,7 @@ function dist_standard(_tilebag)
 		{
 			#region
 			case "A":
-				_count = 2;
+				_count = 3;
 				break;
 			case "B":
 				_count = 1;
@@ -34,7 +34,7 @@ function dist_standard(_tilebag)
 				_count = 1;
 				break;
 			case "E":
-				_count = 2;
+				_count = 3;
 				break;
 			case "F":
 				_count = 1;

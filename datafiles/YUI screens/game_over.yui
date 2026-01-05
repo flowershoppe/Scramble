@@ -16,9 +16,10 @@ root:
       alignment: center
       canvas:
         center: true
-      background: ~yui_panel_bg
+      background: ~spPanel
       size: {w: 200, h: 300}
       padding: 10
+      theme: elektra
       elements:
         - type: image
           sprite: ~spLoser
@@ -31,6 +32,7 @@ root:
         - type: text
           text: @@ 'Words Spelled - ' + @words_spelled
         - type: button
+          background: ~spPanel
           content:
             type: text
             text: Main Menu

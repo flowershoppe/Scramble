@@ -8,6 +8,7 @@ dialogues =
 	"[ts:slow]So users can understand how you work, it will appear to them like a [c:orange]game[c:white] of sorts. An old, recognizable one.",
 	"[ts:slow]The game works like this: [c:orange]spell words[c:white] on the board using the tiles in your hand. Simple.",
 	"[ts:slow]Letters have point values that are added to your [c:orange]score[c:white] whenever you make a play with them.",
+	"[ts:slow]The first word must cover the star tile and every word must be longer than 1 letter.",
 	"[ts:slow]Reach the target score to complete the level and process the memory.",
 	"[ts:slow][e:bouncing]Go on, try it!",
 	"[method:start_match]"],
