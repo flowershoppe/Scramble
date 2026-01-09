@@ -1,49 +1,41 @@
 function next_level()
 {
+	var _ind = array_get_index(oRun.levels, oRun.current_level);
 	//activate next level
-	for(var _i = 0; _i < array_length(oRun.levels); _i++)
+	if(!(_ind == (array_length(oRun.levels) - 1)))
 	{
-		if(oRun.levels[_i].active)
+		oRun.levels[_ind].active = false;
+		oRun.levels[_ind + 1].active = true;
+		oRun.current_level = oRun.levels[_ind + 1];
+	}
+	else
+	{		
+		instance_destroy(oLevel);
+		//create new levels if stage is completed (no active levels)
+		//new shop			
+		oRun.levels = [];
+		if(oRun.stage < oRun.stage_count)
 		{
-			oRun.levels[_i].active = false;
-			if(_i < array_length(oRun.levels) - 1)
+			with(oShop){event_user(0);}
+			with(oRun)
 			{
-				oRun.levels[_i + 1].active = true;
-				exit;
-			}
-		}
-		//if no active levels (reached end of array)
-		if(_i == array_length(oRun.levels) - 1)
-		{
-			instance_destroy(oLevel);
-			//create new levels if stage is completed (no active levels)
-			//new shop			
-			oRun.levels = [];
-			if(oRun.stage < oRun.stage_count)
-			{
-				with(oShop){event_user(0);}
-				with(oRun)
+				stage++;						
+				//create levels
+				var _lvl = 0;
+				switch(stage)
 				{
-					stage++;						
-					//create levels
-					var _lvl = 0;
-					switch(stage)
-					{
-						case 1:
-							var _lvl = oLevel1;
-						break;
-						case 2:
-							var _lvl = oLevel2;
-						break;
-						case 3:
-							var _lvl = oLevel3;
-						break;
-					}
-					create_levels(level_count, _lvl);	
+					case 1:
+						var _lvl = oLevel1;
+					break;
+					case 2:
+						var _lvl = oLevel2;
+					break;
+					case 3:
+						var _lvl = oLevel3;
+					break;
 				}
-			}
-			break;
-		}
-		
-	}			
+				create_levels(level_count, _lvl);	
+			}		
+		}		
+	}
 }

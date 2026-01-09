@@ -5,6 +5,7 @@ total_bonus = 0;
 t_bonus = 0;
 p_bonus = 0;
 l_bonus = 0;
+t_bonus_mult = 5;
 
 reward_count = 0;
 array_rewards = [];

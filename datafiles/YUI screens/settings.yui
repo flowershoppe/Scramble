@@ -79,7 +79,7 @@ root:
                   text_style: subtitle
                 - type: dropdown_menu
                   items: @resolution_items
-                  size: {w: 125}
+                  size: {w: 150}
                   can_clear_value: false
                   selection_scope: @resolution_selector
                   on_item_selected:

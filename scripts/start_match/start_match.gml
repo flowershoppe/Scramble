@@ -27,6 +27,30 @@ function start_match()
 	array_copy(oTilebag.match_tiles, 0, oTilebag.tiles, 0, array_length(oTilebag.tiles));
 	add_tile_to_hand(_hand.size);
 	
+	//make coins
+	with(oTileHolder)
+	{
+		//no adjacent coins
+		var _size = sprite_get_width(oTileHolder.sprite_index);
+		var _adjacent = false;
+		if(instance_place(x + _size, y, oCoin)
+			or instance_place(x - _size, y, oCoin)
+			or instance_place(x, y + _size, oCoin)
+			or instance_place(x, y - _size, oCoin))
+		{
+			_adjacent = true;	
+		}
+		if(!_adjacent and visible and !winspot and !start_point and layer != layer_get_id("Hand_Tile_Holders") and irandom_range(0, 100) < oRun.coinchance)
+		{
+			instance_create_layer(x, y, "Hand_Tiles", oCoin);
+			oRun.coinchance = 0;
+		}
+		else
+		{
+			oRun.coinchance++;
+		}
+	}
+	
 	oMatchManager.active = true
 	broadcast("turn start");
 	broadcast("match start");

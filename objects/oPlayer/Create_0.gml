@@ -5,7 +5,6 @@ turn_spelled_words	= [];
 words_tiles = [];
 
 random_mod = 1;
-money = 0; 
 
 letter_point_bonus = 0;
 letter_mult_bonus = 1;
