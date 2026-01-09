@@ -8,7 +8,7 @@ function dialogue_set_layout(index) {
       
       textbox_left = 32;
       textbox_width = dialogue_gui_width - textbox_left * 2;
-      textbox_height = 128;
+      textbox_height = 96;
       textbox_top = dialogue_gui_height - textbox_height;
       
       textbox_hpadding = 8;
@@ -17,7 +17,7 @@ function dialogue_set_layout(index) {
       textbox_options_width = 128;
       textbox_show = true;
       
-      line_spacing = 16;
+      line_spacing = 20;
       line_max = 6;
       dialogue_set_character(-1);
     break;

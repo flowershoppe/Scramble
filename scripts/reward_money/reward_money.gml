@@ -24,7 +24,7 @@ function reward_money()
 		}
 		else if(_m.turn_max > -1)
 		{
-			t_bonus = _m.turn_max - _m.turn;
+			t_bonus = (_m.turn_max - _m.turn) * t_bonus_mult;
 		}
 		total_bonus += base_money_reward + p_bonus + t_bonus + l_bonus;
 	}

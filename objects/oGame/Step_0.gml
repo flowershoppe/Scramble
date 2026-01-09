@@ -23,7 +23,7 @@ if(input_keyboard_check_pressed(ord("1")))
 	//with(oLevel){active = true;}
 	oPlayer.money = 9999;
 	global.cheat = true;
-	add_charm(oHeadphones);
+	add_charm(oFractal);
 	add_charm(oD6);
 	add_charm(oD20);
 }

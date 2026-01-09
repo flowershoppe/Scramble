@@ -37,7 +37,7 @@ root:
               opacity: &cascade_fade_in
           elements:
             - type: text
-              text: "Turn Bonus | "
+              text: "Turn Bonus (base bonus * extra turns) | "
             - type: text
               text: @t_bonus
         - type: panel
