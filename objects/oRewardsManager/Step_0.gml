@@ -19,7 +19,6 @@ if(room == rResults and (input_check_pressed("confirm") or input_mouse_check_pre
 	//reward
 	if(oMatchManager.exchange_count < 1){event_user(0);}
 	rewarding = true;
-	save_game();
 }
 
 //create rewards interface
@@ -50,7 +49,7 @@ if(rewarding)
 			reward_money();
 			//give reward based on current level in stage
 			//if not last level of stage...
-			if(!oRun.levels[array_length(oRun.levels) - 1].active)
+			if(array_get_index(oRun.levels, oRun.current_level) != array_length(oRun.levels) - 1)
 			{
 				instance_create_layer(0, 0, "UI", yui_document,
 				{

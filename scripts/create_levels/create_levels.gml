@@ -26,6 +26,6 @@ function create_levels(_amount, _type)
 				active : _active,
 				spr : _spr
 			});
-		array_push(oRun.levels, _lv);	
+		array_push(oRun.levels, _lv);			
 	}
 }

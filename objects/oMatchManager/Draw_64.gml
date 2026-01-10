@@ -26,7 +26,7 @@ if(turn == 1 and room == rGame)
 	{	
 		if(visible)
 		{
-			if(!array_contains(global.vowels, letter) and letter != "Y")
+			if(!array_contains(global.vowels, letter) and letter != "Y" and letter != "_")
 			{
 				_no_vowels = true;
 			}
