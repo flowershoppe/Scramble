@@ -6,9 +6,9 @@ t_bonus = 0;
 p_bonus = 0;
 l_bonus = 0;
 t_bonus_mult = 5;
+array_rewards = [];
 
 reward_count = 0;
-array_rewards = [];
 buffer = 60;
 
 size = sprite_get_width(spLetterTile);

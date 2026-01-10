@@ -62,7 +62,12 @@ function post_load()
 		
 		with(oLevel)
 		{
-			array_push(oRun.levels, object_index);	
+			array_push(oRun.levels, id);
+		}
+		
+		with(oRun)
+		{
+			current_level = oRun.levels[current_level_index];
 		}
 	
 		with(oTile)
