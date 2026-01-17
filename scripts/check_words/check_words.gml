@@ -256,7 +256,7 @@ function check_words()
 			var _letter = _player_words_tiles[_index][_array_index].letter;
 			_word = string_concat(_word, _letter);
 		}
-		if(!global.dictionary.check(string_lower(_word)) and !global.cheat)
+		if(!global.dictionary.check(_word) and !global.cheat)
 		{
 			array_push(_fake_words, _word);
 		}

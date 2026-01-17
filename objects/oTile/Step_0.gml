@@ -1,4 +1,5 @@
 if(global.paused or !oMatchManager.active){exit;}
+layer_name = layer_get_name(layer);
 var _tile = id;
 with(oTileHolder)
 {
@@ -26,10 +27,6 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 	
 	if(grabbable and _intersect)
 	{
-		if(oMatchManager.active)
-		{
-			layer = layer_get_id("Grabbed");
-		}
 		image_xscale = 1.15;
 		image_yscale = 1.15;
 		xscale = 1.15;
