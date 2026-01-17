@@ -167,29 +167,6 @@ if(!mouse_check_button(mb_left) or _letter != "")
 	{	
 		var _nearest_holder = noone;
 		var _nearest_dist = infinity;
-	
-		var _switch_tile = noone;
-		var _list = ds_list_create();
-		
-		var _num = instance_position_list(x, y, oTile, _list, true);
-		_num += instance_position_list(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile, _list, true);
-		if(_num > 1)
-		{
-			if(_list[| 1].visible)
-			{
-				_switch_tile = _list[| 0];
-				if(_switch_tile == held_tile)
-				{
-					_switch_tile = _list[| 1];	
-				}
-				if(!_switch_tile.grabbable)
-				{
-					_switch_tile = noone;
-				}
-			}
-		}
-		ds_list_destroy(_list);
-		
 		
 		//find nearest tile holder of the same layer		
 		#region
@@ -257,6 +234,40 @@ if(!mouse_check_button(mb_left) or _letter != "")
 		
 		audio_play_sound(global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
 						1, 0, global.volumeSE);
+	
+		//-----SWITCH-----
+		var _switch_tile = noone;
+		var _list = ds_list_create();
+		
+		if(layer != layer_get_id("Hand"))
+		{
+			var _num = instance_position_list(x, y, oTile, _list, true);
+		}
+		else if(layer == layer_get_id("Hand"))
+		{
+			var _num = instance_position_list(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile, _list, true);
+		}
+		if(_num > 1)
+		{
+			for(var i = 0; i < ds_list_size(_list); i++)
+			{
+				_switch_tile = _list[| i];
+				var _switch_layer = layer_get_name(_switch_tile.layer);
+				var _layer_name = layer_get_name(layer);
+				if(_switch_tile.grabbable and _switch_tile != held_tile 
+					and (((_layer_name != "Hand" and _switch_layer != "Hand_Tiles") or
+					(_layer_name == "Hand" and _switch_layer == "Hand_Tiles"))))
+				{
+					break;
+				}
+				if(i == ds_list_size(_list) - 1)
+				{
+					_switch_tile = noone;	
+				}				
+			}
+			
+		}
+		ds_list_destroy(_list);
 
 		held_tile = noone;
 		

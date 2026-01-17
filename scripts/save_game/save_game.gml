@@ -157,7 +157,8 @@ function save_game()
 				data : data,
 				value : value,
 				description : description,
-				isininventory : isininventory
+				isininventory : isininventory,
+				index : index
 			}	
 		}
 		array_push(_saveData, _saveEntity);

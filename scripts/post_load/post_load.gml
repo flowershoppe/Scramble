@@ -45,18 +45,16 @@ function post_load()
 		{
 			if(isininventory)
 			{
-				oCharmManager.charms[array_get_index(oCharmManager.charms, -1)] = id;
+				oCharmManager.charms[index] = id;
 			}
 			//if in rResults and not a player's charm, add to rewards array
 			if(room == rResults)
 			{
-				with(oCharm)
+				if(!array_contains(oCharmManager.charms, id))
 				{
-					if(!array_contains(oCharmManager.charms, id))
-					{
-						array_push(oRewardsManager.array_rewards, id);
-					}
+					array_push(oRewardsManager.array_rewards, id);
 				}
+				
 			}
 		}
 		
