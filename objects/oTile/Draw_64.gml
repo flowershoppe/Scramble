@@ -15,7 +15,7 @@ if(wait_for_input)
 if(on_board){exit;}
 
 //draw self
-draw_sprite_ext(spr, 0, x, y, xscale, yscale, 0, c_white, 1);
+draw_self();
 
 
 if(selected)
