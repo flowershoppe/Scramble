@@ -42,6 +42,7 @@ function calculate_points()
 						break;	
 					}
 				}
+				ds_list_destroy(_list);
 
 				//factor in the holder's multipliers
 				_lmult = _holder.lmult;

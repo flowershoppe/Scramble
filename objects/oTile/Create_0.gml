@@ -28,3 +28,4 @@ receiver.add("turn start", function()
 			instance_destroy();	
 		}
 	});
+layer_name = "";
