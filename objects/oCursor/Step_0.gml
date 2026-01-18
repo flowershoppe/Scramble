@@ -172,6 +172,7 @@ if(!mouse_check_button(mb_left) or _letter != "")
 		#region
 		if(layer == layer_get_id("Hand"))
 		{
+			var _touching = position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTileHolder);
 			with(oTileHolder)
 			{
 				if(array_contains(oPlayerHand.tile_holder_array, id) and visible)
@@ -179,16 +180,40 @@ if(!mouse_check_button(mb_left) or _letter != "")
 					var _dist = point_distance(x, y, device_mouse_x_to_gui(0), device_mouse_y_to_gui(0))
 					if(_dist < _nearest_dist)
 					{
-						//save the id
-						_nearest_holder = id;
-						_nearest_dist = _dist;
+						//if we are not touching a tile holder, then this holder must not have a tile
+						if(!_touching)
+						{
+							if(id.tile == noone)
+							{
+								//save the id
+								_nearest_holder = id;
+								_nearest_dist = _dist;
+							}
+						}
+						else
+						{
+							//save the id
+							_nearest_holder = id;
+							_nearest_dist = _dist;
+						}
 					}
 				}
 			}
 		}
 		
 		else
-		{			
+		{
+			var _touching = position_meeting(x, y, oTileHolder);
+			if(_touching)
+			{
+				if(instance_position(x, y, oTileHolder) != noone)
+				{
+					if(!instance_position(x, y, oTileHolder).visible)
+					{
+						_touching = false;	
+					}
+				}
+			}
 			with(oTileHolder)
 			{
 				if(layer == layer_get_id("Board_Tile_Holders") and visible)
@@ -196,9 +221,22 @@ if(!mouse_check_button(mb_left) or _letter != "")
 					var _dist = point_distance(x, y, other.x, other.y)
 					if(_dist < _nearest_dist)
 					{
-						//save the id
-						_nearest_holder = id;
-						_nearest_dist = _dist;
+						//if we are not touching a tile holder, then this holder must not have a tile
+						if(!_touching)
+						{
+							if(id.tile == noone)
+							{
+								//save the id
+								_nearest_holder = id;
+								_nearest_dist = _dist;
+							}
+						}
+						else
+						{
+							//save the id
+							_nearest_holder = id;
+							_nearest_dist = _dist;
+						}
 					}
 				}
 			}	
@@ -275,7 +313,6 @@ if(!mouse_check_button(mb_left) or _letter != "")
 		#region
 		if(_switch_tile != noone)
 		{
-			array_delete(_placed_tiles, array_get_index(_placed_tiles, _switch_tile), 1);
 			_switch_tile.x = old_x;
 			_switch_tile.y = old_y;
 			_switch_tile.layer = old_layer;		
@@ -322,11 +359,6 @@ if(!mouse_check_button(mb_left) or _letter != "")
 			if(old_layer == layer_get_id("Tiles"))
 			{
 				_switch_tile.layer = layer_get_id("Tiles");
-				//place in array for checking play validity later
-				if(oMatchManager.active)
-				{
-					array_push(_placed_tiles, _switch_tile);
-				}
 				//Blank tile subroutine
 				if(_switch_tile.blank == true)
 				{
@@ -341,6 +373,11 @@ if(!mouse_check_button(mb_left) or _letter != "")
 				_switch_tile.in_hand = true;
 				_switch_tile.on_board = false;
 				_switch_tile.layer = layer_get_id("Hand_Tiles");
+				//place in array for checking play validity later
+				if(oMatchManager.active)
+				{
+					array_delete(_placed_tiles, array_get_index(_placed_tiles, _switch_tile), 1);
+				}
 			}
 			
 			_nearest_holder.tile = _switch_tile;

@@ -87,7 +87,7 @@ if(array_length(reward_structs) < 1)
 				_reward.charm = global.charms[irandom_range(0, array_length(global.charms) - 1)];
 			}
 		
-			array_push(reward_structs, _reward);			
+			array_push(reward_structs, _reward);		
 			_i++;
 		}
 	}
