@@ -374,7 +374,7 @@ if(!mouse_check_button(mb_left) or _letter != "")
 				_switch_tile.on_board = false;
 				_switch_tile.layer = layer_get_id("Hand_Tiles");
 				//place in array for checking play validity later
-				if(oMatchManager.active)
+				if(oMatchManager.active and layer == layer_get_id("Tiles"))
 				{
 					array_delete(_placed_tiles, array_get_index(_placed_tiles, _switch_tile), 1);
 				}

@@ -44,7 +44,7 @@ function check_words()
 			with(_tile)
 			{
 				var _list = ds_list_create();
-				var _num = instance_place_list(_tile.x - _spr_size, _tile.y, oTile, _list, true);
+				var _num = instance_position_list(_tile.x - _spr_size, _tile.y, oTile, _list, true);
 				for(var _i = 0; _i < _num; _i++)
 				{
 					if(_list[| _i].on_board)
@@ -62,6 +62,7 @@ function check_words()
 				{
 					if(!_next_tile.on_board){ _next_tile = noone; }
 				}
+				ds_list_destroy(_list);
 			}
 			
 			_tile = _next_tile;
@@ -85,7 +86,7 @@ function check_words()
 			with(_tile)
 			{
 				var _list = ds_list_create();
-				var _num = instance_place_list(_tile.x + _spr_size, _tile.y, oTile, _list, true);
+				var _num = instance_position_list(_tile.x + _spr_size, _tile.y, oTile, _list, true);
 				for(var _i = 0; _i < _num; _i++)
 				{
 					if(_list[| _i].on_board)
@@ -154,7 +155,7 @@ function check_words()
 			with(_tile)
 			{
 				var _list = ds_list_create();
-				var _num = instance_place_list(_tile.x, _tile.y - _spr_size, oTile, _list, true);
+				var _num = instance_position_list(_tile.x, _tile.y - _spr_size, oTile, _list, true);
 				for(var _i = 0; _i < _num; _i++)
 				{
 					if(_list[| _i].on_board)
@@ -195,7 +196,7 @@ function check_words()
 			with(_tile)
 			{				
 				var _list = ds_list_create();
-				var _num = instance_place_list(_tile.x, _tile.y + _spr_size, oTile, _list, true);
+				var _num = instance_position_list(_tile.x, _tile.y + _spr_size, oTile, _list, true);
 				for(var _i = 0; _i < _num; _i++)
 				{
 					if(_list[| _i].on_board)

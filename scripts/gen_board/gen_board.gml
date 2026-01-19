@@ -620,7 +620,7 @@ function gen_board(_lvl)
 							remove_holder(i, k);
 						}
 					}
-					specs(-1, -1, -1, 8);
+					//specs(-1, -1, -1, 8);
 				break;
 				#endregion
 			}
