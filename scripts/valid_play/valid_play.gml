@@ -40,10 +40,21 @@ function valid_play()
 		with(_tile)
 		{
 			_adjacent_tiles = 
-				[instance_place(_tile.x + _tile_size, _tile.y, oTile),
-				instance_place(_tile.x - _tile_size, _tile.y, oTile),
-				instance_place(_tile.x, _tile.y + _tile_size, oTile),
-				instance_place(_tile.x, _tile.y - _tile_size, oTile)]
+				[instance_position(_tile.x + _tile_size, _tile.y, oTile),
+				instance_position(_tile.x - _tile_size, _tile.y, oTile),
+				instance_position(_tile.x, _tile.y + _tile_size, oTile),
+				instance_position(_tile.x, _tile.y - _tile_size, oTile)]
+			for(var i = 0; i < array_length(_adjacent_tiles); i++)
+			{
+				var _tile = _adjacent_tiles[i];
+				with(_tile)
+				{
+					if(in_hand)
+					{
+						_adjacent_tiles[i] = instance_position(x, y, oTile);	
+					}
+				}
+			}
 		}
 		
 		for(var __index = 0; __index < array_length(_adjacent_tiles); __index++)
@@ -51,7 +62,7 @@ function valid_play()
 			var _adj_tile = _adjacent_tiles[__index];
 			if(_adj_tile != noone)
 			{
-				if(!array_contains(_placed_tiles, _adj_tile) and _adj_tile.layer == _tile.layer)	
+				if(!array_contains(_placed_tiles, _adj_tile) and _adj_tile.layer == layer_get_id("Tiles"))	
 				{
 					_tile_adjacent = true;
 				}
@@ -101,7 +112,7 @@ function valid_play()
 			
 			with(_smallest_tile)
 			{
-				var _other_tile = instance_place(_tile_pos, _smallest_tile.y, oTile);
+				var _other_tile = instance_position(_tile_pos, _smallest_tile.y, oTile);
 				if(!place_meeting(_tile_pos, _smallest_tile.y, _other_tile) or 
 					_other_tile.layer != _smallest_tile.layer)
 				{
@@ -153,7 +164,7 @@ function valid_play()
 			
 				with(_smallest_tile)
 				{
-					var _other_tile = instance_place(_smallest_tile.x, _tile_pos, oTile);
+					var _other_tile = instance_position(_smallest_tile.x, _tile_pos, oTile);
 					if(!place_meeting(_smallest_tile.x, _tile_pos, _other_tile) or 
 						_other_tile.layer != _smallest_tile.layer)
 					{

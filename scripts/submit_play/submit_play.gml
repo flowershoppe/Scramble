@@ -2,7 +2,6 @@ function submit_play()
 {
 	var _placed_tiles = oPlayer.placed_tiles;
 	if(array_length(_placed_tiles) < 1){exit;}
-	
 	if(valid_play() and check_words())
 	{	
 		var _score = calculate_points();
@@ -16,7 +15,7 @@ function submit_play()
 			{
 				if(array_contains(_placed_tiles, id))
 				{
-					grabbable = false;	
+					grabbable = false;
 				}
 			}
 		}

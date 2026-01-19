@@ -1,7 +1,7 @@
 randomize();
 dialogue_setup();
 global.cheat = false;
-version = "v0.01b";
+version = "v0.01d";
 
 global.paused = false;
 //Instance
@@ -202,7 +202,7 @@ oCount,
 oD20,
 oD6,
 oDiamond,
-oEraser,
+//oEraser,
 oFridge,
 oHammerSickle,
 oHeadphones,

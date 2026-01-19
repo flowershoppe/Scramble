@@ -72,22 +72,22 @@ if(array_length(reward_structs) < 1)
 		_i = 0;
 		_reward_count += 3;
 		while(_i < _reward_count)
-		{
-			//if player has all charms, exit
-			if(array_length(global.charms) == array_length(oCharmManager.charms)){exit;}
-			
+		{			
 			//randomly select a charm until an unowned one is chosen
 			var _reward = 
 			{
 				obj : oCharm,
 				charm : global.charms[irandom_range(0, array_length(global.charms) - 1)]
 			}
-			while(instance_exists(_reward.charm))
+			var _charm_rewards = [];
+			
+			while(instance_exists(_reward.charm) or array_contains(_charm_rewards, _reward.charm))
 			{
 				_reward.charm = global.charms[irandom_range(0, array_length(global.charms) - 1)];
 			}
 		
-			array_push(reward_structs, _reward);			
+			array_push(reward_structs, _reward);	
+			array_push(_charm_rewards, _reward.charm);
 			_i++;
 		}
 	}
