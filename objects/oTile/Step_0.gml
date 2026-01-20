@@ -1,5 +1,37 @@
 if(global.paused or !oMatchManager.active){exit;}
 layer_name = layer_get_name(layer);
+
+if(!on_board)
+{
+	is_word = false;
+	if(instance_exists(highlighter))
+	{		
+		instance_destroy(highlighter);	
+		highlighter = noone;
+	}
+}
+if(is_word)
+{
+	if(highlighter == noone)
+	{
+		highlighter = instance_create_depth(x, y, layer_get_depth(layer) + 1, oShine,
+		{
+			color : c_green,
+			image_xscale : 1.2,
+			image_yscale : 1.2,
+			fade : false
+		});
+	}
+}
+else
+{
+	if(instance_exists(highlighter))
+	{		
+		instance_destroy(highlighter);	
+		highlighter = noone;
+	}
+}
+
 var _tile = id;
 with(oTileHolder)
 {
@@ -67,3 +99,6 @@ if(!on_board and blank == true)
 	letter = "_";
 	wait_for_input = false;
 }
+
+if(oMatchManager.active == false){exit;}
+	

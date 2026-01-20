@@ -18,3 +18,5 @@ play_mult_bonus = 1;
 exchanged_tiles = [];
 
 hand_size = 7;
+
+yui_money = money;

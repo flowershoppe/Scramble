@@ -20,7 +20,7 @@ root:
       elements:
         - type: text
           text: "Score: "
-        - @total_points
+        - @yui_points
     - type: panel
       layout: horizontal
       elements:
@@ -56,7 +56,7 @@ root:
       elements:
         - type: text
           text: "Last Play: "
-        - @last_play
+        - @yui_last_play
     - type: panel
       layout: vertical
       alignment: {h: center}

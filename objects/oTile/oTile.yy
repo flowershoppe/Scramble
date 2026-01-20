@@ -40,6 +40,8 @@
     {"$GMObjectProperty":"v1","%Name":"grabbable","filters":[],"listItems":[],"multiselect":false,"name":"grabbable","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"temp","filters":[],"listItems":[],"multiselect":false,"name":"temp","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"holder","filters":[],"listItems":[],"multiselect":false,"name":"holder","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"is_word","filters":[],"listItems":[],"multiselect":false,"name":"is_word","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"highlighter","filters":[],"listItems":[],"multiselect":false,"name":"highlighter","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
