@@ -18,7 +18,7 @@ function gen_board(_lvl)
 		}
 		specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 6);
 		//randomly select a lv1 gen
-			var _ran = irandom_range(1, 4);
+			var _ran = irandom_range(1, 3);
 			switch(_ran)
 			{
 				case 1:					
@@ -138,7 +138,7 @@ function gen_board(_lvl)
 					_array[0, 0].start_point = true;
 					//_array[7, 3].winspot = true;
 					
-					specs(-1, -1, -1, 7);
+					//specs(-1, -1, -1, 7);
 				break;
 				#endregion
 			}
@@ -158,7 +158,7 @@ function gen_board(_lvl)
 			}
 			specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 6);
 			//randomly select a lv2 gen
-			var _ran = irandom_range(4, 4);
+			var _ran = irandom_range(1, 4);
 			switch(_ran)
 			{
 				//DIVIDE

@@ -8,3 +8,6 @@ typist = 0;
 sounds = [sdType];
 wait = false;
 val = 0;
+
+yui_points = total_points;
+yui_last_play = last_play;

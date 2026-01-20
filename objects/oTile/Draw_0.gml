@@ -1,4 +1,4 @@
-if(!on_board){exit;}
+if(!on_board){is_word = false; exit;}
 //draw self
 draw_sprite_ext(spr, 0, x, y, xscale, yscale, 0, c_white, 1);
 
@@ -41,3 +41,4 @@ if(highlight)
 draw_set_halign(_old_halign);
 draw_set_valign(_old_valign);
 draw_set_font(_old_font);
+

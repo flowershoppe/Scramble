@@ -16,7 +16,7 @@ root:
       canvas: 
         top: 75
         left: 110
-      size: {w: 200, h: 160}
+      size: {w: 200, h: 170}
       padding: 10
       background: ~spPanel
       elements:

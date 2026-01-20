@@ -13,7 +13,12 @@ with(instance_nearest(x_loc, y_loc, oTileHolder))
 {
 	tile = _tile;
 }
-instance_create_depth(x_loc, y_loc, layer_get_depth(layer_get_id("Tiles")) - 1, oShine);
+instance_create_depth(x_loc, y_loc, layer_get_depth(layer_get_id("Tiles")) - 1, oShine,
+{
+	alpha : 0.75,
+	fade : true,
+	color : 15784459
+});
 ind++;
 x_loc += size;
 

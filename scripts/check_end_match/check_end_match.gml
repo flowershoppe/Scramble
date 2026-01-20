@@ -189,7 +189,15 @@ function check_end_match()
 			}
 			with(oTile)
 			{
-				if(on_board){instance_create_depth(x, y, depth - 1, oShine);}
+				if(on_board)
+				{
+					instance_create_depth(x, y, depth - 1, oShine,
+					{
+						alpha : 0.75,
+						color : 15784459,
+						fade : true
+					});
+				}
 			}
 			
 			//end run

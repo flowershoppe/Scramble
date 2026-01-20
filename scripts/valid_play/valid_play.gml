@@ -195,7 +195,7 @@ function valid_play()
 	//first turn requires covering start
 	if(oMatchManager.turn == 1 and !_start)
 	{
-		screen_message("Play is invalid", 180);
+		//screen_message("Play is invalid", 180);
 		return false;
 	}
 	
@@ -208,7 +208,7 @@ function valid_play()
 	}
 	else
 	{
-		screen_message("Play is invalid", 180);
+		//screen_message("Play is invalid", 180);
 		return false;
 	}
 	

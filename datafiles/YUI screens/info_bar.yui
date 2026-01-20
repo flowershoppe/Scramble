@@ -36,7 +36,16 @@ root:
         - type: text
           text: Mytes - 
         - type: text
-          text: ~oPlayer.money
+          text: ~oPlayer.yui_money
+    - type: panel
+      layout: horizontal
+      spacing: 5
+      canvas:
+        top: 20
+        left: 420
+      elements:
+        - type: text
+          text: @@ ~oGame.cheat then '!CHEAT ON!' else ''
     - type: text
       text: Run Length - 
       canvas:

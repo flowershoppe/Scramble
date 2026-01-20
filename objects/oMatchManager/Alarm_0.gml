@@ -12,7 +12,12 @@ audio_play_sound_on(oGame.emitter_SE, sdPlayTile, false, 1, , , 1 + (0.5 * count
 audio_play_sound_on(oGame.emitter_SE, sdHit, false, 1, , , 1 + (0.5 * count),);
 var _tile = oPlayer.words_tiles[word_ind][letter_ind];
 _tile.highlight = true;
-instance_create_depth(_tile.x, _tile.y, -200, oShine);
+instance_create_depth(_tile.x, _tile.y, _tile.depth - 1, oShine,
+{
+	alpha : 0.75,
+	fade : true,
+	color : 15784459
+});
 
 //move to next word
 if(letter_ind >= array_length(oPlayer.words_tiles[word_ind]) - 1)

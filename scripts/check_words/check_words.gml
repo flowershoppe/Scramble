@@ -257,7 +257,7 @@ function check_words()
 			var _letter = _player_words_tiles[_index][_array_index].letter;
 			_word = string_concat(_word, _letter);
 		}
-		if(!global.dictionary.check(_word) and !global.cheat)
+		if(!global.dictionary.check(_word) and !oGame.cheat)
 		{
 			array_push(_fake_words, _word);
 		}
@@ -272,16 +272,16 @@ function check_words()
 	}
 	
 	//display spelled/fake words
-	if(array_length(_fake_words) > 0 and !global.cheat)
+	if(array_length(_fake_words) > 0 and !oGame.cheat)
 	{
 		var _str = string(_fake_words);
 		if(array_length(_fake_words) > 1)
 		{
-			screen_message("These words do not appear in the dictionary: " + "\n[" + _str, 180);
+			screen_message("Not in dictionary: " + "\n[" + _str, 180);
 		}
 		else
 		{
-			screen_message("This word does not appear in the dictionary: " + "\n[" + _str, 180);
+			screen_message("Not in dictionary: " + "\n[" + _str, 180);
 		}
 		return false;
 	}
