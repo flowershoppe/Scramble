@@ -3,9 +3,13 @@ if(input_check_pressed("confirm") and active)
 	submit_play();
 }
 
-if(yui_points != total_points)
+if(yui_points < total_points)
 {
 	yui_points++;	
+}
+else if(yui_points > total_points)
+{
+	yui_points--;
 }
 
 if(yui_last_play != last_play)
@@ -280,12 +284,20 @@ for(i = 0; i < array_length(_player_tiles); i++)
 	#endregion
 	
 }
-	
+
 //-----CHECK DICTIONARY-----
 var _word_tiles = [];
 for(var _index = 0; _index < array_length(_player_words_tiles); _index++)
 {
 	_word = "";
+	//clear tiles outside of words
+	with(oTile)
+	{
+		if(!array_contains(_player_words_tiles[_index], id))
+		{
+			is_word = false;	
+		}
+	}
 	for(var _array_index = 0; _array_index < array_length(_player_words_tiles[_index]); _array_index++)
 	{
 		var _tile = _player_words_tiles[_index][_array_index];
@@ -293,12 +305,11 @@ for(var _index = 0; _index < array_length(_player_words_tiles); _index++)
 		_word = string_concat(_word, _letter);
 		array_push(_word_tiles, _tile); 
 	}
+	//if any attemtps aren't words, play is invalid
 	if((!global.dictionary.check(_word) and !oGame.cheat) or string_length(_word) < 2)
 	{
-		for(var i = 0; i < array_length(_word_tiles); i++)
-		{
-			_word_tiles[i].is_word = false;	
-		}
+		with(oTile){is_word = false;}
+		exit;
 	}
 	else
 	{
