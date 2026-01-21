@@ -29,6 +29,7 @@ with(oTile)
 	if(wait_for_input)
 	{
 		_bool = false;
+		break;
 	}
 }
 

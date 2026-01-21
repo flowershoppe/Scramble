@@ -1,4 +1,5 @@
 //Animate tiles on play
+yui_last_play = 0;
 if(loss){exit;}
 if(count < 7){count++;}
 /*if(total_letters == 0)

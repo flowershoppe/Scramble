@@ -17,6 +17,6 @@ if(room == rResults and (input_check_pressed("confirm") or input_mouse_check_pre
 	and !_bool and !global.paused and !rewarding)
 {	
 	//reward
-	if(oMatchManager.exchange_count < 1){event_user(0);}
+	event_user(0);
 	rewarding = true;
 }
