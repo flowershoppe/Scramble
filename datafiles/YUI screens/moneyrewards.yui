@@ -39,7 +39,7 @@ root:
             - type: text
               text: "Turn Bonus (base bonus * extra turns) | "
             - type: text
-              text: @t_bonus
+              text: @t_bonus_mult + ' * ' + (~oMatchManager.turn_max - ~oMatchManager.turn) + ' = ' + @t_bonus
         - type: panel
           layout: horizontal 
           animate:

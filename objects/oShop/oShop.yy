@@ -30,6 +30,13 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"shop_inventory","filters":[],"listItems":[],"multiselect":false,"name":"shop_inventory","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"tile_specs","filters":[],"listItems":[],"multiselect":false,"name":"tile_specs","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"tiles","filters":[],"listItems":[],"multiselect":false,"name":"tiles","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"charms","filters":[],"listItems":[],"multiselect":false,"name":"charms","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"charm_count","filters":[],"listItems":[],"multiselect":false,"name":"charm_count","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"3","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"tile_count","filters":[],"listItems":[],"multiselect":false,"name":"tile_count","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"price_tile","filters":[],"listItems":[],"multiselect":false,"name":"price_tile","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"10","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"price_charm","filters":[],"listItems":[],"multiselect":false,"name":"price_charm","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"25","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

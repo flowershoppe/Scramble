@@ -16,7 +16,6 @@ if (popped || msg_current >= msg_end) {
     event_user(0); exit;
   }
   
-  instance_destroy(oAdvanceButton);
   dialogue_destroy(); exit;
 }
 

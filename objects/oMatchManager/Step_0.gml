@@ -1,3 +1,23 @@
+//NO VOWELS
+if(turn == 1 and room == rGame)
+{
+	with(oTile)
+	{	
+		if(visible)
+		{
+			if(!array_contains(global.vowels, letter) and letter != "Y" and letter != "_")
+			{
+				oMatchManager.no_vowels = true;
+			}
+			else
+			{
+				oMatchManager.no_vowels = false;
+				break;
+			}
+		}
+	}
+}
+
 if(input_check_pressed("confirm") and active)
 {
 	submit_play();

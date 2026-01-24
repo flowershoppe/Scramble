@@ -10,6 +10,7 @@ if (dialogue_gui_fading_in) {
     }
   }
 } else {
+	instance_destroy(oAdvanceButton);
   if (dialogue_gui_fader > 0) {
     dialogue_gui_fader -= dialogue_gui_fader * 0.25;
     alarm[3] = 1;

@@ -29,6 +29,11 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"reward_structs","filters":[],"listItems":[],"multiselect":false,"name":"reward_structs","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[]","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"base_money_reward","filters":[],"listItems":[],"multiselect":false,"name":"base_money_reward","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"t_bonus","filters":[],"listItems":[],"multiselect":false,"name":"t_bonus","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"p_bonus","filters":[],"listItems":[],"multiselect":false,"name":"p_bonus","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"l_bonus","filters":[],"listItems":[],"multiselect":false,"name":"l_bonus","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"t_bonus_mult","filters":[],"listItems":[],"multiselect":false,"name":"t_bonus_mult","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

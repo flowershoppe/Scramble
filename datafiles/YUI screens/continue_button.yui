@@ -1,0 +1,25 @@
+id: continue_button
+file_type: screen
+
+import:
+  - ../Templates/
+
+  - /YUI/Animations/transitions.yui
+  - /YUI/Widgets/
+
+root:
+  type: panel
+  layout: canvas 
+  elements:
+    - type: panel
+      alignment: center
+      canvas:
+        center: h
+      elements:
+        - type: button
+          background: ~spPanel
+          content:
+            type: text
+            text: Continue
+          on_click:
+            - ~flow_continue()

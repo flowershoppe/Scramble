@@ -164,6 +164,7 @@ function check_end_match()
 		//-----WIN-----
 		if(_win and !oMatchManager.loss)
 		{
+			instance_create_layer(0, 0, "UI", oCompleteMessage);
 			oRun.levels_completed++;
 			oMatchManager.victory = true;
 			oMatchManager.active = false;
@@ -181,9 +182,6 @@ function check_end_match()
 					
 			with(oMatchManager)
 			{				
-				typist = scribble_typist();
-				typist.in(0.15, 0);
-				typist.sound_per_char(sounds, 1, 2);
 				wait = true;
 				alarm_set(1, 120);
 			}
@@ -200,11 +198,7 @@ function check_end_match()
 				}
 			}
 			
-			//end run
-			if(oRun.stage >= oRun.stage_count and oRun.current_level == oRun.levels[array_length(oRun.levels) - 1])
-			{
-				win_run();
-			}
+			create_continue_button();
 			
 			broadcast("match end");	
 			return true;

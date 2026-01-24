@@ -1,10 +1,3 @@
-tile_specs = [];
-tiles = [];
-charms = [];
-charm_count = 3;
-tile_count = 5;
-price_tile = 10;
-price_charm = 25;
 shop_size = tile_count + charm_count;
 
 buffer = 60;
