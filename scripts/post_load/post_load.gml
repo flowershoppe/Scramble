@@ -18,6 +18,7 @@ function post_load()
 		with(oCharmManager) instance_destroy();
 		with(oCharm) instance_destroy();
 		with(oDialogueManager) instance_destroy();
+		with(oShop) instance_destroy();
 		
 		for(var i = 0; i < array_length(_loadData); i++) //loop through data array
 		{

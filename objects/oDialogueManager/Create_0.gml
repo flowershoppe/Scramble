@@ -13,7 +13,7 @@ dialogues =
 	"[ts:slow][e:bouncing]Go on, try it!",
 	"[method:start_match]"],
 	["[chr:Cress][ts:slow]Great work! This is so [e:bouncing]excitiiiiing!",
-	"[method:show_results]"]],	
+	"[method:show_results]"]],
 	//level 2
 	[["[chr:Cress][ts:slow]Hey, me again. Your [c:orange]creator[c:white].",
 	"[ts:slow]Now that you're starting to get the idea, here are some tips.",

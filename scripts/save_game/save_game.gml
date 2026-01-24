@@ -278,7 +278,12 @@ function save_game()
 			{
 				x : x,
 				y : y,
-				reward_structs : reward_structs
+				reward_structs : reward_structs,
+				base_money_reward : base_money_reward,
+				p_bonus : p_bonus,
+				t_bonus : t_bonus,
+				t_bonus_mult : t_bonus_mult,
+				l_bonus : l_bonus
 			}
 		}
 		array_push(_saveData, _saveEntity);

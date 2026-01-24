@@ -1,11 +1,6 @@
 selectable = false;
 rewarding = false;
-base_money_reward = 5;
 total_bonus = 0;
-t_bonus = 0;
-p_bonus = 0;
-l_bonus = 0;
-t_bonus_mult = 5;
 array_rewards = [];
 
 reward_count = 0;

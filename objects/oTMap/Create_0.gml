@@ -1,5 +1,5 @@
 name = "Treasure Map";
-description = "At the start of each match, a random unmodified space gains a 2x word multiplier.";
+description = "At the start of each match, a random unmodified space gains a 2x word multiplier and a coin.";
 color = c_olive;
 
 receiver = new Receiver();
@@ -22,11 +22,14 @@ receiver.add("match start", function()
 		var _bool = false;
 		while(_bool == false)
 		{
-			if(_array[_random].wmult == 1 and _array[_random].lmult == 1)
+			var _random = irandom_range(0, _length - 1);
+			var _holder = _array[_random];
+			if(_holder.wmult == 1 and _holder.lmult == 1)
 			{
-				_array[_random].wmult = 2;
+				_holder.wmult = 2;
 				animate = !animate;
 				_bool = true;
+				instance_create_layer(_holder.x, _holder.y, "Hand_Tiles", oCoin);
 				broadcast("charm trigger");
 			}
 		}
