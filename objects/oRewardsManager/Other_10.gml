@@ -73,6 +73,7 @@ if(oMatchManager.exchange_count < 1)
 			//CHARM REWARD
 			_i = 0;
 			_reward_count += 3;
+			var _charm_rewards = [];
 			while(_i < _reward_count)
 			{			
 				//randomly select a charm until an unowned one is chosen
@@ -80,8 +81,7 @@ if(oMatchManager.exchange_count < 1)
 				{
 					obj : oCharm,
 					charm : global.charms[irandom_range(0, array_length(global.charms) - 1)]
-				}
-				var _charm_rewards = [];
+				}				
 			
 				while(instance_exists(_reward.charm) or array_contains(_charm_rewards, _reward.charm))
 				{

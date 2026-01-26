@@ -296,6 +296,7 @@ function check_words()
 		
 		oPlayer.turn_spelled_words = _spelled_words;
 		oPlayer.words_tiles = _player_words_tiles;
+		broadcast("check words");
 		oMatchManager.last_words = [];
 		for(var _index = 0; _index < array_length(_spelled_words); _index++)
 		{
@@ -305,7 +306,6 @@ function check_words()
 		}
 		oMatchManager.print_message = "";
 		
-		broadcast("check words");
 		return true;
 	}
 	#endregion

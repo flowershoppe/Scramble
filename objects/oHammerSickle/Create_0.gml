@@ -4,7 +4,7 @@ color = c_red;
 
 receiver = new Receiver();
 
-receiver.add("check words", function() 
+receiver.add("calculate points", function() 
 	{ 
 		var _factor = 1;
 		var _words = oPlayer.turn_spelled_words;

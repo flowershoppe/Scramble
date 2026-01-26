@@ -12,24 +12,23 @@ root:
   type: panel
   theme: default
   layout: grid
-  siz: {w: 32, h: 175}
   padding: [10, 10, 10, 10]
   grid:
     rows: 5
-    row_height: 32
+    row_height: 40
     row_spacing: 16
     columns: 1
-    column_width: 32
+    column_width: 40
     column_spacing: 16
   background: ~spPanel
   elements: @charms
   template:
     type: image
-    visible: @ != -1 and not undefined
+    visible: @ != -1 and @ != undefined
     events:
       on_mouse_down:
         interaction: sell_charm
-    size: 32
+    size: 40
     theme: elektra
     tooltip: @name + ~chr(13) + @description
     tooltip_width: 250
