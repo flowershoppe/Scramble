@@ -22,9 +22,8 @@ receiver.add("check words", function()
 				broadcast("charm trigger");
 				data[0] += 2;
 				description = "Each time you spell a word you've spelled on a previous turn this match, this charm gains 2 point bonus. Point Bonus: " + string(data[0]);
-				exit;
 			}
 		}		
-		data[1] = oMatchManager.spelled_words;		
+		data[1] = oMatchManager.spelled_words;
 	});
 	

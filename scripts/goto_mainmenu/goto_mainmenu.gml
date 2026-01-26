@@ -17,7 +17,7 @@ function goto_mainmenu()
 	instance_destroy(oRewardsManager);
 	instance_destroy(oShop);
 	instance_destroy(oDialogueManager);
-	
+	instance_destroy(oCompleteMessage);
 	global.paused = false;
 	
 	screenTransition(rMainMenu, , ST_CHECKER_DIAG_UL_TO_DR_Y);

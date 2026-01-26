@@ -11,6 +11,8 @@ function calculate_points()
 	var j = 0;
 	var k = 0;
 	
+	broadcast("calculate points");
+	
 	//review each word spelled
 	for(j = 0; j < array_length(_player_words_tiles); j++)
 	{
@@ -77,6 +79,7 @@ function calculate_points()
 	//post-calc play bonuses
 	_total += oPlayer.play_point_bonus;
 	_total *= oPlayer.play_mult_bonus;
+	_total = ceil(_total);
 	
 	//reset bonuses
 	oPlayer.letter_point_bonus = 0;
@@ -101,7 +104,5 @@ function calculate_points()
 	
 	//animation
 	with(oMatchManager){alarm_set(0, 1);}
-	
-	broadcast("calculate points");
 	return _total;
 }

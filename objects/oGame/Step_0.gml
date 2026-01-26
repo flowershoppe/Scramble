@@ -17,14 +17,12 @@ if(input_check_pressed("pause"))
 if(input_check_pressed("special") and room == rGame)
 {	
 	exchange_tiles();	
-}/*
+}
 if(input_keyboard_check_pressed(ord("1")))
 {
 	//with(oLevel){active = true;}
-	cheat = !cheat;
-	add_charm(oTMap);
-	add_charm(oFractal);
-}*/
+	add_charm(oScales);
+}
 if(input_keyboard_check_pressed(ord("2")))
 {
 	oMatchManager.total_points += 10;

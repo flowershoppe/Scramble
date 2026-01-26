@@ -17,6 +17,10 @@ if(turn == 1 and room == rGame)
 		}
 	}
 }
+else
+{
+	no_vowels = false;	
+}
 
 if(input_check_pressed("confirm") and active)
 {
