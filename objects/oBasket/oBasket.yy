@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spBasket",
+    "path":"sprites/spBasket/spBasket.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

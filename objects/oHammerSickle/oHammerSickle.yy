@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spHammerSickle",
+    "path":"sprites/spHammerSickle/spHammerSickle.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

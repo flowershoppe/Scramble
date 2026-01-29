@@ -23,18 +23,6 @@ root:
           text_style: subtitle
     - type: panel
       alignment: center
-      canvas:
-        top: 275
-      layout: horizontal
-      background: ~spPanel
-      spacing: 25
-      elements: @array_rewards
-      template:
-        size: 64
-        type: image
-        sprite: ~spShadow
-    - type: panel
-      alignment: center
       layout: horizontal
       theme: elektra
       spacing: 25
@@ -53,6 +41,19 @@ root:
           on_click: 
             - ~get_reward(@id)
             - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+    
+    - type: panel
+      alignment: center
+      canvas:
+        top: 275
+      layout: horizontal
+      background: ~spPanel
+      spacing: 25
+      elements: @array_rewards
+      template:
+        size: 64
+        type: image
+        sprite: ~spShadow
 
 
 

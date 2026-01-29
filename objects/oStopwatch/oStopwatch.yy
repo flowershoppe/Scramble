@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spStopwatch",
+    "path":"sprites/spStopwatch/spStopwatch.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

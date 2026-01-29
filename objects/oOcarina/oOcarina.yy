@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spOcarina",
+    "path":"sprites/spOcarina/spOcarina.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
