@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spTMap",
-    "path":"sprites/spTMap/spTMap.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -33,7 +33,7 @@ root:
               xoffset: &cascade_slide_in_right
           on_click: 
             - ~new_run()
-            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdStartup, false, 1)
           events:
             on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
 

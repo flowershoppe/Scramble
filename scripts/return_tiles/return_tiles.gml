@@ -32,6 +32,8 @@ function return_tiles()
 				_placed_tile.layer = layer_get_id("Hand_Tiles");
 				
 				array_delete(_placed_tiles, 0, 1);
+				
+				audio_play_sound_on(oGame.emitter_SE, sdBack, false, 1);
 						
 			}
 		}

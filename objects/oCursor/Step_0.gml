@@ -21,33 +21,37 @@ if(instance_exists(oPlayerHand))
 
 if(global.exchanging){exit;}
 
+
 //-----TYPE TO PLACE-----
 var _letter = "";
 var _bool = true;
-with(oTile)
+if(oMatchManager.active)
 {
-	if(wait_for_input)
+	with(oTile)
 	{
-		_bool = false;
-		break;
-	}
-}
-if(held_tile != noone){_bool = false;}
-
-
-if(room == rGame and input_keyboard_check_pressed(vk_anykey) and layer == layer_get_id("Tiles") and _bool and ord("A") <= keyboard_key and keyboard_key <= ord("Z"))
-{
-	var _array = oPlayerHand.tile_holder_array;
-
-	for(var i = 0; i < array_length(_array); i++)
-	{
-		if(_array[i].tile != noone)
+		if(wait_for_input)
 		{
-			if(string_upper(keyboard_lastchar) == _array[i].tile.letter)
+			_bool = false;
+			break;
+		}
+	}
+	if(held_tile != noone){_bool = false;}
+
+
+	if(room == rGame and input_keyboard_check_pressed(vk_anykey) and layer == layer_get_id("Tiles") and _bool and ord("A") <= keyboard_key and keyboard_key <= ord("Z"))
+	{
+		var _array = oPlayerHand.tile_holder_array;
+
+		for(var i = 0; i < array_length(_array); i++)
+		{
+			if(_array[i].tile != noone)
 			{
-				_letter = string_upper(keyboard_lastchar);
-				held_tile = _array[i].tile;
-				break;
+				if(string_upper(keyboard_lastchar) == _array[i].tile.letter)
+				{
+					_letter = string_upper(keyboard_lastchar);
+					held_tile = _array[i].tile;
+					break;
+				}
 			}
 		}
 	}

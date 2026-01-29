@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spSnake",
-    "path":"sprites/spSnake/spSnake.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spRupee",
-    "path":"sprites/spRupee/spRupee.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

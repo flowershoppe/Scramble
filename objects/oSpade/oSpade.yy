@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spSpade",
-    "path":"sprites/spSpade/spSpade.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

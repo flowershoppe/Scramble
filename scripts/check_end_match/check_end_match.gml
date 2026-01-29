@@ -164,7 +164,6 @@ function check_end_match()
 		//-----WIN-----
 		if(_win and !oMatchManager.loss)
 		{
-			instance_create_layer(0, 0, "UI", oCompleteMessage);
 			oRun.levels_completed++;
 			oMatchManager.victory = true;
 			oMatchManager.active = false;
@@ -176,31 +175,13 @@ function check_end_match()
 					persistent = true;	
 				}
 			}
-			
-			//MUSIC			
-			audio_play_sound_on(oGame.emitter_SE, msWinChime, false, 1);			
 					
 			with(oMatchManager)
 			{				
 				wait = true;
 				alarm_set(1, 120);
 			}
-			with(oTile)
-			{
-				if(on_board)
-				{
-					instance_create_depth(x, y, depth - 1, oShine,
-					{
-						alpha : 0.75,
-						color : 15784459,
-						fade : true
-					});
-				}
-			}
-			
-			create_continue_button();
-			
-			broadcast("match end");	
+
 			return true;
 		}
 	}

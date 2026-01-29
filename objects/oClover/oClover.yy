@@ -34,10 +34,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spClover",
-    "path":"sprites/spClover/spClover.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

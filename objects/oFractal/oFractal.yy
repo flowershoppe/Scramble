@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spFractal",
-    "path":"sprites/spFractal/spFractal.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

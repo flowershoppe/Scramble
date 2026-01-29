@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spCassette",
-    "path":"sprites/spCassette/spCassette.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

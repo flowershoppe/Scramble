@@ -164,5 +164,5 @@
     "path":"texturegroups/Default",
   },
   "TTFName":"",
-  "usesSDF":true,
+  "usesSDF":false,
 }
