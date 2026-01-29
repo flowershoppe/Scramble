@@ -37,6 +37,7 @@ with(oTileHolder)
 {
 	if(tile == _tile)
 	{		
+		tile.holder = id;
 		if(array_contains(oPlayerHand.tile_holder_array, id))
 		{
 			tile.in_hand = true;

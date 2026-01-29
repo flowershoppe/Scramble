@@ -42,7 +42,6 @@ root:
         on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
       on_click: 
         - ~return_tiles()
-        - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)
 
     - type: button 
       background: ~spPanel
@@ -57,6 +56,5 @@ root:
         on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
       on_click: 
         - ~exchange_tiles()
-        - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
 
       

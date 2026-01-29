@@ -32,13 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spEraser",
-    "path":"sprites/spEraser/spEraser.yy",
-  },
-  "spriteMaskId":{
-    "name":"spEraser",
-    "path":"sprites/spEraser/spEraser.yy",
-  },
+  "spriteId":null,
+  "spriteMaskId":null,
   "visible":true,
 }

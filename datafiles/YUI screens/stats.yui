@@ -29,6 +29,7 @@ root:
                 text: Back
                 text_style: subtitle
               border_thickness: 1
+              background: ~spPanel
               on_click: 
                 - ~toggle_stats()
                 - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)

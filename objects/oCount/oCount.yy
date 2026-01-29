@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spCount",
-    "path":"sprites/spCount/spCount.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

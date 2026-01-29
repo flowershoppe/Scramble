@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spIceCream",
-    "path":"sprites/spIceCream/spIceCream.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

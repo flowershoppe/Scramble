@@ -21,7 +21,8 @@ if(input_check_pressed("special") and room == rGame)
 if(input_keyboard_check_pressed(ord("1")))
 {
 	//with(oLevel){active = true;}
-	add_charm(oScales);
+	add_charm(oMoai);
+	cheat = true;
 }
 if(input_keyboard_check_pressed(ord("2")))
 {

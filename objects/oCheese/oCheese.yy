@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spCheese",
-    "path":"sprites/spCheese/spCheese.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

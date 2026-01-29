@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spBClef",
-    "path":"sprites/spBClef/spBClef.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

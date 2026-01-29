@@ -19,6 +19,12 @@ function calculate_points()
 		_lmult = 1;
 		_wmult = 1;
 		_subt = 0;
+		//get the wmult
+		for(k = 0; k < array_length(_player_words_tiles[j]); k++)
+		{
+			_wmult *= _player_words_tiles[j][k].holder.wmult;
+			_wmult *= oPlayer.word_mult_bonus[j];
+		}
 		
 		//review each letter of the word
 		for(k = 0; k < array_length(_player_words_tiles[j]); k++)
@@ -29,29 +35,21 @@ function calculate_points()
 			
 			with(_player_words_tiles[j][k])
 			{
-				var _points = pointvalue;				
-				var _list = ds_list_create();
-				var _num = instance_place_list(x, y, oTileHolder, _list, true);
-				for(var i = 0; i < _num; i++)
-				{
-					_holder = _list[| i];
-					if(_holder.layer == layer_get_id("Hand_Tile_Holders"))
-					{
-						_holder = noone;
-					}
-					else
-					{
-						break;	
-					}
-				}
-				ds_list_destroy(_list);
+				var _tile = _player_words_tiles[j][k];
+				var _points = pointvalue;
+				var _holder = _tile.holder;
 
 				//factor in the holder's multipliers
 				_lmult = _holder.lmult;
 				_lmult *= oPlayer.letter_mult_bonus;
 				_points += oPlayer.letter_point_bonus;
-				_points *= _lmult;	
-				_wmult *= _holder.wmult;
+				_points *= _lmult;
+				_points *= _wmult;
+				if(instance_exists(oMoai))
+				{
+					_tile.pointvalue = _points;
+				}
+				array_push(oMatchManager.scores, _points);
 				
 				//subtotal
 				_subt += _points;
@@ -66,12 +64,12 @@ function calculate_points()
 						instance_destroy(_coin);
 					}
 				}
-				_holder.visible = false;
+				_holder.wmult = 1;
+				_holder.lmult = 1;
+				
 			}
 		}
-		
 		_subt += oPlayer.word_point_bonus[j];
-		_wmult *= oPlayer.word_mult_bonus[j];
 		_subt *= _wmult;
 		_total += _subt;
 	}
@@ -80,6 +78,7 @@ function calculate_points()
 	_total += oPlayer.play_point_bonus;
 	_total *= oPlayer.play_mult_bonus;
 	_total = ceil(_total);
+	array_push(oMatchManager.scores, _total);
 	
 	//reset bonuses
 	oPlayer.letter_point_bonus = 0;

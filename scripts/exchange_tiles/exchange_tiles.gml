@@ -51,6 +51,8 @@ function exchange_tiles()
 		selected = false;	
 	}
 	
+	audio_play_sound_on(oGame.emitter_SE, sdSelect, false, 1);
+	
 	global.exchanging = !global.exchanging;
 	
 	

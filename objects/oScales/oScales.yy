@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spScales",
-    "path":"sprites/spScales/spScales.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

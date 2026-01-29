@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spD20",
-    "path":"sprites/spD20/spD20.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
