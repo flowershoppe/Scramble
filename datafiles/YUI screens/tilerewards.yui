@@ -25,21 +25,6 @@ root:
           text: Select a Reward
           text_style: subtitle
     - type: panel
-      alignment: center
-      animate:
-        on_visible:
-          opacity: &fade_in
-      canvas:
-        top: 275
-      layout: horizontal
-      background: ~spPanel
-      spacing: 25
-      elements: @array_rewards
-      template:
-        size: 64
-        type: image
-        sprite: @@ ~spShadow
-    - type: panel
       theme: dark
       animate:
         on_visible:
@@ -75,6 +60,22 @@ root:
             canvas:
               right: 5
             color: @@ ~isGreater(@letter, @pointvalue) then red else black
+  
+    - type: panel
+      alignment: center
+      animate:
+        on_visible:
+          opacity: &fade_in
+      canvas:
+        top: 275
+      layout: horizontal
+      background: ~spPanel
+      spacing: 25
+      elements: @array_rewards
+      template:
+        size: 64
+        type: image
+        sprite: @@ ~spShadow
 
 
 

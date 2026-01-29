@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spHeadphones",
+    "path":"sprites/spHeadphones/spHeadphones.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

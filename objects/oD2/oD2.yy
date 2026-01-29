@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spCoin",
+    "path":"sprites/spCoin/spCoin.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

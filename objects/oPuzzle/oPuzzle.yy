@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spPuzzle",
+    "path":"sprites/spPuzzle/spPuzzle.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

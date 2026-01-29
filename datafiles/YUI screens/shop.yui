@@ -55,12 +55,6 @@ root:
               on_click: 
                 - ~purchase(@id)
             elements:
-              - type: image
-                sprite: ~spShadow
-                canvas:
-                  bottom: -15
-              - type: image
-                sprite: ~oGame.tile_sprite
               - type: text
                 font: ~oGame.tile_font
                 alignment: center
@@ -72,6 +66,8 @@ root:
                 canvas:
                   right: 2
                 color: ~isGreater(@letter, @pointvalue) then red else black
+              - type: image
+                sprite: ~oGame.tile_sprite
               - type: panel
                 layout: canvas
                 canvas:
@@ -81,17 +77,21 @@ root:
                 elements:
                   - type: text
                     font: ~fnt_elektra_small
+                    color: yellow
+                    text: ~oShop.price_tile
+                    text_style: subtitle
+                  - type: text
+                    font: ~fnt_elektra_small
                     color: black
                     text: ~oShop.price_tile
                     text_style: subtitle
                     canvas:
                       left: 2
                       top: 2
-                  - type: text
-                    font: ~fnt_elektra_small
-                    color: yellow
-                    text: ~oShop.price_tile
-                    text_style: subtitle
+              - type: image
+                sprite: ~spShadow
+                canvas:
+                  bottom: -15
               - type: panel
                 layout: canvas
                 canvas:
@@ -101,15 +101,15 @@ root:
                 elements: 
                   - type: image
                     sprite: ~spMyte
+                    size: 14
+                    blend_color: yellow
+                  - type: image
+                    sprite: ~spMyte
                     blend_color: black
                     size: 14
                     canvas:
                       left: 2
                       top: 2
-                  - type: image
-                    sprite: ~spMyte
-                    size: 14
-                    blend_color: yellow
         - type: panel
           padding: 10
           spacing: 20
@@ -121,10 +121,6 @@ root:
             layout: canvas
             size: 64
             elements:
-              - type: image
-                sprite: ~spShadow
-                canvas:
-                  bottom: -10
               - type: image
                 visible: @ != -1
                 size: 64
@@ -144,17 +140,17 @@ root:
                 elements:
                   - type: text
                     font: ~fnt_elektra_small
+                    color: yellow
+                    text: ~oShop.price_charm
+                    text_style: subtitle
+                  - type: text
+                    font: ~fnt_elektra_small
                     color: black
                     text: ~oShop.price_charm
                     text_style: subtitle
                     canvas:
                       left: 2
                       top: 2
-                  - type: text
-                    font: ~fnt_elektra_small
-                    color: yellow
-                    text: ~oShop.price_charm
-                    text_style: subtitle
               - type: panel
                 layout: canvas
                 canvas:
@@ -164,15 +160,19 @@ root:
                 elements: 
                   - type: image
                     sprite: ~spMyte
+                    size: 14
+                    blend_color: yellow
+                  - type: image
+                    sprite: ~spMyte
                     blend_color: black
                     size: 14
                     canvas:
                       left: 2
                       top: 2
-                  - type: image
-                    sprite: ~spMyte
-                    size: 14
-                    blend_color: yellow
+              - type: image
+                sprite: ~spShadow
+                canvas:
+                  bottom: -10
     - type: panel
       theme: elektra
       canvas:
@@ -180,6 +180,7 @@ root:
         bottom: 125
       elements:
         - type: button
+          background: ~spPanel
           content:
             type: text
             text: To Map

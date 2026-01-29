@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spD6",
+    "path":"sprites/spD6/spD6.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

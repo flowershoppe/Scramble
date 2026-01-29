@@ -5,9 +5,13 @@ receiver = new Receiver();
 
 receiver.add("match start", function()
 	{
+		animate = !animate;
+		broadcast("charm trigger");
 		oMatchManager.total_points += 10;
 	});
 receiver.add("turn start", function() 
 	{ 
+		animate = !animate;
+		broadcast("charm trigger");
 		oMatchManager.total_points --;
 	});

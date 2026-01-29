@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spPiggyBank",
+    "path":"sprites/spPiggyBank/spPiggyBank.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

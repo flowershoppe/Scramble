@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spFridge",
+    "path":"sprites/spFridge/spFridge.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

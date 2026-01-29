@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spMoai",
+    "path":"sprites/spMoai/spMoai.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
