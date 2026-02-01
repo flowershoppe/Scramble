@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"shuffle_hand",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"shuffle_hand",
+  "parent":{
+    "name":"Play",
+    "path":"folders/Scripts/Play.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

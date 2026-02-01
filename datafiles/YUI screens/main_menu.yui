@@ -33,7 +33,6 @@ root:
               xoffset: &cascade_slide_in_right
           on_click: 
             - ~new_run()
-            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdStartup, false, 1)
           events:
             on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
 
@@ -49,7 +48,6 @@ root:
               xoffset: &cascade_slide_in_left
           on_click: 
             - ~load_game()
-            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
           events:
             on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
         - type: button
@@ -79,6 +77,21 @@ root:
               xoffset: &cascade_slide_in_left
           on_click: 
             - ~toggle_stats()
+            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+          events:
+            on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
+        - type: button
+          background: ~spPanel
+          content: 
+            type: text
+            text: Exit
+            text_style: subtitle        
+          border_thickness: 2
+          animate:
+            on_visible:
+              xoffset: &cascade_slide_in_left
+          on_click: 
+            - ~game_end()
             - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
           events:
             on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false

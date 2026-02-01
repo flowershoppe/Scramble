@@ -14,3 +14,4 @@ yui_points = total_points;
 yui_last_play = last_play;
 
 no_vowels = false;
+no_vowels_flag = false;

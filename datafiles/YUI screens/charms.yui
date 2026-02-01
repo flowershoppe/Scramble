@@ -28,19 +28,11 @@ root:
     events:
       on_mouse_down:
         interaction: sell_charm
+        
+    angle: @image_angle
     size: 40
     theme: elektra
     tooltip: @name + ~chr(13) + @description
     tooltip_width: 250
     sprite: @sprite_index ?? ~spHolder
     blend_color: @color ?? white
-    xoffset: @?.animate then 0 else 1
-    animate:
-      default:
-        xoffset: 
-          type: curve
-          curve: ~yui_wave_curve
-          from: -10
-          to: 10
-          duration: 300
-

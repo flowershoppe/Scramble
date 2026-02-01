@@ -1,3 +1,4 @@
+event_inherited();
 name = "Rupee";
 description = "Can be sold for 50 credits.";
 color = c_silver;

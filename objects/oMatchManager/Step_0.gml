@@ -1,5 +1,5 @@
 //NO VOWELS
-if(turn == 1 and room == rGame)
+if(turn == 1 and room == rGame and no_vowels_flag)
 {
 	with(oTile)
 	{	

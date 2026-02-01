@@ -1,3 +1,4 @@
+event_inherited();
 name = "Ocarina";
 description = "When you make a play, double its total point value if it contains only letters from the following: A, B, C, D, E, F, G";
 color = c_aqua;

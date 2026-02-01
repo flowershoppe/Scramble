@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"wiggle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"wiggle",
+  "parent":{
+    "name":"Play",
+    "path":"folders/Scripts/Play.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

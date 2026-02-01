@@ -6,6 +6,10 @@ spr = spPanel;
 spr_w = sprite_get_width(spPlank);
 spr_h = sprite_get_height(spPlank);
 
+inc = 0;
+interval = 10;
+no_vowels = false;
+
 //create tile array
 tile_holder_array = [];
 

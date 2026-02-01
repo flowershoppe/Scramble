@@ -1,5 +1,6 @@
+event_inherited();
 name = "20-Sided Die";
-description = "When a turn starts, has a 1-in-20 chance to quadruple the point value of a random tile in hand until end of match.";
+description = "When a turn starts, has a 1-in-20 chance to quadruple the point value of the right-most tile in hand until end of match.";
 color = c_blue;
 
 receiver = new Receiver();
@@ -8,7 +9,7 @@ receiver.add("turn start", function()
 	{ 
 		if(irandom_range(1, 20 * (oPlayer.random_mod)) >= 20)
 		{
-			var _tile = oPlayerHand.tile_holder_array[irandom_range(0, oPlayerHand.size)].tile;
+			var _tile = oPlayerHand.tile_holder_array[oPlayerHand.size - 1].tile;
 			
 			_tile.pointvalue *= 4;	
 			

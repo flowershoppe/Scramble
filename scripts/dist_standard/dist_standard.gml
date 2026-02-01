@@ -34,7 +34,7 @@ function dist_standard(_tilebag)
 				_count = 1;
 				break;
 			case "E":
-				_count = 3;
+				_count = 2;
 				break;
 			case "F":
 				_count = 1;

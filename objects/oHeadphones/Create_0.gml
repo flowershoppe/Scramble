@@ -1,3 +1,4 @@
+event_inherited();
 name = "Headphones";
 description = "Played music words gain a 2x word multiplier.";
 

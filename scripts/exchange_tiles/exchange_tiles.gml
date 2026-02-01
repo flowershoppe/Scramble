@@ -4,13 +4,14 @@ function exchange_tiles()
 	
 	if(!global.exchanging)
 	{
+		audio_play_sound_on(oGame.emitter_SE, sdSelect, false, 1);
 		global.exchanging = !global.exchanging;
 		exit;	
 	}
 	
 	var _array = [];
 	
-	//remve tile selected tiles from holders
+	//remove tile selected tiles from holders
 	with(oTileHolder)
 	{
 		if(tile != noone and tile.selected)
@@ -25,6 +26,7 @@ function exchange_tiles()
 	//only exchange if tiles have been selected
 	if(array_length(_array) > 0)
 	{
+		audio_play_sound_on(oGame.emitter_SE, sdSelect, false, 1);
 		add_tile_to_hand(array_length(_array));
 	
 		for(var _index = 0; _index < array_length(_array); _index++)
@@ -34,6 +36,7 @@ function exchange_tiles()
 			_tile.visible = false;
 			_tile.x = 0;
 			_tile.y = 0;
+			wiggle(_tile);
 		
 		}
 		//do not increment exchange count on turn 1 if the hand has no vowels or Y's
@@ -45,13 +48,16 @@ function exchange_tiles()
 		oPlayer.exchanged_tiles = _array;
 		broadcast("exchange");
 	}
+	else
+	{
+		audio_play_sound_on(oGame.emitter_SE, sdBack, false, 1);	
+	}
 	
 	with(oTile)
 	{
 		selected = false;	
 	}
 	
-	audio_play_sound_on(oGame.emitter_SE, sdSelect, false, 1);
 	
 	global.exchanging = !global.exchanging;
 	

@@ -1,3 +1,4 @@
+event_inherited();
 name = "Treble Clef";
 description = "Increases point value of each vowel tile added to the tilebag by 1.";
 

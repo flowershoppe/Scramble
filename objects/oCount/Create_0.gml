@@ -1,7 +1,8 @@
+event_inherited();
 name = "The Count";
 data = [1];
 description = "Spelling this charm's point bonus permanently increases its point bonus by 1. Point Bonus: " + string(data[0]) + ".";
-color = c_fuchsia;
+color = 12667308;
 
 receiver = new Receiver();
 

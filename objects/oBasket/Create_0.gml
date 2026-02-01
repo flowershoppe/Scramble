@@ -1,3 +1,4 @@
+event_inherited();
 name = "Basket";
 description = "When a match ends, store half of all extra points here. When a match starts, gain those points. Carrying: " + string(data);
 

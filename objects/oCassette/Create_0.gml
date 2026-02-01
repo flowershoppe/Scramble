@@ -1,3 +1,4 @@
+event_inherited();
 name = "Cassette Tape";
 data[0] = 0;
 description = "Each time you spell a word you've spelled on a previous turn this match, this charm gains 1 point bonus. Point Bonus: " + string(data[0]);

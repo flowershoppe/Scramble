@@ -13,7 +13,7 @@ function purchase(_id)
 			array_delete(oShop.tile_specs, array_get_index(_tiles, _id), 1);
 			array_delete(_tiles, array_get_index(_tiles, _id), 1);			
 			instance_destroy(_id);
-			audio_play_sound_on(oGame.emitter_SE, sdSelect, false, 1);
+			audio_play_sound_on(oGame.emitter_SE, sdPurchase, false, 1);
 		}
 		else
 		{			
@@ -31,7 +31,7 @@ function purchase(_id)
 				_money -= oShop.price_charm;
 				array_delete(_charms, array_get_index(_charms, _ind), 1);
 				instance_destroy(_id);
-				audio_play_sound_on(oGame.emitter_SE, sdSelect, false, 1);
+				audio_play_sound_on(oGame.emitter_SE, sdPurchase, false, 1);
 			}
 			else
 			{			

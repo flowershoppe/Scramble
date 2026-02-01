@@ -4,6 +4,7 @@ length = array_length(letters);
 size = sprite_get_width(spLetterTile);
 width = size * (length - 1);
 animate = false;
+wiggle_count = 0;
 
 x_loc = (room_width / 2) - (width / 2);
 y_loc = room_height * 0.25;

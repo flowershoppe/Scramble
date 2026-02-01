@@ -15,6 +15,7 @@ diatonic
 dissonance
 dolce
 dominant
+etude
 fermata
 flat
 forte

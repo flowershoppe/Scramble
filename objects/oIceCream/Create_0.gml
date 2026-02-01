@@ -1,3 +1,4 @@
+event_inherited();
 name = "Ice Cream";
 description = "When a match starts, gain 10 points. Lose 1 point when a turn starts.";
 

@@ -1,6 +1,7 @@
+event_inherited();
 name = "Watering Can";
 description = "At the start of each turn, increase the value of all tiles on board by 1.";
-color = c_yellow;
+color = 5612366;
 
 receiver = new Receiver();
 

@@ -17,17 +17,19 @@ if(input_check_pressed("pause"))
 if(input_check_pressed("special") and room == rGame)
 {	
 	exchange_tiles();	
-}
+}/*
 if(input_keyboard_check_pressed(ord("1")))
 {
 	//with(oLevel){active = true;}
-	add_charm(oMoai);
-	cheat = true;
+	cheat = !cheat;
 }
 if(input_keyboard_check_pressed(ord("2")))
 {
-	oMatchManager.total_points += 10;
-}
+	oMatchManager.total_points += 10;	
+	oPlayer.money += 100;
+	add_charm(oScales);
+	add_charm(oSeedling);
+}*/
 
 if(instance_exists(oMatchManager))
 {

@@ -1,3 +1,4 @@
+event_inherited();
 name = "Snake";
 description = "Each played S scores an additional point.";
 color = c_green;

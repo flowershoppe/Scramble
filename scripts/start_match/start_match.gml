@@ -51,7 +51,7 @@ function start_match()
 		}
 	}
 	
-	oMatchManager.active = true
+	oMatchManager.active = true;
 	broadcast("turn start");
 	broadcast("match start");
 	save_game();

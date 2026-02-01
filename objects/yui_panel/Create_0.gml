@@ -172,6 +172,10 @@ build = function yui_panel__build() {
 			var data_index = layout_props.reverse ? child_count - i - 1 : i;
 		
 			if exists {
+				if !struct_exists(child, "data_context")
+				{
+				    throw "debug";
+				}
 				// TODO: if the render item type doesn't match, we need to recreate
 				// currently that's not possible so we won't worry about it
 				var new_data = yui_element.uses_template

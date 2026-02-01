@@ -44,17 +44,31 @@ root:
         - ~return_tiles()
 
     - type: button 
-      background: ~spPanel
       enabled: ~oMatchManager.active
       content: 
         type: text
         text: Exchange Tiles
         text_style: body
-      //border_color: @exchange_flash then green else black
+      background: ~oMatchGUI.exchange_flash then green else ~spPanel
       border_thickness: 1
       events:
         on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
       on_click: 
         - ~exchange_tiles()
+
+    - type: button 
+      background: ~spPanel
+      enabled: ~oMatchManager.active
+      content: 
+        type: text
+        text: Shuffle Hand
+        text_style: body
+      border_thickness: 1
+      events:
+        on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
+      on_click: 
+        - ~shuffle_hand()
+
+      
 
       

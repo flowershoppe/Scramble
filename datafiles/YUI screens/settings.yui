@@ -13,7 +13,16 @@ root:
   theme: elektra
   visible: @visible
   is_cursor_layer: true
-  elements:
+  elements:  
+    - type: button
+      content: 
+        type: text        
+        text: Back
+        text_style: subtitle
+      border_thickness: 1
+      on_click: 
+        - @@ ~toggle_settings()
+        - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)
     - type: panel
       layout: horizontal
       spacing: 0
@@ -209,12 +218,3 @@ root:
               on_click: 
                 - @@ ~input_profile_reset_bindings()
                 - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
-    - type: button
-      content: 
-        type: text        
-        text: Back
-        text_style: subtitle
-      border_thickness: 1
-      on_click: 
-        - @@ ~toggle_settings()
-        - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)

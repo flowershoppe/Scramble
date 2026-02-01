@@ -1,3 +1,4 @@
+event_inherited();
 name = "Hammer and Sickle";
 description = "Each additional word spelled in a play doubles this charm's point bonus. Resets at end of turn. Point bonus: 1";
 color = c_red;
