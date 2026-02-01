@@ -8,5 +8,5 @@ if(room == rMainMenu)
 		x_loc += size;
 	}
 	x_loc = (room_width / 2) - (width / 2);
-
+	alarm_set(1, irandom_range(120, 180));
 }

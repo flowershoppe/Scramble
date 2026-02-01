@@ -1,3 +1,4 @@
+event_inherited();
 name = "Puzzle Piece";
 description = "When you make a play, each letter used that is already on the board adds 1 point to the play.";
 color = c_yellow
@@ -21,8 +22,11 @@ receiver.add("check words", function()
 				}
 			}
 		}
-		oPlayer.play_point_bonus += _bonus;
-		animate = !animate; 
-		broadcast("charm trigger");
+		if(_bonus > 0)
+		{
+			oPlayer.play_point_bonus += _bonus;
+			animate = !animate; 
+			broadcast("charm trigger");
+		}
 	});
 	

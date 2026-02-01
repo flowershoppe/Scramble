@@ -1,3 +1,4 @@
+event_inherited();
 name = "Quiver";
 description = "Hand size increased by 1.";
 color = 359082;

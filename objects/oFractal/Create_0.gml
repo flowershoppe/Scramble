@@ -1,3 +1,4 @@
+event_inherited();
 name = "Fractal";
 description = "Finishing a level increases the base turn multiplier Myte reward by 1. Current base: " + string(oRewardsManager.t_bonus_mult);
 color = c_yellow;

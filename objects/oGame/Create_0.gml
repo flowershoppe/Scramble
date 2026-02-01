@@ -1,7 +1,7 @@
 randomize();
 dialogue_setup();
 cheat = false;
-version = "v0.01g";
+version = "v0.02";
 
 global.paused = false;
 //Instance
@@ -204,12 +204,13 @@ oD2,
 oD20,
 oD6,
 oDiamond,
-//oEraser,
+oEraser,
 oFridge,
 oHammerSickle,
 oHeadphones,
 oIceCream,
 oLoop,
+oMoai,
 oMetalDetector,
 oOcarina,
 oPiggyBank,

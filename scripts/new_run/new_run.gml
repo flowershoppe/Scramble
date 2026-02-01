@@ -1,6 +1,10 @@
 function new_run()
 {
+	audio_play_sound_on(oGame.emitter_SE, sdStartup, false, 1)
 	oStats.run_count++;
+	
+	instance_create_layer(0, 0, "Meta", oPlayer);
+	
 	screenTransition(rMap, , ST_CHECKER_DIAG_UL_TO_DR_Y);
 	
 	instance_destroy(oRun);
@@ -13,5 +17,8 @@ function new_run()
 	instance_destroy(oShop);
 	instance_create_layer(0, 0, "Meta", oShop);
 	
-	//audio_play_sound(sdConfirm, 1, false);
+	if(file_exists("gamesave.save"))
+	{
+		oStats.losses++;
+	}
 }

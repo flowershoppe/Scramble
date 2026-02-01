@@ -6,6 +6,7 @@ spr = noone;
 alpha = 1;
 wait = true;
 scalemax = 0;
+factor = .15;
 if(gui and pointvalue == oMatchManager.last_play)
 {	
 	if(oMatchManager.victory and !oMatchManager.loss)
@@ -32,21 +33,18 @@ if(gui and pointvalue == oMatchManager.last_play)
 	if(pointvalue < 10)
 	{
 		spr = spBend;
-		xscale = 1.5;
-		yscale = 1.5;
 	}
 	else if(pointvalue >= 10)
 	{
 		spr = spCircleStar;	
-		xscale = 2;
-		yscale = 2;
 	}
 	else if(pointvalue >= 20)
 	{
 		spr = spNeutron;	
-		xscale = 3;
-		yscale = 3;
+		audio_play_sound_on(oGame.emitter_SE, sdBell2, false, 1);
 	}
+	xscale = factor * pointvalue;
+	yscale = factor * pointvalue;
 	scalemax = xscale * 2;
 	_time = 120;
 	_delay = 60;

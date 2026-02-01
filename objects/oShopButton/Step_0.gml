@@ -19,3 +19,10 @@ else
 	image_xscale = 1;
 	image_yscale = 1;
 }
+if(alarm_get(0) < 1 and instance_exists(oPlayer))
+{
+	if(oPlayer.money > 0)
+	{
+		alarm_set(0, 60);
+	}	
+}

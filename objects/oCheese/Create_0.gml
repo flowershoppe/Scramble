@@ -1,3 +1,4 @@
+event_inherited();
 name = "Cheese Wedge";
 description = "When a turn starts, add 1 to this charm's sell value. Value: " + string(value);
 color = c_yellow;

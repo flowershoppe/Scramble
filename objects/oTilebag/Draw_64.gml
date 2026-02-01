@@ -1,4 +1,4 @@
-image_blend = 22166;
+image_blend = 4895487;
 draw_self();
 
 if(oMatchManager.active == true)

@@ -1,3 +1,4 @@
+event_inherited();
 name = "Treasure Map";
 description = "At the start of each match, a random unmodified space gains a 2x word multiplier and a coin.";
 color = c_olive;

@@ -1,3 +1,4 @@
+event_inherited();
 name = "Eraser";
 description = "At the start of each turn, the first tile in your hand becomes a blank tile.";
 color = c_white;

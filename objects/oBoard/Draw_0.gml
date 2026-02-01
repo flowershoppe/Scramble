@@ -9,4 +9,3 @@ draw_sprite_part_ext(spr, 0, 0,	0,
 					board_width, board_height,
 					x - (board_width / 2) - _tile_size, y - (board_height / 2) - _tile_size, 
 					1, 1, c_white, 1);
-					

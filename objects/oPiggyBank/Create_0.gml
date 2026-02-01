@@ -1,6 +1,7 @@
+event_inherited();
 name = "Piggy Bank";
 description = "When another charm effect triggers, gain 1 credit. This charm cannot trigger charms.";
-color = c_fuchsia;
+color = 10658559;
 
 receiver = new Receiver();
 

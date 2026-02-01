@@ -9,8 +9,10 @@ instance_create_layer(0, 0, "Meta", oCharmManager);
 //generate shop
 with(oShop){event_user(0);}
 
-//initialize player and cursor
-instance_create_layer(0, 0, "Meta", oPlayer);	
+//give random charm
+var _num = irandom_range(1, array_length(global.charms) - 1)
+var _charm = global.charms[_num];
+add_charm(_charm);
 
 create_levels(level_count, oLevel1);
 

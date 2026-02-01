@@ -1,6 +1,7 @@
+event_inherited();
 name = "Loop";
 data[0] = 0;
-description = "When you play an O, add 1 to this charm's point bonus. Resets at match end and when a turn passes without playing an O. Bonus: " + string(data[0]);
+description = "When you play an O, add 1 to this charm's point bonus. Resets when a turn passes without playing an O. Bonus: " + string(data[0]);
 
 receiver = new Receiver();
 
@@ -39,17 +40,11 @@ receiver.add("check words", function()
 		}
 		
 		oPlayer.play_point_bonus += data[0];
-		description = "When you play an O, add 1 to this charm's point bonus. Resets when you don't play an O. Bonus: " + string(data[0]);
+		description = "When you play an O, add 1 to this charm's point bonus. Resets when a turn passes without playing an O. Bonus " + string(data[0]);
 	});
 	
 receiver.add("exchange", function()
 	{
 		data[0] = 0;
-		description = "When you play an O, add 1 to this charm's point bonus. Resets when you don't play an O. Bonus: " + string(data[0]);
-	});
-	
-receiver.add("match end", function()
-	{
-		data[0] = 0;
-		description = "When you play an O, add 1 to this charm's point bonus. Resets when you don't play an O. Bonus: " + string(data[0]);
+		description = "When you play an O, add 1 to this charm's point bonus. Resets when a turn passes without playing an O. Bonus: " + string(data[0]);
 	});

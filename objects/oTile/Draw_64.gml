@@ -32,7 +32,7 @@ draw_set_font(font);
 
 //draw letter
 draw_text_transformed_color(x - _x_offset, y - _y_offset, letter, xscale, yscale, 
-							0, font_color, font_color, font_color, font_color, 100);
+							image_angle, font_color, font_color, font_color, font_color, 100);
 
 var _scale = (font_scale / 3) + (xscale - 1);
 draw_set_halign(fa_center);
@@ -46,8 +46,10 @@ if(pointvalue > global.letters[? letter])
 {
 	font_color = c_red;
 }
-draw_text_transformed_color(x + _x_offset, y - _y_offset, pointvalue, _scale, _scale, 
-							0, font_color, font_color, font_color, font_color, 100);
+draw_text_transformed_color(
+    x + lengthdir_x(cornerNumDist, cornerNumDir + image_angle) * xscale,
+    y + lengthdir_y(cornerNumDist, cornerNumDir + image_angle) * yscale,
+    pointvalue, _scale, _scale, image_angle, font_color, font_color, font_color, font_color, 100);
 
 draw_set_halign(_old_halign);
 draw_set_valign(_old_valign);

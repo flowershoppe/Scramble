@@ -2,7 +2,6 @@ if(global.paused){exit;}
 x = mouse_x;
 y = mouse_y;
 
-
 if(!instance_exists(oMatchManager)){exit;}
 
 if(oMatchManager.active)
@@ -143,6 +142,7 @@ if(mouse_check_button_pressed(mb_left) or _letter != "")
 	old_x = held_tile.x;
 	old_y = held_tile.y;
 	held_tile.layer = layer_get_id("Grabbed");
+	wiggle(held_tile);
 	
 	held_tile.x = device_mouse_x_to_gui(0);
 	held_tile.y = device_mouse_y_to_gui(0);	
@@ -174,7 +174,7 @@ if(!mouse_check_button(mb_left) or _letter != "")
 		var _nearest_holder = noone;
 		var _nearest_dist = infinity;
 		
-		//find nearest tile holder of the same layer		
+		//set the destination holder		
 		#region
 		if(layer == layer_get_id("Hand"))
 		{
@@ -209,6 +209,7 @@ if(!mouse_check_button(mb_left) or _letter != "")
 		
 		else
 		{
+			
 			var _touching = position_meeting(x, y, oTileHolder);
 			if(_touching)
 			{
@@ -246,9 +247,39 @@ if(!mouse_check_button(mb_left) or _letter != "")
 					}
 				}
 			}	
-		}
-		#endregion
+
+			var _tholder = noone;
+			var _list = ds_list_create();
+			var _num = instance_position_list(x, y, oTileHolder, _list, true);
+			for(var _i = 0; _i < _num; _i++)
+			{
+				if(_list[| _i].visible and !array_contains(oPlayerHand.tile_holder_array, _list[| _i]))
+				{
+					_tholder = _list[| _i];
+					break;
+				}
+				else
+				{
+					_tholder = noone;
+				}
+			}
+			ds_list_destroy(_list);
 		
+			if(_tholder == noone)
+			{
+				with(oTileHolder)
+				{
+					if(tile == noone and array_contains(oPlayerHand.tile_holder_array, id))
+					{
+						_nearest_holder = id;
+						oCursor.layer = layer_get_id("Hand");
+						break;
+					}
+				}
+			}
+		}
+		
+		#endregion
 		//-----DROP TILE-----				
 		if(layer == layer_get_id("Tiles"))
 		{
@@ -273,6 +304,12 @@ if(!mouse_check_button(mb_left) or _letter != "")
 		}
 		held_tile.x = _nearest_holder.x;
 		held_tile.y = _nearest_holder.y;
+		with(held_tile)
+		{
+			wiggleTime = 0;
+			wiggleAmplitude = 0;
+			image_angle = 0;
+		}
 		
 		_nearest_holder.tile = held_tile;
 		

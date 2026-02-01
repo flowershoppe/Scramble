@@ -1,3 +1,4 @@
+event_inherited();
 name = "Receipt";
 data = [1];
 description = "Your first exchange each match applies no reward penalty.";

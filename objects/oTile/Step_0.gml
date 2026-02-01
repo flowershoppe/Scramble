@@ -1,6 +1,5 @@
-if(global.paused or !oMatchManager.active){exit;}
+if(global.paused){exit;}
 layer_name = layer_get_name(layer);
-
 if(!on_board)
 {
 	is_word = false;
@@ -33,18 +32,20 @@ else
 }
 
 var _tile = id;
-with(oTileHolder)
+if(instance_exists(oPlayerHand))
 {
-	if(tile == _tile)
-	{		
-		tile.holder = id;
-		if(array_contains(oPlayerHand.tile_holder_array, id))
-		{
-			tile.in_hand = true;
-		}
-	}	
+	with(oTileHolder)
+	{
+		if(tile == _tile)
+		{		
+			tile.holder = id;
+			if(array_contains(oPlayerHand.tile_holder_array, id))
+			{
+				tile.in_hand = true;
+			}
+		}	
+	}
 }
-
 if(oCursor.held_tile == noone and oCamera.dragging == false)
 {
 	var _intersect = false;
@@ -85,6 +86,14 @@ if(oCursor.held_tile == noone and oCamera.dragging == false)
 		hover = false;
 	}
 }
+else
+{
+	image_xscale = 1;
+	image_yscale = 1;
+	xscale = 1;
+	yscale = 1;
+	hover = false;	
+}
 
 //exchanging
 if(position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id)
@@ -101,5 +110,14 @@ if(!on_board and blank == true)
 	wait_for_input = false;
 }
 
-if(oMatchManager.active == false){exit;}
+if (wiggleAmplitude > 0) 
+{
+    wiggleTime++;
+    image_angle = sin(wiggleTime * 2 * pi / wigglePeriod) * wiggleAmplitude;
+    wiggleAmplitude = max(wiggleAmplitude - wiggleFalloff, 0);
+}
+else 
+{
+    image_angle = 0;
+}
 	

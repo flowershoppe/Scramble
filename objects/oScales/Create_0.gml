@@ -1,3 +1,4 @@
+event_inherited();
 name = "Scales";
 description = "Double the value of your play if it contains equal vowels and consonants. Halve the value of all other plays.";
 color = 37541;

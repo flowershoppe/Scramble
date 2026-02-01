@@ -1,3 +1,4 @@
+event_inherited();
 name = "Diamond";
 description = "Double a play's value if it contains at least 5 played consonants.";
 color = c_red;

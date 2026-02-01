@@ -1,3 +1,4 @@
+event_inherited();
 name = "Bass Clef";
 description = "Increases point value of each consonant tile added to the tilebag by 1.";
 

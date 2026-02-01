@@ -1,3 +1,4 @@
+event_inherited();
 name = "Metal Detector";
 description = "After each match, gain credits equal to number of turns passed.";
 color = c_grey;

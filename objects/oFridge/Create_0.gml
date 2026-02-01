@@ -1,3 +1,4 @@
+event_inherited();
 name = "Fridge";
 description = "Played food words gain a 2x word multiplier.";
 

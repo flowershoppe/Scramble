@@ -1,3 +1,4 @@
+event_inherited();
 name = "Stopwatch";
 description = "Turn maximum increased by 1.";
 color = c_silver;

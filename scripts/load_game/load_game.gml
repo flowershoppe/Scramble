@@ -2,6 +2,7 @@ function load_game()
 {	
 	if(file_exists("gamesave.save"))
 	{
+		audio_play_sound_on(oGame.emitter_SE, sdSelect, false, 1)
 		oGame.loading = true;
 		with(oPlayer) instance_destroy();
 		with(oMatchManager) instance_destroy();
@@ -27,5 +28,10 @@ function load_game()
 		{
 			alarm_set(0, 1);	
 		}
+	}
+	else
+	{
+		audio_play_sound_on(oGame.emitter_SE, sdBack, false, 1);	
+		screen_message("No save file", 180);
 	}
 }

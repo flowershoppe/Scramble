@@ -1,6 +1,6 @@
+event_inherited();
 name = "Seedling";
 description = "When a turn starts, gain points equal to the current turn.";
-color = c_green;
 
 receiver = new Receiver();
 

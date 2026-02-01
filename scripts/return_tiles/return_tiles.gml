@@ -6,13 +6,15 @@ function return_tiles()
 	var _hand = oPlayerHand;
 	var _placed_tile_holder;
 	
+	audio_play_sound_on(oGame.emitter_SE, sdBack, false, 1);
+	
 	while(array_length(_placed_tiles) > 0)
 	{
 		_placed_tile = _placed_tiles[0]
 		
 		with(oTileHolder)
 		{
-			if(tile == _placed_tile){_placed_tile_holder = id;}	
+			if(tile == _placed_tile){_placed_tile_holder = id; break;}	
 		}
 	
 		//loop through until an empty tile holder is found
@@ -26,16 +28,14 @@ function return_tiles()
 				_placed_tile.x = _hand_tile_holder.x;
 				_placed_tile.y = _hand_tile_holder.y;
 				_placed_tile.on_board = false;
+				_placed_tile.in_hand = true;
 				
 				_hand_tile_holder.tile = _placed_tile;
 				_placed_tile_holder.tile = noone;
 				_placed_tile.layer = layer_get_id("Hand_Tiles");
 				
-				array_delete(_placed_tiles, 0, 1);
-				
-				audio_play_sound_on(oGame.emitter_SE, sdBack, false, 1);
-						
+				array_delete(_placed_tiles, 0, 1);							
 			}
 		}
-	}	
+	}
 }

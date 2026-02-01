@@ -1,3 +1,4 @@
+event_inherited();
 name = "2-Sided Die";
 description = "When a turn starts, has a 1-in-2 chance to award 1 point plus another for each consecutive success. Streak: " + string(data);
 
