@@ -5,8 +5,13 @@ color = c_white;
 
 receiver = new Receiver();
 
-receiver.add("turn start", function() 
+receiver.add("hand filled", function() 
 	{ 						
-		oPlayerHand.tile_holder_array[0].tile.letter = "_";		
+		broadcast("charm trigger");
+		animate = !animate;
+		var _tile = oPlayerHand.tile_holder_array[0].tile;
+		wiggle(_tile)
+		_tile.blank = true;
+		_tile = "_";		
 	});
 	

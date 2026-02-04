@@ -74,5 +74,7 @@ if(inc > 0)
 }
 else
 {
-	oMatchManager.no_vowels_flag = true;	
+	oMatchManager.no_vowels_flag = true;
+	broadcast("hand filled");
+	save_game();
 }

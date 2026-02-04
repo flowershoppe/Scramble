@@ -1,5 +1,5 @@
 var _tile_size = sprite_get_width(spLetterTile);
-var _letter = chr(irandom_range(65, 91));
+var _letter = chr(irandom_range(65, 90));
 
 audio_play_sound_on(oGame.emitter_SE, sdPlayTile, false, 1, 0.1 - count, , 1 + (0.5),);
 audio_play_sound_on(oGame.emitter_SE, sdHit, false, 1, 0.1 - count, , 1 + (0.5),);
