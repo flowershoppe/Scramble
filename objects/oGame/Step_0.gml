@@ -25,10 +25,8 @@ if(input_keyboard_check_pressed(ord("1")))
 }
 if(input_keyboard_check_pressed(ord("2")))
 {
-	oMatchManager.total_points += 10;	
+	oMatchManager.total_points += 100;	
 	oPlayer.money += 100;
-	add_charm(oScales);
-	add_charm(oSeedling);
 }*/
 
 if(instance_exists(oMatchManager))

@@ -14,9 +14,6 @@ function new_run()
 	instance_destroy(oRewardsManager);
 	instance_create_layer(0, 0, "Meta", oRewardsManager);
 	
-	instance_destroy(oShop);
-	instance_create_layer(0, 0, "Meta", oShop);
-	
 	if(file_exists("gamesave.save"))
 	{
 		oStats.losses++;
