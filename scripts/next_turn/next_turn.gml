@@ -21,6 +21,5 @@ function next_turn()
 	if(!oMatchManager.loss and !oMatchManager.victory)
 	{
 		broadcast("turn start");
-		save_game();
 	}
 }

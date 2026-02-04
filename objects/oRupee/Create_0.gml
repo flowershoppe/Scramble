@@ -1,5 +1,5 @@
 event_inherited();
 name = "Rupee";
-description = "Can be sold for 50 credits.";
-color = c_silver;
+description = "Worth 50 Mytes";
+color = 16723884;
 value = 50;

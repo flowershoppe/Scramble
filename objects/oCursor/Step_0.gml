@@ -409,6 +409,7 @@ if(!mouse_check_button(mb_left) or _letter != "")
 				}	
 				_switch_tile.on_board = true;
 				_switch_tile.in_hand = false;
+				array_push(oPlayer.placed_tiles, _switch_tile);
 
 			}
 			else if(old_layer == layer_get_id("Hand"))

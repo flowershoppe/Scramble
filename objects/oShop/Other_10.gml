@@ -29,7 +29,15 @@ for(var _i = 0; _i < tile_count; _i++)
 	}
 
 	//select random letter
-	_letter = _letters[irandom_range(0, array_length(_letters) - 1)];
+	if(irandom_range(0, 9) >= 9)
+	{
+		//blank chance
+		_letter = "_";
+	}
+	else
+	{
+		_letter = _letters[irandom_range(0, array_length(_letters) - 1)];
+	}
 
 	if(_roll <= _chance)
 	{

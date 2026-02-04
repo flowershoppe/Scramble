@@ -29,7 +29,7 @@ root:
       on_mouse_down:
         interaction: sell_charm
         
-    angle: @image_angle
+    angle: @image_angle ?? 0
     size: 40
     theme: elektra
     tooltip: @name + ~chr(13) + @description
