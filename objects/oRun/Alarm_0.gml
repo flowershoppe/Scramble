@@ -7,6 +7,8 @@ dist_standard(oTilebag);
 instance_create_layer(0, 0, "Meta", oCharmManager);
 
 //generate shop
+instance_destroy(oShop);
+instance_create_layer(0, 0, "Meta", oShop);
 with(oShop){event_user(0);}
 
 //give random charm
@@ -15,5 +17,5 @@ var _charm = global.charms[_num];
 add_charm(_charm);
 
 create_levels(level_count, oLevel1);
-
+	
 save_game();

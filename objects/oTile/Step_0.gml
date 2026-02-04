@@ -32,7 +32,7 @@ else
 }
 
 var _tile = id;
-if(instance_exists(oPlayerHand))
+if(instance_exists(oPlayerHand) and oMatchManager.active)
 {
 	with(oTileHolder)
 	{
