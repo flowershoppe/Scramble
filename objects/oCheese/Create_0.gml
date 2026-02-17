@@ -11,4 +11,9 @@ receiver.add("turn start", function()
 		animate = !animate;
 		value += oMatchManager.turn;
 		description = "When a turn starts, add 1 to this charm's sell value. Value: " + string(value);
+		/*instance_create_layer(x, y, "UI", oPointPrinter,
+		{
+			gui : true,
+			pointvalue : 1
+		});*/
 	});

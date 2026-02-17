@@ -15,9 +15,9 @@ root:
       layout: vertical
       alignment: center
       indexed: true
-      theme: elektra
+      theme: elektra light
       canvas:
-        top: 350
+        top: 375
         center: h
       elements:
         - type: panel

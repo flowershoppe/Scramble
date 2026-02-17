@@ -1,4 +1,4 @@
-id: charmrewards
+id: tilerewards
 file_type: screen
 
 import:
@@ -9,51 +9,67 @@ import:
 
 root:
   type: panel
-  layout: canvas  
-  elements:
+  layout: canvas 
+  theme: elektra light
+  elements:  
     - type: panel
-      theme: elektra
-      alignment: center
-      layout: horizontal
+      size: {h: 135, w: 750}
       canvas:
-        top: 350
-      elements:
-        - type: text
-          text: Select a Reward
-          text_style: subtitle
-    - type: panel
-      alignment: center
-      layout: horizontal
-      theme: elektra
-      spacing: 25
-      canvas:
-        top: 270
-      elements: @array_rewards
-      template:
-        type: image
-        visible: @ != -1
-        size: 64
-        tooltip: @name + ~chr(13) + @description
-        tooltip_width: 250
-        sprite: @sprite_index ?? ~spEmpty
-        blend_color: @color
-        events:
-          on_click: 
-            - ~get_reward(@id)
-            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
-    
-    - type: panel
-      alignment: center
-      canvas:
-        top: 275
-      layout: horizontal
+        top: 260
+        center: h
+      animate:
+        on_visible:
+          opacity: &fade_in
+      layout: canvas
       background: ~spPanel
-      spacing: 25
-      elements: @array_rewards
-      template:
-        size: 64
-        type: image
-        sprite: ~spShadow
+      elements:
+        - type: panel
+          alignment: center
+          layout: horizontal
+          animate:
+            on_visible:
+              opacity: &fade_in
+          canvas:
+            top: 10
+          elements:
+            - type: text
+              text: Select a Reward
+              text_style: subtitle
+        - type: panel
+          theme: elektra light
+          animate:
+            on_visible:
+              opacity: &fade_in
+          alignment: center
+          layout: horizontal
+          spacing: 25
+          canvas:
+            bottom: 25
+          elements: @array_rewards
+          template:
+            type: image
+            visible: @ != -1
+            size: 64
+            tooltip: @name + ~chr(13) + @description
+            tooltip_width: 250
+            sprite: @sprite_index ?? ~spEmpty
+            blend_color: @color
+            events:
+              on_click: 
+                - ~get_reward(@id)
+                - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)    
+        - type: panel
+          canvas:
+            center: h
+            bottom: 15
+          layout: horizontal
+          elements: @array_rewards              
+          padding: 0
+          spacing: 25
+          template:
+            size: 64
+            type: image
+            sprite: @@ ~spShadow
 
 
 

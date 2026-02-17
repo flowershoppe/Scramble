@@ -1,18 +1,15 @@
-function purchase(_id)
+function purchase(_item)
 {
+	if(_item == undefined){exit;}
 	var _money = oPlayer.money;
-	var _ind = _id.object_index;
 	//BUY TILE
-	if(_ind == oTile)
+	if(_item.type == "tile")
 	{
-		var _tiles = oShop.tiles;
-		if((_money - oShop.price_tile) >= 0)
+		if((_money - _item.price) >= 0)
 		{
-			add_tile_to_bag(_id.letter, _id.pointvalue, 1, true);
-			_money -= oShop.price_tile;
-			array_delete(oShop.tile_specs, array_get_index(_tiles, _id), 1);
-			array_delete(_tiles, array_get_index(_tiles, _id), 1);			
-			instance_destroy(_id);
+			add_tile_to_bag(_item.letter, _item.pointvalue, 1, true);
+			_money -= _item.price;	
+			oShop.tiles[array_get_index(oShop.tiles, _item)] = undefined;
 			audio_play_sound_on(oGame.emitter_SE, sdPurchase, false, 1);
 		}
 		else
@@ -21,16 +18,14 @@ function purchase(_id)
 		}
 	}
 	//BUY CHARM
-	else if(object_is_ancestor(_ind, oCharm))
+	else if(_item.type == "charm")
 	{
-		var _charms = oShop.charms;
-		if((_money - oShop.price_charm) >= 0)
+		if((_money - _item.price) >= 0)
 		{
-			if(add_charm(_ind))
+			if(add_charm(_item.charm))
 			{
-				_money -= oShop.price_charm;
-				array_delete(_charms, array_get_index(_charms, _ind), 1);
-				instance_destroy(_id);
+				_money -= _item.price;
+				oShop.charms[array_get_index(oShop.charms, _item)] = undefined;
 				audio_play_sound_on(oGame.emitter_SE, sdPurchase, false, 1);
 			}
 			else

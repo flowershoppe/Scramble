@@ -1,7 +1,7 @@
 file_type: theme
 
 constants:
-  text_color: #f0f0f0
+  text_color: #000000
   //text_color: #70FFFA
   hint_text: #969696
 

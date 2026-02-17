@@ -1,5 +1,6 @@
 function shuffle_hand()
 {
+	if(!oMatchManager.active or oPlayerHand.inc > 0){exit;}
 	var _array = [];
 	with(oTile)
 	{

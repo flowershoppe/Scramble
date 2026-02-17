@@ -1,7 +1,7 @@
 event_inherited();
 name = "Poker Chip";
 description = "When a random chance succeeds, gain 5 credits.";
-color = c_green;
+color = 8112224;
 
 receiver = new Receiver();
 

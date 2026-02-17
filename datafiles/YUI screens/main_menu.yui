@@ -11,23 +11,23 @@ root:
 
   elements:
     - type: panel
-      size: { w: 240, h: 270 }
       alignment: { h: center }
       theme: menu
       canvas:
         top: 5
         center: h      
-      padding: 10      
+      padding: 15    
       indexed: true
+      background: ~spPanel
       elements:
         - type: button
           font: ~fnt_reality_hyper
-          background: ~spPanel
+          background: ~spButton
           content: 
             type: text
             text: New Run
             text_style: subtitle
-          border_thickness: 2
+          border_thickness: 0
           animate:
             on_visible:
               xoffset: &cascade_slide_in_right
@@ -37,12 +37,12 @@ root:
             on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
 
         - type: button
-          background: ~spPanel
+          background: ~spButton
           content: 
             type: text
             text: Load Run
             text_style: subtitle       
-          border_thickness: 2
+          border_thickness: 0
           animate:
             on_visible:
               xoffset: &cascade_slide_in_left
@@ -51,12 +51,12 @@ root:
           events:
             on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
         - type: button
-          background: ~spPanel
+          background: ~spButton
           content: 
             type: text
             text: Settings
             text_style: subtitle        
-          border_thickness: 2
+          border_thickness: 0
           animate:
             on_visible:
               xoffset: &cascade_slide_in_right
@@ -66,12 +66,12 @@ root:
           events:
             on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
         - type: button
-          background: ~spPanel
+          background: ~spButton
           content: 
             type: text
             text: Stats
             text_style: subtitle        
-          border_thickness: 2
+          border_thickness: 0
           animate:
             on_visible:
               xoffset: &cascade_slide_in_left
@@ -81,12 +81,12 @@ root:
           events:
             on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
         - type: button
-          background: ~spPanel
+          background: ~spButton
           content: 
             type: text
             text: Exit
             text_style: subtitle        
-          border_thickness: 2
+          border_thickness: 0
           animate:
             on_visible:
               xoffset: &cascade_slide_in_left

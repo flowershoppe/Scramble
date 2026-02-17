@@ -1,7 +1,7 @@
 function add_charm(_charm)
 {
 	var _charms = oCharmManager.charms;
-	if(array_contains(_charms, -1))
+	if(array_contains(_charms, -1) and _charm != oEmpty)
 	{
 		var _c = instance_create_layer(0, 0, "Meta", _charm, {isininventory : true});
 		var _ind = array_get_index(_charms, -1)

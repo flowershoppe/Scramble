@@ -17,12 +17,13 @@ root:
       canvas:
         center: true
       background: ~spPanel
-      size: {w: 200, h: 300}
+      size: {w: 225, h: 300}
       padding: 10
-      theme: elektra
+      theme: elektra light
       elements:
         - type: image
           sprite: ~spLoser
+          size: 128
         - type: text
           text: @@ 'Total Score - ' + @total_score
         - type: text
@@ -32,7 +33,8 @@ root:
         - type: text
           text: @@ 'Words Spelled - ' + @words_spelled
         - type: button
-          background: ~spPanel
+          background: ~spButton
+          theme: elektra
           content:
             type: text
             text: Main Menu

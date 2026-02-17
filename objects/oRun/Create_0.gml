@@ -1,4 +1,3 @@
-time = 0;
 tiles_played = 0;
 words_spelled = 0;
 total_score = 0;
@@ -33,3 +32,8 @@ if(room == rGame or room == rMap)
 	global.music = global.music_map;
 	audio_play_sound_on(oGame.emitter_MS, global.music_map, true, 1);
 }
+
+//LEVELS
+levels1 = [1, 2, 3];
+levels2 = [1, 2, 3, 4];
+levels3 = [1, 2, 3, 4];

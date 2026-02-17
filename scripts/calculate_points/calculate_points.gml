@@ -67,7 +67,6 @@ function calculate_points()
 				_holder.wmult = 1;
 				_holder.lmult = 1;
 				_holder.visible = false;
-				
 			}
 		}
 		_subt += oPlayer.word_point_bonus[j];

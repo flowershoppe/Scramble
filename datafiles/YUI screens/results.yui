@@ -10,7 +10,7 @@ root:
   type: panel
   alignment: { h: center }
   layout: canvas
-  theme: elektra
+  theme: elektra light
   canvas:
     top: 50
     center: h

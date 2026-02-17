@@ -9,12 +9,21 @@ if(inc > 0)
 	for(var i = 0; i < size; i++)
 	{
 		var _tile_holder = tile_holder_array[i];
-			
+		var _ind = 0;
 		if(_tile_holder.tile == noone)
-		{		
-			//find random tile from bag and set _tile equal to it				
-			var _random = irandom(array_length(_array) - 1);
-			var _bag_tile = _array[_random];
+		{
+			if(target_letter == "")
+			{
+				//find random tile from bag and set _tile equal to it				
+				_ind = irandom(array_length(_array) - 1);
+			}
+			else
+			{
+				_ind = 	array_get_index(_array, target_letter);
+				if(_ind == -1)
+				{_ind = irandom(array_length(_array) - 1);}
+			}
+			var _bag_tile = _array[_ind];
 			var _tile = _bag_tile;
 			if(oMatchManager.turn == 1 and room == rGame and inc == 1)
 			#region
@@ -39,6 +48,7 @@ if(inc > 0)
 			var _count = 0;
 			var _array_copy = [];
 			array_copy(_array_copy, 0, _array, 0, array_length(_array));
+			var _random = 0;
 			while(no_vowels and _count <= array_length(oTilebag.tiles))
 			{
 				_random = irandom(array_length(_array_copy) - 1);
@@ -52,7 +62,7 @@ if(inc > 0)
 				array_delete(_array_copy, _random, 1);
 			}
 			//remove tile from bag
-			array_delete(_array, _random, 1);
+			array_delete(_array, _ind, 1);
 		
 			//place tile id in tile holder
 			_tile_holder.tile = _tile;

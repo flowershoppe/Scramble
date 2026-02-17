@@ -16,7 +16,7 @@ function next_level()
 		oRun.levels = [];
 		if(oRun.stage < oRun.stage_count)
 		{
-			with(oShop){event_user(0);}
+			refresh_shop(0);
 			with(oRun)
 			{
 				stage++;						

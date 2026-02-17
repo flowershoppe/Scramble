@@ -1,5 +1,6 @@
 function return_tiles()
 {	
+	if(!oMatchManager.active){exit;}
 	var _placed_tiles = oPlayer.placed_tiles;
 	if(array_length(_placed_tiles) < 1){exit;}
 	var _placed_tile = _placed_tiles[0];

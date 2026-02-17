@@ -6,7 +6,9 @@ width = size * (length - 1);
 animate = false;
 wiggle_count = 0;
 
-x_loc = (room_width / 2) - (width / 2);
+menu_letters = ["S", "C", "R", "A", "M", "B", "L", "E"];
+
+x_loc = (room_width / 2)
 y_loc = room_height * 0.25;
 
 //PRELOAD
@@ -29,4 +31,3 @@ with(instance_nearest(x_loc, y_loc, oTileHolder))
 }
 instance_create_layer(-64, -64, "Meta", oShine);
 #endregion
-
