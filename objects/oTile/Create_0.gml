@@ -30,6 +30,7 @@ receiver.add("match end", function()
 		{
 			persistent = false;	
 		}
+		letter = old_letter;
 	});
 
 receiver.add("turn start", function()

@@ -18,7 +18,7 @@ root:
         center: h
         top: 75
       layout: grid
-      padding: [10, 10, 10, 10]
+      padding: [15, 15, 15, 15]
       grid:
         rows: 10
         row_height: 50
@@ -40,6 +40,7 @@ root:
             theme: dark
             canvas:
               center: h
+              top: -5
             text: @letter
             font: ~oGame.tile_font
           - type: text

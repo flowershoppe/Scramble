@@ -10,19 +10,27 @@ import:
 root:
   type: panel
   layout: canvas
-  theme: elektra
+  theme: elektra light
   visible: @visible
   is_cursor_layer: true
-  elements:  
-    - type: button
-      content: 
-        type: text        
-        text: Back
-        text_style: subtitle
-      border_thickness: 1
-      on_click: 
-        - @@ ~toggle_settings()
-        - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)
+  elements:
+    - type: panel
+      layout: canvas
+      theme: elektra
+      canvas:
+        top: 15
+        left: 15
+      elements:
+        - type: button
+          background: ~spButton
+          content: 
+            type: text        
+            text: Back
+            text_style: subtitle
+          border_thickness: 0
+          on_click: 
+            - @@ ~toggle_settings()
+            - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)
     - type: panel
       layout: horizontal
       spacing: 0
@@ -78,7 +86,7 @@ root:
                       font: ~oGame.tile_font_small
                       text: 1
                       canvas:
-                        right: 2
+                        right: 2  
             - type: panel
               layout: vertical
               alignment: { h: center }              
@@ -151,6 +159,7 @@ root:
                   text: Dialogue
                   text_style: subtitle
                 - type: button
+                  border_thickness: 0
                   size: 32
                   content: " "
                   background: @play_dialogue then ~spConfirm else ~spCancel
@@ -164,7 +173,7 @@ root:
           flex: true
           size: stretch
           layout: vertical
-          theme: elektra
+          theme: elektra light
           alignment: center
           background: ~spPanel
           padding: 50
@@ -218,3 +227,4 @@ root:
               on_click: 
                 - @@ ~input_profile_reset_bindings()
                 - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
+    

@@ -14,6 +14,7 @@ function add_tile_to_bag(_letter, _pointvalue, _count, _is_permanent)
 		//create new tile and assign its values
 		_tile = instance_create_layer(0, 0, "Tilebag", oTile);
 		_tile.letter = _letter;
+		_tile.old_letter = _letter;
 		_tile.pointvalue = _pointvalue;
 		_tile.visible = false;
 		

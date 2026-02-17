@@ -8,6 +8,13 @@ if(typist != 0)
 		t.draw(_x, _y, typist);
 		t.sdf_outline(c_black, 2);		
 	}
+	else if(oMatchManager.loss)
+	{
+		var t = scribble("[cycle, 250, 250, 250, 230][fnt_reality_hyper_big][fa_center]Sequence Failed");
+		scribble_anim_cycle(0.5, 255, 255);
+		t.draw(_x, _y, typist);
+		t.sdf_outline(c_black, 2);
+	}
 	else
 	{
 		var t = scribble("[cycle, 140, 140, 140, 130][fnt_reality_hyper_big][fa_center]Memory Processed");

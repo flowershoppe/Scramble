@@ -25,19 +25,18 @@ if(room == rResults and _bool == false)
 	instance_create_layer(0, 0, "YUI", yui_document, global.stResults);		
 }
 
-if(instance_exists(oPlayer))
+
+if(instance_exists(oPlayer) and old_money != oPlayer.money)
 {
-	if(old_money != oPlayer.money)
+	if(old_money < oPlayer.money)
 	{
-		if(old_money < oPlayer.money)
-		{
-			oStats.total_money_earned += (oPlayer.money - money_earned)
-			money_earned += (oPlayer.money - money_earned);
-			audio_play_sound_on(oGame.emitter_SE, sdCoinGet, false, 1);
-		}
-		old_money = oPlayer.money;
-	}	
-}
+		oStats.total_money_earned += (oPlayer.money - money_earned)
+		money_earned += (oPlayer.money - money_earned);
+		audio_play_sound_on(oGame.emitter_SE, sdCoinGet, false, 1);
+	}
+	old_money = oPlayer.money;
+}	
+
 
 vowel_count = 0;
 consonant_count = 0;
@@ -47,7 +46,7 @@ if(room == rGame)
 {
 	_array = oTilebag.match_tiles;	
 }
-else
+else if(room == rMap or room == rResults)
 {
 	_array = oTilebag.tiles;
 }

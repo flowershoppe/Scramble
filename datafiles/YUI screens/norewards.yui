@@ -10,7 +10,7 @@ import:
 root:
   type: panel
   layout: canvas 
-  theme: elektra
+  theme: elektra light
   events:
     on_click: @@ ~get_reward(-4)
   elements:

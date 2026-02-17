@@ -22,9 +22,21 @@ if(global.exchanging){exit;}
 
 
 //-----TYPE TO PLACE-----
+
 var _letter = "";
 var _bool = true;
-if(oMatchManager.active)
+var _touching_holder = true;
+var _other_holder = instance_position(x, y, oTileHolder);
+
+if(instance_exists(_other_holder))
+{
+	if(!array_contains(oPlayerHand.tile_holder_array, _other_holder))
+	{
+		_touching_holder = !position_meeting(x, y, oTileHolder);
+	}
+}
+
+if(oMatchManager.active and !_touching_holder)
 {
 	with(oTile)
 	{
@@ -59,12 +71,12 @@ if(oMatchManager.active)
 
 //-----PICK UP-----
 #region
-if(mouse_check_button_pressed(mb_left) or _letter != "")
+if(instance_exists(oPlayerHand) and oPlayerHand.inc == 0 and (mouse_check_button_pressed(mb_left) or _letter != ""))
 {	
 	//in hand check
 	if(_letter == "")
 	{
-		if(oMatchManager.active and position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile))
+		if((room == rMainMenu or oMatchManager.active) and position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile))
 		{
 			var _list = ds_list_create();
 			var _num = instance_place_list(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), oTile, _list, true);
@@ -110,8 +122,14 @@ if(mouse_check_button_pressed(mb_left) or _letter != "")
 	//if(held_tile != noone){if(held_tile.in_hand == true){held_tile = noone;}}
 		
 	//check if tile exists and is grabbable	
+	var _hovertile = instance_place(x, y, oTile);
+	var _bool = true;
+	if(instance_exists(_hovertile))
+	{
+		_bool = _hovertile.grabbable;
+	}
 	if(held_tile == noone){exit;}
-	else if(!held_tile.grabbable or !held_tile.visible){held_tile = noone; exit;}
+	else if(!held_tile.grabbable or !held_tile.visible or !_bool){held_tile = noone; exit;}
 		
 	//grab a tile
 	
@@ -304,6 +322,12 @@ if(!mouse_check_button(mb_left) or _letter != "")
 		}
 		held_tile.x = _nearest_holder.x;
 		held_tile.y = _nearest_holder.y;
+		
+		//if(_nearest_holder.tile != held_tile)
+		//{
+			audio_play_sound(global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
+				1, 0, global.volumeSE);	
+		//}
 		with(held_tile)
 		{
 			wiggleTime = 0;
@@ -313,8 +337,7 @@ if(!mouse_check_button(mb_left) or _letter != "")
 		
 		_nearest_holder.tile = held_tile;
 		
-		audio_play_sound(global.place_sounds[irandom(array_length(global.place_sounds) - 1)],
-						1, 0, global.volumeSE);
+
 	
 		//-----SWITCH-----
 		var _switch_tile = noone;

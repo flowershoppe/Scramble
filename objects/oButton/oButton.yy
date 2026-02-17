@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spButton",
-    "path":"sprites/spButton/spButton.yy",
+    "name":"oldButton",
+    "path":"sprites/oldButton/oldButton.yy",
   },
   "spriteMaskId":null,
   "visible":true,

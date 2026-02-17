@@ -18,7 +18,8 @@ function gen_board(_lvl)
 		}
 		specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 6);
 		//randomly select a lv1 gen
-			var _ran = irandom_range(1, 3);
+			var _larray = oRun.levels1;
+			var _ran = _larray[irandom_range(0, array_length(_larray) - 1)];
 			switch(_ran)
 			{
 				case 1:					
@@ -42,7 +43,7 @@ function gen_board(_lvl)
 					_array[0, 2].lmult = 2;
 					_array[4, 2].lmult = 2;	
 					
-					var _ran = irandom_range(1, 1);
+					array_delete(_larray, array_get_index(_larray, _ran), 1);
 					/*switch(_ran)
 					{
 						case 1:
@@ -78,7 +79,7 @@ function gen_board(_lvl)
 					_array[8, 4].wmult = 2;
 					_array[0, 4].wmult = 2;
 					
-					var _ran = irandom_range(1, 1);
+					array_delete(_larray, array_get_index(_larray, _ran), 1);
 					/*switch(_ran)
 					{
 						case 1:
@@ -110,7 +111,7 @@ function gen_board(_lvl)
 					_array[0, 3].lmult = 2;
 					_array[6, 3].lmult = 2;
 					
-					var _ran = irandom_range(1, 1);
+					array_delete(_larray, array_get_index(_larray, _ran), 1);
 					/*switch(_ran)
 					{
 						case 1:
@@ -136,6 +137,7 @@ function gen_board(_lvl)
 					var _array = oBoard.holders;
 					
 					_array[0, 0].start_point = true;
+					array_delete(_larray, array_get_index(_larray, _ran), 1);
 					//_array[7, 3].winspot = true;
 					
 					//specs(-1, -1, -1, 7);
@@ -158,7 +160,8 @@ function gen_board(_lvl)
 			}
 			specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 6);
 			//randomly select a lv2 gen
-			var _ran = irandom_range(1, 4);
+			var _larray = oRun.levels2;			
+			var _ran = _larray[irandom_range(0, array_length(_larray) - 1)];
 			switch(_ran)
 			{
 				//DIVIDE
@@ -188,7 +191,7 @@ function gen_board(_lvl)
 					_array[1, 7].lmult = 2;
 					_array[7, 1].lmult = 2;
 					
-					var _ran = irandom_range(1, 1);
+					array_delete(_larray, array_get_index(_larray, _ran), 1);
 					/*switch(_ran)
 					{
 						case 1:
@@ -237,7 +240,7 @@ function gen_board(_lvl)
 					remove_holder(3, 5);
 					
 					//_array[9, 9].winspot = true;
-					var _ran = irandom_range(1, 1);
+					array_delete(_larray, array_get_index(_larray, _ran), 1);
 					/*switch(_ran)
 					{
 						case 1:
@@ -313,7 +316,7 @@ function gen_board(_lvl)
 					_array[6, 6].lmult = 2;
 					//_array[8, 8].winspot = true;
 					
-					var _ran = irandom_range(1, 1);
+					array_delete(_larray, array_get_index(_larray, _ran), 1);
 					/*switch(_ran)
 					{
 						case 1:
@@ -447,7 +450,7 @@ function gen_board(_lvl)
 					remove_holder(4, 3);
 					remove_holder(3, 6);
 					
-					var _ran = irandom_range(1, 2);
+					array_delete(_larray, array_get_index(_larray, _ran), 1);
 					/*switch(_ran)
 					{
 						case 1:
@@ -478,7 +481,8 @@ function gen_board(_lvl)
 			}
 			specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 6);
 			//randomly select a lv3 gen
-			var _ran = irandom_range(1, 4);
+			var _larray = oRun.levels3;			
+			var _ran = _larray[irandom_range(0, array_length(_larray) - 1)];
 			switch(_ran)
 			{
 				//EYE
@@ -517,6 +521,7 @@ function gen_board(_lvl)
 					remove_holder(6, 3);
 					remove_holder(7, 3);
 					
+					array_delete(_larray, array_get_index(_larray, _ran), 1);
 					/*var _ran = irandom_range(1, 2);
 					switch(_ran)
 					{
@@ -576,6 +581,8 @@ function gen_board(_lvl)
 					remove_holder(8, 4);
 					remove_holder(8, 5);
 					remove_holder(8, 6);
+					
+					array_delete(_larray, array_get_index(_larray, _ran), 1);
 				break;
 				#endregion
 				//WIDE OPEN
@@ -598,6 +605,8 @@ function gen_board(_lvl)
 					_array[6, 12].lmult = 3;
 					_array[0, 6].lmult = 3;
 					_array[12, 6].lmult = 3;
+					
+					array_delete(_larray, array_get_index(_larray, _ran), 1);
 				break;
 				#endregion
 				//MOUNTAIN
@@ -611,6 +620,12 @@ function gen_board(_lvl)
 					var _array = oBoard.holders;
 					
 					_array[0, 10].start_point = true;
+					_array[10, 10].wmult = 3;
+					_array[2, 8].lmult = 2;
+					_array[4, 6].lmult = 2;
+					_array[6, 4].lmult = 3;
+					_array[8, 2].wmult = 3;
+					_array[10, 0].wmult = 4;
 					//_array[10, 0].winspot = true;
 					
 					for(var i = 0; i < 10; i++)
@@ -620,6 +635,8 @@ function gen_board(_lvl)
 							remove_holder(i, k);
 						}
 					}
+										
+					array_delete(_larray, array_get_index(_larray, _ran), 1);
 					//specs(-1, -1, -1, 8);
 				break;
 				#endregion

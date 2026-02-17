@@ -135,24 +135,21 @@ function check_end_match()
 		if(((_tmaxactive and turn > turn_max) or
 				(_pmaxactive and total_points > point_max)))
 		{
-			//put tiles back in bag
-			with(oTile)
-			{
-				if(array_contains(oTilebag.tiles, id))
-				{
-					persistent = true;	
-				}
-			}
-			oTilebag.yui_tiles = oTilebag.tiles;
-			reset_tilebag();
 			var _saveloc = "gamesave.save";
-			oMatchManager.active = false;
-			oMatchManager.loss = true;
 			file_delete(_saveloc);
 			show_debug_message("Deleting save at " + _saveloc)
+			
+			oMatchManager.active = false;
+			oMatchManager.loss = true;
+			oStats.losses ++;
+			
+			global.music = msGameOver;
+			audio_stop_all()
+			audio_play_sound_on(oGame.emitter_MS, global.music, true, 1);
 			broadcast("match end");
-			screenTransition(rGameOver, , ST_CHECKER_UD_BOTH);
-			with(oRun){alarm_set(1, 1);}
+			
+			create_continue_button();
+			instance_create_layer(0, 0, "UI", oCompleteMessage);
 			return true;
 		}
 

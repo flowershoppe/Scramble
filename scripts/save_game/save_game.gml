@@ -1,7 +1,7 @@
 function save_game()
 {
 	var _saveData = array_create(0);
-	
+	//FIX TIME SAVE
 	//save Run
 	with(oRun)
 	{
@@ -37,8 +37,11 @@ function save_game()
 			{
 				x : x,
 				y : y,
-				tile_specs : tile_specs,
-				charms : charms
+				charms : charms,
+				tile_count : tile_count,
+				charm_count : charm_count,
+				base_charm_count : base_charm_count,
+				base_tile_count : base_tile_count
 			}
 		}
 		array_push(_saveData, _saveEntity);
@@ -211,7 +214,8 @@ function save_game()
 				in_hand : in_hand,
 				spr : spr,	
 				highlight : _high,
-				temp : temp
+				temp : temp,
+				old_letter : old_letter
 			}		
 		}
 		array_push(_saveData, _saveEntity);

@@ -34,6 +34,11 @@ function flow_continue()
 					show_results();	
 				}
 			}
+		}						
+		else if(oMatchManager.loss)
+		{					
+			screenTransition(rGameOver, , ST_CHECKER_UD_BOTH);
+			call_later(1, time_source_units_frames, game_over);
 		}
 		break;		
 	}

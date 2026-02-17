@@ -12,6 +12,7 @@ function reset_tilebag()
 		wait_for_input = false;
 		grabbable = true;
 		selected = false;
+		letter = old_letter;
 
 		x = 0;
 		y = 0;

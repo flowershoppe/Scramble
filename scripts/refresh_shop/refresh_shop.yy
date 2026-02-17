@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"refresh_shop",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"refresh_shop",
+  "parent":{
+    "name":"Play",
+    "path":"folders/Scripts/Play.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

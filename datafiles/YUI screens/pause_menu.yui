@@ -26,7 +26,8 @@ root:
           alignment: {h: center}
           elements:
             - type: button 
-              background: ~spPanel
+              background: ~spButton
+              border_thickness: 0
               content:
                 type: text
                 text_style: subtitle
@@ -37,7 +38,8 @@ root:
               events:
                 on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
             - type: button 
-              background: ~spPanel
+              background: ~spButton
+              border_thickness: 0
               content:
                 type: text
                 text_style: subtitle
@@ -48,7 +50,8 @@ root:
               events:
                 on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
             - type: button 
-              background: ~spPanel
+              background: ~spButton
+              border_thickness: 0
               content:
                 type: text
                 text_style: subtitle

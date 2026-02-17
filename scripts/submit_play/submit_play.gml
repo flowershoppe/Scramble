@@ -1,5 +1,6 @@
 function submit_play()
-{
+{	
+	if(!oMatchManager.active){exit;}
 	var _placed_tiles = oPlayer.placed_tiles;
 	if(array_length(_placed_tiles) < 1){exit;}
 	if(valid_play() and check_words())

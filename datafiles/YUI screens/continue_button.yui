@@ -10,6 +10,7 @@ import:
 root:
   type: panel
   layout: canvas 
+  theme: elektra
   elements:
     - type: panel
       alignment: center
@@ -17,7 +18,8 @@ root:
         center: h
       elements:
         - type: button
-          background: ~spPanel
+          background: ~spButton
+          border_thickness: 0
           content:
             type: text
             text: Continue

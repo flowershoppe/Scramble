@@ -1,6 +1,6 @@
 event_inherited();
 name = "Diamond";
-description = "Double a play's value if it contains at least 5 played consonants.";
+description = "Double a play's value if it contains at least 4 played consonants.";
 color = c_red;
 
 receiver = new Receiver();
@@ -30,7 +30,7 @@ receiver.add("check words", function()
 			}
 			_i++;			
 		}
-		if(_count >= 5)
+		if(_count >= 4)
 		{
 			animate = !animate; 
 			broadcast("charm trigger");

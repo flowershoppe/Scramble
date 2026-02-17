@@ -1,7 +1,7 @@
 event_inherited();
 name = "Spade";
-description = "Double a play's value if it contains at least 5 played vowels";
-color = c_black;
+description = "Double a play's value if it contains at least 4 played vowels";
+color = 5131854;
 
 receiver = new Receiver();
 
@@ -30,7 +30,7 @@ receiver.add("check words", function()
 			}
 			_i++;			
 		}
-		if(_count >= 5)
+		if(_count >= 4)
 		{
 			animate = !animate; 
 			broadcast("charm trigger");

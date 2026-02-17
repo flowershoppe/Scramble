@@ -302,6 +302,10 @@ function check_words()
 		{
 			var _spelled_word = _spelled_words[_index]	
 			array_push(oMatchManager.spelled_words, _spelled_word);
+			if(_index > 0)
+			{
+				_spelled_word = string_insert(", ", _spelled_word, 0);
+			}
 			array_push(oMatchManager.last_words, _spelled_word);
 		}
 		oMatchManager.print_message = "";

@@ -11,8 +11,8 @@ root:
   size: stretch
   alignment: {h: center}
   background: ~spPanel
-  theme: elektra
-  padding: 10
+  theme: elektra light
+  padding: 25
   spacing: 15
   elements:
     - type: panel

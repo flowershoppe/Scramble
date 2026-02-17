@@ -1,5 +1,6 @@
 function exchange_tiles()
 {	
+	if(!oMatchManager.active){exit;}
 	return_tiles();
 	
 	if(!global.exchanging)
@@ -11,7 +12,7 @@ function exchange_tiles()
 	
 	var _array = [];
 	
-	//remove tile selected tiles from holders
+	//remove selected tiles from holders
 	with(oTileHolder)
 	{
 		if(tile != noone and tile.selected)

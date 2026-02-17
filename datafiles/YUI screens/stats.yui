@@ -11,7 +11,7 @@ root:
   type: panel
   layout: canvas
   is_cursor_layer: true
-  theme: elektra
+  theme: elektra light
   elements:
     - type: panel   
       canvas:
@@ -24,12 +24,13 @@ root:
           padding: 10
           elements:
             - type: button
+              theme: elektra
               content:
                 type: text
                 text: Back
                 text_style: subtitle
-              border_thickness: 1
-              background: ~spPanel
+              border_thickness: 0
+              background: ~spButton
               on_click: 
                 - ~toggle_stats()
                 - ~audio_play_sound_on(~oGame.emitter_SE, ~sdBack, false, 1)

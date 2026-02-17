@@ -4,7 +4,7 @@ description = "When a turn starts, has a 1-in-6 chance to double the point value
 
 receiver = new Receiver();
 
-receiver.add("turn start", function() 
+receiver.add("hand filled", function() 
 	{ 
 		if(irandom_range(1, 6 * oPlayer.random_mod) >= 6)
 		{

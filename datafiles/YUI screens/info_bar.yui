@@ -4,33 +4,38 @@ file_type: screen
 root:
   is_cursor_layer: true
   type: panel
-  theme: elektra
+  theme: elektra light
   layout: canvas
   size: stretch
   background: ~spPanel
   padding: 0
   elements:
     - type: button
+      border_thickness: 0
+      padding: 0
       size: {w: 32, h: 32}
       canvas:
         top: 15
         left: 15
       autofocus: false
-      content: " "
-      background: ~spCog
+      content:
+        type: image
+        sprite: ~spCog
+        blend_color: grey
+      background: null
       on_click: 
         - ~toggle_pause()
         - ~audio_play_sound_on(~oGame.emitter_SE, ~sdSelect, false, 1)
     - type: text
       text: @@'Floor - ' + ~oRun.stage
       canvas:
-        top: 20
+        top: 22
         left: 100
     - type: panel
       layout: horizontal
       spacing: 5
       canvas:
-        top: 20
+        top: 22
         left: 200
       elements:
         - type: text
@@ -41,7 +46,7 @@ root:
       layout: horizontal
       spacing: 5
       canvas:
-        top: 20
+        top: 22
         left: 420
       elements:
         - type: text
@@ -49,12 +54,12 @@ root:
     - type: text
       text: Run Length - 
       canvas:
-        top: 20
+        top: 22
         right: 175
     - type: text
       text: ~oRun.length
       canvas:
-        top: 20
+        top: 22
         left: 790
 
 

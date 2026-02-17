@@ -12,12 +12,12 @@ root:
   layout: canvas
   elements:
     - type: panel
-      theme: elektra
+      theme: elektra light
       canvas: 
         top: 75
-        left: 110
-      size: {w: 200, h: 170}
-      padding: 10
+        left: 100
+      padding: 20
+      size: {w: 200}
       background: ~spPanel
       elements:
         - type: text

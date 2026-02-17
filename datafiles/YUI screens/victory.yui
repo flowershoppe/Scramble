@@ -13,7 +13,7 @@ root:
   elements:
     - type: panel
       alignment: center
-      theme: elektra
+      theme: elektra light
       layout: canvas
       canvas:
         center: true
