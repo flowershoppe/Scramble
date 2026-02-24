@@ -19,7 +19,7 @@ if(instance_exists(oPlayerHand))
 }
 
 if(global.exchanging){exit;}
-
+if(instance_exists(oPlayerHand) and oPlayerHand.inc > 0){exit;}
 
 //-----TYPE TO PLACE-----
 

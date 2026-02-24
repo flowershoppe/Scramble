@@ -43,7 +43,8 @@ root:
             - type: text
               text: @@ 'Run Length | ' + @length
         - type: button
-          background: ~spPanel
+          theme: elektra
+          background: ~spButton
           canvas: 
             bottom: 50
             right: 200
