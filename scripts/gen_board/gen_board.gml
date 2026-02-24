@@ -149,7 +149,7 @@ function gen_board(_lvl)
 		
 		case oLevel2:
 		#region
-			_point_base = 50;
+			_point_base = 70;
 			_point_scale = 5;
 			for(var i = 0; i < array_length(oRun.levels); i++)
 			{
@@ -158,7 +158,7 @@ function gen_board(_lvl)
 					_point_scale_mult = i;
 				}
 			}
-			specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 6);
+			specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 8);
 			//randomly select a lv2 gen
 			var _larray = oRun.levels2;			
 			var _ran = _larray[irandom_range(0, array_length(_larray) - 1)];
@@ -265,7 +265,7 @@ function gen_board(_lvl)
 					});
 					var _array = oBoard.holders;
 					
-					_array[0, 0].start_point = true;
+					_array[4, 4].start_point = true;
 					
 					remove_holder(0, 1);
 					remove_holder(0, 2);
@@ -307,7 +307,6 @@ function gen_board(_lvl)
 					
 					remove_holder(5, 4);
 					
-					_array[4, 4].lmult = 3;
 					_array[4, 0].wmult = 2;
 					_array[4, 8].wmult = 2;
 					_array[2, 2].lmult = 2;
@@ -470,8 +469,8 @@ function gen_board(_lvl)
 		
 		case oLevel3:
 		#region
-			_point_base = 60;
-			_point_scale = 5;
+			_point_base = 100;
+			_point_scale = 10;
 			for(var i = 0; i < array_length(oRun.levels); i++)
 			{
 				if(oRun.levels[i].active)
@@ -479,7 +478,7 @@ function gen_board(_lvl)
 					_point_scale_mult = i;
 				}
 			}
-			specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 6);
+			specs(_point_base + (_point_scale * _point_scale_mult), -1, -1, 10);
 			//randomly select a lv3 gen
 			var _larray = oRun.levels3;			
 			var _ran = _larray[irandom_range(0, array_length(_larray) - 1)];
@@ -622,7 +621,7 @@ function gen_board(_lvl)
 					_array[0, 10].start_point = true;
 					_array[10, 10].wmult = 3;
 					_array[2, 8].lmult = 2;
-					_array[4, 6].lmult = 2;
+					_array[4, 6].wmult = 2;
 					_array[6, 4].lmult = 3;
 					_array[8, 2].wmult = 3;
 					_array[10, 0].wmult = 4;

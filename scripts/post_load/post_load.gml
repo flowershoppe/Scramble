@@ -61,7 +61,14 @@ function post_load()
 		
 		with(oLevel)
 		{
-			array_push(oRun.levels, id);
+			array_insert(oRun.levels, index, id);
+		}
+		for(var i = 0; i < array_length(oRun.levels); i++)
+		{
+			if(oRun.levels[i] == 0)
+			{
+				array_delete(oRun.levels, i, 1);	
+			}
 		}
 		
 		with(oRun)

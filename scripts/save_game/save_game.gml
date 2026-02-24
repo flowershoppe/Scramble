@@ -20,7 +20,10 @@ function save_game()
 				levels_completed : levels_completed,
 				level_count : level_count,
 				stage_count : stage_count,
-				current_level_index : current_level_index
+				current_level_index : current_level_index,
+				levels1 : levels1,
+				levels2 : levels2,
+				levels3 : levels3
 			}
 		}
 		array_push(_saveData, _saveEntity);
@@ -38,6 +41,7 @@ function save_game()
 				x : x,
 				y : y,
 				charms : charms,
+				tiles : tiles,
 				tile_count : tile_count,
 				charm_count : charm_count,
 				base_charm_count : base_charm_count,
@@ -305,7 +309,8 @@ function save_game()
 				x : x,
 				y : y,
 				active : active,
-				spr : spr
+				spr : spr,
+				index : index
 			}
 		}
 		array_push(_saveData, _saveEntity);

@@ -1,12 +1,11 @@
 function next_level()
 {
-	var _ind = array_get_index(oRun.levels, oRun.current_level);
+	var _ind = oRun.current_level_index;
 	//activate next level
 	if(!(_ind == (array_length(oRun.levels) - 1)))
 	{
 		oRun.levels[_ind].active = false;
 		oRun.levels[_ind + 1].active = true;
-		oRun.current_level = oRun.levels[_ind + 1];
 	}
 	else
 	{		

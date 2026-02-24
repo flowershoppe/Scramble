@@ -1,3 +1,10 @@
+do
+re
+mi
+fa
+so
+la
+ti
 accent
 arpeggio
 bar
@@ -174,6 +181,7 @@ marimba
 oboe
 piano
 piccolo
+play
 sax
 snare
 string
