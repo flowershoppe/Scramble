@@ -4,6 +4,10 @@ function reset_tilebag()
 	oTilebag.match_tiles = [];
 	with(oTile)
 	{
+		if(letter == "_")
+		{
+			var a = 1;	
+		}
 		layer = layer_get_id("Tilebag");
 		visible = false;
 		in_hand = false;

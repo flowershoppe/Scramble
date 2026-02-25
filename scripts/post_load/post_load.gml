@@ -105,7 +105,7 @@ function post_load()
 		}	
 
 		array_sort(_array, _function);
-		
+		/*
 		with(oTileHolder)
 		{
 			loading = true;
@@ -113,7 +113,7 @@ function post_load()
 			{
 				array_push(oPlayerHand.tile_holder_array, id);
 			}
-		}
+		}*/
 		
 		if(room == rResults)
 		{

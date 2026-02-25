@@ -110,7 +110,12 @@ if(!on_board and blank == true)
 	wait_for_input = false;
 }
 
-if (wiggleAmplitude > 0) 
+if(room != rGame)
+{
+	letter = old_letter;	
+}
+
+if(wiggleAmplitude > 0) 
 {
     wiggleTime++;
     image_angle = sin(wiggleTime * 2 * pi / wigglePeriod) * wiggleAmplitude;
