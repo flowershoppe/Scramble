@@ -7,65 +7,60 @@ import:
 
 root:
   type: panel
-  layout: vertical
-  size: stretch
-  alignment: {h: center}
-  background: ~spPanel
-  theme: elektra light
-  padding: 25
-  spacing: 15
+  layout: canvas
   elements:
     - type: panel
-      layout: horizontal
-      elements:
-        - type: text
-          text: "Score: "
-        - @yui_points
-    - type: panel
-      layout: horizontal
-      elements:
-        - type: text
-          text: "Target: "
-        - @@ ~isnegative(@point_min) then 'N/A' else @point_min
-    - type: panel
-      layout: horizontal
-      elements:
-        - type: text
-          text: "Turn: "
-        - @turn
-    //- type: panel
-    //  layout: horizontal
-    //  elements:
-    //    - type: text
-    //      text: "Point Max: "
-    //    - @@ ~isnegative(@point_max) then 'N/A' else @point_max
-    //- type: panel
-    //  layout: horizontal
-    //  elements:
-    //    - type: text
-    //      text: "Turn Min: "
-    //    - @@ ~isnegative(@turn_min) then 'N/A' else @turn_min
-    - type: panel
-      layout: horizontal
-      elements:
-        - type: text
-          text: "Turn Max: "
-        - @@ ~isnegative(@turn_max) then 'N/A' else @turn_max
-    - type: panel
-      layout: horizontal
-      elements:
-        - type: text
-          text: "Last Play: "
-        - @yui_last_play
-    - type: panel
+      is_cursor_layer: true
+      canvas:
+        top: 60
+        right: 0
       layout: vertical
+      size: {w: 175, h: 200}
       alignment: {h: center}
+      background: ~spPanel
+      theme: elektra light
+      padding: 25
+      spacing: 15
       elements:
-        - type: text
-          text: "Last Word(s): "
         - type: panel
           layout: horizontal
-          elements: @last_words
-          template:
-            type: text
-            text: @
+          elements:
+            - type: text
+              text: "Score: "
+            - @yui_points
+        - type: panel
+          layout: horizontal
+          elements:
+            - type: text
+              text: "Target: "
+            - @@ ~isnegative(@point_min) then 'N/A' else @point_min
+        - type: panel
+          layout: horizontal
+          elements:
+            - type: text
+              text: "Turn: "
+            - @turn
+        //- type: panel
+        //  layout: horizontal
+        //  elements:
+        //    - type: text
+        //      text: "Point Max: "
+        //    - @@ ~isnegative(@point_max) then 'N/A' else @point_max
+        //- type: panel
+        //  layout: horizontal
+        //  elements:
+        //    - type: text
+        //      text: "Turn Min: "
+        //    - @@ ~isnegative(@turn_min) then 'N/A' else @turn_min
+        - type: panel
+          layout: horizontal
+          elements:
+            - type: text
+              text: "Turn Max: "
+            - @@ ~isnegative(@turn_max) then 'N/A' else @turn_max
+        - type: panel
+          layout: horizontal
+          elements:
+            - type: text
+              text: "Last Play: "
+            - @yui_last_play

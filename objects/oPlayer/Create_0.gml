@@ -17,6 +17,6 @@ play_mult_bonus = 1;
 
 exchanged_tiles = [];
 
-hand_size = 7;
+hand_size = 10;
 
 yui_money = money;

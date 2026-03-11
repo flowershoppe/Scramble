@@ -25,7 +25,7 @@ receiver.add("match start", function()
 		{
 			var _random = irandom_range(0, _length - 1);
 			var _holder = _array[_random];
-			if(_holder.visible and _holder.wmult == 1 and _holder.lmult == 1)
+			if(_holder.visible and _holder.wmult == 1 and _holder.lmult == 1 and !_holder.winspot)
 			{
 				_holder.wmult = 2;
 				animate = !animate;

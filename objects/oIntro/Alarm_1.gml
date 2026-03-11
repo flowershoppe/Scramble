@@ -5,15 +5,16 @@ audio_play_sound_on(oGame.emitter_SE, sdPlayTile, false, 1, 0.1 - count, , 1 + (
 audio_play_sound_on(oGame.emitter_SE, sdHit, false, 1, 0.1 - count, , 1 + (0.5),);
 instance_create_depth(irandom_range(0, room_width), irandom_range(0, room_height), 0, oTile,
 	{
-		letter : _letter	
+		letter : _letter,
+		old_letter : _letter,
+		pointvalue : global.letters[? _letter]
 	});
 
-if(count < 50)
+if(count > 50)
 {
-	count++;
-	alarm_set(1, 5);
+	alarm_set(2, 1);	
 }
-else
-{
-	alarm_set(2, 200);	
-}
+
+count++;
+alarm_set(1, 5);
+

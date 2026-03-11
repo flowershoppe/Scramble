@@ -1,7 +1,7 @@
 randomize();
 dialogue_setup();
 cheat = false;
-version = "v0.03a";
+version = "v0.03b";
 
 global.paused = false;
 //Instance
@@ -78,31 +78,32 @@ global.music_victory = msVictory;
 //Fonts
 #region
 fonts = [
-	construct_font("Arial",	fnt_arial, fnt_arial_small),
+	construct_font("Arial",	fnt_arial, fnt_arial_small, fnt_arial_tiny),
 	
-	construct_font("Book Antiqua", fnt_book_antiqua, fnt_book_antiqua_small),
+	construct_font("Book Antiqua", fnt_book_antiqua, fnt_book_antiqua_small, fnt_book_antiqua_tiny),
 	
-	construct_font("Comic Sans", fnt_comic_sans, fnt_comic_sans_small),
+	construct_font("Comic Sans", fnt_comic_sans, fnt_comic_sans_small, fnt_comic_sans_tiny),
 	
-	construct_font("Impact", fnt_impact, fnt_impact_small),
+	construct_font("Impact", fnt_impact, fnt_impact_small, fnt_impact_tiny),
 	
-	construct_font("Oswald", fnt_oswald, fnt_oswald_small),
+	construct_font("Oswald", fnt_oswald, fnt_oswald_small, fnt_oswald_tiny),
 	
-	construct_font("Pirata", fnt_pirata, fnt_pirata_small),
+	construct_font("Pirata", fnt_pirata, fnt_pirata_small, fnt_pirata_tiny),
 	
-	construct_font("Segoe", fnt_segoe, fnt_segoe_small),
+	construct_font("Segoe", fnt_segoe, fnt_segoe_small, fnt_segoe_tiny),
 	
-	construct_font("Wingdings", fnt_wingdings, fnt_wingdings_small)
+	construct_font("Wingdings", fnt_wingdings, fnt_wingdings_small, fnt_wingdings_tiny)
 ];
 #endregion
 tile_sprite = spLetterTile;
 tile_font_color = c_black;
 
 //default font
-font = construct_font("Oswald", fnt_oswald, fnt_oswald_small);
+font = construct_font("Oswald", fnt_oswald, fnt_oswald_small, fnt_oswald_tiny);
 tile_font_name = font.name;
 tile_font = font.normal;
 tile_font_small = font.small;
+tile_font_tiny = font.tiny;
 
 //Handlers
 instance_create_layer(0, 0, "Meta", oSaverLoader);
@@ -141,22 +142,12 @@ global.stMatchStats =
 {
 	data_context : oMatchManager,
 	yui_file : "YUI screens/match_stats.yui",
-	is_full_screen : false,
-	image_xscale : 3.2,
-	image_yscale : 5,
-	x : 755,
-	y : 64,
 	layer : layer_get_id("YUI")
 }
 global.stMatchButtons = 
 {
 	data_context : oMatchGUI,
 	yui_file : "YUI screens/match_buttons.yui",
-	is_full_screen : false,
-	image_xscale : 3.2,
-	image_yscale : 2.609,
-	x : 755,
-	y : 384,
 	layer : layer_get_id("YUI")
 }
 global.stCharms = 

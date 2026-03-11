@@ -12,6 +12,9 @@ level_count = 3;
 vowel_count = 0;
 consonant_count = 0;
 
+//prevents camera draggong while clicking on yui element
+YuiCursorManager.global_left_pressed = start_camera_drag;
+
 if(room == rGame or room == rMap)	
 {
 	switch(oRun.stage)	

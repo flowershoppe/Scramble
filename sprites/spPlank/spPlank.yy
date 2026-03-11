@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"spPlank",
   "bboxMode":1,
-  "bbox_bottom":83,
+  "bbox_bottom":103,
   "bbox_left":0,
-  "bbox_right":524,
+  "bbox_right":649,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":84,
+  "height":104,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"213c703d-78d8-4290-9544-c98c6c724d2d","blendMode":0,"displayName":"default","isLocked":false,"name":"213c703d-78d8-4290-9544-c98c6c724d2d","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -70,13 +70,15 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"366f0bf4-cb18-4a57-bc9a-bd8624d4417d","path":"sprites/spPlank/spPlank.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"34d6888d-f7d6-4ca3-8163-218a7111184d","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"366f0bf4-cb18-4a57-bc9a-bd8624d4417d","path":"sprites/spPlank/spPlank.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"34d6888d-f7d6-4ca3-8163-218a7111184d","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":262,
-    "yorigin":42,
+    "xorigin":325,
+    "yorigin":52,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
@@ -86,5 +88,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":525,
+  "width":650,
 }

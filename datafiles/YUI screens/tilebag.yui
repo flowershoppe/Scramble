@@ -21,34 +21,32 @@ root:
       padding: [15, 15, 15, 15]
       grid:
         rows: 10
-        row_height: 50
+        row_height: 25
         row_spacing: 5
-        columns: 6
-        column_width: 50
+        columns: 10
+        column_width: 25
         column_spacing: 5
       background: ~spPanel
       elements: @yui_tiles
       template:
         type: panel
         layout: canvas
-        size: 50
+        size: 25
         background: ~oGame.tile_sprite
-        events:
-          on_click: ~get_reward(@id)
         elements:
           - type: text
             theme: dark
             canvas:
               center: h
-              top: -5
+              bottom: 2
             text: @letter
-            font: ~oGame.tile_font
+            font: ~oGame.tile_font_small
           - type: text
             theme: default
             text: @pointvalue
-            font: ~oGame.tile_font_small
+            font: ~oGame.tile_font_tiny
             canvas:
-              right: 5
+              right: 2
             color: ~isGreater(@letter, @pointvalue) then red else black
 
 

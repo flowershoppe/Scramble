@@ -4,7 +4,7 @@ instance_destroy(oPlayerHand);
 instance_destroy(oTile);
 instance_destroy(oTileHolder);
 instance_create_layer(0, 0, "Meta", oDialogueManager);
-instance_create_layer(100, 450, "Tilebag", oTilebag);
+instance_create_layer(125, 125, "Tilebag", oTilebag);
 dist_standard(oTilebag);
 	
 //initialize handlers
