@@ -7,64 +7,71 @@ import:
 
 root:
   type: panel
-  layout: vertical
-  size: stretch
-  background: ~spPanel
-  alignment: center
-  padding: 10
-  theme: elektra
+  layout: canvas
   elements:
-    - type: button 
-      background: ~spButton
-      autofocus: false
-      content: 
-        type: text
-        text: Submit Play
-        text_style: body  
-      border_color: black
-      border_thickness: 0
-      events:
-        on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
-      on_click: 
-        - ~submit_play()
+    - type: panel
+      is_cursor_layer: true
+      layout: vertical
+      size: {w: 175, h: 175}
+      canvas:
+        right: 0
+        top: 260
+      background: ~spPanel
+      alignment: center
+      padding: 10
+      theme: elektra
+      elements:
+        - type: button 
+          background: ~spButton
+          autofocus: false
+          content: 
+            type: text
+            text: Submit Play
+            text_style: body  
+          border_color: black
+          border_thickness: 0
+          events:
+            on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
+          on_click: 
+            - ~submit_play()
 
-    - type: button 
-      background: ~spButton
-      content: 
-        type: text
-        text: Return Tiles
-        text_style: body
-      border_color: black
-      border_thickness: 0
-      events:
-        on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
-      on_click: 
-        - ~return_tiles()
+        - type: button 
+          background: ~spButton
+          content: 
+            type: text
+            text: Return Tiles
+            text_style: body
+          border_color: black
+          border_thickness: 0
+          events:
+            on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
+          on_click: 
+            - ~return_tiles()
 
-    - type: button 
-      content: 
-        type: text
-        text: Exchange Tiles
-        text_style: body
-      background: ~oMatchGUI.exchange_flash then green else ~spButton
-      border_thickness: 0
-      events:
-        on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
-      on_click: 
-        - ~exchange_tiles()
+        - type: button 
+          content: 
+            type: text
+            text: Exchange Tiles
+            text_style: body
+          background: ~oMatchGUI.exchange_flash then green else ~spButton
+          border_thickness: 0
+          events:
+            on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
+          on_click: 
+            - ~exchange_tiles()
 
-    - type: button 
-      background: ~spButton
-      content: 
-        type: text
-        text: Shuffle Hand
-        text_style: body
-      border_thickness: 0
-      events:
-        on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
-      on_click: 
-        - ~shuffle_hand()
+        - type: button 
+          background: ~spButton
+          content: 
+            type: text
+            text: Shuffle Hand
+            text_style: body
+          border_thickness: 0
+          events:
+            on_hover_changed: @@ e => e.hover then ~audio_play_sound_on(~oGame.emitter_SE, ~sdHover, false, 1) else false
+          on_click: 
+            - ~shuffle_hand()
 
-      
+          
 
-      
+          

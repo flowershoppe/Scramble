@@ -1,6 +1,6 @@
 event_inherited();
 name = "Sewing Needle";
-description = "When a match ends, if score equals target, gain 20 mytes" + string(value);
+description = "When a match ends, if score equals target, gain 20 mytes";
 color = c_silver;
 
 receiver = new Receiver();

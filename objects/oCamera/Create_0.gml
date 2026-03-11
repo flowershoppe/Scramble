@@ -18,6 +18,7 @@ mouse_xguiprev = 0;
 mouse_yguiprev = 0;
 
 dragging = false;
+yui = false;
 
 //variables for managing camera movement
 /*

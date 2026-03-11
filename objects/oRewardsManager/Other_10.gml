@@ -105,6 +105,7 @@ if(oMatchManager.exchange_count < 1)
 			var _reward = instance_create_layer(_x_loc, _y_loc, "UI", oTile,
 			{
 				letter : _struct.letter,
+				old_letter : _struct.letter,
 				pointvalue : _struct.pointvalue,
 				persistent : _struct.persistent,
 				visible : _struct.visible

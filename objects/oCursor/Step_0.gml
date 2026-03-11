@@ -25,18 +25,25 @@ if(instance_exists(oPlayerHand) and oPlayerHand.inc > 0){exit;}
 
 var _letter = "";
 var _bool = true;
-var _touching_holder = true;
-var _other_holder = instance_position(x, y, oTileHolder);
+var _touching_holder = false;
+var _list = ds_list_create();
+var _num = instance_position_list(x, y, oTileHolder, _list, true);
 
-if(instance_exists(_other_holder))
+if(_num > 0)
 {
-	if(!array_contains(oPlayerHand.tile_holder_array, _other_holder))
+	for(var i = 0; i < _num; i++)
 	{
-		_touching_holder = !position_meeting(x, y, oTileHolder);
+		if(instance_exists(_list[| i]) and _list[| i].visible and
+		!array_contains(oPlayerHand.tile_holder_array, _list[| i]))
+		{
+			_touching_holder = true;
+			break;
+		}
 	}
 }
 
-if(oMatchManager.active and !_touching_holder)
+
+if(oMatchManager.active and _touching_holder)
 {
 	with(oTile)
 	{

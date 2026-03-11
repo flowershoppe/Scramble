@@ -13,6 +13,7 @@ receiver.add("hand filled", function()
 		_tile.old_letter = _tile.letter;
 		wiggle(_tile);
 		_tile.blank = true;
+		_tile.pointvalue = 0;
 		_tile = "_";		
 	});
 	

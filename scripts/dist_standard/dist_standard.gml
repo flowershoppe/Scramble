@@ -22,31 +22,31 @@ function dist_standard(_tilebag)
 		{
 			#region
 			case "A":
-				_count = 3;
+				_count = 5;
 				break;
 			case "B":
-				_count = 1;
+				_count = 2;
 				break;
 			case "C":
-				_count = 1;
+				_count = 2;
 				break;
 			case "D":
-				_count = 1;
+				_count = 4;
 				break;
 			case "E":
-				_count = 2;
+				_count = 6;
 				break;
 			case "F":
-				_count = 1;
+				_count = 2;
 				break;
 			case "G":
-				_count = 1;
+				_count = 2;
 				break;
 			case "H":
-				_count = 1;
+				_count = 2;
 				break;
 			case "I":
-				_count = 2;
+				_count = 4;
 				break;
 			case "J":
 				_count = 1;
@@ -55,31 +55,31 @@ function dist_standard(_tilebag)
 				_count = 1;
 				break;
 			case "L":
-				_count = 1;
-				break;
-			case "M":
-				_count = 1;
-				break;
-			case "N":
-				_count = 1;
-				break;
-			case "O":
 				_count = 2;
 				break;
+			case "M":
+				_count = 2;
+				break;
+			case "N":
+				_count = 3;
+				break;
+			case "O":
+				_count = 5;
+				break;
 			case "P":
-				_count = 1;
+				_count = 2;
 				break;
 			case "Q":
 				_count = 1;
 				break;
 			case "R":
-				_count = 1;
+				_count = 3;
 				break;
 			case "S":
-				_count = 1;
+				_count = 2;
 				break;
 			case "T":
-				_count = 1;
+				_count = 3;
 				break;
 			case "U":
 				_count = 2;
@@ -88,13 +88,13 @@ function dist_standard(_tilebag)
 				_count = 1;
 				break;
 			case "W":
-				_count = 1;
+				_count = 2;
 				break;
 			case "X":
 				_count = 1;
 				break;
 			case "Y":
-				_count = 1;
+				_count = 2;
 				break;
 			case "Z":
 				_count = 1;

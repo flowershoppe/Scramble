@@ -3,8 +3,16 @@ owner = oPlayer;
 empty = false;
 
 spr = spPanel;
-spr_w = sprite_get_width(spPlank);
-spr_h = sprite_get_height(spPlank);
+if(room == rGame)
+{
+	spr_w = 800;
+	spr_h = 105;
+}
+else
+{
+	spr_w = 525;
+	spr_h = 105;
+}
 
 inc = 0;
 interval = 10;

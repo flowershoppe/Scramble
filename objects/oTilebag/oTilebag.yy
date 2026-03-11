@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spTilebag",
-    "path":"sprites/spTilebag/spTilebag.yy",
+    "name":"spTilebagSmall",
+    "path":"sprites/spTilebagSmall/spTilebagSmall.yy",
   },
   "spriteMaskId":null,
   "visible":true,

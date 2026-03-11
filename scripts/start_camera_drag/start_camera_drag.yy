@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"start_camera_drag",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"start_camera_drag",
+  "parent":{
+    "name":"Play",
+    "path":"folders/Scripts/Play.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
