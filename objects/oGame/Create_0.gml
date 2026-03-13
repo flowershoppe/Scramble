@@ -1,7 +1,7 @@
 randomize();
 dialogue_setup();
 cheat = false;
-version = "v0.03b";
+version = "v0.04";
 
 global.paused = false;
 //Instance
