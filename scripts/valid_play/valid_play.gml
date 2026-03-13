@@ -47,12 +47,9 @@ function valid_play()
 			for(var i = 0; i < array_length(_adjacent_tiles); i++)
 			{
 				var _tile = _adjacent_tiles[i];
-				with(_tile)
+				if(instance_exists(_tile) and _tile.in_hand)
 				{
-					if(in_hand)
-					{
-						_adjacent_tiles[i] = instance_position(x, y, oTile);	
-					}
+					_adjacent_tiles[i] = noone;//instance_position(x, y, oTile);						
 				}
 			}
 		}
